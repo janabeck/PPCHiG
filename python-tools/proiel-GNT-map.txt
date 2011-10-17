@@ -1,0 +1,8 @@
+[A]-_-.---.[nv][px].i		ADJ
+[A]-_-.---.[g][px].i		ADJ$
+[A]-_-.---.[a][px].i		ADJA
+[A]-_-.---.[d][px].i		ADJD
+[A]-_-.---.[lbxci][px].i	ADJU
+[A]-_-.---..[c].i		ADJR
+[A]-_-.---..[s].i		ADJS
+[F]-_..........			FW

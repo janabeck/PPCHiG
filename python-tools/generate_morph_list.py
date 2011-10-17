@@ -1,25 +1,52 @@
+# This Python file uses the following encoding: utf-8
+
+"""
+generate_morph_list.py
+Created 2011/10/17
+@author: Jana E. Beck
+@copyright: GNU General Public License http://www.gnu.org/licenses/
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+@contact: jana.eliz.beck@gmail.com
+"""
+
 import re
+import codecs
+
+from BeautifulSoup import BeautifulStoneSoup
+
+from sets import Set
 
 def main():
     """Generate a list of all the morphological tags in an XML document."""
+
+    in_file = codecs.open("proiel-GNT.xml", "rU", "utf-8")
+
+    print "Parsing the input file with BeautifulStoneSoup..."
+    print
+
+    soup = BeautifulStoneSoup(in_file)
+
+    print "Finding all the tokens..."
+    print
+
+    tokens = soup.findAll('token')
+
+    out_file = codecs.open("GNT-morph-list.txt", "w", "utf-8")
+
+    unique_tags = Set([])
+
+    for token in tokens:
+        try:
+            stuff = token['morph-features'].split(",")
+            proiel_pos = stuff[1]
+            proiel_morph = stuff[3]
+            tag = proiel_pos + "_" + proiel_morph
+            unique_tags.add(tag)
+        except KeyError:
+            pass
     
-    in_name = raw_input("What is the name of your input XML file? ")
-    print
-    in_file = open(in_name, "rU")
-
-    attr = raw_input("What is the name of the attribute that contains the morphological information? ")
-    print
-
-    pos = re.compile(attr + '=\"(.*?)\"')
-
-    out_name = raw_input("What would you like the name of the output file to be? ")
-    print
-    out_file = open(out_name, "w")
-    
-    for line in in_file:
-        list = pos.findall(line)
-        for item in list:
-            print >> out_file, item
+    for tag in unique_tags:
+        print >> out_file, tag
     
 if __name__ == "__main__":
     main()
