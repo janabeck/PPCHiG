@@ -25,6 +25,14 @@ def main():
 
     proiel = BeautifulStoneSoup(xml)
 
+    tokens = proiel.findAll('token')
+
+    tok_dict = {}
+
+    # creating a dictionary keyed by PROIEL IDs to speed up searching
+    for token in tokens:
+        tok_dict[token['id']] = token
+
     output = open("gnt-database.xml", "w")
 
     print >> output, "<div>"
@@ -51,7 +59,7 @@ def main():
 
         # adding attributes from the PROIEL XML
         if stuff[1] != "000000" and stuff[1] != "999999" and stuff[1] != "111111":
-            token = proiel.find(id=stuff[1])
+            token = tok_dict[stuff[1]]
             morph = token['morph-features'].split(",")
             word['lemma'] = morph[0]
             word['proiel-pos'] = morph[1]
