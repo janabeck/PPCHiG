@@ -1,8 +1,59 @@
-[A]-_-.---.[nv][px].i		ADJ
-[A]-_-.---.[g][px].i		ADJ$
-[A]-_-.---.[a][px].i		ADJA
-[A]-_-.---.[d][px].i		ADJD
-[A]-_-.---.[lbxci][px].i	ADJU
-[A]-_-.---..[c].i		ADJR
-[A]-_-.---..[s].i		ADJS
-[F]-_..........			FW
+# MORPHOLOGY_POSITIONAL_TAG_SEQUENCE =
+# [ :person, :number, :tense, :mood, :voice, :gender, :case, :degree, :strength, :inflection ]
+
+# Adjectives
+A-_-.---.[nv][px].i	ADJ
+A-_-.---.g[px].i	ADJ$
+A-_-.---.a[px].i	ADJA
+A-_-.---.d[px].i	ADJD
+A-_-.---.[lbxci][px].i	ADJU
+A-_-.---..c.i		ADJR
+A-_-.---..s.i		ADJS
+
+# C- done by lemma
+
+# Df done by lemma
+
+# Foreign words
+F-_..........		FW
+
+# Common Nouns
+# singular
+Nb_-[sdx]---.[nv]-.i	N
+Nb_-[sdx]---.g-.i	N$
+Nb_-[sdx]---.a-.i	NA
+Nb_-[sdx]---.d-.i	ND
+Nb_-[sdx]---.[lbxci]-.i	NU
+# plural
+Nb_-p---.[nv]-.i	NS
+Nb_-p---.g-.i		NS$
+Nb_-p---.a-.i		NSA
+Nb_-p---.d-.i		NSD
+Nb_-p---.[lbxci]-.i	NSU
+
+# Proper Nouns
+# singular
+Ne_-[sdx]---.[nv]-.i	NPR
+Ne_-[sdx]---.g-.i	NPR$
+Ne_-[sdx]---.a-.i	NPRA
+Ne_-[sdx]---.d-.i	NPRD
+Ne_-[sdx]---.[lbxci]-.i	NPRU
+# plural
+Ne_-p---.[nv]-.i	NPRS
+Ne_-p---.g-.i		NPRS$
+Ne_-p---.a-.i		NPRSA
+Ne_-p---.d-.i		NPRSD
+Ne_-p---.[lbxci]-.i	NPRSU
+
+# Articles
+# singular
+S-_-[sdx]---.[nv]-.i	D
+S-_-[sdx]---.g-.i	D$
+S-_-[sdx]---.a-.i	DA
+S-_-[sdx]---.d-.i	DD
+S-_-[sdx]---.[lbxci]-.i	DU
+S-_-p---.[nv]-.i	DS
+S-_-p---.g-.i		DS$
+S-_-p---.a-.i		DSA
+S-_-p---.d-.i		DSD
+S-_-p---.[lbxci]-.i	DSU

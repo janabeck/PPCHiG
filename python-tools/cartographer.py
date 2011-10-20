@@ -29,8 +29,9 @@ def main():
         guide = {}
 
         for line in re_file:
-            info = line.split()
-            guide[info[0]] = info[1]
+            if not line.startswith("#")
+                info = line.split()
+                guide[info[0]] = info[1]
         
         for line in morph_file:
             for key in guide:
