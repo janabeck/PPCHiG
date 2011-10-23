@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.oasis-open.org/docbook/xml/5.0/rng/docbookxi.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="general_intro">
+    <title>General Introduction</title>
+    <sect1>
+        <title>Philosophy and Goals</title>
+        <para>
+            <itemizedlist>
+                <listitem>
+                    <para>Our primary goal has been to create an annotation system that facilitates
+                        automated searches, not to give a correct linguistic analysis of each
+                        sentence. For instance, if a construction can be found unambiguously through
+                        a combination of properties of a bracketed sentence, our annotation may not
+                        contain all of the structure that a full phrase structure diagram of the
+                        sentence would have.</para>
+                </listitem>
+                <listitem>
+                    <para>We have tried to plan our system so that at each stage of the annotation,
+                        information is added in a monotonic way. In particular, we want any future
+                        revisions of the bracketed structures always to add information, never to
+                        change it. This goal requires us to avoid subjective judgments since they
+                        are extremely error-prone. So, for example, we do not distinguish object
+                        control from E(xceptional) C(ase) M(arking), nor do we attempt to implement
+                        the argument-adjunct distinction (except where we have decided to make our
+                        annotation similar to the annotation of the <link
+                            xlink:href="http://foni.uio.no:3000/">PROIEL Project</link> and/or the
+                            <link xlink:href="http://nlp.perseus.tufts.edu/syntax/treebank/">Perseus
+                            Ancient Greek and Latin Dependency Treebanks</link>—namely, in the
+                        annotation of DP modifiers of DPs).</para>
+                </listitem>
+                <listitem>
+                    <para>As many categories as possible should have clear meanings so that unclear
+                        cases can be relegated to a small number of categories of residual cases.
+                        The price of making most categories homogeneous is that these residual
+                        categories will not be. In future revisions of the corpus, it may be
+                        possible to divide some of these residual categories into homogeneous
+                        subcategories.</para>
+                </listitem>
+                <listitem>
+                    <para>As much as possible, we have avoided making decisions that would be
+                        controversial, whether with regard to text interpretation or to linguistic
+                        theory. In doubtful cases, we either avoid specifying structure, or we use
+                        default rules to decide the case for search purposes. An example of the
+                        first strategy concerns VPs. These are not indicated in the corpus, since VP
+                        boundaries are normally indeterminate. This is clearly the case in Classical
+                        and New Testament Greek, which allow scrambling and where the internal
+                        structure of the VP is variable and changing. Even in modern English there
+                        are many cases in which it is not clear whether some phrase attaches as a
+                        daughter of VP or higher up in the tree. An example of the second strategy
+                        concerns PP attachment. Whenever it is unclear where a PP attaches, we
+                        attach it by default as high as possible.</para>
+                </listitem>
+            </itemizedlist>
+        </para>
+    </sect1>
+    <sect1>
+        <title>File Formats</title>
+        <para>At present, the corpus is only available in the default .psd format. However, in the
+            future (see <xref linkend="development"/>) we plan to release the corpus in three
+            different formats: <itemizedlist>
+                <listitem>
+                    <para>part-of-speech (POS) tagged: .pos</para>
+                </listitem>
+                <listitem>
+                    <para>parsed: .psd</para>
+                </listitem>
+                <listitem>
+                    <para>Common Treebank XML: .xml</para>
+                </listitem>
+            </itemizedlist>
+        </para>
+        <sect2>
+            <title>Part-of-Speech (POS) Tagged Files (.pos)</title>
+            <para>Part-of-speech (POS) tagged texts have the extension .pos\index{files!.pos files}.
+                They contain the material in the text files with a POS tag added to each word.
+                Editorial material including milestones (e.g., chapter and verse numbers in the
+                format chapter:verse) is given the tag CODE. Text elements are separated from their
+                POS tags by an underscore. The text is divided into tokens in the same way as in the
+                text files.</para>
+        </sect2>
+        <sect2>
+            <title>Parsed Files (.psd)</title>
+            <para>Parsed files have the extension .psd. They contain a labeled bracketing of the
+                text, with the first set of labeled parentheses around a word repeating the
+                information from the POS-tagged files. The division into tokens in the parsed files
+                is the same as in the POS files. Each token is enclosed with its ID in a set of
+                unlabeled parentheses. <programlisting>
+( (IP-MAT-SPE (CODE {VS:1_8})
+              (CONJ ἀλλὰ)
+              (NP-SBJ *pro*)
+              (VBPP-FUT λήμψεσθε)
+              (NP-OB1 (NA δύναμιν))
+              (IP-ABS (VPR$-AOR ἐπελθόντος)
+                      (NP-SBJ (D$ τοῦ) (ADJ$ ἁγίου) (N$ πνεύματος))
+                      (PP (P ἐφ')
+                          (NP (PROA ὑμᾶς))))
+              (. ,))
+  (ID GreekNT,Acts.7))
+                </programlisting>
+                <programlisting>
+( (IP-MAT-SPE (CODE {VS:1_8a})
+              (CONJ0 καὶ)
+              (NP-SBJ *con*)
+              (VBPP-FUT ἔσεσθέ)
+              (NP-PRD (NP-ATR (CLPRO$ μου))
+                      (NS μάρτυρες))
+              (PP (PP (P ἔν)
+                      (CLTE τε)
+                      (NP (ND Ἰερουσαλὴμ)))
+                  (CONJP (CONJ καὶ)
+                         (PP (P ἐν)
+                             (NP (QD πάσῃ) (DD τῇ) (ADJD Ἰουδαίᾳ))
+                                 (CONJP (CONJ καὶ)
+                                        (NX (ND Σαμαρίᾳ))))))
+                  (CONJP (CONJ καὶ)
+                         (PP (P ἕως)
+                             (NP (ADJ$ ἐσχάτου) (D$ τῆς) (N$ γῆς)))))
+              (. .))
+  (ID GreekNT,Acts.8))
+                </programlisting>
+            </para>
+        </sect2>
+    </sect1>
+    <sect1>
+        <title>Textual Markup</title>
+        <para>In general, it has not been possible to retain the <link
+                xlink:href="http://www.tei-c.org/index.xml">TEI</link> XML markup conventions of the
+                <link xlink:href="http://www.perseus.tufts.edu/hopper/">Perseus Digital
+                Library</link> in their original form because of conflicts with the annotation
+            system. The major changes made are as follows: <itemizedlist>
+                <listitem>
+                    <para>Brackets around words that represent editorial emendations have been
+                        removed.</para>
+                </listitem>
+                <listitem>
+                    <para>All XML markup, including markup indicating quoted speech, has been
+                        removed.</para>
+                </listitem>
+            </itemizedlist>
+        </para>
+    </sect1>
+</chapter>

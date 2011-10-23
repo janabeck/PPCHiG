@@ -1,0 +1,867 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.oasis-open.org/docbook/xml/5.0/rng/docbookxi.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="tags">
+    <title>List of Tags and Empty Categories</title>
+    <sect1>
+        <title>Part-of-Speech (POS) Tags</title>
+        <table>
+            <title>Legal POS Tags</title>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry>Tag</entry>
+                        <entry>Use</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>,</entry>
+                        <entry>sentence-internal punctuation</entry>
+                    </row>
+                    <row>
+                        <entry>.</entry>
+                        <entry>sentence-final punctuation</entry>
+                    </row>
+                    <row>
+                        <entry>"</entry>
+                        <entry>quotation mark</entry>
+                    </row>
+                    <row>
+                        <entry>-$</entry>
+                        <entry>genitive case marker</entry>
+                    </row>
+                    <row>
+                        <entry>-A</entry>
+                        <entry>accusative case marker</entry>
+                    </row>
+                    <row>
+                        <entry>-D</entry>
+                        <entry>dative case marker</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry namest="1" nameend="2">A</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>ADJ</entry>
+                        <entry>adjective, nominative</entry>
+                    </row>
+                    <row>
+                        <entry>ADJ$</entry>
+                        <entry>adjective, genitive</entry>
+                    </row>
+                    <row>
+                        <entry>ADJA</entry>
+                        <entry>adjective, accusative</entry>
+                    </row>
+                    <row>
+                        <entry>ADJD</entry>
+                        <entry>adjective, dative</entry>
+                    </row>
+                    <row>
+                        <entry>ADJR</entry>
+                        <entry>adjective, comparative degree</entry>
+                    </row>
+                    <row>
+                        <entry>ADJS</entry>
+                        <entry>adjective, superlative degree</entry>
+                    </row>
+                    <row>
+                        <entry>ADV</entry>
+                        <entry>adverb</entry>
+                    </row>
+                    <row>
+                        <entry>ADVR</entry>
+                        <entry>adverb, comparative degree</entry>
+                    </row>
+                    <row>
+                        <entry>ADVS</entry>
+                        <entry>adverb, superlative degree</entry>
+                    </row>
+                    <row>
+                        <entry>AN</entry>
+                        <entry>modal particle ἄν</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry namest="1" nameend="2">B</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>BED</entry>
+                        <entry>εἰμί, secondary sequence</entry>
+                    </row>
+                    <row>
+                        <entry>BEI</entry>
+                        <entry>εἰμί, imperative</entry>
+                    </row>
+                    <row>
+                        <entry>BEN</entry>
+                        <entry>εἰμί, infinitive</entry>
+                    </row>
+                    <row>
+                        <entry>BEO</entry>
+                        <entry>εἰμί, optative</entry>
+                    </row>
+                    <row>
+                        <entry>BEP</entry>
+                        <entry>εἰμί, primary sequence</entry>
+                    </row>
+                    <row>
+                        <entry>BES</entry>
+                        <entry>εἰμί, subjunctive</entry>
+                    </row>
+                    <row>
+                        <entry>BPR</entry>
+                        <entry>εἰμί, participle</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry namest="1" nameend="2">C</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>C</entry>
+                        <entry>complementizer</entry>
+                    </row>
+                    <row>
+                        <entry>CLGE</entry>
+                        <entry>emphatic clitic particle γε</entry>
+                    </row>
+                    <row>
+                        <entry>CLPRO$</entry>
+                        <entry>clitic pronoun, genitive</entry>
+                    </row>
+                    <row>
+                        <entry>CLPROA</entry>
+                        <entry>clitic pronoun, accusative</entry>
+                    </row>
+                    <row>
+                        <entry>CLPROD</entry>
+                        <entry>clitic pronoun, dative</entry>
+                    </row>
+                    <row>
+                        <entry>CLPRT</entry>
+                        <entry>second-position particle</entry>
+                    </row>
+                    <row>
+                        <entry>CLQ</entry>
+                        <entry>clitic indefinite pronoun/quantifier τις/τι, nominative</entry>
+                    </row>
+                    <row>
+                        <entry>CLQ$</entry>
+                        <entry>clitic indefinitive pronoun/quantifier τις/τι, genitive</entry>
+                    </row>
+                    <row>
+                        <entry>CLQA</entry>
+                        <entry>clitic indefinitive pronoun/quantifier τις/τι, accusative</entry>
+                    </row>
+                    <row>
+                        <entry>CLQD</entry>
+                        <entry>clitic indefinitive pronoun/quantifier τις/τι, dative</entry>
+                    </row>
+                    <row>
+                        <entry>CLTE</entry>
+                        <entry>conjunctive clitic particle τε</entry>
+                    </row>
+                    <row>
+                        <entry>CODE</entry>
+                        <entry>non-textual material (e.g., milestones and parser's comments)</entry>
+                    </row>
+                    <row>
+                        <entry>CONJ</entry>
+                        <entry>coordinating conjunction</entry>
+                    </row>
+                    <row>
+                        <entry>CONJ0</entry>
+                        <entry>coordinating conjunction, token-initial</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry namest="1" nameend="2">D</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>D</entry>
+                        <entry>determiner, nominative singular</entry>
+                    </row>
+                    <row>
+                        <entry>D$</entry>
+                        <entry>determiner, genitive singular</entry>
+                    </row>
+                    <row>
+                        <entry>DA</entry>
+                        <entry>determiner, accusative singular</entry>
+                    </row>
+                    <row>
+                        <entry>DD</entry>
+                        <entry>determiner, dative singular</entry>
+                    </row>
+                    <row>
+                        <entry>DS</entry>
+                        <entry>determiner, nominative plural</entry>
+                    </row>
+                    <row>
+                        <entry>DS$</entry>
+                        <entry>determiner, genitive plural</entry>
+                    </row>
+                    <row>
+                        <entry>DSA</entry>
+                        <entry>determiner, accusative plural</entry>
+                    </row>
+                    <row>
+                        <entry>DSD</entry>
+                        <entry>determiner, dative plural</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry namest="1" nameend="2">F</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>FW</entry>
+                        <entry>foreign word (often non-inflecting)</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry namest="1" nameend="2">I</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>INTJ</entry>
+                        <entry>interjection</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry namest="1" nameend="2">K</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>KE</entry>
+                        <entry>modal particle κε(ν)/κα</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry namest="1" nameend="2">N</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>N</entry>
+                        <entry>common noun, nominative singular</entry>
+                    </row>
+                    <row>
+                        <entry>N$</entry>
+                        <entry>common noun, genitive singular</entry>
+                    </row>
+                    <row>
+                        <entry>NA</entry>
+                        <entry>common noun, accusative singular</entry>
+                    </row>
+                    <row>
+                        <entry>ND</entry>
+                        <entry>common noun, dative singular</entry>
+                    </row>
+                    <row>
+                        <entry>NPR</entry>
+                        <entry>proper noun, nominative singular</entry>
+                    </row>
+                    <row>
+                        <entry>NPR$</entry>
+                        <entry>proper noun, genitive singular</entry>
+                    </row>
+                    <row>
+                        <entry>NPRA</entry>
+                        <entry>proper noun, accusative singular</entry>
+                    </row>
+                    <row>
+                        <entry>NPRD</entry>
+                        <entry>proper noun, dative singular</entry>
+                    </row>
+                    <row>
+                        <entry>NPRS</entry>
+                        <entry>proper noun, nominative plural</entry>
+                    </row>
+                    <row>
+                        <entry>NPRS$</entry>
+                        <entry>proper noun, genitive plural</entry>
+                    </row>
+                    <row>
+                        <entry>NPRSA</entry>
+                        <entry>proper noun, accusative plural</entry>
+                    </row>
+                    <row>
+                        <entry>NPRSD</entry>
+                        <entry>proper noun, dative plural</entry>
+                    </row>
+                    <row>
+                        <entry>NS</entry>
+                        <entry>common noun, nominative plural</entry>
+                    </row>
+                    <row>
+                        <entry>NS$</entry>
+                        <entry>common noun, genitive plural</entry>
+                    </row>
+                    <row>
+                        <entry>NSA</entry>
+                        <entry>common noun, accusative plural</entry>
+                    </row>
+                    <row>
+                        <entry>NSD</entry>
+                        <entry>common noun, dative plural</entry>
+                    </row>
+                    <row>
+                        <entry>NUM</entry>
+                        <entry>cardinal number</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry namest="1" nameend="2">O</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>OTHER</entry>
+                        <entry>form of ἄλλος, nominative</entry>
+                    </row>
+                    <row>
+                        <entry>OTHER$</entry>
+                        <entry>form of ἄλλος, genitive</entry>
+                    </row>
+                    <row>
+                        <entry>OTHERA</entry>
+                        <entry>form of ἄλλος, accusative</entry>
+                    </row>
+                    <row>
+                        <entry>OTHERD</entry>
+                        <entry>form of ἄλλος, dative</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry namest="1" nameend="2">P</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>P</entry>
+                        <entry>preposition</entry>
+                    </row>
+                    <row>
+                        <entry>PRO</entry>
+                        <entry>personal pronoun, nominative</entry>
+                    </row>
+                    <row>
+                        <entry>PRO$</entry>
+                        <entry>personal pronoun, genitive</entry>
+                    </row>
+                    <row>
+                        <entry>PROA</entry>
+                        <entry>personal pronoun, accusative</entry>
+                    </row>
+                    <row>
+                        <entry>PROD</entry>
+                        <entry>personal pronoun, dative</entry>
+                    </row>
+                    <row>
+                        <entry>PRTQ</entry>
+                        <entry>particle, interrogative (e.g., ἆρα)</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry namest="1" nameend="2">Q</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>Q</entry>
+                        <entry>quantifier, nominative</entry>
+                    </row>
+                    <row>
+                        <entry>Q$</entry>
+                        <entry>quantifier, genitive</entry>
+                    </row>
+                    <row>
+                        <entry>QA</entry>
+                        <entry>quantifier, accusative</entry>
+                    </row>
+                    <row>
+                        <entry>QD</entry>
+                        <entry>quantifier, dative</entry>
+                    </row>
+                    <row>
+                        <entry>QV</entry>
+                        <entry>quantificational adverb (e.g., πάντως)</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry namest="1" nameend="2">V</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>VBD</entry>
+                        <entry>verb, active secondary sequence (imperfect, aorist,
+                            plurperfect)</entry>
+                    </row>
+                    <row>
+                        <entry>VBDP</entry>
+                        <entry>verb, middle/passive secondary sequence (imperfect, aorist,
+                            pluperfect)</entry>
+                    </row>
+                    <row>
+                        <entry>VBI</entry>
+                        <entry>verb, active imperative</entry>
+                    </row>
+                    <row>
+                        <entry>VBIP</entry>
+                        <entry>verb, middle/passive imperative</entry>
+                    </row>
+                    <row>
+                        <entry>VBN</entry>
+                        <entry>verb, active infinitive</entry>
+                    </row>
+                    <row>
+                        <entry>VBNP</entry>
+                        <entry>verb, middle/passive infinitive</entry>
+                    </row>
+                    <row>
+                        <entry>VBO</entry>
+                        <entry>verb, active optative</entry>
+                    </row>
+                    <row>
+                        <entry>VBOP</entry>
+                        <entry>verb, middle/passive optative</entry>
+                    </row>
+                    <row>
+                        <entry>VBP</entry>
+                        <entry>verb, active primary sequence (present, future, perfect)</entry>
+                    </row>
+                    <row>
+                        <entry>VBPP</entry>
+                        <entry>verb, middle/passive primary sequence (present, future,
+                            perfect)</entry>
+                    </row>
+                    <row>
+                        <entry>VBS</entry>
+                        <entry>verb, active subjunctive</entry>
+                    </row>
+                    <row>
+                        <entry>VBSP</entry>
+                        <entry>verb, middle/passive subjunctive</entry>
+                    </row>
+                    <row>
+                        <entry>VPR</entry>
+                        <entry>verb, active participle, nominative</entry>
+                    </row>
+                    <row>
+                        <entry>VPR$</entry>
+                        <entry>verb, active participle, genitive</entry>
+                    </row>
+                    <row>
+                        <entry>VPRA</entry>
+                        <entry>verb, active participle, accusative</entry>
+                    </row>
+                    <row>
+                        <entry>VPRD</entry>
+                        <entry>verb, active participle, dative</entry>
+                    </row>
+                    <row>
+                        <entry>VPRP</entry>
+                        <entry>verb, middle/passive participle, nominative</entry>
+                    </row>
+                    <row>
+                        <entry>VPRP$</entry>
+                        <entry>verb, middle/passive participle, genitive</entry>
+                    </row>
+                    <row>
+                        <entry>VPRPA</entry>
+                        <entry>verb, middle/passive participle, accusative</entry>
+                    </row>
+                    <row>
+                        <entry>VPRPD</entry>
+                        <entry>verb, middle/passive participle, dative</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry namest="1" nameend="2">W</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>WADJ</entry>
+                        <entry>wh-adjective, nominative</entry>
+                    </row>
+                    <row>
+                        <entry>WADJ$</entry>
+                        <entry>wh-adjective, genitive</entry>
+                    </row>
+                    <row>
+                        <entry>WADJA</entry>
+                        <entry>wh-adjective, accusative</entry>
+                    </row>
+                    <row>
+                        <entry>WADJD</entry>
+                        <entry>wh-adjective, dative</entry>
+                    </row>
+                    <row>
+                        <entry>WADV</entry>
+                        <entry>wh-adverb</entry>
+                    </row>
+                    <row>
+                        <entry>WD</entry>
+                        <entry>wh-determiner, nominative</entry>
+                    </row>
+                    <row>
+                        <entry>WD$</entry>
+                        <entry>wh-determiner, genitive</entry>
+                    </row>
+                    <row>
+                        <entry>WDA</entry>
+                        <entry>wh-determiner, accusative</entry>
+                    </row>
+                    <row>
+                        <entry>WDD</entry>
+                        <entry>wh-determiner, dative</entry>
+                    </row>
+                    <row>
+                        <entry>WPRO</entry>
+                        <entry>wh-pronoun, nominative</entry>
+                    </row>
+                    <row>
+                        <entry>WPRO$</entry>
+                        <entry>wh-pronoun, genitive</entry>
+                    </row>
+                    <row>
+                        <entry>WPROA</entry>
+                        <entry>wh-pronoun, accusative</entry>
+                    </row>
+                    <row>
+                        <entry>WPROD</entry>
+                        <entry>wh-pronoun, dative</entry>
+                    </row>
+                    <row>
+                        <entry>WQ</entry>
+                        <entry>εἰ in the meaning 'whether' introducing an indirect question</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry namest="1" nameend="2">X</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>X</entry>
+                        <entry>unknown part of speech</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry namest="1" nameend="2">Y</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>Y</entry>
+                        <entry>may be used temporarily to tag a lemma that is difficult to
+                            categorize</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+        <table>
+            <title>Extended Verbal Tags</title>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry>Tag</entry>
+                        <entry>Use</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>-AOR</entry>
+                        <entry>aorist (perfective aspect)</entry>
+                    </row>
+                    <row>
+                        <entry>-FUT</entry>
+                        <entry>future</entry>
+                    </row>
+                    <row>
+                        <entry>-IMPF</entry>
+                        <entry>imperfective aspect</entry>
+                    </row>
+                    <row>
+                        <entry>-IND</entry>
+                        <entry>marks optatives replacing indicatives in secondary sequence</entry>
+                    </row>
+                    <row>
+                        <entry>-KJV</entry>
+                        <entry>marks optatives replacing subjunctives in secondary sequence</entry>
+                    </row>
+                    <row>
+                        <entry>-PASS</entry>
+                        <entry><emphasis>syntactic</emphasis> passive (not middle!)</entry>
+                    </row>
+                    <row>
+                        <entry>-PRF</entry>
+                        <entry>perfect aspect</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+    </sect1>
+    <sect1>
+        <title>Syntactic Tags</title>
+        <para>The contents of the following table(s) are not exhausative but rather give the most
+            common combinations of basic, "dash," and extended tags.</para>
+        <table>
+            <title>Basic Syntactic Tags</title>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry>Tag</entry>
+                        <entry>Use</entry>
+                    </row>
+                </thead>
+                <thead>
+                    <row>
+                        <entry namest="1" nameend="2">A</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>ADJP</entry>
+                        <entry>adjective phrase</entry>
+                    </row>
+                    <row>
+                        <entry>ADJP-SPR</entry>
+                        <entry>adjective phrase, secondary predicate</entry>
+                    </row>
+                    <row>
+                        <entry>ADJX</entry>
+                        <entry>adjectival constituent, ambiguous projection (ADJ, ADJ', or
+                            ADJP)</entry>
+                    </row>
+                    <row>
+                        <entry>ADJY</entry>
+                        <entry>adjectival non-constituent</entry>
+                    </row>
+                    <row>
+                        <entry>ADVP</entry>
+                        <entry>adverb phrase</entry>
+                    </row>
+                    <row>
+                        <entry>ADVP-DIR</entry>
+                        <entry>adverb phrase, directional</entry>
+                    </row>
+                    <row>
+                        <entry>ADVP-LOC</entry>
+                        <entry>adverb phrase, locative</entry>
+                    </row>
+                    <row>
+                        <entry>ADVP-TMP</entry>
+                        <entry>adverb phrase, temporal</entry>
+                    </row>
+                    <row>
+                        <entry>ADVX</entry>
+                        <entry>adverb phrase, ambiguous projection (ADV, ADV', or ADVP)</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry namest="1" nameend="2">C</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>CONJP</entry>
+                        <entry>conjunction phrase</entry>
+                    </row>
+                    <row>
+                        <entry>CP-ADV</entry>
+                        <entry>adverbial clause</entry>
+                    </row>
+                    <row>
+                        <entry>CP-CAR</entry>
+                        <entry>clause-adjoined relative clause</entry>
+                    </row>
+                    <row>
+                        <entry>CP-COM</entry>
+                        <entry>complement clause (non-indicative)</entry>
+                    </row>
+                    <row>
+                        <entry>CP-CMP</entry>
+                        <entry>comparative clause</entry>
+                    </row>
+                    <row>
+                        <entry>CP-DEG</entry>
+                        <entry>degree complement clause</entry>
+                    </row>
+                    <row>
+                        <entry>CP-EOP</entry>
+                        <entry>empty operator clause</entry>
+                    </row>
+                    <row>
+                        <entry>CP-EXL</entry>
+                        <entry>exclamation (direct or indirect)</entry>
+                    </row>
+                    <row>
+                        <entry>CP-FRL</entry>
+                        <entry>free relatlive clause</entry>
+                    </row>
+                    <row>
+                        <entry>CP-PRP</entry>
+                        <entry>non-infinitival purpose clause</entry>
+                    </row>
+                    <row>
+                        <entry>CP-QUE</entry>
+                        <entry>question (direct or indirect)</entry>
+                    </row>
+                    <row>
+                        <entry>CP-RES</entry>
+                        <entry>result clause</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry namest="1" nameend="2">F</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>FRAG</entry>
+                        <entry>sentence fragment</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry namest="1" nameend="2">I</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>INTJP</entry>
+                        <entry>interjection phrase</entry>
+                    </row>
+                    <row>
+                        <entry>IP-ABS</entry>
+                        <entry>absolute clause, including genitive absolute</entry>
+                    </row>
+                    <row>
+                        <entry>IP-IMP</entry>
+                        <entry>imperative clause</entry>
+                    </row>
+                    <row>
+                        <entry>IP-INF</entry>
+                        <entry>infinitival clause</entry>
+                    </row>
+                    <row>
+                        <entry>IP-INF-ABS</entry>
+                        <entry>absolute infinitive</entry>
+                    </row>
+                    <row>
+                        <entry>IP-INF-COM</entry>
+                        <entry>infinitival complement clause</entry>
+                    </row>
+                    <row>
+                        <entry>IP-INF-PRP</entry>
+                        <entry>infinitival purpose clause</entry>
+                    </row>
+                    <row>
+                        <entry>IP-INF-SBJ</entry>
+                        <entry>infinitival subject (or associate in null-expletive construction)</entry>
+                    </row>
+                    <row>
+                        <entry>IP-MAT</entry>
+                        <entry>matrix (= main) clause</entry>
+                    </row>
+                    <row>
+                        <entry>IP-PPL</entry>
+                        <entry>participial clause</entry>
+                    </row>
+                    <row>
+                        <entry>IP-PPL-COM</entry>
+                        <entry>supplementary participle (occurs with certain verbs)</entry>
+                    </row>
+                    <row>
+                        <entry>IP-SMC</entry>
+                        <entry>small clause</entry>
+                    </row>
+                    <row>
+                        <entry>IP-SUB</entry>
+                        <entry>subordinate clause</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry namest="1" nameend="2">N</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row></row>
+                </tbody>
+            </tgroup>
+        </table>
+    </sect1>
+</chapter>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.oasis-open.org/docbook/xml/5.0/rng/docbookxi.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
+    <info>
+        <title>τὸ ἐγχειρίδιον</title>
+        <subtitle>Annotation Manual for the Penn Parsed Corpora of Historical Greek</subtitle>
+        <authorgroup>
+            <author>
+                <personname><firstname>Jana</firstname><othername>E.</othername><surname>Beck</surname></personname>
+                <email>janabeck@babel.ling.upenn.edu</email>
+            </author>
+            <author>
+                <personname><firstname>Beatrice</firstname><surname>Santorini</surname></personname>
+                <contrib>Beatrice Santorini did not have direct authorship, but much of the material
+                    in this manual is taken directly from her Annotation Manual for the Penn Parsed
+                    Corpora of Historical English.</contrib>
+            </author>
+        </authorgroup>
+    </info>
+    <part>
+        <title>Introduction</title>
+        <xi:include href="general_intro.xml"/>
+        <xi:include href="tags.xml"/>
+    </part>
+
+    <part>
+        <title>Syntactic Annotation</title>
+        <xi:include href="syn_intro.xml"/>
+    </part>
+
+    <part>
+        <title>Planned Corpus Development and Known Issues</title>
+        <xi:include href="development.xml"/>
+        <xi:include href="known_issues.xml"/>
+    </part>
+
+</book>
