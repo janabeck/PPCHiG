@@ -8,6 +8,8 @@
         <table>
             <title>Legal POS Tags</title>
             <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
                 <thead>
                     <row>
                         <entry>Tag</entry>
@@ -42,9 +44,11 @@
                 </tbody>
             </tgroup>
             <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
                 <thead>
                     <row>
-                        <entry namest="1" nameend="2">A</entry>
+                        <entry namest="c1" nameend="c2">A</entry>
                     </row>
                 </thead>
                 <tbody>
@@ -91,9 +95,11 @@
                 </tbody>
             </tgroup>
             <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
                 <thead>
                     <row>
-                        <entry namest="1" nameend="2">B</entry>
+                        <entry namest="c1" nameend="c2">B</entry>
                     </row>
                 </thead>
                 <tbody>
@@ -128,9 +134,11 @@
                 </tbody>
             </tgroup>
             <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
                 <thead>
                     <row>
-                        <entry namest="1" nameend="2">C</entry>
+                        <entry namest="c1" nameend="c2">C</entry>
                     </row>
                 </thead>
                 <tbody>
@@ -193,9 +201,11 @@
                 </tbody>
             </tgroup>
             <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
                 <thead>
                     <row>
-                        <entry namest="1" nameend="2">D</entry>
+                        <entry namest="c1" nameend="c2">D</entry>
                     </row>
                 </thead>
                 <tbody>
@@ -234,9 +244,11 @@
                 </tbody>
             </tgroup>
             <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
                 <thead>
                     <row>
-                        <entry namest="1" nameend="2">F</entry>
+                        <entry namest="c1" nameend="c2">F</entry>
                     </row>
                 </thead>
                 <tbody>
@@ -247,9 +259,11 @@
                 </tbody>
             </tgroup>
             <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
                 <thead>
                     <row>
-                        <entry namest="1" nameend="2">I</entry>
+                        <entry namest="c1" nameend="c2">I</entry>
                     </row>
                 </thead>
                 <tbody>
@@ -260,9 +274,11 @@
                 </tbody>
             </tgroup>
             <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
                 <thead>
                     <row>
-                        <entry namest="1" nameend="2">K</entry>
+                        <entry namest="c1" nameend="c2">K</entry>
                     </row>
                 </thead>
                 <tbody>
@@ -273,9 +289,11 @@
                 </tbody>
             </tgroup>
             <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
                 <thead>
                     <row>
-                        <entry namest="1" nameend="2">N</entry>
+                        <entry namest="c1" nameend="c2">N</entry>
                     </row>
                 </thead>
                 <tbody>
@@ -350,9 +368,11 @@
                 </tbody>
             </tgroup>
             <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
                 <thead>
                     <row>
-                        <entry namest="1" nameend="2">O</entry>
+                        <entry namest="c1" nameend="c2">O</entry>
                     </row>
                 </thead>
                 <tbody>
@@ -375,9 +395,11 @@
                 </tbody>
             </tgroup>
             <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
                 <thead>
                     <row>
-                        <entry namest="1" nameend="2">P</entry>
+                        <entry namest="c1" nameend="c2">P</entry>
                     </row>
                 </thead>
                 <tbody>
@@ -408,9 +430,11 @@
                 </tbody>
             </tgroup>
             <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
                 <thead>
                     <row>
-                        <entry namest="1" nameend="2">Q</entry>
+                        <entry namest="c1" nameend="c2">Q</entry>
                     </row>
                 </thead>
                 <tbody>
@@ -437,9 +461,11 @@
                 </tbody>
             </tgroup>
             <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
                 <thead>
                     <row>
-                        <entry namest="1" nameend="2">V</entry>
+                        <entry namest="c1" nameend="c2">V</entry>
                     </row>
                 </thead>
                 <tbody>
@@ -529,9 +555,11 @@
                 </tbody>
             </tgroup>
             <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
                 <thead>
                     <row>
-                        <entry namest="1" nameend="2">W</entry>
+                        <entry namest="c1" nameend="c2">W</entry>
                     </row>
                 </thead>
                 <tbody>
@@ -572,6 +600,10 @@
                         <entry>wh-determiner, dative</entry>
                     </row>
                     <row>
+                        <entry>WP</entry>
+                        <entry>preposition in a wh- phrase</entry>
+                    </row>
+                    <row>
                         <entry>WPRO</entry>
                         <entry>wh-pronoun, nominative</entry>
                     </row>
@@ -594,9 +626,11 @@
                 </tbody>
             </tgroup>
             <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
                 <thead>
                     <row>
-                        <entry namest="1" nameend="2">X</entry>
+                        <entry namest="c1" nameend="c2">X</entry>
                     </row>
                 </thead>
                 <tbody>
@@ -607,9 +641,11 @@
                 </tbody>
             </tgroup>
             <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
                 <thead>
                     <row>
-                        <entry namest="1" nameend="2">Y</entry>
+                        <entry namest="c1" nameend="c2">Y</entry>
                     </row>
                 </thead>
                 <tbody>
@@ -624,6 +660,8 @@
         <table>
             <title>Extended Verbal Tags</title>
             <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
                 <thead>
                     <row>
                         <entry>Tag</entry>
@@ -670,21 +708,21 @@
         <table>
             <title>Basic Syntactic Tags</title>
             <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
                 <thead>
                     <row>
-                        <entry>Tag</entry>
-                        <entry>Use</entry>
-                    </row>
-                </thead>
-                <thead>
-                    <row>
-                        <entry namest="1" nameend="2">A</entry>
+                        <entry namest="c1" nameend="c2">A</entry>
                     </row>
                 </thead>
                 <tbody>
                     <row>
                         <entry>ADJP</entry>
                         <entry>adjective phrase</entry>
+                    </row>
+                    <row>
+                        <entry>ADJP-PRD</entry>
+                        <entry>adjective phrase, predicate</entry>
                     </row>
                     <row>
                         <entry>ADJP-SPR</entry>
@@ -717,14 +755,17 @@
                     </row>
                     <row>
                         <entry>ADVX</entry>
-                        <entry>adverb phrase, ambiguous projection (ADV, ADV', or ADVP)</entry>
+                        <entry>adverbial constituent, ambiguous projection (ADV, ADV', or
+                            ADVP)</entry>
                     </row>
                 </tbody>
             </tgroup>
             <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
                 <thead>
                     <row>
-                        <entry namest="1" nameend="2">C</entry>
+                        <entry namest="c1" nameend="c2">C</entry>
                     </row>
                 </thead>
                 <tbody>
@@ -779,9 +820,11 @@
                 </tbody>
             </tgroup>
             <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
                 <thead>
                     <row>
-                        <entry namest="1" nameend="2">F</entry>
+                        <entry namest="c1" nameend="c2">F</entry>
                     </row>
                 </thead>
                 <tbody>
@@ -792,9 +835,11 @@
                 </tbody>
             </tgroup>
             <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
                 <thead>
                     <row>
-                        <entry namest="1" nameend="2">I</entry>
+                        <entry namest="c1" nameend="c2">I</entry>
                     </row>
                 </thead>
                 <tbody>
@@ -828,7 +873,8 @@
                     </row>
                     <row>
                         <entry>IP-INF-SBJ</entry>
-                        <entry>infinitival subject (or associate in null-expletive construction)</entry>
+                        <entry>infinitival subject (or associate in null-expletive
+                            construction)</entry>
                     </row>
                     <row>
                         <entry>IP-MAT</entry>
@@ -850,16 +896,690 @@
                         <entry>IP-SUB</entry>
                         <entry>subordinate clause</entry>
                     </row>
+                    <row>
+                        <entry>IPY</entry>
+                        <entry>clausal non-constituent</entry>
+                    </row>
                 </tbody>
             </tgroup>
             <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
                 <thead>
                     <row>
-                        <entry namest="1" nameend="2">N</entry>
+                        <entry namest="c1" nameend="c2">N</entry>
                     </row>
                 </thead>
                 <tbody>
-                    <row></row>
+                    <row>
+                        <entry>NP</entry>
+                        <entry>noun phrase</entry>
+                    </row>
+                    <row>
+                        <entry>NP-ADT</entry>
+                        <entry>noun phrase, adjunct</entry>
+                    </row>
+                    <row>
+                        <entry>NP-ADV</entry>
+                        <entry>noun phrase, adverbial</entry>
+                    </row>
+                    <row>
+                        <entry>NP-AGT</entry>
+                        <entry>noun phrase, agent in a passive</entry>
+                    </row>
+                    <row>
+                        <entry>NP-ATR</entry>
+                        <entry>noun phrase, attributive and/or possessive</entry>
+                    </row>
+                    <row>
+                        <entry>NP-COM</entry>
+                        <entry>noun phrase, complement</entry>
+                    </row>
+                    <row>
+                        <entry>NP-DIR</entry>
+                        <entry>noun phrase, directional</entry>
+                    </row>
+                    <row>
+                        <entry>NP-INS</entry>
+                        <entry>noun phrase, instrumental</entry>
+                    </row>
+                    <row>
+                        <entry>NP-LOC</entry>
+                        <entry>noun phrase, locative</entry>
+                    </row>
+                    <row>
+                        <entry>NP-LFD</entry>
+                        <entry>noun phrase, left-dislocated</entry>
+                    </row>
+                    <row>
+                        <entry>NP-MSR</entry>
+                        <entry>noun phrase, measure</entry>
+                    </row>
+                    <row>
+                        <entry>NP-OB1</entry>
+                        <entry>noun phrase, direct object</entry>
+                    </row>
+                    <row>
+                        <entry>NP-OB2</entry>
+                        <entry>noun phrase, indirect object</entry>
+                    </row>
+                    <row>
+                        <entry>NP-OBP</entry>
+                        <entry>noun phrase, object in a case determined by prepositional verbal
+                            prefix</entry>
+                    </row>
+                    <row>
+                        <entry>NP-OBQ</entry>
+                        <entry>noun phrase, object in a quirky case</entry>
+                    </row>
+                    <row>
+                        <entry>NP-PAR</entry>
+                        <entry>noun phrase, partitive</entry>
+                    </row>
+                    <row>
+                        <entry>NP-PRD</entry>
+                        <entry>noun phrase, predicate</entry>
+                    </row>
+                    <row>
+                        <entry>NP-PRN</entry>
+                        <entry>noun phrase, parenthetical and/or appositive</entry>
+                    </row>
+                    <row>
+                        <entry>NP-RSP</entry>
+                        <entry>noun phrase, resumptive </entry>
+                    </row>
+                    <row>
+                        <entry>NP-SBJ</entry>
+                        <entry>noun phrase, subject</entry>
+                    </row>
+                    <row>
+                        <entry>NP-SPR</entry>
+                        <entry>noun phrase, secondary predicate</entry>
+                    </row>
+                    <row>
+                        <entry>NP-TMP</entry>
+                        <entry>noun phrase, temporal</entry>
+                    </row>
+                    <row>
+                        <entry>NP-VOC</entry>
+                        <entry>noun phrase, vocative</entry>
+                    </row>
+                    <row>
+                        <entry>NUMP</entry>
+                        <entry>number phrase</entry>
+                    </row>
+                    <row>
+                        <entry>NX</entry>
+                        <entry>nominal constituent, ambiguous projection (N, N', or NP)</entry>
+                    </row>
+                    <row>
+                        <entry>NY</entry>
+                        <entry>nominal non-constituent</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
+                <thead>
+                    <row>
+                        <entry namest="c1" nameend="c2">P</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>PP</entry>
+                        <entry>prepositional phrase</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
+                <thead>
+                    <row>
+                        <entry namest="c1" nameend="c2">Q</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>QP</entry>
+                        <entry>quantifier phrase</entry>
+                    </row>
+                    <row>
+                        <entry>QTP</entry>
+                        <entry>quotation phrase</entry>
+                    </row>
+                    <row>
+                        <entry>QX</entry>
+                        <entry>quantificational constituent, ambiguous projection (Q, Q', or
+                            QP)</entry>
+                    </row>
+                    <row>
+                        <entry>QY</entry>
+                        <entry>quantificational non-constituent</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
+                <thead>
+                    <row>
+                        <entry namest="c1" nameend="c2">R</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>RRC</entry>
+                        <entry>reduced relative clause (attributive participle)</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
+                <thead>
+                    <row>
+                        <entry namest="c1" nameend="c2">V</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>VP</entry>
+                        <entry>verb phrase</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
+                <thead>
+                    <row>
+                        <entry namest="c1" nameend="c2">W</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>WADJP</entry>
+                        <entry>wh- adjective phrase</entry>
+                    </row>
+                    <row>
+                        <entry>WADVP</entry>
+                        <entry>wh- adverb phrase</entry>
+                    </row>
+                    <row>
+                        <entry>WNP</entry>
+                        <entry>wh- noun phrase</entry>
+                    </row>
+                    <row>
+                        <entry>WPP</entry>
+                        <entry>wh- prepositional phrase</entry>
+                    </row>
+                    <row>
+                        <entry>WQP</entry>
+                        <entry>wh- quantifier phrase</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+        <table>
+            <title>Dash Tags</title>
+            <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
+                <thead>
+                    <row>
+                        <entry namest="c1" nameend="c2">A</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>-ABS</entry>
+                        <entry>absolute</entry>
+                    </row>
+                    <row>
+                        <entry>-ADT</entry>
+                        <entry>adjunct</entry>
+                    </row>
+                    <row>
+                        <entry>-ADV</entry>
+                        <entry>adverbial</entry>
+                    </row>
+                    <row>
+                        <entry>-AGT</entry>
+                        <entry>agent (in a passive)</entry>
+                    </row>
+                    <row>
+                        <entry>-AOR</entry>
+                        <entry>aorist (perfective aspect)</entry>
+                    </row>
+                    <row>
+                        <entry>-ATR</entry>
+                        <entry>attributive and/or possessive</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
+                <thead>
+                    <row>
+                        <entry namest="c1" nameend="c2">C</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>-CAR</entry>
+                        <entry>clause-adjoined relative</entry>
+                    </row>
+                    <row>
+                        <entry>-CMP</entry>
+                        <entry>comparative</entry>
+                    </row>
+                    <row>
+                        <entry>-COM</entry>
+                        <entry>complement</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
+                <thead>
+                    <row>
+                        <entry namest="c1" nameend="c2">D</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>-DEG</entry>
+                        <entry>degree complement clause</entry>
+                    </row>
+                    <row>
+                        <entry>-DIR</entry>
+                        <entry>directional</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
+                <thead>
+                    <row>
+                        <entry namest="c1" nameend="c2">E</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>-EOP</entry>
+                        <entry>empty-operator construction</entry>
+                    </row>
+                    <row>
+                        <entry>-EXL</entry>
+                        <entry>exclamative</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
+                <thead>
+                    <row>
+                        <entry namest="c1" nameend="c2">F</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>-FRL</entry>
+                        <entry>free relative</entry>
+                        <entry>-FUT</entry>
+                        <entry>future</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
+                <thead>
+                    <row>
+                        <entry namest="c1" nameend="c2">I</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>-IMP</entry>
+                        <entry>imperative</entry>
+                    </row>
+                    <row>
+                        <entry>-IMPF</entry>
+                        <entry>imperfective aspect</entry>
+                    </row>
+                    <row>
+                        <entry>-IND</entry>
+                        <entry>optative replacing indicative in secondary sequence</entry>
+                    </row>
+                    <row>
+                        <entry>-INF</entry>
+                        <entry>infinitive</entry>
+                    </row>
+                    <row>
+                        <entry>-INS</entry>
+                        <entry>instrumental</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
+                <thead>
+                    <row>
+                        <entry namest="c1" nameend="c2">K</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>-KJV</entry>
+                        <entry>optative replacing subjunctive in secondary sequence</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
+                <thead>
+                    <row>
+                        <entry namest="c1" nameend="c2">L</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>-LFD</entry>
+                        <entry>left-dislocated</entry>
+                    </row>
+                    <row>
+                        <entry>-LOC</entry>
+                        <entry>locative</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
+                <thead>
+                    <row>
+                        <entry namest="c1" nameend="c2">M</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>-MSR</entry>
+                        <entry>measure (extent of time/space)</entry>
+                    </row>
+                    <row>
+                        <entry>-MAT</entry>
+                        <entry>matrix (= main) clause</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
+                <thead>
+                    <row>
+                        <entry namest="c1" nameend="c2">O</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>-OB1</entry>
+                        <entry>direct object</entry>
+                    </row>
+                    <row>
+                        <entry>-OB2</entry>
+                        <entry>indirect object</entry>
+                    </row>
+                    <row>
+                        <entry>-OBP</entry>
+                        <entry>object in case determined by prepositional verbal prefix</entry>
+                    </row>
+                    <row>
+                        <entry>-OBQ</entry>
+                        <entry>object in quirky case</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
+                <thead>
+                    <row>
+                        <entry namest="c1" nameend="c2">P</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>-PAR</entry>
+                        <entry>partitive</entry>
+                    </row>
+                    <row>
+                        <entry>-PASS</entry>
+                        <entry><emphasis>syntactic</emphasis> passive (not middle!)</entry>
+                    </row>
+                    <row>
+                        <entry>-PPL</entry>
+                        <entry>participle</entry>
+                    </row>
+                    <row>
+                        <entry>PRD</entry>
+                        <entry>predicate</entry>
+                    </row>
+                    <row>
+                        <entry>-PRF</entry>
+                        <entry>perfect aspect</entry>
+                    </row>
+                    <row>
+                        <entry>-PRN</entry>
+                        <entry>appositive and/or parenthetical</entry>
+                    </row>
+                    <row>
+                        <entry>-PRP</entry>
+                        <entry>purpose</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
+                <thead>
+                    <row>
+                        <entry namest="c1" nameend="c2">Q</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>-QUE</entry>
+                        <entry>question</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
+                <thead>
+                    <row>
+                        <entry namest="c1" nameend="c2">R</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>-REL</entry>
+                        <entry>relative clause</entry>
+                    </row>
+                    <row>
+                        <entry>-RES</entry>
+                        <entry>result clause</entry>
+                    </row>
+                    <row>
+                        <entry>-RSP</entry>
+                        <entry>resumptive</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
+                <thead>
+                    <row>
+                        <entry namest="c1" nameend="c2">S</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>-SBJ</entry>
+                        <entry>subject</entry>
+                    </row>
+                    <row>
+                        <entry>+SLF</entry>
+                        <entry>reflexive (on pronouns)</entry>
+                    </row>
+                    <row>
+                        <entry>-SMC</entry>
+                        <entry>small clause</entry>
+                    </row>
+                    <row>
+                        <entry>-SPE</entry>
+                        <entry>direct speech</entry>
+                    </row>
+                    <row>
+                        <entry>-SPR</entry>
+                        <entry>secondary predicate</entry>
+                    </row>
+                    <row>
+                        <entry>-SUB</entry>
+                        <entry>subordinate clause</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
+                <thead>
+                    <row>
+                        <entry namest="c1" nameend="c2">T</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>-THT</entry>
+                        <entry>indicative ὅτι-type complement clause or infinitive of indirect
+                            discourse</entry>
+                    </row>
+                    <row>
+                        <entry>-TMP</entry>
+                        <entry>temporal</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tgroup cols="2">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
+                <thead>
+                    <row>
+                        <entry namest="c1" nameend="c2">V</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>-VOC</entry>
+                        <entry>vocative</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+        <table>
+            <title>Extended Dash Tags</title>
+            <tgroup cols="4">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
+                <colspec colname="c3"/>
+                <colspec colname="c4"/>
+                <thead>
+                    <row>
+                        <entry>Suffix Tag</entry>
+                        <entry>Definition</entry>
+                        <entry namest="c3" nameend="c4">Example</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>-LFD</entry>
+                        <entry>left-dislocated constituent</entry>
+                        <entry>NP-LFD</entry>
+                        <entry>left-dislocated noun phrase</entry>
+                    </row>
+                    <row>
+                        <entry>-PRN</entry>
+                        <entry>appositive and/or parenthetical</entry>
+                        <entry>NP-PRN</entry>
+                        <entry>appositive and/or parenthetical noun phrase</entry>
+                    </row>
+                    <row>
+                        <entry>-RSP</entry>
+                        <entry>resumptive constituent</entry>
+                        <entry>NP-SBJ-RSP</entry>
+                        <entry>resumptive subject</entry>
+                    </row>
+                    <row>
+                        <entry>-SPE</entry>
+                        <entry>direct speech (only on CP, IP)</entry>
+                        <entry>IP-MAT-SPE</entry>
+                        <entry>matrix clause, direct speech</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+        <table>
+            <title>Empty Categories</title>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry>Symbol</entry>
+                        <entry>Definition</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>*</entry>
+                        <entry>trace of A-movement; also default empty category</entry>
+                    </row>
+                    <row>
+                        <entry>0</entry>
+                        <entry>null element (e.g., null complementizer, empty operator)</entry>
+                    </row>
+                    <row>
+                        <entry>*CL*</entry>
+                        <entry>trace of clitic displacement</entry>
+                    </row>
+                    <row>
+                        <entry>*con*</entry>
+                        <entry>subject elided under conjunction</entry>
+                    </row>
+                    <row>
+                        <entry>*ICH*</entry>
+                        <entry>abbreviation mnemonic for "interpret constituent here"; trace of
+                            extraposition, scrambling, or other movement that does not fit neatly
+                            into the A/A' dichotomy</entry>
+                    </row>
+                    <row>
+                        <entry>*pro*</entry>
+                        <entry>"small/baby pro" (i.e., <emphasis>pro</emphasis>-dropped
+                            subject)</entry>
+                    </row>
+                    <row>
+                        <entry>*T*</entry>
+                        <entry>trace of A'-movement (i.e., wh- movement)</entry>
+                    </row>
                 </tbody>
             </tgroup>
         </table>

@@ -7,6 +7,7 @@
     <projectTree name="PPCHiG%20Annotation%20Manual.xpr">
         <file name="development.xml"/>
         <file name="general_intro.xml"/>
+        <file name="individual_words.xml"/>
         <file name="known_issues.xml"/>
         <file name="PPCHiG%20Annotation%20Manual.xml"/>
         <file name="syn_intro.xml"/>

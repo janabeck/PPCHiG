@@ -96,10 +96,10 @@
                       (PP (P ἐφ')
                           (NP (PROA ὑμᾶς))))
               (. ,))
-  (ID GreekNT,Acts.7))
+  (ID GreekNT,Acts))
                 </programlisting>
                 <programlisting>
-( (IP-MAT-SPE (CODE {VS:1_8a})
+( (IP-MAT-SPE (CODE {VS:1_8})
               (CONJ0 καὶ)
               (NP-SBJ *con*)
               (VBPP-FUT ἔσεσθέ)
@@ -117,7 +117,7 @@
                          (PP (P ἕως)
                              (NP (ADJ$ ἐσχάτου) (D$ τῆς) (N$ γῆς)))))
               (. .))
-  (ID GreekNT,Acts.8))
+  (ID GreekNT,Acts))
                 </programlisting>
             </para>
         </sect2>

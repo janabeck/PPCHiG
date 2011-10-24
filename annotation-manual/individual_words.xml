@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.oasis-open.org/docbook/xml/5.0/rng/docbookxi.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<glossary xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="individual_words">
+    <title>Treatment of Individual Words</title>
+    <glossdiv>
+        <title>Αα</title>
+        <glossentry>
+            <glossterm>αὐτός</glossterm>
+            <glossdef>
+                <para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>When αὐτός behaves as a third-person singular pronoun, it is
+                                tagged PRO.
+                                <programlisting>
+( (IP-MAT-SPE (CODE {VS:1_21})
+              (NP-SBJ (PRO αὐτὸς))
+              (CLPRT γὰρ)
+              (VBP-FUT σώσει)
+              (NP-OB1 (DA τὸν)
+                      (NA λαὸν)
+                      (NP-ATR (PRO$ αὐτοῦ)))
+              (PP (P ἀπὸ)
+                  (NP (DS$ τῶν)
+                      (NS$ ἁμαρτιῶν)
+                      (NP-ATR (PRO$ αὐτῶν)))))
+  (. .)
+  (ID GreekNT,Matthew))                                    
+                                </programlisting>
+                            </para>
+                        </listitem>
+                        <listitem>
+                            <para> When αὐτός appears in attributive position and means `same,' it
+                                is tagged ADJ.
+                                <programlisting>
+( (IP-MAT-SPE (CODE {VS:1_12})
+              (NP-SBJ (PRO σὺ))
+              (CLPRT δὲ)
+              (NP-PRD (D ὁ) (ADJ αὐτὸς))
+              (BEP-IMPF εἶ)
+              (. ,))
+  (ID GreekNT,Hebrews))                                    
+                                </programlisting>
+                            </para>
+                        </listitem>
+                        <listitem>
+                            <para>
+                                When αὐτός behaves as a non-argument reflexive, it is tagged PRO, and it is syntactically analyzed as an NP-PRN.
+                                <programlisting>
+( (IP-MAT (CODE {VS:4_44})
+          (NP-SBJ (NP-PRN (PRO αὐτὸς))
+                  (CLPRT γὰρ)
+                  (N Ἰησοῦς))
+          (VBD-AOR ἐμαρτύρησεν)
+          (CP-THT (C ὅτι)
+                  (IP-SUB (NP-SBJ (N προφήτης))
+                          (PP (P ἐν)
+                              (NP (DD τῇ) (ADJD ἰδίᾳ) (ND πατρίδι)))
+                          (NP-OB1 (NA τιμὴν))
+                          (NEG οὐκ)
+                          (VBP-IMPF ἔχει)))
+          (. .))
+  (ID GreekNT,John))                                    
+                                </programlisting>
+                            </para>
+                        </listitem>
+                    </itemizedlist>
+                </para>
+            </glossdef>
+        </glossentry>
+    </glossdiv>
+    <glossdiv>
+        <title>Εε</title>
+        <glossentry>
+            <glossterm>*ἑαυτός</glossterm>
+            <glossdef>
+                <para>
+                    tagged as PRO*+SLF; no nominative
+                </para>
+            </glossdef>
+        </glossentry>
+        <glossentry>
+            <glossterm>ἕκαστος</glossterm>
+            <glossdef>
+                <para>
+                    tagged as Q
+                </para>
+            </glossdef>
+        </glossentry>
+    </glossdiv>
+</glossary>
