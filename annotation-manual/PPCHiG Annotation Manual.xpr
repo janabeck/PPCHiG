@@ -9,6 +9,7 @@
         <file name="general_intro.xml"/>
         <file name="individual_words.xml"/>
         <file name="known_issues.xml"/>
+        <file name="pos_annotation.xml"/>
         <file name="PPCHiG%20Annotation%20Manual.xml"/>
         <file name="syn_intro.xml"/>
         <file name="tags.xml"/>

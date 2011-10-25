@@ -3,9 +3,9 @@
 <glossary xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="individual_words">
     <title>Treatment of Individual Words</title>
-    <glossdiv>
+    <glossdiv xml:id="Αα">
         <title>Αα</title>
-        <glossentry>
+        <glossentry xml:id="αὐτός">
             <glossterm>αὐτός</glossterm>
             <glossdef>
                 <para>
@@ -45,8 +45,8 @@
                             </para>
                         </listitem>
                         <listitem>
-                            <para>
-                                When αὐτός behaves as a non-argument reflexive, it is tagged PRO, and it is syntactically analyzed as an NP-PRN.
+                            <para> When αὐτός behaves as a non-argument reflexive, it is tagged PRO,
+                                and it is syntactically analyzed as an NP-PRN.
                                 <programlisting>
 ( (IP-MAT (CODE {VS:4_44})
           (NP-SBJ (NP-PRN (PRO αὐτὸς))
@@ -70,22 +70,603 @@
             </glossdef>
         </glossentry>
     </glossdiv>
-    <glossdiv>
+    <glossdiv xml:id="Εε">
         <title>Εε</title>
-        <glossentry>
+        <glossentry xml:id="ἑαυτός">
             <glossterm>*ἑαυτός</glossterm>
             <glossdef>
+                <para> tagged PRO*+SLF; no nominative </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="ἕκαστος">
+            <glossterm>ἕκαστος</glossterm>
+            <glossdef>
+                <para> tagged Q </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="ἔξω">
+            <glossterm>ἔξω</glossterm>
+            <glossdef>
                 <para>
-                    tagged as PRO*+SLF; no nominative
+                    <itemizedlist>
+                        <listitem>
+                            <para> usually tagged ADV </para>
+                        </listitem>
+                        <listitem>
+                            <para> tagged P when it takes a nominal complement in the genitive (see
+                                    <xref linkend="P-notes"/>) </para>
+                        </listitem>
+                    </itemizedlist>
                 </para>
             </glossdef>
         </glossentry>
-        <glossentry>
-            <glossterm>ἕκαστος</glossterm>
+    </glossdiv>
+    <glossdiv xml:id="Ηη">
+        <title>Ηη</title>
+        <glossentry xml:id="ἤ">
+            <glossterm>ἤ</glossterm>
             <glossdef>
                 <para>
-                    tagged as Q
+                    <itemizedlist>
+                        <listitem>
+                            <para> tagged CONJ, C, or P depending on the syntactic context </para>
+                        </listitem>
+                        <listitem>
+                            <para> as CONJ when it means <trans>or</trans>
+                            </para>
+                            <programlisting>
+( (IP-IMP-SPE (CODE {VS:6_31})
+              (NEG μὴ)
+              (CLPRT οὖν)
+              (VBS-AOR μεριμνήσητε)
+              (IP-PPL (VPR-IMPF λέγοντες)
+                      (CP-QUE-SPE (CP-QUE-SPE (WNP-1 (WPROA Τί))
+                                              (C 0)
+                                              (IP-SUB (NP-OB1 *T*-1)
+                                                      (NP-SBJ *pro*)
+                                                      (VBS-AOR φάγωμεν)))
+                                  (. ;)
+                                  (CONJP (CONJ ἤ)
+                                         (CP-QUE-SPE (WNP-2 (WPROA Τί))
+                                                     (C 0)
+                                                     (IP-SUB (NP-OB1 *T*-2)
+                                                             (NP-SBJ *con*)
+                                                             (VBS-AOR πίωμεν))))
+                                  (. ;)
+                                  (CONJP (CONJ ἤ)
+                                         (CP-QUE-SPE (WNP-3 (WPROA Τί))
+                                                     (C 0)
+                                                     (IP-SUB (NP-OB1 *T*-3)
+                                                             (NP-SBJ *con*)
+                                                             (VBSP-AOR περιβαλώμεθα))))))
+              (. ;))
+  (ID GreekNT,Matthew))
+                            </programlisting>
+                        </listitem>
+                        <listitem>
+                            <para> as C when it means <trans>than</trans> and introduces a full
+                                comparative clause (see <xref linkend="CP-CMP"/>)
+                                <programlisting>
+( (IP-MAT (CODE {VS:7_9})
+          (ADJP-PRD (ADJR κρεῖττον)
+                    (CP-CMP *ICH*-1))
+          (CLPRT γάρ)
+          (BEP-IMPF ἐστιν)
+          (IP-INF-SBJ (VBN-IMPF γαμεῖν))
+          (CP-CMP-1 (WADJP-2 0)
+                    (C ἢ)
+                    (IP-SUB (ADJP-PRD *T*-2)
+                            (BEP-IMPF *)
+                            (IP-INF-SBJ (VBNP-IMPF πυροῦσθαι))))
+          (. .))
+  (ID GreekNT,1Corinthians))                                    
+                                </programlisting>
+                            </para>
+                        </listitem>
+                        <listitem>
+                            <para> as P when it means <trans>than</trans> and occurs in a
+                                comparative construction that does not appear to contain an elided
+                                clause (see also <xref linkend="ὡς"/>)
+                                <programlisting>
+( (IP-MAT-SPE (CODE {VS:17_2})
+              (NP-SBJ *pro*)
+              (VBP-IMPF λυσιτελεῖ)
+              (NP-OBQ (PROD αὐτῷ))
+              (CP-ADV (C εἰ)
+                      (IP-SUB (IP-SUB (NP-SBJ (N λίθος) (ADJ μυλικὸς))
+                                      (VBPP-IMPF περίκειται)
+                                      (PP (P περὶ)
+                                          (NP (DA τὸν)
+                                              (NA τράχηλον)
+                                              (NP-ATR (PRO$ αὐτοῦ)))))
+                              (CONJP (CONJ καὶ)
+                                     (IP-SUB (NP-SBJ *pro*)
+                                             (VBPP-PRF ἔρριπται)
+                                             (PP (P εἰς)
+                                                 (NP (DA τὴν) (NA θάλασσαν)))))))
+              (PP (P ἢ)
+                  (CP-ADV (C ἵνα)
+                          (IP-SUB (NP-SBJ *pro*)
+                                  (VBS-AOR σκανδαλίσῃ)
+                                  (NP-OB1 (NP-PAR (DS$ τῶν) (ADJ$ μικρῶν) (DS$ τούτων))
+                                          (NUM ἕνα)))))
+              (. .))
+  (ID GreekNT,Luke))                                    
+                                </programlisting>
+                            </para>
+                        </listitem>
+                    </itemizedlist>
                 </para>
+            </glossdef>
+        </glossentry>
+    </glossdiv>
+    <glossdiv xml:id="Ιι">
+        <title>Ιι</title>
+        <glossentry xml:id="ἰδού">
+            <glossterm>ἰδού</glossterm>
+            <glossdef>
+                <para> tagged INTJ unless actually a full (= main) imperative </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="ἱκανός">
+            <glossterm>ἱκανός</glossterm>
+            <glossdef>
+                <para>
+                    <itemizedlist>
+                        <listitem>
+                            <para> tagged ADJR </para>
+                        </listitem>
+                        <listitem>
+                            <para> can take an IP-INF-COM (epexegetical infinitive) </para>
+                        </listitem>
+                        <listitem>
+                            <para> modifying a noun:
+                                <programlisting>
+( (IP-MAT (CODE {VS:20_37})
+          (NP-SBJ (ADJR ἱκανὸς)
+                  (CLPRT δὲ)
+                  (N κλαυθμὸς)
+                  (NP-ATR *ICH*-2))
+          (VBDP-AOR ἐγένετο)
+          (NP-2 (Q πάντων))
+          (. ,))
+  (ID GreekNT,Acts))                                    
+                                </programlisting>
+                            </para>
+                        </listitem>
+                        <listitem>
+                            <para> taking an IP-INF-COM:
+                                <programlisting>
+( (IP-MAT (CODE {VS:3_16})
+          (VBPP-IMPF ἔρχεται)
+          (CLPRT δὲ)
+          (NP-SBJ (D ὁ)
+                  (ADJR ἰσχυρότερός)
+                  (NP-CMP (CLPRO$ μου))
+                  (, ,)
+                  (CP-REL (WNP-1 (WPRO$ οὗ))
+                          (C 0)
+                          (IP-SUB (NEG οὐκ)
+                                  (NP-SBJ *pro*)
+                                  (BEP-IMPF εἰμὶ)
+                                  (ADJP-PRD (ADJR ἱκανὸς)
+                                            (IP-INF-COM (VBN-AOR λῦσαι)
+                                                        (NP-OB1 (DA τὸν)
+                                                                (NA ἱμάντα)
+                                                                (NP-ATR (DS$ τῶν)
+                                                                        (NS$ ὑποδημάτων)
+                                                                        (NP-ATR-RSP-1 (PRO$ αὐτοῦ)))))))))
+          (. .))
+  (ID GreekNT,Luke))                                    
+                                </programlisting>
+                            </para>
+                        </listitem>
+                    </itemizedlist>
+                </para>
+            </glossdef>
+        </glossentry>
+    </glossdiv>
+    <glossdiv xml:id="Κκ">
+        <title>Κκ</title>
+        <glossentry xml:id="κα">
+            <glossterm>κα</glossterm>
+            <glossdef>
+                <para>tagged KE</para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="κε">
+            <glossterm>κε(ν)</glossterm>
+            <glossdef>
+                <para>tagged KE</para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="καί">
+            <glossterm>καί</glossterm>
+            <glossdef>
+                <para>
+                    <itemizedlist>
+                        <listitem>
+                            <para> καί is generally tagged CONJ <programlisting>
+(VBN-IMPF (VBN-IMPF ποιεῖν) (CLTE τε) (CONJ καὶ) (VBN-IMPF διδάσκειν))
+                                </programlisting>
+                                <quote>...ὧν ἤρξατο Ἰησοῦς ποιεῖν τε καὶ διδάσκειν</quote> (Acts
+                                1.1) </para>
+                        </listitem>
+                        <listitem>
+                            <para> καί is also tagged CONJ when it occurs as part of the <link
+                                    linkend="correlative-conj">correlative
+                                conjunction</link>καί...καί </para>
+                        </listitem>
+                        <listitem>
+                            <para> καί is tagged ADV when it is used adverbially, at the phrase or
+                                sentence level <itemizedlist>
+                                    <listitem>
+                                        <para>phrase-level:</para>
+                                        <programlisting>
+( (IP-MAT-SPE (CODE {VS:2_26})
+              (ADVP-TMP (ADV ἔτι))
+              (CLPRT δὲ)
+              (NP-SBJ (ADV καὶ)
+                      (D ἡ)
+                      (N σάρξ)
+                      (NP-ATR (CLPRO$ μου)))
+              (VBP-FUT κατασκηνώσει)
+              (PP (P ἐπ')
+                  (NP (ND ἐλπίδι)))
+              (. .))
+  (ID GreekNT,Acts))                                    
+                                </programlisting>
+                                    </listitem>
+                                    <listitem>
+                                        <para>sentence-level (Acts 1.3):</para>
+                                        <programlisting>
+(CP-REL-6 (WNP-7 (WPROD οἷς))
+          (C 0)
+          (IP-SUB (NP-OBP *T*-7)
+                  (ADVP (ADV καὶ))
+                  (NP-SBJ *pro*)
+                  (VBD-AOR παρέστησεν)
+                  (IP-SMC (NP-SBJ (PROA+SLF ἑαυτὸν))
+                          (VPRA-IMPF ζῶντα)
+                          (PP (P μετὰ)
+                              (NP (D τὸ)
+                                  (IP-INF (VBN-AOR παθεῖν)
+                                          (NP-SBJ (PROA αὐτὸν))
+                                          (PP (P ἐν)
+                                              (NP (QD πολλοῖς) (NSD τεκμηρίοις)))))                                            
+                                        </programlisting>
+                                    </listitem>
+                                </itemizedlist>
+                            </para>
+                        </listitem>
+                    </itemizedlist>
+                </para>
+            </glossdef>
+        </glossentry>
+    </glossdiv>
+    <glossdiv xml:id="Λλ">
+        <title>Λλ</title>
+        <glossentry xml:id="λίαν">
+            <glossterm>λίαν</glossterm>
+            <glossdef>
+                <para> tagged ADVR when introducing degree complement, otherwise ADV </para>
+            </glossdef>
+        </glossentry>
+    </glossdiv>
+    <glossdiv xml:id="Μμ">
+        <title>Μμ</title>
+        <glossentry xml:id="μάλιστα">
+            <glossterm>μάλιστα</glossterm>
+            <glossdef>
+                <para> tagged QS </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="μᾶλλον">
+            <glossterm>μᾶλλον</glossterm>
+            <glossdef>
+                <para> tagged QR </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="μηδείς">
+            <glossterm>μηδείς</glossterm>
+            <glossdef>
+                <para> tagged NEG+Q </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="μήτι">
+            <glossterm>μήτι</glossterm>
+            <glossdef>
+                <para> tagged PRTQ </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="μόνος">
+            <glossterm>μόνος</glossterm>
+            <glossdef>
+                <para>
+                    <itemizedlist>
+                        <listitem>
+                            <para> μόνος can be tagged an adjective <programlisting>
+(ADJP-PRD (ADJ μόνος))                        
+                    </programlisting>
+                                <quote>καὶ οὐκ εἰμὶ μόνος, ὅτι ὁ πατὴρ μετ᾽ ἐμοῦ ἐστίν.</quote>
+                                (John 16.32) </para>
+                        </listitem>
+                        <listitem>
+                            <para> μόνος can be tagged an adverb when used for focus <programlisting>
+(NP (ND ἄρτῳ) (ADV μόνῳ))                                    
+                                </programlisting>
+                                <quote>Οὐκ ἐπ᾽ ἄρτῳ μόνῳ ζήσεται ὁ ἄνθρωπος</quote> (Matthew 4.4)
+                            </para>
+                        </listitem>
+                    </itemizedlist>
+                </para>
+            </glossdef>
+        </glossentry>
+    </glossdiv>
+    <glossdiv xml:id="Νν">
+        <title>Νν</title>
+        <glossentry xml:id="ναί">
+            <glossterm>ναί</glossterm>
+            <glossdef>
+                <para>tagged INTJ</para>
+            </glossdef>
+        </glossentry>
+    </glossdiv>
+    <glossdiv xml:id="Οο">
+        <title>Οο</title>
+        <glossentry>
+            <glossterm>ὀλίγος</glossterm>
+            <glossdef>
+                <para>tagged Q</para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="ὅλος">
+            <glossterm>ὅλος</glossterm>
+            <glossdef>
+                <para>usually tagged Q, but tagged ADJ when in attributive position</para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="ὁπότερος">
+            <glossterm>ὁπότερος</glossterm>
+            <glossdef>
+                <para> tagged WPRO since <trans>which of two</trans>
+                </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="ὅταν">
+            <glossterm>ὅταν</glossterm>
+            <glossdef>
+                <para> tagged C+AN </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="ὅτε">
+            <glossterm>ὅτε</glossterm>
+            <glossdef>
+                <para>
+                    <itemizedlist>
+                        <listitem>
+                            <para> when introducing adverbial clause without a gap, tagged C
+                                <programlisting>
+( (IP-MAT (CODE {VS:27_31})
+          (CONJ καὶ)
+          (CP-ADV (C ὅτε)
+                  (IP-SUB (NP-SBJ *pro*)
+                          (VBD-AOR ἐνέπαιξαν)
+                          (NP-OBP (PROD αὐτῷ))))
+          (, ,)
+          (VBD-AOR ἐξέδυσαν)
+          (NP-OB2 (PROA αὐτὸν))
+          (NP-OB1 (DA τὴν) (NA χλαμύδα)))
+  (ID GreekNT,Matthew))                                    
+                                </programlisting>
+                            </para>
+                        </listitem>
+                        <listitem>
+                            <para> when introducing a question or relative clause, tagged WADV
+                                <programlisting>
+( (IP-MAT-SPE (CODE {VS:9_4})
+              (VBPP-IMPF ἔρχεται)
+              (NP-SBJ (N νὺξ)
+                      (CP-REL (WADVP-1 (WADV ὅτε))
+                              (C 0)
+                              (IP-SUB (ADVP *T*-1)
+                                      (NP-SBJ (NEG+Q οὐδεὶς))
+                                      (VBPP-IMPF δύναται)
+                                      (IP-INF-COM (VBNP-IMPF ἐργάζεσθαι)))))
+              (. .))
+  (ID GreekNT,John))                                    
+                                </programlisting>
+                            </para>
+                        </listitem>
+                    </itemizedlist>
+                </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="οὐαί">
+            <glossterm>οὐαί</glossterm>
+            <glossdef>
+                <para> tagged INTJ </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="οὐδείς">
+            <glossterm>οὐδείς</glossterm>
+            <glossdef>
+                <para> tagged NEG+Q </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="οὐκοῦν">
+            <glossterm>οὐκοῦν</glossterm>
+            <glossdef>
+                <para> usually tagged CLPRT, but tagged as PRTQ in a question </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="οὐχί">
+            <glossterm>οὐχί</glossterm>
+            <glossdef>
+                <para> tagged PRTQ </para>
+            </glossdef>
+        </glossentry>
+    </glossdiv>
+    <glossdiv xml:id="Ππ">
+        <title>Ππ</title>
+        <glossentry xml:id="πάλιν">
+            <glossterm>πάλιν</glossterm>
+            <glossdef>
+                <para>
+                    <programlisting>
+(ADVP (ADV πάλιν))                        
+                    </programlisting>
+                    does not get a -TMP function tag </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="παπαῖ">
+            <glossterm>παπαῖ</glossterm>
+            <glossdef>
+                <para> tagged INTJ </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="πᾶς">
+            <glossterm>πᾶς</glossterm>
+            <glossdef>
+                <para> usually tagged Q but tagged ADJ when in attributive position </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="πολύς">
+            <glossterm>πολύς</glossterm>
+            <glossdef>
+                <para> usually tagged Q but tagged ADJ when in attributive position </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="πόσος">
+            <glossterm>πόσος</glossterm>
+            <glossdef>
+                <para> tagged WADJ </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="πρῶτος">
+            <glossterm>πρῶτος</glossterm>
+            <glossdef>
+                <para>
+                    <itemizedlist>
+                        <listitem>
+                            <para> when an ordinal number, tagged ADJ </para>
+                        </listitem>
+                        <listitem>
+                            <para> when adverbial (in the neuter singular or plural: πρῶτον, πρῶτα)
+                                tagged ADV </para>
+                        </listitem>
+                    </itemizedlist>
+                </para>
+            </glossdef>
+        </glossentry>
+    </glossdiv>
+    <glossdiv xml:id="Χχ">
+        <title>Χχ</title>
+        <glossentry xml:id="χάριν">
+            <glossterm>χάριν</glossterm>
+            <glossdef>
+                <para> usually tagged N, but tagged P when takes a dependent NP </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="χίλιοι">
+            <glossterm>χίλιοι</glossterm>
+            <glossdef>
+                <para> tagged ADJ, like all cardinal numbers that exist only in adjectival form (see
+                        <xref linkend="NUM"/>) </para>
+            </glossdef>
+        </glossentry>
+    </glossdiv>
+    <glossdiv xml:id="Ωω">
+        <title>Ωω</title>
+        <glossentry xml:id="ὦ">
+            <glossterm>ὦ</glossterm>
+            <glossdef>
+                <para> tagged INTJ </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="ὡς">
+            <glossterm>ὡς</glossterm>
+            <glossdef>
+                <para>
+                    <itemizedlist>
+                        <listitem>
+                            <para> tagged C, WADV, ADV, or P depending on the context </para>
+                        </listitem>
+                        <listitem>
+                            <para> C in its temporal use meaning <trans>when</trans> or when used as
+                                a complementizer introducing any other type of subordinate clause
+                                such as a <emphasis>that</emphasis>-clause (see <xref
+                                    linkend="CP-THT"/>) or a purpose clause (see <xref
+                                    linkend="CP-COM"/>)
+                                <programlisting>
+( (IP-MAT (CODE {VS:10_28})
+          (NP-SBJ *pro*)
+          (VBD-IMPF ἔφη)
+          (CLTE τε)
+          (PP (P πρὸς)
+              (NP (PROA αὐτούς)))
+          (IP-MAT-SPE (NP-SBJ (PRO Ὑμεῖς))
+                      (VBPP-IMPF ἐπίστασθε)
+                      (CP-THT (C ὡς)
+                              (IP-SUB (ADJP-PRD (ADJ ἀθέμιτόν))
+                                      (BEP-IMPF ἐστιν)
+                                      (NP-OB2 (ND ἀνδρὶ) (ADJD Ἰουδαίῳ))
+                                      (IP-INF-SBJ (VBNP-IMPF (VBNP-IMPF κολλᾶσθαι) (CONJ ἢ) (VBNP-IMPF προσέρχεσθαι))
+                                                  (NP-OBQ (ADJD ἀλλοφύλῳ))))))
+          (. .))
+  (ID GreekNT,Acts))                                    
+                                </programlisting>
+                            </para>
+                        </listitem>
+                        <listitem>
+                            <para> WADV in adverbial and comparative clauses (see <xref
+                                    linkend="CP-ADV"/> and <xref linkend="CP-CMP"/> for details)
+                                <programlisting>
+( (IP-MAT (CODE {VS:1_14})
+          (CONJ καὶ)
+          (NP-SBJ (DS οἱ)
+                  (NS ὀφθαλμοὶ)
+                  (NP-ATR (PRO$ αὐτοῦ)))
+          (BEP-IMPF *)
+          (ADVP (CP-CMP (WADVP-3 (WADV ὡς))
+                        (C 0)
+                        (IP-SUB (ADVP *T*-3)
+                                (BEP-IMPF *)
+                                (NP-SBJ (N φλὸξ)
+                                        (NP-ATR (N$ πυρός))))))
+          (. ,))
+  (ID GreekNT,Revelation))                                    
+                                </programlisting>
+                            </para>
+                        </listitem>
+                        <listitem>
+                            <para> ADV when it has the meaning of <trans>so</trans> or
+                                    <trans>thus</trans> and does not introduce a subordinate clause
+                            </para>
+                        </listitem>
+                        <listitem>
+                            <para> P in comparatives when there does not appear to be an elided
+                                clause (see <xref linkend="ἤ"/> as well)
+                                <programlisting>
+(NP-PRN (D ὁ)
+        (RRC (VPR-IMPF ἔχων)
+             (IP-SMC (NP-SBJ (DSA τοὺς)
+                             (NSA ὀφθαλμοὺς)
+                             (NP-ATR (PRO$ αὐτοῦ)))
+                     (PP (P ὡς)
+                         (NP (NA φλόγα)
+                             (NP-ATR (N$ πυρός)))))))                                    
+                                </programlisting>
+                                (Revelation 2.18) </para>
+                        </listitem>
+                    </itemizedlist>
+                </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="ὡσαννά">
+            <glossterm>ὡσαννά</glossterm>
+            <glossdef>
+                <para> tagged INTJ </para>
             </glossdef>
         </glossentry>
     </glossdiv>

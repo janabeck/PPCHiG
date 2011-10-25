@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.oasis-open.org/docbook/xml/5.0/rng/docbookxi.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="pos_annotation">
+    <title>POS Annotation</title>
+    <sect1 xml:id="ADJ_ADV">
+        <title>Adjectives and Adverbs (ADJ, ADV)</title>
+        <table>
+            <title>ADJ and ADV Tags</title>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry> Tag </entry>
+                        <entry> Use </entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>ADJ</entry>
+                        <entry>adjective, nominative</entry>
+                    </row>
+                    <row>
+                        <entry>ADJ$</entry>
+                        <entry>adjective, genitive</entry>
+                    </row>
+                    <row>
+                        <entry>ADJA</entry>
+                        <entry>adjective, accusative</entry>
+                    </row>
+                    <row>
+                        <entry>ADJD</entry>
+                        <entry>adjective, dative</entry>
+                    </row>
+                    <row>
+                        <entry>ADJR</entry>
+                        <entry>adjective, comparative degree</entry>
+                    </row>
+                    <row>
+                        <entry>ADJS</entry>
+                        <entry>adjective, superlative degree</entry>
+                    </row>
+                    <row>
+                        <entry>ADV</entry>
+                        <entry>adverb</entry>
+                    </row>
+                    <row>
+                        <entry>ADVR</entry>
+                        <entry>adverb, comparative degree</entry>
+                    </row>
+                    <row>
+                        <entry>ADVS</entry>
+                        <entry>adverb, superlative degree</entry>
+                    </row>
+                    <row>
+                        <entry>WADJ</entry>
+                        <entry>wh-adjective, nominative</entry>
+                    </row>
+                    <row>
+                        <entry>WADJ$</entry>
+                        <entry>wh-adjective, genitive</entry>
+                    </row>
+                    <row>
+                        <entry>WADJA</entry>
+                        <entry>wh-adjective, accusative</entry>
+                    </row>
+                    <row>
+                        <entry>WADJD</entry>
+                        <entry>wh-adjective, dative</entry>
+                    </row>
+                    <row>
+                        <entry>WADV</entry>
+                        <entry>wh-adverb</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+        <sect2 xml:id="ADJ_ADV_notes">
+            <title>Notes</title>
+            <itemizedlist>
+                <listitem>
+                    <para> No distinction is made between singular and plural adjectives in the
+                        positive degree. </para>
+                </listitem>
+                <listitem>
+                    <para> In the comparative and superlative degrees, no distinctions are made with
+                        respect to the case or number of adjectives. </para>
+                </listitem>
+            </itemizedlist>
+        </sect2>
+        <sect2 xml:id="colors">
+            <title>Colors</title>
+            <itemizedlist>
+                <listitem>
+                    <para> The basic tag for basic color terms is ADJ. </para>
+                </listitem>
+                <listitem>
+                    <para> If a color term is also a substantive noun (e.g.,
+                            <emphasis>orange</emphasis> in English), then it may be tagged
+                            <emphasis>either</emphasis> ADJ <emphasis>or</emphasis> N depending on
+                        the syntactic context. </para>
+                </listitem>
+                <listitem>
+                    <para> Color terms that neither modify a noun nor function as the predicate of a
+                        clause are tagged N. For example, in English: <itemizedlist>
+                            <listitem>
+                                <para> the white/N of an egg </para>
+                            </listitem>
+                            <listitem>
+                                <para> a black/N like that of jet </para>
+                                <para> a deep red/N </para>
+                            </listitem>
+                        </itemizedlist>
+                    </para>
+                </listitem>
+            </itemizedlist>
+        </sect2>
+        <sect2 xml:id="degree_words">
+            <title>Degree Words</title>
+            <para> Degree words (e.g., οὕτως, ἱκανός) are treated as comparatives. See <xref
+                    linkend="ἱκανός"/> for details. </para>
+        </sect2>
+        <sect2 xml:id="ordinal_numbers">
+            <title>Ordinal Numbers</title>
+            <itemizedlist>
+                <listitem>
+                    <para> Ordinal numbers are tagged ADJ. </para>
+                </listitem>
+                <listitem>
+                    <para> πρῶτος also has an adverbial use. See <xref linkend="πρῶτος"/> for
+                        details. </para>
+                </listitem>
+                <listitem>
+                    <para> Cases where an ordinal might be expected but without overt ordinal
+                        marking are treated as cardinal numbers (NUM).
+                        <!-- Not sure if this applies in Greek. -->
+                    </para>
+                </listitem>
+            </itemizedlist>
+        </sect2>
+    </sect1>
+</chapter>
