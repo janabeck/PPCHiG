@@ -5,6 +5,14 @@
     <title>Treatment of Individual Words</title>
     <glossdiv xml:id="Αα">
         <title>Αα</title>
+        <glossentry xml:id="ἄρα">
+            <glossterm>ἄρα</glossterm>
+            <glossdef>
+                <para>
+                    tagged CLPRT
+                </para>
+            </glossdef>
+        </glossentry>        
         <glossentry xml:id="αὐτός">
             <glossterm>αὐτός</glossterm>
             <glossdef>
@@ -66,6 +74,36 @@
                             </para>
                         </listitem>
                     </itemizedlist>
+                </para>
+            </glossdef>
+        </glossentry>
+    </glossdiv>
+    <glossdiv xml:id="Γγ">
+        <title>Γγ</title>
+        <glossentry xml:id="γάρ">
+            <glossterm>γάρ</glossterm>
+            <glossdef>
+                <para>
+                    tagged CLPRT
+                </para>
+            </glossdef>
+        </glossentry>
+    </glossdiv>
+    <glossdiv xml:id="Δδ">
+        <title>Δδ</title>
+        <glossentry xml:id="δέ">
+            <glossterm>δέ</glossterm>
+            <glossdef>
+                <para>
+                    tagged CLPRT
+                </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="δή">
+            <glossterm>δή</glossterm>
+            <glossdef>
+                <para>
+                    tagged CLPRT
                 </para>
             </glossdef>
         </glossentry>
@@ -196,6 +234,14 @@
                             </para>
                         </listitem>
                     </itemizedlist>
+                </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="ἦ">
+            <glossterm>ἦ</glossterm>
+            <glossdef>
+                <para>
+                    tagged CLPRT; also sometimes ἤ, as in ἤτοι
                 </para>
             </glossdef>
         </glossentry>
@@ -367,10 +413,26 @@
                 <para> tagged QR </para>
             </glossdef>
         </glossentry>
+        <glossentry xml:id="μέν">
+            <glossterm>μέν</glossterm>
+            <glossdef>
+                <para>
+                    tagged CLPRT
+                </para>
+            </glossdef>
+        </glossentry>
         <glossentry xml:id="μηδείς">
             <glossterm>μηδείς</glossterm>
             <glossdef>
                 <para> tagged NEG+Q </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="μήν">
+            <glossterm>μήν</glossterm>
+            <glossdef>
+                <para>
+                    tagged CLPRT
+                </para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="μήτι">
@@ -411,10 +473,18 @@
                 <para>tagged INTJ</para>
             </glossdef>
         </glossentry>
+        <glossentry xml:id="νυν">
+            <glossterm>νυν</glossterm>
+            <glossdef>
+                <para>
+                    tagged CLPRT
+                </para>
+            </glossdef>
+        </glossentry>        
     </glossdiv>
     <glossdiv xml:id="Οο">
         <title>Οο</title>
-        <glossentry>
+        <glossentry xml:id="ὀλίγος">
             <glossterm>ὀλίγος</glossterm>
             <glossdef>
                 <para>tagged Q</para>
@@ -500,6 +570,14 @@
                 <para> usually tagged CLPRT, but tagged as PRTQ in a question </para>
             </glossdef>
         </glossentry>
+        <glossentry xml:id="οὖν">
+            <glossterm>οὖν</glossterm>
+            <glossdef>
+                <para>
+                    tagged CLPRT
+                </para>
+            </glossdef>
+        </glossentry>        
         <glossentry xml:id="οὐχί">
             <glossterm>οὐχί</glossterm>
             <glossdef>
@@ -531,6 +609,14 @@
                 <para> usually tagged Q but tagged ADJ when in attributive position </para>
             </glossdef>
         </glossentry>
+        <glossentry xml:id="περ">
+            <glossterm>περ</glossterm>
+            <glossdef>
+                <para>
+                    tagged CLPRT
+                </para>
+            </glossdef>
+        </glossentry>
         <glossentry xml:id="πολύς">
             <glossterm>πολύς</glossterm>
             <glossdef>
@@ -556,6 +642,25 @@
                                 tagged ADV </para>
                         </listitem>
                     </itemizedlist>
+                </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="πω">
+            <glossterm>πω</glossterm>
+            <glossdef>
+                <para>
+                    tagged CLPRT
+                </para>
+            </glossdef>
+        </glossentry>
+    </glossdiv>
+    <glossdiv xml:id="Ττ">
+        <title>Ττ</title>
+        <glossentry>
+            <glossterm>τοι</glossterm>
+            <glossdef>
+                <para>
+                    tagged CLPRT
                 </para>
             </glossdef>
         </glossentry>

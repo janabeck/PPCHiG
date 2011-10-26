@@ -138,4 +138,197 @@
             </itemizedlist>
         </sect2>
     </sect1>
+    <sect1 xml:id="NUM">
+        <title>Cardinal Numbers (NUM)</title>
+        <table>
+            <title>NUM Tags</title>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry> Tag </entry>
+                        <entry> Use </entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>NUM</entry>
+                        <entry>cardinal number</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+        <sect2 xml:id="NUM_notes">
+            <title>Notes</title>
+            <itemizedlist>
+                <listitem>
+                    <para> All cardinal numbers are tagged NUM. </para>
+                </listitem>
+                <listitem>
+                    <para> Cardinal numbers that only exist in adjectival form (e.g., <link
+                            linkend="χίλιοι">χίλιοι</link>) are tagged ADJ. </para>
+                </listitem>
+                <listitem>
+                    <para> Greek equivalents of words such as <emphasis>double</emphasis>,
+                            <emphasis>treble</emphasis>, <emphasis>triple</emphasis>, etc.,
+                        \textit{twice}, \textit{thrice}, and <emphasis>once</emphasis> when
+                        analogous in meaning to <emphasis>twice</emphasis>,
+                            <emphasis>thrice</emphasis> are always tagged NUM.
+                        <programlisting>
+(ADVP (NUM δὶς))                            
+                        </programlisting>
+                        (Mark 14:30) </para>
+                </listitem>
+                <listitem>
+                    <para> Words such as <emphasis>double</emphasis> and <emphasis>score</emphasis>
+                        are treated as cardinal numbers, on a par with <emphasis>hundred</emphasis>
+                        and <emphasis>thousand</emphasis>, and tagged NUM. There may or may not be
+                        Greek parallels to this type of case. </para>
+                </listitem>
+                <listitem>
+                    <para> When overtly marked for plural (<emphasis>dozens</emphasis>,
+                            <emphasis>scores</emphasis>, <emphasis>hundreds</emphasis>,
+                            <emphasis>thousands</emphasis>, etc.), cardinal numbers are tagged NS.
+                        This may not be consistently followed in the PPCNTG. </para>
+                </listitem>
+            </itemizedlist>
+        </sect2>
+    </sect1>
+    <sect1 xml:id="CL">
+        <title>Clitics (CL)</title>
+        <table>
+            <title>CL Tags</title>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry> Tag </entry>
+                        <entry> Use </entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>AN</entry>
+                        <entry>modal particle ἄν</entry>
+                    </row>
+                    <row>
+                        <entry>CLGE</entry>
+                        <entry>emphatic clitic particle γε</entry>
+                    </row>
+                    <row>
+                        <entry>CLPRO$</entry>
+                        <entry>clitic pronoun, genitive</entry>
+                    </row>
+                    <row>
+                        <entry>CLPROA</entry>
+                        <entry>clitic pronoun, accusative</entry>
+                    </row>
+                    <row>
+                        <entry>CLPROD</entry>
+                        <entry>clitic pronoun, dative</entry>
+                    </row>
+                    <row>
+                        <entry>CLPRT</entry>
+                        <entry>second-position sentential particle, other second position particles
+                            such as περ <trans>indeed</trans></entry>
+                    </row>
+                    <row>
+                        <entry>CLQ</entry>
+                        <entry>indefinite clitic pronoun/quantifier τις/τι, nominative</entry>
+                    </row>
+                    <row>
+                        <entry>CLQ$</entry>
+                        <entry>indefinite clitic pronoun/quantifier τις/τι, genitive</entry>
+                    </row>
+                    <row>
+                        <entry>CLQA</entry>
+                        <entry>indefinite clitic pronoun/quantifier τις/τι, accusative</entry>
+                    </row>
+                    <row>
+                        <entry>CLQD</entry>
+                        <entry>indefinite clitic pronoun/quantifier τις/τι, dative</entry>
+                    </row>
+                    <row>
+                        <entry>CLTE</entry>
+                        <entry>conjunctive clitic particle τε</entry>
+                    </row>
+                    <row>
+                        <entry>KE</entry>
+                        <entry>modal particle κε(ν)/κα</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+        <sect2 xml:id="CL_notes">
+            <title>Notes</title>
+            <itemizedlist>
+                <listitem>
+                    <para> The clitic particles γε\index{γε} and τε\index{τε} both have their own
+                        tags: CLGE and CLTE, respectively. </para>
+                </listitem>
+                <listitem>
+                    <para> The modal particles κε(ν)/κα and ἄν also have their own tags: KE and AN,
+                        respectively. </para>
+                </listitem>
+                <listitem>
+                    <para> In the singular and third person plural of the oblique cases (not the
+                        genitive in the case of the third plural), the clitic forms of the personal
+                        pronouns—e.g., με, σε, μιν, σφι, σφεας, μου, σου (not a complete list!)—are
+                        tagged CLPRO\$, CLPROA, CLPROD as appropriate. </para>
+                </listitem>
+                <listitem>
+                    <para> The second-position sentential particles receive the tag CLPRT. These
+                        are: <link linkend="δέ">δέ</link>, <link linkend="δή">δή</link>, <link
+                            linkend="πω">πω</link>, <link linkend="οὖν">οὖν</link>, <link
+                            linkend="γάρ">γάρ</link>, <link linkend="μέν">μέν</link>, <link
+                            linkend="νυν">νυν</link>, <link linkend="περ">περ</link>, <link
+                            linkend="τοι">τοι</link>, <link linkend="ἄρα">ἄρα</link>, <link
+                            linkend="ἤ">ἤ</link>, <link linkend="μήν">μήν</link>. </para>
+                </listitem>
+                <listitem>
+                    <para> Particles in combination with other particles or other items receive
+                        multiple tags tags separated with a hyphen. The forms themselves are also
+                        hyphenated to indicate the segmentation. For example, καί-τοι receives the
+                        tag CONJ-CLPRT and τοί-νυν receives the tag CLPRT-CLPRT. </para>
+                </listitem>
+            </itemizedlist>
+        </sect2>
+    </sect1>
+    <sect1 xml:id="C">
+        <title>Complementizers (C)</title>
+        <table>
+            <title>C Tags</title>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry> Tag </entry>
+                        <entry> Use </entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>C</entry>
+                        <entry>complementizer</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+        <sect2 xml:id="C_notes">
+            <title>Notes</title>
+            <itemizedlist>
+                <listitem>
+                    <para> ὅτι, ἵνα, <link linkend="ὅτε">ὅτε</link>, etc. introducing any kind of
+                        subordinate clause are tagged C. </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <link linkend="ὡς">ὡς</link> can be tagged C, WADV, ADV, or P depending on
+                        the syntactic context. </para>
+                </listitem>
+                <listitem>
+                    <para> Likewise, <link linkend="ἤ">ἤ</link> can be tagged CONJ, C, or P
+                        depending on the syntactic context. </para>
+                </listitem>
+            </itemizedlist>
+        </sect2>
+    </sect1>
+    
 </chapter>
