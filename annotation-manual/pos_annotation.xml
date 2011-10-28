@@ -330,5 +330,283 @@
             </itemizedlist>
         </sect2>
     </sect1>
+    <sect1 xml:id="CONJ_CLTE">
+        <title>Coordinating Conjunctions (CONJ, CLTE)</title>
+        <table>
+            <title>CONJ and CLTE Tags</title>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry> Tag </entry>
+                        <entry> Use </entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>CONJ</entry>
+                        <entry>conjunction, including correlative conjunctions</entry>
+                    </row>
+                    <row>
+                        <entry>NEG+CONJ</entry>
+                        <entry>compound negative conjunctions</entry>
+                    </row>
+                    <row>
+                        <entry>CLTE</entry>
+                        <entry>clitic conjunctive particle τε</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+        <sect2 xml:id="CONJ_CLTE_notes">
+            <title>Notes</title>
+            <itemizedlist>
+                <listitem>
+                    <para> The following items are tagged CONJ when used as coordinating
+                        conjunctions: <link linkend="καί">καί</link>, <link linkend="ἤ">ἤ</link>,
+                        ἀλλά, εἴτε. </para>
+                </listitem>
+                <listitem>
+                    <para> The following items contain CONJ as part of a compound tag NEG+CONJ when
+                        used as coordinating conjunctions: οὐδέ, μηδέ. See <xref
+                            linkend="compound_NEG"/>. </para>
+                </listitem>
+                <listitem>
+                    <para> The following items contain CLTE as part of a compound tag NEG+CLTE when
+                        used as coordinating conjunctions: οὔτε, μήτε. See <xref
+                            linkend="compound_NEG"/>. </para>
+                </listitem>
+                <listitem>
+                    <para> In cases of correlative conjunction (<xref linkend="correlative_conj"/>),
+                        each of the correlative conjunctions is tagged CONJ: καί...καί, ἤ...ἤ,
+                        εἴτε...εἴτε, οὔτε...οὔτε, μήτε...μήτε. </para>
+                </listitem>
+                <listitem>
+                    <para> The clitic conjunctive particle τε is tagged CLTE. See <xref linkend="CL"
+                        />
+                    </para>
+                </listitem>
+            </itemizedlist>
+        </sect2>
+    </sect1>
+    <sect1 xml:id="D">
+        <title>Determiners and Demonstratives (D)</title>
+        <table>
+            <title>D Tags</title>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry> Tag </entry>
+                        <entry> Use </entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>D</entry>
+                        <entry>determiner or demonstrative, nominative singular</entry>
+                    </row>
+                    <row>
+                        <entry>D$</entry>
+                        <entry>determiner or demonstrative, genitive singular</entry>
+                    </row>
+                    <row>
+                        <entry>DA</entry>
+                        <entry>determiner or demonstrative, accusative singular</entry>
+                    </row>
+                    <row>
+                        <entry>DD</entry>
+                        <entry>determiner or demonstrative, dative singular</entry>
+                    </row>
+                    <row>
+                        <entry>DS</entry>
+                        <entry>determiner or demonstrative, nominative plural</entry>
+                    </row>
+                    <row>
+                        <entry>DS$</entry>
+                        <entry>determiner or demonstrative, genitive plural</entry>
+                    </row>
+                    <row>
+                        <entry>DSA</entry>
+                        <entry>determiner or demonstrative, accusative plural</entry>
+                    </row>
+                    <row>
+                        <entry>DSD</entry>
+                        <entry>determiner or demonstrative, dative plural</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+        <sect2 xml:id="D_notes">
+            <title>Notes</title>
+            <itemizedlist>
+                <listitem>
+                    <para> The following lemmas are tagged with D: ὁ, οὗτος, ἐκεῖνος, ὅδε. </para>
+                </listitem>
+                <listitem>
+                    <para> Demonstratives are always tagged D, regardless of whether they precede a
+                        noun. Note the difference between ordinary determiners and wh-words (see
+                            <xref linkend="W"/> for details) in this regard. <itemizedlist>
+                            <listitem>
+                                <para> demonstrative not preceding noun:
+                                    <programlisting>
+( (IP-MAT-SPE (CODE {VS:7_12})
+              (NP-SBJ (D οὗτος))
+              (CLPRT γάρ)
+              (BEP-IMPF ἐστιν)
+              (NP-PRD (NP (D ὁ) (N νόμος))
+                      (CONJP (CONJ καὶ)
+                             (NP (DS οἱ) (NS προφῆται))))
+              (. .))
+  (ID GreekNT,Matthew))                                    
+                                </programlisting>
+                                </para>
+                            </listitem>
+                            <listitem>
+                                <para> wh-determiner preceding a noun:
+                                    <programlisting>
+( (IP-MAT (CODE {VS:4_2})
+          (NP-SBJ *pro*)
+          (VBP-PRF οἴδατε)
+          (CLPRT γὰρ)
+          (CP-QUE (WNP-1 (WDA τίνας) (NSA παραγγελίας))
+                  (C 0)
+                  (IP-SUB (NP-OB1 *T*-1)
+                          (NP-SBJ *pro*)
+                          (VBD-AOR ἐδώκαμεν)
+                          (NP-OB2 (PROD ὑμῖν))
+                          (PP (P διὰ)
+                              (NP (D$ τοῦ)
+                                  (N$ κυρίου)
+                                  (NP-PRN (N$ Ἰησοῦ))))))
+          (. .))
+  (ID GreekNT,1Thessalonians))                                    
+                                </programlisting>
+                                </para>
+                            </listitem>
+                            <listitem>
+                                <para> wh-determiner not preceding a noun:
+                                    <programlisting>
+( (IP-IMP-SPE (CODE {VS:10_27})
+              (NP-OB1 (CP-FRL (WNP-1 (WPROA ὃ))
+                              (C 0)
+                              (IP-SUB (NP-OB1 *T*-1)
+                                      (NP-SBJ *pro*)
+                                      (VBP-IMPF λέγω)
+                                      (NP-OB2 (PROD ὑμῖν))
+                                      (PP (P ἐν)
+                                          (NP (DD τῇ) (ND σκοτίᾳ))))))
+              (, ,)
+              (VBI-AOR εἴπατε)
+              (PP (P ἐν)
+                  (NP (DD τῷ) (ND φωτί)))
+              (. .))
+  (ID GreekNT,Matthew))                                    
+                                </programlisting>
+                                </para>
+                            </listitem>
+                        </itemizedlist>
+                    </para>
+                </listitem>
+            </itemizedlist>
+        </sect2>
+    </sect1>
+    <sect1 xml:id="FW">
+        <title>Foreign Words (FW)</title>
+        <table>
+            <title>FW Tags</title>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry> Tag </entry>
+                        <entry> Use </entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>FW</entry>
+                        <entry>foreign word</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+        <sect2 xml:id="FW_notes">
+            <title>Notes</title>
+            <itemizedlist>
+                <listitem>
+                    <para> If a potential foreign word has an entry in the LSJ<footnote>
+                            <para>Henry George Liddell and Robert Scott. <emphasis>A Greek-English
+                                    Lexicon</emphasis>. Revised and augmented throughout by Sir
+                                Henry Stuart Jones with the assistance of Roderick McKenzie. Oxford.
+                                Clarendon Press. 1940.</para>
+                        </footnote>, it is not tagged as FW. This is true even for nouns that retain
+                        a foreign plural. </para>
+                </listitem>
+                <listitem>
+                    <para> Foreign names are treated as nouns. </para>
+                </listitem>
+                <listitem>
+                    <para> Titles (e.g., of literary works) in foreign languages are generally
+                        tagged as FW. </para>
+                </listitem>
+                <listitem>
+                    <para> In foreign language sequences, everything (words, symbols, numbers, etc.)
+                        except punctuation is labeled FW. </para>
+                </listitem>
+            </itemizedlist>
+        </sect2>
+    </sect1>
+    <sect1 xml:id="INTJ">
+        <title>Interjections (INTJ)</title>
+        <table>
+            <title>INTJ Tags</title>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry> Tag </entry>
+                        <entry> Use </entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>INTJ</entry>
+                        <entry>interjection</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+        <sect2 xml:id="INTJ_notes">
+            <title>Notes</title>
+            <itemizedlist>
+                <listitem>
+                    <para> INTJ is only used to tag words that are difficult or impossible to tag
+                        any other way, like the following: <link linkend="ὦ">ὦ</link>, <link
+                            linkend="παπαῖ">παπαῖ</link>, <link linkend="ναί">ναί</link>, <link
+                            linkend="οὐαί">οὐαί</link>, <link linkend="ἀμήν">ἀμήν</link>, <link
+                            linkend="ἰδού">ἰδού</link>, <link linkend="ὡσαννά">ὡσαννά</link> (not a
+                        complete list).
+                        <programlisting>
+( (IP-MAT-SPE (CODE {VS:6_2})
+              (INTJ ἀμὴν)
+              (NP-SBJ *pro*)
+              (VBP-IMPF λέγω)
+              (NP-OB2 (PROD ὑμῖν))
+              (, ,)
+              (IP-MAT-SPE (NP-SBJ *pro*)
+                          (VBP-IMPF ἀπέχουσιν)
+                          (NP-OB1 (DA τὸν)
+                                  (NA μισθὸν)
+                                  (NP-ATR (PRO$ αὐτῶν))))
+              (. .))
+  (ID GreekNT,Matthew))                            
+                        </programlisting>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para> When preceding another imperative verb, the following are also tagged as
+                        INTJ: ἄγε, ἄγετε, φέρε, ἴθι. There are no examples of this in the PPCNTG.
+                    </para>
+                </listitem>
+            </itemizedlist>
+        </sect2>
+    </sect1>
     
 </chapter>
