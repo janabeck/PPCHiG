@@ -116,8 +116,8 @@
         </sect2>
         <sect2 xml:id="degree_words">
             <title>Degree Words</title>
-            <para> Degree words (e.g., οὕτως, ἱκανός) are treated as comparatives. See <xref
-                    linkend="ἱκανός"/> for details. </para>
+            <para> Degree words (e.g., <link linkend="οὕτως">οὕτως</link>, <link linkend="ἱκανός"
+                    >ἱκανός</link>) are treated as comparatives. </para>
         </sect2>
         <sect2 xml:id="ordinal_numbers">
             <title>Ordinal Numbers</title>
@@ -228,7 +228,7 @@
                     <row>
                         <entry>CLPRT</entry>
                         <entry>second-position sentential particle, other second position particles
-                            such as περ <trans>indeed</trans></entry>
+                            such as περ 'indeed'</entry>
                     </row>
                     <row>
                         <entry>CLQ</entry>
@@ -261,8 +261,8 @@
             <title>Notes</title>
             <itemizedlist>
                 <listitem>
-                    <para> The clitic particles γε\index{γε} and τε\index{τε} both have their own
-                        tags: CLGE and CLTE, respectively. </para>
+                    <para> The clitic particles γε and τε both have their own tags: CLGE and CLTE,
+                        respectively. </para>
                 </listitem>
                 <listitem>
                     <para> The modal particles κε(ν)/κα and ἄν also have their own tags: KE and AN,
@@ -608,5 +608,280 @@
             </itemizedlist>
         </sect2>
     </sect1>
-    
+    <sect1 xml:id="NEG">
+        <title>Negation (NEG)</title>
+        <table>
+            <title>NEG Tags</title>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry> Tag </entry>
+                        <entry> Use </entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>NEG</entry>
+                        <entry>negation</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+        <sect2 xml:id="NEG_notes">
+            <title>Notes</title>
+            <itemizedlist>
+                <listitem>
+                    <para> The particles οὐ and μή are tagged NEG. </para>
+                </listitem>
+            </itemizedlist>
+        </sect2>
+        <sect2 xml:id="compound_NEG">
+            <title>Compound NEG Tags</title>
+            <itemizedlist>
+                <listitem>
+                    <para> The following items contain NEG as part of a compound tag NEG+CONJ when
+                        used as coordinating conjunctions: οὐδέ, μηδέ. </para>
+                </listitem>
+                <listitem>
+                    <para> The following items contain NEG as part of a compound tag NEG+CLTE when
+                        used as coordinating conjunctions: οὔτε, μήτε. </para>
+                </listitem>
+                <listitem>
+                    <para> In addition, the lemmas οὐδείς, μηδείς, οὐδέτερος, and μηδέτερος contain
+                        NEG as part of a compound tag NEG+Q, and words such as οὐκέτι/μηδαμῶς and
+                        οὔποτε/μήποτε are tagged NEG+ADV. </para>
+                </listitem>
+                <listitem>
+                    <para> The lemmas οὐδαμός and μηδαμός contain NEG as part of the compound tag
+                        NEG+ADJ. </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <emphasis>NB: This is not a complete list of all the lemmas that receive
+                            compound negative tags.</emphasis>
+                    </para>
+                </listitem>
+            </itemizedlist>
+        </sect2>
+    </sect1>
+    <sect1 xml:id="nominals">
+        <title>Nominals (N, PRO, CLPRO)</title>
+        <table>
+            <title>Nominal Tags</title>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry> Tag </entry>
+                        <entry> Use </entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>CLPRO$</entry>
+                        <entry>clitic pronoun, genitive</entry>
+                    </row>
+                    <row>
+                        <entry>CLPROA</entry>
+                        <entry>clitic pronoun, accusative</entry>
+                    </row>
+                    <row>
+                        <entry>CLPROD</entry>
+                        <entry>clitic pronoun, dative</entry>
+                    </row>
+                    <row>
+                        <entry>CLQ</entry>
+                        <entry>indefinite clitic pronoun/quantifier τις/τι, nominative</entry>
+                    </row>
+                    <row>
+                        <entry>CLQ$</entry>
+                        <entry>indefinite clitic pronoun/quantifier τις/τι, genitive</entry>
+                    </row>
+                    <row>
+                        <entry>CLQA</entry>
+                        <entry>indefinite clitic pronoun/quantifier τις/τι, accusative</entry>
+                    </row>
+                    <row>
+                        <entry>CLQD</entry>
+                        <entry>indefinite clitic pronoun/quantifier τις/τι, dative</entry>
+                    </row>
+                    <row>
+                        <entry>N</entry>
+                        <entry>common noun, nominative singular</entry>
+                    </row>
+                    <row>
+                        <entry>N$</entry>
+                        <entry>common noun, genitive singular</entry>
+                    </row>
+                    <row>
+                        <entry>NA</entry>
+                        <entry>common noun, accusative singular</entry>
+                    </row>
+                    <row>
+                        <entry>ND</entry>
+                        <entry>common noun, dative singular</entry>
+                    </row>
+                    <row>
+                        <entry>NPR</entry>
+                        <entry>proper noun, nominative singular</entry>
+                    </row>
+                    <row>
+                        <entry>NPR$</entry>
+                        <entry>proper noun, genitive singular</entry>
+                    </row>
+                    <row>
+                        <entry>NPRA</entry>
+                        <entry>proper noun, accusative singular</entry>
+                    </row>
+                    <row>
+                        <entry>NPRD</entry>
+                        <entry>proper noun, dative singular</entry>
+                    </row>
+                    <row>
+                        <entry>NPRS</entry>
+                        <entry>proper noun, nominative plural</entry>
+                    </row>
+                    <row>
+                        <entry>NPRS$</entry>
+                        <entry>proper noun, genitive plural</entry>
+                    </row>
+                    <row>
+                        <entry>NPRSA</entry>
+                        <entry>proper noun, accusative plural</entry>
+                    </row>
+                    <row>
+                        <entry>NPRSD</entry>
+                        <entry>proper noun, dative plural</entry>
+                    </row>
+                    <row>
+                        <entry>NS</entry>
+                        <entry>common noun, nominative plural</entry>
+                    </row>
+                    <row>
+                        <entry>NS$</entry>
+                        <entry>common noun, genitive plural</entry>
+                    </row>
+                    <row>
+                        <entry>NSA</entry>
+                        <entry>common noun, accusative plural</entry>
+                    </row>
+                    <row>
+                        <entry>NSD</entry>
+                        <entry>common noun, dative plural</entry>
+                    </row>
+                    <row>
+                        <entry>PRO</entry>
+                        <entry>personal pronoun, nominative</entry>
+                    </row>
+                    <row>
+                        <entry>PRO$</entry>
+                        <entry>personal pronoun, genitive</entry>
+                    </row>
+                    <row>
+                        <entry>PROA</entry>
+                        <entry>personal pronoun, accusative</entry>
+                    </row>
+                    <row>
+                        <entry>PROD</entry>
+                        <entry>personal pronoun, dative</entry>
+                    </row>
+                    <row>
+                        <entry>WPRO</entry>
+                        <entry>wh-pronoun, nominative</entry>
+                    </row>
+                    <row>
+                        <entry>WPRO$</entry>
+                        <entry>wh-pronoun, genitive</entry>
+                    </row>
+                    <row>
+                        <entry>WPROA</entry>
+                        <entry>wh-pronoun, accusative</entry>
+                    </row>
+                    <row>
+                        <entry>WPROD</entry>
+                        <entry>wh-pronoun, dative</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+        <sect2 xml:id="nominals_notes">
+            <title>Notes: Nominals</title>
+            <itemizedlist>
+                <listitem>
+                    <para> Foreign names are tagged as nouns (N) rather than as foreign words (FW).
+                        <programlisting>
+εἰ/C δὲ/CLPRT ἐγὼ/PRO ἐν/P Βεεζεβοὺλ/ND ἐκβάλλω/VBP-IMPF τὰ/DSA δαιμόνια/NSA                            
+                        </programlisting>
+                        (Luke 11.19) </para>
+                </listitem>
+                <listitem>
+                    <para> Formally singular count nouns are tagged as singular (N), even when
+                        construed with a plural verb. Likewise, formally plural count nouns are
+                        tagged as plural (NS), even when construed with a singular verb (e.g.,
+                        neuter plurals in Classical Greek). </para>
+                </listitem>
+                <listitem>
+                    <para> Collective nouns such as λαός are tagged according to their morphological
+                        number (i.e., N for singular in this case), even if they are construed with
+                        a plural verb. </para>
+                </listitem>
+                <listitem>
+                    <para> In general, forms with an overt adjectival suffix are tagged ADJ even if
+                        they are used as substantives.
+                        <programlisting>
+καὶ/CONJ ἀφοριοῦσιν/VBP-FUT τοὺς/DSA πονηροὺς/ADJA ἐκ/P μέσου/N$ τῶν/DS$ δικαίων/ADJ$                            
+                        </programlisting>
+                        (Matthew 13.49) </para>
+                </listitem>
+                <listitem>
+                    <para> Units of measure after numbers are tagged as singular or plural depending
+                        on overt number marking. </para>
+                </listitem>
+                <listitem>
+                    <para> Common nouns standing in a genitive relationship with other nouns are
+                        tagged N$, NS$. </para>
+                </listitem>
+                <listitem>
+                    <para> Words referring to groups of people (ethnic, ideological, or religious)
+                        are handled as follows: if the word has a morphologically adjectival form,
+                        it is tagged ADJ. <itemizedlist>
+                            <listitem>
+                                <para> adjectival form:
+                                    <programlisting>
+           τῶν/DS$ Ἰουδαίων/ADJ$                     
+                            </programlisting></para>
+                            </listitem>
+                            <listitem>
+                                <para> nominal form:
+                                    <programlisting>
+           οἱ/DS Φαρισαῖοι/NS                         
+                                </programlisting>
+                                </para>
+                            </listitem>
+                        </itemizedlist>
+                    </para>
+                </listitem>
+            </itemizedlist>
+        </sect2>
+        <sect2 xml:id="PRO_notes">
+            <title>Notes: Pronominals</title>
+            <itemizedlist>
+                <listitem>
+                    <para> All pronouns are tagged PRO except the clitic pronouns (CLPRO) and the
+                        indefinite clitic pronoun τις/τι (CLQ). </para>
+                </listitem>
+                <listitem>
+                    <para> Reflexive pronouns are tagged with compound tags consisting of a PRO* tag
+                        followed by the dash tag -SLF. </para>
+                </listitem>
+                <listitem>
+                    <para> Reciprocal pronouns will be identifiable by lemma in the final version of
+                        the corpus. </para>
+                </listitem>
+                <listitem>
+                    <para> When αὐτός is used as a non-argument reflexive, it is still tagged PRO.
+                        See <link linkend="αὐτός">αὐτός</link> for details. </para>
+                </listitem>
+            </itemizedlist>
+        </sect2>
+    </sect1>
 </chapter>

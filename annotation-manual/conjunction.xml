@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.oasis-open.org/docbook/xml/5.0/rng/docbookxi.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="conjunction">
+    <title>Conjunction</title>
+    <sect1 xml:id="word_level_conj">
+        <title>Word-Level Conjunction</title>
+        <para></para>
+    </sect1>
+    <sect1 xml:id="phrase_level_conj">
+        <title>Phrase-Level Conjunction</title>
+        <para></para>
+    </sect1>
+    <sect1 xml:id="empty_head_conjps">
+        <title>CONJPs with Empty Heads</title>
+        <para></para>
+    </sect1>
+    <sect1 xml:id="unlike_conj">
+        <title>Conjunction of Unlike Categories</title>
+        <para></para>
+    </sect1>
+    <sect1 xml:id="recursive_conj">
+        <title>Recursive Conjunction Structures</title>
+        <para></para>
+    </sect1>
+    <sect1 xml:id="shared_mod_conj">
+        <title>Shared Modifiers</title>
+        <para></para>
+    </sect1>
+    <sect1 xml:id="conj_and_neg">
+        <title>Conjunction and Negation</title>
+        <para></para>
+    </sect1>
+    <sect1 xml:id="extraposed_conjps">
+        <title>Extraposed CONJPs</title>
+        <para></para>
+    </sect1>
+    <sect1 xml:id="correlative_conj">
+        <title>Correlative Conjunction</title>
+        <para></para>
+    </sect1>
+    <sect1 xml:id="clausal_conj">
+        <title>Clausal Conjunction</title>
+        <para></para>
+    </sect1>
+    </chapter>

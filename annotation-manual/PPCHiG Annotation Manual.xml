@@ -29,6 +29,14 @@
     <part>
         <title>Syntactic Annotation</title>
         <xi:include href="syn_intro.xml"/>
+        <xi:include href="phrase_level.xml"/>
+        <xi:include href="conjunction.xml"/>
+        <xi:include href="empty_categories.xml"/>
+        <xi:include href="clause_level.xml"/>
+        <xi:include href="subordinate_clauses.xml"/>
+        <xi:include href="special_constructions.xml"/>
+        <xi:include href="discontinuous_phrases.xml"/>
+        <xi:include href="disfluencies.xml"/>
     </part>
 
     <part>

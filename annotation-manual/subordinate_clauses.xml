@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.oasis-open.org/docbook/xml/5.0/rng/docbookxi.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="subordinate_clauses">
+    <title>Subordinate Clauses</title>
+    <sect1 xml:id="CP-ADV">
+        <title>Adverbial Clauses</title>
+        <para></para>
+    </sect1>
+    <sect1 xml:id="CP-THT">
+        <title><emphasis>That</emphasis>-Clauses</title>
+        <para></para>
+    </sect1>
+    <sect1 xml:id="CP-COM">
+        <title>Complement Clauses</title>
+        <para></para>
+    </sect1>
+    <sect1 xml:id="CP-PRP">
+        <title>Purpose Clauses</title>
+        <para></para>
+    </sect1>
+    <sect1 xml:id="CP-DEG">
+        <title>Degree Complements</title>
+        <para></para>
+    </sect1>
+    <sect1 xml:id="CP-CMP">
+        <title>Comparative Clauses</title>
+        <para></para>
+    </sect1>
+    <sect1 xml:id="CP-QUE">
+        <title>Questions</title>
+        <para></para>
+    </sect1>
+    <sect1 xml:id="CP-EXL">
+        <title>Exclamative Clauses</title>
+        <para></para>
+    </sect1>
+    <sect1 xml:id="CP-REL">
+        <title>Ordinary Relative Clauses</title>
+        <para></para>
+    </sect1>
+    <sect1 xml:id="RRC">
+        <title>Reduced Relative Clauses</title>
+        <para></para>
+    </sect1>
+    <sect1 xml:id="CP-CAR">
+        <title>Clause-Adjoined Relative Clauses</title>
+        <para></para>
+    </sect1>
+    <sect1 xml:id="CP-FRL">
+        <title>Free Relatives</title>
+        <para></para>
+    </sect1>
+    <sect1 xml:id="CP-EOP">
+        <title>Empty Operator Clauses</title>
+        <para></para>
+    </sect1>
+    <sect1 xml:id="IP-INF">
+        <title>Infinitival Clauses</title>
+        <para></para>
+    </sect1>
+    <sect1 xml:id="IP-SMC">
+        <title>Small Clauses</title>
+        <para></para>
+    </sect1>
+    <sect1 xml:id="IP-PPL">
+        <title>Participial Clauses</title>
+        <para></para>
+    </sect1>
+    </chapter>

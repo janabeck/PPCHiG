@@ -90,7 +90,7 @@
                     </row>
                     <row>
                         <entry>AN</entry>
-                        <entry>modal particle ἄν</entry>
+                        <entry>modal particle <link linkend="ἄν">ἄν</link></entry>
                     </row>
                 </tbody>
             </tgroup>
@@ -105,7 +105,7 @@
                 <tbody>
                     <row>
                         <entry>BED</entry>
-                        <entry>εἰμί, secondary sequence</entry>
+                        <entry><link linkend="εἰμί">εἰμί</link>, secondary sequence</entry>
                     </row>
                     <row>
                         <entry>BEI</entry>
@@ -168,7 +168,7 @@
                     </row>
                     <row>
                         <entry>CLQ</entry>
-                        <entry>clitic indefinite pronoun/quantifier τις/τι, nominative</entry>
+                        <entry>clitic indefinite pronoun/quantifier <link linkend="τις">τις/τι</link>, nominative</entry>
                     </row>
                     <row>
                         <entry>CLQ$</entry>
@@ -184,7 +184,7 @@
                     </row>
                     <row>
                         <entry>CLTE</entry>
-                        <entry>conjunctive clitic particle τε</entry>
+                        <entry>conjunctive clitic particle <link linkend="τε">τε</link></entry>
                     </row>
                     <row>
                         <entry>CODE</entry>
@@ -284,7 +284,7 @@
                 <tbody>
                     <row>
                         <entry>KE</entry>
-                        <entry>modal particle κε(ν)/κα</entry>
+                        <entry>modal particle <link linkend="κε">κε(ν)</link>/<link linkend="κα">κα</link></entry>
                     </row>
                 </tbody>
             </tgroup>
@@ -378,7 +378,7 @@
                 <tbody>
                     <row>
                         <entry>OTHER</entry>
-                        <entry>form of ἄλλος, nominative</entry>
+                        <entry>form of <link linkend="ἄλλος">ἄλλος</link>, nominative</entry>
                     </row>
                     <row>
                         <entry>OTHER$</entry>
@@ -425,7 +425,7 @@
                     </row>
                     <row>
                         <entry>PRTQ</entry>
-                        <entry>particle, interrogative (e.g., ἆρα)</entry>
+                        <entry>particle, interrogative (e.g., <link linkend="ἆρα">ἆρα</link>)</entry>
                     </row>
                 </tbody>
             </tgroup>
@@ -456,7 +456,7 @@
                     </row>
                     <row>
                         <entry>QV</entry>
-                        <entry>quantificational adverb (e.g., πάντως)</entry>
+                        <entry>quantificational adverb (e.g., <link linkend="πάντως">πάντως</link>)</entry>
                     </row>
                 </tbody>
             </tgroup>
@@ -621,7 +621,7 @@
                     </row>
                     <row>
                         <entry>WQ</entry>
-                        <entry>εἰ in the meaning 'whether' introducing an indirect question</entry>
+                        <entry><link linkend="εἰ">εἰ</link> in the meaning 'whether' introducing an indirect question</entry>
                     </row>
                 </tbody>
             </tgroup>

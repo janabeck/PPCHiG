@@ -8,11 +8,21 @@
         <glossentry xml:id="ἄρα">
             <glossterm>ἄρα</glossterm>
             <glossdef>
-                <para>
-                    tagged CLPRT
-                </para>
+                <para> tagged CLPRT </para>
             </glossdef>
-        </glossentry>        
+        </glossentry>
+        <glossentry xml:id="ἆρα">
+            <glossterm>ἆρα</glossterm>
+            <glossdef>
+                <para> tagged PRTQ </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="ἄλλος">
+            <glossterm>ἄλλος</glossterm>
+            <glossdef>
+                <para> tagged OTHER </para>
+            </glossdef>
+        </glossentry>
         <glossentry xml:id="αὐτός">
             <glossterm>αὐτός</glossterm>
             <glossdef>
@@ -83,9 +93,13 @@
         <glossentry xml:id="γάρ">
             <glossterm>γάρ</glossterm>
             <glossdef>
-                <para>
-                    tagged CLPRT
-                </para>
+                <para> tagged CLPRT </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="γε">
+            <glossterm>γε</glossterm>
+            <glossdef>
+                <para> tagged CLGE </para>
             </glossdef>
         </glossentry>
     </glossdiv>
@@ -94,17 +108,13 @@
         <glossentry xml:id="δέ">
             <glossterm>δέ</glossterm>
             <glossdef>
-                <para>
-                    tagged CLPRT
-                </para>
+                <para> tagged CLPRT </para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="δή">
             <glossterm>δή</glossterm>
             <glossdef>
-                <para>
-                    tagged CLPRT
-                </para>
+                <para> tagged CLPRT </para>
             </glossdef>
         </glossentry>
     </glossdiv>
@@ -114,6 +124,13 @@
             <glossterm>*ἑαυτός</glossterm>
             <glossdef>
                 <para> tagged PRO*+SLF; no nominative </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="εἰμί">
+            <glossterm>εἰμί</glossterm>
+            <glossdef>
+                <para> the verb 'to be'; receives special set of verbal tags beginning with BE*
+                </para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="ἕκαστος">
@@ -132,7 +149,7 @@
                         </listitem>
                         <listitem>
                             <para> tagged P when it takes a nominal complement in the genitive (see
-                                    <xref linkend="P-notes"/>) </para>
+                                    <xref linkend="P_notes"/>) </para>
                         </listitem>
                     </itemizedlist>
                 </para>
@@ -150,8 +167,7 @@
                             <para> tagged CONJ, C, or P depending on the syntactic context </para>
                         </listitem>
                         <listitem>
-                            <para> as CONJ when it means <trans>or</trans>
-                            </para>
+                            <para> as CONJ when it means 'or' </para>
                             <programlisting>
 ( (IP-IMP-SPE (CODE {VS:6_31})
               (NEG μὴ)
@@ -182,8 +198,8 @@
                             </programlisting>
                         </listitem>
                         <listitem>
-                            <para> as C when it means <trans>than</trans> and introduces a full
-                                comparative clause (see <xref linkend="CP-CMP"/>)
+                            <para> as C when it means 'than' and introduces a full comparative
+                                clause (see <xref linkend="CPCMP"/>)
                                 <programlisting>
 ( (IP-MAT (CODE {VS:7_9})
           (ADJP-PRD (ADJR κρεῖττον)
@@ -202,9 +218,9 @@
                             </para>
                         </listitem>
                         <listitem>
-                            <para> as P when it means <trans>than</trans> and occurs in a
-                                comparative construction that does not appear to contain an elided
-                                clause (see also <xref linkend="ὡς"/>)
+                            <para> as P when it means 'than' and occurs in a comparative
+                                construction that does not appear to contain an elided clause (see
+                                also <xref linkend="ὡς"/>)
                                 <programlisting>
 ( (IP-MAT-SPE (CODE {VS:17_2})
               (NP-SBJ *pro*)
@@ -240,9 +256,7 @@
         <glossentry xml:id="ἦ">
             <glossterm>ἦ</glossterm>
             <glossdef>
-                <para>
-                    tagged CLPRT; also sometimes ἤ, as in ἤτοι
-                </para>
+                <para> tagged CLPRT; also sometimes ἤ, as in ἤτοι </para>
             </glossdef>
         </glossentry>
     </glossdiv>
@@ -340,7 +354,7 @@
                         </listitem>
                         <listitem>
                             <para> καί is also tagged CONJ when it occurs as part of the <link
-                                    linkend="correlative-conj">correlative
+                                    linkend="correlative_conj">correlative
                                 conjunction</link>καί...καί </para>
                         </listitem>
                         <listitem>
@@ -416,9 +430,7 @@
         <glossentry xml:id="μέν">
             <glossterm>μέν</glossterm>
             <glossdef>
-                <para>
-                    tagged CLPRT
-                </para>
+                <para> tagged CLPRT </para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="μηδείς">
@@ -430,9 +442,7 @@
         <glossentry xml:id="μήν">
             <glossterm>μήν</glossterm>
             <glossdef>
-                <para>
-                    tagged CLPRT
-                </para>
+                <para> tagged CLPRT </para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="μήτι">
@@ -476,11 +486,9 @@
         <glossentry xml:id="νυν">
             <glossterm>νυν</glossterm>
             <glossdef>
-                <para>
-                    tagged CLPRT
-                </para>
+                <para> tagged CLPRT </para>
             </glossdef>
-        </glossentry>        
+        </glossentry>
     </glossdiv>
     <glossdiv xml:id="Οο">
         <title>Οο</title>
@@ -499,8 +507,7 @@
         <glossentry xml:id="ὁπότερος">
             <glossterm>ὁπότερος</glossterm>
             <glossdef>
-                <para> tagged WPRO since <trans>which of two</trans>
-                </para>
+                <para> tagged WPRO since 'which of two' </para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="ὅταν">
@@ -573,11 +580,17 @@
         <glossentry xml:id="οὖν">
             <glossterm>οὖν</glossterm>
             <glossdef>
+                <para> tagged CLPRT </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="οὕτως">
+            <glossterm>οὕτως</glossterm>
+            <glossdef>
                 <para>
-                    tagged CLPRT
+                    tagged QR
                 </para>
             </glossdef>
-        </glossentry>        
+        </glossentry>
         <glossentry xml:id="οὐχί">
             <glossterm>οὐχί</glossterm>
             <glossdef>
@@ -603,6 +616,12 @@
                 <para> tagged INTJ </para>
             </glossdef>
         </glossentry>
+        <glossentry xml:id="πάντως">
+            <glossterm>πάντως</glossterm>
+            <glossdef>
+                <para> tagged QV </para>
+            </glossdef>
+        </glossentry>
         <glossentry xml:id="πᾶς">
             <glossterm>πᾶς</glossterm>
             <glossdef>
@@ -612,9 +631,7 @@
         <glossentry xml:id="περ">
             <glossterm>περ</glossterm>
             <glossdef>
-                <para>
-                    tagged CLPRT
-                </para>
+                <para> tagged CLPRT </para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="πολύς">
@@ -648,20 +665,22 @@
         <glossentry xml:id="πω">
             <glossterm>πω</glossterm>
             <glossdef>
-                <para>
-                    tagged CLPRT
-                </para>
+                <para> tagged CLPRT </para>
             </glossdef>
         </glossentry>
     </glossdiv>
     <glossdiv xml:id="Ττ">
         <title>Ττ</title>
+        <glossentry xml:id="τις">
+            <glossterm>τις/τι</glossterm>
+            <glossdef>
+                <para> clitic indefinite pronoun quantifier; tagged CLQ* </para>
+            </glossdef>
+        </glossentry>
         <glossentry>
             <glossterm>τοι</glossterm>
             <glossdef>
-                <para>
-                    tagged CLPRT
-                </para>
+                <para> tagged CLPRT </para>
             </glossdef>
         </glossentry>
     </glossdiv>
@@ -698,11 +717,10 @@
                             <para> tagged C, WADV, ADV, or P depending on the context </para>
                         </listitem>
                         <listitem>
-                            <para> C in its temporal use meaning <trans>when</trans> or when used as
-                                a complementizer introducing any other type of subordinate clause
-                                such as a <emphasis>that</emphasis>-clause (see <xref
-                                    linkend="CP-THT"/>) or a purpose clause (see <xref
-                                    linkend="CP-COM"/>)
+                            <para> C in its temporal use meaning 'when' or when used as a
+                                complementizer introducing any other type of subordinate clause such
+                                as a <emphasis>that</emphasis>-clause (see <xref linkend="CP-THT"/>)
+                                or a purpose clause (see <xref linkend="CP-COM"/>)
                                 <programlisting>
 ( (IP-MAT (CODE {VS:10_28})
           (NP-SBJ *pro*)
@@ -745,9 +763,8 @@
                             </para>
                         </listitem>
                         <listitem>
-                            <para> ADV when it has the meaning of <trans>so</trans> or
-                                    <trans>thus</trans> and does not introduce a subordinate clause
-                            </para>
+                            <para> ADV when it has the meaning of 'so' or 'thus' and does not
+                                introduce a subordinate clause </para>
                         </listitem>
                         <listitem>
                             <para> P in comparatives when there does not appear to be an elided

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.oasis-open.org/docbook/xml/5.0/rng/docbookxi.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="phrase_level">
+    <title>Phrase-Level Constituents</title>
+    <sect1 xml:id="ADJP">
+        <title>Adjective Phrase</title>
+        <para></para>
+    </sect1>
+    <sect1 xml:id="ADVP">
+        <title>Adverb Phrase</title>
+        <para></para>
+    </sect1>
+    <sect1 xml:id="CONJP">
+        <title>Conjunction Phrase</title>
+        <para></para>
+    </sect1>
+    <sect1 xml:id="FRAG">
+        <title>Fragment</title>
+        <para></para>
+    </sect1>
+    <sect1 xml:id="INTJP">
+        <title>Interjection Phrase</title>
+        <para></para>
+    </sect1>
+    <sect1 xml:id="NP">
+        <title>Noun Phrase</title>
+        <para></para>
+    </sect1>
+    <sect1 xml:id="NUMP">
+        <title>Number Phrase</title>
+        <para></para>
+    </sect1>
+    <sect1 xml:id="PP">
+        <title>Prepositional Phrase</title>
+        <para></para>
+    </sect1>
+    <sect1 xml:id="QP">
+        <title>Quantifier Phrase</title>
+        <para></para>
+    </sect1>
+    <sect1 xml:id="WP">
+        <title>Wh- Phrase</title>
+        <para></para>
+    </sect1>
+    <sect1 xml:id="non-structural">
+        <title>Non-Structural Labels</title>
+        <para></para>
+    </sect1>
+    </chapter>
