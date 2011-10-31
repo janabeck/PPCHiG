@@ -3,4 +3,46 @@
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="empty_categories">
     <title>Empty Categories</title>
-    </chapter>
+    <sect1 xml:id="empty_subjects">
+        <title>Empty Subjects</title>
+        <para/>
+    </sect1>
+    <sect1 xml:id="traces">
+        <title>Traces</title>
+        <sect2 xml:id="a_movement">
+            <title>Traces of A-Movement</title>
+            <para/>
+        </sect2>
+        <sect2 xml:id="wh_movement">
+            <title>Traces of Wh-Movement</title>
+            <para/>
+        </sect2>
+        <sect2 xml:id="a_bar_movement">
+            <title>Traces of Other A'-Movement</title>
+            <para/>
+        </sect2>
+    </sect1>
+    <sect1 xml:id="other_empty">
+        <title>Other Empty Categories</title>
+        <para/>
+    </sect1>
+    <sect1 xml:id="position_empty">
+        <title>The Position of Empty Categories</title>
+        <sect2 xml:id="position_null_copula">
+            <title>The Position of the Null Copula</title>
+            <para/>
+        </sect2>
+        <sect2 xml:id="position_empty_subjects">
+            <title>The Position of Empty Subjects</title>
+            <para/>
+        </sect2>
+        <sect2 xml:id="position_traces">
+            <title>The Position of Traces</title>
+            <para/>
+        </sect2>
+    </sect1>
+    <sect1 xml:id="resumptive">
+        <title>Resumptive Pronouns</title>
+        <para/>
+    </sect1>
+</chapter>

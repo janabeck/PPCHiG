@@ -3,4 +3,115 @@
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="clause_level">
     <title>Clause-Level Constituents</title>
-    </chapter>
+    <sect1 xml:id="clADJP">
+        <title>Adjective Phrase</title>
+        <para/>
+    </sect1>
+    <sect1 xml:id="clADVP">
+        <title>Adverb Phrase</title>
+        <para/>
+    </sect1>
+    <sect1 xml:id="clNP">
+        <title>Noun Phrase</title>
+        <sect2 xml:id="NP-SBJ">
+            <title>Subject</title>
+            <para/>
+        </sect2>
+        <sect2 xml:id="NP-OB1">
+            <title>NP-OB1</title>
+            <para/>
+        </sect2>
+        <sect2 xml:id="NP-OB2">
+            <title>NP-OB2</title>
+            <para/>
+        </sect2>
+        <sect2 xml:id="NP-OBP">
+            <title>NP-OBP</title>
+            <para/>
+        </sect2>
+        <sect2 xml:id="NP-OBQ">
+            <title>NP-OBQ</title>
+            <para/>
+        </sect2>
+        <sect2 xml:id="passive_obj">
+            <title>Objects in Passive</title>
+            <para/>
+        </sect2>
+        <sect2 xml:id="NP-ADT">
+            <title>Non-Argument (Adjunct) NP</title>
+            <para/>
+        </sect2>
+        <sect2 xml:id="NP-ADV">
+            <title>Adverbial NP</title>
+            <para/>
+        </sect2>
+        <sect2 xml:id="NP-ATR">
+            <title>Attributive (and/or Possessive) NP</title>
+            <para/>
+        </sect2>
+        <sect2 xml:id="NP-COM">
+            <title>Complement NP</title>
+            <para/>
+        </sect2>
+        <sect2 xml:id="NP-DIR">
+            <title>Directional NP</title>
+            <para/>
+        </sect2>
+        <sect2 xml:id="NP-INS">
+            <title>Instrumental NP</title>
+            <para/>
+        </sect2>
+        <sect2 xml:id="NP-LOC">
+            <title>Locative NP</title>
+            <para/>
+        </sect2>
+        <sect2 xml:id="NP-MSR">
+            <title>Measure Phrase</title>
+            <para/>
+        </sect2>
+        <sect2 xml:id="NP-PAR">
+            <title>Partitive NP</title>
+            <para/>
+        </sect2>
+        <sect2 xml:id="NP-PRD">
+            <title>Predicate NP</title>
+            <para/>
+        </sect2>
+        <sect2 xml:id="NP-SPR">
+            <title>Secondary Predicate NP</title>
+            <para/>
+        </sect2>
+        <sect2 xml:id="NP-TMP">
+            <title>Temporal NP</title>
+            <para/>
+        </sect2>
+        <sect2 xml:id="NP-VOC">
+            <title>Vocative</title>
+            <para/>
+        </sect2>
+        <sect2 xml:id="bare_NP">
+            <title>Bare NP</title>
+            <para/>
+        </sect2>
+    </sect1>
+    <sect1 xml:id="clPP">
+        <title>Prepositional Phrase</title>
+        <para/>
+    </sect1>
+    <sect1 xml:id="clQP">
+        <title>Quantifier Phrase</title>
+        <para/>
+    </sect1>
+    <sect1 xml:id="words_clausal_constituents">
+        <title>Words as Clausal Constituents</title>
+        <para/>
+    </sect1>
+    <sect1 xml:id="extended_dash">
+        <title>Extended Dash Tags</title>
+        <para/>
+    </sect1>
+    <sect1 xml:id="unknown">
+        <title>Unknown</title>
+        <para/>
+    </sect1>
+</chapter>

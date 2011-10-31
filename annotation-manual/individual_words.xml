@@ -5,6 +5,24 @@
     <title>Treatment of Individual Words</title>
     <glossdiv xml:id="Αα">
         <title>Αα</title>
+        <glossentry xml:id="ἄγε">
+            <glossterm>ἄγε, ἄγετε</glossterm>
+            <glossdef>
+                <para> tagged INTJ if not main verb imperative, VBI otherwise </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="ἀμήν">
+            <glossterm>ἀμήν</glossterm>
+            <glossdef>
+                <para> tagged INTJ </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="ἄν">
+            <glossterm>ἄν</glossterm>
+            <glossdef>
+                <para> tagged AN </para>
+            </glossdef>
+        </glossentry>
         <glossentry xml:id="ἄρα">
             <glossterm>ἄρα</glossterm>
             <glossdef>
@@ -17,13 +35,31 @@
                 <para> tagged PRTQ </para>
             </glossdef>
         </glossentry>
+        <glossentry xml:id="ἀλλά">
+            <glossterm>ἀλλά</glossterm>
+            <glossdef>
+                <para> tagged CONJ </para>
+            </glossdef>
+        </glossentry>
         <glossentry xml:id="ἄλλος">
             <glossterm>ἄλλος</glossterm>
             <glossdef>
                 <para> tagged OTHER </para>
             </glossdef>
         </glossentry>
-        <glossentry xml:id="αὐτός">
+        <glossentry xml:id="ἀμφότεροι">
+            <glossterm>ἀμφότεροι</glossterm>
+            <glossdef>
+                <para> tagged Q </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="ἅπας">
+            <glossterm>ἅπας</glossterm>
+            <glossdef>
+                <para> tagged Q </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="αὐτός">
             <glossterm>αὐτός</glossterm>
             <glossdef>
                 <para>
@@ -117,6 +153,12 @@
                 <para> tagged CLPRT </para>
             </glossdef>
         </glossentry>
+        <glossentry xml:id="δίς">
+            <glossterm>δίς</glossterm>
+            <glossdef>
+                <para> tagged NUM </para>
+            </glossdef>
+        </glossentry>
     </glossdiv>
     <glossdiv xml:id="Εε">
         <title>Εε</title>
@@ -126,6 +168,12 @@
                 <para> tagged PRO*+SLF; no nominative </para>
             </glossdef>
         </glossentry>
+        <glossentry xml:id="εἰ">
+            <glossterm>εἰ</glossterm>
+            <glossdef>
+                <para> tagged C </para>
+            </glossdef>
+        </glossentry>
         <glossentry xml:id="εἰμί">
             <glossterm>εἰμί</glossterm>
             <glossdef>
@@ -133,10 +181,23 @@
                 </para>
             </glossdef>
         </glossentry>
+        <glossentry xml:id="εἴτε">
+            <glossterm>εἴτε</glossterm>
+            <glossdef>
+                <para> tagged CONJ </para>
+                <para> can be correlative: εἴτε...εἴτε </para>
+            </glossdef>
+        </glossentry>
         <glossentry xml:id="ἕκαστος">
             <glossterm>ἕκαστος</glossterm>
             <glossdef>
                 <para> tagged Q </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="ἐκεῖνος">
+            <glossterm>ἐκεῖνος</glossterm>
+            <glossdef>
+                <para> tagged D </para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="ἔξω">
@@ -198,8 +259,12 @@
                             </programlisting>
                         </listitem>
                         <listitem>
+                            <para> as CONJ when it occurs as a correlative conjunction: ἤ...ἤ
+                            </para>
+                        </listitem>
+                        <listitem>
                             <para> as C when it means 'than' and introduces a full comparative
-                                clause (see <xref linkend="CPCMP"/>)
+                                clause (see <xref linkend="CP-CMP"/>)
                                 <programlisting>
 ( (IP-MAT (CODE {VS:7_9})
           (ADJP-PRD (ADJR κρεῖττον)
@@ -268,6 +333,12 @@
                 <para> tagged INTJ unless actually a full (= main) imperative </para>
             </glossdef>
         </glossentry>
+        <glossentry xml:id="ἴθι">
+            <glossterm>ἴθι</glossterm>
+            <glossdef>
+                <para> tagged INTJ if not main verb imperative, VBI otherwise </para>
+            </glossdef>
+        </glossentry>
         <glossentry xml:id="ἱκανός">
             <glossterm>ἱκανός</glossterm>
             <glossdef>
@@ -325,6 +396,18 @@
                 </para>
             </glossdef>
         </glossentry>
+        <glossentry xml:id="ἵνα">
+            <glossterm>ἵνα</glossterm>
+            <glossdef>
+                <para> tagged C </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="ἵνατί">
+            <glossterm>ἵνατί</glossterm>
+            <glossdef>
+                <para> tagged WADV+CLQA </para>
+            </glossdef>
+        </glossentry>
     </glossdiv>
     <glossdiv xml:id="Κκ">
         <title>Κκ</title>
@@ -334,13 +417,24 @@
                 <para>tagged KE</para>
             </glossdef>
         </glossentry>
+        <glossentry xml:id="κἀγώ">
+            <glossterm>κἀγώ</glossterm>
+            <glossdef>
+                <para> crasis for καὶ ἐγώ; split into two words suffixed and prefixed with $:
+                    <programlisting>
+(NODE (CONJ κἀ$)
+      (PRO $γώ))
+                    </programlisting>
+                </para>
+            </glossdef>
+        </glossentry>
         <glossentry xml:id="κε">
             <glossterm>κε(ν)</glossterm>
             <glossdef>
                 <para>tagged KE</para>
             </glossdef>
         </glossentry>
-        <glossentry xml:id="καί">
+        <glossentry xml:id="καί">
             <glossterm>καί</glossterm>
             <glossdef>
                 <para>
@@ -403,9 +497,22 @@
                 </para>
             </glossdef>
         </glossentry>
+        <glossentry xml:id="καίτοι">
+            <glossterm>καίτοι</glossterm>
+            <glossdef>
+                <para> lemma καί-τοι; tagged CONJ-CLPRT </para>
+            </glossdef>
+        </glossentry>
     </glossdiv>
     <glossdiv xml:id="Λλ">
         <title>Λλ</title>
+        <glossentry xml:id="λαός">
+            <glossterm>λαός</glossterm>
+            <glossdef>
+                <para> an example of a collective noun; collective nouns are tagged according to
+                    their morphological number, even if they induce plural agreement </para>
+            </glossdef>
+        </glossentry>
         <glossentry xml:id="λίαν">
             <glossterm>λίαν</glossterm>
             <glossdef>
@@ -427,10 +534,34 @@
                 <para> tagged QR </para>
             </glossdef>
         </glossentry>
-        <glossentry xml:id="μέν">
+        <glossentry xml:id="με">
+            <glossterm>με</glossterm>
+            <glossdef>
+                <para> tagged CLPROA </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="μέν">
             <glossterm>μέν</glossterm>
             <glossdef>
                 <para> tagged CLPRT </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="μηδαμός">
+            <glossterm>μηδαμός</glossterm>
+            <glossdef>
+                <para> tagged NEG+ADJ </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="μηδαμῶς">
+            <glossterm>μηδαμῶς</glossterm>
+            <glossdef>
+                <para> tagged NEG+ADV </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="μηδέ">
+            <glossterm>μηδέ</glossterm>
+            <glossdef>
+                <para> tagged NEG+CONJ </para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="μηδείς">
@@ -439,16 +570,41 @@
                 <para> tagged NEG+Q </para>
             </glossdef>
         </glossentry>
-        <glossentry xml:id="μήν">
+        <glossentry xml:id="μηδέτερος">
+            <glossterm>μηδέτερος</glossterm>
+            <glossdef>
+                <para> tagged NEG+Q </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="μήν">
             <glossterm>μήν</glossterm>
             <glossdef>
                 <para> tagged CLPRT </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="μήποτε">
+            <glossterm>μήποτε</glossterm>
+            <glossdef>
+                <para> tagged NEG+CLPRT </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="μήτε">
+            <glossterm>μήτε</glossterm>
+            <glossdef>
+                <para> tagged NEG+CLTE </para>
+                <para> can be correlative: μήτε...μήτε </para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="μήτι">
             <glossterm>μήτι</glossterm>
             <glossdef>
                 <para> tagged PRTQ </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="μιν">
+            <glossterm>μιν</glossterm>
+            <glossdef>
+                <para> tagged CLPROA </para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="μόνος">
@@ -474,6 +630,12 @@
                 </para>
             </glossdef>
         </glossentry>
+        <glossentry xml:id="μου">
+            <glossterm>μου</glossterm>
+            <glossdef>
+                <para> tagged CLPRO$ </para>
+            </glossdef>
+        </glossentry>
     </glossdiv>
     <glossdiv xml:id="Νν">
         <title>Νν</title>
@@ -492,6 +654,18 @@
     </glossdiv>
     <glossdiv xml:id="Οο">
         <title>Οο</title>
+        <glossentry xml:id="ὁ">
+            <glossterm>ὁ</glossterm>
+            <glossdef>
+                <para> tagged D </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="ὅδε">
+            <glossterm>ὅδε</glossterm>
+            <glossdef>
+                <para> tagged D </para>
+            </glossdef>
+        </glossentry>
         <glossentry xml:id="ὀλίγος">
             <glossterm>ὀλίγος</glossterm>
             <glossdef>
@@ -508,6 +682,19 @@
             <glossterm>ὁπότερος</glossterm>
             <glossdef>
                 <para> tagged WPRO since 'which of two' </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="ὅς">
+            <glossterm>ὅς</glossterm>
+            <glossdef>
+                <para> tagged WD or WPRO depending on whether it is modifying a noun or serving as
+                    the head of the WNP, respectively </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="ὅστις">
+            <glossterm>ὅστις</glossterm>
+            <glossdef>
+                <para> tagged WPRO+CLQ </para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="ὅταν">
@@ -559,16 +746,46 @@
                 </para>
             </glossdef>
         </glossentry>
+        <glossentry xml:id="ὅτι">
+            <glossterm>ὅτι</glossterm>
+            <glossdef>
+                <para> tagged C </para>
+            </glossdef>
+        </glossentry>
         <glossentry xml:id="οὐαί">
             <glossterm>οὐαί</glossterm>
             <glossdef>
                 <para> tagged INTJ </para>
             </glossdef>
         </glossentry>
+        <glossentry xml:id="οὐδαμός">
+            <glossterm>οὐδαμός</glossterm>
+            <glossdef>
+                <para> tagged NEG+ADJ </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="οὐδέ">
+            <glossterm>οὐδέ</glossterm>
+            <glossdef>
+                <para> tagged NEG+CONJ </para>
+            </glossdef>
+        </glossentry>
         <glossentry xml:id="οὐδείς">
             <glossterm>οὐδείς</glossterm>
             <glossdef>
                 <para> tagged NEG+Q </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="οὐδέτερος">
+            <glossterm>οὐδέτερος</glossterm>
+            <glossdef>
+                <para> tagged NEG+Q </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="οὐκέτι">
+            <glossterm>οὐκέτι</glossterm>
+            <glossdef>
+                <para> tagged NEG+ADV </para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="οὐκοῦν">
@@ -583,12 +800,29 @@
                 <para> tagged CLPRT </para>
             </glossdef>
         </glossentry>
+        <glossentry xml:id="οὔποτε">
+            <glossterm>οὔποτε</glossterm>
+            <glossdef>
+                <para> tagged NEG+CLPRT </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="οὔτε">
+            <glossterm>οὔτε</glossterm>
+            <glossdef>
+                <para> tagged NEG+CLTE </para>
+                <para> can be correlative: οὔτε...οὔτε </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="οὗτος">
+            <glossterm>οὗτος</glossterm>
+            <glossdef>
+                <para> tagged D </para>
+            </glossdef>
+        </glossentry>
         <glossentry xml:id="οὕτως">
             <glossterm>οὕτως</glossterm>
             <glossdef>
-                <para>
-                    tagged QR
-                </para>
+                <para> tagged QR </para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="οὐχί">
@@ -634,6 +868,25 @@
                 <para> tagged CLPRT </para>
             </glossdef>
         </glossentry>
+        <glossentry xml:id="πλεῖστος">
+            <glossterm>πλεῖστος</glossterm>
+            <glossdef>
+                <para> tagged QS </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="πόθεν">
+            <glossterm>πόθεν</glossterm>
+            <glossdef>
+                <para> tagged WADV </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="ποῖος">
+            <glossterm>ποῖος</glossterm>
+            <glossdef>
+                <para> tagged WD or WPRO depending on whether it is modifying a noun or serving as
+                    the head of the WNP, respectively </para>
+            </glossdef>
+        </glossentry>
         <glossentry xml:id="πολύς">
             <glossterm>πολύς</glossterm>
             <glossdef>
@@ -644,6 +897,24 @@
             <glossterm>πόσος</glossterm>
             <glossdef>
                 <para> tagged WADJ </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="ποτε">
+            <glossterm>ποτε</glossterm>
+            <glossdef>
+                <para> tagged CLPRT </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="πότε">
+            <glossterm>πότε</glossterm>
+            <glossdef>
+                <para> tagged WADV </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="ποῦ">
+            <glossterm>ποῦ</glossterm>
+            <glossdef>
+                <para> tagged WADV </para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="πρῶτος">
@@ -668,19 +939,92 @@
                 <para> tagged CLPRT </para>
             </glossdef>
         </glossentry>
+        <glossentry xml:id="πῶς">
+            <glossterm>πῶς</glossterm>
+            <glossdef>
+                <para> tagged WADV </para>
+            </glossdef>
+        </glossentry>
+    </glossdiv>
+    <glossdiv xml:id="Σς">
+        <title>Σς</title>
+        <glossentry xml:id="σε">
+            <glossterm>σε</glossterm>
+            <glossdef>
+                <para> tagged CLPROA </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="σου">
+            <glossterm>σου</glossterm>
+            <glossdef>
+                <para> tagged CLPRO$ </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="σφεας">
+            <glossterm>σφεας</glossterm>
+            <glossdef>
+                <para> tagged CLPROA </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="σφι">
+            <glossterm>σφι</glossterm>
+            <glossdef>
+                <para> tagged CLPROD </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="σύμπας">
+            <glossterm>σύμπας</glossterm>
+            <glossdef>
+                <para> tagged Q </para>
+            </glossdef>
+        </glossentry>
     </glossdiv>
     <glossdiv xml:id="Ττ">
         <title>Ττ</title>
+        <glossentry xml:id="τε">
+            <glossterm>τε</glossterm>
+            <glossdef>
+                <para> tagged CLTE </para>
+            </glossdef>
+        </glossentry>
         <glossentry xml:id="τις">
             <glossterm>τις/τι</glossterm>
             <glossdef>
                 <para> clitic indefinite pronoun quantifier; tagged CLQ* </para>
             </glossdef>
         </glossentry>
-        <glossentry>
+        <glossentry xml:id="τίς">
+            <glossterm>τίς</glossterm>
+            <glossdef>
+                <para> tagged WD or WPRO depending on whether it is modifying a noun or serving as
+                    the head of the WNP, respectively </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="τοι">
             <glossterm>τοι</glossterm>
             <glossdef>
                 <para> tagged CLPRT </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="τοίνυν">
+            <glossterm>τοίνυν</glossterm>
+            <glossdef>
+                <para> lemma τοί-νυν; tagged CLPRT-CLPRT </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="τοσοῦτοι">
+            <glossterm>τοσοῦτοι</glossterm>
+            <glossdef>
+                <para> tagged Q </para>
+            </glossdef>
+        </glossentry>
+    </glossdiv>
+    <glossdiv xml:id="Φφ">
+        <title>Φφ</title>
+        <glossentry xml:id="φέρε">
+            <glossterm>φέρε</glossterm>
+            <glossdef>
+                <para> tagged INTJ if not main verb imperative, VBI otherwise </para>
             </glossdef>
         </glossentry>
     </glossdiv>

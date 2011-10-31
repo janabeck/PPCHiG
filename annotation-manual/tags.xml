@@ -168,7 +168,8 @@
                     </row>
                     <row>
                         <entry>CLQ</entry>
-                        <entry>clitic indefinite pronoun/quantifier <link linkend="τις">τις/τι</link>, nominative</entry>
+                        <entry>clitic indefinite pronoun/quantifier <link linkend="τις"
+                                >τις/τι</link>, nominative</entry>
                     </row>
                     <row>
                         <entry>CLQ$</entry>
@@ -284,7 +285,8 @@
                 <tbody>
                     <row>
                         <entry>KE</entry>
-                        <entry>modal particle <link linkend="κε">κε(ν)</link>/<link linkend="κα">κα</link></entry>
+                        <entry>modal particle <link linkend="κε">κε(ν)</link>/<link linkend="κα"
+                                >κα</link></entry>
                     </row>
                 </tbody>
             </tgroup>
@@ -425,7 +427,8 @@
                     </row>
                     <row>
                         <entry>PRTQ</entry>
-                        <entry>particle, interrogative (e.g., <link linkend="ἆρα">ἆρα</link>)</entry>
+                        <entry>particle, interrogative (e.g., <link linkend="ἆρα"
+                            >ἆρα</link>)</entry>
                     </row>
                 </tbody>
             </tgroup>
@@ -456,7 +459,8 @@
                     </row>
                     <row>
                         <entry>QV</entry>
-                        <entry>quantificational adverb (e.g., <link linkend="πάντως">πάντως</link>)</entry>
+                        <entry>quantificational adverb (e.g., <link linkend="πάντως"
+                            >πάντως</link>)</entry>
                     </row>
                 </tbody>
             </tgroup>
@@ -621,7 +625,8 @@
                     </row>
                     <row>
                         <entry>WQ</entry>
-                        <entry><link linkend="εἰ">εἰ</link> in the meaning 'whether' introducing an indirect question</entry>
+                        <entry><link linkend="εἰ">εἰ</link> in the meaning 'whether' introducing an
+                            indirect question</entry>
                     </row>
                 </tbody>
             </tgroup>

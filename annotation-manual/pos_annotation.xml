@@ -119,7 +119,7 @@
             <para> Degree words (e.g., <link linkend="οὕτως">οὕτως</link>, <link linkend="ἱκανός"
                     >ἱκανός</link>) are treated as comparatives. </para>
         </sect2>
-        <sect2 xml:id="ordinal_numbers">
+        <sect2 xml:id="ordinals">
             <title>Ordinal Numbers</title>
             <itemizedlist>
                 <listitem>
@@ -170,7 +170,8 @@
                 <listitem>
                     <para> Greek equivalents of words such as <emphasis>double</emphasis>,
                             <emphasis>treble</emphasis>, <emphasis>triple</emphasis>, etc.,
-                        \textit{twice}, \textit{thrice}, and <emphasis>once</emphasis> when
+                            <emphasis>twice</emphasis> (see <link linkend="δίς">δίς</link>,
+                            <emphasis>thrice</emphasis>, and <emphasis>once</emphasis> when
                         analogous in meaning to <emphasis>twice</emphasis>,
                             <emphasis>thrice</emphasis> are always tagged NUM.
                         <programlisting>
@@ -207,11 +208,11 @@
                 <tbody>
                     <row>
                         <entry>AN</entry>
-                        <entry>modal particle ἄν</entry>
+                        <entry>modal particle <link linkend="ἄν">ἄν</link></entry>
                     </row>
                     <row>
                         <entry>CLGE</entry>
-                        <entry>emphatic clitic particle γε</entry>
+                        <entry>emphatic clitic particle <link linkend="γε">γε</link></entry>
                     </row>
                     <row>
                         <entry>CLPRO$</entry>
@@ -228,11 +229,12 @@
                     <row>
                         <entry>CLPRT</entry>
                         <entry>second-position sentential particle, other second position particles
-                            such as περ 'indeed'</entry>
+                            such as <link linkend="περ">περ</link> 'indeed'</entry>
                     </row>
                     <row>
                         <entry>CLQ</entry>
-                        <entry>indefinite clitic pronoun/quantifier τις/τι, nominative</entry>
+                        <entry>indefinite clitic pronoun/quantifier <link linkend="τις"
+                                >τις/τι</link>, nominative</entry>
                     </row>
                     <row>
                         <entry>CLQ$</entry>
@@ -248,11 +250,12 @@
                     </row>
                     <row>
                         <entry>CLTE</entry>
-                        <entry>conjunctive clitic particle τε</entry>
+                        <entry>conjunctive clitic particle <link linkend="τε">τε</link></entry>
                     </row>
                     <row>
                         <entry>KE</entry>
-                        <entry>modal particle κε(ν)/κα</entry>
+                        <entry>modal particle <link linkend="κε">κε(ν)</link>/<link linkend="κα"
+                                >κα</link></entry>
                     </row>
                 </tbody>
             </tgroup>
@@ -271,17 +274,22 @@
                 <listitem>
                     <para> In the singular and third person plural of the oblique cases (not the
                         genitive in the case of the third plural), the clitic forms of the personal
-                        pronouns—e.g., με, σε, μιν, σφι, σφεας, μου, σου (not a complete list!)—are
-                        tagged CLPRO\$, CLPROA, CLPROD as appropriate. </para>
+                        pronouns—e.g., <link linkend="με">με</link>, <link linkend="σε">σε</link>,
+                            <link linkend="μιν">μιν</link>, <link linkend="σφι">σφι</link>, <link
+                            linkend="σφεας">σφεας</link>, <link linkend="μου">μου</link>, <link
+                            linkend="σου">σου</link> (not a complete list!)—are tagged CLPRO\$,
+                        CLPROA, CLPROD as appropriate. </para>
                 </listitem>
                 <listitem>
                     <para> The second-position sentential particles receive the tag CLPRT. These
                         are: <link linkend="δέ">δέ</link>, <link linkend="δή">δή</link>, <link
                             linkend="πω">πω</link>, <link linkend="οὖν">οὖν</link>, <link
-                            linkend="γάρ">γάρ</link>, <link linkend="μέν">μέν</link>, <link
-                            linkend="νυν">νυν</link>, <link linkend="περ">περ</link>, <link
-                            linkend="τοι">τοι</link>, <link linkend="ἄρα">ἄρα</link>, <link
-                            linkend="ἤ">ἤ</link>, <link linkend="μήν">μήν</link>. </para>
+                            linkend="γάρ">γάρ</link>, <link linkend="μέν">μέν</link>, <link
+                            linkend="νυν">νυν</link>, <link linkend="τοι">τοι</link>, <link
+                            linkend="ἄρα">ἄρα</link>, <link linkend="ἤ">ἤ</link>, <link
+                            linkend="μήν">μήν</link>. Other second-position (but not necessarily
+                        sentential) particles are: <link linkend="περ">περ</link>, <link
+                            linkend="ποτε">ποτε</link></para>
                 </listitem>
                 <listitem>
                     <para> Particles in combination with other particles or other items receive
@@ -315,8 +323,10 @@
             <title>Notes</title>
             <itemizedlist>
                 <listitem>
-                    <para> ὅτι, ἵνα, <link linkend="ὅτε">ὅτε</link>, etc. introducing any kind of
-                        subordinate clause are tagged C. </para>
+                    <para>
+                        <link linkend="ὅτι">ὅτι</link>, <link linkend="ἵνα">ἵνα</link>, <link
+                            linkend="ὅτε">ὅτε</link>, etc. introducing any kind of subordinate
+                        clause are tagged C. </para>
                 </listitem>
                 <listitem>
                     <para>
@@ -363,17 +373,18 @@
                 <listitem>
                     <para> The following items are tagged CONJ when used as coordinating
                         conjunctions: <link linkend="καί">καί</link>, <link linkend="ἤ">ἤ</link>,
-                        ἀλλά, εἴτε. </para>
+                            <link linkend="ἀλλά">ἀλλά</link>, <link linkend="εἴτε">εἴτε</link>.
+                    </para>
                 </listitem>
                 <listitem>
                     <para> The following items contain CONJ as part of a compound tag NEG+CONJ when
-                        used as coordinating conjunctions: οὐδέ, μηδέ. See <xref
-                            linkend="compound_NEG"/>. </para>
+                        used as coordinating conjunctions: <link linkend="οὐδέ">οὐδέ</link>, <link
+                            linkend="μηδέ">μηδέ</link>. See <xref linkend="compound_NEG"/>. </para>
                 </listitem>
                 <listitem>
                     <para> The following items contain CLTE as part of a compound tag NEG+CLTE when
-                        used as coordinating conjunctions: οὔτε, μήτε. See <xref
-                            linkend="compound_NEG"/>. </para>
+                        used as coordinating conjunctions: <link linkend="οὔτε">οὔτε</link>, <link
+                            linkend="μήτε">μήτε</link>. See <xref linkend="compound_NEG"/>. </para>
                 </listitem>
                 <listitem>
                     <para> In cases of correlative conjunction (<xref linkend="correlative_conj"/>),
@@ -439,7 +450,9 @@
             <title>Notes</title>
             <itemizedlist>
                 <listitem>
-                    <para> The following lemmas are tagged with D: ὁ, οὗτος, ἐκεῖνος, ὅδε. </para>
+                    <para> The following lemmas are tagged with D: <link linkend="ὁ">ὁ</link>, <link
+                            linkend="οὗτος">οὗτος</link>, <link linkend="ἐκεῖνος">ἐκεῖνος</link>,
+                            <link linkend="ὅδε">ὅδε</link>. </para>
                 </listitem>
                 <listitem>
                     <para> Demonstratives are always tagged D, regardless of whether they precede a
@@ -602,7 +615,9 @@
                 </listitem>
                 <listitem>
                     <para> When preceding another imperative verb, the following are also tagged as
-                        INTJ: ἄγε, ἄγετε, φέρε, ἴθι. There are no examples of this in the PPCNTG.
+                        INTJ: <link linkend="ἄγε">ἄγε</link>, ἄγετε, <link linkend="φέρε"
+                            >φέρε</link>, <link linkend="ἴθι">ἴθι</link>.
+                        <!-- There are no examples of this in the PPCNTG. -->
                     </para>
                 </listitem>
             </itemizedlist>
@@ -640,26 +655,33 @@
             <itemizedlist>
                 <listitem>
                     <para> The following items contain NEG as part of a compound tag NEG+CONJ when
-                        used as coordinating conjunctions: οὐδέ, μηδέ. </para>
+                        used as coordinating conjunctions: <link linkend="οὐδέ">οὐδέ</link>, <link
+                            linkend="μηδέ">μηδέ</link>. </para>
                 </listitem>
                 <listitem>
                     <para> The following items contain NEG as part of a compound tag NEG+CLTE when
-                        used as coordinating conjunctions: οὔτε, μήτε. </para>
+                        used as coordinating conjunctions: <link linkend="οὔτε">οὔτε</link>, <link
+                            linkend="μήτε">μήτε</link>. </para>
                 </listitem>
                 <listitem>
-                    <para> In addition, the lemmas οὐδείς, μηδείς, οὐδέτερος, and μηδέτερος contain
-                        NEG as part of a compound tag NEG+Q, and words such as οὐκέτι/μηδαμῶς and
-                        οὔποτε/μήποτε are tagged NEG+ADV. </para>
+                    <para> In addition, the lemmas <link linkend="οὐδείς">οὐδείς</link>, <link
+                            linkend="μηδείς">μηδείς</link>, <link linkend="οὐδέτερος"
+                            >οὐδέτερος</link>, and <link linkend="μηδέτερος">μηδέτερος</link>
+                        contain NEG as part of a compound tag NEG+Q, and words such as <link
+                            linkend="οὐκέτι">οὐκέτι</link>, <link linkend="μηδαμῶς">μηδαμῶς</link>
+                        are tagged NEG+ADV, while <link linkend="οὔποτε">οὔποτε</link> and <link
+                            linkend="μήποτε">μήποτε</link> are tagged NEG+CLPRT. </para>
                 </listitem>
                 <listitem>
-                    <para> The lemmas οὐδαμός and μηδαμός contain NEG as part of the compound tag
+                    <para> The lemmas <link linkend="οὐδαμός">οὐδαμός</link> and <link
+                            linkend="μηδαμός">μηδαμός</link> contain NEG as part of the compound tag
                         NEG+ADJ. </para>
                 </listitem>
                 <listitem>
-                    <para>
-                        <emphasis>NB: This is not a complete list of all the lemmas that receive
-                            compound negative tags.</emphasis>
-                    </para>
+                    <important>
+                        <para> This is not a complete list of all the lemmas that receive compound
+                            negative tags. </para>
+                    </important>
                 </listitem>
             </itemizedlist>
         </sect2>
@@ -690,7 +712,8 @@
                     </row>
                     <row>
                         <entry>CLQ</entry>
-                        <entry>indefinite clitic pronoun/quantifier τις/τι, nominative</entry>
+                        <entry>indefinite clitic pronoun/quantifier <link linkend="τις"
+                                >τις/τι</link>, nominative</entry>
                     </row>
                     <row>
                         <entry>CLQ$</entry>
@@ -820,9 +843,9 @@
                         neuter plurals in Classical Greek). </para>
                 </listitem>
                 <listitem>
-                    <para> Collective nouns such as λαός are tagged according to their morphological
-                        number (i.e., N for singular in this case), even if they are construed with
-                        a plural verb. </para>
+                    <para> Collective nouns such as <link linkend="λαός">λαός</link> are tagged
+                        according to their morphological number (i.e., N for singular in this case),
+                        even if they are construed with a plural verb. </para>
                 </listitem>
                 <listitem>
                     <para> In general, forms with an overt adjectival suffix are tagged ADJ even if
@@ -867,7 +890,7 @@
             <itemizedlist>
                 <listitem>
                     <para> All pronouns are tagged PRO except the clitic pronouns (CLPRO) and the
-                        indefinite clitic pronoun τις/τι (CLQ). </para>
+                        indefinite clitic pronoun <link linkend="τις">τις/τι</link> (CLQ). </para>
                 </listitem>
                 <listitem>
                     <para> Reflexive pronouns are tagged with compound tags consisting of a PRO* tag
@@ -883,5 +906,670 @@
                 </listitem>
             </itemizedlist>
         </sect2>
+    </sect1>
+    <sect1 xml:id="ordinal_numbers">
+        <title>Ordinal Numbers</title>
+        <para> See <xref linkend="ordinals"/>
+        </para>
+    </sect1>
+    <sect1 xml:id="particles">
+        <title>Particles (CLPRT, AN, KE, PRTQ, CLGE)</title>
+        <table>
+            <title>Particle Tags</title>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry> Tag </entry>
+                        <entry> Use </entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>AN</entry>
+                        <entry>modal particle <link linkend="ἄν">ἄν</link></entry>
+                    </row>
+                    <row>
+                        <entry>CLGE</entry>
+                        <entry>emphatic clitic particle <link linkend="γε">γε</link></entry>
+                    </row>
+                    <row>
+                        <entry>CLPRT</entry>
+                        <entry>second-position sentential particle or other second-position
+                            particle</entry>
+                    </row>
+                    <row>
+                        <entry>KE</entry>
+                        <entry>modal particle <link linkend="κε">κε(ν)</link>/<link linkend="κα"
+                                >κα</link></entry>
+                    </row>
+                    <row>
+                        <entry>PRTQ</entry>
+                        <entry>interrogative particle (e.g., <link linkend="ἆρα">ἆρα</link>)</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+        <sect2 xml:id="modal_particles">
+            <title>Notes: Modal Particles</title>
+            <itemizedlist>
+                <listitem>
+                    <para> The modal particle ἄν is tagged AN. Its dialectal variants κε(ν) and κα
+                        are tagged KE. </para>
+                </listitem>
+                <listitem>
+                    <para> Words consisting of a complementizer plus the modal particle
+                            ἄν—e.g.,<link linkend="ὅταν">ὅταν</link>—are tagged with the compound
+                        tag C+AN. </para>
+                </listitem>
+            </itemizedlist>
+        </sect2>
+        <sect2 xml:id="CLGE_notes">
+            <title>Notes: CLGE</title>
+            <para> See <xref linkend="CL"/>. </para>
+        </sect2>
+        <sect2 xml:id="CLPRT_notes">
+            <title>Notes: CLPRT</title>
+            <para> See <xref linkend="CL"/>. </para>
+        </sect2>
+        <sect2 xml:id="PRTQ_notes">
+            <title>Notes: PRTQ</title>
+            <itemizedlist>
+                <listitem>
+                    <para> The interrogative particle ἆρα is always tagged PRTQ. </para>
+                </listitem>
+                <listitem>
+                    <para> Other particles such as <link linkend="οὐχί">οὐχί</link> , <link
+                            linkend="μήτι">μήτι</link>, and οὐκοῦν are only tagged PRTQ when they
+                        appear in questions and do not have any of their negative force. </para>
+                </listitem>
+            </itemizedlist>
+        </sect2>
+    </sect1>
+    <sect1 xml:id="P">
+        <title>Prepositions (P)</title>
+        <table>
+            <title>P Tags</title>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry> Tag </entry>
+                        <entry> Use </entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>P</entry>
+                        <entry>preposition</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+        <sect2 xml:id="P_notes">
+            <title>Notes</title>
+            <itemizedlist>
+                <listitem>
+                    <para> Prepositions are tagged P. </para>
+                </listitem>
+                <listitem>
+                    <para> Words traditionally analyzed as adverbs—e.g., <link linkend="ἔξω"
+                            >ἔξω</link>—that take a nominal complement (often in the genitive) are
+                        tagged P when they appear with such complements, ADV otherwise.
+                        <programlisting>
+(NP-SBJ *pro*)
+(VBD-AOR ἐξῆλθεν)
+(PP (P ἔξω)
+    (NP (D$ τῆς) (N$ πόλεως)))
+(PP (P εἰς)
+    (NP (NA Βηθανίαν)))                            
+                        </programlisting>
+                        (Matthew 21.17) </para>
+                </listitem>
+            </itemizedlist>
+        </sect2>
+    </sect1>
+    <sect1 xml:id="punctuation">
+        <title>Punctuation</title>
+        <table>
+            <title>Punctuation Tags</title>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry>Tag</entry>
+                        <entry>Use</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>,</entry>
+                        <entry>sentence-internal punctuation</entry>
+                    </row>
+                    <row>
+                        <entry>.</entry>
+                        <entry>sentence-final punctuation</entry>
+                    </row>
+                    <row>
+                        <entry>"</entry>
+                        <entry>quotation mark</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+        <sect2 xml:id="punctuation_notes">
+            <title>Notes</title>
+            <itemizedlist>
+                <listitem>
+                    <para> Final punctuation indicates the end of a token. Note, however, that
+                        tokens can terminate without any punctuation. </para>
+                </listitem>
+                <listitem>
+                    <para> Question marks (Greek <literal>;</literal>) are tagged as sentence-final
+                        punctuation (usually) or sentence-internal punctuation depending on their
+                        relationships to the end of the token. </para>
+                </listitem>
+                <listitem>
+                    <para> Periods preceding sentence-final quotes are tagged as sentence-final
+                        punctuation. The quotes are tagged as themselves. </para>
+                </listitem>
+                <listitem>
+                    <para> All other sentence punctuation that does not coincide with the end of a
+                        token is tagged with a comma.
+                        <!-- This is not done consistently in the PPCNTG. -->
+                    </para>
+                </listitem>
+                <listitem>
+                    <para> Interpuncts in the original text are represented by interpuncts in the
+                        annotated corpus. By default, they are tagged with '.' but their tags should
+                        be changed to ',' when they do not serve as sentence-final punctuation.
+                        (Note that an interpunct preceding a sentence final quote would count as
+                        sentence-final punctuation.) </para>
+                </listitem>
+                <listitem>
+                    <para> Single and double quotation marks are tagged as double quotes.
+                        Directionality is not preserved. </para>
+                </listitem>
+                <listitem>
+                    <para> Colons are replaced by periods by default, even when sentence-internal,
+                        due to interference with the colon in certain CODE elements, including
+                        chapter and verse markers. </para>
+                </listitem>
+            </itemizedlist>
+        </sect2>
+    </sect1>
+    <sect1 xml:id="Q">
+        <title>Quantifiers (Q)</title>
+        <table>
+            <title>Q Tags</title>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry> Tag </entry>
+                        <entry> Use </entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>Q</entry>
+                        <entry>quantifier, nominative</entry>
+                    </row>
+                    <row>
+                        <entry>Q$</entry>
+                        <entry>quantifier, genitive</entry>
+                    </row>
+                    <row>
+                        <entry>QA</entry>
+                        <entry>quantifier, accusative</entry>
+                    </row>
+                    <row>
+                        <entry>QD</entry>
+                        <entry>quantifier, dative</entry>
+                    </row>
+                    <row>
+                        <entry>QR</entry>
+                        <entry>quantifier, comparative</entry>
+                    </row>
+                    <row>
+                        <entry>QS</entry>
+                        <entry>quantifier, superlative</entry>
+                    </row>
+                    <row>
+                        <entry>QV</entry>
+                        <entry>adverbial quantifier</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+        <sect2 xml:id="Q_notes">
+            <title>Notes</title>
+            <itemizedlist>
+                <listitem>
+                    <para> Words belonging to the following lemmas are usually tagged Q: <link
+                            linkend="πᾶς">πᾶς</link>, <link linkend="ἅπας">ἅπας</link>, <link
+                            linkend="ἀμφότεροι">ἀμφότεροι</link>, <link linkend="ἕκαστος"
+                            >ἕκαστος</link>, <link linkend="μάλιστα">μάλιστα</link>, <link
+                            linkend="μᾶλλον">μᾶλλον</link>, <link linkend="ὀλίγος">ὀλίγος</link>,
+                            <link linkend="πλεῖστος">πλεῖστος</link>, <link linkend="πολύς"
+                            >πολύς</link>, <link linkend="σύμπας">σύμπας</link>, <link
+                            linkend="τοσοῦτοι">τοσοῦτοι</link>. </para>
+                </listitem>
+                <listitem>
+                    <para> The word <emphasis>half</emphasis> is tagged Q when it acts adverbially
+                        (roughly comparable to <emphasis>partially</emphasis>) or when it precedes a
+                        determiner.
+                        <!-- There doesn’t appear to be an example of this in the PPCNTG. -->
+                    </para>
+                </listitem>
+                <listitem>
+                    <para> Words containing the negative οὐ or μή are tagged with the compound tag
+                        NEG+Q. See <xref linkend="compound_NEG"/>. </para>
+                </listitem>
+            </itemizedlist>
+        </sect2>
+    </sect1>
+    <sect1 xml:id="subordinating_conjunctions">
+        <title>Subordinating Conjunctions</title>
+        <para> See <xref linkend="C"/>. </para>
+    </sect1>
+    <sect1 xml:id="VB_BE">
+        <title>Verbs (VB*, BE*)</title>
+        <table>
+            <title>VB* and BE* Tags</title>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry> Tag </entry>
+                        <entry> Use </entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>BED</entry>
+                        <entry><link linkend="εἰμί">εἰμί</link>, secondary sequence</entry>
+                    </row>
+                    <row>
+                        <entry>BEI</entry>
+                        <entry>εἰμί, imperative</entry>
+                    </row>
+                    <row>
+                        <entry>BEN</entry>
+                        <entry>εἰμί, infinitive</entry>
+                    </row>
+                    <row>
+                        <entry>BEO</entry>
+                        <entry>εἰμί, optative</entry>
+                    </row>
+                    <row>
+                        <entry>BEP</entry>
+                        <entry>εἰμί, primary sequence</entry>
+                    </row>
+                    <row>
+                        <entry>BES</entry>
+                        <entry>εἰμί, subjunctive</entry>
+                    </row>
+                    <row>
+                        <entry>BPR</entry>
+                        <entry>εἰμί, participle</entry>
+                    </row>
+                    <row>
+                        <entry>VBD</entry>
+                        <entry>verb, active secondary sequence (imperfect, aorist,
+                            plurperfect)</entry>
+                    </row>
+                    <row>
+                        <entry>VBDP</entry>
+                        <entry>verb, middle/passive secondary sequence (imperfect, aorist,
+                            pluperfect)</entry>
+                    </row>
+                    <row>
+                        <entry>VBI</entry>
+                        <entry>verb, active imperative</entry>
+                    </row>
+                    <row>
+                        <entry>VBIP</entry>
+                        <entry>verb, middle/passive imperative</entry>
+                    </row>
+                    <row>
+                        <entry>VBN</entry>
+                        <entry>verb, active infinitive</entry>
+                    </row>
+                    <row>
+                        <entry>VBNP</entry>
+                        <entry>verb, middle/passive infinitive</entry>
+                    </row>
+                    <row>
+                        <entry>VBO</entry>
+                        <entry>verb, active optative</entry>
+                    </row>
+                    <row>
+                        <entry>VBOP</entry>
+                        <entry>verb, middle/passive optative</entry>
+                    </row>
+                    <row>
+                        <entry>VBP</entry>
+                        <entry>verb, active primary sequence (present, future, perfect)</entry>
+                    </row>
+                    <row>
+                        <entry>VBPP</entry>
+                        <entry>verb, middle/passive primary sequence (present, future,
+                            perfect)</entry>
+                    </row>
+                    <row>
+                        <entry>VBS</entry>
+                        <entry>verb, active subjunctive</entry>
+                    </row>
+                    <row>
+                        <entry>VBSP</entry>
+                        <entry>verb, middle/passive subjunctive</entry>
+                    </row>
+                    <row>
+                        <entry>VPR</entry>
+                        <entry>verb, active participle, nominative</entry>
+                    </row>
+                    <row>
+                        <entry>VPR$</entry>
+                        <entry>verb, active participle, genitive</entry>
+                    </row>
+                    <row>
+                        <entry>VPRA</entry>
+                        <entry>verb, active participle, accusative</entry>
+                    </row>
+                    <row>
+                        <entry>VPRD</entry>
+                        <entry>verb, active participle, dative</entry>
+                    </row>
+                    <row>
+                        <entry>VPRP</entry>
+                        <entry>verb, middle/passive participle, nominative</entry>
+                    </row>
+                    <row>
+                        <entry>VPRP$</entry>
+                        <entry>verb, middle/passive participle, genitive</entry>
+                    </row>
+                    <row>
+                        <entry>VPRPA</entry>
+                        <entry>verb, middle/passive participle, accusative</entry>
+                    </row>
+                    <row>
+                        <entry>VPRPD</entry>
+                        <entry>verb, middle/passive participle, dative</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+        <table>
+            <title>Extended Verbal Dash Tags</title>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry> Tag </entry>
+                        <entry> Use </entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>-AOR</entry>
+                        <entry>aorist (perfective aspect)</entry>
+                    </row>
+                    <row>
+                        <entry>-FUT</entry>
+                        <entry>future</entry>
+                    </row>
+                    <row>
+                        <entry>-IMPF</entry>
+                        <entry>imperfective aspect</entry>
+                    </row>
+                    <row>
+                        <entry>-IND</entry>
+                        <entry>marks optatives replacing indicatives in secondary sequence</entry>
+                    </row>
+                    <row>
+                        <entry>-KJV</entry>
+                        <entry>marks optatives replacing subjunctives in secondary sequence</entry>
+                    </row>
+                    <row>
+                        <entry>-PASS</entry>
+                        <entry><emphasis>syntactic</emphasis> passive (not middle!)</entry>
+                    </row>
+                    <row>
+                        <entry>-PRF</entry>
+                        <entry>perfect aspect</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+        <sect2 xml:id="VB_BE_notes">
+            <title>Notes</title>
+            <itemizedlist>
+                <listitem>
+                    <para> The forms of the verb εἰμί are distinguished from all other verbs, but no
+                        distinction is made in the tag between auxiliary and main verb uses. In the
+                        syntactically annotated (parsed) files, auxiliary forms of εἰμί can be
+                        distinguished from main verb forms by the presence of a participle in the
+                        clause. </para>
+                </listitem>
+                <listitem>
+                    <para> Modals are not at present distinguished from other verbs. </para>
+                </listitem>
+                <listitem>
+                    <para> All participles get *PR(P) tags regardless of whether the participle is
+                        being used attributively (i.e., adjectivally) or not. Attributive versus
+                        circumstantial use is distinguished in the syntactic annotation: see <xref
+                            linkend="RRC"/>, <xref linkend="IP-PPL"/>. </para>
+                </listitem>
+                <listitem>
+                    <para> Middle and passive verbs both receive the *P tags. Even when a middle
+                        verb has active syntax—i.e., it takes a direct object in the accusative—it
+                        still receives the *P tag. </para>
+                </listitem>
+                <listitem>
+                    <para>Syntactically passive verbs—that is, verbs that are passive with respect
+                        to their syntax, regardless of whether they are ambiguously middle/passive
+                        or unambiguously passive with respect to their morphology—receive the -PASS
+                        dash tag. </para>
+                </listitem>
+                <listitem>
+                    <para> Future verbs receive the -FUT dash tag, which extends a VBP* base POS
+                        tag. A dash tag was chosen to represent future rather than an additional
+                        base POS tag (e.g., VBF/VBFP) because of the existence of future
+                        infinitives, future participles, and future optatives, which would be
+                        impossible to distinguish otherwise. </para>
+                </listitem>
+                <listitem>
+                    <para> Note that the existence of future perfect passive verbs in Greek forces
+                        the possibility of a verb's having up to three dash tags: VBPP-FUT-PRF-PASS.
+                        In cases of two or three verbal dash tags, the tags should be applied in the
+                        order tense-aspect-voice. </para>
+                </listitem>
+                <listitem>
+                    <para> Subjunctives and optatives are distinguished from indicative verb forms.
+                        Optatives in 2◦ secondary representing original indicatives receive the -IND
+                        dash tag, while optatives in 2◦ sequence representing original subjunctives
+                        receive the -KJV dash tag. </para>
+                </listitem>
+                <listitem>
+                    <para> Aspect is indicated on verbs with the dash tags -IMPF (= imperfective,
+                        includes the imperfect tense, present subjunctive, etc.), -AOR (=
+                        aorist/perfective, includes the aorist indicative, aorist subjunctive,
+                        etc.), and -PRF (= perfect, includes the present perfect, pluperfect, etc.).
+                    </para>
+                </listitem>
+                <listitem>
+                    <para> Only voice, aspect, and tense, but not number or gender, are
+                        distinguished on participles. </para>
+                </listitem>
+            </itemizedlist>
+        </sect2>
+    </sect1>
+    <sect1 xml:id="W">
+        <title>Wh- Words (W)</title>
+        <table>
+            <title>W Tags</title>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry> Tag </entry>
+                        <entry> Use </entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>WADJ</entry>
+                        <entry>wh-adjective, nominative</entry>
+                    </row>
+                    <row>
+                        <entry>WADJ$</entry>
+                        <entry>wh-adjective, genitive</entry>
+                    </row>
+                    <row>
+                        <entry>WADJA</entry>
+                        <entry>wh-adjective, accusative</entry>
+                    </row>
+                    <row>
+                        <entry>WADJD</entry>
+                        <entry>wh-adjective, dative</entry>
+                    </row>
+                    <row>
+                        <entry>WADV</entry>
+                        <entry>wh-adverb</entry>
+                    </row>
+                    <row>
+                        <entry>WD</entry>
+                        <entry>wh-determiner, nominative</entry>
+                    </row>
+                    <row>
+                        <entry>WD$</entry>
+                        <entry>wh-determiner, genitive</entry>
+                    </row>
+                    <row>
+                        <entry>WDA</entry>
+                        <entry>wh-determiner, accusative</entry>
+                    </row>
+                    <row>
+                        <entry>WDD</entry>
+                        <entry>wh-determiner, dative</entry>
+                    </row>
+                    <row>
+                        <entry>WP</entry>
+                        <entry>preposition in a wh- phrase</entry>
+                    </row>
+                    <row>
+                        <entry>WPRO</entry>
+                        <entry>wh-pronoun, nominative</entry>
+                    </row>
+                    <row>
+                        <entry>WPRO$</entry>
+                        <entry>wh-pronoun, genitive</entry>
+                    </row>
+                    <row>
+                        <entry>WPROA</entry>
+                        <entry>wh-pronoun, accusative</entry>
+                    </row>
+                    <row>
+                        <entry>WPROD</entry>
+                        <entry>wh-pronoun, dative</entry>
+                    </row>
+                    <row>
+                        <entry>WQ</entry>
+                        <entry><link linkend="εἰ">εἰ</link> in the meaning 'whether' introducing an
+                            indirect question</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+        <sect2 xml:id="W_notes">
+            <title>Notes</title>
+            <itemizedlist>
+                <listitem>
+                    <para> Wh- words that are used as interjections are tagged with the appropriate
+                        POS tag (not as INTJ). Their function is indicated at the phrasal level; see
+                            <xref linkend="INTJ"/>. </para>
+                </listitem>
+                <listitem>
+                    <para> Wh- adverbs (<link linkend="πῶς">πῶς</link>, <link linkend="πότε"
+                            >πότε</link>, <link linkend="ποῦ">ποῦ</link>, <link linkend="πόθεν"
+                            >πόθεν</link>, etc. including ὅ-variants) are tagged WADV. </para>
+                </listitem>
+                <listitem>
+                    <para> Compound wh- words receive compound tags. For example, <link
+                            linkend="ἵνατί">ἵνατί</link> receives the compound tag WADV+CLQA.
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <link linkend="τίς">τίς</link>, <link linkend="ὅς">ὅς</link>, and <link
+                            linkend="ποῖος">ποῖος</link> are tagged WD when not acting as the head
+                        of a wh- noun phrase, and as WPRO otherwise. Note the difference in this
+                        regard between wh- words and ordinary determiners, which are tagged as
+                        determiners invariably. See <xref linkend="D_notes"/> for details and
+                        examples. </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <link linkend="ὅστις">ὅστις</link> is tagged WPRO+CLQ. </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <link linkend="ὅτε">ὅτε</link> is tagged C when introducing adverbial
+                        clauses and as WADV when introducing questions (including indirect
+                        questions) or relative clauses. Ambiguous cases are taken as the wh- word.
+                    </para>
+                </listitem>
+                <listitem>
+                    <para> Quantificational interrogative/relative adjectives such as <link
+                            linkend="πόσος">πόσος</link> ‘how many’ are tagged WADJ. </para>
+                </listitem>
+            </itemizedlist>
+        </sect2>
+    </sect1>
+    <sect1 xml:id="compound_tags">
+        <title>Compound Tags</title>
+        <para>There are several instances requiring compound tags: <itemizedlist>
+                <listitem>
+                    <important>
+                        <para> In general, + is used to segment compound words that have become
+                            fixed lexical items, while - is used to segment clusters of clitic
+                            particles. </para>
+                    </important>
+                </listitem>
+                <listitem>
+                    <para> Crasis is <emphasis>not</emphasis> represented with compound tags but
+                        rather by breaking up the words joined under crasis, appending $ to the end
+                        of the left word and $ to the right of the right word. For example, <link
+                            linkend="κἀγώ">κἀγώ</link>, the crasis of καὶ ἐγώ, is represented as
+                        follows:
+                        <programlisting>
+(NODE (CONJ κἀ$)
+      (PRO $γώ))
+                    </programlisting>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para> Compound negatives: NEG+Q, NEG+ADV, etc. See <xref linkend="compound_NEG"
+                        />. </para>
+                </listitem>
+                <listitem>
+                    <para> Combinations of relative/interrogative pronouns with the indefinitive
+                        pronoun <link linkend="τις">τις/τι</link>—e.g., <link linkend="ὅστις"
+                            >ὅστις</link> is tagged WPRO+CLQ. </para>
+                </listitem>
+                <listitem>
+                    <para> Complementizers combined with the modal particle ἄν: C+PRTG. See <xref
+                            linkend="modal_particles"/>. </para>
+                </listitem>
+                <listitem>
+                    <para> Second-position sentential particles combined with other elements: <itemizedlist>
+                            <listitem>
+                                <para> CONJ-CLPRT </para>
+                            </listitem>
+                            <listitem>
+                                <para> CLPRT-CLPRT </para>
+                            </listitem>
+                        </itemizedlist> See <xref linkend="CL_notes"/> and <xref
+                            linkend="compound_NEG"/>. </para>
+                </listitem>
+                <listitem>
+                    <para> </para>
+                </listitem>
+            </itemizedlist>
+        </para>
     </sect1>
 </chapter>

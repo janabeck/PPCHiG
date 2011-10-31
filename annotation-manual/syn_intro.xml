@@ -3,9 +3,836 @@
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="syn_intro">
     <title>Introduction</title>
-    <sect1>
-        <title></title>
-        <para></para>
+    <para> The parsing scheme for the PPCHiG, which is also used by the <link
+            xlink:href="Penn Parsed Corpora of Historical English">Penn Parsed Corpora of Historical
+            English</link>, uses a limited tree representation in the form of labeled parentheses.
+        All open parentheses have an associated label, either a phrase label (NP, ADJP, etc.) or a
+        word label (N, ADJ, etc.), representing nodes in a tree. We use the terms `word label' and
+        `POS (part-of-speech) label' interchangeably. A word label is associated with every word,
+        but phrasal labels are not included in every case in which a fully labeled tree would
+        require them. Intermediate projections in the sense of X' theory (N', ADJ', etc.) are not
+        generally included in our representations. By comparison to trees in current syntactic
+        theory, the trees in our corpora are therefore quite flat, and they are not required to be
+        binary-branching. </para>
+    <para> The partial representation of phrase structure in our corpora is not intended to make a
+        theoretical statement, but was adopted for practical reasons. Certain phrases are generally
+        omitted in the annotation scheme because their boundaries are too difficult to define. The
+        prime example is VP. The problematic character of VP is particularly obvious in early Middle
+        English, where the order of the verb and its complements is in flux (at least on the
+        surface). But even in Present-Day English, the attachment site of verbal adjuncts is
+        systematically ambiguous between low attachment to VP and high attachment at the clause
+        level. Other categories, such as DP, were omitted because the cost of including them
+        outweighs their usefulness. Intermediate projections are omitted for both reasons. In no
+        case should the lack of any particular phrase label be taken to imply that earlier forms of
+        Greek failed to include the corresponding syntactic category. The trees in the corpora are
+        simply underspecified. </para>
+    <para> The examples in this section of the manual are constructed in Modern English so as to be
+        maximally accessible. The remainder of the manual contains examples from the corpora. The
+        examples are mostly from New Testament Greek (NTG); examples from Herodotus and Homer will
+        be added later. </para>
+    <sect1 xml:id="syn_general_principles">
+        <title>General Principles</title>
+        <para> As just mentioned, the structures in our corpora generally include neither a VP nor
+            intermediate projections like I'. As a result, IP immediately dominates all verbs (to be
+            understood in a broad sense, including modals and auxiliaries) and sentence-level
+            constituents. A typical parse structure is the following:
+            <programlisting>
+(IP-MAT (NP-SBJ (NPR Mary))
+        (HVP has)
+        (BEN been)
+        (VAG meaning)
+        (IP-INF (TO to)
+                (VB go))
+        (PP (P for)
+            (NP (D a) (N week)))))                
+            </programlisting>
+        </para>
+        <sect2 xml:id="dash_tags">
+            <title>Dash Tags</title>
+            <itemizedlist>
+                <listitem>
+                    <para>
+                        <emphasis>Dash tags indicate syntactic subcategory or function.</emphasis>
+                        In general, phrase labels indicate a constituent's category (NP, PP, ADJP,
+                        etc.). Additional labels (so-called dash tags), which are separated from the
+                        category label by a hyphen, indicate subcategory or function: <itemizedlist>
+                            <listitem>
+                                <para> NP-SBJ (subject noun phrase) </para>
+                            </listitem>
+                            <listitem>
+                                <para> ADJP-SPR (secondary predicate adjective phrase) </para>
+                            </listitem>
+                            <listitem>
+                                <para> PP-PRN (parenthetical prepositional phrase) </para>
+                            </listitem>
+                        </itemizedlist>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <emphasis>All clause labels carry a dash tag.</emphasis> Not all phrases are
+                        labeled with a dash tag, and more than one such tag is possible (IP-INF-PRP
+                        = purpose infinitive, NP-SBJ-RSP = resumptive subject noun phrase, etc.).
+                        See <xref linkend="internal_clauses"/> for further basic information and
+                            <xref linkend="subordinate_clauses"/> for detailed discussion. </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <emphasis>All sentence-level NPs carry a dash tag.</emphasis> Bare NPs are
+                        either complements of a nonverbal head (e.g., a preposition), or part of a
+                            <link linkend="conjunction">conjunction structure</link>.
+                        <programlisting>
+(IP-MAT (NP-TMP (N Yesterday))          ← temporal NP
+        (NP-SBJ (NPR Mary))             ← subject
+        (VBD told)
+        (NP-OB2 (NPR Jane))             ← second object
+        (CP-THT (C that)
+                (IP-SUB (NP-SBJ (PRO she))
+                        (VBD studied)
+                        (NP-MSR (QP (ADVR too) (Q much)))   ← measure NP
+                        (PP (P during)
+                            (NP (D the) (N+N weekend))))))  ← no dash tag    
+                        </programlisting>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <emphasis>ADVPs are marked for function as directional (ADVP-DIR), locative
+                            (ADVP-LOC), or temporal (ADVP-TMP).</emphasis> Other functions are
+                        unmarked.
+                        <programlisting>
+(IP-MAT (NP-SBJ (NPR Mary))
+        (ADVP (ADV happily))
+        (VBD put)
+        (NP-OB1 (D the) (N book))
+        (ADVP-LOC (ADV there))
+        (ADVP-TMP (ADV+WARD afterward)))                            
+                        </programlisting>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <emphasis>PPs are not marked for function.</emphasis> However, parenthetical
+                        PPs are possible.
+                        <programlisting>
+(IP-MAT (NP-SBJ (NPR Mary))
+        (VBD put)
+        (NP-OB1 (D the) (N book))
+        (PP (P on)
+            (NP (D the) (N table)))
+        (PP (P on)
+            (NP (NPR Saturday))))                            
+                        </programlisting>
+                    </para>
+                </listitem>
+            </itemizedlist>
+        </sect2>
+        <sect2 xml:id="structural_principles">
+            <title>Structural Principles</title>
+            <itemizedlist>
+                <listitem>
+                    <para>
+                        <emphasis>Sentence-level constituents bear phrasal labels.</emphasis>
+                        <caution>
+                            <para> Exception: IP can immediately dominate the following word-level
+                                constituents: <itemizedlist>
+                                    <listitem>
+                                        <para> verbal material (auxiliaries, modals, verbs,
+                                            participles) </para>
+                                    </listitem>
+                                    <listitem>
+                                        <para> sentential conjunctions (CONJ0) </para>
+                                    </listitem>
+                                    <listitem>
+                                        <para> single-word interjections (INTJ) </para>
+                                    </listitem>
+                                    <listitem>
+                                        <para> sentential negation (NEG) </para>
+                                    </listitem>
+                                    <listitem>
+                                        <para> floated quantifiers (Q*) </para>
+                                    </listitem>
+                                    <listitem>
+                                        <para> particles (AN, CLGE, CLPRT, KE, PRTQ) </para>
+                                    </listitem>
+                                    <listitem>
+                                        <para> word-level constituents indexed with an *ICH*-trace
+                                        </para>
+                                    </listitem>
+                                </itemizedlist>
+                            </para>
+                        </caution>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <emphasis>In general, no intermediate projections.</emphasis> Intermediate
+                        projections (N', ADJ', etc.) are represented only in certain <link
+                            linkend="conjunction">conjunction structures</link> and <link
+                            xml:id="default_leftward">situations involving movement</link>. The
+                        absence of intermediate projections has several consequences: <itemizedlist>
+                            <listitem>
+                                <para> Within phrasal constituents, the phrasal node generally
+                                    immediately dominates the head.
+                                    <programlisting>
+(NP (D the) (N girl))
+
+(PP (P in)
+    (NP (D the) (N spring)))
+
+(ADJP (ADV very) (ADJ big))                                        
+                                    </programlisting>
+                                </para>
+                            </listitem>
+                            <listitem>
+                                <para> Specifiers are not distinguished from pre-head modifiers.
+                                </para>
+                            </listitem>
+                            <listitem>
+                                <para> Adjuncts are never distinguished from complements in
+                                    structural terms. They may be distinguished by the presence of
+                                    dash tags. </para>
+                            </listitem>
+                        </itemizedlist>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para> Single words that are not sentence-level constituents do not project
+                        phrasal nodes if the phrasal node would share the same category as the head.
+                        <programlisting>
+(NP (D a) (ADJ big) (N cat))            ← single-word case
+
+(NP (D a)
+    (ADJP (ADV very) (ADJ big))         ← multi-word case
+    (N cat))                            
+                        </programlisting>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <caution>
+                            <para> Exception: In the PPCHiG, post-head modifiers <emphasis>do
+                                    not</emphasis> project structure beyond the word level unless
+                                they consist of of more than one word; this marks a departure from
+                                the guidelines for the English corpora. Like pre-head modifiers,
+                                they are represented as sisters to the head, except for attributive
+                                participles, which are always given the RRC label.
+                                <programlisting>
+(NP (ADJ various) (ADJ black) (NS cats))
+
+(NP (ADJ black) (NS cats) (ADJ galore))
+
+(NP (D a)
+    (RRC (VAN forsaken))
+    (N castle))
+
+(NP (D an) (N castle)
+    (RRC (VAN forsaken))                ← RRC = reduced relative clause                                    
+                                </programlisting>
+                            </para>
+                        </caution>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <emphasis>Default high attachment.</emphasis> In cases where the attachment
+                        level of constituents is ambiguous or difficult to determine, the default is
+                        to attach as high as possible.
+                        <programlisting>
+(IP-MAT (NP-SBJ (NPR Mary))
+        (VBD saw)
+        (NP-OB1 (D the) (N man))
+        (PP (P with)                    ← high by default
+            (NP (D the) (N telescope))))
+
+(NP (D the)
+    (N story)
+    (CP-REL (WNP-1 0)
+            (C that)
+            (IP-SUB (NP-ACC *T*-1)
+                    (NP-SBJ (PRO they))
+                    (VBP tell)))
+    (PP (P about)                       ← high by default
+        (NP (PRO the)
+            (N king))))
+(NP (D the)
+    (N story)
+    (RRC (BAG being)
+         (VAN told))
+    (PP (P about)                       ← high by default
+        (NP (PRO the)
+            (N king))))                            
+                        </programlisting>
+                    </para>
+                </listitem>
+            </itemizedlist>
+        </sect2>
+    </sect1>
+    <sect1 xml:id="internal_phrases">
+        <title>Internal Structure of Phrases</title>
+        <para> The internal structure of all non-clausal phrases is fundamentally similar. <itemizedlist>
+                <listitem>
+                    <para> Heads project a phrasal node. <caution>
+                            <para> Exception 1: Certain heads, such as determiners (D) and particles
+                                (CLPRT, PRT), never project a phrase. Verbs do not project a VP.
+                            </para>
+                        </caution>
+                        <caution>
+                            <para> Exception 2: Single-word pre-head and post-head modifiers do not
+                                project a phrasal node if the phrasal node would share the same
+                                category as the head. </para>
+                        </caution>
+                        <programlisting>
+(NP (D the) (NS girls)
+    (PP (P on)
+        (NP (D the) (N beach))))
+
+(NP (Q many) (ADJ happy) (NS girls)     ← two single-word pre-head modifiers
+    (PP (P on)
+        (NP (D the) (VAN overcrowded) (N beach))))
+
+(NP (ADJP (ADJ happy) (CONJ and) (VAN excited))   ← multi-word pre-head modifier
+    (NS girls))
+
+(NP (Q many)                            ← single-word pre-head modifier
+    (ADJP (ADV very) (ADJ happy))       ← multi-word pre-head modifier
+    (NS girls)
+    (PP (P on)
+        (NP (D the) (VAN overcrowded) (N beach))))
+
+(NP (QP (ADV very) (Q many))            ← multi-word pre-head modifier
+    (ADJP (ADV very) (ADJ happy))       ← multi-word pre-head modifier
+    (NS girls)
+    (PP (P on)                          ← post-head modifier
+        (NP (D the) (N beach)
+            (PP (P with)
+                (NP (D the) (ADJ big) (NS dunes))))))
+
+(ADJP (ADV very) (ADJ happy))	        ← single-word pre-head modifier
+
+(PP (ADV especially)		        ← single-word pre-head modifier
+    (P on)
+    (NP (NPRS Saturdays)))
+
+(PP (ADV right)			        ← single-word pre-head modifier
+    (P up)
+    (NP (D the) (N street)))
+
+(ADVP (ADV very) (ADV slowly))          ← single-word pre-head modifier
+
+(NP-PRD (NS γενεαὶ) (NUM δεκατέσσαρες)) ← single-word post-head modifier                            
+                        </programlisting>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para> In general, the head of a phrase is overt and matches the category of the
+                        phrase, but in certain cases, there is no matching head. Sometimes, this is
+                        simply an artifact of our annotation scheme and due to the fact that some
+                        words receive a more specific label than others. For instance, pronouns are
+                        labeled PRO, not D or N. In other instances, the absence of an overt head
+                        reflects the possibility of some deletion process. The most common type of
+                        categorial mismatch between heads and phrases is nominal elements not
+                        labeled N, NS, etc.: PRO, CLPRO, CLQ(?), D(?), Q(?). As indicated by the
+                        question marks in the above list, it is not always clear whether a
+                        particular word modifies an elided head or is itself the head of the phrase.
+                        It is mainly for this reason that we do not attempt to make a systematic
+                        distinction between the two cases. The most common elision case is of NPs
+                        containing only a determiner and an adjective (or sometimes only an
+                        adjective).
+                        <programlisting>
+(IP-MAT (IP-MAT-1 (NP-SBJ (NPR Mary))
+                  (VBD gave)
+                  (NP-OB2 (NPR Jane))
+                  (NP-OB1 (D a) (ADJ red) (N ribbon)))
+        (CONJP (CONJ and)
+               (IP-MAT=1 (NP-OB2 (NPR Lucy))
+                         (NP-OB1 (D a) (ADJ blue)))))   ← elided head noun                            
+                        </programlisting>
+                    </para>
+                </listitem>
+            </itemizedlist>
+        </para>
+    </sect1>
+    <sect1 xml:id="internal_clauses">
+        <title>Internal Structure of Clauses</title>
+        <para> Clauses are labeled either CP or IP. CPs contain either a complementizer or a wh-
+            position (or both). IPs contain neither. All IPs and CPs carry dash tags indicating
+            their subtype, as follows. </para>
+        <table>
+            <title>Common IP-Dash Tag Combinations</title>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry>Phrase Level</entry>
+                        <entry>Use</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>IP-IMP</entry>
+                        <entry>imperative</entry>
+                    </row>
+                    <row>
+                        <entry>IP-INF</entry>
+                        <entry>infinitive</entry>
+                    </row>
+                    <row>
+                        <entry>IP-INF-COM</entry>
+                        <entry>complementary infinitive (control, ECM)</entry>
+                    </row>
+                    <row>
+                        <entry>IP-INF-IMP</entry>
+                        <entry>infinitive used as imperative</entry>
+                    </row>
+                    <row>
+                        <entry>IP-INF-PRP</entry>
+                        <entry>purpose infinitive</entry>
+                    </row>
+                    <row>
+                        <entry>IP-INF-SBJ</entry>
+                        <entry>subject infinitive</entry>
+                    </row>
+                    <row>
+                        <entry>IP-INF-THT</entry>
+                        <entry>infinitive of indirect discourse</entry>
+                    </row>
+                    <row>
+                        <entry>IP-MAT</entry>
+                        <entry>declarative matrix IP</entry>
+                    </row>
+                    <row>
+                        <entry>IP-PPL</entry>
+                        <entry>participial clause</entry>
+                    </row>
+                    <row>
+                        <entry>IP-ABS</entry>
+                        <entry>absolute clause, including genitive absolute</entry>
+                    </row>
+                    <row>
+                        <entry>IP-PPL-COM</entry>
+                        <entry>supplementary participle (with certain verbs)</entry>
+                    </row>
+                    <row>
+                        <entry>IP-PPL-THT</entry>
+                        <entry>participial clause of indirect discourse</entry>
+                    </row>
+                    <row>
+                        <entry>IP-SMC</entry>
+                        <entry>small clause</entry>
+                    </row>
+                    <row>
+                        <entry>IP-SUB</entry>
+                        <entry>subordinate clause</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+        <table>
+            <title>Common CP-Dash Tag Combinations</title>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry>Phrase Level</entry>
+                        <entry>Use</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>CP-ADV</entry>
+                        <entry>adverbial clause</entry>
+                    </row>
+                    <row>
+                        <entry>CP-CAR</entry>
+                        <entry>clause-adjoined relative</entry>
+                    </row>
+                    <row>
+                        <entry>CP-COM</entry>
+                        <entry>non-indicative complement clause</entry>
+                    </row>
+                    <row>
+                        <entry>CP-CMP</entry>
+                        <entry>comparative clause</entry>
+                    </row>
+                    <row>
+                        <entry>CP-DEG</entry>
+                        <entry>degree complement clause</entry>
+                    </row>
+                    <row>
+                        <entry>CP-EOP</entry>
+                        <entry>empty operator CP</entry>
+                    </row>
+                    <row>
+                        <entry>CP-EXL</entry>
+                        <entry>exclamative clause</entry>
+                    </row>
+                    <row>
+                        <entry>CP-FRL</entry>
+                        <entry>free relative clause</entry>
+                    </row>
+                    <row>
+                        <entry>CP-QUE</entry>
+                        <entry>direct or indirect question</entry>
+                    </row>
+                    <row>
+                        <entry>CP-REL</entry>
+                        <entry>relative clause</entry>
+                    </row>
+                    <row>
+                        <entry>CP-THT</entry>
+                        <entry>indicative complement clause</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+        <sect2 xml:id="IPs">
+            <title>IPs</title>
+            <para> All IPs except subjectless imperatives and <link linkend="IP-INF">subjectless
+                    infinitives</link> have a subject in our annotation scheme. If the subject is
+                not overt, an empty subject is added. Clauses do not contain VP. As a rule,
+                daughters of IP are phrasal (but see <xref linkend="internal_phrases"/> for
+                exceptions).
+                <programlisting>
+(IP-MAT (CONJ0 But)                      ← sentential conjunction
+        (INTJ alas)                     ← single-word interjection
+        (, ,)
+        (NP-SBJ (PRO we))
+        (MD will)                       ← modal
+        (NEG not)                       ← negation
+        (Q all)                         ← floated quantifier
+        (VB end)                        ← verb
+        (RP up))                        ← particle
+        (PP (P with)
+            (NP-OB1 (PRO$ our) (N favorite)))
+        (. .))                    
+                </programlisting>
+            </para>
+        </sect2>
+        <sect2 xml:id="imperatives">
+            <title>Imperatives</title>
+            <para> Imperatives are labeled IP-IMP. Only overt subjects are included in the
+                annotation. <itemizedlist>
+                    <listitem>
+                        <para> No overt subject:
+                            <programlisting>
+(IP-IMP (VBI-IMPF ὕπαγε)
+        (PP (P εἰς)
+            (NP (DA τὸν)
+                (NA οἶκόν)
+                (NP-ATR (CLPRO$ σου)))))                                
+                            </programlisting>
+                            (Matthew 9.6) </para>
+                    </listitem>
+                    <listitem>
+                        <para> Overt subject:
+                            <programlisting>
+(IP-IMP (VBI-AOR ἐλθάτω)
+        (NP-SBJ (D ἡ)                   ← overt subject
+                (N βασιλεία)
+                (NP-ATR (CLPRO$ σου)))))                                
+                            </programlisting>
+                            (Matthew 6.10) </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </sect2>
+        <sect2 xml:id="non_wh_CPs">
+            <title>Non-wh CPs</title>
+            <para> Indicative complement clauses (CP-THT), non-indicative complement clauses
+                (CP-COM), degree complements (CP-DEG), and certain adverbial clauses (CP-ADV) have
+                the following basic structure:
+                <programlisting>
+(CP (C {word, 0})
+    (IP ...))                    
+                </programlisting>
+                The complementizer position is always included; when not filled by an overt
+                complementizer, it contains 0 (zero). <itemizedlist>
+                    <listitem>
+                        <para> Overt complementizer:
+                            <programlisting>
+(CP-THT (C ὅτι)                         ← overt complementizer
+        (IP-SUB (NP-SBJ (N Ἰωάνης))
+                (VBDP-AOR-PASS παρεδόθη))))                                
+                            </programlisting>
+                            (Matthew 4.12) </para>
+                    </listitem>
+                    <listitem>
+                        <para> No overt complementizer:
+                            <programlisting>
+(IP-SUB (NP-SBJ *pro*)
+        (VBP-PRF οἴδατε)
+        (CP-THT (C 0)                   ← null complementizer
+                (IP-SUB (NP-SBJ *T*-1)
+                        (VBD-AOR ἐστερέωσεν)))) (Acts 3.16)                                
+                            </programlisting>
+                        </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </sect2>
+        <sect2 xml:id="wh_CPs">
+            <title>Wh- CPs</title>
+            <para> A number of clause types, listed below, contain both a wh- position and a
+                complementizer position. This is to allow for the case in which both positions are
+                filled. Empty wh- positions and empty complementizers are both indicated by 0
+                (zero). The wh- operator is coindexed to a trace of the same category. See <xref
+                    linkend="wh_movement"/> and <xref linkend="position_traces"/> for details. <itemizedlist>
+                    <listitem>
+                        <para> certain adverbial clauses (CP-ADV) </para>
+                    </listitem>
+                    <listitem>
+                        <para> clause-adjoined relatives (CP-CAR) </para>
+                    </listitem>
+                    <listitem>
+                        <para> comparative clauses (CP-CMP) </para>
+                    </listitem>
+                    <listitem>
+                        <para> exclamatives (CP-EXL) </para>
+                    </listitem>
+                    <listitem>
+                        <para> free relatives (CP-FRL) </para>
+                    </listitem>
+                    <listitem>
+                        <para> questions (CP-QUE) </para>
+                    </listitem>
+                    <listitem>
+                        <para> relative clauses (CP-REL) </para>
+                    </listitem>
+                </itemizedlist>
+                <itemizedlist>
+                    <listitem>
+                        <para> Both wh- and complementizer positions filled (possibly restricted to
+                            NTG; 42 examples in the GNT):
+                            <programlisting>
+(CP-REL (WNP-1 (WPRO ὅσα))
+        (C+PRTG ἐὰν)
+        (IP-SUB (NP-SBJ *pro*)
+                (VBS-IMPF θέλητε)
+                (CP-COM (C ἵνα)
+                        (IP-SUB (NP-OB1 *T*-1)
+                                (VBS-IMPF ποιῶσιν)
+                                (NP-OB2 (PROD ὑμῖν))
+                                (NP-SBJ (DS οἱ) (NS ἄνθρωποι))))))                                
+                            </programlisting>
+                            (Matthew 7.12) </para>
+                    </listitem>
+                    <listitem>
+                        <para> Only wh- position filled:
+                            <programlisting>
+(CP-QUE (WADVP-1 (WADV Τί))
+        (C 0)
+        (IP-SUB (ADVP *T*-1)
+                (NP-SBJ *pro*)
+                (VBPX-IMPF (VBPP-IMPF θορυβεῖσθε) (CONJ καὶ) (VBP-IMPF κλαίετε))))                                
+                            </programlisting>
+                            (Mark 5.39) </para>
+                    </listitem>
+                    <listitem>
+                        <para> Only complementizer position filled (rare in Greek; 1 example in the
+                            GNT):
+                            <programlisting>
+(CP-QUE-SPE (WNP-1 (WPRO Τίς))
+            (CLPRT ἄρα)
+            (C 0)
+            (IP-SUB (NP-PRD *T*-1)
+                    (NP-SBJ-LFD (D οὗτός)
+                                (CP-REL *ICH*-2))
+                    (BEP-IMPF ἐστιν)
+                    (CP-REL-2 (WNP-3 0)
+                              (C ὅτι)
+                              (IP-SUB (NP-SBJ (ADV καὶ)
+                                              (NP (D ὁ) (N ἄνεμος))
+                                              (CONJP (CONJ καὶ)
+                                                     (NP (D ἡ) (N θάλασσα))))
+                                      (VBP-IMPF ὑπακούει)
+                                      (NP-OBP-RSP-3 (PROD αὐτῷ))))))                                
+                            </programlisting>
+                            (Mark 4.41) </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </sect2>
+        <sect2 xml:id="fronting">
+            <title>Fronting to pre-complementizer position</title>
+            <para> Fronted elements can occupy Spec(CP), the position immediately preceding the
+                complementizer. Since the specifier position is not explicitly indicated in our
+                annotation system for any phrasal category, these elements simply appear within the
+                CP in pre-head position. Such fronted constituents are coindexed with an *ICH* trace
+                or with a resumptive (-RSP) phrase.
+                <programlisting>
+(CP-ADV (NP-LFD (PRO σὺ))
+        (CLPRT οὖν)
+        (C+PRTG ἐὰν)
+        (IP-SUB (NP-SBJ-RSP *pro*)
+                (VBS-AOR προσκυνήσῃς)
+                (PP (P ἐνώπιον)
+                    (NP (PRO$ ἐμοῦ)))))                    
+                </programlisting>
+                (Luke 4.7) </para>
+        </sect2>
+        <sect2 xml:id="CP_adjunction">
+            <title>Adjunction to CP</title>
+            <para> Material appearing before a wh- element must be adjoined to CP rather than
+                occupying Spec(CP) (since the wh- element occupies that position), but our
+                annotation does not explicitly express the distinction between the two types of
+                positions.
+                <programlisting>
+( (CP-QUE-SPE (CODE {VS:21_25})
+              (NP-LFD (D τὸ)
+                      (N βάπτισμα)
+                      (NP-PRN (D τὸ)
+                              (NP-ATR (N$ Ἰωάνου)))
+              (WADVP-1 (WADV πόθεν))
+              (C 0)
+              (IP-SUB (ADVP-DIR *T*-1)
+                      (NP-SBJ-RSP *pro*)
+                      (BED-IMPF ἦν))
+              (. ;))
+  (ID GreekNT,Matthew))                    
+                </programlisting>
+            </para>
+        </sect2>
+    </sect1>
+    <sect1 xml:id="tokens">
+        <title>Division into Sentence Tokens</title>
+        <para> The conventions that govern the division of the text into sentence tokens in
+            connection with conjunction are discussed in more detail in <xref linkend="clausal_conj"
+            />. What follows is a list of illustrative examples. Blank lines indicate a break
+            between sentence tokens. <itemizedlist>
+                <listitem>
+                    <para> No token break with conjoined intransitive verbs.
+                        <programlisting>
+( (IP-MAT (NP-SBJ (PRO He))
+          (VBD (VBD came) (, ,) (VBD saw) (, ,) (CONJ and) (VBD conquered))
+          (. .)))                                
+                            </programlisting>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para> Ordinary VP conjunction triggers token break.
+                        <programlisting>
+( (IP-MAT (NP-SBJ (PRO He))
+          (VBD sang)
+          (. ,)))
+
+( (IP-MAT (CONJ and)
+          (NP-SBJ *con*)
+          (VBD danced)
+          (NP-OB1 (D the) (N polka))
+          (. .)))                                
+                            </programlisting>
+                    </para>
+                </listitem>
+                <listitem>
+                    <caution>
+                        <para> Proper treatment depends on meaning (not on punctuation).
+                            <programlisting>
+He came ,_, and left fifty years later ._.	← both events in the same year
+
+( (IP-MAT (NP-SBJ (PRO He))
+          (VBD (VBD came) (, ,) (CONJ and) (VBD left))
+          (ADVP-TMP (NP-MSR (NUM 50) (NS years))
+                    (ADVR later))
+          (. .)))
+
+He came ,_.
+
+and left fifty years later ._.			← both events separated by 50 years
+
+( (IP-MAT (NP-SBJ (PRO He))
+          (VBD came)
+          (. ,)))
+
+( (IP-MAT (CONJ and)
+          (NP-SBJ *con*)
+          (VBD left)
+          (ADVP-TMP (NP-MSR (NUM 50) (NS years))
+                    (ADVR later))
+          (. .)))                                    
+                                </programlisting>
+                        </para>
+                    </caution>
+                </listitem>
+                <listitem>
+                    <para> No token break with first direct speech clause. See <xref
+                            linkend="direct_speech_conj"/>.
+                        <programlisting>
+( (IP-MAT (NP-SBJ (PRO He))
+          (VBD said)
+          (, ,)
+          (" ")			← default high attachment (contrary to sense)
+          (IP-MAT-SPE (NP-SBJ (PRO I))
+                      (VBD conquered))
+          (" ")			← default high attachment (contrary to sense)
+          (. .)))                                
+                            </programlisting>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para> Further direct speech clauses become separate tokens. See <xref
+                            linkend="direct_speech_conj"/>.
+                        <programlisting>
+He said ,_, " I came ,_.
+
+I saw ,_.
+
+I conquered ._. "_"
+
+( (IP-MAT (NP-SBJ (PRO He))
+          (VBD said)
+          (, ,)
+          (" ")			← default high attachment (contrary to sense)
+          (IP-MAT-SPE (NP-SBJ (PRO I))
+                      (VBD came))
+          (. ,)))
+
+( (IP-MAT-SPE (NP-SBJ (PRO I))
+              (VBD saw)
+              (. ,)))
+
+( (IP-MAT-SPE (NP-SBJ (PRO I))
+              (VBD conquered)
+              (. .)
+              (" ")))                                
+                            </programlisting>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <link linkend="CP-CAR">Clause-adjoined relatives</link> (generally no token
+                        break, regardless of capitalization).
+                        <programlisting>
+She baked brownies ,_, whereupon joy reigned unconfined ._.
+
+She baked brownies ,_, Whereupon joy reigned unconfined ._.                                
+                            </programlisting>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para> Ordinary combination of direct speech and clause-adjoined relative (no
+                        token break).
+                        <programlisting>
+She said ,_, " I will bake brownies ,_, "_" Whereupon joy reigned unconfined ._.                                
+                            </programlisting>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para> Separate direct speech token forces clause-adjoined relative to become
+                        separate token.
+                        <programlisting>
+She said ,_, " I will fix the errors ._,
+
+and I will do so now ._. "_"
+
+Whereupon joy reigned unconfined ._.                                
+                            </programlisting>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para> Where possible, <link linkend="INTJ">interjections</link> and <link
+                            linkend="NP-VOC">vocatives</link> are treated as part of a preceding or
+                        following sentence token. </para>
+                </listitem>
+            </itemizedlist>
+        </para>
     </sect1>
 </chapter>
-
