@@ -230,8 +230,7 @@
                             (Matthew 5.16) </para>
                     </listitem>
                     <listitem>
-                        <para>
-                            infinitive with an (unmarked) PRO subject:
+                        <para> infinitive with an (unmarked) PRO subject:
                             <programlisting>
 (ADJP-PRD (ADJ καλόν))
 (NP-OB2 (PROD σοί))
@@ -240,12 +239,11 @@
             (PP (P εἰς)
                 (NP (DA τὴν) (NA ζωὴν)))
             (ADJP-SPR (ADJA κυλλὸν) (CONJ ἢ) (ADJA χωλόν)))                                
-                            </programlisting> (Matthew 18.8)
-                        </para>
+                            </programlisting>
+                            (Matthew 18.8) </para>
                     </listitem>
                     <listitem>
-                        <para>
-                            ECM infinitive with a (marked) subject:
+                        <para> ECM infinitive with a (marked) subject:
                             <programlisting>
 (CONJ καὶ)
 (IP-PPL (VPR-IMPF ἐπιτιμῶν))
@@ -254,22 +252,242 @@
 (VBD-IMPF εἴα)
 (IP-INF-COM (NP-SBJ (PROA αὐτὰ))
             (VBN-IMPF λαλεῖν))                                
-                            </programlisting> (Luke 4.41)
-                        </para>
+                            </programlisting>
+                            (Luke 4.41) </para>
                     </listitem>
                 </itemizedlist>
             </para>
         </sect2>
-        <sect2 xml:id="NP-OBJ"><!-- work here -->
+        <sect2 xml:id="NP-OBJ">
             <title>Object</title>
             <sect3 xml:id="NP-OB1">
                 <title>NP-OB1</title>
-                <para/>
+                <para> Because of the difficulties inherent in trying to label objects consistently
+                    by case, we label complement NPs in four different ways: as (1) first object
+                    (-OB1) for accusative direct objects, as (2) second object (-OB2) for accusative
+                    or dative indirect objects, as (3) prepositional object (-OBP) for objects that
+                    derive their case from a prepositional prefix on the verb, and as (4) quirky
+                    object (-OBQ) for direct objects in a quirky case (i.e., genitive or dative).
+                    The rules for deciding which object to label as first, second, prepositional, or
+                    quirky are intended to be unambiguous and to work well for automatic retrieval,
+                    but they do not always yield the linguistically correct analysis. Given the
+                    variability and changes in case marking in the course of the history of Greek,
+                    the approach taken seems the only practical one. </para>
+                <sect4 xml:id="NP-OB1_monotrans">
+                    <title>NP-OB1 with ordinary monotransitive verbs.</title>
+                    <para> The single object of a monotransitive verb is generally labeled NP-OB1.
+                        <programlisting>
+( (IP-MAT-SPE (CODE {VS:1_21})
+              (NP-SBJ *pro*)
+              (VBPP-FUT τέξεται)
+              (CLPRT δὲ)
+              (NP-OB1 (NA υἱὸν)))
+  (ID GreekNT,Matthew))                                    
+                                </programlisting>
+                    </para>
+                </sect4>
+                <sect4 xml:id="NP-OB1_ditrans">
+                    <title>NP-OB1 with ditransitive verbs.</title>
+                    <para> The direct object of a ditransitive verb is labeled NP-OB1.
+                        <programlisting>
+( (IP-MAT (CODE {VS:4_8})
+          (CONJ καὶ)
+          (NP-SBJ *con*)
+          (VBP-IMPF δείκνυσιν)
+          (NP-OB2 (PROD αὐτῷ))
+          (NP-OB1 (NP (QA πάσας)
+                      (DSA τὰς)
+                      (NSA βασιλείας)
+                      (NP-ATR (D$ τοῦ) (N$ κόσμου)))
+                  (CONJP (CONJ καὶ)
+                         (NP (DA τὴν)
+                             (NA δόξαν)
+                             (NP-ATR (PRO$ αὐτῶν)))))
+          (, ,))
+  (ID GreekNT,Matthew))                                    
+                                </programlisting>
+                    </para>
+                </sect4>
+                <sect4 xml:id="NP-OB1+clause_monotrans">
+                    <title>NP-OB1 + clause with monotransitives.</title>
+                    <para> With monotransitives (i.e., verbs that do not occur with two NP objects),
+                        the NP object in cases with an NP and a clause is labeled NP-OB1. See <xref
+                            linkend="IP-INF-COM"/> for further relevant discussion.
+                        <programlisting>
+( (IP-MAT-SPE (CODE {VS:5_42})
+              (CONJ ἀλλὰ)
+              (NP-SBJ *pro*)
+              (VBP-PRF ἔγνωκα)
+              (NP-OB1 (PROA ὑμᾶς))
+              (CP-THT (C ὅτι)
+                      (IP-SUB (NP-OB1 (DA τὴν)
+                                      (NA ἀγάπην)
+                                      (NP-ATR (D$ τοῦ) (N$ θεοῦ)))
+                              (NEG οὐκ)
+                              (NP-SBJ *pro*)
+                              (VBP-IMPF ἔχετε)
+                              (PP (P ἐν)
+                                  (NP (PROD+SLF ἑαυτοῖς)))))
+              (. .))
+  (ID GreekNT,John))                                    
+                                </programlisting>
+                    </para>
+                </sect4>
+                <sect4 xml:id="NP-OB1+clause_complex">
+                    <title>NP-OB1 + clause with complex predicates.</title>
+                    <para>This may not translate to Greek! Complex predicates include all cases of
+                        HAVE + NP with a verbal equivalent (HAVE FEAR = FEAR, HAVE KNOWLEDGE = KNOW,
+                        HAVE MARVEL = MARVEL, etc.). Some other common complex predicates are: <itemizedlist>
+                            <listitem>
+                                <para>bear witness</para>
+                            </listitem>
+                            <listitem>
+                                <para>bow (one's) heart</para>
+                            </listitem>
+                            <listitem>
+                                <para>do (no) force/pain</para>
+                            </listitem>
+                            <listitem>
+                                <para>give example/(one's) heart/heed/(one's)
+                                    intent/leave/notice/occasion/order</para>
+                            </listitem>
+                            <listitem>
+                                <para>have care/(great) comfort/head/(no)
+                                    joy/leave/mind/need/occasion/stomach/(good) will/s.o. to
+                                    witness</para>
+                            </listitem>
+                            <listitem>
+                                <para>kindle (one's) heart</para>
+                            </listitem>
+                            <listitem>
+                                <para>lay (one's) force</para>
+                            </listitem>
+                            <listitem>
+                                <para>make countenance/effort/fiaunce/(no) mention/note/(no)
+                                    semblant/shift</para>
+                            </listitem>
+                            <listitem>
+                                <para>send word</para>
+                            </listitem>
+                            <listitem>
+                                <para>send word</para>
+                            </listitem>
+                            <listitem>
+                                <para>stir (one's) heart</para>
+                            </listitem>
+                            <listitem>
+                                <para>take care/counsel/(one's)
+                                    heart/heed/keep/note/notice/occasion/order/pains</para>
+                            </listitem>
+                            <listitem>turn (one's) heart</listitem>
+                        </itemizedlist> The noun member of a complex predicate is labeled NP-OB1.
+                        The accompanying clause is treated as a clause-level constituent, rather
+                        than as a complement of the noun.
+                        <programlisting>
+( (IP-MAT (CONJ and)
+          (NP-SBJ *con*)
+          (HVD had)
+          (NP-OB1 (N mervayle))
+          (CP-QUE (WADVP-1 (WADV whye))
+                  (C 0)
+                  (IP-SUB (ADVP *T*-1)
+                          (NP-SBJ (PRO he))
+                          (BED was)
+                          (ADVP (ADV so))
+                          (VAN abaysshed)))
+          (. .))
+  (ID CMMALORY,655.4467))                        
+                    </programlisting></para>
+                </sect4>
             </sect3>
             <sect3 xml:id="NP-OB2">
                 <title>NP-OB2</title>
-                <para/>
+                <sect4 xml:id="NP-OB2_ditrans">
+                    <title>NP-OB2 with ditransitive verbs.</title>
+                    <para> The indirect object of a ditransitive verb is labeled NP-OB2.
+                        <programlisting>
+( (IP-MAT (CODE {VS:4_8})
+          (CONJ καὶ)
+          (NP-SBJ *con*)
+          (VBP-IMPF δείκνυσιν)
+          (NP-OB2 (PROD αὐτῷ))
+          (NP-OB1 (NP (QA πάσας)
+                      (DSA τὰς)
+                      (NSA βασιλείας)
+                      (NP-ATR (D$ τοῦ) (N$ κόσμου)))
+                  (CONJP (CONJ καὶ)
+                         (NP (DA τὴν)
+                             (NA δόξαν)
+                             (NP-ATR (PRO$ αὐτῶν)))))
+          (, ,))
+  (ID GreekNT,Matthew))                            
+                        </programlisting>
+                    </para>
+                </sect4>
+                <sect4 xml:id="NP-OB2_copular">
+                    <title>NP-OB2 in copular constructions.</title>
+                    <para> When the second NP in a <link linkend="copular_verbs">copular</link>
+                        construction is neither coreferential with nor predicated of the subject, it
+                        is labeled NP-OB2.
+                        <programlisting>
+( (IP-MAT-SPE (CODE {VS:16_22})
+              (NEG οὐ)
+              (NEG μὴ)
+              (BEP-FUT ἔσται)
+              (NP-OB2 (CLPROD σοι))
+              (NP-SBJ (D τοῦτο))
+              (. .))
+  (ID GreekNT,Matthew))                            
+                        </programlisting>
+                    </para>
+                </sect4>
+                <sect4 xml:id="NP-OB2_cognate">
+                    <title>NP-OB2 with <link linkend="cognate_object_verbs">cognate object
+                            verbs</link>.</title>
+                    <para> We treat verbs like <emphasis>delight</emphasis>,
+                            <emphasis>help</emphasis>, <emphasis>pain</emphasis>,
+                            <emphasis>pray</emphasis>, and <emphasis>thank</emphasis>, etc. as
+                        taking an abstract direct object that incorporates into the verb. The
+                        superficial object is therefore annotated as NP-OB2.
+                        <programlisting>
+( (IP-IMP-SPE (CODE {VS:6_6})
+              (CONJ καὶ)
+              (IP-PPL (VPR-AOR κλείσας)
+                      (NP-OB1 (DA τὴν)
+                              (NA θύραν)
+                              (NP-ATR (CLPRO$ σου))))
+              (VBIP-AOR πρόσευξαι)
+              (NP-OB2 (DD τῷ)
+                      (ND πατρί)
+                      (NP-ATR (CLPRO$ σου))
+                      (NP-PRN (DD τῷ)
+                              (PP (P ἐν)
+                                  (NP (DD τῷ) (ADJD κρυπτῷ)))))
+              (. .))
+  (ID GreekNT,Matthew))                            
+                        </programlisting>
+                    </para>
+                </sect4>
+                <sect4 xml:id="NP-OB2+clause_ditrans">
+                    <title>NP-OB2 + clause with ditransitives.</title>
+                    <para> When a ditransitive verb takes an animate NP and a clause, rather than
+                        two NPs, the label of the animate NP remains the same as in the case with
+                        two NPs, preserving the parellelism between the two cases. In Greek, this
+                        only seems to occur with an NP-OB2 + infinitival clause. 
+                        <programlisting>
+(IP-SUB (NP-SBJ *T*-1)
+        (VBD-AOR ὑπέδειξεν)
+        (NP-OB2 (PROD ὑμῖν))
+        (IP-INF-COM (VBN-AOR φυγεῖν)
+                    (PP (P ἀπὸ)
+                        (NP (D$ τῆς)
+                            (RRC (VPR$-IMPF μελλούσης))
+                            (N$ ὀργῆς)))))                            
+                        </programlisting> (Matthew 3.7)
+                    </para>
+                </sect4>
             </sect3>
+            <!-- work here -->
             <sect3 xml:id="NP-OBP">
                 <title>NP-OBP</title>
                 <para/>
