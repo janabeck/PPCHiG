@@ -287,7 +287,7 @@
                 to distinguish from intransitive uses of transitive verbs. This is despite some
                 examples in Greek that seem almost certain to contain pro-dropped objects:
                 <programlisting>
-(CP-ADV (C+PRTG ἐπὰν)
+(CP-ADV (C+AN ἐπὰν)
         (IP-SUB (CLPRT δὲ)
                 (NP-SBJ *pro*)
                 (VBS-AOR εὕρητε)))
@@ -334,11 +334,9 @@
         <sect2 xml:id="generic_empty">
             <title>A Generic Empty Category</title>
             <para> In addition to serving as a trace of (some instances of) A-movement, (X *) is a
-                generic empty category, used in at least the following cases.
-                <itemizedlist>
+                generic empty category, used in at least the following cases. <itemizedlist>
                     <listitem>
-                        <para>
-                            verbs elided when gapping is not possible:
+                        <para> verbs elided when gapping is not possible:
                             <programlisting>
 ( (IP-MAT (CODE {VS:2_37a}
           (NP-SBJ *pro*)
@@ -371,7 +369,38 @@
   (ID GreekNT,Acts))                                
                             </programlisting>
                         </para>
-                        <!-- work here -->
+                    </listitem>
+                    <listitem>
+                        <para> null copula:
+                            <programlisting>
+( (IP-MAT-SPE (CODE {VS:5_9})
+              (INTJ ἰδοὺ)
+              (NP-SBJ (DS οἱ)
+                      (NS πόδες)
+                      (NP-ATR (DS$ τῶν)
+                              (RRC (VPR$-AOR θαψάντων)
+                                   (NP-OB1 (DA τὸν)
+                                           (NA ἄνδρα)
+                                           (NP-ATR (CLPRO$ σου))))))
+              (BEP-IMPF *)
+              (PP (P ἐπὶ)
+                  (NP (DD τῇ) (ND θύρᾳ))))
+  (ID GreekNT,Acts))                                
+                            </programlisting>
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para> empty subjects of small clauses within a reduced relative clause (see
+                            also <link linkend="IP-SMC">small clauses</link>):
+                            <programlisting>
+(PP (P ἀπὸ)
+    (NP (N$ ὄρους)
+        (NP-PRN (D$ τοῦ)
+                (RRC (VPRP$-IMPF-PASS καλουμένου)
+                     (IP-SMC (NP-SBJ *)
+                             (NP-PRD (N$ Ἐλαιῶνος)))))                                
+                            </programlisting>
+                            (Acts 1.12) </para>
                     </listitem>
                 </itemizedlist>
             </para>
@@ -379,21 +408,153 @@
     </sect1>
     <sect1 xml:id="position_empty">
         <title>The Position of Empty Categories</title>
+        <para> Since empty categories are not visible, their position in the string is often not
+            determinable. We therefore follow the following rules concerning their position. </para>
         <sect2 xml:id="position_null_copula">
             <title>The Position of the Null Copula</title>
-            <para/>
+            <para> The null copula should appear between the subject and the predicate. If there is
+                only a subject, then the null copula should appear before the subject. <itemizedlist>
+                    <listitem>
+                        <para> subject and predicate:
+                            <programlisting>
+( (IP-MAT-SPE (CODE {VS:5_9})
+              (INTJ ἰδοὺ)
+              (NP-SBJ (DS οἱ)
+                      (NS πόδες)
+                      (NP-ATR (DS$ τῶν)
+                              (RRC (VPR$-AOR θαψάντων)
+                                   (NP-OB1 (DA τὸν)
+                                           (NA ἄνδρα)
+                                           (NP-ATR (CLPRO$ σου))))))
+              (BEP-IMPF *)
+              (PP (P ἐπὶ)
+                  (NP (DD τῇ) (ND θύρᾳ))))
+  (ID GreekNT,Acts))                                
+                            </programlisting>
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para> subject only:
+                            <programlisting>
+( (IP-MAT (CODE {VS:4_15})
+          (ADVP-LOC (CP-FRL (WADVP-1 (WADV οὗ))
+                            (CLPRT δὲ)
+                            (C 0)
+                            (IP-SUB (ADVP-LOC *T*-1)
+                                    (NEG οὐκ)
+                                    (BEP-IMPF ἔστιν)
+                                    (NP-SBJ (N νόμος)))))
+          (, ,)
+          (NEG+CONJ οὐδὲ)
+          (BEP-IMPF *)
+          (NP-SBJ (N παράβασις))
+          (. .))
+  (ID GreekNT,Romans))                                
+                            </programlisting>
+                        </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </sect2>
         <sect2 xml:id="position_empty_subjects">
             <title>The Position of Empty Subjects</title>
-            <para/>
+            <para> In general, empty subjects are put in the position immediately preceding the
+                tensed verb in the clause. If the clause does not have a tensed verb (because of
+                gapping, ellipsis, etc.), then the empty subject comes first in the clause after
+                conjunctions, traces, and left-dislocated elements. (No good example of the latter
+                yet, but it does seem to be a logical possibility.)
+                <programlisting>
+( (IP-MAT-SPE (CODE {VS:1_21})
+              (NP-SBJ *pro*)
+              (VBPP-FUT τέξεται)
+              (CLPRT δὲ)
+              (NP-OB1 (NA υἱὸν)))
+  (ID GreekNT,Matthew))                    
+                </programlisting>
+            </para>
         </sect2>
         <sect2 xml:id="position_traces">
             <title>The Position of Traces</title>
-            <para/>
+            <para> Almost all traces (both wh and non-wh) appear in constituent-initial position: <itemizedlist>
+                    <listitem>
+                        <para> traces in IP:
+                            <programlisting>
+(PP (P ἕως)
+    (NP (CP-FRL (WNP-1 (WPRO$ οὗ))
+                (C 0)
+                (IP-SUB (NP-TMP *T*-1)
+                        (NP-SBJ *pro*)
+                        (VBD-AOR ἔτεκεν)
+                        (NP-OB1 (NA υἱόν))))))                                
+                            </programlisting>
+                            (Matthew 1.25) </para>
+                    </listitem>
+                    <listitem>
+                        <para> traces in ADJP:
+                            <programlisting>
+(CP-ADV (C εἰ)
+        (CLPRT δὲ)
+        (IP-SUB (NP-SBJ *pro*)
+                (BEP-IMPF *CL*-3)
+                (PP (P χωρίς)
+                    (BEP-IMPF-CL-3 ἐστε)
+                    (NP (N$ παιδείας)
+                          (CP-REL (WNP-2 (WPRO$ ἧς))
+                                  (C 0)
+                                  (IP-SUB (ADJP-PRD (NP-COM *T*-2)
+                                                    (ADJ μέτοχοι))
+                                          (VBP-PRF γεγόνασι)
+                                          (NP-SBJ (Q πάντες))))))))                                
+                            </programlisting>
+                            (Hebrews 12.8) </para>
+                    </listitem>
+                    <listitem>
+                        <para> traces of modifiers:
+                            <programlisting>
+(CP-QUE-SPE (WQP-1 (WADJA Πόσους))
+            (C 0)
+            (IP-SUB (NP-SBJ *pro*)
+                    (VBP-IMPF ἔχετε)
+                    (NP-OB1 (QP *T*-1)
+                            (NSA ἄρτους))))                                
+                            </programlisting>
+                            (Mark 8.5) </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </sect2>
     </sect1>
     <sect1 xml:id="resumptive">
         <title>Resumptive Pronouns</title>
-        <para/>
+        <para> When a wh- phrase is associated with a resumptive pronoun, the pronoun receives an
+            index, just like a trace. In addition, its syntactic tag receives the extended tag -RSP.
+            See also <xref linkend="LFD"/>.
+            <programlisting>
+(CP-REL (WNP-1 (WPRO$ οὗ))
+        (C 0)
+        (IP-SUB (NEG οὐκ)
+                (BEP-IMPF εἰμὶ)
+                (NP-SBJ (PRO ἐγὼ))
+                (ADJP-PRD (ADJ ἄξιος)
+                          (CP-COM (C ἵνα)
+                                  (IP-SUB (NP-SBJ *pro*)
+                                          (VBS-AOR λύσω)
+                                          (NP-OB1 (NP-ATR-RSP-1 (PRO$ αὐτοῦ))
+                                                  (DA τὸν)
+                                                  (NA ἱμάντα)
+                                                  (NP-ATR (NP-ATR-RSP *ICH*-1)
+                                                          (D$ τοῦ)
+                                                          (N$ ὑποδήματος))))))))                            
+                        </programlisting>
+            (John 1.27)
+            <programlisting>
+(CP-REL (WNP-1 (WPRO ὃν))
+        (C 0)
+        (IP-SUB (NP-SBJ *pro*)
+                (VBD-AOR ἀνέπεμψά)
+                (NP-OB2 (CLPROD σοι))
+                (NP-OB1-RSP-1 (PROA αὐτόν))))    
+</programlisting>
+            (Philemon 1.12) </para>
     </sect1>
 </chapter>
