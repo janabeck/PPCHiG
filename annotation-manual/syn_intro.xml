@@ -169,7 +169,7 @@
                         <emphasis>In general, no intermediate projections.</emphasis> Intermediate
                         projections (N', ADJ', etc.) are represented only in certain <link
                             linkend="conjunction">conjunction structures</link> and <link
-                            xml:id="default_leftward">situations involving movement</link>. The
+                            linkend="default_leftward">situations involving movement</link>. The
                         absence of intermediate projections has several consequences: <itemizedlist>
                             <listitem>
                                 <para> Within phrasal constituents, the phrasal node generally
@@ -234,7 +234,7 @@
                     </para>
                 </listitem>
                 <listitem>
-                    <para>
+                    <para xml:id="high_attachment">
                         <emphasis>Default high attachment.</emphasis> In cases where the attachment
                         level of constituents is ambiguous or difficult to determine, the default is
                         to attach as high as possible.
@@ -604,7 +604,7 @@
                             NTG; 42 examples in the GNT):
                             <programlisting>
 (CP-REL (WNP-1 (WPRO ὅσα))
-        (C+PRTG ἐὰν)
+        (C+AN ἐὰν)
         (IP-SUB (NP-SBJ *pro*)
                 (VBS-IMPF θέλητε)
                 (CP-COM (C ἵνα)
@@ -661,7 +661,7 @@
                 <programlisting>
 (CP-ADV (NP-LFD (PRO σὺ))
         (CLPRT οὖν)
-        (C+PRTG ἐὰν)
+        (C+AN ἐὰν)
         (IP-SUB (NP-SBJ-RSP *pro*)
                 (VBS-AOR προσκυνήσῃς)
                 (PP (P ἐνώπιον)

@@ -357,6 +357,10 @@
                         <entry>conjunction, including correlative conjunctions</entry>
                     </row>
                     <row>
+                        <entry>CONJ0</entry>
+                        <entry>conjunction, clause-level and token-initial</entry>
+                    </row>
+                    <row>
                         <entry>NEG+CONJ</entry>
                         <entry>compound negative conjunctions</entry>
                     </row>
@@ -375,6 +379,9 @@
                         conjunctions: <link linkend="καί">καί</link>, <link linkend="ἤ">ἤ</link>,
                             <link linkend="ἀλλά">ἀλλά</link>, <link linkend="εἴτε">εἴτε</link>.
                     </para>
+                </listitem>
+                <listitem>
+                    <para> Sentential conjunctions that are token-initial are tagged CONJ0. </para>
                 </listitem>
                 <listitem>
                     <para> The following items contain CONJ as part of a compound tag NEG+CONJ when
@@ -1001,6 +1008,10 @@
                         <entry>P</entry>
                         <entry>preposition</entry>
                     </row>
+                    <row>
+                        <entry>WP</entry>
+                        <entry>preposition in a wh- prepositional phrase</entry>
+                    </row>
                 </tbody>
             </tgroup>
         </table>
@@ -1023,6 +1034,11 @@
     (NP (NA Βηθανίαν)))                            
                         </programlisting>
                         (Matthew 21.17) </para>
+                </listitem>
+                <listitem>
+                    <para> Prepositions in a wh- prepositional phrase (<link linkend="WPP"
+                            >WPP</link>) are tagged WP to facilitate the creation of the correct
+                        type of trace for these in the emacs parser-mode. </para>
                 </listitem>
             </itemizedlist>
         </sect2>
@@ -1072,9 +1088,7 @@
                 </listitem>
                 <listitem>
                     <para> All other sentence punctuation that does not coincide with the end of a
-                        token is tagged with a comma.
-                        <!-- This is not done consistently in the PPCNTG. -->
-                    </para>
+                        token is tagged with a comma. </para>
                 </listitem>
                 <listitem>
                     <para> Interpuncts in the original text are represented by interpuncts in the
@@ -1552,7 +1566,7 @@
                             >ὅστις</link> is tagged WPRO+CLQ. </para>
                 </listitem>
                 <listitem>
-                    <para> Complementizers combined with the modal particle ἄν: C+PRTG. See <xref
+                    <para> Complementizers combined with the modal particle ἄν: C+AN. See <xref
                             linkend="modal_particles"/>. </para>
                 </listitem>
                 <listitem>

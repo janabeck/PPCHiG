@@ -3,28 +3,378 @@
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="empty_categories">
     <title>Empty Categories</title>
+    <para> In general, empty categories are treated the same way as overt ones except that they do
+        not contain lexical material. </para>
     <sect1 xml:id="empty_subjects">
         <title>Empty Subjects</title>
-        <para/>
+        <para> There are three types of empty subjects: <itemizedlist>
+                <listitem>
+                    <para>
+                        <link linkend="con">subjects elided under conjunction</link>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <link linkend="arb">arbitrary subjects in ECM infinitives</link>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <link linkend="pro"><emphasis>pro</emphasis>-drop subjects</link>
+                    </para>
+                </listitem>
+            </itemizedlist> Due to the complete lack of overt expletive subjects, we assume that
+            Greek does <emphasis>not</emphasis> contain empty expletive subjects either. </para>
+        <para>
+            <important>
+                <para>All empty subjects should be placed immediately preceding the tensed verb in
+                    the clause.</para>
+            </important> If the clause does not contain a tensed verb (e.g., because of <link
+                linkend="gapping">gapping</link>), then the empty subject should come before all
+            overt elements in the clause but after traces of wh- movement. </para>
+        <sect2 xml:id="con">
+            <title>Subjects Elided under Conjunction</title>
+            <para> Subjects elided under conjunction contain *con*. Subjects are obligatory in most
+                types of clauses in our system, and so elided subjects are indicated both in main
+                clause tokens and in conjoined subordinate clauses. The empty subject of a matrix
+                clause must be coreferential with the subject of the previous token in order to be
+                treated as *con* (the clause must contain an overt CONJ and not merely a conjunctive
+                sentential particle such as δέ); otherwise, it is treated as *pro*. In principle,
+                elided objects could be treated analogously, but they aren’t, since too many cases
+                are too difficult to decide. <programlisting>
+( (IP-MAT-SPE (CODE {VS:2_2a})
+              (NP-SBJ *pro*)                                ← first token with pro subject
+              (VBD-AOR εἴδομεν)
+              (CLPRT γὰρ)
+              (NP-OB1 (NP-ATR (PRO$ αὐτοῦ))
+                      (DA τὸν)
+                      (NA ἀστέρα))
+              (PP (P ἐν)
+                  (NP (DD τῇ) (ND ἀνατολῇ))))
+  (ID GreekNT,Matthew))
+
+( (IP-MAT-SPE (CODE {VS:2_2b})
+              (CONJ0 καὶ)
+              (NP-SBJ *con*)                                ← following token with subject elided
+              (VBD-AOR ἤλθομεν)
+              (IP-INF-PRP (VBN-AOR προσκυνῆσαι)
+                          (NP-OBP (PROD αὐτῷ)))
+              (. .))
+  (ID GreekNT,Matthew))                    
+                </programlisting>
+                <programlisting>
+(CP-THT (C ὅτι)
+        (IP-SUB-SPE (IP-SUB (NP-SBJ (Q πολλοὶ))
+                            (PP (P ἀπὸ)
+                                (NP (NS$ ἀνατολῶν) (CONJ καὶ) (NS$ δυσμῶν)))
+                            (VBP-FUT ἥξουσιν))
+                    (CONJP (CONJ καὶ)
+                           (IP-SUB (NP-SBJ *con*)           ← subject elided in conjoined clause
+                                   (VBPP-FUT ἀνακλιθήσονται)
+                                   (PP (P μετὰ)
+                                       (NP (N$ Ἀβραὰμ) (CONJ καὶ) 
+                                           (N$ Ἰσαὰκ) (CONJ καὶ) 
+                                           (N$ Ἰακὼβ)))
+                                   (PP (P ἐν)
+                                       (NP (DD τῇ)
+                                           (ND βασιλείᾳ)
+                                           (NP-ATR (DS$ τῶν) (NS$ οὐρανῶν))))))))                    
+                </programlisting>
+                (Matthew 8.11) </para>
+        </sect2>
+        <sect2 xml:id="arb">
+            <title>Arbitrary Subjects in ECM Infinitives</title>
+            <para> The arbitrary subject of an infinitive governed by <link linkend="IP-INF-COM">an
+                    ECM verb</link> is labeled *arb*. <programlisting>
+( (IP-MAT (CONJ0 And)
+          (ADVP (ADV soo))
+          (PP (P by)
+              (NP (D the) (N counceil)
+                  (PP (P of)
+                      (NP (NPR Merlyn)))))
+          (NP-SBJ (D the) (N kyng))
+          (VBD lete)
+          (IP-INF (NP-SBJ *arb*)
+                  (VB calle)
+                  (NP-OB1 (PRO$ his) (NS barons))
+                  (PP (P to)
+                      (NP (N counceil))))
+          (. ,))
+          (ID CMMALORY,14.419))                    
+                </programlisting>
+                <!-- This may not exist in Greek! The one example from the GNT, in Matthew 27.58, that seems close is not an example of an arbitrary subject but rather an anaphoric pro-dropped subject dependent on the previous sentence. -->
+            </para>
+        </sect2>
+        <sect2 xml:id="pro">
+            <title><emphasis>pro</emphasis>-Drop Subjects</title>
+            <para> An empty subject that is not coreferential with the subject of the previous
+                clause (unless the clauses are connected by a conjunctive sentential particle and
+                not a true conjunction) contains *pro*. This represents pro-drop, which is
+                (unsurprisingly, given that Greek is a language with very rich verbal morphology)
+                common in Greek.
+                <programlisting>
+( (IP-MAT-SPE (CODE {VS:2_5})
+              (ADVP (ADV οὕτως))
+              (CLPRT γὰρ)
+              (NP-SBJ *pro*)
+              (VBPP-PRF-PASS γέγραπται)
+              (PP (P διὰ)
+                  (NP (D$ τοῦ) (N$ προφήτου))))
+  (ID GreekNT,Matthew))                    
+                </programlisting>
+            </para>
+        </sect2>
     </sect1>
     <sect1 xml:id="traces">
         <title>Traces</title>
+        <para> Several kinds of traces are indicated in our system, including traces of <link
+                linkend="a_movement">A-movement</link>, of <link linkend="wh_movement"
+                >wh-movement</link>, and of <link linkend="a_bar_movement">other A’-movement</link>.
+            All traces bear an index matching the index on the trace’s antecedent. Not all instances
+            of movement are explicitly indicated. In particular, we do not distinguish raising from
+            subject control, and infinitive clauses ordinarily do not contain subject traces. See
+                <xref linkend="IP-INF"/> for details. In general, only phrases undergo movement. The
+            three exceptions to this rule are discussed elsewhere: <itemizedlist>
+                <listitem>
+                    <para>
+                        <link linkend="float_conj">floated conjunctions</link>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <link linkend="floated_quantifiers">floated quantifiers</link>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <link linkend="word_level_fronting">word-level leftward fronting</link>
+                    </para>
+                </listitem>
+            </itemizedlist>
+        </para>
         <sect2 xml:id="a_movement">
             <title>Traces of A-Movement</title>
-            <para/>
+            <para> Traces of A-movement contain * (which is also used as <link
+                    linkend="generic_empty">a generic empty category</link>, but in this case never
+                indexed). Not all instances of A-movement are explicitly indicated. In particular,
+                our annotation scheme does not ordinarily express the distinction between raising
+                and control. A-movement is indicated only when the moved element is extracted from
+                within another phrase (usually PP) or clause. Thus, a passivized NP that is
+                extracted from a PP or lower clause (small clause or infinitive) is coindexed with a
+                trace, but an ordinary passive subject is not.
+                <programlisting>
+(CP-ADV (C μή)
+        (IP-SUB (CLPRT ποτε)
+                (IP-SMC (NP-SBJ *-1)
+                        (ADJP-PRD (ADV καὶ)
+                                  (ADJ θεομάχοι)))
+                (NP-SBJ-1 *pro*)
+                (VBSP-AOR-PASS εὑρεθῆτε)))                    
+                </programlisting>
+                (Acts 5.39) </para>
         </sect2>
         <sect2 xml:id="wh_movement">
             <title>Traces of Wh-Movement</title>
-            <para/>
+            <para> Wh- traces contain *T*; the POS label on the trace indicates the category of the
+                gap. See <xref linkend="subordinate_clauses"/> for clause types in which wh-
+                movement is assumed.
+                <programlisting>
+(CP-QUE-SPE (WADVP-1 (WADV Ποῦ))
+            (C 0)
+            (IP-SUB-SPE (ADVP-LOC *T*-1)
+                        (BEP-IMPF ἐστὶν)
+                        (NP-SBJ (D ὁ)
+                                (RRC (VPRP-AOR-PASS τεχθεὶς)
+                                     (NP-SPR (N βασιλεὺς)
+                                             (NP-COM (DS$ τῶν) (NS$ Ἰουδαίων)))))))                    
+                </programlisting>
+                (Matthew 2.2) </para>
+            <para> In pied-piping contexts, embedded wh- constituents recursively project a wh-
+                feature all the way up to the phrase in SpecCP. In exceptional cases, this results
+                in the categories WIP (and even WCP). Where a wh- phrase is not associated with a
+                trace (as is possible in pied-piping contexts), a dash tag is exceptionally added to
+                the wh- phrase’s label.
+                <programlisting>
+(CP-REL (WPP-1 (P ἐξ)
+               (WNP (WPRO$ ἧς)))
+        (C 0)
+        (IP-SUB (PP *T*-1)
+                (VBDP-AOR-PASS ἐγεννήθη)
+                (NP-SBJ (N Ἰησοῦς)
+                        (NP-PRN (D ὁ)
+                                (RRC (VPRP-IMPF-PASS λεγόμενος)
+                                     (IP-SMC (NP-SBJ *)
+                                             (NP-PRD (N Χριστός))))))))                    
+                </programlisting>
+                (Matthew 1.16) </para>
+            <para> Pied-piping is assumed only if no other analysis is possible. In particular, if a
+                token can be treated as involving simple extraction from an adjunct, that analysis
+                is the default. This is similar in spirit to our treatment of tokens that are
+                ambiguous between an analysis with extraction and one with a parenthetical clause.
+                <programlisting>
+(NODE (CP-REL (WNP-1 (WPRO wich))                      ← WNP, not WIP-PPL-ABS
+              (C 0)
+              (IP-SUB (IP-PPL-ABS (NP-SBJ *T*-1)       ← extraction out of adjunct
+                                  (BAG being)
+                                  (VAN graunted))
+                      (, ,)
+                      (ADVP (ADV so))
+                      (NP-SBJ (PRO she))
+                      (VBD came)
+                      (ADJP-SPR (ADJ like)
+                                (NP (D a) (N frend)))))
+      (ID EDWARD,290.167))
+
+(NODE (CP-REL (WIP-PPL-ABS-1 (WNP-SBJ (WPRO wich))     ← movement of adjunct (WRONG)
+                             (BAG being)
+                             (VAN graunted))
+              (, ,)
+              (C 0)
+              (IP-SUB (IP-PPL-ABS *T*-1)
+                      (ADVP (ADV so))
+                      (NP-SBJ (PRO she))
+                      (VBD came)
+                      (ADJP-SPR (ADJ like)
+                                (NP (D a) (N frend))))))
+      (ID EDWARD,290.167))                    
+                </programlisting>
+            </para>
         </sect2>
         <sect2 xml:id="a_bar_movement">
             <title>Traces of Other A'-Movement</title>
-            <para/>
+            <para> Traces of A’-movement other than wh- movement, both leftward and rightward,
+                contain *ICH* (= interpret constituent here). *ICH* traces are only indicated when a
+                constituent has been extracted from within another constituent, making the
+                extraction site clear. The grammatical function of the moved phrase is indicated on
+                its trace in the clause of origin, but the moved phrase itself has no dash tag since
+                it has no function in the clause into which it has moved.
+                <programlisting>
+(IP-MAT-SPE (NP-SBJ (D τὸ)
+                    (CLPRT γὰρ)
+                    (RRC (PP (P ἐν)
+                             (NP (PROD αὐτῇ)))
+                         (VPRP-AOR-PASS γεννηθὲν)))
+            (PP (P ἐκ)
+                (NP (N$ πνεύματός)
+                    (BEP-IMPF-CL-1 ἐστιν)
+                    (ADJ$ ἁγίου)))
+            (BEP-IMPF *CL*-1)
+            (. .))                    
+                </programlisting>
+                (Matthew 1.20)
+                <programlisting>
+( (IP-MAT (CODE {VS:3_4})
+          (NY-1 (D ἡ)
+                (CLPRT δὲ)
+                (N τροφὴ))
+          (BED-IMPF ἦν)
+          (NP-SBJ (NY *ICH*-1)
+                  (NP-ATR (PRO$ αὐτοῦ)))
+          (NP-PRD (NP (NS ἀκρίδες))
+                  (CONJP (CONJ καὶ)
+                         (NP (N μέλι) (ADJ ἄγριον))))
+          (. .))
+  (ID GreekNT,Matthew))                    
+                </programlisting>
+            </para>
         </sect2>
     </sect1>
     <sect1 xml:id="other_empty">
         <title>Other Empty Categories</title>
-        <para/>
+        <sect2 xml:id="empty_objects">
+            <title>Empty Objects</title>
+            <para> Empty objects (apart from traces) are not indicated since they are too difficult
+                to distinguish from intransitive uses of transitive verbs. This is despite some
+                examples in Greek that seem almost certain to contain pro-dropped objects:
+                <programlisting>
+(CP-ADV (C+PRTG ἐπὰν)
+        (IP-SUB (CLPRT δὲ)
+                (NP-SBJ *pro*)
+                (VBS-AOR εὕρητε)))
+(VBI-AOR ἀπαγγείλατέ)
+(NP-OB2 (CLPROD μοι))                    
+                </programlisting>
+                (Matthew 2.8) </para>
+        </sect2>
+        <sect2 xml:id="empty_wh_and_c">
+            <title>Empty Wh- Phrases and Complementizers</title>
+            <para> Empty wh- phrases and complementizers contain 0 (zero). <itemizedlist>
+                    <listitem>
+                        <para> empty wh- phrase:
+                            <programlisting>
+(CP-ADV (C ἵνα)
+        (IP-SUB (NP-SBJ *pro*)
+                (VBS-AOR εὕρωσιν)
+                (NP-OB1 (CP-FRL (WNP-1 0)
+                                (C 0)
+                                (IP-INF (NP-OB1 *T*-1)
+                                        (VBN-IMPF κατηγορεῖν)
+                                        (NP-OB2 (PRO$ αὐτοῦ)))))))                                
+                            </programlisting>
+                            (Luke 6.7) </para>
+                    </listitem>
+                    <listitem>
+                        <para> empty complementizer:
+                            <programlisting>
+(NP-SBJ (D ὁ)
+        (N ἀστὴρ)
+        (CP-REL (WNP-1 (WPROA ὃν))
+                (C 0)
+                (IP-SUB (NP-OB1 *T*-1)
+                        (NP-SBJ *pro*)
+                        (VBD-AOR εἶδον)
+                        (PP (P ἐν)
+                            (NP (DD τῇ) (ND ἀνατολῇ))))))                                
+                            </programlisting>
+                            (Matthew 2.9) </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </sect2>
+        <sect2 xml:id="generic_empty">
+            <title>A Generic Empty Category</title>
+            <para> In addition to serving as a trace of (some instances of) A-movement, (X *) is a
+                generic empty category, used in at least the following cases.
+                <itemizedlist>
+                    <listitem>
+                        <para>
+                            verbs elided when gapping is not possible:
+                            <programlisting>
+( (IP-MAT (CODE {VS:2_37a}
+          (NP-SBJ *pro*)
+          (VBD-AOR εἶπάν)
+          (CLTE τε)
+          (PP (P πρὸς)
+              (NP (NP (DA τὸν) (NA Πέτρον))
+                  (CONJP (CONJ καὶ)
+                         (NP (DSA τοὺς) (ADJA λοιποὺς) (NSA ἀποστόλους)))))
+          (CP-QUE-SPE (WNP-1 (WPROA Τί))
+                      (C 0)
+                      (IP-SUB (NP-OB1 *T*-1)
+                              (NP-SBJ *pro*)
+                              (VBS-AOR ποιήσωμεν))
+                      (, ,)
+                      (CODE {VS:2_38})
+                      (NP-VOC (NS ἄνδρες)
+                              (NP-PRN (NS ἀδελφοί))))
+          (. ;))
+  (ID GreekNT,Acts))
+
+( (IP-MAT (CODE {VS:2_38a})
+          (NP-SBJ (N Πέτρος))
+          (CLPRT δὲ)
+          (VBD-AOR *)                                       ← εἶπεν elided
+          (PP (P πρὸς)
+              (NP (PROA αὐτούς)))
+          (IP-IMP-SPE (VBI-AOR Μετανοήσατε))
+          (, ,))
+  (ID GreekNT,Acts))                                
+                            </programlisting>
+                        </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </sect2>
     </sect1>
     <sect1 xml:id="position_empty">
         <title>The Position of Empty Categories</title>

@@ -9,6 +9,17 @@
     </sect1>
     <sect1 xml:id="default_leftward">
         <title>Default Leftward Movement</title>
-        <para></para>
+        <sect2 xml:id="word_level_fronting">
+            <title>Word-Level Fronting</title>
+            <para></para>
+        </sect2>
+        <sect2 xml:id="intermediate_level_fronting">
+            <title>Fronting of Non-Constituents</title>
+            <para></para>
+        </sect2>
+        <sect2 xml:id="phrase_level_fronting">
+            <title>Phrase-Level Fronting</title>
+            <para></para>
+        </sect2>
     </sect1>
     </chapter>

@@ -49,7 +49,7 @@
     </sect1>
     <sect1 xml:id="CP-FRL">
         <title>Free Relatives</title>
-        <para/>
+        <para xml:id="ὡς_nominal_gap"></para>
     </sect1>
     <sect1 xml:id="CP-EOP">
         <title>Empty Operator Clauses</title>
@@ -57,7 +57,30 @@
     </sect1>
     <sect1 xml:id="IP-INF">
         <title>Infinitival Clauses</title>
-        <para/>
+        <sect2 xml:id="IP-INF-ADT">
+            <title>IP-INF-ADT</title>
+            <para></para>
+        </sect2>
+        <sect2 xml:id="IP-INF-COM">
+            <title>IP-INF-COM</title>
+            <para></para>
+        </sect2>
+        <sect2 xml:id="IP-INF-DEG">
+            <title>IP-INF-DEG</title>
+            <para></para>
+        </sect2>
+        <sect2 xml:id="IP-INF-PRP">
+            <title>IP-INF-PRP</title>
+            <para></para>
+        </sect2>
+        <sect2 xml:id="IP-INF-SBJ">
+            <title>IP-INF-SBJ</title>
+            <para></para>
+        </sect2>
+        <sect2 xml:id="IP-INF-THT">
+            <title>IP-INF-THT</title>
+            <para></para>
+        </sect2>
     </sect1>
     <sect1 xml:id="IP-SMC">
         <title>Small Clauses</title>

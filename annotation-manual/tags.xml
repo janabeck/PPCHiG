@@ -197,7 +197,7 @@
                     </row>
                     <row>
                         <entry>CONJ0</entry>
-                        <entry>coordinating conjunction, token-initial</entry>
+                        <entry>coordinating conjunction, clause-level and token-initial</entry>
                     </row>
                 </tbody>
             </tgroup>

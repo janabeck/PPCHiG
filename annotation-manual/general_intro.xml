@@ -3,7 +3,7 @@
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="general_intro">
     <title>General Introduction</title>
-    <sect1>
+    <sect1 xml:id="philosophy_and_goals">
         <title>Philosophy and Goals</title>
         <para>
             <itemizedlist>
@@ -54,7 +54,7 @@
             </itemizedlist>
         </para>
     </sect1>
-    <sect1>
+    <sect1 xml:id="file_formats">
         <title>File Formats</title>
         <para>At present, the corpus is only available in the default .psd format. However, in the
             future (see <xref linkend="development"/>) we plan to release the corpus in three
@@ -87,7 +87,7 @@
                 is the same as in the POS files. Each token is enclosed with its ID in a set of
                 unlabeled parentheses. <programlisting>
 ( (IP-MAT-SPE (CODE {VS:1_8})
-              (CONJ ἀλλὰ)
+              (CONJ0 ἀλλὰ)
               (NP-SBJ *pro*)
               (VBPP-FUT λήμψεσθε)
               (NP-OB1 (NA δύναμιν))
@@ -122,7 +122,7 @@
             </para>
         </sect2>
     </sect1>
-    <sect1>
+    <sect1 xml:id="textual_markup">
         <title>Textual Markup</title>
         <para>In general, it has not been possible to retain the <link
                 xlink:href="http://www.tei-c.org/index.xml">TEI</link> XML markup conventions of the

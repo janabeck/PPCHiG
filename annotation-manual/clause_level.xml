@@ -104,11 +104,41 @@
     </sect1>
     <sect1 xml:id="words_clausal_constituents">
         <title>Words as Clausal Constituents</title>
-        <para/>
+        <sect2 xml:id="clausal_adverbs">
+            <title>Adverbs</title>
+            <para></para>
+        </sect2>
+        <sect2 xml:id="floated_quantifiers">
+            <title>Floated Quantifiers</title>
+            <para></para>
+        </sect2>
+        <sect2 xml:id="clausal_negation">
+            <title>Negation</title>
+            <para></para>
+        </sect2>
+        <sect2 xml:id="clausal_participles">
+            <title>Participles</title>
+            <para></para>
+        </sect2>
     </sect1>
     <sect1 xml:id="extended_dash">
         <title>Extended Dash Tags</title>
-        <para/>
+        <sect2 xml:id="LFD">
+            <title>Left Dislocation</title>
+            <para></para>
+        </sect2>
+        <sect2 xml:id="PRN">
+            <title>Appositive or Parenthetical</title>
+            <para></para>
+        </sect2>
+        <sect2 xml:id="RSP">
+            <title>Resumptive</title>
+            <para></para>
+        </sect2>
+        <sect2 xml:id="SPE">
+            <title>Direct Speech</title>
+            <para></para>
+        </sect2>
     </sect1>
     <sect1 xml:id="unknown">
         <title>Unknown</title>

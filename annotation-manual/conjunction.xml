@@ -5,73 +5,828 @@
     <title>Conjunction</title>
     <sect1 xml:id="word_level_conj">
         <title>Word-Level Conjunction</title>
-        <para/>
+        <para> Constituents that are labeled only at the word level (i.e., verbs) conjoin at the
+            word level. When an active verb is conjoined with a middle-passive verb, the appropriate
+            verbal POS tag with an -X appended is used to show that the voice of the conjoined verb
+            is unknown. It is not possible to conjoin—at the word level—two verbs that are marked
+            differently for tense (or aspect). See <xref linkend="unlike_conj"/> for what to do in
+            this situation. <itemizedlist>
+                <listitem>
+                    <para> word-level verbal conjunction:
+                        <programlisting>
+(VBP-IMPF (VBP-IMPF ἀκούετε) (CONJ καὶ) (VBP-IMPF βλέπετε))                            
+                        </programlisting>
+                        (Matthew 11.4) </para>
+                </listitem>
+                <listitem>
+                    <para> word-level verbal conjunction of unlike-voiced verbs:
+                        <programlisting>
+(VBOX-AOR (VBOP-AOR κύσαιτο) (CONJ καὶ) (VBO-AOR τέκοι))                            
+                        </programlisting>
+                        (ID Gortyn, LawCode.61) </para>
+                </listitem>
+            </itemizedlist>
+        </para>
+        <para> For simplicity, categories that project phrases also conjoin at the word level,
+            provided that all conjuncts consist of a single word. Since the constituenthood of the
+            conjunction structure is already indicated by a phrasal tag, no additional word-level
+            tag surrounds the structure, unlike in the case of verbs above. <itemizedlist>
+                <listitem>
+                    <para>
+                        <programlisting>
+(NP (NSA ἡγεμόνας) (CLPRT δὲ) (CONJ καὶ) (NSA βασιλεῖς))                        
+                    </programlisting>
+                        (Matthew 10.18) </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <programlisting>
+(ADVP-TMP (ADV σήμερον) (CONJ καὶ) (ADV αὔριον))                            
+                        </programlisting>
+                        (Luke 13.32) </para>
+                </listitem>
+            </itemizedlist>
+        </para>
     </sect1>
     <sect1 xml:id="phrase_level_conj">
         <title>Phrase-Level Conjunction</title>
-        <para/>
+        <para> When any of the conjuncts consists of more than a single word, the second and
+            following conjuncts are labeled as CONJPs, headed by the conjunction, and adjoined to
+            the first conjunct at the phrasal level, as illustrated in the following schema:
+            <programlisting>
+(XP (XP (X first-conjunct))
+    (CONJP (CONJ conjunction)
+           (YP (Y second-conjunct)))
+    (CONJP (CONJ conjunction)
+           (ZP (Z third-conjunct) (Z more-of-third-conjunct))))                
+            </programlisting>
+            All phrasal categories are conjoined in the same way. <link linkend="clausal_conj"
+                >Conjunction of clauses</link>, which follows essentially the same pattern but
+            presents special difficulties, is discussed separately below. <itemizedlist>
+                <listitem>
+                    <para>
+                        <programlisting>
+(NP-OB1 (NP (DA τὸ) (NA παιδίον))
+        (CONJP (CONJ καὶ)
+               (NP (DA τὴν)
+                   (NA μητέρα)
+                   (NP-ATR (PRO$ αὐτοῦ)))))                            
+                        </programlisting>
+                        (Matthew 2.13) </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <programlisting>
+(PP (PP (P ἐν)
+        (NP (DSD ταῖς) (NSD συναγωγαῖς)))
+    (CONJP (CONJ καὶ)
+           (PP (P ἐν)
+               (NP (DSD ταῖς) (NSD ῥύμαις)))))                            
+                        </programlisting>
+                        (Matthew 6.2) </para>
+                </listitem>
+            </itemizedlist>
+        </para>
     </sect1>
     <sect1 xml:id="empty_head_conjps">
         <title>CONJPs with Empty Heads</title>
-        <para/>
+        <para> Instances of word-level conjunction generally contain at least one overt conjunction.
+            In the small number of cases where this is not the case, CONJPs are added to make the
+            structure clear and distinguish these cases from noun compounds. <!-- There are no Greek
+                examples of this type as of yet. -->
+            <programlisting>
+(NODE (NP-SBJ (NS abbeyes)
+              (, .)
+              (CONJP (NS priories))
+              (, .)
+              (CONJP (NS bernes)))
+      (ID CMAYENBI,30.488))                
+            </programlisting>
+        </para>
+        <para> All clear cases of phrasal conjunction, including ones without an overt conjunction,
+            contain CONJP. This is most common in cases with more than two conjuncts, where an overt
+            conjunction appears only before the final conjunct. But there are also cases without any
+            explicit conjunction at all. <itemizedlist>
+                <listitem>
+                    <para> more than two conjuncts:
+                        <programlisting>
+(NP-OB1 (NP (ADJA χωλούς))
+        (, ,)
+        (CONJP (NP (ADJA κυλλούς)))
+        (, ,)
+        (CONJP (NP (ADJA τυφλούς)))
+        (, ,)
+        (CONJP (NP (ADJA κωφούς)))
+        (, ,)
+        (CONJP (CONJ καὶ)
+               (NP (ADJA ἑτέρους) (QA πολλούς))))                            
+                        </programlisting>
+                        (Matthew 15.30) </para>
+                </listitem>
+                <listitem>
+                    <para> no explicit conjunction:
+                        <programlisting>
+(NP-SBJ (NP (NUM μία) (N ποίμνη))
+        (, ,)
+        (CONJP (NP (NUM εἷς) (N ποιμήν))))                            
+                        </programlisting>
+                        (John 10.16) </para>
+                </listitem>
+            </itemizedlist>
+        </para>
+        <para> In general, sets of constituents (NPs, PPs, etc.) acting as a unit are treated either
+            as appositive or conjoined, and this is indicated either by the presence of the extended
+            tag -PRN (see \autoref{PRN}), or by the presence of CONJP on the second (and following)
+            constituents. The immediately following structure is therefore illegal:
+            <programlisting>
+(NODE (WNP-2 (WNP (WD what) (N mede))     ← illegal structure, no -PRN or CONJP
+             (, ,)
+             (WNP (WD what) (N blysse))
+             (, ,)
+             (WNP (WD what) (N coroune))))
+
+(NODE (WNP-2 (WNP (WD what) (N mede))     ← corrected structure, with CONJPs
+             (, ,)
+             (CONJP (WNP (WD what) (N blysse)))
+             (, ,)
+             (CONJP (WNP (WD what) (N coroune))))
+      (ID CMAELR3,26.14))                
+            </programlisting>
+        </para>
     </sect1>
     <sect1 xml:id="unlike_conj">
         <title>Conjunction of Unlike Categories</title>
-        <para/>
+        <para> Conjuncts are generally of the same category, but not always. In the case of unlike
+            categories, the category enclosing the entire conjunction structure is, by default, that
+            of the first conjunct.
+            <programlisting>
+(NP-OB2 (NP (DD τῷ)
+            (RRC (VPRPD-IMPF δαιμονιζομένῳ)))
+        (CONJP (CONJ καὶ)
+               (PP (P περὶ)
+                   (NP (DS$ τῶν) (NS$ χοίρων)))))                
+            </programlisting>
+            (Mark 5.16) </para>
+        <para> When two words that conjoin at the word level have different labels (unless they are
+            verbs that differ only with respect to voice—see <xref linkend="word_level_conj"/>
+            above), a CONJP is added. In most cases of single-word conjunction, the difference
+            between conjoining like and unlike categories is an artifact of our system of labeling
+            rather than reflecting true conjunction of unlike categories. <!-- There are no Greek
+                examples of this type as of yet. -->
+            <programlisting>
+(NODE (DON (DON done)
+           (CONJP (CONJ and)
+                  (VBN caused)))
+      (ID CMMALORY,65.2185))                
+            </programlisting>
+        </para>
+        <para> Cases involving the conjunction of unlike categories that result in morphological
+            mismatches are treated differently; see <xref linkend="backwards_gapping"/>. </para>
     </sect1>
     <sect1 xml:id="recursive_conj">
         <title>Recursive Conjunction Structures</title>
-        <para/>
+        <para> Conjunction structures can be recursive. We attempt to represent the (perceived)
+            intent of the text, using various clues such as the distribution of conjunctions,
+            punctuation, syntactic parallelism, and alliteration. In the absence of evidence for
+            grouping, the default is to give a non-recursive structure.
+            <programlisting>
+(NP-OB1 (NP (NEG μὴ)
+            (DSA τοὺς)
+            (NSA πόδας)
+            (NP-ATR (CLPRO$ μου))
+            (ADV μόνον))
+        (CONJP (CONJ ἀλλὰ)
+               (ADV καὶ)
+               (NP (NP (DSA τὰς) (NSA χεῖρας))
+                   (CONJP (CONJ καὶ)
+                          (NP (DA τὴν) (NA κεφαλήν))))))                
+            </programlisting>
+            (John 13.9) </para>
     </sect1>
     <sect1 xml:id="shared_mod_conj">
         <title>Shared Modifiers</title>
-        <para/>
+        <sect2 xml:id="pre_mod">
+            <title>Shared Pre-Modifiers</title>
+            <para> See also <xref linkend="clausal_shared_mod"/>. When the first conjunct includes
+                pre-head modifiers, it is possible in principle for conjunction to apply at the word
+                level or at the phrase level. In order to indicate the (potential) attachment
+                ambiguity, the second and following conjuncts are labeled (W)ADJX, (W)ADVX, or (W)NX.<important>
+                    <para>(W)ADJX, (W)ADVX, and (W)NX are used even when the attachment ambiguity is
+                        resolved by the context.</para>
+                </important> Since the second conjunct in these cases is never taken to be a full
+                phrase on its own, the first conjunct is never surrounded by phrasal brackets of its
+                own.
+                <programlisting>
+(NP-SBJ (Q πολλοὶ)
+        (NS τελῶναι)
+        (CONJP (CONJ καὶ)
+               (NX (ADJ ἁμαρτωλοὶ))))                    
+                </programlisting>
+                (Mark 2.15) </para>
+            <para> This convention applies only to ADJX, ADVX, NX, and their wh- counterparts. It
+                does not extend to PP. <!-- There is not likely to be a Greek example of this yet. -->
+                <programlisting>
+(NODE (PP (PP (FP bote)
+              (P in)
+              (NP (ONE oon)))
+          (, ,)
+          (CONJP (PP (P at)
+                     (NP (ONE oon))))
+          (CONJP (CONJ and)
+                 (PP (P wit)
+                     (NP (ONE oon)))))
+      (ID CMAELR3,35.268))                    
+                </programlisting>
+            </para>
+        </sect2>
+        <sect2 xml:id="post_mod">
+            <title>Shared Post-Modifiers</title>
+            <para> See also <xref linkend="clausal_shared_mod"/>. In keeping with our general
+                principles, shared post-modifiers are attached <link linkend="high_attachment">as
+                    high as possible</link>.
+                <programlisting>
+(NP-SBJ (NP (NS σημεῖα))
+        (CONJP (CONJ καὶ)
+               (NP (NS τέρατα)))
+        (Q πολλὰ))                    
+                </programlisting>
+                (Acts 5.12) </para>
+        </sect2>
     </sect1>
     <sect1 xml:id="conj_and_neg">
         <title>Conjunction and Negation</title>
-        <para/>
+        <para>
+            <important>
+                <para>In both of the following constructions, <emphasis>not</emphasis> is bracketed
+                    as low as possible, reflecting the fact that it forms a constituent with the
+                    phrase that it negates. In other words, <emphasis>not</emphasis> is never
+                    treated as a correlative conjunction or as part of one.</para>
+            </important>
+            <programlisting>
+(XP (XP (X first-conjunct))
+    (CONJP (YP (NEG not) (Y second-conjunct))))     ← X NOT Y
+
+(XP (XP (X first-conjunct))
+    (CONJP (CONJ conjunction)
+           (YP (NEG not) (Y second-conjunct))))     ← X AND/BUT NOT Y            
+        </programlisting>
+            <itemizedlist>
+                <listitem>
+                    <para> X <emphasis>not</emphasis> Y, X AND <emphasis>not</emphasis> Y, X BUT
+                            <emphasis>not</emphasis> Y:
+                        <programlisting>
+(NP (NP (ND καινότητι)
+        (NP-ATR (N$ πνεύματος)))
+    (CONJP (CONJ καὶ)
+           (NP (NEG οὐ)
+               (ND παλαιότητι)
+               (NP-ATR (N$ γράμματος)))))                            
+                        </programlisting>
+                        (Romans 7.6) </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <emphasis>not</emphasis> (<emphasis>only</emphasis>) X BUT
+                            (<emphasis>also</emphasis>) Y <important>
+                            <para><emphasis>Also</emphasis>, unlike <emphasis>not</emphasis>
+                                    (<emphasis>only</emphasis>), attaches as a sister to the
+                                conjunction.</para>
+                        </important>:
+                        <programlisting>
+(NP-OB1 (NP (NEG μὴ)
+            (DSA τοὺς)
+            (NSA πόδας)
+            (NP-ATR (CLPRO$ μου))
+            (ADV μόνον))
+        (CONJP (CONJ ἀλλὰ)
+               (ADV καὶ)
+               (NP (NP (DSA τὰς) (NSA χεῖρας))
+                   (CONJP (CONJ καὶ)
+                          (NP (DA τὴν) (NA κεφαλήν))))))                            
+                        </programlisting>
+                        (John 13.9) </para>
+                </listitem>
+            </itemizedlist>
+        </para>
     </sect1>
     <sect1 xml:id="extraposed_conjps">
         <title>Extraposed CONJPs</title>
-        <para/>
+        <para> Not infrequently, the second (or following) conjunct of a conjoined phrase is
+            extraposed. In such cases, the extraposed conjunct is coindexed with an *ICH* trace.
+            This is one of the few cases of rightward movement allowed in the corpora. See <xref
+                linkend="extraposition"/> for extensive discussion.
+            <programlisting>
+( (IP-MAT (CODE {VS:21_12})
+          (CONJ0 καὶ)
+          (NP-OB1 (NP (DSA τὰς)
+                      (NSA τραπέζας)
+                      (NP-ATR (DS$ τῶν) (NS$ κολλυβιστῶν)))
+                  (CONJP *ICH*-1))
+          (NP-SBJ *con*)
+          (VBD κατέστρεψεν)
+          (CONJP-1 (CONJ καὶ)
+                   (NP (DSA τὰς)
+                       (NSA καθέδρας)
+                       (NP-ATR (DS$ τῶν)
+                               (RRC (VPR$-IMPF πωλούντων)
+                                    (NP-OB1 (DSA τὰς) (NSA περιστεράς))))))
+          (, ,))
+  (ID GreekNT,Matthew))                
+            </programlisting>
+        </para>
+        <para> Extraposition of a second (or following) conjunct from a phrase consisting of
+            conjoined single words is treated in the same way. Although for simplicity’s sake, these
+            cases normally do not contain a CONJP, when extraposition is involved, a CONJP is
+            introduced (motivated by the fact of extraposition itself). Apart from the CONJP, no
+            additional phrasal nodes are introduced. As with the phrasal case just discussed, the
+            extraposed CONJP is coindexed with <link linkend="a_bar_movement">an *ICH* trace</link>.
+            <programlisting>
+(IP-INF-COM (NP-OBQ (ND θεῷ)
+                    (CONJP *ICH*-1))
+            (VBN-IMPF δουλεύειν)
+            (CONJP-1 (CONJ καὶ)
+                     (ND μαμωνᾷ)))                
+            </programlisting>
+            (Matthew 6.24) </para>
     </sect1>
     <sect1 xml:id="correlative_conj">
         <title>Correlative Conjunction</title>
-        <para/>
+        <sect2 xml:id="word_level_correlative_conj">
+            <title>Word-Level Correlative Conjunction</title>
+            <para> Single-word cases are bracketed flat, as in the general case.
+                <programlisting>
+(NP-OB1 (CONJ καὶ) (NA ψυχὴν) (CONJ καὶ) (NA σῶμα))                   
+                </programlisting>
+                (Matthew 10.28) </para>
+        </sect2>
+        <sect2 xml:id="phrase_level_correlative_conj">
+            <title>Phrase-Level Correlative Conjunction</title>
+            <para> In phrase-level correlative conjunction, the first conjunction is treated as a
+                sister of the first conjunct:
+                <programlisting>
+(NP-OB1 (CONJ καὶ)
+        (NP (DSA τὰς) (NSA χεῖρας))
+        (CONJP (CONJ καὶ)
+               (NP (DA τὴν) (NA πλευρὰν))))                    
+                </programlisting>
+                (John 20.20) </para>
+        </sect2>
+        <sect2 xml:id="float_conj">
+            <title>Floated Conjunctions</title>
+            <para> Floated conjunctions are attached as high as possible, usually at the IP level,
+                but lower if necessary. Where possible, they are coindexed with an *ICH* trace in
+                the position where they are interpreted. <!-- This may not occur in Greek. -->
+                <programlisting>
+(NODE (IP-SUB (NP-SBJ (D +te) (N kyng))
+              (MD schulde)
+              (CONJ-1 no+ter)
+              (VB bere)
+              (NP-OB1 (CONJ *ICH*-1) (N swerd) (CONJ ne) (N knyf)))
+      (ID CMPOLYCH,VI,445.3266))                    
+                </programlisting>
+            </para>
+        </sect2>
     </sect1>
     <sect1 xml:id="clausal_conj">
         <title>Clausal Conjunction</title>
         <sect2 xml:id="matrix_conj">
             <title>Conjunction of Matrix IPs</title>
-            <para/>
+            <para> See also <xref linkend="direct_speech_conj"/>. Main clauses are separated even
+                when conjoined. The clause-initial CONJ in the second and subsequent clause(s) is
+                treated as a constituent of the clause, and an empty subject (NP-SBJ *con*) is
+                included in the second and subsequent clauses. An (NP-SBJ *con*) should only be used
+                in Greek when a true conjunction is involved—e.g., καί—and not when sentential
+                particles (δέ, οὖν) are involved.
+                <programlisting>
+( (IP-MAT (CODE {VS:21_12})
+          (CONJ0 Καὶ)
+          (VBD-AOR εἰσῆλθεν)
+          (NP-SBJ (N Ἰησοῦς))
+          (PP (P εἰς)
+              (NP (DA τὸ) (ADJA ἱερόν)))
+          (, ,))
+  (ID GreekNT,Matthew))
+
+( (IP-MAT (CODE {VS:21_12a})
+          (CONJ0 καὶ)
+          (NP-SBJ *con*)
+          (VBD-AOR ἐξέβαλεν)
+          (NP-OB1 (QA πάντας)
+                  (DSA τοὺς)
+                  (RRC (VPRA-IMPF (VPRA-IMPF πωλοῦντας)
+                                  (CONJ καὶ)
+                                  (VPRA-IMPF ἀγοράζοντας))
+                       (PP (P ἐν)
+                           (NP (DD τῷ) (ADJD ἱερῷ))))))
+  (ID GreekNT,Matthew))                    
+                </programlisting>
+            </para>
         </sect2>
         <sect2 xml:id="embedded_conj">
             <title>Conjunction of Embedded IPs</title>
-            <para/>
+            <para> The absence of a VP level in our annotation system forces us to treat both VP and
+                IP conjunction in the same way—namely, as IP conjunction. An <link
+                    linkend="empty_subjects">empty subject</link> (NP-SBJ *con*) is included in any
+                non-first clausal conjunct when its subject is elided.
+                <programlisting>
+(CP-ADV (C ὅτι)
+        (IP-SUB (IP-SUB (NP-SBJ *pro*)
+                        (VBD-AOR ἔκρυψας)
+                        (NP-OB1 (DSA ταῦτα))
+                        (PP (P ἀπὸ)
+                            (NP (ADJ$ σοφῶν) (CONJ καὶ) (ADJ$ συνετῶν))))
+                (, ,)
+                (CONJP (CONJ καὶ)
+                       (IP-SUB (NP-SBJ *con*)
+                               (VBD-AOR ἀπεκάλυψας)
+                               (NP-OB1 (PROA αὐτὰ))
+                               (NP-OB2 (ADJD νηπίοις))))))                    
+                </programlisting>
+                (Matthew 11.25) </para>
+            <para> For cases where more than the subject is elided from the second conjunct, see
+                    <xref linkend="gapping"/>. </para>
         </sect2>
         <sect2 xml:id="right_raising">
             <title>Right-Node Raising</title>
-            <para/>
+            <para> Right-node raising is treated differently depending on whether the
+                right-node-raised constituent is smaller than NP or not. In the first case, the
+                right-node-raised constituent will be immediately dominated by NP; in the second
+                case, by some type of IP. In the examples below, the right-node-raised constituents
+                are italicized. <itemizedlist>
+                    <listitem>
+                        <para> an enlarging and a restraining <emphasis>power</emphasis> ←
+                            right-node raised constituent = N </para>
+                    </listitem>
+                    <listitem>
+                        <para> She asked for, but she did not get, <emphasis>a raise</emphasis>. ←
+                            right-node raised constituent = NP </para>
+                    </listitem>
+                </itemizedlist> The noun phrase-internal type is treated like ordinary conjunction,
+                except that the head of the first conjunct is not expressed.
+                <programlisting>
+(NP (NP (D an) (VAG enlarging))
+    (CONJP (CONJ and)
+           (NP (D a) (VAG restraining) (N power))))                    
+                </programlisting>
+                In the clausal type, the incomplete IP is marked as a parenthetical (IP-MAT-PRN,
+                IP-SUB-PRN, etc.). In addition, the incomplete clausal material immediately
+                preceding the right-node raised constituent is coindexed (with a index preceded by
+                an equal sign) to the clause from which its missing parts can be reconstructed.
+                Within such incomplete clauses, no reconstruction at all is done. That is, no empty
+                categories are included, and no information beyond part-of-speech and minimal
+                phrasal labelling (including the annotation of grammatical functions) is provided.
+                PPs in such clauses need not include a prepositional object.
+                <programlisting>
+( (IP-MAT-1 (NP-SBJ (PRO She))                  ← complete clause with right-node raised constituent
+            (VBD asked)
+            (PP (P for)
+                (IP-MAT-PRN=1 (CONJ but)        ← index with = on incomplete clause
+                              (NP-SBJ (PRO she))
+                              (DOD did)
+                              (NEG not)
+                              (VB get))
+                (NP (D a) (N raise)))))                    
+                </programlisting>
+            </para>
         </sect2>
         <sect2 xml:id="gapping">
             <title>Gapping</title>
-            <para/>
+            <para> The treatment of gapping resembles that of <link linkend="right_raising"
+                    >right-node raising</link>. The gapped clause is coindexed with the complete
+                clause from which it can be reconstructed. If the gapped clause is sentence-final,
+                it does not receive a -PRN dash tag.
+                <programlisting>
+( (IP-MAT (CODE {VS:2_3})
+          (IP-MAT-1 (IP-PPL (VPR-AOR Ἀκούσας))
+                    (CLPRT δὲ)
+                    (NP-SBJ (D ὁ)
+                            (N βασιλεὺς)
+                            (NP-PRN (N Ἡρῴδης)))
+                    (VBDP-AOR-PASS ἐταράχθη))
+          (CONJP (CONJ καὶ)
+                 (IP-MAT=1 (NP-SBJ (Q πᾶσα) (N Ἰεροσόλυμα))
+                           (PP (P μετ')
+                               (NP (PRO$ αὐτοῦ)))))
+          (, ,))
+  (ID GreekNT,Matthew))                    
+                </programlisting>
+            </para>
+            <para> In cases that are ambiguous between gapping and ordinary conjunction, the default
+                is usually ordinary conjunction. A common case is the <emphasis>not</emphasis>
+                    (<emphasis>only</emphasis>) X <emphasis>but</emphasis> Y construction. In
+                general, gapped clauses should dominate more than one constituent (not counting any
+                conjunctions). However, in cases in which an extraposed CONJP is construed with the
+                subject, the default is gapping. This is because it is possible for the extraposed
+                CONJP to be construed with a silent subject or a subject yielding a mismatch in
+                subject-verb agreement, in which cases an ordinary conjunction analysis is difficult
+                or impossible to implement.
+                <programlisting>
+(CP-ADV (C ὅτε)                                             ← like this
+        (IP-SUB (IP-SUB-2 (NP-SBJ *pro*)
+                          (VBD-AOR ἐπείνασεν))
+                (CONJP (CONJ καὶ)
+                       (IP-SUB=2 (NP-SBJ (DS οἱ)
+                                         (PP (P μετ')
+                                             (NP (PRO$ αὐτοῦ))))))))
+
+(CP-ADV (C ὅτε)                                             ← not like this
+        (IP-SUB (NP-SBJ (PRO *pro*)
+                        (CONJP *ICH*-1))
+                (VBD-AOR ἐπείνασεν)
+                (CONJP-1 (CONJ καὶ)
+                         (NP (DS οἱ)
+                             (PP (P μετ')
+                                 (NP (PRO$ αὐτοῦ)))))))                    
+                </programlisting>
+                (Matthew 12.3) </para>
+            <para> If the gapped clause is clause-internal, it is labeled as a parenthetical, with
+                the exact label (IP-MAT-PRN, IP- SUB-PRN, etc.) depending on how its dominating
+                clause is labeled, just as in the case of <link linkend="right_raising">right-node
+                    raising</link>. Gapping of this type is often used even without strict
+                equivalence between the complete and the gapped clause. If the relationship is
+                extremely loose, however, the second clause may be dominated by FRAG.
+                <programlisting>
+( (IP-MAT-1 (CONJ0 And)
+            (NP-SBJ (NS men))
+            (VBP comen)
+            (PP (P fro)
+                (ADJP (ADJ fer)))
+            (PP (P by)
+                (NP (N watre)))
+            (PP (P in)
+                (NP (NS schippes)))
+            (IP-MAT-PRN=1 (CONJ and)
+                          (PP (P be)
+                              (NP (N londe)))
+                          (PP (P with)
+                              (NP (NS cartes))))
+            (IP-INF-PRP (FOR for) (TO to)
+                        (VB fetten)
+                        (PP (P of)
+                            (NP (D +tat) (N grauell)))))
+  (ID CMMANDEV,19.464))                    
+                </programlisting>
+            </para>
         </sect2>
         <sect2 xml:id="backwards_gapping">
             <title>Backwards Gapping</title>
-            <para/>
+            <para> In backwards gapping, the constituent that counts as gapped is the first conjunct
+                (rather than the second conjunct, as with <link linkend="gapping">ordinary
+                    gapping</link>). The conjunction is included under CONJP in either type.
+                Backwards gapping is used to annotate ‘whether or not’ clauses as well as the
+                conjunction of unlike categories that result in morphological mismatches.
+                <programlisting>
+(CP-THT (C ὅτι)
+        (IP-SUB (IP-SUB=1 (NP-SBJ (PRO ἐγὼ))
+                          (PP (P ἐν)
+                              (NP (DD τῷ) (ND πατρὶ))))
+                (CONJP (CONJ καὶ)
+                       (IP-SUB-1 (NP-SBJ (D ὁ) (N πατὴρ))
+                                 (PP (P ἐν)
+                                     (NP (PROD ἐμοί)))
+                                 (BEP-IMPF ἐστιν)))))                    
+                </programlisting>
+                (John 14.10) </para>
         </sect2>
         <sect2 xml:id="direct_speech_conj">
             <title>Conjoined Direct Speech</title>
-            <para/>
+            <para> After a verb of saying in a matrix clause, all conjoined clauses containing
+                direct speech after the first one are treated as separate tokens.
+                <programlisting>
+( (IP-MAT-SPE (CODE {VS:5_26})
+              (INTJ ἀμὴν)
+              (NP-SBJ *pro*)
+              (VBP-IMPF λέγω)
+              (NP-OB2 (CLPROD σοι))
+              (, ,)
+              (IP-MAT-SPE (NEG οὐ)
+                          (NEG μὴ)
+                          (NP-SBJ *pro*)
+                          (VBS-AOR ἐξέλθῃς)
+                          (ADVP-DIR (ADV ἐκεῖθεν))
+                          (CP-ADV (C ἕως)
+                                  (IP-SUB (PRTG ἂν)
+                                          (NP-SBJ *pro*)
+                                          (VBS-AOR ἀποδῷς)
+                                          (NP-OB1 (DA τὸν) (ADJA ἔσχατον) (NA κοδράντην)))))
+              (. .))
+  (ID GreekNT,Matthew))
+
+( (IP-MAT-SPE (CODE {VS:5_27})
+              (NP-SBJ *pro*)
+              (VBD-AOR Ἠκούσατε)
+              (CP-THT (C ὅτι)
+                      (IP-SUB (NP-SBJ *pro*)
+                              (VBDP-AOR-PASS ἐρρέθη)
+                              (IP-MAT-SPE (NEG Οὐ)
+                                          (NP-SBJ *pro*)
+                                          (VBP-FUT μοιχεύσεις))))
+              (. .))
+  (ID GreekNT,Matthew))                    
+                </programlisting>
+            </para>
+            <para> On the other hand, in embedded clauses, including parentheticals, all conjoined
+                direct speech remains part of the same token.
+                <programlisting>
+( (IP-MAT-SPE (CODE {VS:5_33})
+              (ADVP (ADV Πάλιν))
+              (NP-SBJ *pro*)
+              (VBD-AOR ἠκούσατε)
+              (CP-THT (C ὅτι)
+                      (IP-SUB (NP-SBJ *pro*)
+                              (VBDP-AOR-PASS ἐρρέθη)
+                              (NP-OB2 (DSD τοῖς) (ADJD ἀρχαίοις))
+                              (IP-MAT-SPE (IP-MAT-SPE (NEG Οὐκ)
+                                                      (NP-SBJ *pro*)
+                                                      (VBP-FUT ἐπιορκήσεις))
+                                          (, ,)
+                                          (CONJP (IP-MAT-SPE (NP-SBJ *con*)
+                                                             (VBP-FUT ἀποδώσεις)
+                                                             (CLPRT δὲ)
+                                                             (NP-OB2 (DD τῷ) (ND κυρίῳ))
+                                                             (NP-OB1 (DSA τοὺς)
+                                                                     (NSA ὅρκους)
+                                                                     (NP-ATR (CLPRO$ σου))))))))
+              (. .))
+  (ID GreekNT,Matthew))                    
+                </programlisting>
+            </para>
+            <para> However, because of the prevalence of introducing direct speech with the
+                participle λέγων in the GNT, conjoined direct speech embedded within participial or
+                infinitival phrases in the PPCNTG is treated the same as conjoined direct speech
+                introduced by a verb of saying in a matrix clause: all conjoined clauses containing
+                direct speech after the first one are treated as separate tokens.
+                <programlisting>
+( (IP-MAT (CODE {VS:13_3})
+          (CONJ0 καὶ)
+          (NP-SBJ *pro*)
+          (VBD-AOR ἐλάλησεν)
+          (NP-OB2 (PROD αὐτοῖς))
+          (NP-OB1 (QA πολλὰ))
+          (PP (P ἐν)
+              (NP (NSD παραβολαῖς)))
+          (IP-PPL (VPR-IMPF λέγων)
+                  (IP-MAT-SPE (INTJ Ἰδοὺ)
+                              (VBD-AOR ἐξῆλθεν)
+                              (NP-SBJ (D ὁ) (VPR-IMPF σπείρων))
+                              (CP-PRP (C τοῦ)
+                                      (IP-INF (VBN-IMPF σπείρειν)))))
+          (. .))
+  (ID GreekNT,Matthew))
+
+( (IP-MAT-SPE (CODE {VS:13_4})
+              (CONJ0 καὶ)
+              (PP (P ἐν)
+                  (NP (DD τῷ)
+                      (IP-INF (VBN-IMPF σπείρειν)
+                              (NP-SBJ (PROA αὐτὸν))
+                              (NP-OB1 (CP-FRL (WNP-1 (WPROA ἃ)) 
+                                              (CLPRT μὲν)
+                                              (C 0)
+                                              (IP-SUB (NP-SBJ *T*-1)
+                                                      (VBD-AOR ἔπεσεν)
+                                                      (PP (P παρὰ)
+                                                          (NP (DA τὴν) (NA ὁδόν)))))))))
+              (, ,)
+              (CONJ καὶ)
+              (IP-PPL (VPR-AOR ἐλθόντα))
+              (NP-SBJ (DS τὰ) (ADJ πετεινὰ))
+              (VBD-AOR κατέφαγεν)
+              (NP-OB1 (PROA αὐτα))
+              (. .))
+  (ID GreekNT,Matthew))                    
+                </programlisting>
+            </para>
         </sect2>
         <sect2 xml:id="CP_conj">
             <title>Conjunction of CPs</title>
-            <para/>
+            <para> Conjunction of embedded clauses is treated as CP conjunction (rather than as IP
+                conjunction) only if the second conjunct has overt CP material, such as a wh- phrase
+                or complementizer.
+                <programlisting>
+( (IP-IMP-SPE (CODE {VS:6_19})
+              (NEG Μὴ)
+              (VBI-IMPF θησαυρίζετε)
+              (NP-OB2 (PROD ὑμῖν))
+              (NP-OB1 (NSA θησαυροὺς))
+              (PP (P ἐπὶ)
+                  (NP (D$ τῆς)
+                      (N$ γῆς)
+                      (, ,)
+                      (CP-REL (CP-REL (WADVP-1 (WADV ὅπου))
+                                      (C 0)
+                                      (IP-SUB (ADVP-LOC *T*-1)
+                                              (NP-SBJ (N σὴς) (CONJ καὶ) (N βρῶσις))
+                                              (VBP-IMPF ἀφανίζει)))
+                              (, ,)
+                              (CONJP (CONJ καὶ)
+                                     (CP-REL (WADVP-2 (WADV ὅπου))
+                                             (C 0)
+                                             (IP-SUB (ADVP-LOC *T*-2)
+                                                     (NP-SBJ (NS κλέπται))
+                                                     (VBP-IMPF (VBP-IMPF διορύσσουσιν)
+                                                               (CONJ καὶ)
+                                                               (VBP-IMPF κλέπτουσιν))))))))
+              (. .))
+  (ID GreekNT,Matthew))                    
+                </programlisting>
+            </para>
         </sect2>
         <sect2 xml:id="clausal_shared_mod">
             <title>Clausal Conjunction and Shared Modifiers</title>
-            <para/>
+            <para> Because of the way that we split matrix clauses, shared elements interpreted as
+                belonging to both clauses must be annotated as belonging to one clause or the other,
+                or one of the clauses must be treated as parenthetical. For adjuncts, we take the
+                former approach (see examples below); for complements, the latter (see <xref
+                    linkend="embedded_conj"/>). As a result of our convention, pre-sentential
+                adjuncts (most commonly, clause-initial WHEN and IF clauses) appear as constituents
+                of the first conjunct only, while post-sentential adjuncts appear as constituents of
+                the second conjunct only. 
+                <programlisting>
+( (IP-IMP-SPE (CODE {VS:6_6})
+              (CP-ADV (NP-LFD (PRO σὺ))                     ← potential shared adjunct
+                      (CLPRT δὲ)
+                      (C ὅταν)
+                      (IP-SUB (NP-SBJ-RSP *pro*)
+                              (VBSP-IMPF προσεύχῃ)))
+              (, ,)
+              (VBI-AOR εἴσελθε)
+              (PP (P εἰς)
+                  (NP (DA τὸ)
+                      (NA ταμεῖόν)
+                      (NP-ATR (CLPRO$ σου)))))
+  (ID GreekNT,Matthew))
+
+( (IP-IMP-SPE (CODE {VS:6_6a})
+              (CONJ0 καὶ)
+              (IP-PPL (VPR-AOR κλείσας)
+                      (NP-OB1 (DA τὴν)
+                              (NA θύραν)
+                              (NP-ATR (CLPRO$ σου))))
+              (VBIP-AOR πρόσευξαι)
+              (NP-OB2 (DD τῷ)
+                      (ND πατρί)
+                      (NP-ATR (CLPRO$ σου))
+                      (NP-PRN (DD τῷ)
+                              (PP (P ἐν)
+                                  (NP (DD τῷ) (ADJD κρυπτῷ)))))
+              (. .))
+  (ID GreekNT,Matthew))                    
+                </programlisting>
+                <programlisting>
+( (IP-IMP-SPE (CODE {VS:6_17})
+              (NP-SBJ (PRO σὺ))
+              (CLPRT δὲ)
+              (IP-PPL (VPR-IMPF νηστεύων))
+              (VBIP-AOR ἄλειψαί)
+              (NP-OB1 (NP-ATR (CLPRO$ σου))
+                      (DA τὴν)
+                      (NA κεφαλὴν)))
+  (ID GreekNT,Matthew))
+
+( (IP-IMP-SPE (CODE {VS:6_17a})
+              (CONJ0 καὶ)
+              (NP-OB1 (DA τὸ)
+                      (NA πρόσωπόν)
+                      (NP-ATR (CLPRO$ σου)))
+              (VBIP-AOR νίψαι)
+              (, ,)
+              (CODE {VS:6_18})
+              (CP-ADV (C ὅπως)                              ← potential shared adjunct
+                      (IP-SUB (NEG μὴ)
+                              (NP-SBJ *pro*)
+                              (VBSP-AOR φανῇς)
+                              (NP-OB2 (NP (DSD τοῖς) (NSD ἀνθρώποις))
+                                      (CONJP *ICH*-1))
+                              (IP-PPL-COM (VPR-IMPF νηστεύων))
+                              (CONJP-1 (CONJ ἀλλὰ)
+                                       (NP (DD τῷ)
+                                           (ND πατρί)
+                                           (NP-ATR (CLPRO$ σου))
+                                           (NP-PRN (DD τῷ)
+                                                   (PP (P ἐν)
+                                                       (NP (DD τῷ) (ADJD κρυφαίῳ))))))))
+              (. .))
+  (ID GreekNT,Matthew))                    
+                </programlisting>
+            </para>
+            <para>
+                Shared adjuncts in embedded conjoined clauses are treated analogously.
+                <programlisting>
+(IP-SUB (IP-SUB-5 (NP-SBJ *T*-4)
+                  (CP-ADV (C ὅτε)                           ← potential shared adjunct
+                          (IP-SUB (NP-SBJ *pro*)
+                                  (BED-IMPF ἦν)
+                                  (PP (P ἐν)
+                                      (NP (DD τῇ) (ND Γαλιλαίᾳ)))))
+                  (VBD-IMPF ἠκολούθουν)
+                  (NP-OBQ (PROD αὐτῷ)))
+        (CONJP (CONJ καὶ)
+               (IP-SUB=5 (NP-SBJ *T*-4)
+                         (VBD-IMPF διηκόνουν)
+                         (NP-OBQ (PROD αὐτῷ)))))                    
+                </programlisting> (Mark 15.41)
+            </para>
         </sect2>
     </sect1>
 </chapter>
