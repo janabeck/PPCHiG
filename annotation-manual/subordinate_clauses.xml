@@ -25,7 +25,10 @@
     </sect1>
     <sect1 xml:id="CP-CMP">
         <title>Comparative Clauses</title>
-        <para/>
+        <sect2 xml:id="full_correlative">
+            <title>Correlative Comparatives</title>
+            <para></para>
+        </sect2>
     </sect1>
     <sect1 xml:id="CP-QUE">
         <title>Questions</title>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.oasis-open.org/docbook/xml/5.0/rng/docbookxi.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<appendix xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="appendix">
+    <title>Appendix</title>
+    <sect1 xml:id="copular_verbs">
+        <title>Copular Verbs</title>
+        <para><blockquote>
+                <para>APPEAR, BE, BECOME, CHANCE, CONTINUE, FALL, FEEL, GET, GROW, KEEP, LOOK, PLEAD
+                    (in legal sense), PROVE, REMAIN, SAVOR, SEEM, SHOW, SMELL, SOUND, STAY, TASTE,
+                    TURN, WAX</para>
+            </blockquote></para>
+    </sect1>
+    <sect1 xml:id="small_clause_verbs">
+        <title>Verbs taking Small Clauses</title>
+        <para><blockquote><para></para></blockquote></para>
+    </sect1>
+    <sect1 xml:id="secondary_pred_verbs">
+        <title>Verbs taking Secondary Predicates</title>
+        <para><blockquote><para></para></blockquote></para>
+    </sect1>
+    <sect1 xml:id="cognate_object_verbs">
+        <title>Cognate Object Verbs</title>
+        <para><blockquote><para></para></blockquote></para>
+    </sect1>
+</appendix>

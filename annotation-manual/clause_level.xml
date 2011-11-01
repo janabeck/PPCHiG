@@ -5,37 +5,283 @@
     <title>Clause-Level Constituents</title>
     <sect1 xml:id="clADJP">
         <title>Adjective Phrase</title>
-        <para/>
+        <sect2 xml:id="ADJP-PRD">
+            <title>Predicate Adjectives</title>
+            <para> Bare ADJPs at the sentence level are predicates of the copular verbs listed below
+                or of small clauses. The Greek semantic equivalents of the following English verbs
+                count as copular verbs: <blockquote>
+                    <para>APPEAR, BE, BECOME, CHANCE, CONTINUE, FALL, FEEL, GET, GROW, KEEP, LOOK,
+                        PLEAD (in legal sense), PROVE, REMAIN, SAVOR, SEEM, SHOW, SMELL, SOUND,
+                        STAY, TASTE, TURN, WAX</para>
+                </blockquote> Predicate adjectives carry the dash tag -PRD. <itemizedlist>
+                    <listitem>
+                        <para> ADJP-PRD at the sentence level:
+                            <programlisting>
+(NP-SBJ (D ὁ)
+        (CLPRT δὲ)
+        (RRC (PP (P ὀπίσω)
+                 (NP (CLPRO$ μου)))
+             (VPRP-IMPF ἐρχόμενος)))
+(ADJP-PRD (ADJR ἰσχυρότερός)
+          (NP-CMP (CLPRO$ μου)))
+(BEP-IMPF ἐστίν)                                
+                            </programlisting>
+                            (Matthew 3.11) </para>
+                    </listitem>
+                    <listitem>
+                        <para> ADJP-PRD in a small clause:
+                            <programlisting>
+(IP-PPL (ADJA-1 ἴσον)
+        (NP-2 (PROA+SLF ἑαυτὸν))
+        (VPR-IMPF ποιῶν)
+        (IP-SMC (ADJP-PRD (ADJA *ICH*-1)
+                          (NP-COM (DD τῷ) (ND θεῷ)))
+                (NP-SBJ *ICH*-2)))
+                            </programlisting>
+                            (John 5.18)
+                            <!-- include this example in discontinuous phrases discussion! -->
+                        </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </sect2>
+        <sect2 xml:id="ADJP-SPR">
+            <title>Other Clause-Level ADJPs (ADJP-SPR)</title>
+            <para> The dash tag -SPR is mnemonic for ‘secondary predicate’; see <xref
+                    linkend="NP-SPR"/> for a list of verbs that take secondary predicates. This dash
+                tag is also appended to all clause-level ADJPs that are not the predicate of a <link
+                    linkend="copular_verbs">copular verb</link> or <link linkend="IP-SMC">small
+                    clause</link>. In addition to secondary predicates, ADJP-SPRs thus also include
+                adjectival adjuncts (parallel to adjunct <link linkend="IP-PPL">participial
+                    clauses</link>) and the first ADJP in <link linkend="full_correlative">full
+                    correlative comparatives</link>.
+                <programlisting>
+(ADJP-PRD (ADJ καλόν))
+(NP-OB2 (PROD σοί))
+(BEP-IMPF ἐστιν)
+(IP-INF-SBJ (VBN-AOR εἰσελθεῖν)
+            (PP (P εἰς)
+                (NP (DA τὴν) (NA ζωὴν)))
+            (ADJP-SPR (ADJA κυλλὸν) (CONJ ἢ) (ADJA χωλόν)))                    
+                </programlisting>
+                (Matthew 18.8)
+                <programlisting>
+( (IP-MAT-SPE (CODE {VS:4_28})
+              (IP-MAT-1 (ADJP-SPR (ADJ αὐτομάτη))
+                        (NP-SBJ (D ἡ) (N γῆ))
+                        (VBP-IMPF καρποφορεῖ)
+                        (, ,)
+                        (ADVP-TMP (ADV πρῶτον))
+                        (NP-OB1 (NA χόρτον)))
+              (, ,)
+              (CONJP (IP-MAT=1 (ADVP-TMP (ADV εἶτεν))
+                               (NP-OB1 (NA στάχυν))))
+              (, ,)
+              (CONJP (IP-MAT=1 (ADVP-TMP (ADV εἶτεν))
+                               (NP-OB1 (ADJA πλήρη)
+                                       (NA σῖτον)
+                                       (PP (P ἐν)
+                                           (NP (DD τῷ) (ND στάχυϊ))))))
+              (. .))
+  (ID GreekNT,Mark))                    
+                </programlisting>
+            </para>
+        </sect2>
+        <sect2 xml:id="ADJP_movt">
+            <title>Movement out of ADJP</title>
+            <para> Our annotation system does not fix the order of syntactic dependents with respect
+                to the head in ADJPs (which contrast in this respect with other phrasal categories),
+                and so complements of adjectives that immediately precede the head are not treated
+                as instances of movement. For examples of movement out of ADJP, see <link
+                    linkend="ADJP_traces">traces in ADJP</link>. </para>
+        </sect2>
     </sect1>
     <sect1 xml:id="clADVP">
         <title>Adverb Phrase</title>
-        <para/>
+        <para> ADVPs must be headed by adverbs. Noun phrases that are used adverbially are labeled
+                <link linkend="NP-ADV">NP-ADV</link>. <itemizedlist>
+                <listitem>
+                    <para> Directional adverbs (ADVP-DIR):
+                        <programlisting>
+(IP-MAT-SPE (NEG οὐ)
+            (NEG μὴ)
+            (NP-SBJ *pro*)
+            (VBS-AOR ἐξέλθῃς)
+            (ADVP-DIR (ADV ἐκεῖθεν))
+            (CP-ADV (C ἕως)
+                    (IP-SUB (AN ἂν)
+                            (NP-SBJ *pro*)
+                            (VBS-AOR ἀποδῷς)
+                            (NP-OB1 (DA τὸν) (ADJS ἔσχατον) (NA κοδράντην)))))                            
+                        </programlisting>
+                        (Matthew 5.26) </para>
+                </listitem>
+                <listitem>
+                    <para> Locative adverbs (ADVP-LOC):
+                        <programlisting>
+( (IP-MAT-SPE (CODE {VS:8_12})
+              (IP-MAT-1 (ADVP-LOC (ADV ἐκεῖ))
+                        (BEP-FUT ἔσται)
+                        (NP-SBJ (D ὁ) (N κλαυθμὸς)))
+              (CONJP (CONJ καὶ)
+                     (IP-MAT=1 (NP-SBJ (D ὁ)
+                                       (N βρυγμὸς)
+                                       (NP-COM (DS$ τῶν) (NS$ ὀδόντων)))))
+              (. .))
+  (ID GreekNT,Matthew))                            
+                        </programlisting>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para> Temporal adverbs (ADVP-TMP):
+                        <programlisting>
+( (IP-MAT (CODE {VS:3_15})
+          (ADVP-TMP (ADV τότε))
+          (NP-SBJ *pro*)
+          (VBP-IMPF ἀφίησιν)
+          (NP-OB1 (PROA αὐτόν))
+          (. .))
+  (ID GreekNT,Matthew))                            
+                        </programlisting>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para> Other adverbs (ADVP): <programlisting>
+( (IP-MAT-SPE (CODE {VS:13_15})
+              (CONJ καὶ)
+              (NP-INS (DSD τοῖς) (NSD ὠσὶν))
+              (ADVP (ADV βαρέως))
+              (NP-SBJ *pro*)
+              (VBD-AOR ἤκουσαν)
+              (, ,))
+  (ID GreekNT,Matthew))                            
+                        </programlisting>
+                        <programlisting>
+( (IP-MAT (CODE {VS:26_43})
+          (CONJ καὶ)
+          (IP-PPL (VPR-AOR ἐλθὼν)
+                  (ADVP (ADV πάλιν)))
+          (NP-SBJ *pro*)
+          (VBD-AOR εὗρεν)
+          (IP-SMC (NP-SBJ (PROA αὐτοὺς))
+                  (VPRA-IMPF καθεύδοντας))
+          (, ,))
+  (ID GreekNT,Matthew))                            
+                        </programlisting>
+                    </para>
+                </listitem>
+            </itemizedlist>
+        </para>
     </sect1>
     <sect1 xml:id="clNP">
         <title>Noun Phrase</title>
         <sect2 xml:id="NP-SBJ">
             <title>Subject</title>
-            <para/>
+            <para> All clauses contain a marked subject except imperatives (where subjects are
+                indicated only when overt) and infinitives with PRO subjects. Apart from these two
+                cases, when a clause has no overt subject, <link linkend="empty_subjects">an empty
+                    subject is added</link>. The infinitival complements of ECM verbs have subjects;
+                see <xref linkend="IP-INF-COM"/> for a discussion of ECM versus object control. <itemizedlist>
+                    <listitem>
+                        <para> overt subject in a declarative:
+                            <programlisting>
+( (IP-MAT (CODE {VS:1_2})
+          (NP-SBJ (N Ἀβραὰμ))
+          (VBD-AOR ἐγέννησεν)
+          (NP-OB1 (DA τὸν) (NA Ἰσαάκ))
+          (, ,))
+  (ID GreekNT,Matthew))                                
+                            </programlisting>
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para> null subject in a declarative:
+                            <programlisting>
+( (IP-MAT-SPE (CODE {VS:1_21})
+              (NP-SBJ *pro*)
+              (VBPP-FUT τέξεται)
+              (CLPRT δὲ)
+              (NP-OB1 (NA υἱὸν)))
+  (ID GreekNT,Matthew))                                
+                            </programlisting>
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para> imperative without a subject:
+                            <programlisting>
+(IP-IMP-SPE (VBI-IMPF φεῦγε)
+            (PP (P εἰς)
+                (NP (NA Αἴγυπτον))))                                
+                            </programlisting>
+                            (Matthew 2.13) </para>
+                    </listitem>
+                    <listitem>
+                        <para> imperative with an overt subject (especially common in Greek with
+                            3rd-person imperatives, as here):
+                            <programlisting>
+(ADVP (ADV οὕτως))
+(VBI-AOR λαμψάτω)
+(NP-SBJ (D τὸ)
+        (N φῶς)
+        (NP-ATR (PRO$ ὑμῶν)))
+(PP (P ἔμπροσθεν)
+    (NP (DS$ τῶν) (NS$ ἀνθρώπων)))                                
+                            </programlisting>
+                            (Matthew 5.16) </para>
+                    </listitem>
+                    <listitem>
+                        <para>
+                            infinitive with an (unmarked) PRO subject:
+                            <programlisting>
+(ADJP-PRD (ADJ καλόν))
+(NP-OB2 (PROD σοί))
+(BEP-IMPF ἐστιν)
+(IP-INF-SBJ (VBN-AOR εἰσελθεῖν)
+            (PP (P εἰς)
+                (NP (DA τὴν) (NA ζωὴν)))
+            (ADJP-SPR (ADJA κυλλὸν) (CONJ ἢ) (ADJA χωλόν)))                                
+                            </programlisting> (Matthew 18.8)
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>
+                            ECM infinitive with a (marked) subject:
+                            <programlisting>
+(CONJ καὶ)
+(IP-PPL (VPR-IMPF ἐπιτιμῶν))
+(NEG οὐκ)
+(NP-SBJ *pro*)
+(VBD-IMPF εἴα)
+(IP-INF-COM (NP-SBJ (PROA αὐτὰ))
+            (VBN-IMPF λαλεῖν))                                
+                            </programlisting> (Luke 4.41)
+                        </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </sect2>
-        <sect2 xml:id="NP-OB1">
-            <title>NP-OB1</title>
-            <para/>
-        </sect2>
-        <sect2 xml:id="NP-OB2">
-            <title>NP-OB2</title>
-            <para/>
-        </sect2>
-        <sect2 xml:id="NP-OBP">
-            <title>NP-OBP</title>
-            <para/>
-        </sect2>
-        <sect2 xml:id="NP-OBQ">
-            <title>NP-OBQ</title>
-            <para/>
-        </sect2>
-        <sect2 xml:id="passive_obj">
-            <title>Objects in Passive</title>
-            <para/>
+        <sect2 xml:id="NP-OBJ"><!-- work here -->
+            <title>Object</title>
+            <sect3 xml:id="NP-OB1">
+                <title>NP-OB1</title>
+                <para/>
+            </sect3>
+            <sect3 xml:id="NP-OB2">
+                <title>NP-OB2</title>
+                <para/>
+            </sect3>
+            <sect3 xml:id="NP-OBP">
+                <title>NP-OBP</title>
+                <para/>
+            </sect3>
+            <sect3 xml:id="NP-OBQ">
+                <title>NP-OBQ</title>
+                <para/>
+            </sect3>
+            <sect3 xml:id="passive_obj">
+                <title>Objects in Passive</title>
+                <para/>
+            </sect3>
         </sect2>
         <sect2 xml:id="NP-ADT">
             <title>Non-Argument (Adjunct) NP</title>
@@ -106,38 +352,38 @@
         <title>Words as Clausal Constituents</title>
         <sect2 xml:id="clausal_adverbs">
             <title>Adverbs</title>
-            <para></para>
+            <para/>
         </sect2>
         <sect2 xml:id="floated_quantifiers">
             <title>Floated Quantifiers</title>
-            <para></para>
+            <para/>
         </sect2>
         <sect2 xml:id="clausal_negation">
             <title>Negation</title>
-            <para></para>
+            <para/>
         </sect2>
         <sect2 xml:id="clausal_participles">
             <title>Participles</title>
-            <para></para>
+            <para/>
         </sect2>
     </sect1>
     <sect1 xml:id="extended_dash">
         <title>Extended Dash Tags</title>
         <sect2 xml:id="LFD">
             <title>Left Dislocation</title>
-            <para></para>
+            <para/>
         </sect2>
         <sect2 xml:id="PRN">
             <title>Appositive or Parenthetical</title>
-            <para></para>
+            <para/>
         </sect2>
         <sect2 xml:id="RSP">
             <title>Resumptive</title>
-            <para></para>
+            <para/>
         </sect2>
         <sect2 xml:id="SPE">
             <title>Direct Speech</title>
-            <para></para>
+            <para/>
         </sect2>
     </sect1>
     <sect1 xml:id="unknown">
