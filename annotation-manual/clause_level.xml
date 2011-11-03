@@ -602,7 +602,7 @@
                 all or none of which may be evidenced in Greek: <itemizedlist>
                     <listitem>
                         <para> fronted NPs not associated with a resumptive (<link linkend="RSP"
-                                >-RSP</link>) element in the body of the clause: 
+                                >-RSP</link>) element in the body of the clause:
                             <programlisting>
 ( (IP-IMP-SPE (CODE {VS:10_14})
               (CONJ καὶ)
@@ -637,8 +637,8 @@
                         </para>
                     </listitem>
                     <listitem>
-                        <para>
-                            fronted NPs that mean more or less AS FOR NP (although these actually receive NP-ADV in the Gortyn Law Code):
+                        <para> fronted NPs that mean more or less AS FOR NP (although these actually
+                            receive NP-ADV in the Gortyn Law Code):
                             <programlisting>
 ( (IP-INF-IMP (NP-ADT (D$ το) (CLPRT δὲ) (N$ κρόνο))
               (NP-SBJ (DA τὸν) (NA δι[κ]αστὰν))
@@ -650,8 +650,8 @@
                         </para>
                     </listitem>
                     <listitem>
-                        <para>
-                            traces of wh- phrases without an evident semantic relation to the body of the clause:
+                        <para> traces of wh- phrases without an evident semantic relation to the
+                            body of the clause:
                             <programlisting>
 (NODE (CP-CAR (WNP-1 (D the) (WPRO which))
               (C 0)
@@ -672,85 +672,879 @@
                 </itemizedlist>
             </para>
         </sect2>
-        <!-- work here -->
         <sect2 xml:id="NP-ADV">
             <title>Adverbial NP</title>
-            <para/>
+            <para> NPs acting adverbially are labeled NP-ADV. The use of NP-ADV is essentially a
+                catch-all that includes all adverbial uses (e.g., adverbial accusative) of nouns
+                that do not fall into any other category such as <link linkend="NP-TMP"
+                    >NP-TMP</link>, <link linkend="NP-LOC">NP-LOC</link>, etc. In most cases if
+                trying to decide between <link linkend="NP-ADT">NP-ADT</link> and NP-ADV, the choice
+                will be NP-ADV. In the traditional terms of Greek grammar<footnote>
+                    <para>See the Appendix (pp. 699-707) in Hansen and Quinn’s <emphasis>Greek: An
+                            Intensive Course</emphasis> for descriptions of these terms.</para>
+                </footnote>, some of the uses which NP-ADV covers (but this list is probably not
+                exhaustive) are: <itemizedlist>
+                    <listitem>
+                        <para> dative of respect:
+                            <programlisting>
+(NP-SBJ (DS οἱ)
+        (ADJP (ADJ πτωχοὶ)
+              (NP-ADV (DD τῷ) (ND πνεύματι))))                                
+                            </programlisting>
+                            (Matthew 5.3) </para>
+                    </listitem>
+                    <listitem>
+                        <para> adverbial accusative:
+                            <programlisting>
+(ADVP-TMP (ADV ποσάκις))
+(NP-SBJ *pro*)
+(VBD-AOR ἠθέλησα)
+(IP-INF-COM (VBN-AOR ἐπισυναγαγεῖν)
+            (NP-OB1 (DSA τὰ)
+                    (NSA τέκνα)
+                    (NP-ATR (CLPRO$ σου)))
+            (, ,)
+            (NP-ADV (CP-FRL (WNP-1 (WDA ὃν) (NA τρόπον))
+                            (C 0)
+                            (IP-SUB (NP-ADV *T*-1)
+                                    (NP-SBJ (N ὄρνις))
+                                    (VBP-IMPF ἐπισυνάγει)
+                                    (NP-OB1 (DSA τὰ)
+                                            (NSA νοσσία)
+                                            (NP-ATR (PRO$ αὐτῆς)))
+                                    (PP (P ὑπὸ)
+                                        (NP (DSA τὰς) (NSA πτέρυγας)))))))                                
+                            </programlisting>
+                            (Matthew 23.37) </para>
+                    </listitem>
+                    <listitem>
+                        <para> idiomatic usage:
+                            <programlisting>
+( (IP-MAT (CODE {VS:6_40})
+          (CONJ καὶ)
+          (NP-SBJ *pro*)
+          (VBD-AOR ἀνέπεσαν)
+          (NP-ADV (NS πρασιαὶ) (NS πρασιαὶ))
+          (PP (PP (P κατὰ)
+                  (NP (NUM ἑκατὸν)))
+              (CONJP (CONJ καὶ)
+                     (PP (P κατὰ)
+                         (NP (NUM πεντήκοντα)))))
+          (. .))
+  (ID GreekNT,Mark))                                
+                            </programlisting>
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para> dative of manner:
+                            <programlisting>
+(CP-ADV (C+PRTG ἐὰν)
+        (IP-SUB (NEG μὴ)
+                (NP-ADV (ND πυγμῇ))
+                (NP-SBJ *pro*)
+                (VBSP-AOR νίψωνται)
+                (NP-OB1 (DSA τὰς) (NSA χεῖρας))))                                
+                            </programlisting>
+                            (Mark 7.3) </para>
+                    </listitem>
+                    <listitem>
+                        <para> dative of interest (dative of advantage/disadvantage) </para>
+                    </listitem>
+                    <listitem>
+                        <para> dative of reference </para>
+                    </listitem>
+                    <listitem>
+                        <para> ethical dative </para>
+                    </listitem>
+                    <listitem>
+                        <para> dative of cause </para>
+                    </listitem>
+                    <listitem>
+                        <para> dative of (military) accompaniment </para>
+                    </listitem>
+                    <listitem>
+                        <para> accusative of respect </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </sect2>
         <sect2 xml:id="NP-ATR">
             <title>Attributive (and/or Possessive) NP</title>
-            <para/>
+            <para> A bare NP, usually in the genitive, that modifies another noun is often an
+                attributive NP, labeled NP-ATR. Possessive genitives are included in this category.
+                Subjective genitives are also included in this category, since they can be very
+                difficult to distinguish from possessive genitives. <itemizedlist>
+                    <listitem>
+                        <para> non-possessive NP-ATR:
+                            <programlisting>
+(IP-PPL (VPA-AOR ἄρξαντες-ἄρχω)
+        (CLPRT μὲν-μέν)
+        (PP (P ἐπὶ-ἐπί)
+            (NP (NP (NUMP (NUM δύο-δύο)
+                          (CLTE τε-τε)
+                          (CONJ καὶ-καί)
+                          (NUM εἴκοσι-εἴκοσι))
+                    (NSA γενεὰς-γενεά)
+                    (NP-ATR (NS$ ἀνδρῶν-ἀνήρ)))
+                (CONJP (NP (NSA ἔτεα-ἔτος)
+                           (NUMP (NUM πέντε-πέντε)
+                                 (CLTE τε-τε)
+                                 (CONJ καὶ-καί)
+                                 (ADJA πεντακόσια-πεντακόσιοι)))))))                                
+                            </programlisting>
+                            (Hdt. 1.7.4) </para>
+                    </listitem>
+                    <listitem>
+                        <para> possessive NP-ATR:
+                            <programlisting>
+( (IP-MAT (CODE {VS:1_8_1})
+          (NP-SBJ (D οὗτος) 
+                  (CLPRT δὴ)
+                  (CLPRT ὦν)
+                  (D ὁ)
+                  (N Κανδαύλης))
+          (VBDP-AOR ἠράσθη)
+          (NP-OBQ (D$ τῆς)
+                  (NP-ATR (PRO$+SLF ἑωυτοῦ))
+                  (N$ γυναικός))
+          (, ,))
+  (ID Herodotus,Histories))                                
+                            </programlisting>
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para> dative of possession:
+                            <programlisting>
+(NP-SBJ (DA τὸ)
+        (CLPRT δέ)
+        (NP-ATR (CLPROD οἱ))
+        (NA οὔνομα))                               
+                            </programlisting>
+                            (Hdt. 1.1.3) </para>
+                    </listitem>
+                    <listitem>
+                        <para> (potentially) subjective genitive:
+                            <programlisting>
+(PP (P πρὸ)
+    (CLPRT δὲ)
+    (NP (D$ τῆς)
+        (NP-ATR (N$ Κροίσου))
+        (N$ ἀρχῆς)))
+                            </programlisting>
+                            (Hdt. 1.6.3) </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </sect2>
         <sect2 xml:id="NP-COM">
             <title>Complement NP</title>
-            <para/>
+            <para> A bare NP in the complement to a noun or adjective is labeled NP-COM. In the case
+                of a nominal complement of a noun, the complement noun is most often an objective
+                genitive, in the traditional terms of Greek grammar. <itemizedlist>
+                    <listitem>
+                        <para> NP complement of a noun (objective genitive):
+                            <programlisting>
+(NP-OB1 (NP-COM (N$ Μηδείης))
+        (DA τὴν)
+        (NA ἁρπαγήν))                               
+                            </programlisting>
+                            (Hdt. 1.3.2) </para>
+                    </listitem>
+                    <listitem>
+                        <para> NP complement of an adjective:
+                            <programlisting>
+( (IP-INF-THT (CODE {VS:1_2_1})
+              (PP (P μετὰ)
+                  (CLPRT δὲ)
+                  (NP (DSA ταῦτα)))
+              (NP-SBJ (NSA Ἕλληνας))
+              (ADJP-PRD (ADJA αἰτίους)
+                        (NP-COM (D$ τῆς)
+                                (ADJ$ δευτέρης)
+                                (N$ ἀδικίης)))
+              (VBNP-AOR γενέσθαι)
+	      (. .))
+  (ID Herodotus,Histories))                                
+                            </programlisting>
+                        </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </sect2>
         <sect2 xml:id="NP-DIR">
             <title>Directional NP</title>
-            <para/>
+            <para> A bare NP with a verb of motion indicating a direction (to or from) is labeled
+                NP-DIR. This usage is found mainly in Homer. </para>
         </sect2>
         <sect2 xml:id="NP-INS">
             <title>Instrumental NP</title>
-            <para/>
+            <para> A bare NP indicating the means or instrument with which something was
+                accomplished is labeled NP-INS. This corresponds with the dative of
+                means/instrumental dative in the terms of traditional Greek grammar<footnote>
+                    <para>See Hansen and Quinn’s <emphasis>Greek: An Intensive Course</emphasis> pg.
+                        701.</para>
+                </footnote>.
+                <programlisting>
+(NP-SBJ (N Ἰωάνης))
+(CLPRT μὲν)
+(VBD-AOR ἐβάπτισεν)
+(NP-INS (ND ὕδατι))                    
+                </programlisting>
+                (Acts 1.5) </para>
         </sect2>
         <sect2 xml:id="NP-LOC">
             <title>Locative NP</title>
-            <para/>
+            <para> A bare NP indicating location is labeled NP-LOC. This corresponds with the dative
+                of place where in the terms of traditional Greek grammar<footnote>
+                    <para>See Hansen and Quinn’s <emphasis>Greek: An Intensive Course</emphasis> pg.
+                        702.</para>
+                </footnote>.
+                <programlisting>
+(NP-SBJ (NEG+Q Οὐδεὶς))
+(CLPRT δὲ)
+(IP-PPL (NP-OB1 (NA λύχνον))
+        (VPR-AOR ἅψας))
+(VBP-IMPF καλύπτει)
+(NP-OB1 (PROA αὐτὸν))
+(NP-LOC (ND σκεύει)))                    
+                </programlisting>
+                (Luke 8.16) </para>
         </sect2>
         <sect2 xml:id="NP-MSR">
             <title>Measure Phrase</title>
-            <para/>
+            <important>
+                <para> In cases that are ambiguous between complements (say, NP-OB1) and adjuncts
+                    (say, NP-MSR), the default is complement. A simple test for doubtful cases is to
+                    passivize the sentence; if the relevant noun phrase can be the subject of a
+                    passive, it should be annotated as NP-OB1.
+                    <programlisting>
+( (IP-MAT (NP-SBJ (PRO He))
+          (VBD ate)
+          (NP-ACC (ADVR too) (Q much))
+          (. .)))
+
+( (IP-MAT (NP-SBJ (PRO He))
+          (VBD ate)
+          (NP-ACC (QP (ADVR too) (Q much))
+                  (N spinach))
+          (. .)))
+
+( (IP-MAT (NP-SBJ (PRO He))
+          (VBD ate)
+          (NP-MSR (ADJP (ADVR too) (ADJ long)))
+          (. .)))                        
+                    </programlisting>
+                </para>
+            </important>
+            <para> Measure phrases occur as sentential constituents. We also explicitly label
+                measure phrase modifiers of other constituents (see, for instance, <link
+                    linkend="N_mod">measure phrase modifiers of N</link>). Only NP measure phrases
+                are indicated as such. PP measure phrases (FOR THREE DAYS, etc.) are not indicated,
+                following our policy of not specifying the function of PPs. <important>
+                    <para> The distinction between NP-MSR and QP, described immediately below, is
+                        not straightforward, and it is likely that some instances of one category
+                        are mistagged as the other. It is therefore wise to search for measure
+                        phrases in terms of the disjunction NP-MSR|QP. </para>
+                </important> At the sentence level, noun phrases expressing measure are labeled
+                NP-MSR. As is generally the case with noun phrases, categories other than nouns may
+                act as the head of NP-MSR. In the traditional terms of Greek grammar, NP measure
+                phrases usually correspond to one of the following: <itemizedlist>
+                    <listitem>
+                        <para> accusative of extent of space:
+                            <programlisting>
+(NP-SBJ (D Τὸ) (CLPRT δὲ) (N πλοῖον))
+(ADVP-TMP (ADV ἤδη))
+(NP-MSR (NSA σταδίους) (QA πολλοὺς))
+(PP (P ἀπὸ)
+    (NP (D$ τῆς) (N$ γῆς)))
+(VBD-IMPF ἀπεῖχεν)                                
+                            </programlisting>
+                            (Matthew 14.24) </para>
+                    </listitem>
+                    <listitem>
+                        <para> accusative of extent of time:
+                            <programlisting>
+(CONJ καὶ)
+(NP-SBJ *con*)
+(VBD-IMPF περιέκρυβεν)
+(NP-OB1 (PROA+SLF ἑαυτὴν))
+(NP-MSR (NSA μῆνας) (NUM πέντε))                                
+                            </programlisting>
+                            (Luke 1.25) </para>
+                    </listitem>
+                    <listitem>
+                        <para> dative of time at which (?<footnote>
+                                <para>The usage here is quite odd, but no other type of dative in
+                                    Hansen and Quinn’s <emphasis>Greek: An Intensive
+                                        Course</emphasis> or Smyth’s <emphasis>Greek
+                                        Grammar</emphasis> seems to fit. <emphasis>A Grammatical
+                                        Analysis of the Greek New Testament</emphasis> by Max
+                                    Zerwick, S.J. (translated, revised, and adapted by Mary
+                                    Grosvenor in collaboration with the author, with the assistance
+                                    of John Welch, S.J.) remarks that this is a case of the dative
+                                    being used instead of the accusative of duration (p.
+                                    207).</para>
+                            </footnote>):
+                            <programlisting>
+( (IP-MAT (CODE {VS:8_27})
+          (CONJ καὶ)
+          (NP-MSR (ND χρόνῳ) (ADJR ἱκανῷ))
+          (NEG οὐκ)
+          (NP-SBJ *pro*)
+          (VBDP-AOR ἐνεδύσατο)
+          (NP-OB1 (NA ἱμάτιον))
+          (, ,))
+  (ID GreekNT,Luke))                                
+                            </programlisting>
+                        </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para> Measure phrases at levels lower than the sentence (notably, within ADJP and ADVP)
+                are treated slightly differently. Here, measure expressions headed by Q are not
+                surrounded by NP-MSR. But other measure phrases continue to be surrounded by NP-MSR
+                brackets, even when they consist of a single word.
+                <programlisting>
+(ADJP (Q much) (ADJR higher))
+
+(ADJP (QP (ADV very) (Q much))
+      (ADJR higher))
+
+(ADJP (QP (Q much) (QR more))
+      (VAG imposing))
+
+(ADJP (QP (QP (ADVR so) (Q much))
+          (QR more))
+      (VAG imposing))
+
+(ADJP (NP-MSR (ADJ far))
+      (ADJR higher))
+
+(ADJP (NP-MSR (ADJP (ADV quite) (ADJ far))
+      (ADJ distant))
+
+(ADJP (NP-MSR (Q+WPRO somewhat))
+      (ADJR higher))
+
+(ADJP (NP-MSR (Q some) (WPRO what))
+      (ADJR higher))
+
+(ADJP (NP-MSR (Q many) (NS times))
+      (ADJR higher))
+
+(ADJP (QP (NP-MSR (Q many) (NS times))
+          (QR more))
+      (ADJR higher))
+
+(ADVP (NP-MSR (NUM half))
+      (ADVR so) (ADV sore))                    
+                </programlisting>
+            </para>
         </sect2>
         <sect2 xml:id="NP-PAR">
             <title>Partitive NP</title>
-            <para/>
+            <para> Bare NPs in the genitive that express partitivity—i.e., partitive genitives—are
+                labeled NP-PAR.
+                <programlisting>
+( (IP-MAT (CODE {VS:1_6_3})
+          (PP (P πρὸ-πρό)
+          (CLPRT δὲ-δέ)
+          (NP (D$ τῆς-ὁ)
+              (NP-ATR (N$ Κροίσου-Κροῖσος))
+              (N$ ἀρχῆς-ἀρχή)))
+          (NP-SBJ (Q πάντες-πᾶς)
+                  (NP-PAR (NS Ἕλληνες-Ἕλλην)))
+          (BED ἦσαν-εἰμί)
+          (ADJP-PRD (ADJ ἐλεύθεροι-ἐλεύθερος))
+          (. ·))
+  (ID Herodotus,Histories))                    
+                </programlisting>
+            </para>
         </sect2>
         <sect2 xml:id="NP-PRD">
             <title>Predicate NP</title>
-            <para/>
+            <para> NP predicates of <link linkend="copular_verbs">copular verbs</link> and NP
+                predicates in <link linkend="IP-SMC">small clauses</link> are labeled NP-PRD. <itemizedlist>
+                    <listitem>
+                        <para> with a copular verb:
+                            <programlisting>
+(CP-ADV (C ἵνα)
+        (IP-SUB (NP-SBJ (DS οἱ) (NS λίθοι) (DS οὗτοι))
+                (NP-PRD (NS ἄρτοι))
+                (VBSP-AOR γένωνται)))                                
+                            </programlisting>
+                            (Matthew 4.3) </para>
+                    </listitem>
+                    <listitem>
+                        <para> in a small clause:
+                            <programlisting>
+(CP-REL-3 (WNP-4 (WPRO ὃς))
+          (C 0)
+          (IP-SUB (NP-SBJ *T*-4)
+                  (NEG οὐ)
+                  (VBP-IMPF γινώσκει)
+                  (IP-PPL-THT (NP-SBJ (DA τὴν)
+                                      (NP-ATR (ADJ$ Ἐφεσίων))
+                                      (NA πόλιν))
+                              (NA-5 νεωκόρον)
+                              (BPR-IMPF οὖσαν)
+                              (NP-PRD (NA *ICH*-5)
+                                      (NP-COM (NP (D$ τῆς) (ADJ$ μεγάλης) (N$ Ἀρτέμιδος))
+                                              (CONJP (CONJ καὶ)
+                                                     (NP (D$ τοῦ) (ADJ$ διοπετοῦς)))))))                                
+                            </programlisting>
+                            (Acts 19.35) </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para> Note that a predicate NP in a copular construction may not always be in the
+                nominative; genitive predicates (usually indicating possession, although not
+                concretely in the example below) are also possible:
+                <programlisting>
+(IP-MAT-SPE (NEG Οὐχ)
+            (NP-PRD (PRO$ ὑμῶν))
+            (BEP-IMPF ἐστὶν)
+            (IP-INF-SBJ (VBN-AOR γνῶναι)
+                        (NP-OB1 (NSA χρόνους) (CONJ ἢ) (NSA καιροὺς)
+                                (CP-REL (WNP-1 (WPROA οὓς))
+                                        (C 0)
+                                        (IP-SUB (NP-OB1 *T*-1)
+                                                (NP-SBJ (D ὁ) (N πατὴρ))
+                                                (VBDP-AOR ἔθετο)
+                                                (PP (P ἐν)
+                                                    (NP (DD τῇ) (ADJD ἰδίᾳ) (ND ἐξουσίᾳ))))))))                    
+                </programlisting>
+                (Acts 1.7) </para>
         </sect2>
         <sect2 xml:id="NP-SPR">
             <title>Secondary Predicate NP</title>
-            <para/>
+            <para> See also <link linkend="IP-SMC">small clauses</link>. </para>
+            <para> The dash tag -SPR is appended to all NPs that act as secondary predicates.
+                <programlisting>
+(IP-INF (TO to)
+        (VB stand/mount)
+        (NP-SPR (N guard)))
+
+(IP-INF (TO to)
+        (VB elect)
+        (NP-ACC (D a) (NPR Hapsburg))
+        (NP-SPR (N emperor)))                    
+                </programlisting>
+            </para>
+            <para> The Greek semantic equivalents of the following verbs are treated as taking
+                secondary predicates; the list is intended to be illustrative rather than exhaustive
+                and should be compared with the list of verbs that we treat as taking small clause
+                complements. The general rule of thumb is that if the meaning of the verb does not
+                change depending on whether a predicate-like item is in the sentence, the verb takes
+                a secondary predicate. For example, the following do not differ fundamentally in
+                their meaning (the second just contains more information): <orderedlist>
+                    <listitem>
+                        <para> They named him. </para>
+                    </listitem>
+                    <listitem>
+                        <para> They named him John. </para>
+                    </listitem>
+                </orderedlist> In contrast, verbs that we analyze as taking small clauses may have
+                very different meanings (although not always) depending on whether a predicate-like
+                item is present: <orderedlist>
+                    <listitem>
+                        <para> We called him. </para>
+                    </listitem>
+                    <listitem>
+                        <para> We called him a loser. </para>
+                    </listitem>
+                </orderedlist>
+                <blockquote>
+                    <para> ADMIT, AGREE, ANOINT, APPOINT, BIND, BRING, CHOOSE, CHRISTEN, CLAIM,
+                        CONFIRM, CONSECRATE, CROWN, DEFEND, DEFINE, DEVOTE, ELECT, INTERPRET, KEEP,
+                        LEAVE, LOVE, NAME, NOMINATE, OFFER, ORDAIN, PRESERVE, SET, SUBSCRIBE,
+                        SUFFER, SURNAME, TAKE, TESTIFY, TRANSLATE, TRY, VOW, WITNESS </para>
+                </blockquote> In addition, the following Greek verbs should be considered to take
+                secondary predicates. <itemizedlist>
+                    <listitem>
+                        <para> τίκτω (more often passive—e.g., τεχθείς in Matthew 2:2) ‘give birth
+                            to’ </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para> Some examples from the PPCNTG: <itemizedlist>
+                    <listitem>
+                        <programlisting>
+( (IP-MAT (CODE {VS:24_27})
+          (IP-ABS (NP-SBJ (N$ Διετίας))
+                  (CLPRT δὲ)
+                  (VPRP$-AOR-PASS πληρωθείσης))
+          (VBD-AOR ἔλαβεν)
+          (NP-SPR (NA διάδοχον))
+          (NP-SBJ (D ὁ) (N Φῆλιξ))
+          (NP-OB1 (NA Πόρκιον)
+                  (NP-PRN (NA Φῆστον)))
+          (. .))
+  (ID GreekNT,Acts))                            
+                        </programlisting>
+                    </listitem>
+                    <listitem>
+                        <programlisting>
+( (IP-IMP (CODE {VS:3_15})
+          (NP-OB1 (NA κύριον))
+          (CLPRT δὲ)
+          (NP-SPR (DA τὸν) (NA Χριστὸν))
+          (VBI-AOR ἁγιάσατε)
+          (PP (P ἐν)
+              (NP (DSD ταῖς)
+                  (NSD καρδίαις)
+                  (NP-ATR (PRO$ ὑμῶν))))
+          (, ,))
+  (ID GreekNT,1Peter))                            
+                        </programlisting>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </sect2>
         <sect2 xml:id="NP-TMP">
             <title>Temporal NP</title>
-            <para/>
+            <para> NPs denoting points in time (THAT DAY, TUESDAY, YESTERDAY, etc.) are labeled NP-
+                TMP. Dates are annotated with flat structure.
+                <programlisting>
+( (IP-MAT (CODE {VS:14_25})
+          (NP-TMP (ADJD Τετάρτῃ)
+                  (CLPRT δὲ)
+                  (ND φυλακῇ)
+                  (NP-PAR (D$ τῆς) (N$ νυκτὸς)))
+          (NP-SBJ *pro*)
+          (VBD-AOR ἦλθεν)
+          (PP (P πρὸς)
+              (NP (PROA αὐτοὺς)))
+          (IP-PPL (VPR-IMPF περιπατῶν)
+                  (PP (P ἐπὶ)
+                      (NP (DA τὴν) (NA θάλασσαν))))
+          (. .))
+  (ID GreekNT,Matthew))                    
+                </programlisting>
+            </para>
+            <para> NPs denoting frequency (EVERY DAY, TUESDAYS, etc.) are labeled NP-TMP.
+                <programlisting>
+( (CP-QUE (CODE {VS:15_30})
+          (WADVP-1 (WADV τί))
+          (C 0)
+          (IP-SUB (ADVP *T*-1)
+                  (NP-SBJ (ADV καὶ) (PRO ἡμεῖς))
+                  (VBP-IMPF κινδυνεύομεν)
+                  (NP-TMP (QA πᾶσαν) (NA ὥραν)))
+          (. ;))
+  (ID GreekNT,1Corinthians))                    
+                </programlisting>
+            </para>
+            <para> In the terms of traditional Greek grammar, the NPs receiving the label NP-TMP
+                correspond to genitive of time within which, the dative of time at which, and the
+                accusative of extent of time<footnote>
+                    <para>See pp. 697-706 in Hansen and Quinn’s <emphasis>Greek: An Intensive
+                            Course</emphasis> for explanations of these terms.</para>
+                </footnote>. </para>
         </sect2>
         <sect2 xml:id="NP-VOC">
             <title>Vocative</title>
-            <para/>
+            <para> Vocatives are labeled NP-VOC. Accompanying interjections—i.e., ὦ—are treated as
+                clause-level constituents rather than as constituents of the vocative NP.
+                <programlisting>
+( (IP-IMP (CODE {VS:6_11})
+          (NP-SBJ (PRO Σὺ))
+          (CLPRT δέ)
+          (, ,)
+          (INTJ ὦ)
+          (NP-VOC (N ἄνθρωπε)
+                  (NP-ATR (N$ θεοῦ)))
+          (, ,)
+          (NP-OB1 (DSA ταῦτα))
+          (VBI-IMPF φεῦγε)
+          (. .))
+  (ID GreekNT,1Timothy))                    
+                </programlisting>
+            </para>
         </sect2>
         <sect2 xml:id="bare_NP">
             <title>Bare NP</title>
-            <para/>
+            <para> The bare label NP is used for NPs without any of the above functions. These
+                include: <itemizedlist>
+                    <listitem>
+                        <para> NP complements of <link linkend="PP">P</link>
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para> conjoined NPs </para>
+                    </listitem>
+                    <listitem>
+                        <para> NPs extracted from another constituent </para>
+                    </listitem>
+                </itemizedlist> The topmost NP of a conjoined NP is labeled by function if
+                necessary. The NPs immediately dominating the individual conjuncts are never marked
+                for function.
+                <programlisting>
+( (IP-MAT (CODE {VS:1_3})
+          (NP-SBJ (N Ἰούδας))
+          (CLPRT δὲ)
+          (VBD-AOR ἐγέννησεν)
+          (NP-OB1 (NP (DA τὸν) (NA Φαρὲς))
+                  (CONJP (CONJ καὶ)
+                         (NP (DA τὸν) (NA Ζαρὰ))))
+          (PP (P ἐκ)
+              (NP (D$ τῆς) (N$ Θάμαρ)))
+          (, ,))
+  (ID GreekNT,Matthew))                    
+                </programlisting>
+            </para>
+            <para> NPs extracted from another constituent (phrase or clause) are labeled NP and
+                coindexed with a trace within the constituent from which they are extracted.
+                Examples include topicalization with preposition stranding and long-distance
+                topicalization. If necessary, the function of the extracted NP is indicated on the
+                trace.
+                <programlisting>
+(IP-PPL (NP-2 (N$ σαββάτου))
+        (VPR-IMPF ἔχον)
+        (NP-OB1 (NP-MSR *ICH*-2)
+                (NA ὁδόν)))                    
+                </programlisting>
+                (Acts 1.12) </para>
         </sect2>
     </sect1>
     <sect1 xml:id="clPP">
         <title>Prepositional Phrase</title>
-        <para/>
+        <para> For want of reliable criteria, our annotation system makes no distinction between
+            complement and adjunct PPs.
+            <programlisting>
+(INTJ Ἄφες)
+(NP-SBJ *pro*)
+(VBS-AOR ἐκβάλω)
+(NP-OB1 (DA τὸ) (NA κάρφος))
+(PP (P ἐκ)
+    (NP (D$ τοῦ)
+        (N$ ὀφθαλμοῦ)
+        (NP-ATR (CLPRO$ σου))))                
+            </programlisting>
+            (Matthew 7.4)
+            <programlisting>
+(NP-SBJ (N ἄγγελος)
+        (NP-ATR (N$ Κυρίου)))
+(PP (P κατ')
+    (NP (NA ὄναρ)))
+(VBDP-AOR ἐφάνη)                
+            </programlisting>
+            (Matthew 1.20) </para>
+        <para> By default, complements of prepositions that immediately precede the head are treated
+            as constituents of the PP, and movement out of PP is indicated only if the word order
+            leaves no alternative. <itemizedlist>
+                <listitem>
+                    <para> complements that precede the head:
+                        <programlisting>
+(IP-PPL (VPRP-AOR-PASS ἀποσχισθέντες)
+        (NP-OBP (D$ τῆς)
+                (ADJ$ ἄλλης)
+                (N$ στρατιῆς))
+        (PP (NP (DS$ τῶνδε))
+            (P εἵνεκα)))                            
+                        </programlisting>
+                            (<link
+                            xlink:href="http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0125%3Abook%3D8%3Achapter%3D35%3Asection%3D2"
+                            >Hdt. 8.35.2</link>) </para>
+                </listitem>
+                <listitem>
+                    <para> movement out of
+                        PP:<!-- Thus far, there are no uncontroversial examples of
+                        this in Greek. -->
+                    </para>
+                </listitem>
+            </itemizedlist>
+        </para>
+        <para> Although the trace of passivized constituents is not normally indicated, it is in the
+            case of passivization from PP. See <link linkend="a_movement">Traces of
+                A-Movement</link> for examples. It may be that passivization from PP does not occur
+            in Greek. </para>
     </sect1>
     <sect1 xml:id="clQP">
         <title>Quantifier Phrase</title>
-        <para/>
+        <para> In general, QP does not occur at the clausal level. There are two exceptions. <itemizedlist>
+                <listitem>
+                    <para> When a quantifier is part of a phrase that is comparable in meaning to a
+                            <link linkend="floated_quantifiers">floated quantifier</link>.
+                        <programlisting>
+( (IP-MAT (CODE {VS:1_14_1})
+          (NP-SBJ (N Γύγης-Γύγης))
+          (CLPRT δὲ-δέ)
+          (IP-PPL (VPR-AOR τυραννεύσας-τυραννεύω))
+          (VBD-AOR ἀπέπεμψε-ἀποπέμπω)
+          (NP-OB1 (NSA-1 ἀναθήματα-ἀνάθημα))
+          (PP (P ἐς-εἰς)
+              (NP (NSA Δελφοὺς-Δελφοί)))
+          (QP=1 (NEG οὐκ-οὐ) (QA ὀλίγα-ὀλίγος))
+          (, ,))
+  (ID Herodotus,Histories))                          
+                        </programlisting>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para> When a QP is extracted out of a phrase.
+                        <programlisting>
+( (CP-QUE (WNP-1 (WPRO what)
+                 (QP *ICH*-2))
+          (IP-SUB (NP-OB1 *T*-1)
+                  (MD would)
+                  (NP-SBJ (PRO you))
+                  (HV have)
+                  (QP-2 (QR more)))
+          (. ,))
+  (ID PENNY,156.366))                        
+                    </programlisting>
+                    </para>
+                </listitem>
+            </itemizedlist>
+        </para>
     </sect1>
     <sect1 xml:id="words_clausal_constituents">
         <title>Words as Clausal Constituents</title>
         <sect2 xml:id="clausal_adverbs">
             <title>Adverbs</title>
-            <para/>
+            <para> It is apparently possible for adverbs to scramble out of other phrases and become
+                daughters of IP. Some instances look like permutations of the adverb and a
+                preposition in the original, but we have not attmepted to emend the text.
+                <programlisting>
+(IP-MAT-SPE (NEG Οὐ)
+            (ADV-1 μακρὰν)
+            (NP-SBJ *pro*)
+            (BEP-IMPF εἶ)
+            (PP (ADV *ICH*-1)
+                (P ἀπὸ)
+                (NP (D$ τῆς)
+                    (N$ βασιλείας)
+                    (NP-ATR (D$ τοῦ) (N$ θεοῦ)))))                    
+                </programlisting>
+                (Mark 12.34) </para>
         </sect2>
         <sect2 xml:id="floated_quantifiers">
             <title>Floated Quantifiers</title>
-            <para/>
+            <para> See also <link linkend="clQP">clause-level QP</link>. Floated quantifiers are
+                labeled Q* without a phrase label, unless a phrase label is necessary because the
+                quantifier itself has a modifier. The same notation as used for gapping is used to
+                indicate the coindexation between a floated quantifier and the NP it modifies. <itemizedlist>
+                    <listitem>
+                        <para> floated quantifier:
+                            <programlisting>
+(IP-MAT-SPE (NEG+QA=1 Οὐδὲν)
+            (NP-SBJ *pro*)
+            (VBP-IMPF εὑρίσκω)
+            (NP-OB1 (ADJA-1 αἴτιον))
+            (PP (P ἐν)
+                (NP (DD τῷ) (ND ἀνθρώπῳ) (DD τούτῳ))))                                
+                            </programlisting>
+                            (Luke 23.4) </para>
+                    </listitem>
+                    <listitem>
+                        <para> floated quantifier with a QP layer:
+                            <programlisting>
+( (IP-MAT (CODE {VS:1_14_1})
+          (NP-SBJ (N Γύγης-Γύγης))
+          (CLPRT δὲ-δέ)
+          (IP-PPL (VPR-AOR τυραννεύσας-τυραννεύω))
+          (VBD-AOR ἀπέπεμψε-ἀποπέμπω)
+          (NP-OB1 (NSA-1 ἀναθήματα-ἀνάθημα))
+          (PP (P ἐς-εἰς)
+              (NP (NSA Δελφοὺς-Δελφοί)))
+          (QP=1 (NEG οὐκ-οὐ) (QA ὀλίγα-ὀλίγος))
+          (, ,))
+  (ID Herodotus,Histories))                                
+                            </programlisting>
+                        </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <important>
+                <para> Where a phrase is ambiguous between an ordinary subject and a floated
+                    quantifier, it is treated as an ordinary subject.
+                    <programlisting>
+( (IP-MAT-SPE (CODE {VS:11_27})
+              (NP-SBJ (Q Πάντα))
+              (NP-OB2 (CLPROD μοι))
+              (VBDP-AOR-PASS παρεδόθη)
+              (PP (P ὑπὸ)
+                  (NP (D$ τοῦ)
+                      (N$ πατρός)
+                      (NP-ATR (CLPRO$ μου))))
+	      (, ,))
+  (ID GreekNT,Matthew))                        
+                    </programlisting>
+                </para>
+            </important>
         </sect2>
         <sect2 xml:id="clausal_negation">
             <title>Negation</title>
-            <para/>
+            <para>
+                <link linkend="NEG">Negation</link> never projects a phrase.
+                <programlisting>
+( (IP-MAT (CODE {VS:1_25})
+          (CONJ καὶ)
+          (NEG οὐκ)
+          (NP-SBJ *con*)
+          (VBD-IMPF ἐγίνωσκεν)
+          (NP-OB1 (PROA αὐτὴν))
+          (PP (P ἕως)
+              (NP (CP-FRL (WNP-1 (WPRO$ οὗ))
+                          (C 0)
+                          (IP-SUB (NP-TMP *T*-1)
+                                  (NP-SBJ *pro*)
+                                  (VBD-AOR ἔτεκεν)
+                                  (NP-OB1 (NA υἱόν))))))
+          (. .))
+  (ID GreekNT,Matthew))                    
+                </programlisting>
+            </para>
         </sect2>
         <sect2 xml:id="clausal_participles">
             <title>Participles</title>
-            <para/>
+            <para> At the clausal level, participles occur as complements of <link
+                    linkend="copular_verbs">copular verbs</link>, in <link linkend="RRC">reduced
+                    relative clauses</link>, in <link linkend="IP-SMC">small clauses</link>, and in
+                    <link linkend="IP-ABS">absolute clauses</link>. <itemizedlist>
+                    <listitem>
+                        <para> complement of copular verb:
+                            <programlisting>
+( (IP-MAT (CODE {VS:1_9})
+          (BED-IMPF Ἦν)
+          (NP-SBJ (D τὸ)
+                  (N φῶς)
+                  (NP-PRN (D τὸ) (ADJ ἀληθινὸν))
+                  (CP-REL (WNP-1 (WPRO ὃ))
+                          (C 0)
+                          (IP-SUB (NP-SBJ *T*-1)
+                                  (VBP-IMPF φωτίζει)
+                                  (NP-OB1 (QA πάντα) (NA ἄνθρωπον)))))
+          (VPRP-IMPF ἐρχόμενον)
+          (PP (P εἰς)
+              (NP (DA τὸν) (NA κόσμον)))
+          (. .))
+  (ID GreekNT,John))                                
+                            </programlisting>
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para> reduced relative clause:
+                            <programlisting>
+( (IP-MAT (CODE {VS:2_9})
+          (NP-SBJ (DS οἱ)
+                  (CLPRT δὲ)
+                  (RRC (VPR-AOR ἀκούσαντες)
+                       (NP-OBQ (D$ τοῦ) (N$ βασιλέως))))
+          (VBDP-AOR ἐπορεύθησαν)
+          (, ,))
+  (ID GreekNT,Matthew))                                
+                            </programlisting>
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>
+                            <!-- work here -->
+                        </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </sect2>
     </sect1>
     <sect1 xml:id="extended_dash">
