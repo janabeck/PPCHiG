@@ -308,7 +308,7 @@
                                 </programlisting>
                     </para>
                 </sect4>
-                <sect4 xml:id="NP-OB1+clause_monotrans">
+                <sect4 xml:id="NP-OB1_clause_monotrans">
                     <title>NP-OB1 + clause with monotransitives.</title>
                     <para> With monotransitives (i.e., verbs that do not occur with two NP objects),
                         the NP object in cases with an NP and a clause is labeled NP-OB1. See <xref
@@ -333,7 +333,7 @@
                                 </programlisting>
                     </para>
                 </sect4>
-                <sect4 xml:id="NP-OB1+clause_complex">
+                <sect4 xml:id="NP-OB1_clause_complex">
                     <title>NP-OB1 + clause with complex predicates.</title>
                     <para>This may not translate to Greek! Complex predicates include all cases of
                         HAVE + NP with a verbal equivalent (HAVE FEAR = FEAR, HAVE KNOWLEDGE = KNOW,
@@ -468,12 +468,12 @@
                         </programlisting>
                     </para>
                 </sect4>
-                <sect4 xml:id="NP-OB2+clause_ditrans">
+                <sect4 xml:id="NP-OB2_clause_ditrans">
                     <title>NP-OB2 + clause with ditransitives.</title>
                     <para> When a ditransitive verb takes an animate NP and a clause, rather than
                         two NPs, the label of the animate NP remains the same as in the case with
                         two NPs, preserving the parellelism between the two cases. In Greek, this
-                        only seems to occur with an NP-OB2 + infinitival clause. 
+                        only seems to occur with an NP-OB2 + infinitival clause.
                         <programlisting>
 (IP-SUB (NP-SBJ *T*-1)
         (VBD-AOR ὑπέδειξεν)
@@ -483,28 +483,196 @@
                         (NP (D$ τῆς)
                             (RRC (VPR$-IMPF μελλούσης))
                             (N$ ὀργῆς)))))                            
-                        </programlisting> (Matthew 3.7)
-                    </para>
+                        </programlisting>
+                        (Matthew 3.7) </para>
                 </sect4>
             </sect3>
-            <!-- work here -->
             <sect3 xml:id="NP-OBP">
                 <title>NP-OBP</title>
-                <para/>
+                <para> If the object of a verb gets its case from a prepositional prefix on the verb
+                    (check in the LSJ to make sure the case usage for that preposition is correct),
+                    the object is labeled NP-OBP. In the case below αὐτῷ is in the dative because of
+                    the prefix προσ- on the verb. According to the LSJ, πρός + dative is normal
+                    following verbs of motion.
+                    <programlisting>
+( (IP-MAT (CODE {VS:5_1})
+          (CONJ καὶ)
+          (IP-ABS (VPR$-AOR καθίσαντος)
+                  (NP-SBJ (PRO$ αὐτοῦ)))
+          (VBD-AOR προσῆλθαν)
+          (NP-OBP (PROD αὐτῷ))
+          (NP-SBJ (DS οἱ)
+                  (NS μαθηταὶ)
+                  (NP-ATR (PRO$ αὐτοῦ)))
+          (. .))
+  (ID GreekNT,Matthew))                        
+                    </programlisting>
+                </para>
             </sect3>
             <sect3 xml:id="NP-OBQ">
                 <title>NP-OBQ</title>
-                <para/>
+                <para> If no other label is appropriate for an NP argument of a verb and the
+                    argument is a direct object that appears in the genitive or dative case, the NP
+                    is labeled NP-OBQ. One should check in the LSJ or a specifically NT Greek
+                    lexicon to be sure that the verb in question regularly takes an NP argument. If
+                    not, then possibly the NP should be labeled <link linkend="NP-ADV">NP-ADV</link>
+                    or <link linkend="NP-INS">NP-INS</link> if it has a means or instrumental sense. <programlisting>
+( (IP-MAT-SPE (CODE {VS:14_64})
+              (NP-SBJ *pro*)
+              (VBD-AOR ἠκούσατε)
+              (NP-OBQ (D$ τῆς) (N$ βλασφημίας))
+              (. ;))
+  (ID GreekNT,Mark))                        
+                    </programlisting>
+                    <programlisting>
+(NP-SBJ *pro*)
+(VBS-IMPF μιμνήσκῃ)
+(NP-OBQ (PRO$ αὐτοῦ))                        
+                    </programlisting>
+                    (Hebrews 2.6) <programlisting>
+( (IP-MAT (CODE {VS:9_9})
+          (CONJ καὶ)
+          (IP-PPL (VPR-AOR ἀναστὰς))
+          (NP-SBJ *pro*)
+          (VBD-AOR ἠκολούθησεν)
+          (NP-OBQ (PROD αὐτῷ))
+          (. .))
+  (ID GreekNT,Matthew))                        
+                    </programlisting>
+                    <programlisting>
+( (IP-MAT-SPE (CODE {VS:21_32})
+              (CONJ καὶ)
+              (NEG οὐκ)
+              (NP-SBJ *pro*)
+              (VBD-AOR ἐπιστεύσατε)
+              (NP-OBQ (PROD αὐτῷ))
+              (. .))
+  (ID GreekNT,Matthew))                        
+                    </programlisting>
+                </para>
+                <para> When a verb that normally takes an object with quirky case—e.g., ἀκούω, which
+                    normally takes the genitive—takes an accusative object instead, this object
+                    should be labeled NP-OB1 as is usual for accusative direct objects.
+                    <programlisting>
+( (IP-MAT-SPE (CODE {VS:26_65})
+              (INTJ ἴδε)
+              (ADVP-TMP (ADV νῦν))
+              (NP-SBJ *pro*)
+              (VBD-AOR ἠκούσατε)
+              (NP-OB1 (DA τὴν) (NA βλασφημίαν))
+              (. .))
+  (ID GreekNT,Matthew))                        
+                    </programlisting>
+                </para>
             </sect3>
             <sect3 xml:id="passive_obj">
                 <title>Objects in Passive</title>
-                <para/>
+                <para> Whichever object is promoted to subject in the passive of ditransitive verbs,
+                    the remaining object is treated in a way that maximizes the parallelism between
+                    active and passive. <itemizedlist>
+                        <listitem>
+                            <para> direct object promoted to subject:
+                                <programlisting>
+( (IP-MAT (NP-SBJ (D the) (N letter)))
+          (BED was)
+          (VAN given)
+          (NP-OB2 (PRO him))
+  (. .))                                    
+                                </programlisting>
+                            </para>
+                        </listitem>
+                        <listitem>
+                            <para> indirect object promoted to subject:
+                                <programlisting>
+( (IP-MAT (NP-SBJ (PRO he))
+          (BED was)
+          (VAN given)
+          (NP-OB1 (D the) (N letter)))
+  (. .))                                    
+                                </programlisting>
+                            </para>
+                        </listitem>
+                    </itemizedlist>
+                </para>
             </sect3>
         </sect2>
         <sect2 xml:id="NP-ADT">
             <title>Non-Argument (Adjunct) NP</title>
-            <para/>
+            <para> This is something of a catch-all category, which includes the following types,
+                all or none of which may be evidenced in Greek: <itemizedlist>
+                    <listitem>
+                        <para> fronted NPs not associated with a resumptive (<link linkend="RSP"
+                                >-RSP</link>) element in the body of the clause: 
+                            <programlisting>
+( (IP-IMP-SPE (CODE {VS:10_14})
+              (CONJ καὶ)
+              (NP-ADT (CP-FRL (WNP-1 (WPRO ὃς))
+                              (C 0)
+                              (IP-SUB (IP-SUB (NP-SBJ *T*-1)
+                                              (PRTG ἂν)
+                                              (NEG μὴ)
+                                              (VBSP-AOR δέξηται)
+                                              (NP-OB1 (PROA ὑμᾶς)))
+                                      (CONJP (NEG+CONJ μηδὲ)
+                                             (IP-SUB (NP-SBJ *con*)
+                                                     (VBS-AOR ἀκούσῃ)
+                                                     (NP-OB1 (DSA τοὺς)
+                                                             (NSA λόγους)
+                                                             (NP-ATR (PRO$ ὑμῶν))))))))
+              (, ,)
+              (IP-PPL (VPRP-IMPF ἐξερχόμενοι)
+                      (PP (P ἔξω)
+                          (NP (NP (D$ τῆς) (N$ οἰκίας))
+                              (CONJP (CONJ ἢ)
+                                     (NP (D$ τῆς) (N$ πόλεως) (D$ ἐκείνης))))))
+              (VBI-AOR ἐκτινάξατε)
+              (NP-OB1 (DA τὸν)
+                      (NA κονιορτὸν)
+                      (NP-COM (DS$ τῶν)
+                              (NS$ ποδῶν)
+                              (NP-ATR (PRO$ ὑμῶν))))
+              (. .))
+  (ID GreekNT,Matthew))                                
+                            </programlisting>
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>
+                            fronted NPs that mean more or less AS FOR NP (although these actually receive NP-ADV in the Gortyn Law Code):
+                            <programlisting>
+( (IP-INF-IMP (NP-ADT (D$ το) (CLPRT δὲ) (N$ κρόνο))
+              (NP-SBJ (DA τὸν) (NA δι[κ]αστὰν))
+              (IP-PPL (VPRA-IMPF ὀμνύντα))
+              (VBN-IMPF κρίνεν)
+              (. .))
+  (ID Gortyn,LawCode.6))                                
+                            </programlisting>
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>
+                            traces of wh- phrases without an evident semantic relation to the body of the clause:
+                            <programlisting>
+(NODE (CP-CAR (WNP-1 (D the) (WPRO which))
+              (C 0)
+              (IP-SUB (NP-ADT *T*-1)
+                      (NP-SBJ (PRO I))
+                      (VBP marvell)
+                      (ADVP (ADV greatly))
+                      (CP-THT (C that)
+                              (IP-SUB (NP-SBJ (PRO I))
+                                      (HVP have)
+                                      (NP-OB1 (Q no) (N word))
+                                      (PP (P from)
+                                          (NP (PRO you)))))))
+      (ID APLUMPT,186.92))                                
+                            </programlisting>
+                        </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </sect2>
+        <!-- work here -->
         <sect2 xml:id="NP-ADV">
             <title>Adverbial NP</title>
             <para/>
