@@ -546,6 +546,14 @@
                 <para> tagged CLPRT </para>
             </glossdef>
         </glossentry>
+        <glossentry xml:id="μή">
+            <glossterm>μή</glossterm>
+            <glossdef>
+                <para> usually tagged NEG, but tagged C when could be translated
+                        <emphasis>lest</emphasis> and introducing a subordinate clause—e.g., a fear
+                    clause </para>
+            </glossdef>
+        </glossentry>
         <glossentry xml:id="μηδαμός">
             <glossterm>μηδαμός</glossterm>
             <glossdef>
@@ -689,6 +697,14 @@
             <glossdef>
                 <para> tagged WD or WPRO depending on whether it is modifying a noun or serving as
                     the head of the WNP, respectively </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="ὅσος">
+            <glossterm>ὅσος</glossterm>
+            <glossdef>
+                <para>
+                    tagged WADJ
+                </para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="ὅστις">
@@ -1012,8 +1028,8 @@
                 <para> lemma τοί-νυν; tagged CLPRT-CLPRT </para>
             </glossdef>
         </glossentry>
-        <glossentry xml:id="τοσοῦτοι">
-            <glossterm>τοσοῦτοι</glossterm>
+        <glossentry xml:id="τοσοῦτος">
+            <glossterm>τοσοῦτος</glossterm>
             <glossdef>
                 <para> tagged Q </para>
             </glossdef>
