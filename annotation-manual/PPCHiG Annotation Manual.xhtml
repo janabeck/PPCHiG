@@ -3,7 +3,7 @@
   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head><title>τὸ ἐγχειρίδιον</title><meta name="generator" content="DocBook XSL-NS Stylesheets V1.76.1"/></head><body><div class="book" title="τὸ ἐγχειρίδιον"><div class="titlepage"><div><div><h1 class="title"><a id="d0e2"/>τὸ ἐγχειρίδιον</h1></div><div><h2 class="subtitle">Annotation Manual for the Penn Parsed Corpora of Historical Greek</h2></div><div><div class="authorgroup"><div class="author"><h3 class="author"><span class="firstname">Jana</span> <span class="othername">E.</span> <span class="surname">Beck</span></h3><code class="email">&lt;<a class="email" href="mailto:janabeck@babel.ling.upenn.edu">janabeck@babel.ling.upenn.edu</a>&gt;</code></div><div class="author"><h3 class="author"><span class="firstname">Beatrice</span> <span class="surname">Santorini</span></h3><span class="contrib">Beatrice Santorini did not have direct authorship, but much of the material
                     in this manual is taken directly from her Annotation Manual for the Penn Parsed
-                    Corpora of Historical English.</span> </div></div></div></div><hr/></div><div class="toc"><p><strong>Table of Contents</strong></p><dl><dt><span class="part"><a href="#d0e27">I. Introduction</a></span></dt><dd><dl><dt><span class="chapter"><a href="#general_intro">1. General Introduction</a></span></dt><dd><dl><dt><span class="sect1"><a href="#philosophy_and_goals">Philosophy and Goals</a></span></dt><dt><span class="sect1"><a href="#file_formats">File Formats</a></span></dt><dd><dl><dt><span class="sect2"><a href="#d0e77">Part-of-Speech (POS) Tagged Files (.pos)</a></span></dt><dt><span class="sect2"><a href="#d0e82">Parsed Files (.psd)</a></span></dt></dl></dd><dt><span class="sect1"><a href="#textual_markup">Textual Markup</a></span></dt></dl></dd><dt><span class="chapter"><a href="#tags">2. List of Tags and Empty Categories</a></span></dt><dd><dl><dt><span class="sect1"><a href="#d0e116">Part-of-Speech (POS) Tags</a></span></dt><dt><span class="sect1"><a href="#d0e912">Syntactic Tags</a></span></dt></dl></dd><dt><span class="glossary"><a href="#individual_words">Treatment of Individual Words</a></span></dt><dt><span class="chapter"><a href="#pos_annotation">3. POS Annotation</a></span></dt><dd><dl><dt><span class="sect1"><a href="#ADJ_ADV">Adjectives and Adverbs (ADJ, ADV)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#ADJ_ADV_notes">Notes</a></span></dt><dt><span class="sect2"><a href="#colors">Colors</a></span></dt><dt><span class="sect2"><a href="#degree_words">Degree Words</a></span></dt><dt><span class="sect2"><a href="#ordinals">Ordinal Numbers</a></span></dt></dl></dd><dt><span class="sect1"><a href="#NUM">Cardinal Numbers (NUM)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#NUM_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#CL">Clitics (CL)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#CL_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#C">Complementizers (C)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#C_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#CONJ_CLTE">Coordinating Conjunctions (CONJ, CLTE)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#CONJ_CLTE_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#D">Determiners and Demonstratives (D)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#D_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#FW">Foreign Words (FW)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#FW_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#INTJ">Interjections (INTJ)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#INTJ_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#NEG">Negation (NEG)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#NEG_notes">Notes</a></span></dt><dt><span class="sect2"><a href="#compound_NEG">Compound NEG Tags</a></span></dt></dl></dd><dt><span class="sect1"><a href="#nominals">Nominals (N, PRO, CLPRO)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#nominals_notes">Notes: Nominals</a></span></dt><dt><span class="sect2"><a href="#PRO_notes">Notes: Pronominals</a></span></dt></dl></dd><dt><span class="sect1"><a href="#ordinal_numbers">Ordinal Numbers</a></span></dt><dt><span class="sect1"><a href="#particles">Particles (CLPRT, AN, KE, PRTQ, CLGE)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#modal_particles">Notes: Modal Particles</a></span></dt><dt><span class="sect2"><a href="#CLGE_notes">Notes: CLGE</a></span></dt><dt><span class="sect2"><a href="#CLPRT_notes">Notes: CLPRT</a></span></dt><dt><span class="sect2"><a href="#PRTQ_notes">Notes: PRTQ</a></span></dt></dl></dd><dt><span class="sect1"><a href="#P">Prepositions (P)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#P_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#punctuation">Punctuation</a></span></dt><dd><dl><dt><span class="sect2"><a href="#punctuation_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#Q">Quantifiers (Q)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#Q_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#subordinating_conjunctions">Subordinating Conjunctions</a></span></dt><dt><span class="sect1"><a href="#VB_BE">Verbs (VB*, BE*)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#VB_BE_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#W">Wh- Words (W)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#W_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#compound_tags">Compound Tags</a></span></dt></dl></dd></dl></dd><dt><span class="part"><a href="#d0e4631">II. Syntactic Annotation</a></span></dt><dd><dl><dt><span class="chapter"><a href="#syn_intro">4. Introduction</a></span></dt><dd><dl><dt><span class="sect1"><a href="#syn_general_principles">General Principles</a></span></dt><dd><dl><dt><span class="sect2"><a href="#dash_tags">Dash Tags</a></span></dt><dt><span class="sect2"><a href="#structural_principles">Structural Principles</a></span></dt></dl></dd><dt><span class="sect1"><a href="#internal_phrases">Internal Structure of Phrases</a></span></dt><dt><span class="sect1"><a href="#internal_clauses">Internal Structure of Clauses</a></span></dt><dd><dl><dt><span class="sect2"><a href="#IPs">IPs</a></span></dt><dt><span class="sect2"><a href="#imperatives">Imperatives</a></span></dt><dt><span class="sect2"><a href="#non_wh_CPs">Non-wh CPs</a></span></dt><dt><span class="sect2"><a href="#wh_CPs">Wh- CPs</a></span></dt><dt><span class="sect2"><a href="#fronting">Fronting to pre-complementizer position</a></span></dt><dt><span class="sect2"><a href="#CP_adjunction">Adjunction to CP</a></span></dt></dl></dd><dt><span class="sect1"><a href="#tokens">Division into Sentence Tokens</a></span></dt></dl></dd><dt><span class="chapter"><a href="#phrase_level">5. Phrase-Level Constituents</a></span></dt><dd><dl><dt><span class="sect1"><a href="#ADJP">Adjective Phrase</a></span></dt><dd><dl><dt><span class="sect2"><a href="#ADJ_com">Complements of ADJ</a></span></dt><dt><span class="sect2"><a href="#ADJ_mod">Modifiers of ADJ</a></span></dt></dl></dd><dt><span class="sect1"><a href="#ADVP">Adverb Phrase</a></span></dt><dd><dl><dt><span class="sect2"><a href="#ADV_com">Complements of ADV</a></span></dt><dt><span class="sect2"><a href="#ADV_mod">Modifiers of ADV</a></span></dt></dl></dd><dt><span class="sect1"><a href="#CONJP">Conjunction Phrase</a></span></dt><dt><span class="sect1"><a href="#FRAG">Fragment</a></span></dt><dt><span class="sect1"><a href="#INTJP">Interjection Phrase</a></span></dt><dt><span class="sect1"><a href="#NP">Noun Phrase</a></span></dt><dd><dl><dt><span class="sect2"><a href="#NP_head">Heads of NP</a></span></dt><dt><span class="sect2"><a href="#N_com">Complements of N</a></span></dt><dt><span class="sect2"><a href="#N_mod">Modifiers of N</a></span></dt></dl></dd><dt><span class="sect1"><a href="#NUMP">Number Phrase</a></span></dt><dt><span class="sect1"><a href="#PP">Prepositional Phrase</a></span></dt><dd><dl><dt><span class="sect2"><a href="#P_com">Complements of P</a></span></dt><dt><span class="sect2"><a href="#P_spec">Specifiers of P</a></span></dt></dl></dd><dt><span class="sect1"><a href="#QP">Quantifier Phrase</a></span></dt><dd><dl><dt><span class="sect2"><a href="#Q_com">Complements of Q</a></span></dt><dt><span class="sect2"><a href="#Q_mod">Modifiers of Q</a></span></dt></dl></dd><dt><span class="sect1"><a href="#WP">Wh- Phrase</a></span></dt><dd><dl><dt><span class="sect2"><a href="#WADJP">WADJP</a></span></dt><dt><span class="sect2"><a href="#WADVP">WADVP</a></span></dt><dt><span class="sect2"><a href="#WNP">WNP</a></span></dt><dt><span class="sect2"><a href="#WPP">WPP</a></span></dt><dt><span class="sect2"><a href="#WQP">WQP</a></span></dt></dl></dd><dt><span class="sect1"><a href="#non-structural">Non-Structural Labels</a></span></dt><dd><dl><dt><span class="sect2"><a href="#CODE">CODE</a></span></dt><dt><span class="sect2"><a href="#foreign">Foreign Language Passages</a></span></dt><dt><span class="sect2"><a href="#QTP">QTP</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#conjunction">6. Conjunction</a></span></dt><dd><dl><dt><span class="sect1"><a href="#word_level_conj">Word-Level Conjunction</a></span></dt><dt><span class="sect1"><a href="#phrase_level_conj">Phrase-Level Conjunction</a></span></dt><dt><span class="sect1"><a href="#empty_head_conjps">CONJPs with Empty Heads</a></span></dt><dt><span class="sect1"><a href="#unlike_conj">Conjunction of Unlike Categories</a></span></dt><dt><span class="sect1"><a href="#recursive_conj">Recursive Conjunction Structures</a></span></dt><dt><span class="sect1"><a href="#shared_mod_conj">Shared Modifiers</a></span></dt><dd><dl><dt><span class="sect2"><a href="#pre_mod">Shared Pre-Modifiers</a></span></dt><dt><span class="sect2"><a href="#post_mod">Shared Post-Modifiers</a></span></dt></dl></dd><dt><span class="sect1"><a href="#conj_and_neg">Conjunction and Negation</a></span></dt><dt><span class="sect1"><a href="#extraposed_conjps">Extraposed CONJPs</a></span></dt><dt><span class="sect1"><a href="#correlative_conj">Correlative Conjunction</a></span></dt><dd><dl><dt><span class="sect2"><a href="#word_level_correlative_conj">Word-Level Correlative Conjunction</a></span></dt><dt><span class="sect2"><a href="#phrase_level_correlative_conj">Phrase-Level Correlative Conjunction</a></span></dt><dt><span class="sect2"><a href="#float_conj">Floated Conjunctions</a></span></dt></dl></dd><dt><span class="sect1"><a href="#clausal_conj">Clausal Conjunction</a></span></dt><dd><dl><dt><span class="sect2"><a href="#matrix_conj">Conjunction of Matrix IPs</a></span></dt><dt><span class="sect2"><a href="#embedded_conj">Conjunction of Embedded IPs</a></span></dt><dt><span class="sect2"><a href="#right_raising">Right-Node Raising</a></span></dt><dt><span class="sect2"><a href="#gapping">Gapping</a></span></dt><dt><span class="sect2"><a href="#backwards_gapping">Backwards Gapping</a></span></dt><dt><span class="sect2"><a href="#direct_speech_conj">Conjoined Direct Speech</a></span></dt><dt><span class="sect2"><a href="#CP_conj">Conjunction of CPs</a></span></dt><dt><span class="sect2"><a href="#clausal_shared_mod">Clausal Conjunction and Shared Modifiers</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#empty_categories">7. Empty Categories</a></span></dt><dd><dl><dt><span class="sect1"><a href="#empty_subjects">Empty Subjects</a></span></dt><dd><dl><dt><span class="sect2"><a href="#con">Subjects Elided under Conjunction</a></span></dt><dt><span class="sect2"><a href="#arb">Arbitrary Subjects in ECM Infinitives</a></span></dt><dt><span class="sect2"><a href="#pro"><span class="emphasis"><em>pro</em></span>-Drop Subjects</a></span></dt></dl></dd><dt><span class="sect1"><a href="#traces">Traces</a></span></dt><dd><dl><dt><span class="sect2"><a href="#a_movement">Traces of A-Movement</a></span></dt><dt><span class="sect2"><a href="#wh_movement">Traces of Wh-Movement</a></span></dt><dt><span class="sect2"><a href="#a_bar_movement">Traces of Other A'-Movement</a></span></dt></dl></dd><dt><span class="sect1"><a href="#other_empty">Other Empty Categories</a></span></dt><dd><dl><dt><span class="sect2"><a href="#empty_objects">Empty Objects</a></span></dt><dt><span class="sect2"><a href="#empty_wh_and_c">Empty Wh- Phrases and Complementizers</a></span></dt><dt><span class="sect2"><a href="#generic_empty">A Generic Empty Category</a></span></dt></dl></dd><dt><span class="sect1"><a href="#position_empty">The Position of Empty Categories</a></span></dt><dd><dl><dt><span class="sect2"><a href="#position_null_copula">The Position of the Null Copula</a></span></dt><dt><span class="sect2"><a href="#position_empty_subjects">The Position of Empty Subjects</a></span></dt><dt><span class="sect2"><a href="#position_traces">The Position of Traces</a></span></dt></dl></dd><dt><span class="sect1"><a href="#resumptive">Resumptive Pronouns</a></span></dt></dl></dd><dt><span class="chapter"><a href="#clause_level">8. Clause-Level Constituents</a></span></dt><dd><dl><dt><span class="sect1"><a href="#clADJP">Adjective Phrase</a></span></dt><dd><dl><dt><span class="sect2"><a href="#ADJP-PRD">Predicate Adjectives</a></span></dt><dt><span class="sect2"><a href="#ADJP-SPR">Other Clause-Level ADJPs (ADJP-SPR)</a></span></dt><dt><span class="sect2"><a href="#ADJP_movt">Movement out of ADJP</a></span></dt></dl></dd><dt><span class="sect1"><a href="#clADVP">Adverb Phrase</a></span></dt><dt><span class="sect1"><a href="#clNP">Noun Phrase</a></span></dt><dd><dl><dt><span class="sect2"><a href="#NP-SBJ">Subject</a></span></dt><dt><span class="sect2"><a href="#NP-OBJ">Object</a></span></dt><dt><span class="sect2"><a href="#NP-ADT">Non-Argument (Adjunct) NP</a></span></dt><dt><span class="sect2"><a href="#NP-ADV">Adverbial NP</a></span></dt><dt><span class="sect2"><a href="#NP-ATR">Attributive (and/or Possessive) NP</a></span></dt><dt><span class="sect2"><a href="#NP-COM">Complement NP</a></span></dt><dt><span class="sect2"><a href="#NP-DIR">Directional NP</a></span></dt><dt><span class="sect2"><a href="#NP-INS">Instrumental NP</a></span></dt><dt><span class="sect2"><a href="#NP-LOC">Locative NP</a></span></dt><dt><span class="sect2"><a href="#NP-MSR">Measure Phrase</a></span></dt><dt><span class="sect2"><a href="#NP-PAR">Partitive NP</a></span></dt><dt><span class="sect2"><a href="#NP-PRD">Predicate NP</a></span></dt><dt><span class="sect2"><a href="#NP-SPR">Secondary Predicate NP</a></span></dt><dt><span class="sect2"><a href="#NP-TMP">Temporal NP</a></span></dt><dt><span class="sect2"><a href="#NP-VOC">Vocative</a></span></dt><dt><span class="sect2"><a href="#bare_NP">Bare NP</a></span></dt></dl></dd><dt><span class="sect1"><a href="#clPP">Prepositional Phrase</a></span></dt><dt><span class="sect1"><a href="#clQP">Quantifier Phrase</a></span></dt><dt><span class="sect1"><a href="#words_clausal_constituents">Words as Clausal Constituents</a></span></dt><dd><dl><dt><span class="sect2"><a href="#clausal_adverbs">Adverbs</a></span></dt><dt><span class="sect2"><a href="#floated_quantifiers">Floated Quantifiers</a></span></dt><dt><span class="sect2"><a href="#clausal_negation">Negation</a></span></dt><dt><span class="sect2"><a href="#clausal_participles">Participles</a></span></dt></dl></dd><dt><span class="sect1"><a href="#extended_dash">Extended Dash Tags</a></span></dt><dd><dl><dt><span class="sect2"><a href="#LFD">Left Dislocation</a></span></dt><dt><span class="sect2"><a href="#PRN">Appositive or Parenthetical</a></span></dt><dt><span class="sect2"><a href="#RSP">Resumptive</a></span></dt><dt><span class="sect2"><a href="#SPE">Direct Speech</a></span></dt></dl></dd><dt><span class="sect1"><a href="#unknown">Unknown</a></span></dt></dl></dd><dt><span class="chapter"><a href="#subordinate_clauses">9. Subordinate Clauses</a></span></dt><dd><dl><dt><span class="sect1"><a href="#CP-ADV">Adverbial Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-THT"><span class="emphasis"><em>That</em></span>-Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-COM">Complement Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-PRP">Purpose Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-DEG">Degree Complements</a></span></dt><dt><span class="sect1"><a href="#CP-CMP">Comparative Clauses</a></span></dt><dd><dl><dt><span class="sect2"><a href="#full_correlative">Correlative Comparatives</a></span></dt></dl></dd><dt><span class="sect1"><a href="#CP-QUE">Questions</a></span></dt><dt><span class="sect1"><a href="#CP-EXL">Exclamative Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-REL">Ordinary Relative Clauses</a></span></dt><dt><span class="sect1"><a href="#RRC">Reduced Relative Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-CAR">Clause-Adjoined Relative Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-FRL">Free Relatives</a></span></dt><dt><span class="sect1"><a href="#CP-EOP">Empty Operator Clauses</a></span></dt><dt><span class="sect1"><a href="#IP-INF">Infinitival Clauses</a></span></dt><dd><dl><dt><span class="sect2"><a href="#IP-INF-ADT">IP-INF-ADT</a></span></dt><dt><span class="sect2"><a href="#IP-INF-COM">IP-INF-COM</a></span></dt><dt><span class="sect2"><a href="#IP-INF-DEG">IP-INF-DEG</a></span></dt><dt><span class="sect2"><a href="#IP-INF-PRP">IP-INF-PRP</a></span></dt><dt><span class="sect2"><a href="#IP-INF-SBJ">IP-INF-SBJ</a></span></dt><dt><span class="sect2"><a href="#IP-INF-THT">IP-INF-THT</a></span></dt></dl></dd><dt><span class="sect1"><a href="#IP-SMC">Small Clauses</a></span></dt><dt><span class="sect1"><a href="#IP-PPL">Participial Clauses</a></span></dt></dl></dd><dt><span class="chapter"><a href="#special_constructions">10. Special Constructions</a></span></dt><dd><dl><dt><span class="sect1"><a href="#prolepsis">Prolepsis</a></span></dt></dl></dd><dt><span class="chapter"><a href="#discontinuous_phrases">11. Discontinuous Phrases</a></span></dt><dd><dl><dt><span class="sect1"><a href="#extraposition">Rightward Extraposition</a></span></dt><dt><span class="sect1"><a href="#default_leftward">Default Leftward Movement</a></span></dt><dd><dl><dt><span class="sect2"><a href="#word_level_fronting">Word-Level Fronting</a></span></dt><dt><span class="sect2"><a href="#intermediate_level_fronting">Fronting of Non-Constituents</a></span></dt><dt><span class="sect2"><a href="#phrase_level_fronting">Phrase-Level Fronting</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#disfluencies">12. Disfluencies</a></span></dt><dd><dl><dt><span class="sect1"><a href="#break">Break</a></span></dt><dt><span class="sect1"><a href="#false_start">False Start</a></span></dt><dt><span class="sect1"><a href="#repetition">Repetition</a></span></dt><dt><span class="sect1"><a href="#tag">Tag</a></span></dt></dl></dd></dl></dd><dt><span class="part"><a href="#d0e7058">III. Planned Corpus Development and Known Issues</a></span></dt><dd><dl><dt><span class="chapter"><a href="#development">13. General Corpus Development</a></span></dt><dd><dl><dt><span class="sect1"><a href="#d0e7065"/></span></dt></dl></dd><dt><span class="chapter"><a href="#known_issues">14. Known Issues</a></span></dt><dd><dl><dt><span class="sect1"><a href="#d0e7072"/></span></dt></dl></dd></dl></dd><dt><span class="appendix"><a href="#appendix">A. Appendix</a></span></dt><dd><dl><dt><span class="sect1"><a href="#copular_verbs">Copular Verbs</a></span></dt><dt><span class="sect1"><a href="#small_clause_verbs">Verbs taking Small Clauses</a></span></dt><dt><span class="sect1"><a href="#secondary_pred_verbs">Verbs taking Secondary Predicates</a></span></dt><dt><span class="sect1"><a href="#cognate_object_verbs">Cognate Object Verbs</a></span></dt></dl></dd></dl></div><div class="list-of-tables"><p><strong>List of Tables</strong></p><dl><dt>2.1. <a href="#d0e119">Legal POS Tags</a></dt><dt>2.2. <a href="#d0e862">Extended Verbal Tags</a></dt><dt>2.3. <a href="#d0e917">Basic Syntactic Tags</a></dt><dt>2.4. <a href="#d0e1375">Dash Tags</a></dt><dt>2.5. <a href="#d0e1752">Extended Dash Tags</a></dt><dt>2.6. <a href="#d0e1805">Empty Categories</a></dt><dt>3.1. <a href="#d0e2782">ADJ and ADV Tags</a></dt><dt>3.2. <a href="#d0e2936">NUM Tags</a></dt><dt>3.3. <a href="#d0e3031">CL Tags</a></dt><dt>3.4. <a href="#d0e3200">C Tags</a></dt><dt>3.5. <a href="#d0e3247">CONJ and CLTE Tags</a></dt><dt>3.6. <a href="#d0e3335">D Tags</a></dt><dt>3.7. <a href="#d0e3433">FW Tags</a></dt><dt>3.8. <a href="#d0e3475">INTJ Tags</a></dt><dt>3.9. <a href="#d0e3539">NEG Tags</a></dt><dt>3.10. <a href="#d0e3627">Nominal Tags</a></dt><dt>3.11. <a href="#d0e3875">Particle Tags</a></dt><dt>3.12. <a href="#d0e3969">P Tags</a></dt><dt>3.13. <a href="#d0e4015">Punctuation Tags</a></dt><dt>3.14. <a href="#d0e4072">Q Tags</a></dt><dt>3.15. <a href="#d0e4184">VB* and BE* Tags</a></dt><dt>3.16. <a href="#d0e4332">Extended Verbal Dash Tags</a></dt><dt>3.17. <a href="#d0e4421">W Tags</a></dt><dt>4.1. <a href="#d0e4839">Common IP-Dash Tag Combinations</a></dt><dt>4.2. <a href="#d0e4920">Common CP-Dash Tag Combinations</a></dt></dl></div><div class="part" title="Part I. Introduction"><div class="titlepage"><div><div><h1 class="title"><a id="d0e27"/>Part I. Introduction</h1></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl><dt><span class="chapter"><a href="#general_intro">1. General Introduction</a></span></dt><dd><dl><dt><span class="sect1"><a href="#philosophy_and_goals">Philosophy and Goals</a></span></dt><dt><span class="sect1"><a href="#file_formats">File Formats</a></span></dt><dd><dl><dt><span class="sect2"><a href="#d0e77">Part-of-Speech (POS) Tagged Files (.pos)</a></span></dt><dt><span class="sect2"><a href="#d0e82">Parsed Files (.psd)</a></span></dt></dl></dd><dt><span class="sect1"><a href="#textual_markup">Textual Markup</a></span></dt></dl></dd><dt><span class="chapter"><a href="#tags">2. List of Tags and Empty Categories</a></span></dt><dd><dl><dt><span class="sect1"><a href="#d0e116">Part-of-Speech (POS) Tags</a></span></dt><dt><span class="sect1"><a href="#d0e912">Syntactic Tags</a></span></dt></dl></dd><dt><span class="glossary"><a href="#individual_words">Treatment of Individual Words</a></span></dt><dt><span class="chapter"><a href="#pos_annotation">3. POS Annotation</a></span></dt><dd><dl><dt><span class="sect1"><a href="#ADJ_ADV">Adjectives and Adverbs (ADJ, ADV)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#ADJ_ADV_notes">Notes</a></span></dt><dt><span class="sect2"><a href="#colors">Colors</a></span></dt><dt><span class="sect2"><a href="#degree_words">Degree Words</a></span></dt><dt><span class="sect2"><a href="#ordinals">Ordinal Numbers</a></span></dt></dl></dd><dt><span class="sect1"><a href="#NUM">Cardinal Numbers (NUM)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#NUM_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#CL">Clitics (CL)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#CL_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#C">Complementizers (C)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#C_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#CONJ_CLTE">Coordinating Conjunctions (CONJ, CLTE)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#CONJ_CLTE_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#D">Determiners and Demonstratives (D)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#D_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#FW">Foreign Words (FW)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#FW_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#INTJ">Interjections (INTJ)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#INTJ_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#NEG">Negation (NEG)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#NEG_notes">Notes</a></span></dt><dt><span class="sect2"><a href="#compound_NEG">Compound NEG Tags</a></span></dt></dl></dd><dt><span class="sect1"><a href="#nominals">Nominals (N, PRO, CLPRO)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#nominals_notes">Notes: Nominals</a></span></dt><dt><span class="sect2"><a href="#PRO_notes">Notes: Pronominals</a></span></dt></dl></dd><dt><span class="sect1"><a href="#ordinal_numbers">Ordinal Numbers</a></span></dt><dt><span class="sect1"><a href="#particles">Particles (CLPRT, AN, KE, PRTQ, CLGE)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#modal_particles">Notes: Modal Particles</a></span></dt><dt><span class="sect2"><a href="#CLGE_notes">Notes: CLGE</a></span></dt><dt><span class="sect2"><a href="#CLPRT_notes">Notes: CLPRT</a></span></dt><dt><span class="sect2"><a href="#PRTQ_notes">Notes: PRTQ</a></span></dt></dl></dd><dt><span class="sect1"><a href="#P">Prepositions (P)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#P_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#punctuation">Punctuation</a></span></dt><dd><dl><dt><span class="sect2"><a href="#punctuation_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#Q">Quantifiers (Q)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#Q_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#subordinating_conjunctions">Subordinating Conjunctions</a></span></dt><dt><span class="sect1"><a href="#VB_BE">Verbs (VB*, BE*)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#VB_BE_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#W">Wh- Words (W)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#W_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#compound_tags">Compound Tags</a></span></dt></dl></dd></dl></div><div class="chapter" title="Chapter 1. General Introduction"><div class="titlepage"><div><div><h2 class="title"><a id="general_intro"/>Chapter 1. General Introduction</h2></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl><dt><span class="sect1"><a href="#philosophy_and_goals">Philosophy and Goals</a></span></dt><dt><span class="sect1"><a href="#file_formats">File Formats</a></span></dt><dd><dl><dt><span class="sect2"><a href="#d0e77">Part-of-Speech (POS) Tagged Files (.pos)</a></span></dt><dt><span class="sect2"><a href="#d0e82">Parsed Files (.psd)</a></span></dt></dl></dd><dt><span class="sect1"><a href="#textual_markup">Textual Markup</a></span></dt></dl></div><div class="sect1" title="Philosophy and Goals"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="philosophy_and_goals"/>Philosophy and Goals</h2></div></div></div><p>
+                    Corpora of Historical English.</span> </div></div></div></div><hr/></div><div class="toc"><p><strong>Table of Contents</strong></p><dl><dt><span class="part"><a href="#d0e27">I. Introduction</a></span></dt><dd><dl><dt><span class="chapter"><a href="#general_intro">1. General Introduction</a></span></dt><dd><dl><dt><span class="sect1"><a href="#philosophy_and_goals">Philosophy and Goals</a></span></dt><dt><span class="sect1"><a href="#file_formats">File Formats</a></span></dt><dd><dl><dt><span class="sect2"><a href="#d0e77">Part-of-Speech (POS) Tagged Files (.pos)</a></span></dt><dt><span class="sect2"><a href="#d0e82">Parsed Files (.psd)</a></span></dt></dl></dd><dt><span class="sect1"><a href="#textual_markup">Textual Markup</a></span></dt></dl></dd><dt><span class="chapter"><a href="#tags">2. List of Tags and Empty Categories</a></span></dt><dd><dl><dt><span class="sect1"><a href="#d0e116">Part-of-Speech (POS) Tags</a></span></dt><dt><span class="sect1"><a href="#d0e912">Syntactic Tags</a></span></dt></dl></dd><dt><span class="glossary"><a href="#individual_words">Treatment of Individual Words</a></span></dt><dt><span class="chapter"><a href="#pos_annotation">3. POS Annotation</a></span></dt><dd><dl><dt><span class="sect1"><a href="#ADJ_ADV">Adjectives and Adverbs (ADJ, ADV)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#ADJ_ADV_notes">Notes</a></span></dt><dt><span class="sect2"><a href="#colors">Colors</a></span></dt><dt><span class="sect2"><a href="#degree_words">Degree Words</a></span></dt><dt><span class="sect2"><a href="#ordinals">Ordinal Numbers</a></span></dt></dl></dd><dt><span class="sect1"><a href="#NUM">Cardinal Numbers (NUM)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#NUM_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#CL">Clitics (CL)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#CL_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#C">Complementizers (C)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#C_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#CONJ_CLTE">Coordinating Conjunctions (CONJ, CLTE)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#CONJ_CLTE_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#D">Determiners and Demonstratives (D)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#D_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#FW">Foreign Words (FW)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#FW_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#INTJ">Interjections (INTJ)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#INTJ_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#NEG">Negation (NEG)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#NEG_notes">Notes</a></span></dt><dt><span class="sect2"><a href="#compound_NEG">Compound NEG Tags</a></span></dt></dl></dd><dt><span class="sect1"><a href="#nominals">Nominals (N, PRO, CLPRO)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#nominals_notes">Notes: Nominals</a></span></dt><dt><span class="sect2"><a href="#PRO_notes">Notes: Pronominals</a></span></dt></dl></dd><dt><span class="sect1"><a href="#ordinal_numbers">Ordinal Numbers</a></span></dt><dt><span class="sect1"><a href="#particles">Particles (CLPRT, AN, KE, PRTQ, CLGE)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#modal_particles">Notes: Modal Particles</a></span></dt><dt><span class="sect2"><a href="#CLGE_notes">Notes: CLGE</a></span></dt><dt><span class="sect2"><a href="#CLPRT_notes">Notes: CLPRT</a></span></dt><dt><span class="sect2"><a href="#PRTQ_notes">Notes: PRTQ</a></span></dt></dl></dd><dt><span class="sect1"><a href="#P">Prepositions (P)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#P_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#punctuation">Punctuation</a></span></dt><dd><dl><dt><span class="sect2"><a href="#punctuation_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#Q">Quantifiers (Q)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#Q_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#subordinating_conjunctions">Subordinating Conjunctions</a></span></dt><dt><span class="sect1"><a href="#VB_BE">Verbs (VB*, BE*)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#VB_BE_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#W">Wh- Words (W)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#W_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#compound_tags">Compound Tags</a></span></dt></dl></dd></dl></dd><dt><span class="part"><a href="#d0e4631">II. Syntactic Annotation</a></span></dt><dd><dl><dt><span class="chapter"><a href="#syn_intro">4. Introduction</a></span></dt><dd><dl><dt><span class="sect1"><a href="#syn_general_principles">General Principles</a></span></dt><dd><dl><dt><span class="sect2"><a href="#dash_tags">Dash Tags</a></span></dt><dt><span class="sect2"><a href="#structural_principles">Structural Principles</a></span></dt></dl></dd><dt><span class="sect1"><a href="#internal_phrases">Internal Structure of Phrases</a></span></dt><dt><span class="sect1"><a href="#internal_clauses">Internal Structure of Clauses</a></span></dt><dd><dl><dt><span class="sect2"><a href="#IPs">IPs</a></span></dt><dt><span class="sect2"><a href="#imperatives">Imperatives</a></span></dt><dt><span class="sect2"><a href="#non_wh_CPs">Non-wh CPs</a></span></dt><dt><span class="sect2"><a href="#wh_CPs">Wh- CPs</a></span></dt><dt><span class="sect2"><a href="#fronting">Fronting to pre-complementizer position</a></span></dt><dt><span class="sect2"><a href="#CP_adjunction">Adjunction to CP</a></span></dt></dl></dd><dt><span class="sect1"><a href="#tokens">Division into Sentence Tokens</a></span></dt></dl></dd><dt><span class="chapter"><a href="#phrase_level">5. Phrase-Level Constituents</a></span></dt><dd><dl><dt><span class="sect1"><a href="#ADJP">Adjective Phrase</a></span></dt><dd><dl><dt><span class="sect2"><a href="#ADJ_com">Complements of ADJ</a></span></dt><dt><span class="sect2"><a href="#ADJ_mod">Modifiers of ADJ</a></span></dt></dl></dd><dt><span class="sect1"><a href="#ADVP">Adverb Phrase</a></span></dt><dd><dl><dt><span class="sect2"><a href="#ADV_com">Complements of ADV</a></span></dt><dt><span class="sect2"><a href="#ADV_mod">Modifiers of ADV</a></span></dt></dl></dd><dt><span class="sect1"><a href="#CONJP">Conjunction Phrase</a></span></dt><dt><span class="sect1"><a href="#FRAG">Fragment</a></span></dt><dt><span class="sect1"><a href="#INTJP">Interjection Phrase</a></span></dt><dt><span class="sect1"><a href="#NP">Noun Phrase</a></span></dt><dd><dl><dt><span class="sect2"><a href="#NP_head">Heads of NP</a></span></dt><dt><span class="sect2"><a href="#N_com">Complements of N</a></span></dt><dt><span class="sect2"><a href="#N_mod">Modifiers of N</a></span></dt></dl></dd><dt><span class="sect1"><a href="#NUMP">Number Phrase</a></span></dt><dt><span class="sect1"><a href="#PP">Prepositional Phrase</a></span></dt><dd><dl><dt><span class="sect2"><a href="#P_com">Complements of P</a></span></dt><dt><span class="sect2"><a href="#P_spec">Specifiers of P</a></span></dt></dl></dd><dt><span class="sect1"><a href="#QP">Quantifier Phrase</a></span></dt><dd><dl><dt><span class="sect2"><a href="#Q_com">Complements of Q</a></span></dt><dt><span class="sect2"><a href="#Q_mod">Modifiers of Q</a></span></dt></dl></dd><dt><span class="sect1"><a href="#WP">Wh- Phrase</a></span></dt><dd><dl><dt><span class="sect2"><a href="#WADJP">WADJP</a></span></dt><dt><span class="sect2"><a href="#WADVP">WADVP</a></span></dt><dt><span class="sect2"><a href="#WNP">WNP</a></span></dt><dt><span class="sect2"><a href="#WPP">WPP</a></span></dt><dt><span class="sect2"><a href="#WQP">WQP</a></span></dt></dl></dd><dt><span class="sect1"><a href="#non-structural">Non-Structural Labels</a></span></dt><dd><dl><dt><span class="sect2"><a href="#CODE">CODE</a></span></dt><dt><span class="sect2"><a href="#foreign">Foreign Language Passages</a></span></dt><dt><span class="sect2"><a href="#QTP">QTP</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#conjunction">6. Conjunction</a></span></dt><dd><dl><dt><span class="sect1"><a href="#word_level_conj">Word-Level Conjunction</a></span></dt><dt><span class="sect1"><a href="#phrase_level_conj">Phrase-Level Conjunction</a></span></dt><dt><span class="sect1"><a href="#empty_head_conjps">CONJPs with Empty Heads</a></span></dt><dt><span class="sect1"><a href="#unlike_conj">Conjunction of Unlike Categories</a></span></dt><dt><span class="sect1"><a href="#recursive_conj">Recursive Conjunction Structures</a></span></dt><dt><span class="sect1"><a href="#shared_mod_conj">Shared Modifiers</a></span></dt><dd><dl><dt><span class="sect2"><a href="#pre_mod">Shared Pre-Modifiers</a></span></dt><dt><span class="sect2"><a href="#post_mod">Shared Post-Modifiers</a></span></dt></dl></dd><dt><span class="sect1"><a href="#conj_and_neg">Conjunction and Negation</a></span></dt><dt><span class="sect1"><a href="#extraposed_conjps">Extraposed CONJPs</a></span></dt><dt><span class="sect1"><a href="#correlative_conj">Correlative Conjunction</a></span></dt><dd><dl><dt><span class="sect2"><a href="#word_level_correlative_conj">Word-Level Correlative Conjunction</a></span></dt><dt><span class="sect2"><a href="#phrase_level_correlative_conj">Phrase-Level Correlative Conjunction</a></span></dt><dt><span class="sect2"><a href="#float_conj">Floated Conjunctions</a></span></dt></dl></dd><dt><span class="sect1"><a href="#clausal_conj">Clausal Conjunction</a></span></dt><dd><dl><dt><span class="sect2"><a href="#matrix_conj">Conjunction of Matrix IPs</a></span></dt><dt><span class="sect2"><a href="#embedded_conj">Conjunction of Embedded IPs</a></span></dt><dt><span class="sect2"><a href="#right_raising">Right-Node Raising</a></span></dt><dt><span class="sect2"><a href="#gapping">Gapping</a></span></dt><dt><span class="sect2"><a href="#backwards_gapping">Backwards Gapping</a></span></dt><dt><span class="sect2"><a href="#direct_speech_conj">Conjoined Direct Speech</a></span></dt><dt><span class="sect2"><a href="#CP_conj">Conjunction of CPs</a></span></dt><dt><span class="sect2"><a href="#clausal_shared_mod">Clausal Conjunction and Shared Modifiers</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#empty_categories">7. Empty Categories</a></span></dt><dd><dl><dt><span class="sect1"><a href="#empty_subjects">Empty Subjects</a></span></dt><dd><dl><dt><span class="sect2"><a href="#con">Subjects Elided under Conjunction</a></span></dt><dt><span class="sect2"><a href="#arb">Arbitrary Subjects in ECM Infinitives</a></span></dt><dt><span class="sect2"><a href="#pro"><span class="emphasis"><em>pro</em></span>-Drop Subjects</a></span></dt></dl></dd><dt><span class="sect1"><a href="#traces">Traces</a></span></dt><dd><dl><dt><span class="sect2"><a href="#a_movement">Traces of A-Movement</a></span></dt><dt><span class="sect2"><a href="#wh_movement">Traces of Wh-Movement</a></span></dt><dt><span class="sect2"><a href="#a_bar_movement">Traces of Other A'-Movement</a></span></dt></dl></dd><dt><span class="sect1"><a href="#other_empty">Other Empty Categories</a></span></dt><dd><dl><dt><span class="sect2"><a href="#empty_objects">Empty Objects</a></span></dt><dt><span class="sect2"><a href="#empty_wh_and_c">Empty Wh- Phrases and Complementizers</a></span></dt><dt><span class="sect2"><a href="#generic_empty">A Generic Empty Category</a></span></dt></dl></dd><dt><span class="sect1"><a href="#position_empty">The Position of Empty Categories</a></span></dt><dd><dl><dt><span class="sect2"><a href="#position_null_copula">The Position of the Null Copula</a></span></dt><dt><span class="sect2"><a href="#position_empty_subjects">The Position of Empty Subjects</a></span></dt><dt><span class="sect2"><a href="#position_traces">The Position of Traces</a></span></dt></dl></dd><dt><span class="sect1"><a href="#resumptive">Resumptive Pronouns</a></span></dt></dl></dd><dt><span class="chapter"><a href="#clause_level">8. Clause-Level Constituents</a></span></dt><dd><dl><dt><span class="sect1"><a href="#clADJP">Adjective Phrase</a></span></dt><dd><dl><dt><span class="sect2"><a href="#ADJP-PRD">Predicate Adjectives</a></span></dt><dt><span class="sect2"><a href="#ADJP-SPR">Other Clause-Level ADJPs (ADJP-SPR)</a></span></dt><dt><span class="sect2"><a href="#ADJP_movt">Movement out of ADJP</a></span></dt></dl></dd><dt><span class="sect1"><a href="#clADVP">Adverb Phrase</a></span></dt><dt><span class="sect1"><a href="#clNP">Noun Phrase</a></span></dt><dd><dl><dt><span class="sect2"><a href="#NP-SBJ">Subject</a></span></dt><dt><span class="sect2"><a href="#NP-OBJ">Object</a></span></dt><dt><span class="sect2"><a href="#NP-ADT">Non-Argument (Adjunct) NP</a></span></dt><dt><span class="sect2"><a href="#NP-ADV">Adverbial NP</a></span></dt><dt><span class="sect2"><a href="#NP-ATR">Attributive (and/or Possessive) NP</a></span></dt><dt><span class="sect2"><a href="#NP-COM">Complement NP</a></span></dt><dt><span class="sect2"><a href="#NP-DIR">Directional NP</a></span></dt><dt><span class="sect2"><a href="#NP-INS">Instrumental NP</a></span></dt><dt><span class="sect2"><a href="#NP-LOC">Locative NP</a></span></dt><dt><span class="sect2"><a href="#NP-MSR">Measure Phrase</a></span></dt><dt><span class="sect2"><a href="#NP-PAR">Partitive NP</a></span></dt><dt><span class="sect2"><a href="#NP-PRD">Predicate NP</a></span></dt><dt><span class="sect2"><a href="#NP-SPR">Secondary Predicate NP</a></span></dt><dt><span class="sect2"><a href="#NP-TMP">Temporal NP</a></span></dt><dt><span class="sect2"><a href="#NP-VOC">Vocative</a></span></dt><dt><span class="sect2"><a href="#bare_NP">Bare NP</a></span></dt></dl></dd><dt><span class="sect1"><a href="#clPP">Prepositional Phrase</a></span></dt><dt><span class="sect1"><a href="#clQP">Quantifier Phrase</a></span></dt><dt><span class="sect1"><a href="#words_clausal_constituents">Words as Clausal Constituents</a></span></dt><dd><dl><dt><span class="sect2"><a href="#clausal_adverbs">Adverbs</a></span></dt><dt><span class="sect2"><a href="#floated_quantifiers">Floated Quantifiers</a></span></dt><dt><span class="sect2"><a href="#clausal_negation">Negation</a></span></dt><dt><span class="sect2"><a href="#clausal_participles">Participles</a></span></dt></dl></dd><dt><span class="sect1"><a href="#extended_dash">Extended Dash Tags</a></span></dt><dd><dl><dt><span class="sect2"><a href="#LFD">Left Dislocation</a></span></dt><dt><span class="sect2"><a href="#PRN">Appositive or Parenthetical</a></span></dt><dt><span class="sect2"><a href="#RSP">Resumptive</a></span></dt><dt><span class="sect2"><a href="#SPE">Direct Speech</a></span></dt></dl></dd><dt><span class="sect1"><a href="#unknown">Unknown</a></span></dt></dl></dd><dt><span class="chapter"><a href="#subordinate_clauses">9. Subordinate Clauses</a></span></dt><dd><dl><dt><span class="sect1"><a href="#CP-ADV">Adverbial Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-THT"><span class="emphasis"><em>That</em></span>-Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-COM">Complement Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-PRP">Purpose Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-DEG">Degree Complements</a></span></dt><dt><span class="sect1"><a href="#CP-CMP">Comparative Clauses</a></span></dt><dd><dl><dt><span class="sect2"><a href="#full_correlative">Correlative Comparatives</a></span></dt></dl></dd><dt><span class="sect1"><a href="#CP-QUE">Questions</a></span></dt><dt><span class="sect1"><a href="#CP-EXL">Exclamative Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-REL">Ordinary Relative Clauses</a></span></dt><dt><span class="sect1"><a href="#RRC">Reduced Relative Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-CAR">Clause-Adjoined Relative Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-FRL">Free Relatives</a></span></dt><dt><span class="sect1"><a href="#CP-EOP">Empty Operator Clauses</a></span></dt><dt><span class="sect1"><a href="#IP-INF">Infinitival Clauses</a></span></dt><dd><dl><dt><span class="sect2"><a href="#IP-INF-ADT">IP-INF-ADT</a></span></dt><dt><span class="sect2"><a href="#IP-INF-COM">IP-INF-COM</a></span></dt><dt><span class="sect2"><a href="#IP-INF-DEG">IP-INF-DEG</a></span></dt><dt><span class="sect2"><a href="#IP-INF-PRP">IP-INF-PRP</a></span></dt><dt><span class="sect2"><a href="#IP-INF-SBJ">IP-INF-SBJ</a></span></dt><dt><span class="sect2"><a href="#IP-INF-THT">IP-INF-THT</a></span></dt></dl></dd><dt><span class="sect1"><a href="#IP-SMC">Small Clauses</a></span></dt><dt><span class="sect1"><a href="#IP-PPL">Participial Clauses</a></span></dt><dd><dl><dt><span class="sect2"><a href="#IP-ABS">Absolute Clauses</a></span></dt><dt><span class="sect2"><a href="#IP-PPL-COM">Supplementary Participles</a></span></dt><dt><span class="sect2"><a href="#IP-PPL-THT">Participles of Indirect Discourse</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#special_constructions">10. Special Constructions</a></span></dt><dd><dl><dt><span class="sect1"><a href="#prolepsis">Prolepsis</a></span></dt></dl></dd><dt><span class="chapter"><a href="#discontinuous_phrases">11. Discontinuous Phrases</a></span></dt><dd><dl><dt><span class="sect1"><a href="#extraposition">Rightward Extraposition</a></span></dt><dt><span class="sect1"><a href="#default_leftward">Default Leftward Movement</a></span></dt><dd><dl><dt><span class="sect2"><a href="#word_level_fronting">Word-Level Fronting</a></span></dt><dt><span class="sect2"><a href="#intermediate_level_fronting">Fronting of Non-Constituents</a></span></dt><dt><span class="sect2"><a href="#phrase_level_fronting">Phrase-Level Fronting</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#disfluencies">12. Disfluencies</a></span></dt><dd><dl><dt><span class="sect1"><a href="#break">Break</a></span></dt><dt><span class="sect1"><a href="#false_start">False Start</a></span></dt><dt><span class="sect1"><a href="#repetition">Repetition</a></span></dt><dt><span class="sect1"><a href="#tag">Tag</a></span></dt></dl></dd></dl></dd><dt><span class="part"><a href="#d0e7842">III. Planned Corpus Development and Known Issues</a></span></dt><dd><dl><dt><span class="chapter"><a href="#development">13. General Corpus Development</a></span></dt><dd><dl><dt><span class="sect1"><a href="#d0e7849"/></span></dt></dl></dd><dt><span class="chapter"><a href="#known_issues">14. Known Issues</a></span></dt><dd><dl><dt><span class="sect1"><a href="#d0e7856"/></span></dt></dl></dd></dl></dd><dt><span class="appendix"><a href="#appendix">A. Appendix</a></span></dt><dd><dl><dt><span class="sect1"><a href="#copular_verbs">Copular Verbs</a></span></dt><dt><span class="sect1"><a href="#small_clause_verbs">Verbs taking Small Clauses</a></span></dt><dt><span class="sect1"><a href="#secondary_pred_verbs">Verbs taking Secondary Predicates</a></span></dt><dt><span class="sect1"><a href="#cognate_object_verbs">Cognate Object Verbs</a></span></dt></dl></dd></dl></div><div class="list-of-tables"><p><strong>List of Tables</strong></p><dl><dt>2.1. <a href="#d0e119">Legal POS Tags</a></dt><dt>2.2. <a href="#d0e862">Extended Verbal Tags</a></dt><dt>2.3. <a href="#d0e917">Basic Syntactic Tags</a></dt><dt>2.4. <a href="#d0e1375">Dash Tags</a></dt><dt>2.5. <a href="#d0e1752">Extended Dash Tags</a></dt><dt>2.6. <a href="#d0e1805">Empty Categories</a></dt><dt>3.1. <a href="#d0e2782">ADJ and ADV Tags</a></dt><dt>3.2. <a href="#d0e2936">NUM Tags</a></dt><dt>3.3. <a href="#d0e3031">CL Tags</a></dt><dt>3.4. <a href="#d0e3200">C Tags</a></dt><dt>3.5. <a href="#d0e3247">CONJ and CLTE Tags</a></dt><dt>3.6. <a href="#d0e3335">D Tags</a></dt><dt>3.7. <a href="#d0e3433">FW Tags</a></dt><dt>3.8. <a href="#d0e3475">INTJ Tags</a></dt><dt>3.9. <a href="#d0e3539">NEG Tags</a></dt><dt>3.10. <a href="#d0e3627">Nominal Tags</a></dt><dt>3.11. <a href="#d0e3875">Particle Tags</a></dt><dt>3.12. <a href="#d0e3969">P Tags</a></dt><dt>3.13. <a href="#d0e4015">Punctuation Tags</a></dt><dt>3.14. <a href="#d0e4072">Q Tags</a></dt><dt>3.15. <a href="#d0e4184">VB* and BE* Tags</a></dt><dt>3.16. <a href="#d0e4332">Extended Verbal Dash Tags</a></dt><dt>3.17. <a href="#d0e4421">W Tags</a></dt><dt>4.1. <a href="#d0e4839">Common IP-Dash Tag Combinations</a></dt><dt>4.2. <a href="#d0e4920">Common CP-Dash Tag Combinations</a></dt></dl></div><div class="part" title="Part I. Introduction"><div class="titlepage"><div><div><h1 class="title"><a id="d0e27"/>Part I. Introduction</h1></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl><dt><span class="chapter"><a href="#general_intro">1. General Introduction</a></span></dt><dd><dl><dt><span class="sect1"><a href="#philosophy_and_goals">Philosophy and Goals</a></span></dt><dt><span class="sect1"><a href="#file_formats">File Formats</a></span></dt><dd><dl><dt><span class="sect2"><a href="#d0e77">Part-of-Speech (POS) Tagged Files (.pos)</a></span></dt><dt><span class="sect2"><a href="#d0e82">Parsed Files (.psd)</a></span></dt></dl></dd><dt><span class="sect1"><a href="#textual_markup">Textual Markup</a></span></dt></dl></dd><dt><span class="chapter"><a href="#tags">2. List of Tags and Empty Categories</a></span></dt><dd><dl><dt><span class="sect1"><a href="#d0e116">Part-of-Speech (POS) Tags</a></span></dt><dt><span class="sect1"><a href="#d0e912">Syntactic Tags</a></span></dt></dl></dd><dt><span class="glossary"><a href="#individual_words">Treatment of Individual Words</a></span></dt><dt><span class="chapter"><a href="#pos_annotation">3. POS Annotation</a></span></dt><dd><dl><dt><span class="sect1"><a href="#ADJ_ADV">Adjectives and Adverbs (ADJ, ADV)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#ADJ_ADV_notes">Notes</a></span></dt><dt><span class="sect2"><a href="#colors">Colors</a></span></dt><dt><span class="sect2"><a href="#degree_words">Degree Words</a></span></dt><dt><span class="sect2"><a href="#ordinals">Ordinal Numbers</a></span></dt></dl></dd><dt><span class="sect1"><a href="#NUM">Cardinal Numbers (NUM)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#NUM_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#CL">Clitics (CL)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#CL_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#C">Complementizers (C)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#C_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#CONJ_CLTE">Coordinating Conjunctions (CONJ, CLTE)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#CONJ_CLTE_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#D">Determiners and Demonstratives (D)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#D_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#FW">Foreign Words (FW)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#FW_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#INTJ">Interjections (INTJ)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#INTJ_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#NEG">Negation (NEG)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#NEG_notes">Notes</a></span></dt><dt><span class="sect2"><a href="#compound_NEG">Compound NEG Tags</a></span></dt></dl></dd><dt><span class="sect1"><a href="#nominals">Nominals (N, PRO, CLPRO)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#nominals_notes">Notes: Nominals</a></span></dt><dt><span class="sect2"><a href="#PRO_notes">Notes: Pronominals</a></span></dt></dl></dd><dt><span class="sect1"><a href="#ordinal_numbers">Ordinal Numbers</a></span></dt><dt><span class="sect1"><a href="#particles">Particles (CLPRT, AN, KE, PRTQ, CLGE)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#modal_particles">Notes: Modal Particles</a></span></dt><dt><span class="sect2"><a href="#CLGE_notes">Notes: CLGE</a></span></dt><dt><span class="sect2"><a href="#CLPRT_notes">Notes: CLPRT</a></span></dt><dt><span class="sect2"><a href="#PRTQ_notes">Notes: PRTQ</a></span></dt></dl></dd><dt><span class="sect1"><a href="#P">Prepositions (P)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#P_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#punctuation">Punctuation</a></span></dt><dd><dl><dt><span class="sect2"><a href="#punctuation_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#Q">Quantifiers (Q)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#Q_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#subordinating_conjunctions">Subordinating Conjunctions</a></span></dt><dt><span class="sect1"><a href="#VB_BE">Verbs (VB*, BE*)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#VB_BE_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#W">Wh- Words (W)</a></span></dt><dd><dl><dt><span class="sect2"><a href="#W_notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#compound_tags">Compound Tags</a></span></dt></dl></dd></dl></div><div class="chapter" title="Chapter 1. General Introduction"><div class="titlepage"><div><div><h2 class="title"><a id="general_intro"/>Chapter 1. General Introduction</h2></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl><dt><span class="sect1"><a href="#philosophy_and_goals">Philosophy and Goals</a></span></dt><dt><span class="sect1"><a href="#file_formats">File Formats</a></span></dt><dd><dl><dt><span class="sect2"><a href="#d0e77">Part-of-Speech (POS) Tagged Files (.pos)</a></span></dt><dt><span class="sect2"><a href="#d0e82">Parsed Files (.psd)</a></span></dt></dl></dd><dt><span class="sect1"><a href="#textual_markup">Textual Markup</a></span></dt></dl></div><div class="sect1" title="Philosophy and Goals"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="philosophy_and_goals"/>Philosophy and Goals</h2></div></div></div><p>
             </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>Our primary goal has been to create an annotation system that facilitates
                         automated searches, not to give a correct linguistic analysis of each
                         sentence. For instance, if a construction can be found unambiguously through
@@ -674,7 +674,7 @@
         </p></div><div class="footnotes"><br/><hr width="100" align="left"/><div class="footnote"><p><sup>[<a id="ftn.d0e3456" href="#d0e3456" class="para">1</a>] </sup>Henry George Liddell and Robert Scott. <span class="emphasis"><em>A Greek-English
                                     Lexicon</em></span>. Revised and augmented throughout by Sir
                                 Henry Stuart Jones with the assistance of Roderick McKenzie. Oxford.
-                                Clarendon Press. 1940.</p></div></div></div></div><div class="part" title="Part II. Syntactic Annotation"><div class="titlepage"><div><div><h1 class="title"><a id="d0e4631"/>Part II. Syntactic Annotation</h1></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl><dt><span class="chapter"><a href="#syn_intro">4. Introduction</a></span></dt><dd><dl><dt><span class="sect1"><a href="#syn_general_principles">General Principles</a></span></dt><dd><dl><dt><span class="sect2"><a href="#dash_tags">Dash Tags</a></span></dt><dt><span class="sect2"><a href="#structural_principles">Structural Principles</a></span></dt></dl></dd><dt><span class="sect1"><a href="#internal_phrases">Internal Structure of Phrases</a></span></dt><dt><span class="sect1"><a href="#internal_clauses">Internal Structure of Clauses</a></span></dt><dd><dl><dt><span class="sect2"><a href="#IPs">IPs</a></span></dt><dt><span class="sect2"><a href="#imperatives">Imperatives</a></span></dt><dt><span class="sect2"><a href="#non_wh_CPs">Non-wh CPs</a></span></dt><dt><span class="sect2"><a href="#wh_CPs">Wh- CPs</a></span></dt><dt><span class="sect2"><a href="#fronting">Fronting to pre-complementizer position</a></span></dt><dt><span class="sect2"><a href="#CP_adjunction">Adjunction to CP</a></span></dt></dl></dd><dt><span class="sect1"><a href="#tokens">Division into Sentence Tokens</a></span></dt></dl></dd><dt><span class="chapter"><a href="#phrase_level">5. Phrase-Level Constituents</a></span></dt><dd><dl><dt><span class="sect1"><a href="#ADJP">Adjective Phrase</a></span></dt><dd><dl><dt><span class="sect2"><a href="#ADJ_com">Complements of ADJ</a></span></dt><dt><span class="sect2"><a href="#ADJ_mod">Modifiers of ADJ</a></span></dt></dl></dd><dt><span class="sect1"><a href="#ADVP">Adverb Phrase</a></span></dt><dd><dl><dt><span class="sect2"><a href="#ADV_com">Complements of ADV</a></span></dt><dt><span class="sect2"><a href="#ADV_mod">Modifiers of ADV</a></span></dt></dl></dd><dt><span class="sect1"><a href="#CONJP">Conjunction Phrase</a></span></dt><dt><span class="sect1"><a href="#FRAG">Fragment</a></span></dt><dt><span class="sect1"><a href="#INTJP">Interjection Phrase</a></span></dt><dt><span class="sect1"><a href="#NP">Noun Phrase</a></span></dt><dd><dl><dt><span class="sect2"><a href="#NP_head">Heads of NP</a></span></dt><dt><span class="sect2"><a href="#N_com">Complements of N</a></span></dt><dt><span class="sect2"><a href="#N_mod">Modifiers of N</a></span></dt></dl></dd><dt><span class="sect1"><a href="#NUMP">Number Phrase</a></span></dt><dt><span class="sect1"><a href="#PP">Prepositional Phrase</a></span></dt><dd><dl><dt><span class="sect2"><a href="#P_com">Complements of P</a></span></dt><dt><span class="sect2"><a href="#P_spec">Specifiers of P</a></span></dt></dl></dd><dt><span class="sect1"><a href="#QP">Quantifier Phrase</a></span></dt><dd><dl><dt><span class="sect2"><a href="#Q_com">Complements of Q</a></span></dt><dt><span class="sect2"><a href="#Q_mod">Modifiers of Q</a></span></dt></dl></dd><dt><span class="sect1"><a href="#WP">Wh- Phrase</a></span></dt><dd><dl><dt><span class="sect2"><a href="#WADJP">WADJP</a></span></dt><dt><span class="sect2"><a href="#WADVP">WADVP</a></span></dt><dt><span class="sect2"><a href="#WNP">WNP</a></span></dt><dt><span class="sect2"><a href="#WPP">WPP</a></span></dt><dt><span class="sect2"><a href="#WQP">WQP</a></span></dt></dl></dd><dt><span class="sect1"><a href="#non-structural">Non-Structural Labels</a></span></dt><dd><dl><dt><span class="sect2"><a href="#CODE">CODE</a></span></dt><dt><span class="sect2"><a href="#foreign">Foreign Language Passages</a></span></dt><dt><span class="sect2"><a href="#QTP">QTP</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#conjunction">6. Conjunction</a></span></dt><dd><dl><dt><span class="sect1"><a href="#word_level_conj">Word-Level Conjunction</a></span></dt><dt><span class="sect1"><a href="#phrase_level_conj">Phrase-Level Conjunction</a></span></dt><dt><span class="sect1"><a href="#empty_head_conjps">CONJPs with Empty Heads</a></span></dt><dt><span class="sect1"><a href="#unlike_conj">Conjunction of Unlike Categories</a></span></dt><dt><span class="sect1"><a href="#recursive_conj">Recursive Conjunction Structures</a></span></dt><dt><span class="sect1"><a href="#shared_mod_conj">Shared Modifiers</a></span></dt><dd><dl><dt><span class="sect2"><a href="#pre_mod">Shared Pre-Modifiers</a></span></dt><dt><span class="sect2"><a href="#post_mod">Shared Post-Modifiers</a></span></dt></dl></dd><dt><span class="sect1"><a href="#conj_and_neg">Conjunction and Negation</a></span></dt><dt><span class="sect1"><a href="#extraposed_conjps">Extraposed CONJPs</a></span></dt><dt><span class="sect1"><a href="#correlative_conj">Correlative Conjunction</a></span></dt><dd><dl><dt><span class="sect2"><a href="#word_level_correlative_conj">Word-Level Correlative Conjunction</a></span></dt><dt><span class="sect2"><a href="#phrase_level_correlative_conj">Phrase-Level Correlative Conjunction</a></span></dt><dt><span class="sect2"><a href="#float_conj">Floated Conjunctions</a></span></dt></dl></dd><dt><span class="sect1"><a href="#clausal_conj">Clausal Conjunction</a></span></dt><dd><dl><dt><span class="sect2"><a href="#matrix_conj">Conjunction of Matrix IPs</a></span></dt><dt><span class="sect2"><a href="#embedded_conj">Conjunction of Embedded IPs</a></span></dt><dt><span class="sect2"><a href="#right_raising">Right-Node Raising</a></span></dt><dt><span class="sect2"><a href="#gapping">Gapping</a></span></dt><dt><span class="sect2"><a href="#backwards_gapping">Backwards Gapping</a></span></dt><dt><span class="sect2"><a href="#direct_speech_conj">Conjoined Direct Speech</a></span></dt><dt><span class="sect2"><a href="#CP_conj">Conjunction of CPs</a></span></dt><dt><span class="sect2"><a href="#clausal_shared_mod">Clausal Conjunction and Shared Modifiers</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#empty_categories">7. Empty Categories</a></span></dt><dd><dl><dt><span class="sect1"><a href="#empty_subjects">Empty Subjects</a></span></dt><dd><dl><dt><span class="sect2"><a href="#con">Subjects Elided under Conjunction</a></span></dt><dt><span class="sect2"><a href="#arb">Arbitrary Subjects in ECM Infinitives</a></span></dt><dt><span class="sect2"><a href="#pro"><span class="emphasis"><em>pro</em></span>-Drop Subjects</a></span></dt></dl></dd><dt><span class="sect1"><a href="#traces">Traces</a></span></dt><dd><dl><dt><span class="sect2"><a href="#a_movement">Traces of A-Movement</a></span></dt><dt><span class="sect2"><a href="#wh_movement">Traces of Wh-Movement</a></span></dt><dt><span class="sect2"><a href="#a_bar_movement">Traces of Other A'-Movement</a></span></dt></dl></dd><dt><span class="sect1"><a href="#other_empty">Other Empty Categories</a></span></dt><dd><dl><dt><span class="sect2"><a href="#empty_objects">Empty Objects</a></span></dt><dt><span class="sect2"><a href="#empty_wh_and_c">Empty Wh- Phrases and Complementizers</a></span></dt><dt><span class="sect2"><a href="#generic_empty">A Generic Empty Category</a></span></dt></dl></dd><dt><span class="sect1"><a href="#position_empty">The Position of Empty Categories</a></span></dt><dd><dl><dt><span class="sect2"><a href="#position_null_copula">The Position of the Null Copula</a></span></dt><dt><span class="sect2"><a href="#position_empty_subjects">The Position of Empty Subjects</a></span></dt><dt><span class="sect2"><a href="#position_traces">The Position of Traces</a></span></dt></dl></dd><dt><span class="sect1"><a href="#resumptive">Resumptive Pronouns</a></span></dt></dl></dd><dt><span class="chapter"><a href="#clause_level">8. Clause-Level Constituents</a></span></dt><dd><dl><dt><span class="sect1"><a href="#clADJP">Adjective Phrase</a></span></dt><dd><dl><dt><span class="sect2"><a href="#ADJP-PRD">Predicate Adjectives</a></span></dt><dt><span class="sect2"><a href="#ADJP-SPR">Other Clause-Level ADJPs (ADJP-SPR)</a></span></dt><dt><span class="sect2"><a href="#ADJP_movt">Movement out of ADJP</a></span></dt></dl></dd><dt><span class="sect1"><a href="#clADVP">Adverb Phrase</a></span></dt><dt><span class="sect1"><a href="#clNP">Noun Phrase</a></span></dt><dd><dl><dt><span class="sect2"><a href="#NP-SBJ">Subject</a></span></dt><dt><span class="sect2"><a href="#NP-OBJ">Object</a></span></dt><dt><span class="sect2"><a href="#NP-ADT">Non-Argument (Adjunct) NP</a></span></dt><dt><span class="sect2"><a href="#NP-ADV">Adverbial NP</a></span></dt><dt><span class="sect2"><a href="#NP-ATR">Attributive (and/or Possessive) NP</a></span></dt><dt><span class="sect2"><a href="#NP-COM">Complement NP</a></span></dt><dt><span class="sect2"><a href="#NP-DIR">Directional NP</a></span></dt><dt><span class="sect2"><a href="#NP-INS">Instrumental NP</a></span></dt><dt><span class="sect2"><a href="#NP-LOC">Locative NP</a></span></dt><dt><span class="sect2"><a href="#NP-MSR">Measure Phrase</a></span></dt><dt><span class="sect2"><a href="#NP-PAR">Partitive NP</a></span></dt><dt><span class="sect2"><a href="#NP-PRD">Predicate NP</a></span></dt><dt><span class="sect2"><a href="#NP-SPR">Secondary Predicate NP</a></span></dt><dt><span class="sect2"><a href="#NP-TMP">Temporal NP</a></span></dt><dt><span class="sect2"><a href="#NP-VOC">Vocative</a></span></dt><dt><span class="sect2"><a href="#bare_NP">Bare NP</a></span></dt></dl></dd><dt><span class="sect1"><a href="#clPP">Prepositional Phrase</a></span></dt><dt><span class="sect1"><a href="#clQP">Quantifier Phrase</a></span></dt><dt><span class="sect1"><a href="#words_clausal_constituents">Words as Clausal Constituents</a></span></dt><dd><dl><dt><span class="sect2"><a href="#clausal_adverbs">Adverbs</a></span></dt><dt><span class="sect2"><a href="#floated_quantifiers">Floated Quantifiers</a></span></dt><dt><span class="sect2"><a href="#clausal_negation">Negation</a></span></dt><dt><span class="sect2"><a href="#clausal_participles">Participles</a></span></dt></dl></dd><dt><span class="sect1"><a href="#extended_dash">Extended Dash Tags</a></span></dt><dd><dl><dt><span class="sect2"><a href="#LFD">Left Dislocation</a></span></dt><dt><span class="sect2"><a href="#PRN">Appositive or Parenthetical</a></span></dt><dt><span class="sect2"><a href="#RSP">Resumptive</a></span></dt><dt><span class="sect2"><a href="#SPE">Direct Speech</a></span></dt></dl></dd><dt><span class="sect1"><a href="#unknown">Unknown</a></span></dt></dl></dd><dt><span class="chapter"><a href="#subordinate_clauses">9. Subordinate Clauses</a></span></dt><dd><dl><dt><span class="sect1"><a href="#CP-ADV">Adverbial Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-THT"><span class="emphasis"><em>That</em></span>-Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-COM">Complement Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-PRP">Purpose Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-DEG">Degree Complements</a></span></dt><dt><span class="sect1"><a href="#CP-CMP">Comparative Clauses</a></span></dt><dd><dl><dt><span class="sect2"><a href="#full_correlative">Correlative Comparatives</a></span></dt></dl></dd><dt><span class="sect1"><a href="#CP-QUE">Questions</a></span></dt><dt><span class="sect1"><a href="#CP-EXL">Exclamative Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-REL">Ordinary Relative Clauses</a></span></dt><dt><span class="sect1"><a href="#RRC">Reduced Relative Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-CAR">Clause-Adjoined Relative Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-FRL">Free Relatives</a></span></dt><dt><span class="sect1"><a href="#CP-EOP">Empty Operator Clauses</a></span></dt><dt><span class="sect1"><a href="#IP-INF">Infinitival Clauses</a></span></dt><dd><dl><dt><span class="sect2"><a href="#IP-INF-ADT">IP-INF-ADT</a></span></dt><dt><span class="sect2"><a href="#IP-INF-COM">IP-INF-COM</a></span></dt><dt><span class="sect2"><a href="#IP-INF-DEG">IP-INF-DEG</a></span></dt><dt><span class="sect2"><a href="#IP-INF-PRP">IP-INF-PRP</a></span></dt><dt><span class="sect2"><a href="#IP-INF-SBJ">IP-INF-SBJ</a></span></dt><dt><span class="sect2"><a href="#IP-INF-THT">IP-INF-THT</a></span></dt></dl></dd><dt><span class="sect1"><a href="#IP-SMC">Small Clauses</a></span></dt><dt><span class="sect1"><a href="#IP-PPL">Participial Clauses</a></span></dt></dl></dd><dt><span class="chapter"><a href="#special_constructions">10. Special Constructions</a></span></dt><dd><dl><dt><span class="sect1"><a href="#prolepsis">Prolepsis</a></span></dt></dl></dd><dt><span class="chapter"><a href="#discontinuous_phrases">11. Discontinuous Phrases</a></span></dt><dd><dl><dt><span class="sect1"><a href="#extraposition">Rightward Extraposition</a></span></dt><dt><span class="sect1"><a href="#default_leftward">Default Leftward Movement</a></span></dt><dd><dl><dt><span class="sect2"><a href="#word_level_fronting">Word-Level Fronting</a></span></dt><dt><span class="sect2"><a href="#intermediate_level_fronting">Fronting of Non-Constituents</a></span></dt><dt><span class="sect2"><a href="#phrase_level_fronting">Phrase-Level Fronting</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#disfluencies">12. Disfluencies</a></span></dt><dd><dl><dt><span class="sect1"><a href="#break">Break</a></span></dt><dt><span class="sect1"><a href="#false_start">False Start</a></span></dt><dt><span class="sect1"><a href="#repetition">Repetition</a></span></dt><dt><span class="sect1"><a href="#tag">Tag</a></span></dt></dl></dd></dl></div><div class="chapter" title="Chapter 4. Introduction"><div class="titlepage"><div><div><h2 class="title"><a id="syn_intro"/>Chapter 4. Introduction</h2></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl><dt><span class="sect1"><a href="#syn_general_principles">General Principles</a></span></dt><dd><dl><dt><span class="sect2"><a href="#dash_tags">Dash Tags</a></span></dt><dt><span class="sect2"><a href="#structural_principles">Structural Principles</a></span></dt></dl></dd><dt><span class="sect1"><a href="#internal_phrases">Internal Structure of Phrases</a></span></dt><dt><span class="sect1"><a href="#internal_clauses">Internal Structure of Clauses</a></span></dt><dd><dl><dt><span class="sect2"><a href="#IPs">IPs</a></span></dt><dt><span class="sect2"><a href="#imperatives">Imperatives</a></span></dt><dt><span class="sect2"><a href="#non_wh_CPs">Non-wh CPs</a></span></dt><dt><span class="sect2"><a href="#wh_CPs">Wh- CPs</a></span></dt><dt><span class="sect2"><a href="#fronting">Fronting to pre-complementizer position</a></span></dt><dt><span class="sect2"><a href="#CP_adjunction">Adjunction to CP</a></span></dt></dl></dd><dt><span class="sect1"><a href="#tokens">Division into Sentence Tokens</a></span></dt></dl></div><p> The parsing scheme for the PPCHiG, which is also used by the <a class="link" href="Penn Parsed Corpora of Historical English" target="_top">Penn Parsed Corpora of Historical
+                                Clarendon Press. 1940.</p></div></div></div></div><div class="part" title="Part II. Syntactic Annotation"><div class="titlepage"><div><div><h1 class="title"><a id="d0e4631"/>Part II. Syntactic Annotation</h1></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl><dt><span class="chapter"><a href="#syn_intro">4. Introduction</a></span></dt><dd><dl><dt><span class="sect1"><a href="#syn_general_principles">General Principles</a></span></dt><dd><dl><dt><span class="sect2"><a href="#dash_tags">Dash Tags</a></span></dt><dt><span class="sect2"><a href="#structural_principles">Structural Principles</a></span></dt></dl></dd><dt><span class="sect1"><a href="#internal_phrases">Internal Structure of Phrases</a></span></dt><dt><span class="sect1"><a href="#internal_clauses">Internal Structure of Clauses</a></span></dt><dd><dl><dt><span class="sect2"><a href="#IPs">IPs</a></span></dt><dt><span class="sect2"><a href="#imperatives">Imperatives</a></span></dt><dt><span class="sect2"><a href="#non_wh_CPs">Non-wh CPs</a></span></dt><dt><span class="sect2"><a href="#wh_CPs">Wh- CPs</a></span></dt><dt><span class="sect2"><a href="#fronting">Fronting to pre-complementizer position</a></span></dt><dt><span class="sect2"><a href="#CP_adjunction">Adjunction to CP</a></span></dt></dl></dd><dt><span class="sect1"><a href="#tokens">Division into Sentence Tokens</a></span></dt></dl></dd><dt><span class="chapter"><a href="#phrase_level">5. Phrase-Level Constituents</a></span></dt><dd><dl><dt><span class="sect1"><a href="#ADJP">Adjective Phrase</a></span></dt><dd><dl><dt><span class="sect2"><a href="#ADJ_com">Complements of ADJ</a></span></dt><dt><span class="sect2"><a href="#ADJ_mod">Modifiers of ADJ</a></span></dt></dl></dd><dt><span class="sect1"><a href="#ADVP">Adverb Phrase</a></span></dt><dd><dl><dt><span class="sect2"><a href="#ADV_com">Complements of ADV</a></span></dt><dt><span class="sect2"><a href="#ADV_mod">Modifiers of ADV</a></span></dt></dl></dd><dt><span class="sect1"><a href="#CONJP">Conjunction Phrase</a></span></dt><dt><span class="sect1"><a href="#FRAG">Fragment</a></span></dt><dt><span class="sect1"><a href="#INTJP">Interjection Phrase</a></span></dt><dt><span class="sect1"><a href="#NP">Noun Phrase</a></span></dt><dd><dl><dt><span class="sect2"><a href="#NP_head">Heads of NP</a></span></dt><dt><span class="sect2"><a href="#N_com">Complements of N</a></span></dt><dt><span class="sect2"><a href="#N_mod">Modifiers of N</a></span></dt></dl></dd><dt><span class="sect1"><a href="#NUMP">Number Phrase</a></span></dt><dt><span class="sect1"><a href="#PP">Prepositional Phrase</a></span></dt><dd><dl><dt><span class="sect2"><a href="#P_com">Complements of P</a></span></dt><dt><span class="sect2"><a href="#P_spec">Specifiers of P</a></span></dt></dl></dd><dt><span class="sect1"><a href="#QP">Quantifier Phrase</a></span></dt><dd><dl><dt><span class="sect2"><a href="#Q_com">Complements of Q</a></span></dt><dt><span class="sect2"><a href="#Q_mod">Modifiers of Q</a></span></dt></dl></dd><dt><span class="sect1"><a href="#WP">Wh- Phrase</a></span></dt><dd><dl><dt><span class="sect2"><a href="#WADJP">WADJP</a></span></dt><dt><span class="sect2"><a href="#WADVP">WADVP</a></span></dt><dt><span class="sect2"><a href="#WNP">WNP</a></span></dt><dt><span class="sect2"><a href="#WPP">WPP</a></span></dt><dt><span class="sect2"><a href="#WQP">WQP</a></span></dt></dl></dd><dt><span class="sect1"><a href="#non-structural">Non-Structural Labels</a></span></dt><dd><dl><dt><span class="sect2"><a href="#CODE">CODE</a></span></dt><dt><span class="sect2"><a href="#foreign">Foreign Language Passages</a></span></dt><dt><span class="sect2"><a href="#QTP">QTP</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#conjunction">6. Conjunction</a></span></dt><dd><dl><dt><span class="sect1"><a href="#word_level_conj">Word-Level Conjunction</a></span></dt><dt><span class="sect1"><a href="#phrase_level_conj">Phrase-Level Conjunction</a></span></dt><dt><span class="sect1"><a href="#empty_head_conjps">CONJPs with Empty Heads</a></span></dt><dt><span class="sect1"><a href="#unlike_conj">Conjunction of Unlike Categories</a></span></dt><dt><span class="sect1"><a href="#recursive_conj">Recursive Conjunction Structures</a></span></dt><dt><span class="sect1"><a href="#shared_mod_conj">Shared Modifiers</a></span></dt><dd><dl><dt><span class="sect2"><a href="#pre_mod">Shared Pre-Modifiers</a></span></dt><dt><span class="sect2"><a href="#post_mod">Shared Post-Modifiers</a></span></dt></dl></dd><dt><span class="sect1"><a href="#conj_and_neg">Conjunction and Negation</a></span></dt><dt><span class="sect1"><a href="#extraposed_conjps">Extraposed CONJPs</a></span></dt><dt><span class="sect1"><a href="#correlative_conj">Correlative Conjunction</a></span></dt><dd><dl><dt><span class="sect2"><a href="#word_level_correlative_conj">Word-Level Correlative Conjunction</a></span></dt><dt><span class="sect2"><a href="#phrase_level_correlative_conj">Phrase-Level Correlative Conjunction</a></span></dt><dt><span class="sect2"><a href="#float_conj">Floated Conjunctions</a></span></dt></dl></dd><dt><span class="sect1"><a href="#clausal_conj">Clausal Conjunction</a></span></dt><dd><dl><dt><span class="sect2"><a href="#matrix_conj">Conjunction of Matrix IPs</a></span></dt><dt><span class="sect2"><a href="#embedded_conj">Conjunction of Embedded IPs</a></span></dt><dt><span class="sect2"><a href="#right_raising">Right-Node Raising</a></span></dt><dt><span class="sect2"><a href="#gapping">Gapping</a></span></dt><dt><span class="sect2"><a href="#backwards_gapping">Backwards Gapping</a></span></dt><dt><span class="sect2"><a href="#direct_speech_conj">Conjoined Direct Speech</a></span></dt><dt><span class="sect2"><a href="#CP_conj">Conjunction of CPs</a></span></dt><dt><span class="sect2"><a href="#clausal_shared_mod">Clausal Conjunction and Shared Modifiers</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#empty_categories">7. Empty Categories</a></span></dt><dd><dl><dt><span class="sect1"><a href="#empty_subjects">Empty Subjects</a></span></dt><dd><dl><dt><span class="sect2"><a href="#con">Subjects Elided under Conjunction</a></span></dt><dt><span class="sect2"><a href="#arb">Arbitrary Subjects in ECM Infinitives</a></span></dt><dt><span class="sect2"><a href="#pro"><span class="emphasis"><em>pro</em></span>-Drop Subjects</a></span></dt></dl></dd><dt><span class="sect1"><a href="#traces">Traces</a></span></dt><dd><dl><dt><span class="sect2"><a href="#a_movement">Traces of A-Movement</a></span></dt><dt><span class="sect2"><a href="#wh_movement">Traces of Wh-Movement</a></span></dt><dt><span class="sect2"><a href="#a_bar_movement">Traces of Other A'-Movement</a></span></dt></dl></dd><dt><span class="sect1"><a href="#other_empty">Other Empty Categories</a></span></dt><dd><dl><dt><span class="sect2"><a href="#empty_objects">Empty Objects</a></span></dt><dt><span class="sect2"><a href="#empty_wh_and_c">Empty Wh- Phrases and Complementizers</a></span></dt><dt><span class="sect2"><a href="#generic_empty">A Generic Empty Category</a></span></dt></dl></dd><dt><span class="sect1"><a href="#position_empty">The Position of Empty Categories</a></span></dt><dd><dl><dt><span class="sect2"><a href="#position_null_copula">The Position of the Null Copula</a></span></dt><dt><span class="sect2"><a href="#position_empty_subjects">The Position of Empty Subjects</a></span></dt><dt><span class="sect2"><a href="#position_traces">The Position of Traces</a></span></dt></dl></dd><dt><span class="sect1"><a href="#resumptive">Resumptive Pronouns</a></span></dt></dl></dd><dt><span class="chapter"><a href="#clause_level">8. Clause-Level Constituents</a></span></dt><dd><dl><dt><span class="sect1"><a href="#clADJP">Adjective Phrase</a></span></dt><dd><dl><dt><span class="sect2"><a href="#ADJP-PRD">Predicate Adjectives</a></span></dt><dt><span class="sect2"><a href="#ADJP-SPR">Other Clause-Level ADJPs (ADJP-SPR)</a></span></dt><dt><span class="sect2"><a href="#ADJP_movt">Movement out of ADJP</a></span></dt></dl></dd><dt><span class="sect1"><a href="#clADVP">Adverb Phrase</a></span></dt><dt><span class="sect1"><a href="#clNP">Noun Phrase</a></span></dt><dd><dl><dt><span class="sect2"><a href="#NP-SBJ">Subject</a></span></dt><dt><span class="sect2"><a href="#NP-OBJ">Object</a></span></dt><dt><span class="sect2"><a href="#NP-ADT">Non-Argument (Adjunct) NP</a></span></dt><dt><span class="sect2"><a href="#NP-ADV">Adverbial NP</a></span></dt><dt><span class="sect2"><a href="#NP-ATR">Attributive (and/or Possessive) NP</a></span></dt><dt><span class="sect2"><a href="#NP-COM">Complement NP</a></span></dt><dt><span class="sect2"><a href="#NP-DIR">Directional NP</a></span></dt><dt><span class="sect2"><a href="#NP-INS">Instrumental NP</a></span></dt><dt><span class="sect2"><a href="#NP-LOC">Locative NP</a></span></dt><dt><span class="sect2"><a href="#NP-MSR">Measure Phrase</a></span></dt><dt><span class="sect2"><a href="#NP-PAR">Partitive NP</a></span></dt><dt><span class="sect2"><a href="#NP-PRD">Predicate NP</a></span></dt><dt><span class="sect2"><a href="#NP-SPR">Secondary Predicate NP</a></span></dt><dt><span class="sect2"><a href="#NP-TMP">Temporal NP</a></span></dt><dt><span class="sect2"><a href="#NP-VOC">Vocative</a></span></dt><dt><span class="sect2"><a href="#bare_NP">Bare NP</a></span></dt></dl></dd><dt><span class="sect1"><a href="#clPP">Prepositional Phrase</a></span></dt><dt><span class="sect1"><a href="#clQP">Quantifier Phrase</a></span></dt><dt><span class="sect1"><a href="#words_clausal_constituents">Words as Clausal Constituents</a></span></dt><dd><dl><dt><span class="sect2"><a href="#clausal_adverbs">Adverbs</a></span></dt><dt><span class="sect2"><a href="#floated_quantifiers">Floated Quantifiers</a></span></dt><dt><span class="sect2"><a href="#clausal_negation">Negation</a></span></dt><dt><span class="sect2"><a href="#clausal_participles">Participles</a></span></dt></dl></dd><dt><span class="sect1"><a href="#extended_dash">Extended Dash Tags</a></span></dt><dd><dl><dt><span class="sect2"><a href="#LFD">Left Dislocation</a></span></dt><dt><span class="sect2"><a href="#PRN">Appositive or Parenthetical</a></span></dt><dt><span class="sect2"><a href="#RSP">Resumptive</a></span></dt><dt><span class="sect2"><a href="#SPE">Direct Speech</a></span></dt></dl></dd><dt><span class="sect1"><a href="#unknown">Unknown</a></span></dt></dl></dd><dt><span class="chapter"><a href="#subordinate_clauses">9. Subordinate Clauses</a></span></dt><dd><dl><dt><span class="sect1"><a href="#CP-ADV">Adverbial Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-THT"><span class="emphasis"><em>That</em></span>-Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-COM">Complement Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-PRP">Purpose Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-DEG">Degree Complements</a></span></dt><dt><span class="sect1"><a href="#CP-CMP">Comparative Clauses</a></span></dt><dd><dl><dt><span class="sect2"><a href="#full_correlative">Correlative Comparatives</a></span></dt></dl></dd><dt><span class="sect1"><a href="#CP-QUE">Questions</a></span></dt><dt><span class="sect1"><a href="#CP-EXL">Exclamative Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-REL">Ordinary Relative Clauses</a></span></dt><dt><span class="sect1"><a href="#RRC">Reduced Relative Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-CAR">Clause-Adjoined Relative Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-FRL">Free Relatives</a></span></dt><dt><span class="sect1"><a href="#CP-EOP">Empty Operator Clauses</a></span></dt><dt><span class="sect1"><a href="#IP-INF">Infinitival Clauses</a></span></dt><dd><dl><dt><span class="sect2"><a href="#IP-INF-ADT">IP-INF-ADT</a></span></dt><dt><span class="sect2"><a href="#IP-INF-COM">IP-INF-COM</a></span></dt><dt><span class="sect2"><a href="#IP-INF-DEG">IP-INF-DEG</a></span></dt><dt><span class="sect2"><a href="#IP-INF-PRP">IP-INF-PRP</a></span></dt><dt><span class="sect2"><a href="#IP-INF-SBJ">IP-INF-SBJ</a></span></dt><dt><span class="sect2"><a href="#IP-INF-THT">IP-INF-THT</a></span></dt></dl></dd><dt><span class="sect1"><a href="#IP-SMC">Small Clauses</a></span></dt><dt><span class="sect1"><a href="#IP-PPL">Participial Clauses</a></span></dt><dd><dl><dt><span class="sect2"><a href="#IP-ABS">Absolute Clauses</a></span></dt><dt><span class="sect2"><a href="#IP-PPL-COM">Supplementary Participles</a></span></dt><dt><span class="sect2"><a href="#IP-PPL-THT">Participles of Indirect Discourse</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#special_constructions">10. Special Constructions</a></span></dt><dd><dl><dt><span class="sect1"><a href="#prolepsis">Prolepsis</a></span></dt></dl></dd><dt><span class="chapter"><a href="#discontinuous_phrases">11. Discontinuous Phrases</a></span></dt><dd><dl><dt><span class="sect1"><a href="#extraposition">Rightward Extraposition</a></span></dt><dt><span class="sect1"><a href="#default_leftward">Default Leftward Movement</a></span></dt><dd><dl><dt><span class="sect2"><a href="#word_level_fronting">Word-Level Fronting</a></span></dt><dt><span class="sect2"><a href="#intermediate_level_fronting">Fronting of Non-Constituents</a></span></dt><dt><span class="sect2"><a href="#phrase_level_fronting">Phrase-Level Fronting</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#disfluencies">12. Disfluencies</a></span></dt><dd><dl><dt><span class="sect1"><a href="#break">Break</a></span></dt><dt><span class="sect1"><a href="#false_start">False Start</a></span></dt><dt><span class="sect1"><a href="#repetition">Repetition</a></span></dt><dt><span class="sect1"><a href="#tag">Tag</a></span></dt></dl></dd></dl></div><div class="chapter" title="Chapter 4. Introduction"><div class="titlepage"><div><div><h2 class="title"><a id="syn_intro"/>Chapter 4. Introduction</h2></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl><dt><span class="sect1"><a href="#syn_general_principles">General Principles</a></span></dt><dd><dl><dt><span class="sect2"><a href="#dash_tags">Dash Tags</a></span></dt><dt><span class="sect2"><a href="#structural_principles">Structural Principles</a></span></dt></dl></dd><dt><span class="sect1"><a href="#internal_phrases">Internal Structure of Phrases</a></span></dt><dt><span class="sect1"><a href="#internal_clauses">Internal Structure of Clauses</a></span></dt><dd><dl><dt><span class="sect2"><a href="#IPs">IPs</a></span></dt><dt><span class="sect2"><a href="#imperatives">Imperatives</a></span></dt><dt><span class="sect2"><a href="#non_wh_CPs">Non-wh CPs</a></span></dt><dt><span class="sect2"><a href="#wh_CPs">Wh- CPs</a></span></dt><dt><span class="sect2"><a href="#fronting">Fronting to pre-complementizer position</a></span></dt><dt><span class="sect2"><a href="#CP_adjunction">Adjunction to CP</a></span></dt></dl></dd><dt><span class="sect1"><a href="#tokens">Division into Sentence Tokens</a></span></dt></dl></div><p> The parsing scheme for the PPCHiG, which is also used by the <a class="link" href="Penn Parsed Corpora of Historical English" target="_top">Penn Parsed Corpora of Historical
             English</a>, uses a limited tree representation in the form of labeled parentheses.
         All open parentheses have an associated label, either a phrase label (NP, ADJP, etc.) or a
         word label (N, ADJ, etc.), representing nodes in a tree. We use the terms `word label' and
@@ -3211,8 +3211,7 @@ Whereupon joy reigned unconfined ._.
 (PP (P ἔμπροσθεν)
     (NP (DS$ τῶν) (NS$ ἀνθρώπων)))                                
                             </pre><p>
-                            (Matthew 5.16) </p></li><li class="listitem"><p>
-                            infinitive with an (unmarked) PRO subject:
+                            (Matthew 5.16) </p></li><li class="listitem"><p> infinitive with an (unmarked) PRO subject:
                             </p><pre class="programlisting">
 (ADJP-PRD (ADJ καλόν))
 (NP-OB2 (PROD σοί))
@@ -3221,9 +3220,8 @@ Whereupon joy reigned unconfined ._.
             (PP (P εἰς)
                 (NP (DA τὴν) (NA ζωὴν)))
             (ADJP-SPR (ADJA κυλλὸν) (CONJ ἢ) (ADJA χωλόν)))                                
-                            </pre><p> (Matthew 18.8)
-                        </p></li><li class="listitem"><p>
-                            ECM infinitive with a (marked) subject:
+                            </pre><p>
+                            (Matthew 18.8) </p></li><li class="listitem"><p> ECM infinitive with a (marked) subject:
                             </p><pre class="programlisting">
 (CONJ καὶ)
 (IP-PPL (VPR-IMPF ἐπιτιμῶν))
@@ -3232,8 +3230,1283 @@ Whereupon joy reigned unconfined ._.
 (VBD-IMPF εἴα)
 (IP-INF-COM (NP-SBJ (PROA αὐτὰ))
             (VBN-IMPF λαλεῖν))                                
-                            </pre><p> (Luke 4.41)
+                            </pre><p>
+                            (Luke 4.41) </p></li></ul></div><p>
+            </p></div><div class="sect2" title="Object"><div class="titlepage"><div><div><h3 class="title"><a id="NP-OBJ"/>Object</h3></div></div></div><div class="sect3" title="NP-OB1"><div class="titlepage"><div><div><h4 class="title"><a id="NP-OB1"/>NP-OB1</h4></div></div></div><p> Because of the difficulties inherent in trying to label objects consistently
+                    by case, we label complement NPs in four different ways: as (1) first object
+                    (-OB1) for accusative direct objects, as (2) second object (-OB2) for accusative
+                    or dative indirect objects, as (3) prepositional object (-OBP) for objects that
+                    derive their case from a prepositional prefix on the verb, and as (4) quirky
+                    object (-OBQ) for direct objects in a quirky case (i.e., genitive or dative).
+                    The rules for deciding which object to label as first, second, prepositional, or
+                    quirky are intended to be unambiguous and to work well for automatic retrieval,
+                    but they do not always yield the linguistically correct analysis. Given the
+                    variability and changes in case marking in the course of the history of Greek,
+                    the approach taken seems the only practical one. </p><div class="sect4" title="NP-OB1 with ordinary monotransitive verbs."><div class="titlepage"><div><div><h5 class="title"><a id="NP-OB1_monotrans"/>NP-OB1 with ordinary monotransitive verbs.</h5></div></div></div><p> The single object of a monotransitive verb is generally labeled NP-OB1.
+                        </p><pre class="programlisting">
+( (IP-MAT-SPE (CODE {VS:1_21})
+              (NP-SBJ *pro*)
+              (VBPP-FUT τέξεται)
+              (CLPRT δὲ)
+              (NP-OB1 (NA υἱὸν)))
+  (ID GreekNT,Matthew))                                    
+                                </pre><p>
+                    </p></div><div class="sect4" title="NP-OB1 with ditransitive verbs."><div class="titlepage"><div><div><h5 class="title"><a id="NP-OB1_ditrans"/>NP-OB1 with ditransitive verbs.</h5></div></div></div><p> The direct object of a ditransitive verb is labeled NP-OB1.
+                        </p><pre class="programlisting">
+( (IP-MAT (CODE {VS:4_8})
+          (CONJ καὶ)
+          (NP-SBJ *con*)
+          (VBP-IMPF δείκνυσιν)
+          (NP-OB2 (PROD αὐτῷ))
+          (NP-OB1 (NP (QA πάσας)
+                      (DSA τὰς)
+                      (NSA βασιλείας)
+                      (NP-ATR (D$ τοῦ) (N$ κόσμου)))
+                  (CONJP (CONJ καὶ)
+                         (NP (DA τὴν)
+                             (NA δόξαν)
+                             (NP-ATR (PRO$ αὐτῶν)))))
+          (, ,))
+  (ID GreekNT,Matthew))                                    
+                                </pre><p>
+                    </p></div><div class="sect4" title="NP-OB1 + clause with monotransitives."><div class="titlepage"><div><div><h5 class="title"><a id="NP-OB1_clause_monotrans"/>NP-OB1 + clause with monotransitives.</h5></div></div></div><p> With monotransitives (i.e., verbs that do not occur with two NP objects),
+                        the NP object in cases with an NP and a clause is labeled NP-OB1. See <a class="xref" href="#IP-INF-COM" title="IP-INF-COM">the section called “IP-INF-COM”</a> for further relevant discussion.
+                        </p><pre class="programlisting">
+( (IP-MAT-SPE (CODE {VS:5_42})
+              (CONJ ἀλλὰ)
+              (NP-SBJ *pro*)
+              (VBP-PRF ἔγνωκα)
+              (NP-OB1 (PROA ὑμᾶς))
+              (CP-THT (C ὅτι)
+                      (IP-SUB (NP-OB1 (DA τὴν)
+                                      (NA ἀγάπην)
+                                      (NP-ATR (D$ τοῦ) (N$ θεοῦ)))
+                              (NEG οὐκ)
+                              (NP-SBJ *pro*)
+                              (VBP-IMPF ἔχετε)
+                              (PP (P ἐν)
+                                  (NP (PROD+SLF ἑαυτοῖς)))))
+              (. .))
+  (ID GreekNT,John))                                    
+                                </pre><p>
+                    </p></div><div class="sect4" title="NP-OB1 + clause with complex predicates."><div class="titlepage"><div><div><h5 class="title"><a id="NP-OB1_clause_complex"/>NP-OB1 + clause with complex predicates.</h5></div></div></div><p>This may not translate to Greek! Complex predicates include all cases of
+                        HAVE + NP with a verbal equivalent (HAVE FEAR = FEAR, HAVE KNOWLEDGE = KNOW,
+                        HAVE MARVEL = MARVEL, etc.). Some other common complex predicates are: </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>bear witness</p></li><li class="listitem"><p>bow (one's) heart</p></li><li class="listitem"><p>do (no) force/pain</p></li><li class="listitem"><p>give example/(one's) heart/heed/(one's)
+                                    intent/leave/notice/occasion/order</p></li><li class="listitem"><p>have care/(great) comfort/head/(no)
+                                    joy/leave/mind/need/occasion/stomach/(good) will/s.o. to
+                                    witness</p></li><li class="listitem"><p>kindle (one's) heart</p></li><li class="listitem"><p>lay (one's) force</p></li><li class="listitem"><p>make countenance/effort/fiaunce/(no) mention/note/(no)
+                                    semblant/shift</p></li><li class="listitem"><p>send word</p></li><li class="listitem"><p>send word</p></li><li class="listitem"><p>stir (one's) heart</p></li><li class="listitem"><p>take care/counsel/(one's)
+                                    heart/heed/keep/note/notice/occasion/order/pains</p></li><li class="listitem"><p>turn (one's) heart</p></li></ul></div><p> The noun member of a complex predicate is labeled NP-OB1.
+                        The accompanying clause is treated as a clause-level constituent, rather
+                        than as a complement of the noun.
+                        </p><pre class="programlisting">
+( (IP-MAT (CONJ and)
+          (NP-SBJ *con*)
+          (HVD had)
+          (NP-OB1 (N mervayle))
+          (CP-QUE (WADVP-1 (WADV whye))
+                  (C 0)
+                  (IP-SUB (ADVP *T*-1)
+                          (NP-SBJ (PRO he))
+                          (BED was)
+                          (ADVP (ADV so))
+                          (VAN abaysshed)))
+          (. .))
+  (ID CMMALORY,655.4467))                        
+                    </pre></div></div><div class="sect3" title="NP-OB2"><div class="titlepage"><div><div><h4 class="title"><a id="NP-OB2"/>NP-OB2</h4></div></div></div><div class="sect4" title="NP-OB2 with ditransitive verbs."><div class="titlepage"><div><div><h5 class="title"><a id="NP-OB2_ditrans"/>NP-OB2 with ditransitive verbs.</h5></div></div></div><p> The indirect object of a ditransitive verb is labeled NP-OB2.
+                        </p><pre class="programlisting">
+( (IP-MAT (CODE {VS:4_8})
+          (CONJ καὶ)
+          (NP-SBJ *con*)
+          (VBP-IMPF δείκνυσιν)
+          (NP-OB2 (PROD αὐτῷ))
+          (NP-OB1 (NP (QA πάσας)
+                      (DSA τὰς)
+                      (NSA βασιλείας)
+                      (NP-ATR (D$ τοῦ) (N$ κόσμου)))
+                  (CONJP (CONJ καὶ)
+                         (NP (DA τὴν)
+                             (NA δόξαν)
+                             (NP-ATR (PRO$ αὐτῶν)))))
+          (, ,))
+  (ID GreekNT,Matthew))                            
+                        </pre><p>
+                    </p></div><div class="sect4" title="NP-OB2 in copular constructions."><div class="titlepage"><div><div><h5 class="title"><a id="NP-OB2_copular"/>NP-OB2 in copular constructions.</h5></div></div></div><p> When the second NP in a <a class="link" href="#copular_verbs" title="Copular Verbs">copular</a>
+                        construction is neither coreferential with nor predicated of the subject, it
+                        is labeled NP-OB2.
+                        </p><pre class="programlisting">
+( (IP-MAT-SPE (CODE {VS:16_22})
+              (NEG οὐ)
+              (NEG μὴ)
+              (BEP-FUT ἔσται)
+              (NP-OB2 (CLPROD σοι))
+              (NP-SBJ (D τοῦτο))
+              (. .))
+  (ID GreekNT,Matthew))                            
+                        </pre><p>
+                    </p></div><div class="sect4" title="NP-OB2 with cognate object verbs."><div class="titlepage"><div><div><h5 class="title"><a id="NP-OB2_cognate"/>NP-OB2 with <a class="link" href="#cognate_object_verbs" title="Cognate Object Verbs">cognate object
+                            verbs</a>.</h5></div></div></div><p> We treat verbs like <span class="emphasis"><em>delight</em></span>,
+                            <span class="emphasis"><em>help</em></span>, <span class="emphasis"><em>pain</em></span>,
+                            <span class="emphasis"><em>pray</em></span>, and <span class="emphasis"><em>thank</em></span>, etc. as
+                        taking an abstract direct object that incorporates into the verb. The
+                        superficial object is therefore annotated as NP-OB2.
+                        </p><pre class="programlisting">
+( (IP-IMP-SPE (CODE {VS:6_6})
+              (CONJ καὶ)
+              (IP-PPL (VPR-AOR κλείσας)
+                      (NP-OB1 (DA τὴν)
+                              (NA θύραν)
+                              (NP-ATR (CLPRO$ σου))))
+              (VBIP-AOR πρόσευξαι)
+              (NP-OB2 (DD τῷ)
+                      (ND πατρί)
+                      (NP-ATR (CLPRO$ σου))
+                      (NP-PRN (DD τῷ)
+                              (PP (P ἐν)
+                                  (NP (DD τῷ) (ADJD κρυπτῷ)))))
+              (. .))
+  (ID GreekNT,Matthew))                            
+                        </pre><p>
+                    </p></div><div class="sect4" title="NP-OB2 + clause with ditransitives."><div class="titlepage"><div><div><h5 class="title"><a id="NP-OB2_clause_ditrans"/>NP-OB2 + clause with ditransitives.</h5></div></div></div><p> When a ditransitive verb takes an animate NP and a clause, rather than
+                        two NPs, the label of the animate NP remains the same as in the case with
+                        two NPs, preserving the parellelism between the two cases. In Greek, this
+                        only seems to occur with an NP-OB2 + infinitival clause.
+                        </p><pre class="programlisting">
+(IP-SUB (NP-SBJ *T*-1)
+        (VBD-AOR ὑπέδειξεν)
+        (NP-OB2 (PROD ὑμῖν))
+        (IP-INF-COM (VBN-AOR φυγεῖν)
+                    (PP (P ἀπὸ)
+                        (NP (D$ τῆς)
+                            (RRC (VPR$-IMPF μελλούσης))
+                            (N$ ὀργῆς)))))                            
+                        </pre><p>
+                        (Matthew 3.7) </p></div></div><div class="sect3" title="NP-OBP"><div class="titlepage"><div><div><h4 class="title"><a id="NP-OBP"/>NP-OBP</h4></div></div></div><p> If the object of a verb gets its case from a prepositional prefix on the verb
+                    (check in the LSJ to make sure the case usage for that preposition is correct),
+                    the object is labeled NP-OBP. In the case below αὐτῷ is in the dative because of
+                    the prefix προσ- on the verb. According to the LSJ, πρός + dative is normal
+                    following verbs of motion.
+                    </p><pre class="programlisting">
+( (IP-MAT (CODE {VS:5_1})
+          (CONJ καὶ)
+          (IP-ABS (VPR$-AOR καθίσαντος)
+                  (NP-SBJ (PRO$ αὐτοῦ)))
+          (VBD-AOR προσῆλθαν)
+          (NP-OBP (PROD αὐτῷ))
+          (NP-SBJ (DS οἱ)
+                  (NS μαθηταὶ)
+                  (NP-ATR (PRO$ αὐτοῦ)))
+          (. .))
+  (ID GreekNT,Matthew))                        
+                    </pre><p>
+                </p></div><div class="sect3" title="NP-OBQ"><div class="titlepage"><div><div><h4 class="title"><a id="NP-OBQ"/>NP-OBQ</h4></div></div></div><p> If no other label is appropriate for an NP argument of a verb and the
+                    argument is a direct object that appears in the genitive or dative case, the NP
+                    is labeled NP-OBQ. One should check in the LSJ or a specifically NT Greek
+                    lexicon to be sure that the verb in question regularly takes an NP argument. If
+                    not, then possibly the NP should be labeled <a class="link" href="#NP-ADV" title="Adverbial NP">NP-ADV</a>
+                    or <a class="link" href="#NP-INS" title="Instrumental NP">NP-INS</a> if it has a means or instrumental sense. </p><pre class="programlisting">
+( (IP-MAT-SPE (CODE {VS:14_64})
+              (NP-SBJ *pro*)
+              (VBD-AOR ἠκούσατε)
+              (NP-OBQ (D$ τῆς) (N$ βλασφημίας))
+              (. ;))
+  (ID GreekNT,Mark))                        
+                    </pre><p>
+                    </p><pre class="programlisting">
+(NP-SBJ *pro*)
+(VBS-IMPF μιμνήσκῃ)
+(NP-OBQ (PRO$ αὐτοῦ))                        
+                    </pre><p>
+                    (Hebrews 2.6) </p><pre class="programlisting">
+( (IP-MAT (CODE {VS:9_9})
+          (CONJ καὶ)
+          (IP-PPL (VPR-AOR ἀναστὰς))
+          (NP-SBJ *pro*)
+          (VBD-AOR ἠκολούθησεν)
+          (NP-OBQ (PROD αὐτῷ))
+          (. .))
+  (ID GreekNT,Matthew))                        
+                    </pre><p>
+                    </p><pre class="programlisting">
+( (IP-MAT-SPE (CODE {VS:21_32})
+              (CONJ καὶ)
+              (NEG οὐκ)
+              (NP-SBJ *pro*)
+              (VBD-AOR ἐπιστεύσατε)
+              (NP-OBQ (PROD αὐτῷ))
+              (. .))
+  (ID GreekNT,Matthew))                        
+                    </pre><p>
+                </p><p> When a verb that normally takes an object with quirky case—e.g., ἀκούω, which
+                    normally takes the genitive—takes an accusative object instead, this object
+                    should be labeled NP-OB1 as is usual for accusative direct objects.
+                    </p><pre class="programlisting">
+( (IP-MAT-SPE (CODE {VS:26_65})
+              (INTJ ἴδε)
+              (ADVP-TMP (ADV νῦν))
+              (NP-SBJ *pro*)
+              (VBD-AOR ἠκούσατε)
+              (NP-OB1 (DA τὴν) (NA βλασφημίαν))
+              (. .))
+  (ID GreekNT,Matthew))                        
+                    </pre><p>
+                </p></div><div class="sect3" title="Objects in Passive"><div class="titlepage"><div><div><h4 class="title"><a id="passive_obj"/>Objects in Passive</h4></div></div></div><p> Whichever object is promoted to subject in the passive of ditransitive verbs,
+                    the remaining object is treated in a way that maximizes the parallelism between
+                    active and passive. </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p> direct object promoted to subject:
+                                </p><pre class="programlisting">
+( (IP-MAT (NP-SBJ (D the) (N letter)))
+          (BED was)
+          (VAN given)
+          (NP-OB2 (PRO him))
+  (. .))                                    
+                                </pre><p>
+                            </p></li><li class="listitem"><p> indirect object promoted to subject:
+                                </p><pre class="programlisting">
+( (IP-MAT (NP-SBJ (PRO he))
+          (BED was)
+          (VAN given)
+          (NP-OB1 (D the) (N letter)))
+  (. .))                                    
+                                </pre><p>
+                            </p></li></ul></div><p>
+                </p></div></div><div class="sect2" title="Non-Argument (Adjunct) NP"><div class="titlepage"><div><div><h3 class="title"><a id="NP-ADT"/>Non-Argument (Adjunct) NP</h3></div></div></div><p> This is something of a catch-all category, which includes the following types,
+                all or none of which may be evidenced in Greek: </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p> fronted NPs not associated with a resumptive (<a class="link" href="#RSP" title="Resumptive">-RSP</a>) element in the body of the clause:
+                            </p><pre class="programlisting">
+( (IP-IMP-SPE (CODE {VS:10_14})
+              (CONJ καὶ)
+              (NP-ADT (CP-FRL (WNP-1 (WPRO ὃς))
+                              (C 0)
+                              (IP-SUB (IP-SUB (NP-SBJ *T*-1)
+                                              (PRTG ἂν)
+                                              (NEG μὴ)
+                                              (VBSP-AOR δέξηται)
+                                              (NP-OB1 (PROA ὑμᾶς)))
+                                      (CONJP (NEG+CONJ μηδὲ)
+                                             (IP-SUB (NP-SBJ *con*)
+                                                     (VBS-AOR ἀκούσῃ)
+                                                     (NP-OB1 (DSA τοὺς)
+                                                             (NSA λόγους)
+                                                             (NP-ATR (PRO$ ὑμῶν))))))))
+              (, ,)
+              (IP-PPL (VPRP-IMPF ἐξερχόμενοι)
+                      (PP (P ἔξω)
+                          (NP (NP (D$ τῆς) (N$ οἰκίας))
+                              (CONJP (CONJ ἢ)
+                                     (NP (D$ τῆς) (N$ πόλεως) (D$ ἐκείνης))))))
+              (VBI-AOR ἐκτινάξατε)
+              (NP-OB1 (DA τὸν)
+                      (NA κονιορτὸν)
+                      (NP-COM (DS$ τῶν)
+                              (NS$ ποδῶν)
+                              (NP-ATR (PRO$ ὑμῶν))))
+              (. .))
+  (ID GreekNT,Matthew))                                
+                            </pre><p>
+                        </p></li><li class="listitem"><p> fronted NPs that mean more or less AS FOR NP (although these actually
+                            receive NP-ADV in the Gortyn Law Code):
+                            </p><pre class="programlisting">
+( (IP-INF-IMP (NP-ADT (D$ το) (CLPRT δὲ) (N$ κρόνο))
+              (NP-SBJ (DA τὸν) (NA δι[κ]αστὰν))
+              (IP-PPL (VPRA-IMPF ὀμνύντα))
+              (VBN-IMPF κρίνεν)
+              (. .))
+  (ID Gortyn,LawCode.6))                                
+                            </pre><p>
+                        </p></li><li class="listitem"><p> traces of wh- phrases without an evident semantic relation to the
+                            body of the clause:
+                            </p><pre class="programlisting">
+(NODE (CP-CAR (WNP-1 (D the) (WPRO which))
+              (C 0)
+              (IP-SUB (NP-ADT *T*-1)
+                      (NP-SBJ (PRO I))
+                      (VBP marvell)
+                      (ADVP (ADV greatly))
+                      (CP-THT (C that)
+                              (IP-SUB (NP-SBJ (PRO I))
+                                      (HVP have)
+                                      (NP-OB1 (Q no) (N word))
+                                      (PP (P from)
+                                          (NP (PRO you)))))))
+      (ID APLUMPT,186.92))                                
+                            </pre><p>
                         </p></li></ul></div><p>
-            </p></div><div class="sect2" title="Object"><div class="titlepage"><div><div><h3 class="title"><a id="NP-OBJ"/>Object</h3></div></div></div><div class="sect3" title="NP-OB1"><div class="titlepage"><div><div><h4 class="title"><a id="NP-OB1"/>NP-OB1</h4></div></div></div><p/></div><div class="sect3" title="NP-OB2"><div class="titlepage"><div><div><h4 class="title"><a id="NP-OB2"/>NP-OB2</h4></div></div></div><p/></div><div class="sect3" title="NP-OBP"><div class="titlepage"><div><div><h4 class="title"><a id="NP-OBP"/>NP-OBP</h4></div></div></div><p/></div><div class="sect3" title="NP-OBQ"><div class="titlepage"><div><div><h4 class="title"><a id="NP-OBQ"/>NP-OBQ</h4></div></div></div><p/></div><div class="sect3" title="Objects in Passive"><div class="titlepage"><div><div><h4 class="title"><a id="passive_obj"/>Objects in Passive</h4></div></div></div><p/></div></div><div class="sect2" title="Non-Argument (Adjunct) NP"><div class="titlepage"><div><div><h3 class="title"><a id="NP-ADT"/>Non-Argument (Adjunct) NP</h3></div></div></div><p/></div><div class="sect2" title="Adverbial NP"><div class="titlepage"><div><div><h3 class="title"><a id="NP-ADV"/>Adverbial NP</h3></div></div></div><p/></div><div class="sect2" title="Attributive (and/or Possessive) NP"><div class="titlepage"><div><div><h3 class="title"><a id="NP-ATR"/>Attributive (and/or Possessive) NP</h3></div></div></div><p/></div><div class="sect2" title="Complement NP"><div class="titlepage"><div><div><h3 class="title"><a id="NP-COM"/>Complement NP</h3></div></div></div><p/></div><div class="sect2" title="Directional NP"><div class="titlepage"><div><div><h3 class="title"><a id="NP-DIR"/>Directional NP</h3></div></div></div><p/></div><div class="sect2" title="Instrumental NP"><div class="titlepage"><div><div><h3 class="title"><a id="NP-INS"/>Instrumental NP</h3></div></div></div><p/></div><div class="sect2" title="Locative NP"><div class="titlepage"><div><div><h3 class="title"><a id="NP-LOC"/>Locative NP</h3></div></div></div><p/></div><div class="sect2" title="Measure Phrase"><div class="titlepage"><div><div><h3 class="title"><a id="NP-MSR"/>Measure Phrase</h3></div></div></div><p/></div><div class="sect2" title="Partitive NP"><div class="titlepage"><div><div><h3 class="title"><a id="NP-PAR"/>Partitive NP</h3></div></div></div><p/></div><div class="sect2" title="Predicate NP"><div class="titlepage"><div><div><h3 class="title"><a id="NP-PRD"/>Predicate NP</h3></div></div></div><p/></div><div class="sect2" title="Secondary Predicate NP"><div class="titlepage"><div><div><h3 class="title"><a id="NP-SPR"/>Secondary Predicate NP</h3></div></div></div><p/></div><div class="sect2" title="Temporal NP"><div class="titlepage"><div><div><h3 class="title"><a id="NP-TMP"/>Temporal NP</h3></div></div></div><p/></div><div class="sect2" title="Vocative"><div class="titlepage"><div><div><h3 class="title"><a id="NP-VOC"/>Vocative</h3></div></div></div><p/></div><div class="sect2" title="Bare NP"><div class="titlepage"><div><div><h3 class="title"><a id="bare_NP"/>Bare NP</h3></div></div></div><p/></div></div><div class="sect1" title="Prepositional Phrase"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="clPP"/>Prepositional Phrase</h2></div></div></div><p/></div><div class="sect1" title="Quantifier Phrase"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="clQP"/>Quantifier Phrase</h2></div></div></div><p/></div><div class="sect1" title="Words as Clausal Constituents"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="words_clausal_constituents"/>Words as Clausal Constituents</h2></div></div></div><div class="sect2" title="Adverbs"><div class="titlepage"><div><div><h3 class="title"><a id="clausal_adverbs"/>Adverbs</h3></div></div></div><p/></div><div class="sect2" title="Floated Quantifiers"><div class="titlepage"><div><div><h3 class="title"><a id="floated_quantifiers"/>Floated Quantifiers</h3></div></div></div><p/></div><div class="sect2" title="Negation"><div class="titlepage"><div><div><h3 class="title"><a id="clausal_negation"/>Negation</h3></div></div></div><p/></div><div class="sect2" title="Participles"><div class="titlepage"><div><div><h3 class="title"><a id="clausal_participles"/>Participles</h3></div></div></div><p/></div></div><div class="sect1" title="Extended Dash Tags"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="extended_dash"/>Extended Dash Tags</h2></div></div></div><div class="sect2" title="Left Dislocation"><div class="titlepage"><div><div><h3 class="title"><a id="LFD"/>Left Dislocation</h3></div></div></div><p/></div><div class="sect2" title="Appositive or Parenthetical"><div class="titlepage"><div><div><h3 class="title"><a id="PRN"/>Appositive or Parenthetical</h3></div></div></div><p/></div><div class="sect2" title="Resumptive"><div class="titlepage"><div><div><h3 class="title"><a id="RSP"/>Resumptive</h3></div></div></div><p/></div><div class="sect2" title="Direct Speech"><div class="titlepage"><div><div><h3 class="title"><a id="SPE"/>Direct Speech</h3></div></div></div><p/></div></div><div class="sect1" title="Unknown"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="unknown"/>Unknown</h2></div></div></div><p/></div></div><div class="chapter" title="Chapter 9. Subordinate Clauses"><div class="titlepage"><div><div><h2 class="title"><a id="subordinate_clauses"/>Chapter 9. Subordinate Clauses</h2></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl><dt><span class="sect1"><a href="#CP-ADV">Adverbial Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-THT"><span class="emphasis"><em>That</em></span>-Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-COM">Complement Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-PRP">Purpose Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-DEG">Degree Complements</a></span></dt><dt><span class="sect1"><a href="#CP-CMP">Comparative Clauses</a></span></dt><dd><dl><dt><span class="sect2"><a href="#full_correlative">Correlative Comparatives</a></span></dt></dl></dd><dt><span class="sect1"><a href="#CP-QUE">Questions</a></span></dt><dt><span class="sect1"><a href="#CP-EXL">Exclamative Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-REL">Ordinary Relative Clauses</a></span></dt><dt><span class="sect1"><a href="#RRC">Reduced Relative Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-CAR">Clause-Adjoined Relative Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-FRL">Free Relatives</a></span></dt><dt><span class="sect1"><a href="#CP-EOP">Empty Operator Clauses</a></span></dt><dt><span class="sect1"><a href="#IP-INF">Infinitival Clauses</a></span></dt><dd><dl><dt><span class="sect2"><a href="#IP-INF-ADT">IP-INF-ADT</a></span></dt><dt><span class="sect2"><a href="#IP-INF-COM">IP-INF-COM</a></span></dt><dt><span class="sect2"><a href="#IP-INF-DEG">IP-INF-DEG</a></span></dt><dt><span class="sect2"><a href="#IP-INF-PRP">IP-INF-PRP</a></span></dt><dt><span class="sect2"><a href="#IP-INF-SBJ">IP-INF-SBJ</a></span></dt><dt><span class="sect2"><a href="#IP-INF-THT">IP-INF-THT</a></span></dt></dl></dd><dt><span class="sect1"><a href="#IP-SMC">Small Clauses</a></span></dt><dt><span class="sect1"><a href="#IP-PPL">Participial Clauses</a></span></dt></dl></div><div class="sect1" title="Adverbial Clauses"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="CP-ADV"/>Adverbial Clauses</h2></div></div></div><p/></div><div class="sect1" title="That-Clauses"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="CP-THT"/><span class="emphasis"><em>That</em></span>-Clauses</h2></div></div></div><p/></div><div class="sect1" title="Complement Clauses"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="CP-COM"/>Complement Clauses</h2></div></div></div><p/></div><div class="sect1" title="Purpose Clauses"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="CP-PRP"/>Purpose Clauses</h2></div></div></div><p/></div><div class="sect1" title="Degree Complements"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="CP-DEG"/>Degree Complements</h2></div></div></div><p/></div><div class="sect1" title="Comparative Clauses"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="CP-CMP"/>Comparative Clauses</h2></div></div></div><div class="sect2" title="Correlative Comparatives"><div class="titlepage"><div><div><h3 class="title"><a id="full_correlative"/>Correlative Comparatives</h3></div></div></div><p/></div></div><div class="sect1" title="Questions"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="CP-QUE"/>Questions</h2></div></div></div><p/></div><div class="sect1" title="Exclamative Clauses"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="CP-EXL"/>Exclamative Clauses</h2></div></div></div><p/></div><div class="sect1" title="Ordinary Relative Clauses"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="CP-REL"/>Ordinary Relative Clauses</h2></div></div></div><p/></div><div class="sect1" title="Reduced Relative Clauses"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="RRC"/>Reduced Relative Clauses</h2></div></div></div><p/></div><div class="sect1" title="Clause-Adjoined Relative Clauses"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="CP-CAR"/>Clause-Adjoined Relative Clauses</h2></div></div></div><p/></div><div class="sect1" title="Free Relatives"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="CP-FRL"/>Free Relatives</h2></div></div></div><p><a id="ὡς_nominal_gap"/></p></div><div class="sect1" title="Empty Operator Clauses"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="CP-EOP"/>Empty Operator Clauses</h2></div></div></div><p/></div><div class="sect1" title="Infinitival Clauses"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="IP-INF"/>Infinitival Clauses</h2></div></div></div><div class="sect2" title="IP-INF-ADT"><div class="titlepage"><div><div><h3 class="title"><a id="IP-INF-ADT"/>IP-INF-ADT</h3></div></div></div><p/></div><div class="sect2" title="IP-INF-COM"><div class="titlepage"><div><div><h3 class="title"><a id="IP-INF-COM"/>IP-INF-COM</h3></div></div></div><p/></div><div class="sect2" title="IP-INF-DEG"><div class="titlepage"><div><div><h3 class="title"><a id="IP-INF-DEG"/>IP-INF-DEG</h3></div></div></div><p/></div><div class="sect2" title="IP-INF-PRP"><div class="titlepage"><div><div><h3 class="title"><a id="IP-INF-PRP"/>IP-INF-PRP</h3></div></div></div><p/></div><div class="sect2" title="IP-INF-SBJ"><div class="titlepage"><div><div><h3 class="title"><a id="IP-INF-SBJ"/>IP-INF-SBJ</h3></div></div></div><p/></div><div class="sect2" title="IP-INF-THT"><div class="titlepage"><div><div><h3 class="title"><a id="IP-INF-THT"/>IP-INF-THT</h3></div></div></div><p/></div></div><div class="sect1" title="Small Clauses"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="IP-SMC"/>Small Clauses</h2></div></div></div><p/></div><div class="sect1" title="Participial Clauses"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="IP-PPL"/>Participial Clauses</h2></div></div></div><p/></div></div><div class="chapter" title="Chapter 10. Special Constructions"><div class="titlepage"><div><div><h2 class="title"><a id="special_constructions"/>Chapter 10. Special Constructions</h2></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl><dt><span class="sect1"><a href="#prolepsis">Prolepsis</a></span></dt></dl></div><div class="sect1" title="Prolepsis"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="prolepsis"/>Prolepsis</h2></div></div></div><p/></div></div><div class="chapter" title="Chapter 11. Discontinuous Phrases"><div class="titlepage"><div><div><h2 class="title"><a id="discontinuous_phrases"/>Chapter 11. Discontinuous Phrases</h2></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl><dt><span class="sect1"><a href="#extraposition">Rightward Extraposition</a></span></dt><dt><span class="sect1"><a href="#default_leftward">Default Leftward Movement</a></span></dt><dd><dl><dt><span class="sect2"><a href="#word_level_fronting">Word-Level Fronting</a></span></dt><dt><span class="sect2"><a href="#intermediate_level_fronting">Fronting of Non-Constituents</a></span></dt><dt><span class="sect2"><a href="#phrase_level_fronting">Phrase-Level Fronting</a></span></dt></dl></dd></dl></div><div class="sect1" title="Rightward Extraposition"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="extraposition"/>Rightward Extraposition</h2></div></div></div><p/></div><div class="sect1" title="Default Leftward Movement"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="default_leftward"/>Default Leftward Movement</h2></div></div></div><div class="sect2" title="Word-Level Fronting"><div class="titlepage"><div><div><h3 class="title"><a id="word_level_fronting"/>Word-Level Fronting</h3></div></div></div><p/></div><div class="sect2" title="Fronting of Non-Constituents"><div class="titlepage"><div><div><h3 class="title"><a id="intermediate_level_fronting"/>Fronting of Non-Constituents</h3></div></div></div><p/></div><div class="sect2" title="Phrase-Level Fronting"><div class="titlepage"><div><div><h3 class="title"><a id="phrase_level_fronting"/>Phrase-Level Fronting</h3></div></div></div><p/></div></div></div><div class="chapter" title="Chapter 12. Disfluencies"><div class="titlepage"><div><div><h2 class="title"><a id="disfluencies"/>Chapter 12. Disfluencies</h2></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl><dt><span class="sect1"><a href="#break">Break</a></span></dt><dt><span class="sect1"><a href="#false_start">False Start</a></span></dt><dt><span class="sect1"><a href="#repetition">Repetition</a></span></dt><dt><span class="sect1"><a href="#tag">Tag</a></span></dt></dl></div><div class="sect1" title="Break"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="break"/>Break</h2></div></div></div><p/></div><div class="sect1" title="False Start"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="false_start"/>False Start</h2></div></div></div><p/></div><div class="sect1" title="Repetition"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="repetition"/>Repetition</h2></div></div></div><p/></div><div class="sect1" title="Tag"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="tag"/>Tag</h2></div></div></div><p/></div></div></div><div class="part" title="Part III. Planned Corpus Development and Known Issues"><div class="titlepage"><div><div><h1 class="title"><a id="d0e7058"/>Part III. Planned Corpus Development and Known Issues</h1></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl><dt><span class="chapter"><a href="#development">13. General Corpus Development</a></span></dt><dd><dl><dt><span class="sect1"><a href="#d0e7065"/></span></dt></dl></dd><dt><span class="chapter"><a href="#known_issues">14. Known Issues</a></span></dt><dd><dl><dt><span class="sect1"><a href="#d0e7072"/></span></dt></dl></dd></dl></div><div class="chapter" title="Chapter 13. General Corpus Development"><div class="titlepage"><div><div><h2 class="title"><a id="development"/>Chapter 13. General Corpus Development</h2></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl><dt><span class="sect1"><a href="#d0e7065"/></span></dt></dl></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="d0e7065"/></h2></div></div></div><p/></div></div><div class="chapter" title="Chapter 14. Known Issues"><div class="titlepage"><div><div><h2 class="title"><a id="known_issues"/>Chapter 14. Known Issues</h2></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl><dt><span class="sect1"><a href="#d0e7072"/></span></dt></dl></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="d0e7072"/></h2></div></div></div><p/></div></div></div><div class="appendix" title="Appendix A. Appendix"><div class="titlepage"><div><div><h2 class="title"><a id="appendix"/>Appendix A. Appendix</h2></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl><dt><span class="sect1"><a href="#copular_verbs">Copular Verbs</a></span></dt><dt><span class="sect1"><a href="#small_clause_verbs">Verbs taking Small Clauses</a></span></dt><dt><span class="sect1"><a href="#secondary_pred_verbs">Verbs taking Secondary Predicates</a></span></dt><dt><span class="sect1"><a href="#cognate_object_verbs">Cognate Object Verbs</a></span></dt></dl></div><div class="sect1" title="Copular Verbs"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="copular_verbs"/>Copular Verbs</h2></div></div></div><div class="blockquote"><blockquote class="blockquote"><p>APPEAR, BE, BECOME, CHANCE, CONTINUE, FALL, FEEL, GET, GROW, KEEP, LOOK, PLEAD
+            </p></div><div class="sect2" title="Adverbial NP"><div class="titlepage"><div><div><h3 class="title"><a id="NP-ADV"/>Adverbial NP</h3></div></div></div><p> NPs acting adverbially are labeled NP-ADV. The use of NP-ADV is essentially a
+                catch-all that includes all adverbial uses (e.g., adverbial accusative) of nouns
+                that do not fall into any other category such as <a class="link" href="#NP-TMP" title="Temporal NP">NP-TMP</a>, <a class="link" href="#NP-LOC" title="Locative NP">NP-LOC</a>, etc. In most cases if
+                trying to decide between <a class="link" href="#NP-ADT" title="Non-Argument (Adjunct) NP">NP-ADT</a> and NP-ADV, the choice
+                will be NP-ADV. In the traditional terms of Greek grammar<sup>[<a id="d0e7017" href="#ftn.d0e7017" class="footnote">3</a>]</sup>, some of the uses which NP-ADV covers (but this list is probably not
+                exhaustive) are: </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p> dative of respect:
+                            </p><pre class="programlisting">
+(NP-SBJ (DS οἱ)
+        (ADJP (ADJ πτωχοὶ)
+              (NP-ADV (DD τῷ) (ND πνεύματι))))                                
+                            </pre><p>
+                            (Matthew 5.3) </p></li><li class="listitem"><p> adverbial accusative:
+                            </p><pre class="programlisting">
+(ADVP-TMP (ADV ποσάκις))
+(NP-SBJ *pro*)
+(VBD-AOR ἠθέλησα)
+(IP-INF-COM (VBN-AOR ἐπισυναγαγεῖν)
+            (NP-OB1 (DSA τὰ)
+                    (NSA τέκνα)
+                    (NP-ATR (CLPRO$ σου)))
+            (, ,)
+            (NP-ADV (CP-FRL (WNP-1 (WDA ὃν) (NA τρόπον))
+                            (C 0)
+                            (IP-SUB (NP-ADV *T*-1)
+                                    (NP-SBJ (N ὄρνις))
+                                    (VBP-IMPF ἐπισυνάγει)
+                                    (NP-OB1 (DSA τὰ)
+                                            (NSA νοσσία)
+                                            (NP-ATR (PRO$ αὐτῆς)))
+                                    (PP (P ὑπὸ)
+                                        (NP (DSA τὰς) (NSA πτέρυγας)))))))                                
+                            </pre><p>
+                            (Matthew 23.37) </p></li><li class="listitem"><p> idiomatic usage:
+                            </p><pre class="programlisting">
+( (IP-MAT (CODE {VS:6_40})
+          (CONJ καὶ)
+          (NP-SBJ *pro*)
+          (VBD-AOR ἀνέπεσαν)
+          (NP-ADV (NS πρασιαὶ) (NS πρασιαὶ))
+          (PP (PP (P κατὰ)
+                  (NP (NUM ἑκατὸν)))
+              (CONJP (CONJ καὶ)
+                     (PP (P κατὰ)
+                         (NP (NUM πεντήκοντα)))))
+          (. .))
+  (ID GreekNT,Mark))                                
+                            </pre><p>
+                        </p></li><li class="listitem"><p> dative of manner:
+                            </p><pre class="programlisting">
+(CP-ADV (C+PRTG ἐὰν)
+        (IP-SUB (NEG μὴ)
+                (NP-ADV (ND πυγμῇ))
+                (NP-SBJ *pro*)
+                (VBSP-AOR νίψωνται)
+                (NP-OB1 (DSA τὰς) (NSA χεῖρας))))                                
+                            </pre><p>
+                            (Mark 7.3) </p></li><li class="listitem"><p> dative of interest (dative of advantage/disadvantage) </p></li><li class="listitem"><p> dative of reference </p></li><li class="listitem"><p> ethical dative </p></li><li class="listitem"><p> dative of cause </p></li><li class="listitem"><p> dative of (military) accompaniment </p></li><li class="listitem"><p> accusative of respect </p></li></ul></div><p>
+            </p></div><div class="sect2" title="Attributive (and/or Possessive) NP"><div class="titlepage"><div><div><h3 class="title"><a id="NP-ATR"/>Attributive (and/or Possessive) NP</h3></div></div></div><p> A bare NP, usually in the genitive, that modifies another noun is often an
+                attributive NP, labeled NP-ATR. Possessive genitives are included in this category.
+                Subjective genitives are also included in this category, since they can be very
+                difficult to distinguish from possessive genitives. </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p> non-possessive NP-ATR:
+                            </p><pre class="programlisting">
+(IP-PPL (VPA-AOR ἄρξαντες-ἄρχω)
+        (CLPRT μὲν-μέν)
+        (PP (P ἐπὶ-ἐπί)
+            (NP (NP (NUMP (NUM δύο-δύο)
+                          (CLTE τε-τε)
+                          (CONJ καὶ-καί)
+                          (NUM εἴκοσι-εἴκοσι))
+                    (NSA γενεὰς-γενεά)
+                    (NP-ATR (NS$ ἀνδρῶν-ἀνήρ)))
+                (CONJP (NP (NSA ἔτεα-ἔτος)
+                           (NUMP (NUM πέντε-πέντε)
+                                 (CLTE τε-τε)
+                                 (CONJ καὶ-καί)
+                                 (ADJA πεντακόσια-πεντακόσιοι)))))))                                
+                            </pre><p>
+                            (Hdt. 1.7.4) </p></li><li class="listitem"><p> possessive NP-ATR:
+                            </p><pre class="programlisting">
+( (IP-MAT (CODE {VS:1_8_1})
+          (NP-SBJ (D οὗτος) 
+                  (CLPRT δὴ)
+                  (CLPRT ὦν)
+                  (D ὁ)
+                  (N Κανδαύλης))
+          (VBDP-AOR ἠράσθη)
+          (NP-OBQ (D$ τῆς)
+                  (NP-ATR (PRO$+SLF ἑωυτοῦ))
+                  (N$ γυναικός))
+          (, ,))
+  (ID Herodotus,Histories))                                
+                            </pre><p>
+                        </p></li><li class="listitem"><p> dative of possession:
+                            </p><pre class="programlisting">
+(NP-SBJ (DA τὸ)
+        (CLPRT δέ)
+        (NP-ATR (CLPROD οἱ))
+        (NA οὔνομα))                               
+                            </pre><p>
+                            (Hdt. 1.1.3) </p></li><li class="listitem"><p> (potentially) subjective genitive:
+                            </p><pre class="programlisting">
+(PP (P πρὸ)
+    (CLPRT δὲ)
+    (NP (D$ τῆς)
+        (NP-ATR (N$ Κροίσου))
+        (N$ ἀρχῆς)))
+                            </pre><p>
+                            (Hdt. 1.6.3) </p></li></ul></div><p>
+            </p></div><div class="sect2" title="Complement NP"><div class="titlepage"><div><div><h3 class="title"><a id="NP-COM"/>Complement NP</h3></div></div></div><p> A bare NP in the complement to a noun or adjective is labeled NP-COM. In the case
+                of a nominal complement of a noun, the complement noun is most often an objective
+                genitive, in the traditional terms of Greek grammar. </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p> NP complement of a noun (objective genitive):
+                            </p><pre class="programlisting">
+(NP-OB1 (NP-COM (N$ Μηδείης))
+        (DA τὴν)
+        (NA ἁρπαγήν))                               
+                            </pre><p>
+                            (Hdt. 1.3.2) </p></li><li class="listitem"><p> NP complement of an adjective:
+                            </p><pre class="programlisting">
+( (IP-INF-THT (CODE {VS:1_2_1})
+              (PP (P μετὰ)
+                  (CLPRT δὲ)
+                  (NP (DSA ταῦτα)))
+              (NP-SBJ (NSA Ἕλληνας))
+              (ADJP-PRD (ADJA αἰτίους)
+                        (NP-COM (D$ τῆς)
+                                (ADJ$ δευτέρης)
+                                (N$ ἀδικίης)))
+              (VBNP-AOR γενέσθαι)
+	      (. .))
+  (ID Herodotus,Histories))                                
+                            </pre><p>
+                        </p></li></ul></div><p>
+            </p></div><div class="sect2" title="Directional NP"><div class="titlepage"><div><div><h3 class="title"><a id="NP-DIR"/>Directional NP</h3></div></div></div><p> A bare NP with a verb of motion indicating a direction (to or from) is labeled
+                NP-DIR. This usage is found mainly in Homer. </p></div><div class="sect2" title="Instrumental NP"><div class="titlepage"><div><div><h3 class="title"><a id="NP-INS"/>Instrumental NP</h3></div></div></div><p> A bare NP indicating the means or instrument with which something was
+                accomplished is labeled NP-INS. This corresponds with the dative of
+                means/instrumental dative in the terms of traditional Greek grammar<sup>[<a id="d0e7128" href="#ftn.d0e7128" class="footnote">4</a>]</sup>.
+                </p><pre class="programlisting">
+(NP-SBJ (N Ἰωάνης))
+(CLPRT μὲν)
+(VBD-AOR ἐβάπτισεν)
+(NP-INS (ND ὕδατι))                    
+                </pre><p>
+                (Acts 1.5) </p></div><div class="sect2" title="Locative NP"><div class="titlepage"><div><div><h3 class="title"><a id="NP-LOC"/>Locative NP</h3></div></div></div><p> A bare NP indicating location is labeled NP-LOC. This corresponds with the dative
+                of place where in the terms of traditional Greek grammar<sup>[<a id="d0e7143" href="#ftn.d0e7143" class="footnote">5</a>]</sup>.
+                </p><pre class="programlisting">
+(NP-SBJ (NEG+Q Οὐδεὶς))
+(CLPRT δὲ)
+(IP-PPL (NP-OB1 (NA λύχνον))
+        (VPR-AOR ἅψας))
+(VBP-IMPF καλύπτει)
+(NP-OB1 (PROA αὐτὸν))
+(NP-LOC (ND σκεύει)))                    
+                </pre><p>
+                (Luke 8.16) </p></div><div class="sect2" title="Measure Phrase"><div class="titlepage"><div><div><h3 class="title"><a id="NP-MSR"/>Measure Phrase</h3></div></div></div><div class="important" title="Important" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Important"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Important]" src="file:/Applications/oxygen/frameworks/docbook/xsl/images/important.png"/></td><th align="left">Important</th></tr><tr><td align="left" valign="top"><p> In cases that are ambiguous between complements (say, NP-OB1) and adjuncts
+                    (say, NP-MSR), the default is complement. A simple test for doubtful cases is to
+                    passivize the sentence; if the relevant noun phrase can be the subject of a
+                    passive, it should be annotated as NP-OB1.
+                    </p><pre class="programlisting">
+( (IP-MAT (NP-SBJ (PRO He))
+          (VBD ate)
+          (NP-ACC (ADVR too) (Q much))
+          (. .)))
+
+( (IP-MAT (NP-SBJ (PRO He))
+          (VBD ate)
+          (NP-ACC (QP (ADVR too) (Q much))
+                  (N spinach))
+          (. .)))
+
+( (IP-MAT (NP-SBJ (PRO He))
+          (VBD ate)
+          (NP-MSR (ADJP (ADVR too) (ADJ long)))
+          (. .)))                        
+                    </pre><p>
+                </p></td></tr></table></div><p> Measure phrases occur as sentential constituents. We also explicitly label
+                measure phrase modifiers of other constituents (see, for instance, <a class="link" href="#N_mod" title="Modifiers of N">measure phrase modifiers of N</a>). Only NP measure phrases
+                are indicated as such. PP measure phrases (FOR THREE DAYS, etc.) are not indicated,
+                following our policy of not specifying the function of PPs. </p><div class="important" title="Important" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Important"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Important]" src="file:/Applications/oxygen/frameworks/docbook/xsl/images/important.png"/></td><th align="left">Important</th></tr><tr><td align="left" valign="top"><p> The distinction between NP-MSR and QP, described immediately below, is
+                        not straightforward, and it is likely that some instances of one category
+                        are mistagged as the other. It is therefore wise to search for measure
+                        phrases in terms of the disjunction NP-MSR|QP. </p></td></tr></table></div><p> At the sentence level, noun phrases expressing measure are labeled
+                NP-MSR. As is generally the case with noun phrases, categories other than nouns may
+                act as the head of NP-MSR. In the traditional terms of Greek grammar, NP measure
+                phrases usually correspond to one of the following: </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p> accusative of extent of space:
+                            </p><pre class="programlisting">
+(NP-SBJ (D Τὸ) (CLPRT δὲ) (N πλοῖον))
+(ADVP-TMP (ADV ἤδη))
+(NP-MSR (NSA σταδίους) (QA πολλοὺς))
+(PP (P ἀπὸ)
+    (NP (D$ τῆς) (N$ γῆς)))
+(VBD-IMPF ἀπεῖχεν)                                
+                            </pre><p>
+                            (Matthew 14.24) </p></li><li class="listitem"><p> accusative of extent of time:
+                            </p><pre class="programlisting">
+(CONJ καὶ)
+(NP-SBJ *con*)
+(VBD-IMPF περιέκρυβεν)
+(NP-OB1 (PROA+SLF ἑαυτὴν))
+(NP-MSR (NSA μῆνας) (NUM πέντε))                                
+                            </pre><p>
+                            (Luke 1.25) </p></li><li class="listitem"><p> dative of time at which (?<sup>[<a id="d0e7187" href="#ftn.d0e7187" class="footnote">6</a>]</sup>):
+                            </p><pre class="programlisting">
+( (IP-MAT (CODE {VS:8_27})
+          (CONJ καὶ)
+          (NP-MSR (ND χρόνῳ) (ADJR ἱκανῷ))
+          (NEG οὐκ)
+          (NP-SBJ *pro*)
+          (VBDP-AOR ἐνεδύσατο)
+          (NP-OB1 (NA ἱμάτιον))
+          (, ,))
+  (ID GreekNT,Luke))                                
+                            </pre><p>
+                        </p></li></ul></div><p>
+            </p><p> Measure phrases at levels lower than the sentence (notably, within ADJP and ADVP)
+                are treated slightly differently. Here, measure expressions headed by Q are not
+                surrounded by NP-MSR. But other measure phrases continue to be surrounded by NP-MSR
+                brackets, even when they consist of a single word.
+                </p><pre class="programlisting">
+(ADJP (Q much) (ADJR higher))
+
+(ADJP (QP (ADV very) (Q much))
+      (ADJR higher))
+
+(ADJP (QP (Q much) (QR more))
+      (VAG imposing))
+
+(ADJP (QP (QP (ADVR so) (Q much))
+          (QR more))
+      (VAG imposing))
+
+(ADJP (NP-MSR (ADJ far))
+      (ADJR higher))
+
+(ADJP (NP-MSR (ADJP (ADV quite) (ADJ far))
+      (ADJ distant))
+
+(ADJP (NP-MSR (Q+WPRO somewhat))
+      (ADJR higher))
+
+(ADJP (NP-MSR (Q some) (WPRO what))
+      (ADJR higher))
+
+(ADJP (NP-MSR (Q many) (NS times))
+      (ADJR higher))
+
+(ADJP (QP (NP-MSR (Q many) (NS times))
+          (QR more))
+      (ADJR higher))
+
+(ADVP (NP-MSR (NUM half))
+      (ADVR so) (ADV sore))                    
+                </pre><p>
+            </p></div><div class="sect2" title="Partitive NP"><div class="titlepage"><div><div><h3 class="title"><a id="NP-PAR"/>Partitive NP</h3></div></div></div><p> Bare NPs in the genitive that express partitivity—i.e., partitive genitives—are
+                labeled NP-PAR.
+                </p><pre class="programlisting">
+( (IP-MAT (CODE {VS:1_6_3})
+          (PP (P πρὸ-πρό)
+          (CLPRT δὲ-δέ)
+          (NP (D$ τῆς-ὁ)
+              (NP-ATR (N$ Κροίσου-Κροῖσος))
+              (N$ ἀρχῆς-ἀρχή)))
+          (NP-SBJ (Q πάντες-πᾶς)
+                  (NP-PAR (NS Ἕλληνες-Ἕλλην)))
+          (BED ἦσαν-εἰμί)
+          (ADJP-PRD (ADJ ἐλεύθεροι-ἐλεύθερος))
+          (. ·))
+  (ID Herodotus,Histories))                    
+                </pre><p>
+            </p></div><div class="sect2" title="Predicate NP"><div class="titlepage"><div><div><h3 class="title"><a id="NP-PRD"/>Predicate NP</h3></div></div></div><p> NP predicates of <a class="link" href="#copular_verbs" title="Copular Verbs">copular verbs</a> and NP
+                predicates in <a class="link" href="#IP-SMC" title="Small Clauses">small clauses</a> are labeled NP-PRD. </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p> with a copular verb:
+                            </p><pre class="programlisting">
+(CP-ADV (C ἵνα)
+        (IP-SUB (NP-SBJ (DS οἱ) (NS λίθοι) (DS οὗτοι))
+                (NP-PRD (NS ἄρτοι))
+                (VBSP-AOR γένωνται)))                                
+                            </pre><p>
+                            (Matthew 4.3) </p></li><li class="listitem"><p> in a small clause:
+                            </p><pre class="programlisting">
+(CP-REL-3 (WNP-4 (WPRO ὃς))
+          (C 0)
+          (IP-SUB (NP-SBJ *T*-4)
+                  (NEG οὐ)
+                  (VBP-IMPF γινώσκει)
+                  (IP-PPL-THT (NP-SBJ (DA τὴν)
+                                      (NP-ATR (ADJ$ Ἐφεσίων))
+                                      (NA πόλιν))
+                              (NA-5 νεωκόρον)
+                              (BPR-IMPF οὖσαν)
+                              (NP-PRD (NA *ICH*-5)
+                                      (NP-COM (NP (D$ τῆς) (ADJ$ μεγάλης) (N$ Ἀρτέμιδος))
+                                              (CONJP (CONJ καὶ)
+                                                     (NP (D$ τοῦ) (ADJ$ διοπετοῦς)))))))                                
+                            </pre><p>
+                            (Acts 19.35) </p></li></ul></div><p>
+            </p><p> Note that a predicate NP in a copular construction may not always be in the
+                nominative; genitive predicates (usually indicating possession, although not
+                concretely in the example below) are also possible:
+                </p><pre class="programlisting">
+(IP-MAT-SPE (NEG Οὐχ)
+            (NP-PRD (PRO$ ὑμῶν))
+            (BEP-IMPF ἐστὶν)
+            (IP-INF-SBJ (VBN-AOR γνῶναι)
+                        (NP-OB1 (NSA χρόνους) (CONJ ἢ) (NSA καιροὺς)
+                                (CP-REL (WNP-1 (WPROA οὓς))
+                                        (C 0)
+                                        (IP-SUB (NP-OB1 *T*-1)
+                                                (NP-SBJ (D ὁ) (N πατὴρ))
+                                                (VBDP-AOR ἔθετο)
+                                                (PP (P ἐν)
+                                                    (NP (DD τῇ) (ADJD ἰδίᾳ) (ND ἐξουσίᾳ))))))))                    
+                </pre><p>
+                (Acts 1.7) </p></div><div class="sect2" title="Secondary Predicate NP"><div class="titlepage"><div><div><h3 class="title"><a id="NP-SPR"/>Secondary Predicate NP</h3></div></div></div><p> See also <a class="link" href="#IP-SMC" title="Small Clauses">small clauses</a>. </p><p> The dash tag -SPR is appended to all NPs that act as secondary predicates.
+                </p><pre class="programlisting">
+(IP-INF (TO to)
+        (VB stand/mount)
+        (NP-SPR (N guard)))
+
+(IP-INF (TO to)
+        (VB elect)
+        (NP-ACC (D a) (NPR Hapsburg))
+        (NP-SPR (N emperor)))                    
+                </pre><p>
+            </p><p> The Greek semantic equivalents of the following verbs are treated as taking
+                secondary predicates; the list is intended to be illustrative rather than exhaustive
+                and should be compared with the list of verbs that we treat as taking small clause
+                complements. The general rule of thumb is that if the meaning of the verb does not
+                change depending on whether a predicate-like item is in the sentence, the verb takes
+                a secondary predicate. For example, the following do not differ fundamentally in
+                their meaning (the second just contains more information): </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p> They named him. </p></li><li class="listitem"><p> They named him John. </p></li></ol></div><p> In contrast, verbs that we analyze as taking small clauses may have
+                very different meanings (although not always) depending on whether a predicate-like
+                item is present: </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p> We called him. </p></li><li class="listitem"><p> We called him a loser. </p></li></ol></div><p>
+                </p><div class="blockquote"><blockquote class="blockquote"><p> ADMIT, AGREE, ANOINT, APPOINT, BIND, BRING, CHOOSE, CHRISTEN, CLAIM,
+                        CONFIRM, CONSECRATE, CROWN, DEFEND, DEFINE, DEVOTE, ELECT, INTERPRET, KEEP,
+                        LEAVE, LOVE, NAME, NOMINATE, OFFER, ORDAIN, PRESERVE, SET, SUBSCRIBE,
+                        SUFFER, SURNAME, TAKE, TESTIFY, TRANSLATE, TRY, VOW, WITNESS </p></blockquote></div><p> In addition, the following Greek verbs should be considered to take
+                secondary predicates. </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p> τίκτω (more often passive—e.g., τεχθείς in Matthew 2:2) ‘give birth
+                            to’ </p></li></ul></div><p>
+            </p><p> Some examples from the PPCNTG: </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><pre class="programlisting">
+( (IP-MAT (CODE {VS:24_27})
+          (IP-ABS (NP-SBJ (N$ Διετίας))
+                  (CLPRT δὲ)
+                  (VPRP$-AOR-PASS πληρωθείσης))
+          (VBD-AOR ἔλαβεν)
+          (NP-SPR (NA διάδοχον))
+          (NP-SBJ (D ὁ) (N Φῆλιξ))
+          (NP-OB1 (NA Πόρκιον)
+                  (NP-PRN (NA Φῆστον)))
+          (. .))
+  (ID GreekNT,Acts))                            
+                        </pre></li><li class="listitem"><pre class="programlisting">
+( (IP-IMP (CODE {VS:3_15})
+          (NP-OB1 (NA κύριον))
+          (CLPRT δὲ)
+          (NP-SPR (DA τὸν) (NA Χριστὸν))
+          (VBI-AOR ἁγιάσατε)
+          (PP (P ἐν)
+              (NP (DSD ταῖς)
+                  (NSD καρδίαις)
+                  (NP-ATR (PRO$ ὑμῶν))))
+          (, ,))
+  (ID GreekNT,1Peter))                            
+                        </pre></li></ul></div><p>
+            </p></div><div class="sect2" title="Temporal NP"><div class="titlepage"><div><div><h3 class="title"><a id="NP-TMP"/>Temporal NP</h3></div></div></div><p> NPs denoting points in time (THAT DAY, TUESDAY, YESTERDAY, etc.) are labeled NP-
+                TMP. Dates are annotated with flat structure.
+                </p><pre class="programlisting">
+( (IP-MAT (CODE {VS:14_25})
+          (NP-TMP (ADJD Τετάρτῃ)
+                  (CLPRT δὲ)
+                  (ND φυλακῇ)
+                  (NP-PAR (D$ τῆς) (N$ νυκτὸς)))
+          (NP-SBJ *pro*)
+          (VBD-AOR ἦλθεν)
+          (PP (P πρὸς)
+              (NP (PROA αὐτοὺς)))
+          (IP-PPL (VPR-IMPF περιπατῶν)
+                  (PP (P ἐπὶ)
+                      (NP (DA τὴν) (NA θάλασσαν))))
+          (. .))
+  (ID GreekNT,Matthew))                    
+                </pre><p>
+            </p><p> NPs denoting frequency (EVERY DAY, TUESDAYS, etc.) are labeled NP-TMP.
+                </p><pre class="programlisting">
+( (CP-QUE (CODE {VS:15_30})
+          (WADVP-1 (WADV τί))
+          (C 0)
+          (IP-SUB (ADVP *T*-1)
+                  (NP-SBJ (ADV καὶ) (PRO ἡμεῖς))
+                  (VBP-IMPF κινδυνεύομεν)
+                  (NP-TMP (QA πᾶσαν) (NA ὥραν)))
+          (. ;))
+  (ID GreekNT,1Corinthians))                    
+                </pre><p>
+            </p><p> In the terms of traditional Greek grammar, the NPs receiving the label NP-TMP
+                correspond to genitive of time within which, the dative of time at which, and the
+                accusative of extent of time<sup>[<a id="d0e7312" href="#ftn.d0e7312" class="footnote">7</a>]</sup>. </p></div><div class="sect2" title="Vocative"><div class="titlepage"><div><div><h3 class="title"><a id="NP-VOC"/>Vocative</h3></div></div></div><p> Vocatives are labeled NP-VOC. Accompanying interjections—i.e., ὦ—are treated as
+                clause-level constituents rather than as constituents of the vocative NP.
+                </p><pre class="programlisting">
+( (IP-IMP (CODE {VS:6_11})
+          (NP-SBJ (PRO Σὺ))
+          (CLPRT δέ)
+          (, ,)
+          (INTJ ὦ)
+          (NP-VOC (N ἄνθρωπε)
+                  (NP-ATR (N$ θεοῦ)))
+          (, ,)
+          (NP-OB1 (DSA ταῦτα))
+          (VBI-IMPF φεῦγε)
+          (. .))
+  (ID GreekNT,1Timothy))                    
+                </pre><p>
+            </p></div><div class="sect2" title="Bare NP"><div class="titlepage"><div><div><h3 class="title"><a id="bare_NP"/>Bare NP</h3></div></div></div><p> The bare label NP is used for NPs without any of the above functions. These
+                include: </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p> NP complements of <a class="link" href="#PP" title="Prepositional Phrase">P</a>
+                        </p></li><li class="listitem"><p> conjoined NPs </p></li><li class="listitem"><p> NPs extracted from another constituent </p></li></ul></div><p> The topmost NP of a conjoined NP is labeled by function if
+                necessary. The NPs immediately dominating the individual conjuncts are never marked
+                for function.
+                </p><pre class="programlisting">
+( (IP-MAT (CODE {VS:1_3})
+          (NP-SBJ (N Ἰούδας))
+          (CLPRT δὲ)
+          (VBD-AOR ἐγέννησεν)
+          (NP-OB1 (NP (DA τὸν) (NA Φαρὲς))
+                  (CONJP (CONJ καὶ)
+                         (NP (DA τὸν) (NA Ζαρὰ))))
+          (PP (P ἐκ)
+              (NP (D$ τῆς) (N$ Θάμαρ)))
+          (, ,))
+  (ID GreekNT,Matthew))                    
+                </pre><p>
+            </p><p> NPs extracted from another constituent (phrase or clause) are labeled NP and
+                coindexed with a trace within the constituent from which they are extracted.
+                Examples include topicalization with preposition stranding and long-distance
+                topicalization. If necessary, the function of the extracted NP is indicated on the
+                trace.
+                </p><pre class="programlisting">
+(IP-PPL (NP-2 (N$ σαββάτου))
+        (VPR-IMPF ἔχον)
+        (NP-OB1 (NP-MSR *ICH*-2)
+                (NA ὁδόν)))                    
+                </pre><p>
+                (Acts 1.12) </p></div></div><div class="sect1" title="Prepositional Phrase"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="clPP"/>Prepositional Phrase</h2></div></div></div><p> For want of reliable criteria, our annotation system makes no distinction between
+            complement and adjunct PPs.
+            </p><pre class="programlisting">
+(INTJ Ἄφες)
+(NP-SBJ *pro*)
+(VBS-AOR ἐκβάλω)
+(NP-OB1 (DA τὸ) (NA κάρφος))
+(PP (P ἐκ)
+    (NP (D$ τοῦ)
+        (N$ ὀφθαλμοῦ)
+        (NP-ATR (CLPRO$ σου))))                
+            </pre><p>
+            (Matthew 7.4)
+            </p><pre class="programlisting">
+(NP-SBJ (N ἄγγελος)
+        (NP-ATR (N$ Κυρίου)))
+(PP (P κατ')
+    (NP (NA ὄναρ)))
+(VBDP-AOR ἐφάνη)                
+            </pre><p>
+            (Matthew 1.20) </p><p> By default, complements of prepositions that immediately precede the head are treated
+            as constituents of the PP, and movement out of PP is indicated only if the word order
+            leaves no alternative. </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p> complements that precede the head:
+                        </p><pre class="programlisting">
+(IP-PPL (VPRP-AOR-PASS ἀποσχισθέντες)
+        (NP-OBP (D$ τῆς)
+                (ADJ$ ἄλλης)
+                (N$ στρατιῆς))
+        (PP (NP (DS$ τῶνδε))
+            (P εἵνεκα)))                            
+                        </pre><p>
+                            (<a class="link" href="http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0125%3Abook%3D8%3Achapter%3D35%3Asection%3D2" target="_top">Hdt. 8.35.2</a>) </p></li><li class="listitem"><p> movement out of
+                        PP:
+                    </p></li></ul></div><p>
+        </p><p> Although the trace of passivized constituents is not normally indicated, it is in the
+            case of passivization from PP. See <a class="link" href="#a_movement" title="Traces of A-Movement">Traces of
+                A-Movement</a> for examples. It may be that passivization from PP does not occur
+            in Greek. </p></div><div class="sect1" title="Quantifier Phrase"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="clQP"/>Quantifier Phrase</h2></div></div></div><p> In general, QP does not occur at the clausal level. There are two exceptions. </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p> When a quantifier is part of a phrase that is comparable in meaning to a
+                            <a class="link" href="#floated_quantifiers" title="Floated Quantifiers">floated quantifier</a>.
+                        </p><pre class="programlisting">
+( (IP-MAT (CODE {VS:1_14_1})
+          (NP-SBJ (N Γύγης-Γύγης))
+          (CLPRT δὲ-δέ)
+          (IP-PPL (VPR-AOR τυραννεύσας-τυραννεύω))
+          (VBD-AOR ἀπέπεμψε-ἀποπέμπω)
+          (NP-OB1 (NSA-1 ἀναθήματα-ἀνάθημα))
+          (PP (P ἐς-εἰς)
+              (NP (NSA Δελφοὺς-Δελφοί)))
+          (QP=1 (NEG οὐκ-οὐ) (QA ὀλίγα-ὀλίγος))
+          (, ,))
+  (ID Herodotus,Histories))                          
+                        </pre><p>
+                    </p></li><li class="listitem"><p> When a QP is extracted out of a phrase.
+                        </p><pre class="programlisting">
+( (CP-QUE (WNP-1 (WPRO what)
+                 (QP *ICH*-2))
+          (IP-SUB (NP-OB1 *T*-1)
+                  (MD would)
+                  (NP-SBJ (PRO you))
+                  (HV have)
+                  (QP-2 (QR more)))
+          (. ,))
+  (ID PENNY,156.366))                        
+                    </pre><p>
+                    </p></li></ul></div><p>
+        </p></div><div class="sect1" title="Words as Clausal Constituents"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="words_clausal_constituents"/>Words as Clausal Constituents</h2></div></div></div><div class="sect2" title="Adverbs"><div class="titlepage"><div><div><h3 class="title"><a id="clausal_adverbs"/>Adverbs</h3></div></div></div><p> It is apparently possible for adverbs to scramble out of other phrases and become
+                daughters of IP. Some instances look like permutations of the adverb and a
+                preposition in the original, but we have not attmepted to emend the text.
+                </p><pre class="programlisting">
+(IP-MAT-SPE (NEG Οὐ)
+            (ADV-1 μακρὰν)
+            (NP-SBJ *pro*)
+            (BEP-IMPF εἶ)
+            (PP (ADV *ICH*-1)
+                (P ἀπὸ)
+                (NP (D$ τῆς)
+                    (N$ βασιλείας)
+                    (NP-ATR (D$ τοῦ) (N$ θεοῦ)))))                    
+                </pre><p>
+                (Mark 12.34) </p></div><div class="sect2" title="Floated Quantifiers"><div class="titlepage"><div><div><h3 class="title"><a id="floated_quantifiers"/>Floated Quantifiers</h3></div></div></div><p> See also <a class="link" href="#clQP" title="Quantifier Phrase">clause-level QP</a>. Floated quantifiers are
+                labeled Q* without a phrase label, unless a phrase label is necessary because the
+                quantifier itself has a modifier. The same notation as used for gapping is used to
+                indicate the coindexation between a floated quantifier and the NP it modifies. </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p> floated quantifier:
+                            </p><pre class="programlisting">
+(IP-MAT-SPE (NEG+QA=1 Οὐδὲν)
+            (NP-SBJ *pro*)
+            (VBP-IMPF εὑρίσκω)
+            (NP-OB1 (ADJA-1 αἴτιον))
+            (PP (P ἐν)
+                (NP (DD τῷ) (ND ἀνθρώπῳ) (DD τούτῳ))))                                
+                            </pre><p>
+                            (Luke 23.4) </p></li><li class="listitem"><p> floated quantifier with a QP layer:
+                            </p><pre class="programlisting">
+( (IP-MAT (CODE {VS:1_14_1})
+          (NP-SBJ (N Γύγης-Γύγης))
+          (CLPRT δὲ-δέ)
+          (IP-PPL (VPR-AOR τυραννεύσας-τυραννεύω))
+          (VBD-AOR ἀπέπεμψε-ἀποπέμπω)
+          (NP-OB1 (NSA-1 ἀναθήματα-ἀνάθημα))
+          (PP (P ἐς-εἰς)
+              (NP (NSA Δελφοὺς-Δελφοί)))
+          (QP=1 (NEG οὐκ-οὐ) (QA ὀλίγα-ὀλίγος))
+          (, ,))
+  (ID Herodotus,Histories))                                
+                            </pre><p>
+                        </p></li></ul></div><p>
+            </p><div class="important" title="Important" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Important"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Important]" src="file:/Applications/oxygen/frameworks/docbook/xsl/images/important.png"/></td><th align="left">Important</th></tr><tr><td align="left" valign="top"><p> Where a phrase is ambiguous between an ordinary subject and a floated
+                    quantifier, it is treated as an ordinary subject.
+                    </p><pre class="programlisting">
+( (IP-MAT-SPE (CODE {VS:11_27})
+              (NP-SBJ (Q Πάντα))
+              (NP-OB2 (CLPROD μοι))
+              (VBDP-AOR-PASS παρεδόθη)
+              (PP (P ὑπὸ)
+                  (NP (D$ τοῦ)
+                      (N$ πατρός)
+                      (NP-ATR (CLPRO$ μου))))
+	      (, ,))
+  (ID GreekNT,Matthew))                        
+                    </pre><p>
+                </p></td></tr></table></div></div><div class="sect2" title="Negation"><div class="titlepage"><div><div><h3 class="title"><a id="clausal_negation"/>Negation</h3></div></div></div><p>
+                <a class="link" href="#NEG" title="Negation (NEG)">Negation</a> never projects a phrase.
+                </p><pre class="programlisting">
+( (IP-MAT (CODE {VS:1_25})
+          (CONJ καὶ)
+          (NEG οὐκ)
+          (NP-SBJ *con*)
+          (VBD-IMPF ἐγίνωσκεν)
+          (NP-OB1 (PROA αὐτὴν))
+          (PP (P ἕως)
+              (NP (CP-FRL (WNP-1 (WPRO$ οὗ))
+                          (C 0)
+                          (IP-SUB (NP-TMP *T*-1)
+                                  (NP-SBJ *pro*)
+                                  (VBD-AOR ἔτεκεν)
+                                  (NP-OB1 (NA υἱόν))))))
+          (. .))
+  (ID GreekNT,Matthew))                    
+                </pre><p>
+            </p></div><div class="sect2" title="Participles"><div class="titlepage"><div><div><h3 class="title"><a id="clausal_participles"/>Participles</h3></div></div></div><p> At the clausal level, participles occur as complements of <a class="link" href="#copular_verbs" title="Copular Verbs">copular verbs</a>, in <a class="link" href="#RRC" title="Reduced Relative Clauses">reduced
+                    relative clauses</a>, in <a class="link" href="#IP-SMC" title="Small Clauses">small clauses</a>, and in
+                    <a class="link" href="#IP-ABS" title="Absolute Clauses">absolute clauses</a>. </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p> complement of copular verb:
+                            </p><pre class="programlisting">
+( (IP-MAT (CODE {VS:1_9})
+          (BED-IMPF Ἦν)
+          (NP-SBJ (D τὸ)
+                  (N φῶς)
+                  (NP-PRN (D τὸ) (ADJ ἀληθινὸν))
+                  (CP-REL (WNP-1 (WPRO ὃ))
+                          (C 0)
+                          (IP-SUB (NP-SBJ *T*-1)
+                                  (VBP-IMPF φωτίζει)
+                                  (NP-OB1 (QA πάντα) (NA ἄνθρωπον)))))
+          (VPRP-IMPF ἐρχόμενον)
+          (PP (P εἰς)
+              (NP (DA τὸν) (NA κόσμον)))
+          (. .))
+  (ID GreekNT,John))                                
+                            </pre><p>
+                        </p></li><li class="listitem"><p> reduced relative clause:
+                            </p><pre class="programlisting">
+( (IP-MAT (CODE {VS:2_9})
+          (NP-SBJ (DS οἱ)
+                  (CLPRT δὲ)
+                  (RRC (VPR-AOR ἀκούσαντες)
+                       (NP-OBQ (D$ τοῦ) (N$ βασιλέως))))
+          (VBDP-AOR ἐπορεύθησαν)
+          (, ,))
+  (ID GreekNT,Matthew))                                
+                            </pre><p>
+                        </p></li><li class="listitem"><p> small clause:
+                            </p><pre class="programlisting">
+( (IP-MAT (CODE {VS:26_40})
+          (CONJ καὶ)
+          (NP-SBJ *con*)
+          (VBP-IMPF εὑρίσκει)
+          (IP-SMC (NP-SBJ (PROA αὐτοὺς))
+                  (VPRA-IMPF καθεύδοντας))
+          (, ,))
+  (ID GreekNT,Matthew))                                
+                            </pre><p>
+                        </p></li><li class="listitem"><p> absolute clause:
+                            </p><pre class="programlisting">
+( (IP-MAT (CODE {VS:5_1})
+          (CONJ καὶ)
+          (IP-ABS (VPR$-AOR καθίσαντος)
+                  (NP-SBJ (PRO$ αὐτοῦ)))
+          (VBD-AOR προσῆλθαν)
+          (NP-OBP (PROD αὐτῷ))
+          (NP-SBJ (DS οἱ)
+                  (NS μαθηταὶ)
+                  (NP-ATR (PRO$ αὐτοῦ)))
+          (. .))
+  (ID GreekNT,Matthew))                                    
+                                </pre><p>
+                        </p></li></ul></div><p>
+            </p></div></div><div class="sect1" title="Extended Dash Tags"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="extended_dash"/>Extended Dash Tags</h2></div></div></div><div class="sect2" title="Left Dislocation"><div class="titlepage"><div><div><h3 class="title"><a id="LFD"/>Left Dislocation</h3></div></div></div><p> Left-dislocated constituents are associated with a resumptive element in the body
+                of the clause, which is marked by the dash tag -RSP. The left-dislocated and the
+                resumptive constituents are not coindexed since with very rare exceptions, there is
+                only one -LFD/-RSP pair per clause. Function tags, if any, appear only on the
+                resumptive element. In the absence of a resumptive associate, fronted constituents
+                are labeled <a class="link" href="#NP-ADT" title="Non-Argument (Adjunct) NP">NP-ADT</a>. In general, only phrases, and not
+                words, are marked as resumptive, and so the -RSP label may be attached to the phrase
+                that contains the resumptive element, rather than to the resumptive element itself.
+                See also <a class="xref" href="#prolepsis" title="Prolepsis">the section called “Prolepsis”</a>. </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p> left-dislocated NP:
+                            </p><pre class="programlisting">
+( (IP-MAT-SPE (CODE {VS:7_40})
+              (NP-LFD (D ὁ)
+                      (CLPRT γὰρ)
+                      (N Μωυσῆς)
+                      (D οὗτος)
+                      (, ,)
+                      (CP-REL (WNP-1 (WPRO ὃς))
+                              (C 0)
+                              (IP-SUB (NP-SBJ *T*-1)
+                                      (VBD-AOR ἐξήγαγεν)
+                                      (NP-OB1 (PROA ἡμᾶς))
+                                      (PP (P ἐκ)
+                                          (NP (N$ γῆς)
+                                              (NP-PRN (N$ Αἰγύπτου)))))))
+              (, ,)
+              (NEG οὐκ)
+              (NP-SBJ *pro*)
+              (VBP-PRF οἴδαμεν)
+              (CP-QUE (WNP-2 (WPRO τί))
+                      (C 0)
+                      (IP-SUB (NP-SBJ *T*-2)
+                              (VBDP-AOR ἐγένετο)
+                              (NP-OB2-RSP (PROD αὐτῷ))))
+              (. .))
+  (ID GreekNT,Acts))                                
+                            </pre><p>
+                        </p></li><li class="listitem"><p> non-NP left dislocation:
+                            </p><pre class="programlisting">
+( (IP-MAT-SPE (CODE {VS:6_21})
+              (ADVP-LFD (CP-FRL (WADVP-1 (WADV ὅπου))
+                                (CLPRT γάρ)
+                                (C 0)
+                                (IP-SUB (ADVP-LOC *T*-1)
+                                        (BEP-IMPF ἐστιν)
+                                        (NP-SBJ (D ὁ)
+                                                (N θησαυρός)
+                                                (NP-ATR (CLPRO$ σου))))))
+              (, ,)
+              (ADVP-LOC-RSP (ADV ἐκεῖ))
+              (BEP-FUT ἔσται)
+              (NP-SBJ (ADV καὶ)
+                      (D ἡ)
+                      (N καρδία)
+                      (NP-ATR (CLPRO$ σου)))
+              (. .))
+  (ID GreekNT,Matthew))                                
+                            </pre><p>
+                        </p></li><li class="listitem"><p> resumptive phrase:
+                            </p><pre class="programlisting">
+( (IP-IMP-SPE (CODE {VS:21_23})
+              (NP-LFD (DA τοῦτο))
+              (CLPRT οὖν)
+              (VBI-AOR ποίησον)
+              (NP-OB1-RSP (CP-FRL (WNP-1 (WPROA ὅ))
+                                  (C 0)
+                                  (IP-SUB (NP-OB1 *T*-1)
+                                          (NP-OB2 (CLPROD σοι))
+                                          (NP-SBJ *pro*)
+                                          (VBP-IMPF λέγομεν))))
+	      (. .))
+  (ID GreekNT,Acts))                                
+                            </pre><p>
+                        </p></li></ul></div><p> Finally, there are cases where there is a category mismatch between
+                the two elements that make up a correlative; these cases are analyzed as containing
+                left dislocation and resumption in order to handle the category mismatch.
+                </p><pre class="programlisting">
+( (IP-IMP-SPE (CODE {VS:7_12})
+              (NP-OB1-LFD (QA Πάντα)
+                          (CLPRT οὖν)
+                          (CP-REL (WNP-1 (WADJA ὅσα))
+                                  (C+PRTG ἐὰν)
+                                  (IP-SUB (NP-SBJ *pro*)
+                                          (VBS-IMPF θέλητε)
+                                          (CP-COM (C ἵνα)
+                                                  (IP-SUB (NP-OB1 *T*-1)
+                                                          (VBS-IMPF ποιῶσιν)
+                                                          (NP-OB2 (PROD ὑμῖν))
+                                                          (NP-SBJ (DS οἱ) (NS ἄνθρωποι)))))))
+              (, ,)
+              (ADVP-RSP (ADV οὕτως))
+              (NP-SBJ (ADV καὶ) (PRO ὑμεῖς))
+              (VBI-IMPF ποιεῖτε)
+              (NP-OB2 (PROD αὐτοῖς))
+              (. .))
+  (ID GreekNT,Matthew))                    
+                </pre><p>
+            </p></div><div class="sect2" title="Appositive or Parenthetical"><div class="titlepage"><div><div><h3 class="title"><a id="PRN"/>Appositive or Parenthetical</h3></div></div></div><p> See also ‘appositives and parentheticals’ in <a class="xref" href="#N_mod" title="Modifiers of N">the section called “Modifiers of N”</a>. </p><p> The extended label -PRN can be attached to any constituent label and indicates
+                either an appositive or a parenthetical. If the appositive/parenthetical constituent
+                immediately follows its co-constituent, it is included in the co-constituent’s
+                brackets. If separated from its co-constituent, it is coindexed with a trace within
+                the co-constituent. The two most common types are separated NP appositives (often
+                probably right-dislocation structures) and clauses (usually that clauses) appositive
+                to demonstratives (usually this or that). The latter is rare or does not occur in
+                Greek. </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p> included in the co-constituent’s brackets:
+                            </p><pre class="programlisting">
+(NP (NA Ἀνδρέαν)
+    (NP-PRN (DA τὸν)
+            (NA ἀδελφὸν)
+            (NP-ATR (N$ Σίμωνος))))                                
+                            </pre><p>
+                            (Mark 1.16) </p></li><li class="listitem"><p> co-indexed:
+                            </p><pre class="programlisting">
+(IP-MAT-SPE (NP-SBJ (N φωνὴ)
+                    (NP-PRN *ICH*-1))
+            (PP (P ἐν)
+	        (NP (ND Ῥαμὰ)))
+            (VBDP-AOR-PASS ἠκούσθη)
+            (, ,)
+            (NP-1 (NP (N κλαυθμὸς))
+                  (CONJP (CONJ καὶ)
+                         (NP (N ὀδυρμὸς) (ADJ πολύς)))))                                
+                            </pre><p>
+                            (Matthew 2.17) </p></li><li class="listitem"><p>
+                            <span class="emphasis"><em>Exception:</em></span> no coindexation because speakers of
+                            imperatives are not normally indicated:
+                            </p><pre class="programlisting">
+(IP-IMP-SPE (NP-PRN (N φωνὴ)
+                    (NP-ATR (RRC (VPR-IMPF βοῶντος)
+                                 (PP (P ἐν)
+                                     (NP (DD τῇ) (ADJD ἐρήμῳ))))))
+            (VBI-AOR Ἑτοιμάσατε)
+            (NP-OB1 (DA τὴν)
+                    (NA ὁδὸν)
+                    (NP-ATR (N$ Κυρίου))))                                
+                            </pre><p>
+                            (Matthew 3.3) </p></li></ul></div><p>
+            </p><p> Besides gapping and right-node raising, which are discussed separately, there are
+                several types of parenthetical IPs: </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p> Asides surrounded on both sides by parts of another clause are
+                            labeled IP-MAT-PRN.
+                            </p><pre class="programlisting">
+( (IP-MAT-SPE (CODE {VS:10_42})
+              (CONJ καὶ)
+              (NP-SBJ (CP-FRL (WNP-1 (WPRO ὃς))
+                              (C 0)
+                              (IP-SUB (NP-SBJ *T*-1)
+                                      (PRTG ἂν)
+                                      (VBS-AOR ποτίσῃ)
+                                      (NP-OB2 (NUM ἕνα)
+                                              (NP-PAR (DS$ τῶν) (ADJ$ μικρῶν) (DS$ τούτων)))
+                                      (NP-OB1 (NA ποτήριον)
+                                              (NP-ATR (ADJ$ ψυχροῦ)))
+                                      (ADVP (ADV μόνον))
+                                      (PP (P εἰς)
+                                          (NP (NA ὄνομα)
+                                              (NP-ATR (N$ μαθητοῦ)))))))
+              (, ,)
+              (IP-MAT-PRN (INTJ ἀμὴν)
+                          (NP-SBJ *pro*)
+                          (VBP-IMPF λέγω)
+                          (NP-OB2 (PROD ὑμῖν)))
+              (, ,)
+              (NEG οὐ)
+              (NEG μὴ)
+              (VBS-AOR ἀπολέσῃ)
+              (NP-OB1 (DA τὸν)
+                      (NA μισθὸν)
+                      (NP-ATR (PRO$ αὐτοῦ)))
+              (. .))
+  (ID GreekNT,Matthew))    
+</pre><p>
+                        </p></li><li class="listitem"><p> Bare reason adjuncts are labeled IP-MAT-PRN. These may not exist in
+                            Greek.
+                            </p><pre class="programlisting">
+ ( (IP-MAT (NP-SBJ (D The) (N river))
+          (VBD froze)
+          (IP-MAT-PRN (NP-SBJ (PRO it))
+                      (BED was)
+                      (ADJP (ADVR so) (ADJ cold))))
+          (. .))                               
+                            </pre><p>
+                        </p></li><li class="listitem"><p>
+                            <span class="emphasis"><em>said</em></span> X:
+                            </p><pre class="programlisting">
+( (IP-MAT-SPE (CODE {VS:6_18})
+              (CONJ καὶ)
+              (NP-SBJ (PRO ὑμεῖς))
+              (VBPP-FUT ἔσεσθέ)
+              (NP-OB2 (CLPROD μοι))
+              (PP (P εἰς)
+                  (NP (NSA υἱοὺς) (CONJ καὶ) (NSA θυγατέρας)))
+              (, ,)
+              (IP-MAT-PRN (VBP-IMPF λέγει)
+                          (NP-SBJ (N Κύριος)
+                                  (NP-PRN (N Παντοκράτωρ))))
+              (. .))
+  (ID GreekNT,2Corinthians))                                
+                            </pre><p>
+                        </p></li><li class="listitem"><p> Glosses or expansions on words or phrases introduced by
+                                <span class="emphasis"><em>that is</em></span>, <span class="emphasis"><em>that is to
+                                say/understand</em></span>, <span class="emphasis"><em>to wit</em></span>, and the like
+                            are labeled as parenthetical clauses (IP-MAT-PRN or, in the case of
+                                <span class="emphasis"><em>to wit</em></span>, IP-INF-PRN). The gloss itself is
+                            treated as a complement of the lowest verb. The category of the gloss is
+                            usually NP or PP, but may (at least in the English corpora) be VP (see
+                            “VP in Parentheticals” in the <a class="link" href="http://www.ling.upenn.edu/~beatrice/annotation/" target="_top">online
+                                annotation manual for the English corpora</a>) or IP-MAT.
+                            </p><pre class="programlisting">
+(IP-SUB (PP (P διὰ)
+            (NP (D$ τοῦ) (N$ θανάτου)))
+        (NP-SBJ *pro*)
+        (VBS-AOR καταργήσῃ)
+        (NP-OB1 (DA τὸν)
+                (RRC (NX-1 (DA τὸ)
+                           (NA κράτος))
+                     (VPRA-IMPF ἔχοντα)
+                     (NP-OB1 (NX *ICH*-1)
+                             (NP-ATR (D$ τοῦ) (N$ θανάτου)))
+        (, ,)
+        (IP-MAT-PRN (NP-SBJ (D τοῦτ'))
+                    (BEP-IMPF ἔστι))
+                    (NP-OB1 (DA τὸν) (ADJA διάβολον))))                                
+                            </pre><p>
+                            (Hebrews 2.14) </p></li></ul></div><p>
+            </p></div><div class="sect2" title="Resumptive"><div class="titlepage"><div><div><h3 class="title"><a id="RSP"/>Resumptive</h3></div></div></div><p> Resumptive elements form a pair with <a class="link" href="#LFD" title="Left Dislocation">left-dislocated
+                    constituents</a>. See also <a class="xref" href="#resumptive" title="Resumptive Pronouns">the section called “Resumptive Pronouns”</a>. </p></div><div class="sect2" title="Direct Speech"><div class="titlepage"><div><div><h3 class="title"><a id="SPE"/>Direct Speech</h3></div></div></div><p> Full sentences of direct speech (matrix clauses, imperatives and direct
+                questions) are given the extended label -SPE. The first main clause following a verb
+                of saying is included in its matrix clause. Any following main clauses are separated
+                (and also labeled -SPE). See also <a class="xref" href="#direct_speech_conj" title="Conjoined Direct Speech">the section called “Conjoined Direct Speech”</a>, <a class="xref" href="#QTP" title="QTP">the section called “QTP”</a>. The -SPE follows all other CP and finite IP tags—that is, it
+                “trickles down”—except for grammatical function tags like -SBJ or -OB1, which it
+                precedes. This is to facilitate searches for clausal subjects and objects along with
+                ordinary subjects. Any sentence containing a parenthetical <span class="emphasis"><em>he
+                    said</em></span>, etc. is labeled -SPE at the highest level. </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p> -SPE “trickles down”:
+                            </p><pre class="programlisting">
+( (IP-MAT (CODE {VS:8_25})
+          (NP-SBJ *pro*)
+          (VBD εἶπεν)
+          (CLPRT δὲ)
+          (NP-OB2 (PROD αὐτοῖς))
+          (CP-QUE-SPE (WADVP-1 (WADV Ποῦ))
+                      (C 0)
+                      (IP-SUB-SPE (ADVP-LOC *T*-1)
+                                  (BEP-IMPF *)
+                                  (NP-SBJ (D ἡ)
+                                          (N πίστις)
+                                          (NP-ATR (PRO$ ὑμῶν)))))
+          (. ;))
+  (ID GreekNT,Luke))                                
+                            </pre><p>
+                        </p></li><li class="listitem"><p> -SPE comes <span class="emphasis"><em>before</em></span> function tags such as -SBJ:
+                            </p><pre class="programlisting">
+( (IP-MAT (CODE {VS:8_20})
+          (VBDP-AOR ἀπηγγέλη)
+          (CLPRT δὲ)
+          (NP-OB2 (PROD αὐτῷ))
+          (IP-MAT-SPE-SBJ (NP-SBJ (NP (D Ἡ)
+                                      (N μήτηρ)
+                                      (NP-ATR (CLPRO$ σου)))
+                                  (CONJP (CONJ καὶ)
+                                         (NP (DS οἱ)
+                                             (NS ἀδελφοί)
+                                             (NP-ATR (CLPRO$ σου)))))
+                          (VBP-PRF ἑστήκασιν)
+                          (ADVP-LOC (ADV ἔξω))
+                          (IP-PPL (VBN-AOR-1 ἰδεῖν)
+                                  (VPR-IMPF θέλοντές)
+                                  (IP-INF-COM (VBN-AOR *ICH*-1)
+                                              (NP-OB1 (CLPROA σε)))))
+          (. .))
+  (ID GreekNT,Luke))                                
+                            </pre><p>
+                        </p></li><li class="listitem"><p> sentences containing parenthetical <span class="emphasis"><em>he said</em></span> are
+                            labeled -SPE at the highest level:
+                            </p><pre class="programlisting">
+( (IP-MAT-SPE (CODE {VS:6_18})
+              (CONJ καὶ)
+              (NP-SBJ (PRO ὑμεῖς))
+              (VBPP-FUT ἔσεσθέ)
+              (NP-OB2 (CLPROD μοι))
+              (PP (P εἰς)
+                  (NP (NSA υἱοὺς) (CONJ καὶ) (NSA θυγατέρας)))
+              (, ,)
+              (IP-MAT-PRN (VBP-IMPF λέγει)
+                          (NP-SBJ (N Κύριος)
+                                  (NP-PRN (N Παντοκράτωρ))))
+              (. .))
+  (ID GreekNT,2Corinthians))                                
+                            </pre><p>
+                        </p></li></ul></div><p>
+            </p></div></div><div class="sect1" title="Unknown"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="unknown"/>Unknown</h2></div></div></div><p> The label X is used to mark parts of the sentence which are ungrammatical or of which
+            the structure is unknown. Inside a constituent labeled X, words are usually labeled and
+            partial structure may be given to the extent that it is clear. The parts, however, do
+            not form a coherent whole. X is also used when the category of a constituent is unknown
+            in general or is difficult to determine in a specific context. </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p> unknown structure:
+                        </p><pre class="programlisting">
+( (IP-MAT (CODE {VS:7_5})
+          (IP-ABS (CONJ Καὶ)
+                  (CLPRT γὰρ)
+                  (VPR$-AOR ἐλθόντων)
+                  (NP-SBJ (PRO$ ἡμῶν))
+                  (PP (P εἰς)
+                      (NP (NA Μακεδονίαν))))
+          (QA=1 οὐδεμίαν)
+          (VBD-PRF ἔσχηκεν)
+          (NP-OB1 (NA-1 ἄνεσιν))
+          (NP-SBJ (D ἡ)
+                  (N σὰρξ)
+                  (NP-ATR (PRO$ ἡμῶν)))
+          (, ,)
+          (CODE {COM:what_to_do_with_this_conj.?})
+          (CONJ ἀλλ')
+          (IP-MAT (PP (P ἐν)
+                      (NP (QD παντὶ)))
+                  (VPRP-IMPF θλιβόμενοι))
+          (X (X (ADVP-LOC (ADV ἔξωθεν))
+                (NP-SBJ (NS μάχαι))
+                (, ,)
+                (CONJP (X (ADVP-LOC (ADV ἔσωθεν))
+                          (NP-SBJ (NS φόβοι)))))))
+  (ID GreekNT,2Corinthians))                            
+                        </pre><p>
+                    </p></li><li class="listitem"><p> unknown category of constituent:
+                        </p><pre class="programlisting">
+(NP-OB1 (DA τὸ)
+        (X ἔντος)
+        (NP-COM (NP (D$ τοῦ) (N$ ποτηρίου))
+                (CONJP (CONJ καὶ)
+                       (NP (D$ τῆς) (N$ παροψίδος)))))                            
+                        </pre><p>
+                        (Matthew 23.26) </p></li></ul></div><p>
+        </p></div><div class="footnotes"><br/><hr width="100" align="left"/><div class="footnote"><p><sup>[<a id="ftn.d0e7017" href="#d0e7017" class="para">3</a>] </sup>See the Appendix (pp. 699-707) in Hansen and Quinn’s <span class="emphasis"><em>Greek: An
+                            Intensive Course</em></span> for descriptions of these terms.</p></div><div class="footnote"><p><sup>[<a id="ftn.d0e7128" href="#d0e7128" class="para">4</a>] </sup>See Hansen and Quinn’s <span class="emphasis"><em>Greek: An Intensive Course</em></span> pg.
+                        701.</p></div><div class="footnote"><p><sup>[<a id="ftn.d0e7143" href="#d0e7143" class="para">5</a>] </sup>See Hansen and Quinn’s <span class="emphasis"><em>Greek: An Intensive Course</em></span> pg.
+                        702.</p></div><div class="footnote"><p><sup>[<a id="ftn.d0e7187" href="#d0e7187" class="para">6</a>] </sup>The usage here is quite odd, but no other type of dative in
+                                    Hansen and Quinn’s <span class="emphasis"><em>Greek: An Intensive
+                                        Course</em></span> or Smyth’s <span class="emphasis"><em>Greek
+                                        Grammar</em></span> seems to fit. <span class="emphasis"><em>A Grammatical
+                                        Analysis of the Greek New Testament</em></span> by Max
+                                    Zerwick, S.J. (translated, revised, and adapted by Mary
+                                    Grosvenor in collaboration with the author, with the assistance
+                                    of John Welch, S.J.) remarks that this is a case of the dative
+                                    being used instead of the accusative of duration (p.
+                                    207).</p></div><div class="footnote"><p><sup>[<a id="ftn.d0e7312" href="#d0e7312" class="para">7</a>] </sup>See pp. 697-706 in Hansen and Quinn’s <span class="emphasis"><em>Greek: An Intensive
+                            Course</em></span> for explanations of these terms.</p></div></div></div><div class="chapter" title="Chapter 9. Subordinate Clauses"><div class="titlepage"><div><div><h2 class="title"><a id="subordinate_clauses"/>Chapter 9. Subordinate Clauses</h2></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl><dt><span class="sect1"><a href="#CP-ADV">Adverbial Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-THT"><span class="emphasis"><em>That</em></span>-Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-COM">Complement Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-PRP">Purpose Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-DEG">Degree Complements</a></span></dt><dt><span class="sect1"><a href="#CP-CMP">Comparative Clauses</a></span></dt><dd><dl><dt><span class="sect2"><a href="#full_correlative">Correlative Comparatives</a></span></dt></dl></dd><dt><span class="sect1"><a href="#CP-QUE">Questions</a></span></dt><dt><span class="sect1"><a href="#CP-EXL">Exclamative Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-REL">Ordinary Relative Clauses</a></span></dt><dt><span class="sect1"><a href="#RRC">Reduced Relative Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-CAR">Clause-Adjoined Relative Clauses</a></span></dt><dt><span class="sect1"><a href="#CP-FRL">Free Relatives</a></span></dt><dt><span class="sect1"><a href="#CP-EOP">Empty Operator Clauses</a></span></dt><dt><span class="sect1"><a href="#IP-INF">Infinitival Clauses</a></span></dt><dd><dl><dt><span class="sect2"><a href="#IP-INF-ADT">IP-INF-ADT</a></span></dt><dt><span class="sect2"><a href="#IP-INF-COM">IP-INF-COM</a></span></dt><dt><span class="sect2"><a href="#IP-INF-DEG">IP-INF-DEG</a></span></dt><dt><span class="sect2"><a href="#IP-INF-PRP">IP-INF-PRP</a></span></dt><dt><span class="sect2"><a href="#IP-INF-SBJ">IP-INF-SBJ</a></span></dt><dt><span class="sect2"><a href="#IP-INF-THT">IP-INF-THT</a></span></dt></dl></dd><dt><span class="sect1"><a href="#IP-SMC">Small Clauses</a></span></dt><dt><span class="sect1"><a href="#IP-PPL">Participial Clauses</a></span></dt><dd><dl><dt><span class="sect2"><a href="#IP-ABS">Absolute Clauses</a></span></dt><dt><span class="sect2"><a href="#IP-PPL-COM">Supplementary Participles</a></span></dt><dt><span class="sect2"><a href="#IP-PPL-THT">Participles of Indirect Discourse</a></span></dt></dl></dd></dl></div><div class="sect1" title="Adverbial Clauses"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="CP-ADV"/>Adverbial Clauses</h2></div></div></div><p/></div><div class="sect1" title="That-Clauses"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="CP-THT"/><span class="emphasis"><em>That</em></span>-Clauses</h2></div></div></div><p/></div><div class="sect1" title="Complement Clauses"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="CP-COM"/>Complement Clauses</h2></div></div></div><p/></div><div class="sect1" title="Purpose Clauses"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="CP-PRP"/>Purpose Clauses</h2></div></div></div><p/></div><div class="sect1" title="Degree Complements"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="CP-DEG"/>Degree Complements</h2></div></div></div><p/></div><div class="sect1" title="Comparative Clauses"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="CP-CMP"/>Comparative Clauses</h2></div></div></div><div class="sect2" title="Correlative Comparatives"><div class="titlepage"><div><div><h3 class="title"><a id="full_correlative"/>Correlative Comparatives</h3></div></div></div><p/></div></div><div class="sect1" title="Questions"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="CP-QUE"/>Questions</h2></div></div></div><p/></div><div class="sect1" title="Exclamative Clauses"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="CP-EXL"/>Exclamative Clauses</h2></div></div></div><p/></div><div class="sect1" title="Ordinary Relative Clauses"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="CP-REL"/>Ordinary Relative Clauses</h2></div></div></div><p/></div><div class="sect1" title="Reduced Relative Clauses"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="RRC"/>Reduced Relative Clauses</h2></div></div></div><p/></div><div class="sect1" title="Clause-Adjoined Relative Clauses"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="CP-CAR"/>Clause-Adjoined Relative Clauses</h2></div></div></div><p/></div><div class="sect1" title="Free Relatives"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="CP-FRL"/>Free Relatives</h2></div></div></div><p><a id="ὡς_nominal_gap"/></p></div><div class="sect1" title="Empty Operator Clauses"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="CP-EOP"/>Empty Operator Clauses</h2></div></div></div><p/></div><div class="sect1" title="Infinitival Clauses"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="IP-INF"/>Infinitival Clauses</h2></div></div></div><div class="sect2" title="IP-INF-ADT"><div class="titlepage"><div><div><h3 class="title"><a id="IP-INF-ADT"/>IP-INF-ADT</h3></div></div></div><p/></div><div class="sect2" title="IP-INF-COM"><div class="titlepage"><div><div><h3 class="title"><a id="IP-INF-COM"/>IP-INF-COM</h3></div></div></div><p/></div><div class="sect2" title="IP-INF-DEG"><div class="titlepage"><div><div><h3 class="title"><a id="IP-INF-DEG"/>IP-INF-DEG</h3></div></div></div><p/></div><div class="sect2" title="IP-INF-PRP"><div class="titlepage"><div><div><h3 class="title"><a id="IP-INF-PRP"/>IP-INF-PRP</h3></div></div></div><p/></div><div class="sect2" title="IP-INF-SBJ"><div class="titlepage"><div><div><h3 class="title"><a id="IP-INF-SBJ"/>IP-INF-SBJ</h3></div></div></div><p/></div><div class="sect2" title="IP-INF-THT"><div class="titlepage"><div><div><h3 class="title"><a id="IP-INF-THT"/>IP-INF-THT</h3></div></div></div><p/></div></div><div class="sect1" title="Small Clauses"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="IP-SMC"/>Small Clauses</h2></div></div></div><p/></div><div class="sect1" title="Participial Clauses"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="IP-PPL"/>Participial Clauses</h2></div></div></div><div class="sect2" title="Absolute Clauses"><div class="titlepage"><div><div><h3 class="title"><a id="IP-ABS"/>Absolute Clauses</h3></div></div></div><p/></div><div class="sect2" title="Supplementary Participles"><div class="titlepage"><div><div><h3 class="title"><a id="IP-PPL-COM"/>Supplementary Participles</h3></div></div></div><p/></div><div class="sect2" title="Participles of Indirect Discourse"><div class="titlepage"><div><div><h3 class="title"><a id="IP-PPL-THT"/>Participles of Indirect Discourse</h3></div></div></div><p/></div></div></div><div class="chapter" title="Chapter 10. Special Constructions"><div class="titlepage"><div><div><h2 class="title"><a id="special_constructions"/>Chapter 10. Special Constructions</h2></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl><dt><span class="sect1"><a href="#prolepsis">Prolepsis</a></span></dt></dl></div><div class="sect1" title="Prolepsis"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="prolepsis"/>Prolepsis</h2></div></div></div><p/></div></div><div class="chapter" title="Chapter 11. Discontinuous Phrases"><div class="titlepage"><div><div><h2 class="title"><a id="discontinuous_phrases"/>Chapter 11. Discontinuous Phrases</h2></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl><dt><span class="sect1"><a href="#extraposition">Rightward Extraposition</a></span></dt><dt><span class="sect1"><a href="#default_leftward">Default Leftward Movement</a></span></dt><dd><dl><dt><span class="sect2"><a href="#word_level_fronting">Word-Level Fronting</a></span></dt><dt><span class="sect2"><a href="#intermediate_level_fronting">Fronting of Non-Constituents</a></span></dt><dt><span class="sect2"><a href="#phrase_level_fronting">Phrase-Level Fronting</a></span></dt></dl></dd></dl></div><div class="sect1" title="Rightward Extraposition"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="extraposition"/>Rightward Extraposition</h2></div></div></div><p/></div><div class="sect1" title="Default Leftward Movement"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="default_leftward"/>Default Leftward Movement</h2></div></div></div><div class="sect2" title="Word-Level Fronting"><div class="titlepage"><div><div><h3 class="title"><a id="word_level_fronting"/>Word-Level Fronting</h3></div></div></div><p/></div><div class="sect2" title="Fronting of Non-Constituents"><div class="titlepage"><div><div><h3 class="title"><a id="intermediate_level_fronting"/>Fronting of Non-Constituents</h3></div></div></div><p/></div><div class="sect2" title="Phrase-Level Fronting"><div class="titlepage"><div><div><h3 class="title"><a id="phrase_level_fronting"/>Phrase-Level Fronting</h3></div></div></div><p/></div></div></div><div class="chapter" title="Chapter 12. Disfluencies"><div class="titlepage"><div><div><h2 class="title"><a id="disfluencies"/>Chapter 12. Disfluencies</h2></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl><dt><span class="sect1"><a href="#break">Break</a></span></dt><dt><span class="sect1"><a href="#false_start">False Start</a></span></dt><dt><span class="sect1"><a href="#repetition">Repetition</a></span></dt><dt><span class="sect1"><a href="#tag">Tag</a></span></dt></dl></div><div class="sect1" title="Break"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="break"/>Break</h2></div></div></div><p/></div><div class="sect1" title="False Start"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="false_start"/>False Start</h2></div></div></div><p/></div><div class="sect1" title="Repetition"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="repetition"/>Repetition</h2></div></div></div><p/></div><div class="sect1" title="Tag"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="tag"/>Tag</h2></div></div></div><p/></div></div></div><div class="part" title="Part III. Planned Corpus Development and Known Issues"><div class="titlepage"><div><div><h1 class="title"><a id="d0e7842"/>Part III. Planned Corpus Development and Known Issues</h1></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl><dt><span class="chapter"><a href="#development">13. General Corpus Development</a></span></dt><dd><dl><dt><span class="sect1"><a href="#d0e7849"/></span></dt></dl></dd><dt><span class="chapter"><a href="#known_issues">14. Known Issues</a></span></dt><dd><dl><dt><span class="sect1"><a href="#d0e7856"/></span></dt></dl></dd></dl></div><div class="chapter" title="Chapter 13. General Corpus Development"><div class="titlepage"><div><div><h2 class="title"><a id="development"/>Chapter 13. General Corpus Development</h2></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl><dt><span class="sect1"><a href="#d0e7849"/></span></dt></dl></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="d0e7849"/></h2></div></div></div><p/></div></div><div class="chapter" title="Chapter 14. Known Issues"><div class="titlepage"><div><div><h2 class="title"><a id="known_issues"/>Chapter 14. Known Issues</h2></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl><dt><span class="sect1"><a href="#d0e7856"/></span></dt></dl></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="d0e7856"/></h2></div></div></div><p/></div></div></div><div class="appendix" title="Appendix A. Appendix"><div class="titlepage"><div><div><h2 class="title"><a id="appendix"/>Appendix A. Appendix</h2></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl><dt><span class="sect1"><a href="#copular_verbs">Copular Verbs</a></span></dt><dt><span class="sect1"><a href="#small_clause_verbs">Verbs taking Small Clauses</a></span></dt><dt><span class="sect1"><a href="#secondary_pred_verbs">Verbs taking Secondary Predicates</a></span></dt><dt><span class="sect1"><a href="#cognate_object_verbs">Cognate Object Verbs</a></span></dt></dl></div><div class="sect1" title="Copular Verbs"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="copular_verbs"/>Copular Verbs</h2></div></div></div><div class="blockquote"><blockquote class="blockquote"><p>APPEAR, BE, BECOME, CHANCE, CONTINUE, FALL, FEEL, GET, GROW, KEEP, LOOK, PLEAD
                     (in legal sense), PROVE, REMAIN, SAVOR, SEEM, SHOW, SMELL, SOUND, STAY, TASTE,
                     TURN, WAX</p></blockquote></div></div><div class="sect1" title="Verbs taking Small Clauses"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="small_clause_verbs"/>Verbs taking Small Clauses</h2></div></div></div><div class="blockquote"><blockquote class="blockquote"><p/></blockquote></div></div><div class="sect1" title="Verbs taking Secondary Predicates"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="secondary_pred_verbs"/>Verbs taking Secondary Predicates</h2></div></div></div><div class="blockquote"><blockquote class="blockquote"><p/></blockquote></div></div><div class="sect1" title="Cognate Object Verbs"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="cognate_object_verbs"/>Cognate Object Verbs</h2></div></div></div><div class="blockquote"><blockquote class="blockquote"><p/></blockquote></div></div></div></div></body></html>

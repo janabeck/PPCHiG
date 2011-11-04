@@ -379,7 +379,7 @@
                                 <para>take care/counsel/(one's)
                                     heart/heed/keep/note/notice/occasion/order/pains</para>
                             </listitem>
-                            <listitem>turn (one's) heart</listitem>
+                            <listitem><para>turn (one's) heart</para></listitem>
                         </itemizedlist> The noun member of a complex predicate is labeled NP-OB1.
                         The accompanying clause is treated as a clause-level constituent, rather
                         than as a complement of the noun.
@@ -1927,9 +1927,56 @@
             </para>
         </sect2>
     </sect1>
-    <!-- work here -->
     <sect1 xml:id="unknown">
         <title>Unknown</title>
-        <para/>
+        <para> The label X is used to mark parts of the sentence which are ungrammatical or of which
+            the structure is unknown. Inside a constituent labeled X, words are usually labeled and
+            partial structure may be given to the extent that it is clear. The parts, however, do
+            not form a coherent whole. X is also used when the category of a constituent is unknown
+            in general or is difficult to determine in a specific context. <itemizedlist>
+                <listitem>
+                    <para> unknown structure:
+                        <programlisting>
+( (IP-MAT (CODE {VS:7_5})
+          (IP-ABS (CONJ Καὶ)
+                  (CLPRT γὰρ)
+                  (VPR$-AOR ἐλθόντων)
+                  (NP-SBJ (PRO$ ἡμῶν))
+                  (PP (P εἰς)
+                      (NP (NA Μακεδονίαν))))
+          (QA=1 οὐδεμίαν)
+          (VBD-PRF ἔσχηκεν)
+          (NP-OB1 (NA-1 ἄνεσιν))
+          (NP-SBJ (D ἡ)
+                  (N σὰρξ)
+                  (NP-ATR (PRO$ ἡμῶν)))
+          (, ,)
+          (CODE {COM:what_to_do_with_this_conj.?})
+          (CONJ ἀλλ')
+          (IP-MAT (PP (P ἐν)
+                      (NP (QD παντὶ)))
+                  (VPRP-IMPF θλιβόμενοι))
+          (X (X (ADVP-LOC (ADV ἔξωθεν))
+                (NP-SBJ (NS μάχαι))
+                (, ,)
+                (CONJP (X (ADVP-LOC (ADV ἔσωθεν))
+                          (NP-SBJ (NS φόβοι)))))))
+  (ID GreekNT,2Corinthians))                            
+                        </programlisting>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para> unknown category of constituent:
+                        <programlisting>
+(NP-OB1 (DA τὸ)
+        (X ἔντος)
+        (NP-COM (NP (D$ τοῦ) (N$ ποτηρίου))
+                (CONJP (CONJ καὶ)
+                       (NP (D$ τῆς) (N$ παροψίδος)))))                            
+                        </programlisting>
+                        (Matthew 23.26) </para>
+                </listitem>
+            </itemizedlist>
+        </para>
     </sect1>
 </chapter>

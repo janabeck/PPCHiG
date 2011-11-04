@@ -27,7 +27,7 @@
         <title>Comparative Clauses</title>
         <sect2 xml:id="full_correlative">
             <title>Correlative Comparatives</title>
-            <para></para>
+            <para/>
         </sect2>
     </sect1>
     <sect1 xml:id="CP-QUE">
@@ -52,7 +52,7 @@
     </sect1>
     <sect1 xml:id="CP-FRL">
         <title>Free Relatives</title>
-        <para xml:id="ὡς_nominal_gap"></para>
+        <para xml:id="ὡς_nominal_gap"/>
     </sect1>
     <sect1 xml:id="CP-EOP">
         <title>Empty Operator Clauses</title>
@@ -62,27 +62,27 @@
         <title>Infinitival Clauses</title>
         <sect2 xml:id="IP-INF-ADT">
             <title>IP-INF-ADT</title>
-            <para></para>
+            <para/>
         </sect2>
         <sect2 xml:id="IP-INF-COM">
             <title>IP-INF-COM</title>
-            <para></para>
+            <para/>
         </sect2>
         <sect2 xml:id="IP-INF-DEG">
             <title>IP-INF-DEG</title>
-            <para></para>
+            <para/>
         </sect2>
         <sect2 xml:id="IP-INF-PRP">
             <title>IP-INF-PRP</title>
-            <para></para>
+            <para/>
         </sect2>
         <sect2 xml:id="IP-INF-SBJ">
             <title>IP-INF-SBJ</title>
-            <para></para>
+            <para/>
         </sect2>
         <sect2 xml:id="IP-INF-THT">
             <title>IP-INF-THT</title>
-            <para></para>
+            <para/>
         </sect2>
     </sect1>
     <sect1 xml:id="IP-SMC">
@@ -91,6 +91,17 @@
     </sect1>
     <sect1 xml:id="IP-PPL">
         <title>Participial Clauses</title>
-        <para/>
+        <sect2 xml:id="IP-ABS">
+            <title>Absolute Clauses</title>
+            <para/>
+        </sect2>
+        <sect2 xml:id="IP-PPL-COM">
+            <title>Supplementary Participles</title>
+            <para/>
+        </sect2>
+        <sect2 xml:id="IP-PPL-THT">
+            <title>Participles of Indirect Discourse</title>
+            <para/>
+        </sect2>
     </sect1>
 </chapter>
