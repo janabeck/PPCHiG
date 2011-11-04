@@ -1539,8 +1539,34 @@
                         </para>
                     </listitem>
                     <listitem>
-                        <para>
-                            <!-- work here -->
+                        <para> small clause:
+                            <programlisting>
+( (IP-MAT (CODE {VS:26_40})
+          (CONJ καὶ)
+          (NP-SBJ *con*)
+          (VBP-IMPF εὑρίσκει)
+          (IP-SMC (NP-SBJ (PROA αὐτοὺς))
+                  (VPRA-IMPF καθεύδοντας))
+          (, ,))
+  (ID GreekNT,Matthew))                                
+                            </programlisting>
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para> absolute clause:
+                            <programlisting>
+( (IP-MAT (CODE {VS:5_1})
+          (CONJ καὶ)
+          (IP-ABS (VPR$-AOR καθίσαντος)
+                  (NP-SBJ (PRO$ αὐτοῦ)))
+          (VBD-AOR προσῆλθαν)
+          (NP-OBP (PROD αὐτῷ))
+          (NP-SBJ (DS οἱ)
+                  (NS μαθηταὶ)
+                  (NP-ATR (PRO$ αὐτοῦ)))
+          (. .))
+  (ID GreekNT,Matthew))                                    
+                                </programlisting>
                         </para>
                     </listitem>
                 </itemizedlist>
@@ -1551,21 +1577,357 @@
         <title>Extended Dash Tags</title>
         <sect2 xml:id="LFD">
             <title>Left Dislocation</title>
-            <para/>
+            <para> Left-dislocated constituents are associated with a resumptive element in the body
+                of the clause, which is marked by the dash tag -RSP. The left-dislocated and the
+                resumptive constituents are not coindexed since with very rare exceptions, there is
+                only one -LFD/-RSP pair per clause. Function tags, if any, appear only on the
+                resumptive element. In the absence of a resumptive associate, fronted constituents
+                are labeled <link linkend="NP-ADT">NP-ADT</link>. In general, only phrases, and not
+                words, are marked as resumptive, and so the -RSP label may be attached to the phrase
+                that contains the resumptive element, rather than to the resumptive element itself.
+                See also <xref linkend="prolepsis"/>. <itemizedlist>
+                    <listitem>
+                        <para> left-dislocated NP:
+                            <programlisting>
+( (IP-MAT-SPE (CODE {VS:7_40})
+              (NP-LFD (D ὁ)
+                      (CLPRT γὰρ)
+                      (N Μωυσῆς)
+                      (D οὗτος)
+                      (, ,)
+                      (CP-REL (WNP-1 (WPRO ὃς))
+                              (C 0)
+                              (IP-SUB (NP-SBJ *T*-1)
+                                      (VBD-AOR ἐξήγαγεν)
+                                      (NP-OB1 (PROA ἡμᾶς))
+                                      (PP (P ἐκ)
+                                          (NP (N$ γῆς)
+                                              (NP-PRN (N$ Αἰγύπτου)))))))
+              (, ,)
+              (NEG οὐκ)
+              (NP-SBJ *pro*)
+              (VBP-PRF οἴδαμεν)
+              (CP-QUE (WNP-2 (WPRO τί))
+                      (C 0)
+                      (IP-SUB (NP-SBJ *T*-2)
+                              (VBDP-AOR ἐγένετο)
+                              (NP-OB2-RSP (PROD αὐτῷ))))
+              (. .))
+  (ID GreekNT,Acts))                                
+                            </programlisting>
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para> non-NP left dislocation:
+                            <programlisting>
+( (IP-MAT-SPE (CODE {VS:6_21})
+              (ADVP-LFD (CP-FRL (WADVP-1 (WADV ὅπου))
+                                (CLPRT γάρ)
+                                (C 0)
+                                (IP-SUB (ADVP-LOC *T*-1)
+                                        (BEP-IMPF ἐστιν)
+                                        (NP-SBJ (D ὁ)
+                                                (N θησαυρός)
+                                                (NP-ATR (CLPRO$ σου))))))
+              (, ,)
+              (ADVP-LOC-RSP (ADV ἐκεῖ))
+              (BEP-FUT ἔσται)
+              (NP-SBJ (ADV καὶ)
+                      (D ἡ)
+                      (N καρδία)
+                      (NP-ATR (CLPRO$ σου)))
+              (. .))
+  (ID GreekNT,Matthew))                                
+                            </programlisting>
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para> resumptive phrase:
+                            <programlisting>
+( (IP-IMP-SPE (CODE {VS:21_23})
+              (NP-LFD (DA τοῦτο))
+              (CLPRT οὖν)
+              (VBI-AOR ποίησον)
+              (NP-OB1-RSP (CP-FRL (WNP-1 (WPROA ὅ))
+                                  (C 0)
+                                  (IP-SUB (NP-OB1 *T*-1)
+                                          (NP-OB2 (CLPROD σοι))
+                                          (NP-SBJ *pro*)
+                                          (VBP-IMPF λέγομεν))))
+	      (. .))
+  (ID GreekNT,Acts))                                
+                            </programlisting>
+                        </para>
+                    </listitem>
+                </itemizedlist> Finally, there are cases where there is a category mismatch between
+                the two elements that make up a correlative; these cases are analyzed as containing
+                left dislocation and resumption in order to handle the category mismatch.
+                <programlisting>
+( (IP-IMP-SPE (CODE {VS:7_12})
+              (NP-OB1-LFD (QA Πάντα)
+                          (CLPRT οὖν)
+                          (CP-REL (WNP-1 (WADJA ὅσα))
+                                  (C+PRTG ἐὰν)
+                                  (IP-SUB (NP-SBJ *pro*)
+                                          (VBS-IMPF θέλητε)
+                                          (CP-COM (C ἵνα)
+                                                  (IP-SUB (NP-OB1 *T*-1)
+                                                          (VBS-IMPF ποιῶσιν)
+                                                          (NP-OB2 (PROD ὑμῖν))
+                                                          (NP-SBJ (DS οἱ) (NS ἄνθρωποι)))))))
+              (, ,)
+              (ADVP-RSP (ADV οὕτως))
+              (NP-SBJ (ADV καὶ) (PRO ὑμεῖς))
+              (VBI-IMPF ποιεῖτε)
+              (NP-OB2 (PROD αὐτοῖς))
+              (. .))
+  (ID GreekNT,Matthew))                    
+                </programlisting>
+            </para>
         </sect2>
         <sect2 xml:id="PRN">
             <title>Appositive or Parenthetical</title>
-            <para/>
+            <para> See also ‘appositives and parentheticals’ in <xref linkend="N_mod"/>. </para>
+            <para> The extended label -PRN can be attached to any constituent label and indicates
+                either an appositive or a parenthetical. If the appositive/parenthetical constituent
+                immediately follows its co-constituent, it is included in the co-constituent’s
+                brackets. If separated from its co-constituent, it is coindexed with a trace within
+                the co-constituent. The two most common types are separated NP appositives (often
+                probably right-dislocation structures) and clauses (usually that clauses) appositive
+                to demonstratives (usually this or that). The latter is rare or does not occur in
+                Greek. <itemizedlist>
+                    <listitem>
+                        <para> included in the co-constituent’s brackets:
+                            <programlisting>
+(NP (NA Ἀνδρέαν)
+    (NP-PRN (DA τὸν)
+            (NA ἀδελφὸν)
+            (NP-ATR (N$ Σίμωνος))))                                
+                            </programlisting>
+                            (Mark 1.16) </para>
+                    </listitem>
+                    <listitem>
+                        <para> co-indexed:
+                            <programlisting>
+(IP-MAT-SPE (NP-SBJ (N φωνὴ)
+                    (NP-PRN *ICH*-1))
+            (PP (P ἐν)
+	        (NP (ND Ῥαμὰ)))
+            (VBDP-AOR-PASS ἠκούσθη)
+            (, ,)
+            (NP-1 (NP (N κλαυθμὸς))
+                  (CONJP (CONJ καὶ)
+                         (NP (N ὀδυρμὸς) (ADJ πολύς)))))                                
+                            </programlisting>
+                            (Matthew 2.17) </para>
+                    </listitem>
+                    <listitem>
+                        <para>
+                            <emphasis>Exception:</emphasis> no coindexation because speakers of
+                            imperatives are not normally indicated:
+                            <programlisting>
+(IP-IMP-SPE (NP-PRN (N φωνὴ)
+                    (NP-ATR (RRC (VPR-IMPF βοῶντος)
+                                 (PP (P ἐν)
+                                     (NP (DD τῇ) (ADJD ἐρήμῳ))))))
+            (VBI-AOR Ἑτοιμάσατε)
+            (NP-OB1 (DA τὴν)
+                    (NA ὁδὸν)
+                    (NP-ATR (N$ Κυρίου))))                                
+                            </programlisting>
+                            (Matthew 3.3) </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para> Besides gapping and right-node raising, which are discussed separately, there are
+                several types of parenthetical IPs: <itemizedlist>
+                    <listitem>
+                        <para> Asides surrounded on both sides by parts of another clause are
+                            labeled IP-MAT-PRN.
+                            <programlisting>
+( (IP-MAT-SPE (CODE {VS:10_42})
+              (CONJ καὶ)
+              (NP-SBJ (CP-FRL (WNP-1 (WPRO ὃς))
+                              (C 0)
+                              (IP-SUB (NP-SBJ *T*-1)
+                                      (PRTG ἂν)
+                                      (VBS-AOR ποτίσῃ)
+                                      (NP-OB2 (NUM ἕνα)
+                                              (NP-PAR (DS$ τῶν) (ADJ$ μικρῶν) (DS$ τούτων)))
+                                      (NP-OB1 (NA ποτήριον)
+                                              (NP-ATR (ADJ$ ψυχροῦ)))
+                                      (ADVP (ADV μόνον))
+                                      (PP (P εἰς)
+                                          (NP (NA ὄνομα)
+                                              (NP-ATR (N$ μαθητοῦ)))))))
+              (, ,)
+              (IP-MAT-PRN (INTJ ἀμὴν)
+                          (NP-SBJ *pro*)
+                          (VBP-IMPF λέγω)
+                          (NP-OB2 (PROD ὑμῖν)))
+              (, ,)
+              (NEG οὐ)
+              (NEG μὴ)
+              (VBS-AOR ἀπολέσῃ)
+              (NP-OB1 (DA τὸν)
+                      (NA μισθὸν)
+                      (NP-ATR (PRO$ αὐτοῦ)))
+              (. .))
+  (ID GreekNT,Matthew))    
+</programlisting>
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para> Bare reason adjuncts are labeled IP-MAT-PRN. These may not exist in
+                            Greek.
+                            <programlisting>
+ ( (IP-MAT (NP-SBJ (D The) (N river))
+          (VBD froze)
+          (IP-MAT-PRN (NP-SBJ (PRO it))
+                      (BED was)
+                      (ADJP (ADVR so) (ADJ cold))))
+          (. .))                               
+                            </programlisting>
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>
+                            <emphasis>said</emphasis> X:
+                            <programlisting>
+( (IP-MAT-SPE (CODE {VS:6_18})
+              (CONJ καὶ)
+              (NP-SBJ (PRO ὑμεῖς))
+              (VBPP-FUT ἔσεσθέ)
+              (NP-OB2 (CLPROD μοι))
+              (PP (P εἰς)
+                  (NP (NSA υἱοὺς) (CONJ καὶ) (NSA θυγατέρας)))
+              (, ,)
+              (IP-MAT-PRN (VBP-IMPF λέγει)
+                          (NP-SBJ (N Κύριος)
+                                  (NP-PRN (N Παντοκράτωρ))))
+              (. .))
+  (ID GreekNT,2Corinthians))                                
+                            </programlisting>
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para> Glosses or expansions on words or phrases introduced by
+                                <emphasis>that is</emphasis>, <emphasis>that is to
+                                say/understand</emphasis>, <emphasis>to wit</emphasis>, and the like
+                            are labeled as parenthetical clauses (IP-MAT-PRN or, in the case of
+                                <emphasis>to wit</emphasis>, IP-INF-PRN). The gloss itself is
+                            treated as a complement of the lowest verb. The category of the gloss is
+                            usually NP or PP, but may (at least in the English corpora) be VP (see
+                            “VP in Parentheticals” in the <link
+                                xlink:href="http://www.ling.upenn.edu/~beatrice/annotation/">online
+                                annotation manual for the English corpora</link>) or IP-MAT.
+                            <programlisting>
+(IP-SUB (PP (P διὰ)
+            (NP (D$ τοῦ) (N$ θανάτου)))
+        (NP-SBJ *pro*)
+        (VBS-AOR καταργήσῃ)
+        (NP-OB1 (DA τὸν)
+                (RRC (NX-1 (DA τὸ)
+                           (NA κράτος))
+                     (VPRA-IMPF ἔχοντα)
+                     (NP-OB1 (NX *ICH*-1)
+                             (NP-ATR (D$ τοῦ) (N$ θανάτου)))
+        (, ,)
+        (IP-MAT-PRN (NP-SBJ (D τοῦτ'))
+                    (BEP-IMPF ἔστι))
+                    (NP-OB1 (DA τὸν) (ADJA διάβολον))))                                
+                            </programlisting>
+                            (Hebrews 2.14) </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </sect2>
         <sect2 xml:id="RSP">
             <title>Resumptive</title>
-            <para/>
+            <para> Resumptive elements form a pair with <link linkend="LFD">left-dislocated
+                    constituents</link>. See also <xref linkend="resumptive"/>. </para>
         </sect2>
         <sect2 xml:id="SPE">
             <title>Direct Speech</title>
-            <para/>
+            <para> Full sentences of direct speech (matrix clauses, imperatives and direct
+                questions) are given the extended label -SPE. The first main clause following a verb
+                of saying is included in its matrix clause. Any following main clauses are separated
+                (and also labeled -SPE). See also <xref linkend="direct_speech_conj"/>, <xref
+                    linkend="QTP"/>. The -SPE follows all other CP and finite IP tags—that is, it
+                “trickles down”—except for grammatical function tags like -SBJ or -OB1, which it
+                precedes. This is to facilitate searches for clausal subjects and objects along with
+                ordinary subjects. Any sentence containing a parenthetical <emphasis>he
+                    said</emphasis>, etc. is labeled -SPE at the highest level. <itemizedlist>
+                    <listitem>
+                        <para> -SPE “trickles down”:
+                            <programlisting>
+( (IP-MAT (CODE {VS:8_25})
+          (NP-SBJ *pro*)
+          (VBD εἶπεν)
+          (CLPRT δὲ)
+          (NP-OB2 (PROD αὐτοῖς))
+          (CP-QUE-SPE (WADVP-1 (WADV Ποῦ))
+                      (C 0)
+                      (IP-SUB-SPE (ADVP-LOC *T*-1)
+                                  (BEP-IMPF *)
+                                  (NP-SBJ (D ἡ)
+                                          (N πίστις)
+                                          (NP-ATR (PRO$ ὑμῶν)))))
+          (. ;))
+  (ID GreekNT,Luke))                                
+                            </programlisting>
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para> -SPE comes <emphasis>before</emphasis> function tags such as -SBJ:
+                            <programlisting>
+( (IP-MAT (CODE {VS:8_20})
+          (VBDP-AOR ἀπηγγέλη)
+          (CLPRT δὲ)
+          (NP-OB2 (PROD αὐτῷ))
+          (IP-MAT-SPE-SBJ (NP-SBJ (NP (D Ἡ)
+                                      (N μήτηρ)
+                                      (NP-ATR (CLPRO$ σου)))
+                                  (CONJP (CONJ καὶ)
+                                         (NP (DS οἱ)
+                                             (NS ἀδελφοί)
+                                             (NP-ATR (CLPRO$ σου)))))
+                          (VBP-PRF ἑστήκασιν)
+                          (ADVP-LOC (ADV ἔξω))
+                          (IP-PPL (VBN-AOR-1 ἰδεῖν)
+                                  (VPR-IMPF θέλοντές)
+                                  (IP-INF-COM (VBN-AOR *ICH*-1)
+                                              (NP-OB1 (CLPROA σε)))))
+          (. .))
+  (ID GreekNT,Luke))                                
+                            </programlisting>
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para> sentences containing parenthetical <emphasis>he said</emphasis> are
+                            labeled -SPE at the highest level:
+                            <programlisting>
+( (IP-MAT-SPE (CODE {VS:6_18})
+              (CONJ καὶ)
+              (NP-SBJ (PRO ὑμεῖς))
+              (VBPP-FUT ἔσεσθέ)
+              (NP-OB2 (CLPROD μοι))
+              (PP (P εἰς)
+                  (NP (NSA υἱοὺς) (CONJ καὶ) (NSA θυγατέρας)))
+              (, ,)
+              (IP-MAT-PRN (VBP-IMPF λέγει)
+                          (NP-SBJ (N Κύριος)
+                                  (NP-PRN (N Παντοκράτωρ))))
+              (. .))
+  (ID GreekNT,2Corinthians))                                
+                            </programlisting>
+                        </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </sect2>
     </sect1>
+    <!-- work here -->
     <sect1 xml:id="unknown">
         <title>Unknown</title>
         <para/>
