@@ -189,7 +189,7 @@
 (ADVP (ADVR οὕτως)
       (CP-DEG (C ὥστε)
               (IP-INF (VBN-AOR πιστεῦσαι)
-                      (NP-SBJ (NP-PAR (ADJ$ Ἰουδαίων) (CLTE τε) (CONJ καὶ) (NS$ Ἑλλήνων))
+                      (NP-SBJ (NP-PAR (ADJ$ Ἰουδαίων) (CLTE τε) (CONJ καὶ) (NPRS$ Ἑλλήνων))
                               (ADJA πολὺ)
                               (NA πλῆθος)))))                                
                             </programlisting>
@@ -235,8 +235,8 @@
         (NP-SBJ (N ΑΡΧΗ)
                 (NP-ATR (D$ τοῦ)
                         (N$ εὐαγγελίου)
-                        (NP-COM (N$ Ἰησοῦ)
-                                (NP-PRN (N$ Χριστοῦ)))))
+                        (NP-COM (NPR$ Ἰησοῦ)
+                                (NP-PRN (NPR$ Χριστοῦ)))))
         (. .))
   (ID GreekNT,Mark))                
             </programlisting>
@@ -250,7 +250,7 @@
                                 (VBPP-FUT-PASS δοθήσεται)
                                 (NP-OB2 (PROD αὐτῷ))
                                 (PP (P ὑπὸ)
-                                    (NP-AGT (D$ τοῦ) (N$ Παύλου))))))
+                                    (NP-AGT (D$ τοῦ) (NPR$ Παύλου))))))
         (. .))
   (ID GreekNT,Acts))                
             </programlisting>
@@ -270,8 +270,8 @@
                           (NP-SBJ *pro*)
                           (VBP-IMPF ἔχω)
                           (PP (P ἐν)
-                              (NP (ND Χριστῷ)
-                                  (NP-PRN (NP (ND Ἰησοῦ))
+                              (NP (NPRD Χριστῷ)
+                                  (NP-PRN (NP (NPRD Ἰησοῦ))
                                           (CONJP (NP (DD τῷ)
                                                      (ND κυρίῳ)
                                                      (NP-ATR (PRO$ ἡμῶν)))))))))
@@ -446,7 +446,7 @@
                     <para xml:id="ADJS"> At the phrasal level, superlative adjectives are generally
                         embedded within or projecting an NP.
                         <programlisting>
-(NP-VOC (ADJS κράτιστε) (N Φῆλιξ))                            
+(NP-VOC (ADJS κράτιστε) (NPR Φῆλιξ))                            
                         </programlisting>
                         (Acts 24.2) </para>
                 </listitem>
@@ -471,9 +471,9 @@
               (CONJ0 Καὶ)
               (NP-SBJ (PRO σύ)
                       (, ,)
-                      (NP-PRN (NP (N Βηθλεὲμ))
+                      (NP-PRN (NP (NPR Βηθλεὲμ))
                               (CONJP (NP (N γῆ)
-                                         (NP-ATR (N$ Ἰούδα)))))
+                                         (NP-ATR (NPR$ Ἰούδα)))))
                       (, ,))
               (ADVP (NEG+ADV οὐδαμῶς))
               (ADJP-PRD (ADJS ἐλαχίστη))
@@ -481,7 +481,7 @@
               (PP (P ἐν)
                   (NP (DSD τοῖς)
                       (NSD ἡγεμόσιν)
-                      (NP-ATR (N$ Ἰούδα))))
+                      (NP-ATR (NPR$ Ἰούδα))))
               (. .))
   (ID GreekNT,Matthew))                            
                         </programlisting>
@@ -504,7 +504,7 @@
                         <programlisting>
 (NP (DA τὴν)
     (NA μετοικεσίαν)
-    (NP-COM (N$ Βαβυλῶνος)))                            
+    (NP-COM (NPR$ Βαβυλῶνος)))                            
                         </programlisting>
                     </para>
                 </listitem>
@@ -601,9 +601,9 @@
         (DS αἱ)
         (NS γενεαὶ)
         (PP (P ἀπὸ)
-            (NP (N$ Ἀβραὰμ)))
+            (NP (NPR$ Ἀβραὰμ)))
         (PP (P ἕως)
-            (NP (N$ Δαυεὶδ))))                                
+            (NP (NPR$ Δαυεὶδ))))                                
                             </programlisting>
                             (Matthew 1.17)
                             <programlisting>
@@ -657,10 +657,10 @@
                     <listitem>
                         <para> appositives and parentheticals:
                             <programlisting>
-(NP (NA Ἀνδρέαν)
+(NP (NPRA Ἀνδρέαν)
     (NP-PRN (DA τὸν)
             (NA ἀδελφὸν)
-            (NP-ATR (N$ Σίμωνος))))                                
+            (NP-ATR (NPR$ Σίμωνος))))                                
                             </programlisting>
                             (Mark 1.16) </para>
                     </listitem>
@@ -695,7 +695,7 @@
                 <listitem>
                     <para> As usual, single-word modifiers are not enclosed in phrasal brackets, but
                         multi-word modifiers are. When directly modifying a number and meaning
-                        'about, approximately', <link linkend="ὡς">ὡς</link> is tagged ADV.
+                        ‘about, approximately’, <link linkend="ὡς">ὡς</link> is tagged ADV.
                         <programlisting>
 (NUMP (ADV ὡς) (NUM ἑβδομήκοντα) (NUM ἕξ))                            
                         </programlisting>
@@ -757,7 +757,7 @@
                     <para>
                         <emphasis>Pre-head NP complements of P.</emphasis> Some PPs or words that
                         are treated as PPs when they take a dependent NP (such as
-                        \hyperref[χάριν]{χάριν}) take a pre-head complement. This is rare in the GNT
+                        <link linkend="χάριν">χάριν</link>) take a pre-head complement. This is rare in the GNT
                         even with items that regularly or exclusively took pre-head complements in
                         Classical Greek.
                         <programlisting>
@@ -875,7 +875,7 @@
 (NP-OB1 (QA πολλοὺς)
         (NP-PAR (DS$ τῶν)
                 (NS$ υἱῶν)
-                (NP-ATR (N$ Ἰσραὴλ))))                    
+                (NP-ATR (NPR$ Ἰσραὴλ))))                    
                 </programlisting>
                 (Luke 1.16) </para>
         </sect2>
@@ -927,7 +927,7 @@
               (NP-SBJ *pro*)
               (BEP-FUT ἔσται)
               (NP-OB2 (ND γῇ)
-                      (NP-ATR (NS$ Σοδόμων) (CONJ καὶ) (NS$ Γομόρρων)))
+                      (NP-ATR (NPRS$ Σοδόμων) (CONJ καὶ) (NPRS$ Γομόρρων)))
               (PP (P ἐν)
                   (NP (ND ἡμέρᾳ)
                       (NP-ATR (N$ κρίσεως))))
@@ -939,7 +939,7 @@
                             (Matthew 10.15) </para>
                     </listitem>
                     <listitem>
-                        <para> adjective modified by <emphasis>how</emphasis>: <!-- There may not be a parallel in Greek, but it's in the manual for now. -->
+                        <para> adjective modified by <emphasis>how</emphasis>: <!-- There may not be a parallel in Greek, but it’s in the manual for now. -->
                             <programlisting>
 (NODE (CP-QUE (WADJP-3 (WADV hou) (ADJ seruisable))     ← ADJ modified by HOW
               (C 0)
@@ -999,7 +999,7 @@
 ( (IP-MAT (CODE {VS:1_24})
           (VPRP-AOR-1 Ἐγερθεὶς)
           (CLPRT δὲ)
-          (NP-SBJ (D ὁ) (N Ἰωσὴφ))
+          (NP-SBJ (D ὁ) (NPR Ἰωσὴφ))
           (IP-PPL (VPRP-AOR *ICH*-1)
                   (PP-1 (P ἀπὸ)
                         (NP (D$ τοῦ) (N$ ὕπνου)))

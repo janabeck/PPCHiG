@@ -16,9 +16,9 @@ import codecs
 def main():
     """Create an XML database containing a word from the GNT, its PROIEL ID # and other PROIEL info."""
 
-    aligned = codecs.open("aligned-matthew.wds", "rU", "utf-8")
+    aligned = codecs.open("aligned-gospels.wds", "rU", "utf-8")
 
-    xml = codecs.open("proiel-matthew.xml", "rU", "utf-8")
+    xml = codecs.open("proiel-GNT.xml", "rU", "utf-8")
 
     print "Parsing the PROIEL XML with BeautifulStoneSoup..."
     print
@@ -33,11 +33,11 @@ def main():
     for token in tokens:
         tok_dict[token['id']] = token
 
-    output = open("gnt-database.xml", "w")
+    output = open("gospels-database.xml", "w")
 
     print >> output, "<div>"
 
-    print >> output, "<title>Matthew</title>"
+    print >> output, "<title>Gospels</title>"
 
     count = 100001
 

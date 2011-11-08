@@ -3,20 +3,83 @@
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="disfluencies">
     <title>Disfluencies</title>
+    <para> The following labels and dash tags are used to annotate disfluencies.
+        <!-- Disfluences are not yet indicated in the PPCNTG. -->
+    </para>
     <sect1 xml:id="break">
         <title>Break</title>
-        <para></para>
+        <para> BREAK dominates 0 and indicates that a phrase or sentence breaks off or is otherwise
+            left unfinished.
+            <programlisting>
+( (IP-MAT (NP-SBJ (PRO They))
+          (MD $could)
+          (NEG $n't)
+          (VB believe)
+          (CP-THAT (C 0)
+                   (IP-SUB (NP-SBJ (PRO we))
+                           (VBD saw)
+                           (NP-OB1 (D a) (BREAK 0))))
+           (. ...)))                
+            </programlisting>
+        </para>
     </sect1>
     <sect1 xml:id="false_start">
         <title>False Start</title>
-        <para></para>
+        <para> FS indicates a false start. Within a false start, internal structure is indicated as
+            far as is feasible, but breaks are not specially indicated.
+            <programlisting>
+( (IP-MAT (FS (IP-MAT (NP-SBJ (PRO I))
+                      (DOD $did)
+                      (NEG $n't)
+                      (VB know)))
+          (, -)
+          (FS (IP-MAT (NP-SBJ (CP-FRL (WNP-1 (WPRO what))
+                                      (C 0)
+                                      (IP-SUB (NP-SBJ (PRO I))
+                                              (VBP mean)
+                                              (IP-INF (NP-ACC *T*-1)
+                                                      (TO to)
+                                                      (VB say)))))
+                      (BEP is)))
+          (NP-SBJ (PRO I))
+          (BEP am)
+          (ADJP (ADV very) (ADJ sorry)
+                (IP-INF (TO to)
+                        (VB hear)
+                        (PP (P of)
+                            (NP (PRO$ your) (N loss)))))
+          (. .)))                
+            </programlisting>
+        </para>
     </sect1>
     <sect1 xml:id="repetition">
         <title>Repetition</title>
-        <para></para>
+        <para> REP is a full-fledged tag indicating the exact repetition of a constituent for
+            rhetorical or other reasons.
+            <programlisting>
+( (IP-MAT (NP-SBJ (PRO It))
+          (BEP is)
+          (NP-OB1 (D a) (N trifle)
+                  (REP (NP (D a) (N trifle))))
+          (. .)))                
+            </programlisting>
+        </para>
     </sect1>
     <sect1 xml:id="tag">
         <title>Tag</title>
-        <para></para>
+        <para> The dash tag -TAG on a question indicates that it is a tag question.
+            <programlisting>
+( (IP-MAT (NP-SBJ-1 (EX There))
+          (HVP have)
+          (BEN been)
+          (NP=1 (NS riots))
+          (PP (P in)
+              (NP (NPR Calabria))
+          (CP-QUE-TAG (IP-SUB (HVP $have)
+                              (NEG $n't)
+                              (NP-SBJ (EX there))))
+          (? .)))                
+            </programlisting>
+        </para>
     </sect1>
-    </chapter>
+</chapter>

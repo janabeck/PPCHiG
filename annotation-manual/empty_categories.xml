@@ -37,7 +37,7 @@
             <para> Subjects elided under conjunction contain *con*. Subjects are obligatory in most
                 types of clauses in our system, and so elided subjects are indicated both in main
                 clause tokens and in conjoined subordinate clauses. The empty subject of a matrix
-                clause must be coreferential with the subject of the previous token in order to be
+                clause must be co-referential with the subject of the previous token in order to be
                 treated as *con* (the clause must contain an overt CONJ and not merely a conjunctive
                 sentential particle such as δέ); otherwise, it is treated as *pro*. In principle,
                 elided objects could be treated analogously, but they aren’t, since too many cases
@@ -72,9 +72,9 @@
                            (IP-SUB (NP-SBJ *con*)           ← subject elided in conjoined clause
                                    (VBPP-FUT ἀνακλιθήσονται)
                                    (PP (P μετὰ)
-                                       (NP (N$ Ἀβραὰμ) (CONJ καὶ) 
-                                           (N$ Ἰσαὰκ) (CONJ καὶ) 
-                                           (N$ Ἰακὼβ)))
+                                       (NP (NPR$ Ἀβραὰμ) (CONJ καὶ) 
+                                           (NPR$ Ἰσαὰκ) (CONJ καὶ) 
+                                           (NPR$ Ἰακὼβ)))
                                    (PP (P ἐν)
                                        (NP (DD τῇ)
                                            (ND βασιλείᾳ)
@@ -107,7 +107,7 @@
         </sect2>
         <sect2 xml:id="pro">
             <title><emphasis>pro</emphasis>-Drop Subjects</title>
-            <para> An empty subject that is not coreferential with the subject of the previous
+            <para> An empty subject that is not co-referential with the subject of the previous
                 clause (unless the clauses are connected by a conjunctive sentential particle and
                 not a true conjunction) contains *pro*. This represents pro-drop, which is
                 (unsurprisingly, given that Greek is a language with very rich verbal morphology)
@@ -186,7 +186,7 @@
                         (NP-SBJ (D ὁ)
                                 (RRC (VPRP-AOR-PASS τεχθεὶς)
                                      (NP-SPR (N βασιλεὺς)
-                                             (NP-COM (DS$ τῶν) (NS$ Ἰουδαίων)))))))                    
+                                             (NP-COM (DS$ τῶν) (ADJ$ Ἰουδαίων)))))))                    
                 </programlisting>
                 (Matthew 2.2) </para>
             <para> In pied-piping contexts, embedded wh- constituents recursively project a wh-
@@ -200,11 +200,11 @@
         (C 0)
         (IP-SUB (PP *T*-1)
                 (VBDP-AOR-PASS ἐγεννήθη)
-                (NP-SBJ (N Ἰησοῦς)
+                (NP-SBJ (NPR Ἰησοῦς)
                         (NP-PRN (D ὁ)
                                 (RRC (VPRP-IMPF-PASS λεγόμενος)
                                      (IP-SMC (NP-SBJ *)
-                                             (NP-PRD (N Χριστός))))))))                    
+                                             (NP-PRD (NPR Χριστός))))))))                    
                 </programlisting>
                 (Matthew 1.16) </para>
             <para> Pied-piping is assumed only if no other analysis is possible. In particular, if a
@@ -343,7 +343,7 @@
           (VBD-AOR εἶπάν)
           (CLTE τε)
           (PP (P πρὸς)
-              (NP (NP (DA τὸν) (NA Πέτρον))
+              (NP (NP (DA τὸν) (NPRA Πέτρον))
                   (CONJP (CONJ καὶ)
                          (NP (DSA τοὺς) (ADJA λοιποὺς) (NSA ἀποστόλους)))))
           (CP-QUE-SPE (WNP-1 (WPROA Τί))
@@ -359,7 +359,7 @@
   (ID GreekNT,Acts))
 
 ( (IP-MAT (CODE {VS:2_38a})
-          (NP-SBJ (N Πέτρος))
+          (NP-SBJ (NPR Πέτρος))
           (CLPRT δὲ)
           (VBD-AOR *)                                       ← εἶπεν elided
           (PP (P πρὸς)

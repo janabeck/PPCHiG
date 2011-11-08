@@ -186,9 +186,9 @@
                         <para> overt subject in a declarative:
                             <programlisting>
 ( (IP-MAT (CODE {VS:1_2})
-          (NP-SBJ (N Ἀβραὰμ))
+          (NP-SBJ (NPR Ἀβραὰμ))
           (VBD-AOR ἐγέννησεν)
-          (NP-OB1 (DA τὸν) (NA Ἰσαάκ))
+          (NP-OB1 (DA τὸν) (NPRA Ἰσαάκ))
           (, ,))
   (ID GreekNT,Matthew))                                
                             </programlisting>
@@ -211,7 +211,7 @@
                             <programlisting>
 (IP-IMP-SPE (VBI-IMPF φεῦγε)
             (PP (P εἰς)
-                (NP (NA Αἴγυπτον))))                                
+                (NP (NPRA Αἴγυπτον))))                                
                             </programlisting>
                             (Matthew 2.13) </para>
                     </listitem>
@@ -342,13 +342,13 @@
                                 <para>bear witness</para>
                             </listitem>
                             <listitem>
-                                <para>bow (one's) heart</para>
+                                <para>bow (one’s) heart</para>
                             </listitem>
                             <listitem>
                                 <para>do (no) force/pain</para>
                             </listitem>
                             <listitem>
-                                <para>give example/(one's) heart/heed/(one's)
+                                <para>give example/(one’s) heart/heed/(one’s)
                                     intent/leave/notice/occasion/order</para>
                             </listitem>
                             <listitem>
@@ -357,10 +357,10 @@
                                     witness</para>
                             </listitem>
                             <listitem>
-                                <para>kindle (one's) heart</para>
+                                <para>kindle (one’s) heart</para>
                             </listitem>
                             <listitem>
-                                <para>lay (one's) force</para>
+                                <para>lay (one’s) force</para>
                             </listitem>
                             <listitem>
                                 <para>make countenance/effort/fiaunce/(no) mention/note/(no)
@@ -373,13 +373,15 @@
                                 <para>send word</para>
                             </listitem>
                             <listitem>
-                                <para>stir (one's) heart</para>
+                                <para>stir (one’s) heart</para>
                             </listitem>
                             <listitem>
-                                <para>take care/counsel/(one's)
+                                <para>take care/counsel/(one’s)
                                     heart/heed/keep/note/notice/occasion/order/pains</para>
                             </listitem>
-                            <listitem><para>turn (one's) heart</para></listitem>
+                            <listitem>
+                                <para>turn (one’s) heart</para>
+                            </listitem>
                         </itemizedlist> The noun member of a complex predicate is labeled NP-OB1.
                         The accompanying clause is treated as a clause-level constituent, rather
                         than as a complement of the noun.
@@ -427,8 +429,8 @@
                 <sect4 xml:id="NP-OB2_copular">
                     <title>NP-OB2 in copular constructions.</title>
                     <para> When the second NP in a <link linkend="copular_verbs">copular</link>
-                        construction is neither coreferential with nor predicated of the subject, it
-                        is labeled NP-OB2.
+                        construction is neither co-referential with nor predicated of the subject,
+                        it is labeled NP-OB2.
                         <programlisting>
 ( (IP-MAT-SPE (CODE {VS:16_22})
               (NEG οὐ)
@@ -472,7 +474,7 @@
                     <title>NP-OB2 + clause with ditransitives.</title>
                     <para> When a ditransitive verb takes an animate NP and a clause, rather than
                         two NPs, the label of the animate NP remains the same as in the case with
-                        two NPs, preserving the parellelism between the two cases. In Greek, this
+                        two NPs, preserving the parallelism between the two cases. In Greek, this
                         only seems to occur with an NP-OB2 + infinitival clause.
                         <programlisting>
 (IP-SUB (NP-SBJ *T*-1)
@@ -550,9 +552,10 @@
   (ID GreekNT,Matthew))                        
                     </programlisting>
                 </para>
-                <para> When a verb that normally takes an object with quirky case—e.g., ἀκούω, which
-                    normally takes the genitive—takes an accusative object instead, this object
-                    should be labeled NP-OB1 as is usual for accusative direct objects.
+                <para> When a verb that normally takes an object with quirky case—e.g., <link
+                        linkend="ἀκούω">ἀκούω</link>, which normally takes the genitive—takes an
+                    accusative object instead, this object should be labeled NP-OB1 as is usual for
+                    accusative direct objects.
                     <programlisting>
 ( (IP-MAT-SPE (CODE {VS:26_65})
               (INTJ ἴδε)
@@ -777,20 +780,20 @@
                     <listitem>
                         <para> non-possessive NP-ATR:
                             <programlisting>
-(IP-PPL (VPA-AOR ἄρξαντες-ἄρχω)
-        (CLPRT μὲν-μέν)
-        (PP (P ἐπὶ-ἐπί)
-            (NP (NP (NUMP (NUM δύο-δύο)
-                          (CLTE τε-τε)
-                          (CONJ καὶ-καί)
-                          (NUM εἴκοσι-εἴκοσι))
-                    (NSA γενεὰς-γενεά)
-                    (NP-ATR (NS$ ἀνδρῶν-ἀνήρ)))
-                (CONJP (NP (NSA ἔτεα-ἔτος)
-                           (NUMP (NUM πέντε-πέντε)
-                                 (CLTE τε-τε)
-                                 (CONJ καὶ-καί)
-                                 (ADJA πεντακόσια-πεντακόσιοι)))))))                                
+(IP-PPL (VPA-AOR ἄρξαντες)
+        (CLPRT μὲν)
+        (PP (P ἐπὶ)
+            (NP (NP (NUMP (NUM δύο)
+                          (CLTE τε)
+                          (CONJ καὶ)
+                          (NUM εἴκοσι))
+                    (NSA γενεὰς)
+                    (NP-ATR (NS$ ἀνδρῶν)))
+                (CONJP (NP (NSA ἔτεα)
+                           (NUMP (NUM πέντε)
+                                 (CLTE τε)
+                                 (CONJ καὶ)
+                                 (ADJA πεντακόσια)))))))                                
                             </programlisting>
                             (Hdt. 1.7.4) </para>
                     </listitem>
@@ -802,7 +805,7 @@
                   (CLPRT δὴ)
                   (CLPRT ὦν)
                   (D ὁ)
-                  (N Κανδαύλης))
+                  (NPR Κανδαύλης))
           (VBDP-AOR ἠράσθη)
           (NP-OBQ (D$ τῆς)
                   (NP-ATR (PRO$+SLF ἑωυτοῦ))
@@ -828,7 +831,7 @@
 (PP (P πρὸ)
     (CLPRT δὲ)
     (NP (D$ τῆς)
-        (NP-ATR (N$ Κροίσου))
+        (NP-ATR (NPR$ Κροίσου))
         (N$ ἀρχῆς)))
                             </programlisting>
                             (Hdt. 1.6.3) </para>
@@ -844,7 +847,7 @@
                     <listitem>
                         <para> NP complement of a noun (objective genitive):
                             <programlisting>
-(NP-OB1 (NP-COM (N$ Μηδείης))
+(NP-OB1 (NP-COM (NPR$ Μηδείης))
         (DA τὴν)
         (NA ἁρπαγήν))                               
                             </programlisting>
@@ -857,7 +860,7 @@
               (PP (P μετὰ)
                   (CLPRT δὲ)
                   (NP (DSA ταῦτα)))
-              (NP-SBJ (NSA Ἕλληνας))
+              (NP-SBJ (NPRSA Ἕλληνας))
               (ADJP-PRD (ADJA αἰτίους)
                         (NP-COM (D$ τῆς)
                                 (ADJ$ δευτέρης)
@@ -885,7 +888,7 @@
                         701.</para>
                 </footnote>.
                 <programlisting>
-(NP-SBJ (N Ἰωάνης))
+(NP-SBJ (NPR Ἰωάνης))
 (CLPRT μὲν)
 (VBD-AOR ἐβάπτισεν)
 (NP-INS (ND ὕδατι))                    
@@ -1046,18 +1049,22 @@
             <para> Bare NPs in the genitive that express partitivity—i.e., partitive genitives—are
                 labeled NP-PAR.
                 <programlisting>
-( (IP-MAT (CODE {VS:1_6_3})
-          (PP (P πρὸ-πρό)
-          (CLPRT δὲ-δέ)
-          (NP (D$ τῆς-ὁ)
-              (NP-ATR (N$ Κροίσου-Κροῖσος))
-              (N$ ἀρχῆς-ἀρχή)))
-          (NP-SBJ (Q πάντες-πᾶς)
-                  (NP-PAR (NS Ἕλληνες-Ἕλλην)))
-          (BED ἦσαν-εἰμί)
-          (ADJP-PRD (ADJ ἐλεύθεροι-ἐλεύθερος))
-          (. ·))
-  (ID Herodotus,Histories))                    
+( (IP-MAT (CODE {VS:1_1_1})
+          (NP-SBJ (NP-PAR (NPRS$ Περσέων))
+                  (CLPRT μέν)
+                  (CLPRT νυν)
+                  (DS οἱ)
+                  (ADJ λόγιοι))
+          (NP-1 (NPRSA Φοίνικας))
+          (ADJA-2 αἰτίους)
+          (VBP-IMPF φασὶ)
+          (IP-INF-THT (NP-SBJ *ICH*-1)
+                      (VBNP-AOR γενέσθαι)
+                      (ADJP-PRD (ADJA *ICH*-2)
+                                (NP-COM (D$ τῆς)
+                                        (N$ διαφορῆς))))
+          (. .))
+  (ID Herodotus,Histories))                 
                 </programlisting>
             </para>
         </sect2>
@@ -1089,7 +1096,7 @@
                               (NA-5 νεωκόρον)
                               (BPR-IMPF οὖσαν)
                               (NP-PRD (NA *ICH*-5)
-                                      (NP-COM (NP (D$ τῆς) (ADJ$ μεγάλης) (N$ Ἀρτέμιδος))
+                                      (NP-COM (NP (D$ τῆς) (ADJ$ μεγάλης) (NPR$ Ἀρτέμιδος))
                                               (CONJP (CONJ καὶ)
                                                      (NP (D$ τοῦ) (ADJ$ διοπετοῦς)))))))                                
                             </programlisting>
@@ -1134,7 +1141,12 @@
             <para> The Greek semantic equivalents of the following verbs are treated as taking
                 secondary predicates; the list is intended to be illustrative rather than exhaustive
                 and should be compared with the list of verbs that we treat as taking small clause
-                complements. The general rule of thumb is that if the meaning of the verb does not
+                complements. <blockquote>
+                    <para> ADMIT, AGREE, ANOINT, APPOINT, BIND, BRING, CHOOSE, CHRISTEN, CLAIM,
+                        CONFIRM, CONSECRATE, CROWN, DEFEND, DEFINE, DEVOTE, ELECT, INTERPRET, KEEP,
+                        LEAVE, LOVE, NAME, NOMINATE, OFFER, ORDAIN, PRESERVE, SET, SUBSCRIBE,
+                        SUFFER, SURNAME, TAKE, TESTIFY, TRANSLATE, TRY, VOW, WITNESS </para>
+                </blockquote> The general rule of thumb is that if the meaning of the verb does not
                 change depending on whether a predicate-like item is in the sentence, the verb takes
                 a secondary predicate. For example, the following do not differ fundamentally in
                 their meaning (the second just contains more information): <orderedlist>
@@ -1153,17 +1165,12 @@
                     <listitem>
                         <para> We called him a loser. </para>
                     </listitem>
-                </orderedlist>
-                <blockquote>
-                    <para> ADMIT, AGREE, ANOINT, APPOINT, BIND, BRING, CHOOSE, CHRISTEN, CLAIM,
-                        CONFIRM, CONSECRATE, CROWN, DEFEND, DEFINE, DEVOTE, ELECT, INTERPRET, KEEP,
-                        LEAVE, LOVE, NAME, NOMINATE, OFFER, ORDAIN, PRESERVE, SET, SUBSCRIBE,
-                        SUFFER, SURNAME, TAKE, TESTIFY, TRANSLATE, TRY, VOW, WITNESS </para>
-                </blockquote> In addition, the following Greek verbs should be considered to take
+                </orderedlist>In addition, the following Greek verbs should be considered to take
                 secondary predicates. <itemizedlist>
                     <listitem>
-                        <para> τίκτω (more often passive—e.g., τεχθείς in Matthew 2:2) ‘give birth
-                            to’ </para>
+                        <para>
+                            <link linkend="τίκτω">τίκτω</link> (more often passive—e.g., τεχθείς in
+                            Matthew 2:2) ‘give birth to’ </para>
                     </listitem>
                 </itemizedlist>
             </para>
@@ -1176,9 +1183,9 @@
                   (VPRP$-AOR-PASS πληρωθείσης))
           (VBD-AOR ἔλαβεν)
           (NP-SPR (NA διάδοχον))
-          (NP-SBJ (D ὁ) (N Φῆλιξ))
-          (NP-OB1 (NA Πόρκιον)
-                  (NP-PRN (NA Φῆστον)))
+          (NP-SBJ (D ὁ) (NPR Φῆλιξ))
+          (NP-OB1 (NPRA Πόρκιον)
+                  (NP-PRN (NPRA Φῆστον)))
           (. .))
   (ID GreekNT,Acts))                            
                         </programlisting>
@@ -1188,7 +1195,7 @@
 ( (IP-IMP (CODE {VS:3_15})
           (NP-OB1 (NA κύριον))
           (CLPRT δὲ)
-          (NP-SPR (DA τὸν) (NA Χριστὸν))
+          (NP-SPR (DA τὸν) (NPRA Χριστὸν))
           (VBI-AOR ἁγιάσατε)
           (PP (P ἐν)
               (NP (DSD ταῖς)
@@ -1281,14 +1288,14 @@
                 for function.
                 <programlisting>
 ( (IP-MAT (CODE {VS:1_3})
-          (NP-SBJ (N Ἰούδας))
+          (NP-SBJ (NPR Ἰούδας))
           (CLPRT δὲ)
           (VBD-AOR ἐγέννησεν)
-          (NP-OB1 (NP (DA τὸν) (NA Φαρὲς))
+          (NP-OB1 (NP (DA τὸν) (NPRA Φαρὲς))
                   (CONJP (CONJ καὶ)
-                         (NP (DA τὸν) (NA Ζαρὰ))))
+                         (NP (DA τὸν) (NPRA Ζαρὰ))))
           (PP (P ἐκ)
-              (NP (D$ τῆς) (N$ Θάμαρ)))
+              (NP (D$ τῆς) (NPR$ Θάμαρ)))
           (, ,))
   (ID GreekNT,Matthew))                    
                 </programlisting>
@@ -1368,14 +1375,14 @@
                             <link linkend="floated_quantifiers">floated quantifier</link>.
                         <programlisting>
 ( (IP-MAT (CODE {VS:1_14_1})
-          (NP-SBJ (N Γύγης-Γύγης))
-          (CLPRT δὲ-δέ)
-          (IP-PPL (VPR-AOR τυραννεύσας-τυραννεύω))
-          (VBD-AOR ἀπέπεμψε-ἀποπέμπω)
-          (NP-OB1 (NSA-1 ἀναθήματα-ἀνάθημα))
-          (PP (P ἐς-εἰς)
-              (NP (NSA Δελφοὺς-Δελφοί)))
-          (QP=1 (NEG οὐκ-οὐ) (QA ὀλίγα-ὀλίγος))
+          (NP-SBJ (NPR Γύγης))
+          (CLPRT δὲ)
+          (IP-PPL (VPR-AOR τυραννεύσας))
+          (VBD-AOR ἀπέπεμψε)
+          (NP-OB1 (NSA-1 ἀναθήματα))
+          (PP (P ἐς)
+              (NP (NPRSA Δελφοὺς)))
+          (QP=1 (NEG οὐκ) (QA ὀλίγα))
           (, ,))
   (ID Herodotus,Histories))                          
                         </programlisting>
@@ -1386,6 +1393,7 @@
                         <programlisting>
 ( (CP-QUE (WNP-1 (WPRO what)
                  (QP *ICH*-2))
+          (C 0)
           (IP-SUB (NP-OB1 *T*-1)
                   (MD would)
                   (NP-SBJ (PRO you))
@@ -1405,7 +1413,7 @@
             <title>Adverbs</title>
             <para> It is apparently possible for adverbs to scramble out of other phrases and become
                 daughters of IP. Some instances look like permutations of the adverb and a
-                preposition in the original, but we have not attmepted to emend the text.
+                preposition in the original, but we have not attempted to emend the text.
                 <programlisting>
 (IP-MAT-SPE (NEG Οὐ)
             (ADV-1 μακρὰν)
@@ -1441,14 +1449,14 @@
                         <para> floated quantifier with a QP layer:
                             <programlisting>
 ( (IP-MAT (CODE {VS:1_14_1})
-          (NP-SBJ (N Γύγης-Γύγης))
-          (CLPRT δὲ-δέ)
-          (IP-PPL (VPR-AOR τυραννεύσας-τυραννεύω))
-          (VBD-AOR ἀπέπεμψε-ἀποπέμπω)
-          (NP-OB1 (NSA-1 ἀναθήματα-ἀνάθημα))
-          (PP (P ἐς-εἰς)
-              (NP (NSA Δελφοὺς-Δελφοί)))
-          (QP=1 (NEG οὐκ-οὐ) (QA ὀλίγα-ὀλίγος))
+          (NP-SBJ (NPR Γύγης))
+          (CLPRT δὲ)
+          (IP-PPL (VPR-AOR τυραννεύσας))
+          (VBD-AOR ἀπέπεμψε)
+          (NP-OB1 (NSA-1 ἀναθήματα))
+          (PP (P ἐς)
+              (NP (NSA Δελφοὺς)))
+          (QP=1 (NEG οὐκ) (QA ὀλίγα))
           (, ,))
   (ID Herodotus,Histories))                                
                             </programlisting>
@@ -1592,7 +1600,7 @@
 ( (IP-MAT-SPE (CODE {VS:7_40})
               (NP-LFD (D ὁ)
                       (CLPRT γὰρ)
-                      (N Μωυσῆς)
+                      (NPR Μωυσῆς)
                       (D οὗτος)
                       (, ,)
                       (CP-REL (WNP-1 (WPRO ὃς))
@@ -1602,7 +1610,7 @@
                                       (NP-OB1 (PROA ἡμᾶς))
                                       (PP (P ἐκ)
                                           (NP (N$ γῆς)
-                                              (NP-PRN (N$ Αἰγύπτου)))))))
+                                              (NP-PRN (NPR$ Αἰγύπτου)))))))
               (, ,)
               (NEG οὐκ)
               (NP-SBJ *pro*)
@@ -1699,10 +1707,10 @@
                     <listitem>
                         <para> included in the co-constituent’s brackets:
                             <programlisting>
-(NP (NA Ἀνδρέαν)
+(NP (NPRA Ἀνδρέαν)
     (NP-PRN (DA τὸν)
             (NA ἀδελφὸν)
-            (NP-ATR (N$ Σίμωνος))))                                
+            (NP-ATR (NPR$ Σίμωνος))))                                
                             </programlisting>
                             (Mark 1.16) </para>
                     </listitem>
@@ -1712,7 +1720,7 @@
 (IP-MAT-SPE (NP-SBJ (N φωνὴ)
                     (NP-PRN *ICH*-1))
             (PP (P ἐν)
-	        (NP (ND Ῥαμὰ)))
+	        (NP (NPRD Ῥαμὰ)))
             (VBDP-AOR-PASS ἠκούσθη)
             (, ,)
             (NP-1 (NP (N κλαυθμὸς))
@@ -1782,11 +1790,11 @@
                             Greek.
                             <programlisting>
  ( (IP-MAT (NP-SBJ (D The) (N river))
-          (VBD froze)
-          (IP-MAT-PRN (NP-SBJ (PRO it))
-                      (BED was)
-                      (ADJP (ADVR so) (ADJ cold))))
-          (. .))                               
+           (VBD froze)
+           (IP-MAT-PRN (NP-SBJ (PRO it))
+                       (BED was)
+                       (ADJP (ADVR so) (ADJ cold))))
+           (. .))                               
                             </programlisting>
                         </para>
                     </listitem>
@@ -1804,7 +1812,7 @@
               (, ,)
               (IP-MAT-PRN (VBP-IMPF λέγει)
                           (NP-SBJ (N Κύριος)
-                                  (NP-PRN (N Παντοκράτωρ))))
+                                  (NP-PRN (NPR Παντοκράτωρ))))
               (. .))
   (ID GreekNT,2Corinthians))                                
                             </programlisting>
@@ -1917,7 +1925,7 @@
               (, ,)
               (IP-MAT-PRN (VBP-IMPF λέγει)
                           (NP-SBJ (N Κύριος)
-                                  (NP-PRN (N Παντοκράτωρ))))
+                                  (NP-PRN (NPR Παντοκράτωρ))))
               (. .))
   (ID GreekNT,2Corinthians))                                
                             </programlisting>
@@ -1943,7 +1951,7 @@
                   (VPR$-AOR ἐλθόντων)
                   (NP-SBJ (PRO$ ἡμῶν))
                   (PP (P εἰς)
-                      (NP (NA Μακεδονίαν))))
+                      (NP (NPRA Μακεδονίαν))))
           (QA=1 οὐδεμίαν)
           (VBD-PRF ἔσχηκεν)
           (NP-OB1 (NA-1 ἄνεσιν))
@@ -1951,9 +1959,8 @@
                   (N σὰρξ)
                   (NP-ATR (PRO$ ἡμῶν)))
           (, ,)
-          (CODE {COM:what_to_do_with_this_conj.?})
           (CONJ ἀλλ')
-          (IP-MAT (PP (P ἐν)
+          (IP-PPL (PP (P ἐν)
                       (NP (QD παντὶ)))
                   (VPRP-IMPF θλιβόμενοι))
           (X (X (ADVP-LOC (ADV ἔξωθεν))

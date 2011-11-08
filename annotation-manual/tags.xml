@@ -151,6 +151,10 @@
                         <entry>emphatic clitic particle γε</entry>
                     </row>
                     <row>
+                        <entry>CLPRO</entry>
+                        <entry>clitic pronoun, nominative (Homer only)</entry>
+                    </row>
+                    <row>
                         <entry>CLPRO$</entry>
                         <entry>clitic pronoun, genitive</entry>
                     </row>
@@ -173,15 +177,15 @@
                     </row>
                     <row>
                         <entry>CLQ$</entry>
-                        <entry>clitic indefinitive pronoun/quantifier τις/τι, genitive</entry>
+                        <entry>clitic indefinite pronoun/quantifier τις/τι, genitive</entry>
                     </row>
                     <row>
                         <entry>CLQA</entry>
-                        <entry>clitic indefinitive pronoun/quantifier τις/τι, accusative</entry>
+                        <entry>clitic indefinite pronoun/quantifier τις/τι, accusative</entry>
                     </row>
                     <row>
                         <entry>CLQD</entry>
-                        <entry>clitic indefinitive pronoun/quantifier τις/τι, dative</entry>
+                        <entry>clitic indefinite pronoun/quantifier τις/τι, dative</entry>
                     </row>
                     <row>
                         <entry>CLTE</entry>
@@ -189,7 +193,7 @@
                     </row>
                     <row>
                         <entry>CODE</entry>
-                        <entry>non-textual material (e.g., milestones and parser's comments)</entry>
+                        <entry>non-textual material (e.g., milestones and parser’s comments)</entry>
                     </row>
                     <row>
                         <entry>CONJ</entry>
@@ -314,6 +318,10 @@
                     <row>
                         <entry>ND</entry>
                         <entry>common noun, dative singular</entry>
+                    </row>
+                    <row>
+                        <entry>NEG</entry>
+                        <entry>negation</entry>
                     </row>
                     <row>
                         <entry>NPR</entry>
@@ -458,6 +466,14 @@
                         <entry>quantifier, dative</entry>
                     </row>
                     <row>
+                        <entry>QR</entry>
+                        <entry>quantifier, comparative</entry>
+                    </row>
+                    <row>
+                        <entry>QS</entry>
+                        <entry>quantifier, superlative</entry>
+                    </row>
+                    <row>
                         <entry>QV</entry>
                         <entry>quantificational adverb (e.g., <link linkend="πάντως"
                             >πάντως</link>)</entry>
@@ -476,7 +492,7 @@
                     <row>
                         <entry>VBD</entry>
                         <entry>verb, active secondary sequence (imperfect, aorist,
-                            plurperfect)</entry>
+                            pluperfect)</entry>
                     </row>
                     <row>
                         <entry>VBDP</entry>
@@ -625,7 +641,7 @@
                     </row>
                     <row>
                         <entry>WQ</entry>
-                        <entry><link linkend="εἰ">εἰ</link> in the meaning 'whether' introducing an
+                        <entry><link linkend="εἰ">εἰ</link> in the meaning ‘whether’ introducing an
                             indirect question</entry>
                     </row>
                 </tbody>
@@ -709,7 +725,7 @@
     <sect1>
         <title>Syntactic Tags</title>
         <para>The contents of the following table(s) are not exhausative but rather give the most
-            common combinations of basic, "dash," and extended tags.</para>
+            common combinations of basic, “dash,” and extended tags.</para>
         <table>
             <title>Basic Syntactic Tags</title>
             <tgroup cols="2">
@@ -808,7 +824,7 @@
                     </row>
                     <row>
                         <entry>CP-FRL</entry>
-                        <entry>free relatlive clause</entry>
+                        <entry>free relative clause</entry>
                     </row>
                     <row>
                         <entry>CP-PRP</entry>
@@ -902,8 +918,8 @@
                         <entry>subordinate clause</entry>
                     </row>
                     <row>
-                        <entry>IPY</entry>
-                        <entry>clausal non-constituent</entry>
+                        <entry>IY</entry>
+                        <entry>inflectional non-constituent</entry>
                     </row>
                 </tbody>
             </tgroup>
@@ -1372,11 +1388,15 @@
                         <entry><emphasis>syntactic</emphasis> passive (not middle!)</entry>
                     </row>
                     <row>
+                        <entry>-POS</entry>
+                        <entry>possessive adjective</entry>
+                    </row>
+                    <row>
                         <entry>-PPL</entry>
                         <entry>participle</entry>
                     </row>
                     <row>
-                        <entry>PRD</entry>
+                        <entry>-PRD</entry>
                         <entry>predicate</entry>
                     </row>
                     <row>
@@ -1572,13 +1592,13 @@
                     </row>
                     <row>
                         <entry>*ICH*</entry>
-                        <entry>abbreviation mnemonic for "interpret constituent here"; trace of
+                        <entry>abbreviation mnemonic for “interpret constituent here”; trace of
                             extraposition, scrambling, or other movement that does not fit neatly
                             into the A/A' dichotomy</entry>
                     </row>
                     <row>
                         <entry>*pro*</entry>
-                        <entry>"small/baby pro" (i.e., <emphasis>pro</emphasis>-dropped
+                        <entry>“small/baby pro” (i.e., <emphasis>pro</emphasis>-dropped
                             subject)</entry>
                     </row>
                     <row>

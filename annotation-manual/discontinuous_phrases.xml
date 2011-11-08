@@ -3,23 +3,519 @@
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="discontinuous_phrases">
     <title>Discontinuous Phrases</title>
+    <para> This section gives guidelines for representing discontinuous phrases—most commonly,
+        discontinuous noun phrases—in the PPCHiG. The basic guiding principle of representing
+        discontinuous phrases in these parsed corpora is that <emphasis>all</emphasis> movement
+        should be represented as leftward movement if possible. Certain defined exceptions to this
+        generalization are represented as rightward movement or clitic displacement. </para>
     <sect1 xml:id="extraposition">
         <title>Rightward Extraposition</title>
-        <para></para>
+        <para> It appears that restricting rightward movement of phrases to the same categories in
+            which rightward movement is annotated in the English corpora is sufficient for Ancient
+            Greek. Rightward movement of phrases is thus allowed only with: <itemizedlist>
+                <listitem>
+                    <para> CONJP
+                        <programlisting>
+( (IP-MAT (CODE {VS:14_2})
+          (NP-SBJ (D ὁ)
+                  (CLPRT γὰρ)
+                  (RRC (VPR-IMPF λαλῶν)
+                       (NP-INS (ND γλώσσῃ))))
+          (NEG οὐκ)
+          (NP-OB2 (NSD ἀνθρώποις)
+                  (CONJP *ICH*-1))
+          (VBP-IMPF λαλεῖ)
+          (CONJP-1 (CONJ ἀλλὰ)
+                   (ND θεῷ))
+          (, ,))
+  (ID GreekNT,1Corinthians))                            
+                        </programlisting>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para> PP
+                        <programlisting>
+( (IP-MAT (CODE {VS:20_17})
+          (IP-PPL (VPR-IMPF Μέλλων)
+                  (CLPRT δὲ)
+                  (IP-INF-COM (VBN-IMPF ἀναβαίνειν)
+                              (PP *ICH*-1)))
+          (NP-SBJ (NPR Ἰησοῦς))
+          (PP-1 (P εἰς)
+                (NP (NPRA Ἰεροσόλυμα)))
+          (VBD-AOR παρέλαβεν)
+          (NP-OB1 (DSA τοὺς) (NUM δώδεκα) (NSA μαθητὰς))
+          (PP (P κατ')
+              (NP (ADJA ἰδίαν)))
+          (, ,))
+  (ID GreekNT,Matthew))                         
+                        </programlisting>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para> CP-REL
+                        <programlisting>
+( (IP-MAT-SPE (CODE {VS:1_8_4})
+              (ADVP-TMP (ADV πάλαι))
+              (CLPRT δὲ)
+              (NP-SBJ (DS τὰ)
+                      (ADJ καλὰ)
+                      (CP-REL *ICH*-1))
+              (NP-AGT (NSD ἀνθρώποισι))
+              (VBPP-PRF-PASS ἐξεύρηται)
+              (, ,)
+              (CP-REL-1 (WPP-2 (P ἐκ)
+                               (WNP (WPRO$ τῶν)))
+                        (IP-SUB (IP-INF-SBJ (PP *T*-2)
+                                            (VBN-IMPF μανθάνειν))
+                                (VBP-IMPF δεῖ)))
+              (. ·))
+  (ID Herodotus,Histories))                            
+                        </programlisting>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para> RRC (reduced relative clauses)
+                        <programlisting>
+( (IP-MAT-SPE (CODE {VS:5_14})
+              (NEG οὐ)
+              (VBPP-IMPF δύναται)
+              (NP-SBJ (N πόλις)
+                      (RRC *ICH*-1))
+              (IP-INF-COM (VBNP-AOR-PASS κρυβῆναι))
+              (RRC-1 (PP (P ἐπάνω)
+                         (NP (N$ ὄρους)))
+                     (VPAP-IMPF κειμένη))
+              (. .))
+  (ID GreekNT,Matthew))                            
+                        </programlisting>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para> CP-CMP (comparative clauses)
+                        <programlisting>
+( (IP-MAT (CODE {VS:14_5})
+          (ADJP-PRD (ADJR μείζων)
+                    (CP-CMP *ICH*-1))
+          (CLPRT δὲ)
+          (BEP-IMPF *)
+          (NP-SBJ (D ὁ)
+                  (RRC (VPR-IMPF προφητεύων)))
+          (CP-CMP-1 (WADJP-2 0)
+                    (C ἢ)
+                    (IP-SUB (ADJP-PRD *T*-2)
+                            (BEP-IMPF *)
+                            (NP-SBJ (D ὁ)
+                                    (RRC (VPR-IMPF λαλῶν)
+                                         (NP-INS (NSD γλώσσαις))))))
+          (, ,)
+          (PP (P ἐκτὸς)
+              (CP-ADV (C εἰ)
+                      (IP-SUB (NEG μὴ)
+                              (NP-SBJ *pro*)
+                              (VBS-IMPF διερμηνεύῃ)
+                              (, ,)
+                              (CP-ADV (C ἵνα)
+                                      (IP-SUB (NP-SBJ (D ἡ) (N ἐκκλησία))
+                                              (NP-OB1 (NA οἰκοδομὴν))
+                                              (VBS-AOR λάβῃ))))))
+	  (. .))
+  (ID GreekNT,1Corinthians))                            
+                        </programlisting>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para> CP-DEG (degree complements)
+                        <programlisting>
+( (CP-QUE-SPE (CODE {VS:1_32_1})
+              (" ")
+              (INTJ ὦ)
+              (NP-VOC (N ξεῖνε)
+                      (ADJ Ἀθηναῖε))
+              (, ,)
+              (IP-SUB (NP-SBJ (D ἡ)
+                              (CLPRT δ’)
+                              (ADJ-POS ἡμετέρη)
+                              (N εὐδαιμονίη))
+                      (ADVP (ADV οὕτω)
+                            (CP-DEG *ICH*-1))
+                      (NP-AGT (PROD τοι))
+                      (VBPP-PRF-PASS ἀπέρριπται)
+                      (PP (P ἐς)
+                          (NP (DA τὸ)
+                              (NEG+Q μηδὲν)))
+                      (CP-DEG-1 (C ὥστε)
+                                (IP-SUB (NEG+CONJ οὐδὲ)
+                                        (IP-SMC (ADJP-PRD (NP-COM (NS$ ἰδιωτέων)
+                                                                  (NS$ ἀνδρῶν))
+                                                          (ADJA ἀξίους))
+                                                (NP-SBJ (PROA ἡμέας)))
+                                        (NP-SBJ *pro*)
+                                        (VBD-AOR ἐποίησας))))
+              (. ;)
+              (" "))
+  (ID Herodotus,Histories))                            
+                        </programlisting>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para> CP-QUE
+                        <programlisting>
+( (IP-MAT (CODE {VS:26_22})
+          (CONJ καὶ)
+          (IP-PPL (VPRP-IMPF λυπούμενοι)
+                  (ADVP (ADV σφόδρα)))
+          (VBDP-AOR ἤρξαντο)
+          (IP-INF-COM (VBN-IMPF λέγειν)
+                      (NP-OB2 (PROD αὐτῷ))
+                      (CP-QUE-SPE *ICH*-1))
+          (NP-SBJ (NUM εἷς) (Q ἕκαστος))
+          (CP-QUE-SPE-1 (PRTQ Μήτι)
+                        (IP-SUB (NP-SBJ (PRO ἐγώ))
+                                (BEP-IMPF εἰμι)
+                                (, ,)
+                                (NP-VOC (N κύριε))))
+          (. ;))
+  (ID GreekNT,Matthew))                            
+                        </programlisting>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para> *-PRN (appositives and parentheticals)
+                        <programlisting>
+(IP-MAT-SPE (NP-SBJ (N φωνὴ)
+                    (NP-PRN *ICH*-1))
+            (PP (P ἐν)
+                (NP (NPRD Ῥαμὰ)))
+            (VBDP-AOR-PASS ἠκούσθη)
+            (, ,)
+            (NP-1 (NP (N κλαυθμὸς))
+                  (CONJP (CONJ καὶ)
+                         (NP (N ὀδυρμὸς) (ADJ πολύς)))))                            
+                        </programlisting>
+                        (Matthew 2.18) </para>
+                </listitem>
+            </itemizedlist>
+        </para>
+        <para> Care should be taken to represent rightward movement only as a last resort. For
+            example, the following very common (in the Greek New Testament) construction of
+            participle fronting should be represented as constituting leftward movement of the
+            participle, not rightward movement of the PP. <itemizedlist>
+                <listitem>
+                    <para> like this:
+                        <programlisting>
+( (IP-MAT (CODE {VS:8_14})
+          (CONJ0 Καὶ)
+          (VPR-AOR-1 ἐλθὼν)
+          (NP-SBJ (D ὁ) (NPR Ἰησοῦς))
+          (IP-PPL (VPR-AOR *ICH*-1)
+                  (PP (P εἰς)
+                      (NP (DA τὴν)
+                          (NA οἰκίαν)
+                          (NP-ATR (NPR$ Πέτρου)))))
+          (VBD-AOR εἶδεν)
+          (NP-OB1 (DA τὴν)
+                  (NA πενθερὰν)
+                  (NP-ATR (PRO$ αὐτοῦ))
+                  (RRC (VPRPA-PRF βεβλημένην)
+                       (CONJ καὶ)
+                       (VPRA-IMPF πυρέσσουσαν)))
+          (. .))
+  (ID GreekNT,Matthew))                            
+                        </programlisting>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <emphasis>not</emphasis> like this:
+                        <programlisting>
+( (IP-MAT (CODE {VS:8_14})
+          (CONJ0 Καὶ)
+          (IP-PPL (VPR-AOR ἐλθὼν)
+                  (PP *ICH*-1))
+          (NP-SBJ (D ὁ) (NPR Ἰησοῦς))
+          (PP-1 (P εἰς)
+                (NP (DA τὴν)
+                    (NA οἰκίαν)
+                    (NP-ATR (NPR$ Πέτρου))))
+          (VBD-AOR εἶδεν)
+          (NP-OB1 (DA τὴν)
+                  (NA πενθερὰν)
+                  (NP-ATR (PRO$ αὐτοῦ))
+                  (RRC (VPRPA-PRF-PASS βεβλημένην)
+                       (CONJ καὶ)
+                       (VPRA-IMPF πυρέσσουσαν)))
+          (. .))
+  (ID GreekNT,Matthew))                            
+                        </programlisting>
+                    </para>
+                </listitem>
+            </itemizedlist>
+        </para>
     </sect1>
     <sect1 xml:id="default_leftward">
         <title>Default Leftward Movement</title>
         <sect2 xml:id="word_level_fronting">
             <title>Word-Level Fronting</title>
-            <para></para>
+            <para> Both modifiers and heads of phrases can be moved leftward in Classical Greek (the
+                latter case may be a case of remnant movement). <itemizedlist>
+                    <listitem>
+                        <para> fronted modifier:
+                            <programlisting>
+(ADJD-1 δευτέρῃ)
+(CLPRT δὲ)
+(NP-SBJ *pro*)
+(VBP-IMPF λέγουσι)
+(NP-TMP (ADJD *ICH*-1)
+        (ND γενεῇ)
+        (PP (P μετὰ)
+            (NP (DSA ταῦτα))))                                
+                            </programlisting>
+                            (Hdt. 1.3.1) </para>
+                    </listitem>
+                    <listitem>
+                        <para> fronted head:
+                            <programlisting>
+( (IP-MAT (CODE {VS:1_6_2})
+          (NP-SBJ (D οὗτος)
+                  (D ὁ)
+                  (NPR Κροῖσος))
+                  (ADJP (NP-PAR (ADJ$ βαρβάρων)
+                                (CP-REL *ICH*-1))
+                        (ADJ πρῶτος))
+                        (CP-REL-1 (WNP-2 (WPRO$ τῶν))
+                                  (C 0)
+                                  (IP-SUB (NP-OB1 *T*-2)
+                                          (NP-SBJ (PRO ἡμεῖς))
+                                          (VBP-PRF ἴδμεν)))
+          (DSA-3 τοὺς)
+          (CLPRT μὲν)
+          (VBDP-AOR κατεστρέψατο)
+          (NP-OB1 (DSA *ICH*-3)
+                  (NP-PAR (NPRS$ Ἑλλήνων)))
+          (PP (P ἐς)
+               (NP (NP-COM (N$ φόρου))
+                   (NA ἀπαγωγήν)))
+	  (, ,))
+  (ID Herodotus,Histories))                                
+                            </programlisting>
+                        </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para> Word-level wh- movement is also possible.
+                <programlisting>
+(NP-LFD (CP-FRL (WADJ-1 ὅσος-ὅσος)
+                (C 0)
+                (IP-SUB (BED-IMPF ἦν-εἰμί)
+                        (PP (P ἐν-ἐν)
+                            (NP (DD τῷ-ὁ) (ND ἄστεϊ-ἄστυ)))
+                        (NP-SBJ (ADJ *T*-1)
+                                (N σῖτος-σῖτος)
+                                (NP-ATR (CONJ καὶ-καί)
+                                        (NP-ATR (PRO$+SLF ἑωυτοῦ-ἑαυτοῦ))
+                                        (CONJP (CONJ καὶ-καί)
+                                               (ADJP (ADJ ἰδιωτικός-ἰδιωτικός))))))))            
+                </programlisting>
+                (Hdt. 1.21.2) </para>
         </sect2>
         <sect2 xml:id="intermediate_level_fronting">
             <title>Fronting of Non-Constituents</title>
-            <para></para>
+            <para> On occasion, more than one word from a phrase—the words together not forming a
+                constituent—will move to the left, stranding behind other element(s) of the phrase.
+                This occurs most commonly with noun phrases, but it can occur with other types of
+                phrases as well, including inflectional phrases (IPs). The non-constituent grouping
+                is given a label suffixed with -Y: IY, NY, PY etc. <itemizedlist>
+                    <listitem>
+                        <para> nominal non-constituent (NY):
+                            <programlisting>
+( (IP-MAT (CODE {VS:1_5_4})
+          (NP-LFD (CP-FRL (WNP-1 (WPRO τὰ))
+                          (CLPRT γὰρ)
+                          (IP-SUB (NP-SBJ *T*-1)
+                                  (NP-TMP (DA τὸ)
+                                          (ADV πάλαι))
+                                  (ADJP-PRD (ADJ μεγάλα))
+                                  (BED-IMPF ἦν))))
+          (, ,)
+          (NY-2 (DS τὰ)
+                (Q πολλὰ))
+          (ADJP-PRD (ADJ σμικρὰ))
+          (NP-SBJ (NY *ICH*-2)
+                  (NP-PAR-RSP (PRO$ αὐτῶν)))
+          (VBP-PRF γέγονε)
+          (. ·))
+  (ID Herodotus,Histories))                                
+                            </programlisting>
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para> inflectional non-constituent (IY):
+                            <programlisting>
+(IP-PPL (IY-2 (VBN-AOR ἐπικατασφάξαι)
+              (NP-OB1 (CLPROA μιν)))
+        (VPR-IMPF κελεύων)
+        (IP-INF-COM (IY *ICH*-2)
+                    (NP-OBP (DD τῷ)
+                            (ADJD νεκρῷ))))                            
+                            </programlisting>
+                            (Hdt. 1.45.1) </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para> Wh- movement of a non-constituent is also possible.
+                <programlisting>
+( (IP-IMP-SPE (CODE {VS:10_11})
+              (NP-LFD (CP-FRL (WPP (WP-1 εἰς)
+                                   (WNP (WDA-2 ἣν)))
+                              (CLPRT δ')
+                              (C 0)
+                              (IP-SUB (PRTG ἂν)
+                                      (PP (P *T*-1)
+                                          (NP (DA *T*-2)
+                                              (NA (NA πόλιν)
+                                                  (CONJ ἢ)
+                                                  (NA κώμην))))
+                                      (NP-SBJ *pro*)
+                                      (VBS-AOR εἰσέλθητε))))
+              (, ,)
+              (VBI-AOR ἐξετάσατε)
+              (CP-QUE (WNP-3 (WPRO τίς))
+                      (C 0)
+                      (IP-SUB (NP-SBJ *T*-3)
+                              (PP (P ἐν)
+                                  (NP-RSP (PROD αὐτῇ)))
+                              (ADJP-PRD (ADJ ἄξιός))
+                              (BEP-IMPF ἐστιν)))
+	      (. .))
+  (ID GreekNT,Matthew))                    
+                </programlisting>
+            </para>
         </sect2>
         <sect2 xml:id="phrase_level_fronting">
             <title>Phrase-Level Fronting</title>
-            <para></para>
+            <para> A whole phrase can also be moved leftward. As with the examples above, the
+                fronted phrase often ends up in pre-verbal position.
+                <programlisting>
+( (IP-INF-THT (CODE {VS:1_2_3})
+              (NP-SBJ (DSA τοὺς))
+              (CLPRT δὲ)
+              (VBNP-AOR ὑποκρίνασθαι)
+              (CP-THT (C ὡς)
+                      (IP-SUB (NEG+CONJ οὐδὲ)
+                              (NP-SBJ (DS ἐκεῖνοι))
+                              (NP-1 (NP-PRN (NPR$ Ἰοῦς))
+                                    (D$ τῆς)
+                                    (ADJ$ Ἀργείης))
+                              (VBD-AOR ἔδοσάν)
+                              (NP-OB2 (CLPROD σφι))
+                              (NP-OB1 (NSA δίκας))
+                              (NP-OBQ (NP-COM *ICH*-1)
+                                      (D$ τῆς)
+                                      (N$ ἁρπαγῆς))))
+              (. ·))
+  (ID Herodotus,Histories))                    
+                </programlisting>
+            </para>
         </sect2>
     </sect1>
-    </chapter>
+    <sect1 xml:id="clitic_displacement">
+        <title>Clitic Displacement</title>
+        <para> Discontinuities resulting from the intervention of prosodically weak clitic elements
+            that break up otherwise continuous phrases are a different case from those considered
+            thus far. The “movement” or, rather, displacement of clitics is a different process that
+            has been argued to occur at a later stage in the derivation of a sentence than syntactic
+            movement operations like those considered above—namely, during the process that takes
+            the output of syntactic operations as its input, linearizes this input, and maps it onto
+            a phonological form. </para>
+        <sect2 xml:id="CLPRT">
+            <title>Sentence-Position Particles</title>
+            <para> The very common second-position particles are represented with the special POS
+                tag CLPRT alone.
+                <programlisting>
+( (IP-MAT-SPE (CODE {VS:1_21})
+              (NP-SBJ *pro*)
+              (VBPP-FUT τέξεται)
+              (CLPRT δὲ)
+              (NP-OB1 (NA υἱὸν)))
+  (ID GreekNT,Matthew))                    
+                </programlisting>
+            </para>
+            <para> When a second-position particle intervenes in a phrase, it is simply attached as
+                high as possible.
+                <programlisting>
+( (IP-MAT (CODE {VS:1_8_1})
+          (NP-SBJ (D οὗτος) 
+                  (CLPRT δὴ)
+                  (CLPRT ὦν)
+                  (D ὁ)
+                  (NPR Κανδαύλης))
+          (VBDP-AOR ἠράσθη)
+          (NP-OBQ (D$ τῆς)
+                  (NP-ATR (PRO$+SLF ἑωυτοῦ))
+                  (N$ γυναικός))
+          (, ,))
+  (ID Herodotus,Histories))                       
+                </programlisting>
+            </para>
+        </sect2>
+        <sect2 xml:id="CLPRO_and_verbs">
+            <title>Clitic Pronouns and Verbs</title>
+            <para> Discontinuities also occur when the intervention of clitic pronouns and clitic
+                forms of the verbs εἰμί ‘be’ and φημί ‘say’ results in a discontinuous phrase. The
+                clitic pronouns and verbal forms have a more complex distribution, and so these are
+                represented with a dash tag -CL and a special type of movement trace *CL* at the
+                proper hierarchical level where the clitic element is interpreted. There are no
+                restrictions on whether this trace occurs to the left or to the right of the
+                displaced element, but an effort is made to put the trace in the likely position
+                where the clitic originated in the syntax given that clitics often appear in second
+                position, inverted in linear order with either the first (rightward movement) or the
+                last element (leftward movement) of some phrase. <itemizedlist>
+                    <listitem>
+                        <para> intervening clitic pronoun:
+                            <programlisting>
+( (IP-MAT-SPE (CODE {VS:1_37_2})
+              (ADVP-TMP (ADV νῦν))
+              (CLPRT δὲ)
+              (NP-OB1 *CL*-1)
+              (NP-OBP (Q$ ἀμφοτέρων)
+                      (NP-CL-1 (CLPROA με))
+                      (DS$ τούτων))
+              (VPR-AOR ἀποκληίσας)
+              (NP-SBJ *pro*)
+              (VBP-IMPF ἔχεις)
+              (, ,)
+              (IP-PPL (NP-OB1 (NEG+CLTE οὔτε)
+                              (NP (CLQA τινὰ)
+                                  (NA δειλίην))
+                              (CONJP *ICH*-2))
+                      (NP-OBP (CLPROD μοι))
+                      (VPR-AOR παριδὼν)
+                      (CONJP-2 (NEG+CLTE οὔτε)
+                               (NP (NA ἀθυμίην)))))
+  (ID Herodotus,Histories))                                
+                            </programlisting>
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para> intervening clitic verb:
+                            <programlisting>
+( (IP-MAT-SPE (CODE {VS:12_8})
+              (BEP-IMPF *CL*-1)
+              (NP-PRD (N κύριος)
+                      (CLPRT γάρ)
+                      (BEP-IMPF-CL-1 ἐστιν)
+                      (NP-ATR (D$ τοῦ) (N$ σαββάτου)))
+              (NP-SBJ (D ὁ)
+                      (N υἱὸς)
+                      (NP-ATR (D$ τοῦ) (N$ ἀνθρώπου)))
+              (. .))
+  (ID GreekNT,Matthew.579))                                
+                            </programlisting>
+                        </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </sect2>
+    </sect1>
+</chapter>

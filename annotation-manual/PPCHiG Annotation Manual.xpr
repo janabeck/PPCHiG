@@ -5,6 +5,7 @@
         <options/>
     </meta>
     <projectTree name="PPCHiG%20Annotation%20Manual.xpr">
+        <file name="appendix.xml"/>
         <file name="clause_level.xml"/>
         <file name="conjunction.xml"/>
         <file name="development.xml"/>
@@ -16,6 +17,7 @@
         <file name="known_issues.xml"/>
         <file name="phrase_level.xml"/>
         <file name="pos_annotation.xml"/>
+        <file name="PPCHiG%20Annotation%20Manual.xhtml"/>
         <file name="PPCHiG%20Annotation%20Manual.xml"/>
         <file name="special_constructions.xml"/>
         <file name="subordinate_clauses.xml"/>

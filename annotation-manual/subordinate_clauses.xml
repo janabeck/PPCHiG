@@ -38,15 +38,15 @@
                     </para>
                 </listitem>
                 <listitem>
-                    <para> an adverbial ὡς clause without a gap (can be paraphrased `when, while,
-                        since, as if'):
+                    <para> an adverbial ὡς clause without a gap (can be paraphrased ‘when, while,
+                        since, as if’):
                         <programlisting>
 (CP-ADV (C ὡς)
         (IP-SUB (PRTG ἂν)
                 (NP-SBJ *pro*)
                 (VBSP-IMPF πορεύωμαι)
                 (PP (P εἰς)
-                    (NP (DA τὴν) (NA Σπανίαν)))))                            
+                    (NP (DA τὴν) (NPRA Σπανίαν)))))                            
                         </programlisting>
                         (Romans 15.24) </para>
                 </listitem>
@@ -190,7 +190,7 @@
     <sect1 xml:id="CP-COM">
         <title>Complement Clauses</title>
         <para> Complement clauses differ from <emphasis>that</emphasis> clauses in that they are
-            non-veridical complements occuring following certain classes of verbs, mainly “verbs of
+            non-veridical complements occurring following certain classes of verbs, mainly “verbs of
             the head” (i.e., verbs of thinking, speaking, etc.). They can be sub-classified into
             three types: fear clauses, object clauses of effort, and all other non-veridical
             complement clauses that sometimes occur—particularly in the New Testament—in place of
@@ -204,7 +204,7 @@
         (CLTE τε)
         (CP-COM (C μὴ)
                 (IP-SUB (PP (P εἰς)
-                            (NP (DA τὴν) (NA Σύρτιν)))
+                            (NP (DA τὴν) (NPRA Σύρτιν)))
                         (NP-SBJ *pro*)
                         (VBS-AOR ἐκπέσωσιν))))                            
                         </programlisting>
@@ -341,7 +341,7 @@ to-devise       [CP −COM    that   the body    the brother     cutting-down   
                   (RRC (VPRP-IMPF φανταζόμενον)))
           (, ,)
           (CP-DEG-1 (C 0)
-                    (IP-SUB (NP-SBJ (N Μωυσῆς))
+                    (IP-SUB (NP-SBJ (NPR Μωυσῆς))
                             (VBD-AOR εἶπεν)
                             (IP-MAT-SPE (ADJP-PRD (ADJ Ἐκφοβός)
                                                   (CONJP *ICH*-1))
@@ -424,7 +424,7 @@ to-devise       [CP −COM    that   the body    the brother     cutting-down   
                                       (N ἀριθμὸς)
                                       (NP-ATR (DS$ τῶν)
                                               (NS$ υἱῶν)
-                                              (NP-ATR (N$ Ἰσραὴλ))))
+                                              (NP-ATR (NPR$ Ἰσραὴλ))))
                               (ADVP (CP-CMP (WADVP-2 (WADV ὡς))
                                             (C 0)
                                             (IP-SUB=1 (ADVP *T*-2)
@@ -532,7 +532,7 @@ to-devise       [CP −COM    that   the body    the brother     cutting-down   
 ( (IP-MAT (CODE {VS:20_22})
           (IP-PPL (VPRP-AOR ἀποκριθεὶς))
           (CLPRT δὲ)
-          (NP-SBJ (D ὁ) (N Ἰησοῦς))
+          (NP-SBJ (D ὁ) (NPR Ἰησοῦς))
           (VBD-AOR εἶπεν)
           (IP-MAT-SPE (NEG Οὐκ)
                       (NP-SBJ *pro*)
@@ -746,7 +746,7 @@ to-devise       [CP −COM    that   the body    the brother     cutting-down   
                               (BEP-IMPF ἐστιν)
                               (NP-PRD (D ὁ)
                                       (N υἱὸς)
-                                      (NP-ATR (N$ Δαυείδ)))))
+                                      (NP-ATR (NPR$ Δαυείδ)))))
           (. ;))
   (ID GreekNT,Matthew))                
             </programlisting>
@@ -785,7 +785,7 @@ to-devise       [CP −COM    that   the body    the brother     cutting-down   
 ( (IP-MAT (CODE {VS:10_23})
           (CONJ Καὶ)
           (IP-PPL (VPRP-AOR περιβλεψάμενος))
-          (NP-SBJ (D ὁ) (N Ἰησοῦς))
+          (NP-SBJ (D ὁ) (NPR Ἰησοῦς))
           (VBP-IMPF λέγει)
           (NP-OB2 (DSD τοῖς)
                   (NSD μαθηταῖς)
@@ -832,7 +832,7 @@ to-devise       [CP −COM    that   the body    the brother     cutting-down   
                                       (NP-OB1 (DA τὸν)
                                               (NA λαόν)
                                               (NP-ATR (CLPRO$ μου))
-                                              (NP-PRN (DA τὸν) (NA Ἰσραήλ)))
+                                              (NP-PRN (DA τὸν) (NPRA Ἰσραήλ)))
                                       (. .)))))
   (ID GreekNT,Matthew))                            
                         </programlisting>
@@ -868,7 +868,7 @@ to-devise       [CP −COM    that   the body    the brother     cutting-down   
 ( (IP-MAT (CODE {VS:12_18})
           (CONJ Καὶ)
           (VBPP-IMPF ἔρχονται)
-          (NP-SBJ (NS Σαδδουκαῖοι)
+          (NP-SBJ (NPRS Σαδδουκαῖοι)
                   (CP-REL *ICH*-1))
           (PP (P πρὸς)
               (NP (PROA αὐτόν)))
@@ -894,7 +894,7 @@ to-devise       [CP −COM    that   the body    the brother     cutting-down   
 ( (IP-MAT (CODE {VS:22_61})
           (CONJ καὶ)
           (VBDP-AOR ὑπεμνήσθη)
-          (NP-SBJ (D ὁ) (N Πέτρος))
+          (NP-SBJ (D ὁ) (NPR Πέτρος))
           (NP-OBQ (D$ τοῦ)
                   (N$ ῥήματος)
                   (NP-ATR (D$ τοῦ) (N$ κυρίου))
@@ -973,7 +973,7 @@ to-devise       [CP −COM    that   the body    the brother     cutting-down   
                           (IP-SUB (NP-SBJ *T*-1)
                                   (BEP-IMPF ἐστιν)
                                   (PP (P ἐγγὺς)
-                                      (NP (NA Ἰερουσαλὴμ)))
+                                      (NP (NPRA Ἰερουσαλὴμ)))
                                   (IP-PPL (NP-2 (N$ σαββάτου))
                                           (VPR-IMPF ἔχον)
                                           (NP-OB1 (NP-MSR *ICH*-2)
@@ -1189,7 +1189,7 @@ to-devise       [CP −COM    that   the body    the brother     cutting-down   
             clauses containing WNP. Internally, the WNP is generally coindexed with an argument
             trace, but externally, the entire free relative often has a non-argument function (<link
                 linkend="NP-ADT">NP-ADT</link>, <link linkend="NP-ADV">NP-ADV</link>, <link
-                linkend="NP-LFD">NP-LFD</link>). </para>
+                linkend="LFD">NP-LFD</link>). </para>
         <para> In certain cases, a free relative is preceded by a preposition that does double duty
             in the sense that it governs the wh- phrase within the free relative, but is also part
             of the matrix clause. Prepositions doing such double duty are bracketed within the free
@@ -1296,11 +1296,13 @@ to-devise       [CP −COM    that   the body    the brother     cutting-down   
                 </listitem>
             </itemizedlist>
         </para>
-        <para>
-            <link xml:id="ὡς">ὡς</link> clauses with a nominal gap that act as arguments of the
-            matrix verb are treated as free relatives with a nominal empty operator and with ὡς
-            filling the complementizer position.
-            <programlisting>
+        <sect2 xml:id="ὡς_nominal_gap">
+            <title>ὡς Clauses with a Nominal Gap</title>
+            <para>
+                <link linkend="ὡς">ὡς</link> clauses with a nominal gap that act as arguments of the
+                matrix verb are treated as free relatives with a nominal empty operator and with ὡς
+                filling the complementizer position.
+                <programlisting>
 ( (IP-MAT (CODE {VS:26_19})
           (CONJ καὶ)
           (VBD-AOR ἐποίησαν)
@@ -1310,12 +1312,12 @@ to-devise       [CP −COM    that   the body    the brother     cutting-down   
                           (IP-SUB (NP-OB1 *T*-1)
                                   (VBD-AOR συνέταξεν)
                                   (NP-OB2 (PROD αὐτοῖς))
-                                  (NP-SBJ (D ὁ) (N Ἰησοῦς)))))
+                                  (NP-SBJ (D ὁ) (NPR Ἰησοῦς)))))
           (, ,))
   (ID GreekNT,Matthew))                
             </programlisting>
-        </para>
-        <sect2 xml:id="ὡς_nominal_gap"/>
+            </para>
+        </sect2>
     </sect1>
     <sect1 xml:id="CP-EOP">
         <title>Empty Operator Clauses</title>
@@ -1355,11 +1357,11 @@ to-devise       [CP −COM    that   the body    the brother     cutting-down   
 ( (IP-MAT (CODE {VS:7_40})
           (CONJ καὶ)
           (IP-PPL (VPRP-AOR ἀποκριθεὶς))
-          (NP-SBJ (D ὁ) (N Ἰησοῦς))
+          (NP-SBJ (D ὁ) (NPR Ἰησοῦς))
           (VBD-AOR εἶπεν)
           (PP (P πρὸς)
               (NP (PROA αὐτόν)))
-          (IP-MAT-SPE (NP-VOC (N Σίμων))
+          (IP-MAT-SPE (NP-VOC (NPR Σίμων))
                       (, ,)
                       (NP-SBJ *pro*)
                       (VBP-IMPF ἔχω)
@@ -1392,8 +1394,8 @@ to-devise       [CP −COM    that   the body    the brother     cutting-down   
                   (NP-SBJ (D$ τῆς)
                           (N$ μητρὸς)
                           (NP-ATR (PRO$ αὐτοῦ))
-                          (NP-PRN (N$ Μαρίας)))
-                  (NP-OB2 (DD τῷ) (ND Ἰωσήφ)))
+                          (NP-PRN (NPR$ Μαρίας)))
+                  (NP-OB2 (DD τῷ) (NPRD Ἰωσήφ)))
           (, ,)
           (PP (P πρὶν)
               (CP-ADV (C ἢ)
@@ -1523,7 +1525,7 @@ to-devise       [CP −COM    that   the body    the brother     cutting-down   
 ( (IP-MAT (CODE {VS:2_13})
           (VBP-IMPF μέλλει)
           (CLPRT γὰρ)
-          (NP-SBJ (N Ἡρῴδης))
+          (NP-SBJ (NPR Ἡρῴδης))
           (IP-INF-COM (VBN-IMPF ζητεῖν)
                       (NP-OB1 (DA τὸ) (NA παιδίον)))
           (CP-PRP (C τοῦ)
@@ -1538,7 +1540,7 @@ to-devise       [CP −COM    that   the body    the brother     cutting-down   
                                     <para> complement to ἐθέλω ‘want’ (subject control):
                                         <programlisting>
 ( (IP-MAT (CODE {VS:2_18})
-          (NP-LFD (N Ῥαχὴλ)
+          (NP-LFD (NPR Ῥαχὴλ)
                   (RRC (VPR-IMPF κλαίουσα)
                        (NP-OB1 (DSA τὰ)
                                (NSA τέκνα)
@@ -1564,7 +1566,7 @@ to-devise       [CP −COM    that   the body    the brother     cutting-down   
                                         <programlisting>
 ( (IP-MAT-SPE (CODE {VS:22_16})
               (NP-SBJ (PRO Ἐγὼ)
-                      (NP-PRN (N Ἰησοῦς)))
+                      (NP-PRN (NPR Ἰησοῦς)))
               (VBD-AOR ἔπεμψα)
               (IP-INF-COM (NP-SBJ (DA τὸν)
                                   (NA ἄγγελόν)
@@ -1613,7 +1615,7 @@ to-devise       [CP −COM    that   the body    the brother     cutting-down   
                     <listitem>
                         <para> infinitival complements of nouns: <itemizedlist>
                                 <listitem>
-                                    <para> without movement away from the infinitive clause:
+                                    <para> without movement away from the infinitive clause: <!-- TODO: look up φοβήθητε in linguistic commentary: aorist indicative or subjunctive (if so, what kind?)  TODO: also is ἐμβαλεῖν really aorist or future (is that where the accent is in the aorist?) -->
                                         <programlisting>
 ( (IP-IMP-SPE (CODE {VS:12_5})
               (VBSP-AOR φοβήθητε)
@@ -1775,7 +1777,7 @@ to-devise       [CP −COM    that   the body    the brother     cutting-down   
           (NP-SBJ (D τὸ)
                   (IP-INF (VBN-IMPF ζῇν)))
           (BEP-IMPF *)
-          (NP-PRD (N Χριστὸς)))
+          (NP-PRD (NPR Χριστὸς)))
   (ID GreekNT,Philippians))                                
                             </programlisting>
                         </para>
@@ -1815,22 +1817,15 @@ to-devise       [CP −COM    that   the body    the brother     cutting-down   
                 indirect discourse<footnote>
                     <para>From CUNY Summer Greek Institute Day 21, Unit 16 Handout by Hardy
                         Hansen.</para>
-                </footnote>: 
-                <itemizedlist>
+                </footnote>: <itemizedlist>
                     <listitem>
-                        <para>
-                            φήμι ‘say, declare’
-                        </para>
+                        <para> φήμι ‘say, declare’ </para>
                     </listitem>
                     <listitem>
-                        <para>
-                            νομίζω ‘consider’
-                        </para>
+                        <para> νομίζω ‘consider’ </para>
                     </listitem>
                     <listitem>
-                        <para>
-                            λέγω ‘say, speak’
-                        </para>
+                        <para> λέγω ‘say, speak’ </para>
                     </listitem>
                 </itemizedlist>
                 <programlisting>
@@ -1839,7 +1834,7 @@ to-devise       [CP −COM    that   the body    the brother     cutting-down   
               (NP (DD ἐκείνῃ) (DD τῇ) (ND ἡμέρᾳ)))
           (VBD-AOR προσῆλθον)
           (NP-OBP (PROD αὐτῷ))
-          (NP-SBJ (NS Σαδδουκαῖοι))
+          (NP-SBJ (NPRS Σαδδουκαῖοι))
           (, ,)
           (IP-PPL (VPR-IMPF λέγοντες)
                   (IP-INF-THT (NEG μὴ)
@@ -1851,24 +1846,365 @@ to-devise       [CP −COM    that   the body    the brother     cutting-down   
             </para>
         </sect2>
     </sect1>
-    <!-- migrate here -->
     <sect1 xml:id="IP-SMC">
         <title>Small Clauses</title>
-        <para/>
+        <important>
+            <para> See also the sections on secondary predicates (<link linkend="ADJP-SPR"
+                    >ADJP-SPR</link>, <link linkend="NP-SPR">NP-SPR</link>). </para>
+        </important>
+        <para> Small clauses are instances of predication where the predicate is a noun phrase,
+            adjective phrase (possibly headed by a participle), participle, or other plausible
+            category for predication (i.e., including predicates that consist in just a
+            prepositional phrase). This marks a departure from the criteria used in the English
+            corpora, where only noun phrases, adjective phrases, and passive participles are allowed
+            as small clause predicates. Crucially, the predicate in a small clause should
+                <emphasis>not</emphasis> be an infinitive. <itemizedlist>
+                <listitem>
+                    <para> noun phrase predicate:
+                        <programlisting>
+( (IP-MAT (CODE {VS:6_20})
+          (NP-SBJ (D ὁ) (CLPRT γὰρ) (NPR Ἡρῴδης))
+          (VBDP-IMPF ἐφοβεῖτο)
+          (NP-OB1 (DA τὸν) (NPRA Ἰωάνην))
+          (, ,)
+          (IP-PPL (VPR-PRF εἰδὼς)
+                  (IP-SMC (NP-SBJ (PROA αὐτὸν))
+                          (NP-PRD (NA ἄνδρα)
+                                  (ADJP (ADJA δίκαιον) (CONJ καὶ) (ADJA ἅγιον)))))
+          (, ,))
+  (ID GreekNT,Mark))                            
+                        </programlisting>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para> adjective phrase predicate:
+                        <programlisting>
+( (IP-IMP-SPE (CODE {VS:3_8})
+              (VBI-AOR ποιήσατε)
+              (CLPRT οὖν)
+              (IP-SMC (NP-SBJ (NA καρπὸν))
+                      (ADJP-PRD (ADJA ἄξιον)
+                                (NP-COM (D$ τῆς) (N$ μετανοίας))))
+              (. .))
+  (ID GreekNT,Matthew))                            
+                        </programlisting>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para> prepositional phrase predicate:
+                        <programlisting>
+(CONJ καὶ)
+(NEG οὐκ)
+(NP-SBJ *con*)
+(VBP-FUT ἀφήσουσιν)
+(IP-SMC (NP-SBJ (NA λίθον))
+        (PP (P ἐπὶ)
+            (NP (NA λίθον))))
+(PP (P ἐν)
+    (NP (PROD σοί)))                            
+                        </programlisting>
+                        (Luke 19.44) </para>
+                </listitem>
+                <listitem>
+                    <para> active participle predicate:
+                        <programlisting>
+( (IP-MAT (CODE {VS:26_43})
+          (CONJ καὶ)
+          (IP-PPL (VPR-AOR ἐλθὼν)
+                  (ADVP (ADV πάλιν)))
+          (NP-SBJ *pro*)
+          (VBD-AOR εὗρεν)
+          (IP-SMC (NP-SBJ (PROA αὐτοὺς))
+                  (VPRA-IMPF καθεύδοντας))
+          (, ,))
+  (ID GreekNT,Matthew))                            
+                        </programlisting>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para> passive participle predicate: <!-- TODO: usage of βεβλημένον weird (intransitive or passive?): look up in grammatical commentaries -->
+                        <programlisting>
+( (IP-MAT (CODE {VS:7_30})
+          (CONJ καὶ)
+          (IP-PPL (VPR-AOR ἀπελθοῦσα)
+                  (PP (P εἰς)
+                      (NP (DA τὸν)
+                          (NA οἶκον)
+                          (NP-ATR (PRO$ αὐτῆς)))))
+          (NP-SBJ *pro*)
+          (VBD-AOR εὗρεν)
+          (IP-SMC (IP-SMC (NP-SBJ (DA τὸ) (NA παιδίον))
+                          (VPRPA-PRF βεβλημένον)
+                          (PP (P ἐπὶ)
+                              (NP (DA τὴν) (NA κλίνην))))
+                  (CONJP (CONJ καὶ)
+                         (IP-SMC (NP-SBJ (DA τὸ) (NA δαιμόνιον))
+                                 (VPRA-PRF ἐξεληλυθός))))
+          (. .))
+  (ID GreekNT,Mark))                            
+                        </programlisting>
+                    </para>
+                </listitem>
+            </itemizedlist>
+        </para>
+        <para> The Greek equivalents of the following English verbs should be considered to take
+            small clauses. (Cf. the list of verbs that take secondary predicates in <xref
+                linkend="NP-SPR"/>.) <blockquote>
+                <para> ACKNOWLEDGE, ACCOUNT, ADJUDGE, AFFIRM, ALLOW, APPROVE, ARGUE, BELIEVE,
+                    BETHINK, BID, CALL, CAUSE, CONCEIVE, CONCLUDE, CONFESS, CONFIRM, CONSIDER,
+                    CONSTITUTE, CONTINUE, COUNT, CREATE, DECLARE, DEEM, DENOMINATE, DENY, DESIGN,
+                    DETERMINE, DISCLOSE, DISCOVER, DO, DOUBT, DUB, ESPY, EFFORM, ESTEEM, EXPECT,
+                    EXPRESS, FANCY, FEEL, FEIGN, FIND, FORESEE, FORM, GET, GRANT, GUESS, HAVE, HEAR,
+                    HOLD, HOPE, IMAGINE, IMPLY, INTEND, JUDGE, KNOW, LEARN, LET, MAKE, MEAN, NOTE,
+                    NUMBER, OBSERVE, OWN, OVERSEE, PERCEIVE, PHRASE, PRESUME, PRETEND, PROCLAIM,
+                    PROFESS, PRONOUNCE, PROTEST, PROVE, RECKON, RELATE, REMEMBER, RENDER, REPORT,
+                    REPUTE, SAY, SEE, SHOW, SPEAK, SPY, STYLE, SUPPOSE, SUSPECT, TERM, THINK, TITLE,
+                    TRUST, TURN, UNDERSTAND, VALUE, WARRANT, WISH, WRITE, WYST, YIELD </para>
+            </blockquote>
+        </para>
+        <para> In addition, the following Greek verbs should be considered to take small clauses. <itemizedlist>
+                <listitem>
+                    <para>
+                        <link linkend="ὁμοιόω">ὁμοιόω</link> ‘make like’ </para>
+                </listitem>
+            </itemizedlist>
+        </para>
     </sect1>
     <sect1 xml:id="IP-PPL">
         <title>Participial Clauses</title>
+        <important>
+            <para> Participial clauses (IP-PPL) are not always easy to distinguish from <link
+                    linkend="RRC">reduced relatives (RRC)</link> headed by participles (see <link
+                    linkend="RRC_vs_IP-PPL">above</link> for some discussion). In searches for one
+                category, it is wise to include the other. </para>
+        </important>
+        <para> Participial clauses without overt subjects are labeled IP-PPL. As usual in our
+            system, the PRO subject, which is generally co-referential with the matrix subject, is
+            not indicated. On rare occasions, an IP-PPL will have an overt subject, but for the most
+            part participial clauses with overt subjects are genitive absolutes and labeled IP-ABS. </para>
+        <para> IP-PPLs in Greek are adjuncts (IP-PPL) or complements (covered below in <xref
+                linkend="IP-PPL-COM"/> and <xref linkend="IP-PPL-THT"/>). <itemizedlist>
+                <listitem>
+                    <para> adjunct participial clause:
+                        <programlisting>
+( (IP-MAT (CODE {VS:2_8})
+          (CONJ καὶ)
+          (IP-PPL (VPR-AOR πέμψας)
+                  (NP-OB1 (PROA αὐτοὺς))
+                  (PP (P εἰς)
+                      (NP (NPRA Βηθλεὲμ))))
+          (VBD-AOR εἶπεν)
+          (IP-IMP-SPE (IP-PPL (VPR-AOR Πορευθέντες))
+                      (VBI-AOR ἐξετάσατε)
+                      (ADVP (ADV ἀκριβῶς))
+                      (PP (P περὶ)
+                          (NP (D$ τοῦ) (N$ παιδίου))))
+          (. .))
+  (ID GreekNT,Matthew))                            
+                        </programlisting>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para> adjunct participial clause with a (rare) subject:
+                        <programlisting>
+( (IP-MAT (CODE {VS:2_36})
+          (CONJ Καὶ)
+          (BED-IMPF ἦν)
+          (NP-SBJ (NP-PRN (NPR Ἇννα))
+                  (N προφῆτις)
+                  (, ,)
+                  (NP-PRN (N θυγάτηρ)
+                          (NP-ATR (NPR$ Φανουήλ)))
+                  (, ,)
+                  (PP (P ἐκ)
+                      (NP (N$ φυλῆς)
+                          (NP-ATR (NPR$ Ἀσήρ)))))
+          (, ,)
+          (IP-PPL (IP-PPL (NP-SBJ (D αὕτη))
+                          (VPR-PRF προβεβηκυῖα)
+                          (PP (P ἐν)
+                              (NP (NSD ἡμέραις) (QD πολλαῖς))))
+                  (, ,)
+                  (CONJP (IP-PPL (VPR-AOR ζήσασα)
+                                 (PP (P μετὰ)
+                                     (NP (N$ ἀνδρὸς)))
+                                 (NP-MSR (NSA ἔτη) (NUM ἑπτὰ))
+                                 (PP (P ἀπὸ)
+                                     (NP (D$ τῆς)
+                                         (N$ παρθενίας)
+                                         (NP-ATR (PRO$ αὐτῆς)))))))
+          (, ,))
+  (ID GreekNT,Luke))                            
+                        </programlisting>
+                    </para>
+                </listitem>
+            </itemizedlist>
+        </para>
         <sect2 xml:id="IP-ABS">
             <title>Absolute Clauses</title>
-            <para/>
+            <para> IP-ABS is the default for any participial clause with a subject, unless the
+                subject of the participle is the same as the subject of the whole clause (as in the
+                example above, which is just labeled IP-PPL). In other words, the distinguishing
+                feature of an absolute clause is that (1) its subject is marked and (2) its subject
+                is distinct from the subject of the matrix clause. Most absolute participial clauses
+                in Greek occur in the genitive—these are the genitive absolutes of the traditional
+                grammatical terminology for Greek. Occasionally, accusative absolutes also occur
+                (although none seem to occur in the PPCNTG), but these are not marked any
+                differently since it is possible to find them in a search by specifying the case of
+                the subject and/or participle.
+                <programlisting>
+( (IP-MAT (CODE {VS:4_35})
+          (CONJ Καὶ)
+          (NP-SBJ *con*)
+          (VBP-IMPF λέγει)
+          (NP-OB2 (PROD αὐτοῖς))
+          (PP (P ἐν)
+              (NP (DD ἐκείνῃ) (DD τῇ) (ND ἡμέρᾳ)))
+          (IP-ABS (NP-SBJ (ADJ$ ὀψίας))
+                  (VPRP$-AOR γενομένης))
+          (IP-MAT-SPE (NP-SBJ *pro*)
+                      (VBS-AOR Διέλθωμεν)
+                      (PP (P εἰς)
+                          (NP (DA τὸ) (ADV πέραν))))
+          (. .))
+  (ID GreekNT,Mark))                    
+                </programlisting>
+            </para>
         </sect2>
         <sect2 xml:id="IP-PPL-COM">
             <title>Supplementary Participles</title>
-            <para/>
+            <para> “Supplementary participles,” in the traditional terminology for Greek grammar,
+                are actually participial complements of a small number of verbs; they are labeled
+                IP-PPL-COM.
+                <programlisting>
+( (IP-MAT (CODE {VS:5_4})
+          (CP-ADV (C ὡς)
+                  (CLPRT δὲ)
+                  (IP-SUB (NP-SBJ *pro*)
+                          (VBDP-AOR ἐπαύσατο)
+                          (IP-PPL-COM (VPR-IMPF λαλῶν))))
+          (, ,)
+          (NP-SBJ *pro*)
+          (VBD-AOR εἶπεν)
+          (PP (P πρὸς)
+              (NP (DA τὸν) (NPRA Σίμωνα)))
+          (IP-IMP-SPE (VBI-AOR Ἐπανάγαγε)
+                      (PP (P εἰς)
+                          (NP (DA τὸ) (NA βάθος)))))
+  (ID GreekNT,Luke))                    
+                </programlisting>
+            </para>
+            <para> There are three major categories of verbs that may select for supplementary
+                participles: <itemizedlist>
+                    <listitem>
+                        <para> verbs of emotion (e.g., <link linkend="χαίρω">χαίρω</link>) </para>
+                    </listitem>
+                    <listitem>
+                        <para> verbs of beginning, ceasing, and enduring: <itemizedlist>
+                                <listitem>
+                                    <para>
+                                        <link linkend="παύω">παύω</link> ‘stop’ (cf. the example
+                                        above) </para>
+                                </listitem>
+                                <listitem>
+                                    <para>
+                                        <link linkend="ἄρχω">ἄρχω</link> ‘begin’ </para>
+                                </listitem>
+                            </itemizedlist>
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para> other: <itemizedlist>
+                                <listitem>
+                                    <para>
+                                        <link linkend="λανθάνω">λανθάνω</link> ‘escape the notice
+                                        of’ </para>
+                                </listitem>
+                                <listitem>
+                                    <para>
+                                        <link linkend="φθάνω">φθάνω</link> ‘anticipate, be first’
+                                    </para>
+                                </listitem>
+                                <listitem>
+                                    <para>
+                                        <link linkend="τυγχάνω">τυγχάνω</link> ‘happen to, obtain’
+                                    </para>
+                                </listitem>
+                            </itemizedlist>
+                        </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </sect2>
         <sect2 xml:id="IP-PPL-THT">
             <title>Participles of Indirect Discourse</title>
-            <para/>
+            <para> Participial clauses in Greek also occur as a third alternative to finite clauses
+                and infinitives in indirect discourse; these are labeled IP-PPL-THT. Only certain
+                verbs are able to take participles of indirect discourse; similar-looking cases with
+                different verbs should be considered <link linkend="IP-SMC">small clauses
+                    (IP-SMC)</link>.
+                <programlisting>
+( (IP-MAT (CODE {VS:17_6})
+          (CONJ0 καὶ)
+          (NP-SBJ *pro*)
+          (VBD-AOR εἶδον)
+          (IP-PPL-THT (NP-SBJ (DA τὴν) (NA γυναῖκα))
+                      (VPRA-IMPF μεθύουσαν)
+                      (PP (PP (P ἐκ)
+                              (NP (D$ τοῦ)
+                                  (N$ αἵματος)
+                                  (NP-ATR (DS$ τῶν) (ADJ$ ἁγίων))))
+                          (CONJP (CONJ καὶ)
+                                 (PP (P ἐκ)
+                                     (NP (D$ τοῦ)
+                                         (N$ αἵματος)
+                                         (NP-ATR (DS$ τῶν)
+                                                 (NS$ μαρτύρων)
+                                                 (NP-ATR (NPR$ Ἰησοῦ))))))))
+          (. .))
+  (ID GreekNT,Revelation))                    
+                </programlisting>
+            </para>
+            <para> The verbs that (optionally) select for participles of indirect discourse are the following<footnote>
+                    <para>From CUNY Summer Greek Institute Day 21, Unit 16 Handout by Hardy
+                        Hansen.</para>
+                </footnote>: <itemizedlist>
+                    <listitem>
+                        <para>
+                            <link linkend="ἀγγέλλω">ἀγγέλλω</link> ‘announce’ </para>
+                    </listitem>
+                    <listitem>
+                        <para>
+                            <link linkend="αἰσθάνομαι">αἰσθάνομαι</link> ‘be ashamed’ </para>
+                    </listitem>
+                    <listitem>
+                        <para>
+                            <link linkend="ἀκούω">ἀκούω</link> ‘hear’ </para>
+                    </listitem>
+                    <listitem>
+                        <para>
+                            <link linkend="γιγνώσκω">γιγνώσκω</link> ‘perceive, recognize, know’
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>
+                            <link linkend="δείκνυμι">δείκνυμι</link> ‘show’ </para>
+                    </listitem>
+                    <listitem>
+                        <para>
+                            <link linkend="δηλόω">δηλόω</link> ‘make clear’ </para>
+                    </listitem>
+                    <listitem>
+                        <para>
+                            <link linkend="μανθάνω">μανθάνω</link> ‘learn, understand’ </para>
+                    </listitem>
+                    <listitem>
+                        <para>
+                            <link linkend="ὁράω">ὁράω</link> ‘see’ (cf. the example above with the
+                            aorist εἶδον) </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </sect2>
     </sect1>
 </chapter>

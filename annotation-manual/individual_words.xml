@@ -5,34 +5,29 @@
     <title>Treatment of Individual Words</title>
     <glossdiv xml:id="Αα">
         <title>Αα</title>
+        <glossentry xml:id="ἀγγέλλω">
+            <glossterm>ἀγγέλλω</glossterm>
+            <glossdef>
+                <para> can select for a participle of indirect discourse, IP-PPL-THT </para>
+            </glossdef>
+        </glossentry>
         <glossentry xml:id="ἄγε">
             <glossterm>ἄγε, ἄγετε</glossterm>
             <glossdef>
                 <para> tagged INTJ if not main verb imperative, VBI otherwise </para>
             </glossdef>
         </glossentry>
-        <glossentry xml:id="ἀμήν">
-            <glossterm>ἀμήν</glossterm>
+        <glossentry xml:id="αἰσθάνομαι">
+            <glossterm>αἰσθάνομαι</glossterm>
             <glossdef>
-                <para> tagged INTJ </para>
+                <para> can select for a participle of indirect discourse, IP-PPL-THT </para>
             </glossdef>
         </glossentry>
-        <glossentry xml:id="ἄν">
-            <glossterm>ἄν</glossterm>
+        <glossentry xml:id="ἀκούω">
+            <glossterm>ἀκούω</glossterm>
             <glossdef>
-                <para> tagged AN </para>
-            </glossdef>
-        </glossentry>
-        <glossentry xml:id="ἄρα">
-            <glossterm>ἄρα</glossterm>
-            <glossdef>
-                <para> tagged CLPRT </para>
-            </glossdef>
-        </glossentry>
-        <glossentry xml:id="ἆρα">
-            <glossterm>ἆρα</glossterm>
-            <glossdef>
-                <para> tagged PRTQ </para>
+                <para> can select for a participle of indirect discourse, IP-PPL-THT </para>
+                <para> can take a quirky genitive object, NP-OBQ </para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="ἀλλά">
@@ -47,16 +42,46 @@
                 <para> tagged OTHER </para>
             </glossdef>
         </glossentry>
+        <glossentry xml:id="ἀμήν">
+            <glossterm>ἀμήν</glossterm>
+            <glossdef>
+                <para> tagged INTJ </para>
+            </glossdef>
+        </glossentry>
         <glossentry xml:id="ἀμφότεροι">
             <glossterm>ἀμφότεροι</glossterm>
             <glossdef>
                 <para> tagged Q </para>
             </glossdef>
         </glossentry>
+        <glossentry xml:id="ἄν">
+            <glossterm>ἄν</glossterm>
+            <glossdef>
+                <para> tagged AN </para>
+            </glossdef>
+        </glossentry>
         <glossentry xml:id="ἅπας">
             <glossterm>ἅπας</glossterm>
             <glossdef>
                 <para> tagged Q </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="ἄρα">
+            <glossterm>ἄρα</glossterm>
+            <glossdef>
+                <para> tagged CLPRT </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="ἆρα">
+            <glossterm>ἆρα</glossterm>
+            <glossdef>
+                <para> tagged PRTQ </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="ἄρχω">
+            <glossterm>ἄρχω</glossterm>
+            <glossdef>
+                <para> can take a supplementary participle, IP-PPL-COM </para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="αὐτός">
@@ -85,7 +110,7 @@
                             </para>
                         </listitem>
                         <listitem>
-                            <para> When αὐτός appears in attributive position and means `same,' it
+                            <para> When αὐτός appears in attributive position and means ‘same,’ it
                                 is tagged ADJ.
                                 <programlisting>
 ( (IP-MAT-SPE (CODE {VS:1_12})
@@ -105,7 +130,7 @@
 ( (IP-MAT (CODE {VS:4_44})
           (NP-SBJ (NP-PRN (PRO αὐτὸς))
                   (CLPRT γὰρ)
-                  (N Ἰησοῦς))
+                  (NPR Ἰησοῦς))
           (VBD-AOR ἐμαρτύρησεν)
           (CP-THT (C ὅτι)
                   (IP-SUB (NP-SBJ (N προφήτης))
@@ -138,6 +163,12 @@
                 <para> tagged CLGE </para>
             </glossdef>
         </glossentry>
+        <glossentry xml:id="γιγνώσκω">
+            <glossterm>γιγνώσκω</glossterm>
+            <glossdef>
+                <para> can select for a participle of indirect discourse, IP-PPL-THT </para>
+            </glossdef>
+        </glossentry>
     </glossdiv>
     <glossdiv xml:id="Δδ">
         <title>Δδ</title>
@@ -147,10 +178,22 @@
                 <para> tagged CLPRT </para>
             </glossdef>
         </glossentry>
+        <glossentry xml:id="δείκνυμι">
+            <glossterm>δείκνυμι</glossterm>
+            <glossdef>
+                <para> can select for a participle of indirect discourse, IP-PPL-THT </para>
+            </glossdef>
+        </glossentry>
         <glossentry xml:id="δή">
             <glossterm>δή</glossterm>
             <glossdef>
                 <para> tagged CLPRT </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="δηλόω">
+            <glossterm>δηλόω</glossterm>
+            <glossdef>
+                <para> can select for a participle of indirect discourse, IP-PPL-THT </para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="δίς">
@@ -177,7 +220,7 @@
         <glossentry xml:id="εἰμί">
             <glossterm>εἰμί</glossterm>
             <glossdef>
-                <para> the verb 'to be'; receives special set of verbal tags beginning with BE*
+                <para> the verb ‘to be’; receives special set of verbal tags beginning with BE*
                 </para>
             </glossdef>
         </glossentry>
@@ -228,7 +271,7 @@
                             <para> tagged CONJ, C, or P depending on the syntactic context </para>
                         </listitem>
                         <listitem>
-                            <para> as CONJ when it means 'or' </para>
+                            <para> as CONJ when it means ‘or’ </para>
                             <programlisting>
 ( (IP-IMP-SPE (CODE {VS:6_31})
               (NEG μὴ)
@@ -263,7 +306,7 @@
                             </para>
                         </listitem>
                         <listitem>
-                            <para> as C when it means 'than' and introduces a full comparative
+                            <para> as C when it means ‘than’ and introduces a full comparative
                                 clause (see <xref linkend="CP-CMP"/>)
                                 <programlisting>
 ( (IP-MAT (CODE {VS:7_9})
@@ -283,7 +326,7 @@
                             </para>
                         </listitem>
                         <listitem>
-                            <para> as P when it means 'than' and occurs in a comparative
+                            <para> as P when it means ‘than’ and occurs in a comparative
                                 construction that does not appear to contain an elided clause (see
                                 also <xref linkend="ὡς"/>)
                                 <programlisting>
@@ -420,10 +463,10 @@
         <glossentry xml:id="κἀγώ">
             <glossterm>κἀγώ</glossterm>
             <glossdef>
-                <para> crasis for καὶ ἐγώ; split into two words suffixed and prefixed with $:
+                <para> crasis for καὶ ἐγώ; split into two words suffixed and prefixed with @:
                     <programlisting>
-(NODE (CONJ κἀ$)
-      (PRO $γώ))
+(NODE (CONJ κἀ@)
+      (PRO @γώ))
                     </programlisting>
                 </para>
             </glossdef>
@@ -513,6 +556,12 @@
                     their morphological number, even if they induce plural agreement </para>
             </glossdef>
         </glossentry>
+        <glossentry xml:id="λανθάνω">
+            <glossterm>λανθάνω</glossterm>
+            <glossdef>
+                <para> can take a supplementary participle, IP-PPL-COM </para>
+            </glossdef>
+        </glossentry>
         <glossentry xml:id="λίαν">
             <glossterm>λίαν</glossterm>
             <glossdef>
@@ -532,6 +581,12 @@
             <glossterm>μᾶλλον</glossterm>
             <glossdef>
                 <para> tagged QR </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="μανθάνω">
+            <glossterm>μανθάνω</glossterm>
+            <glossdef>
+                <para> can select for a participle of indirect discourse, IP-PPL-THT </para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="με">
@@ -686,10 +741,22 @@
                 <para>usually tagged Q, but tagged ADJ when in attributive position</para>
             </glossdef>
         </glossentry>
+        <glossentry xml:id="ὁμοιόω">
+            <glossterm>ὁμοιόω</glossterm>
+            <glossdef>
+                <para> can take an IP-SMC </para>
+            </glossdef>
+        </glossentry>
         <glossentry xml:id="ὁπότερος">
             <glossterm>ὁπότερος</glossterm>
             <glossdef>
-                <para> tagged WPRO since 'which of two' </para>
+                <para> tagged WPRO since ‘which of two’ </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="ὁράω">
+            <glossterm>ὁράω</glossterm>
+            <glossdef>
+                <para> can select for a participle of indirect discourse, IP-PPL-THT </para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="ὅς">
@@ -702,9 +769,7 @@
         <glossentry xml:id="ὅσος">
             <glossterm>ὅσος</glossterm>
             <glossdef>
-                <para>
-                    tagged WADJ
-                </para>
+                <para> tagged WADJ </para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="ὅστις">
@@ -878,6 +943,12 @@
                 <para> usually tagged Q but tagged ADJ when in attributive position </para>
             </glossdef>
         </glossentry>
+        <glossentry xml:id="παύω">
+            <glossterm>παύω</glossterm>
+            <glossdef>
+                <para> can take a supplementary participle, IP-PPL-COM </para>
+            </glossdef>
+        </glossentry>
         <glossentry xml:id="περ">
             <glossterm>περ</glossterm>
             <glossdef>
@@ -1003,6 +1074,12 @@
                 <para> tagged CLTE </para>
             </glossdef>
         </glossentry>
+        <glossentry xml:id="τίκτω">
+            <glossterm>τίκτω</glossterm>
+            <glossdef>
+                <para> can take an NP-SPR </para>
+            </glossdef>
+        </glossentry>
         <glossentry xml:id="τις">
             <glossterm>τις/τι</glossterm>
             <glossdef>
@@ -1034,6 +1111,12 @@
                 <para> tagged Q </para>
             </glossdef>
         </glossentry>
+        <glossentry xml:id="τυγχάνω">
+            <glossterm>τυγχάνω</glossterm>
+            <glossdef>
+                <para> can take a supplementary participle, IP-PPL-COM </para>
+            </glossdef>
+        </glossentry>
     </glossdiv>
     <glossdiv xml:id="Φφ">
         <title>Φφ</title>
@@ -1043,13 +1126,26 @@
                 <para> tagged INTJ if not main verb imperative, VBI otherwise </para>
             </glossdef>
         </glossentry>
+        <glossentry xml:id="φθάνω">
+            <glossterm>φθάνω</glossterm>
+            <glossdef>
+                <para> can take a supplementary participle, IP-PPL-COM </para>
+            </glossdef>
+        </glossentry>
     </glossdiv>
     <glossdiv xml:id="Χχ">
         <title>Χχ</title>
+        <glossentry xml:id="χαίρω">
+            <glossterm>χαίρω</glossterm>
+            <glossdef>
+                <para> can take a supplementary participle, IP-PPL-COM </para>
+            </glossdef>
+        </glossentry>
         <glossentry xml:id="χάριν">
             <glossterm>χάριν</glossterm>
             <glossdef>
-                <para> usually tagged N, but tagged P when takes a dependent NP </para>
+                <para> usually tagged N, but tagged P when takes a dependent NP (may take a pre-head
+                    dependent NP) </para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="χίλιοι">
@@ -1077,7 +1173,7 @@
                             <para> tagged C, WADV, ADV, or P depending on the context </para>
                         </listitem>
                         <listitem>
-                            <para> C in its temporal use meaning 'when' or when used as a
+                            <para> C in its temporal use meaning ‘when’ or when used as a
                                 complementizer introducing any other type of subordinate clause such
                                 as a <emphasis>that</emphasis>-clause (see <xref linkend="CP-THT"/>)
                                 or a purpose clause (see <xref linkend="CP-COM"/>)
@@ -1123,7 +1219,7 @@
                             </para>
                         </listitem>
                         <listitem>
-                            <para> ADV when it has the meaning of 'so' or 'thus' and does not
+                            <para> ADV when it has the meaning of ‘so’ or ‘thus’ and does not
                                 introduce a subordinate clause </para>
                         </listitem>
                         <listitem>

@@ -7,8 +7,8 @@
             xlink:href="Penn Parsed Corpora of Historical English">Penn Parsed Corpora of Historical
             English</link>, uses a limited tree representation in the form of labeled parentheses.
         All open parentheses have an associated label, either a phrase label (NP, ADJP, etc.) or a
-        word label (N, ADJ, etc.), representing nodes in a tree. We use the terms `word label' and
-        `POS (part-of-speech) label' interchangeably. A word label is associated with every word,
+        word label (N, ADJ, etc.), representing nodes in a tree. We use the terms ‘word label’ and
+        ‘POS (part-of-speech) label’ interchangeably. A word label is associated with every word,
         but phrasal labels are not included in every case in which a fully labeled tree would
         require them. Intermediate projections in the sense of X' theory (N', ADJ', etc.) are not
         generally included in our representations. By comparison to trees in current syntactic
@@ -53,7 +53,7 @@
                 <listitem>
                     <para>
                         <emphasis>Dash tags indicate syntactic subcategory or function.</emphasis>
-                        In general, phrase labels indicate a constituent's category (NP, PP, ADJP,
+                        In general, phrase labels indicate a constituent’s category (NP, PP, ADJP,
                         etc.). Additional labels (so-called dash tags), which are separated from the
                         category label by a hyphen, indicate subcategory or function: <itemizedlist>
                             <listitem>
@@ -213,9 +213,9 @@
                         <caution>
                             <para> Exception: In the PPCHiG, post-head modifiers <emphasis>do
                                     not</emphasis> project structure beyond the word level unless
-                                they consist of of more than one word; this marks a departure from
-                                the guidelines for the English corpora. Like pre-head modifiers,
-                                they are represented as sisters to the head, except for attributive
+                                they consist of more than one word; this marks a departure from the
+                                guidelines for the English corpora. Like pre-head modifiers, they
+                                are represented as sisters to the head, except for attributive
                                 participles, which are always given the RRC label.
                                 <programlisting>
 (NP (ADJ various) (ADJ black) (NS cats))
@@ -550,7 +550,7 @@
                         <para> Overt complementizer:
                             <programlisting>
 (CP-THT (C ὅτι)                         ← overt complementizer
-        (IP-SUB (NP-SBJ (N Ἰωάνης))
+        (IP-SUB (NP-SBJ (NPR Ἰωάνης))
                 (VBDP-AOR-PASS παρεδόθη))))                                
                             </programlisting>
                             (Matthew 4.12) </para>
@@ -680,7 +680,7 @@
               (NP-LFD (D τὸ)
                       (N βάπτισμα)
                       (NP-PRN (D τὸ)
-                              (NP-ATR (N$ Ἰωάνου)))
+                              (NP-ATR (NPR$ Ἰωάνου)))
               (WADVP-1 (WADV πόθεν))
               (C 0)
               (IP-SUB (ADVP-DIR *T*-1)

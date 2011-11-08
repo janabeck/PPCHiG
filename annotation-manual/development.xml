@@ -2,9 +2,34 @@
 <?xml-model href="http://www.oasis-open.org/docbook/xml/5.0/rng/docbookxi.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="development">
-    <title>General Corpus Development</title>
-    <sect1>
-        <title></title>
-        <para></para>
+    <title>Corpus Development</title>
+    <sect1 xml:id="schedule">
+        <title>Tentative Corpus Development Schedule</title>
+        <itemizedlist>
+            <listitem>
+                <para> 11/18/2011: Release Matthew from the Greek New Testament and Book 1 from
+                    Herodotus’ <emphasis>Histories</emphasis> as samples of the PPCHiG annotation
+                    system. </para>
+            </listitem>
+            <listitem>
+                <para> 12/2/2011: Release the remaining books of the Gospels from the Greek New
+                    Testament. </para>
+            </listitem>
+            <listitem>
+                <para> 12/30/2011: Release the remaining books of the Greek New Testament. </para>
+            </listitem>
+            <listitem>
+                <para> 3/16/2011: Release the remaining books of Herodotus’
+                        <emphasis>Histories</emphasis>. </para>
+            </listitem>
+            <listitem>
+                <para> 6/15/2011: Release Homer’s <emphasis>Iliad</emphasis> and
+                        <emphasis>Odyssey</emphasis>. </para>
+            </listitem>
+            <listitem>
+                <para> 7/13/2011: Release Hesiod’s <emphasis>Theogeny</emphasis> and <emphasis>Works
+                        and Days</emphasis>. </para>
+            </listitem>
+        </itemizedlist>
     </sect1>
 </chapter>

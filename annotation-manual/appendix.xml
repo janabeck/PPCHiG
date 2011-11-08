@@ -5,22 +5,40 @@
     <title>Appendix</title>
     <sect1 xml:id="copular_verbs">
         <title>Copular Verbs</title>
-        <para><blockquote>
-                <para>APPEAR, BE, BECOME, CHANCE, CONTINUE, FALL, FEEL, GET, GROW, KEEP, LOOK, PLEAD
-                    (in legal sense), PROVE, REMAIN, SAVOR, SEEM, SHOW, SMELL, SOUND, STAY, TASTE,
-                    TURN, WAX</para>
-            </blockquote></para>
+        <blockquote>
+            <para>APPEAR, BE, BECOME, CHANCE, CONTINUE, FALL, FEEL, GET, GROW, KEEP, LOOK, PLEAD (in
+                legal sense), PROVE, REMAIN, SAVOR, SEEM, SHOW, SMELL, SOUND, STAY, TASTE, TURN,
+                WAX</para>
+        </blockquote>
     </sect1>
     <sect1 xml:id="small_clause_verbs">
         <title>Verbs taking Small Clauses</title>
-        <para><blockquote><para></para></blockquote></para>
+        <blockquote>
+            <para> ACKNOWLEDGE, ACCOUNT, ADJUDGE, AFFIRM, ALLOW, APPROVE, ARGUE, BELIEVE, BETHINK,
+                BID, CALL, CAUSE, CONCEIVE, CONCLUDE, CONFESS, CONFIRM, CONSIDER, CONSTITUTE,
+                CONTINUE, COUNT, CREATE, DECLARE, DEEM, DENOMINATE, DENY, DESIGN, DETERMINE,
+                DISCLOSE, DISCOVER, DO, DOUBT, DUB, ESPY, EFFORM, ESTEEM, EXPECT, EXPRESS, FANCY,
+                FEEL, FEIGN, FIND, FORESEE, FORM, GET, GRANT, GUESS, HAVE, HEAR, HOLD, HOPE,
+                IMAGINE, IMPLY, INTEND, JUDGE, KNOW, LEARN, LET, MAKE, MEAN, NOTE, NUMBER, OBSERVE,
+                OWN, OVERSEE, PERCEIVE, PHRASE, PRESUME, PRETEND, PROCLAIM, PROFESS, PRONOUNCE,
+                PROTEST, PROVE, RECKON, RELATE, REMEMBER, RENDER, REPORT, REPUTE, SAY, SEE, SHOW,
+                SPEAK, SPY, STYLE, SUPPOSE, SUSPECT, TERM, THINK, TITLE, TRUST, TURN, UNDERSTAND,
+                VALUE, WARRANT, WISH, WRITE, WYST, YIELD </para>
+        </blockquote>
     </sect1>
     <sect1 xml:id="secondary_pred_verbs">
         <title>Verbs taking Secondary Predicates</title>
-        <para><blockquote><para></para></blockquote></para>
+        <blockquote>
+            <para> ADMIT, AGREE, ANOINT, APPOINT, BIND, BRING, CHOOSE, CHRISTEN, CLAIM, CONFIRM,
+                CONSECRATE, CROWN, DEFEND, DEFINE, DEVOTE, ELECT, INTERPRET, KEEP, LEAVE, LOVE,
+                NAME, NOMINATE, OFFER, ORDAIN, PRESERVE, SET, SUBSCRIBE, SUFFER, SURNAME, TAKE,
+                TESTIFY, TRANSLATE, TRY, VOW, WITNESS </para>
+        </blockquote>
     </sect1>
     <sect1 xml:id="cognate_object_verbs">
         <title>Cognate Object Verbs</title>
-        <para><blockquote><para></para></blockquote></para>
+        <blockquote>
+            <para> DELIGHT, HELP, PAIN, PRAY, THANK </para>
+        </blockquote>
     </sect1>
 </appendix>

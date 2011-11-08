@@ -85,6 +85,9 @@
                     <para> In the comparative and superlative degrees, no distinctions are made with
                         respect to the case or number of adjectives. </para>
                 </listitem>
+                <listitem>
+                    <para> Possessive adjectives receive the “dash” tag -POS. </para>
+                </listitem>
             </itemizedlist>
         </sect2>
         <sect2 xml:id="colors">
@@ -215,6 +218,10 @@
                         <entry>emphatic clitic particle <link linkend="γε">γε</link></entry>
                     </row>
                     <row>
+                        <entry>CLPRO</entry>
+                        <entry>clitic pronoun, nominative (Homer only)</entry>
+                    </row>
+                    <row>
                         <entry>CLPRO$</entry>
                         <entry>clitic pronoun, genitive</entry>
                     </row>
@@ -229,7 +236,7 @@
                     <row>
                         <entry>CLPRT</entry>
                         <entry>second-position sentential particle, other second position particles
-                            such as <link linkend="περ">περ</link> 'indeed'</entry>
+                            such as <link linkend="περ">περ</link> ‘indeed’</entry>
                     </row>
                     <row>
                         <entry>CLQ</entry>
@@ -496,7 +503,7 @@
                           (PP (P διὰ)
                               (NP (D$ τοῦ)
                                   (N$ κυρίου)
-                                  (NP-PRN (N$ Ἰησοῦ))))))
+                                  (NP-PRN (NPR$ Ἰησοῦ))))))
           (. .))
   (ID GreekNT,1Thessalonians))                                    
                                 </programlisting>
@@ -1031,7 +1038,7 @@
 (PP (P ἔξω)
     (NP (D$ τῆς) (N$ πόλεως)))
 (PP (P εἰς)
-    (NP (NA Βηθανίαν)))                            
+    (NP (NPRA Βηθανίαν)))                            
                         </programlisting>
                         (Matthew 21.17) </para>
                 </listitem>
@@ -1092,8 +1099,8 @@
                 </listitem>
                 <listitem>
                     <para> Interpuncts in the original text are represented by interpuncts in the
-                        annotated corpus. By default, they are tagged with '.' but their tags should
-                        be changed to ',' when they do not serve as sentence-final punctuation.
+                        annotated corpus. By default, they are tagged with ‘.’ but their tags should
+                        be changed to ‘,’ when they do not serve as sentence-final punctuation.
                         (Note that an interpunct preceding a sentence final quote would count as
                         sentence-final punctuation.) </para>
                 </listitem>
@@ -1163,7 +1170,7 @@
                             linkend="μᾶλλον">μᾶλλον</link>, <link linkend="ὀλίγος">ὀλίγος</link>,
                             <link linkend="πλεῖστος">πλεῖστος</link>, <link linkend="πολύς"
                             >πολύς</link>, <link linkend="σύμπας">σύμπας</link>, <link
-                                linkend="τοσοῦτος">τοσοῦτος</link>. </para>
+                            linkend="τοσοῦτος">τοσοῦτος</link>. </para>
                 </listitem>
                 <listitem>
                     <para> The word <emphasis>half</emphasis> is tagged Q when it acts adverbially
@@ -1226,7 +1233,7 @@
                     <row>
                         <entry>VBD</entry>
                         <entry>verb, active secondary sequence (imperfect, aorist,
-                            plurperfect)</entry>
+                            pluperfect)</entry>
                     </row>
                     <row>
                         <entry>VBDP</entry>
@@ -1389,7 +1396,7 @@
                 </listitem>
                 <listitem>
                     <para> Note that the existence of future perfect passive verbs in Greek forces
-                        the possibility of a verb's having up to three dash tags: VBPP-FUT-PRF-PASS.
+                        the possibility of a verb’s having up to three dash tags: VBPP-FUT-PRF-PASS.
                         In cases of two or three verbal dash tags, the tags should be applied in the
                         order tense-aspect-voice. </para>
                 </listitem>
@@ -1483,7 +1490,7 @@
                     </row>
                     <row>
                         <entry>WQ</entry>
-                        <entry><link linkend="εἰ">εἰ</link> in the meaning 'whether' introducing an
+                        <entry><link linkend="εἰ">εἰ</link> in the meaning ‘whether’ introducing an
                             indirect question</entry>
                     </row>
                 </tbody>
@@ -1546,13 +1553,13 @@
                 </listitem>
                 <listitem>
                     <para> Crasis is <emphasis>not</emphasis> represented with compound tags but
-                        rather by breaking up the words joined under crasis, appending $ to the end
-                        of the left word and $ to the right of the right word. For example, <link
+                        rather by breaking up the words joined under crasis, appending @ to the end
+                        of the left word and @ to the right of the right word. For example, <link
                             linkend="κἀγώ">κἀγώ</link>, the crasis of καὶ ἐγώ, is represented as
                         follows:
                         <programlisting>
-(NODE (CONJ κἀ$)
-      (PRO $γώ))
+(NODE (CONJ κἀ@)
+      (PRO @γώ))
                     </programlisting>
                     </para>
                 </listitem>
@@ -1561,7 +1568,7 @@
                         />. </para>
                 </listitem>
                 <listitem>
-                    <para> Combinations of relative/interrogative pronouns with the indefinitive
+                    <para> Combinations of relative/interrogative pronouns with the indefinite
                         pronoun <link linkend="τις">τις/τι</link>—e.g., <link linkend="ὅστις"
                             >ὅστις</link> is tagged WPRO+CLQ. </para>
                 </listitem>
@@ -1579,9 +1586,6 @@
                             </listitem>
                         </itemizedlist> See <xref linkend="CL_notes"/> and <xref
                             linkend="compound_NEG"/>. </para>
-                </listitem>
-                <listitem>
-                    <para> </para>
                 </listitem>
             </itemizedlist>
         </para>

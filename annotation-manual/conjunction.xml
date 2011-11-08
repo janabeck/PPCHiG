@@ -136,8 +136,8 @@
         </para>
         <para> In general, sets of constituents (NPs, PPs, etc.) acting as a unit are treated either
             as appositive or conjoined, and this is indicated either by the presence of the extended
-            tag -PRN (see \autoref{PRN}), or by the presence of CONJP on the second (and following)
-            constituents. The immediately following structure is therefore illegal:
+            tag -PRN (see <xref linkend="PRN"/>), or by the presence of CONJP on the second (and
+            following) constituents. The immediately following structure is therefore illegal:
             <programlisting>
 (NODE (WNP-2 (WNP (WD what) (N mede))     ← illegal structure, no -PRN or CONJP
              (, ,)
@@ -401,7 +401,7 @@
 ( (IP-MAT (CODE {VS:21_12})
           (CONJ0 Καὶ)
           (VBD-AOR εἰσῆλθεν)
-          (NP-SBJ (N Ἰησοῦς))
+          (NP-SBJ (NPR Ἰησοῦς))
           (PP (P εἰς)
               (NP (DA τὸ) (ADJA ἱερόν)))
           (, ,))
@@ -501,10 +501,10 @@
                     (CLPRT δὲ)
                     (NP-SBJ (D ὁ)
                             (N βασιλεὺς)
-                            (NP-PRN (N Ἡρῴδης)))
+                            (NP-PRN (NPR Ἡρῴδης)))
                     (VBDP-AOR-PASS ἐταράχθη))
           (CONJP (CONJ καὶ)
-                 (IP-MAT=1 (NP-SBJ (Q πᾶσα) (N Ἰεροσόλυμα))
+                 (IP-MAT=1 (NP-SBJ (Q πᾶσα) (NPR Ἰεροσόλυμα))
                            (PP (P μετ')
                                (NP (PRO$ αὐτοῦ)))))
           (, ,))
@@ -741,8 +741,7 @@
                     linkend="embedded_conj"/>). As a result of our convention, pre-sentential
                 adjuncts (most commonly, clause-initial WHEN and IF clauses) appear as constituents
                 of the first conjunct only, while post-sentential adjuncts appear as constituents of
-                the second conjunct only. 
-                <programlisting>
+                the second conjunct only. <programlisting>
 ( (IP-IMP-SPE (CODE {VS:6_6})
               (CP-ADV (NP-LFD (PRO σὺ))                     ← potential shared adjunct
                       (CLPRT δὲ)
@@ -810,23 +809,22 @@
   (ID GreekNT,Matthew))                    
                 </programlisting>
             </para>
-            <para>
-                Shared adjuncts in embedded conjoined clauses are treated analogously.
+            <para> Shared adjuncts in embedded conjoined clauses are treated analogously.
                 <programlisting>
 (IP-SUB (IP-SUB-5 (NP-SBJ *T*-4)
                   (CP-ADV (C ὅτε)                           ← potential shared adjunct
                           (IP-SUB (NP-SBJ *pro*)
                                   (BED-IMPF ἦν)
                                   (PP (P ἐν)
-                                      (NP (DD τῇ) (ND Γαλιλαίᾳ)))))
+                                      (NP (DD τῇ) (NPRD Γαλιλαίᾳ)))))
                   (VBD-IMPF ἠκολούθουν)
                   (NP-OBQ (PROD αὐτῷ)))
         (CONJP (CONJ καὶ)
                (IP-SUB=5 (NP-SBJ *T*-4)
                          (VBD-IMPF διηκόνουν)
                          (NP-OBQ (PROD αὐτῷ)))))                    
-                </programlisting> (Mark 15.41)
-            </para>
+                </programlisting>
+                (Mark 15.41) </para>
         </sect2>
     </sect1>
 </chapter>

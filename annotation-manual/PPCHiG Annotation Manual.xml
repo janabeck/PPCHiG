@@ -44,7 +44,7 @@
         <xi:include href="development.xml"/>
         <xi:include href="known_issues.xml"/>
     </part>
-    
+
     <xi:include href="appendix.xml"/>
 
 </book>

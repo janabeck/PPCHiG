@@ -5,6 +5,77 @@
     <title>Special Constructions</title>
     <sect1 xml:id="prolepsis">
         <title>Prolepsis</title>
-        <para></para>
+        <para> Smyth defines <emphasis>prolepsis</emphasis> as the case when “The subject of the
+            dependent clause is...anticipated and made the object of the verb of the principal
+            clause.” This construction is especially common—again, according to Smyth—following
+            verbs of saying, seeing, hearing, knowing, fearing, and effecting. In our annotation
+            scheme, prolepsis is indicated by retaining the proleptic object within the outer scope
+            of the dependent clause and giving it a -LFD tag, while the *pro* subject of the
+            dependent clause receives a -RSP tag.
+            <programlisting>
+( (IP-IMP-SPE (CODE {VS:6_28})
+              (VBI-AOR καταμάθετε)
+              (CP-QUE (NP-OB1-LFD (DSA τὰ)
+                                  (NSA κρίνα)
+                                  (NP-COM (D$ τοῦ) (N$ ἀγροῦ)))
+                      (WADVP-1 (WADV πῶς))
+                      (C 0)
+                      (IP-SUB (ADVP *T*-1)
+                              (NP-SBJ-RSP *pro*)
+                              (VBP-IMPF αὐξάνουσιν)))
+              (. .))
+  (ID GreekNT,Matthew))                
+            </programlisting>
+        </para>
     </sect1>
-    </chapter>
+    <sect1 xml:id="clausal_subj">
+        <title>Clausal Subjects</title>
+        <para> Clausal subjects that contain a complementizer are labeled CP-SBJ.
+            <programlisting>
+( (IP-MAT-SPE (CODE {VS:5_29})
+              (VBP-IMPF συμφέρει)
+              (CLPRT γάρ)
+              (NP-OBP (CLPROD σοι))
+              (CP-SBJ (C ἵνα)
+                      (IP-SUB (IP-SUB (VBSP-AOR ἀπόληται)
+                                      (NP-SBJ (NUM ἓν)
+                                              (NP-PAR (DS$ τῶν)
+                                                      (NS$ μελῶν)
+                                                      (NP-ATR (CLPRO$ σου)))))
+                              (CONJP (CONJ καὶ)
+                                     (IP-SUB (NEG μὴ)
+                                             (NP-SBJ (ADJ ὅλον)
+                                                     (D τὸ)
+                                                     (N σῶμά)
+                                                     (NP-ATR (CLPRO$ σου)))
+                                             (VBSP-AOR-PASS βληθῇ)
+                                             (PP (P εἰς)
+                                                 (NP (NA γέενναν)))))))
+              (. .))
+  (ID GreekNT,Matthew))                
+            </programlisting>
+        </para>
+        <para> In the GNT, however, matrix clauses without a CP projection can also occur as the
+            subject of a verb like ἐγένετο ‘(it) happened.’ In this case, the clausal subject is
+            simply indicated with the tag IP-MAT-SBJ.
+            <programlisting>
+( (IP-MAT (CODE {VS:7_28})
+          (CONJ Καὶ)
+          (VBDP-AOR ἐγένετο)
+          (CP-ADV (C ὅτε)
+                  (IP-SUB (VBD-AOR ἐτέλεσεν)
+                          (NP-SBJ (D ὁ) (NPR Ἰησοῦς))
+                          (NP-OB1 (DSA τοὺς) (NSA λόγους) (DSA τούτους))))
+          (, ,)
+          (IP-MAT-SBJ (VBDP-IMPF-PASS ἐξεπλήσσοντο)
+                      (NP-SBJ (DS οἱ) (NS ὄχλοι))
+                      (PP (P ἐπὶ)
+                          (NP (DD τῇ)
+                              (ND διδαχῇ)
+                              (NP-ATR (PRO$ αὐτοῦ)))))
+          (. .))
+  (ID GreekNT,Matthew))                
+            </programlisting>
+        </para>
+    </sect1>
+</chapter>
