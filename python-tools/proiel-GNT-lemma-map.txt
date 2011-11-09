@@ -36,53 +36,103 @@ Df	παντα-χοῦ	Q+ADV
 Df	γάρ		CLPRT
 Df	μή-πω		NEG+CLPRT
 Df	ὅπως		WADV
-Df	 διό-περ		C+CLPRT
-Df	 οὔ-πω		NEG+CLPRT
-Df	 οὖν		CLPRT
-Df	 ποτε		CLPRT
-Df	 τρίς		NUM
-Df	 καί-γε		CONJ+CLGE
-Df	 οὐκ-έτι		NEG+ADV
-Df	 ὡς		WADV
-Df	 ἤ		X
-Df	 οὐ-δέ-πω	NEG+CONJ+CLPRT
-Df	 ὡσαύτως	WADV+SLF
-Df	 ἐ-άν		C+AN
-Df	 ὥσ-τε		WADV+CLTE
-Df	 μηδ-αμῶς	NEG+ADV
-Df	 μᾶλλον		QR
-Df	 ὡσ-περεί	WADV+CLPRT
-Df	 μή		NEG
-Df	 μή-τι		NEG+CLQ
-Df	 οὐχί		NEG
-Df	 μή-τε		NEG+CLTE
-Df	 οὐδέ		NEG+CONJ		
-Df	 μάλιστα		QS
-Df	 ἄν		AN
-Df	 εἰ#2		C	 
-Df	 εἰ#1		P
-Df	 οὐκ-οῦν	NEG+CLPRT
-Df	 μή-ποτε	NEG+CLPRT
-Df	 πάντ-οτε	Q
-Df	 μή-γε		NEG+CLGE
-Df	 μη-δέ-ποτε	NEG+CONJ+CLPRT
-Df	 μέν-τοι		CLPRT+CLPRT
-Df	 πού		CLPRT
-Df	 διό		C
-Df	 τε		CLTE
-Df	 οὐδ-αμῶς	NEG+ADV
-Df	 γέ		CLGE
-Dq	 ὡς		WADV
-Dq	 καθώς		WADV
-Dq	 καθά		WADV
-Dq	 οὗ		WADV
-Dq	 ὅτ-αν		WADV+AN	
-Dq	 ὅθεν		WADV
-Dq	 ὅτε		WADV
-Dq	 καθά-περ	WADV+CLPRT
-Dq	 ὁσάκις		WADV
-Dq	 ὥσ-περ		WADV+CLPRT
-Dq	 ὅπου		WADV		
-Dq	 καθό		WADV
-Dq	 ὅπως		WADV
-
+Df	διό-περ		C+CLPRT
+Df	οὔ-πω		NEG+CLPRT
+Df	οὖν		CLPRT
+Df	ποτε		CLPRT
+Df	τρίς		NUM
+Df	καί-γε		CONJ+CLGE
+Df	οὐκ-έτι		NEG+ADV
+Df	ὡς		WADV
+Df	ἤ		X
+Df	οὐ-δέ-πω	NEG+CONJ+CLPRT
+Df	ὡσαύτως		WADV+SLF
+Df	ἐ-άν		C+AN
+Df	ὥσ-τε		WADV+CLTE
+Df	μηδ-αμῶς	NEG+ADV
+Df	μᾶλλον		QR
+Df	ὡσ-περεί		WADV+CLPRT
+Df	μή		NEG
+Df	μή-τι		NEG+CLQ
+Df	οὐχί		NEG
+Df	μή-τε		NEG+CLTE
+Df	οὐδέ		NEG+CONJ		
+Df	μάλιστα		QS
+Df	ἄν		AN
+Df	εἰ#2		C	 
+Df	εἰ#1		P
+Df	οὐκ-οῦν		NEG+CLPRT
+Df	μή-ποτε		NEG+CLPRT
+Df	πάντ-οτε		Q
+Df	μή-γε		NEG+CLGE
+Df	μη-δέ-ποτε	NEG+CONJ+CLPRT
+Df	μέν-τοι		CLPRT+CLPRT
+Df	πού		CLPRT
+Df	διό		C
+Df	τε		CLTE
+Df	οὐδ-αμῶς	NEG+ADV
+Df	γέ		CLGE
+Dq	ὡς		WADV
+Dq	καθώς		WADV
+Dq	καθά		WADV
+Dq	οὗ		WADV
+Dq	ὅτ-αν		WADV+AN	
+Dq	ὅθεν		WADV
+Dq	ὅτε		WADV
+Dq	καθά-περ		WADV+CLPRT
+Dq	ὁσάκις		WADV
+Dq	ὥσ-περ		WADV+CLPRT
+Dq	ὅπου		WADV		
+Dq	καθό		WADV
+Dq	ὅπως		WADV
+Du	πῶς		WADV
+Du	εἰ		WQ
+Du	ὅτι		WPRO
+Du	πότε		WADV
+Du	μήτι		PRTQ
+Du	ἱνα-τί		WADV+CLQ			
+Du	ποσάκις		WADV
+Du	ποῦ		WADV
+Du	πόθεν		WADV
+Du	πότερον		WPRO
+F-	κούμ		FW
+F-	ἀθά		FW
+F-	μαρὰν		FW
+F-	ταλιθά		FW
+F-	ῥακά		FW
+F-	ἐφφαθά		FW
+F-	ἑλωΐ		FW
+F-	σαβαχθάνι	FW
+F-	Σαβαώθ		FW
+F-	λεμά		FW
+F-	κορβᾶν		FW
+G-	ἡνίκα		
+G-	μέχρις		C
+G-	ἐπει-δή		C+CLPRT
+ἀπό
+ὁπότε
+μέχρι
+ἵνα
+ὅτε
+εἴπως
+ὅτι
+ἄχρι
+καίπερ
+ὡς
+μήπως
+ἄν
+εἴτε
+μήποτε
+ἐπειδήπερ
+ἐπεί
+ἐπάν
+ἕως
+εἴπερ
+ἐάν
+εἰ
+πρίν
+ὥστε
+ἀντί
+καθότι
+διότι
+ὅπως
