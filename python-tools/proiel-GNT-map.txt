@@ -9,20 +9,25 @@ A-_-.---.d[px].i	ADJD
 A-_-.---.[lbxci][px].i	ADJU
 A-_-.---..c.i		ADJR
 A-_-.---..s.i		ADJS
+# non-inflecting
+A-_---------n		ADJU
 
-# C-: Conjunctions, done by lemma
+# C-: Conjunctions, done by lemma, all non-inflecting
 
 # Df: Adverbs, some done by lemma, else:
-Df_..........	   	ADV
+Df_.........n  	    	ADV
+Df_.......p..	   	ADV
+Df_.......c..		ADVR
+Df_.......s..		ADVS
 
-# Dq: Relative adverbs, done by lemma
+# Dq: Relative adverbs, done by lemma, all non-inflecting
 
-# Du: Interrogative adverbs, done by lemma
+# Du: Interrogative adverbs, done by lemma, all non-inflecting
 
 # F-: Foreign words
 F-_..........		FW
 
-# G-: "Subjunctions", done by lemma
+# G-: "Subjunctions", done by lemma, all non-inflecting
 
 # I-: Interjections
 I-_..........		INTJ
@@ -50,6 +55,8 @@ Nb_-p---.g-.i		NS$
 Nb_-p---.a-.i		NSA
 Nb_-p---.d-.i		NSD
 Nb_-p---.[lbxci]-.i	NSU
+# non-inflecting
+Nb_---------n		NU
 
 # Ne: Proper Nouns
 # singular
@@ -64,6 +71,8 @@ Ne_-p---.g-.i		NPRS$
 Ne_-p---.a-.i		NPRSA
 Ne_-p---.d-.i		NPRSD
 Ne_-p---.[lbxci]-.i	NPRSU
+# non-inflecting
+Ne_---------n		NPRU
 
 # Pc: Reciprocal Pronouns
 Pc_-.---.[nv]-.i	PRO
@@ -73,26 +82,86 @@ Pc_-.---.d-.i		PROD
 Pc_-.---.[lbxci]-.i	PROU
 
 # Pd: Demonstrative Pronouns, done by lemma
+# singular
+Pd_.[sdx]---.[nv]-.i    	nom.sing
+Pd_.[sdx]---.g-.i		gen.sing
+Pd_.[sdx]---.a-.i		acc.sing
+Pd_.[sdx]---.d-.i		dat.sing
+Pd_.[sdx]---.[lbxci]-.i		unk.sing
+# plural
+Pd_.p---.[nv]-.i		nom.pl
+Pd_.p---.g-.i			gen.pl
+Pd_.p---.a-.i			acc.pl
+Pd_.p---.d-.i			dat.pl
+Pd_.p---.[lbxci]-.i		unk.pl
 
 # Pi: Interrogative Pronouns, done by lemma
+# singular
+Pi_.[sdx]---.[nv]-.i    	nom.sing
+Pi_.[sdx]---.g-.i		gen.sing
+Pi_.[sdx]---.a-.i		acc.sing
+Pi_.[sdx]---.d-.i		dat.sing
+Pi_.[sdx]---.[lbxci]-.i		unk.sing
+# plural
+Pi_.p---.[nv]-.i		nom.pl
+Pi_.p---.g-.i			gen.pl
+Pi_.p---.a-.i			acc.pl
+Pi_.p---.d-.i			dat.pl
+Pi_.p---.[lbxci]-.i		unk.pl
 
 # Pk: Personal Reflexive Pronouns
-Pk_-.---.[nv]-.i	PRO+SLF
-Pk_-.---.g-.i		PRO$+SLF
-Pk_-.---.a-.i		PROA+SLF
-Pk_-.---.d-.i		PROD+SLF
+Pk_..---.[nv]-.i	PRO+SLF
+Pk_..---.g-.i		PRO$+SLF
+Pk_..---.a-.i		PROA+SLF
+Pk_..---.d-.i		PROD+SLF
 
 # Pp: Personal Pronouns, done by lemma
+# singular
+Pp_.[sdx]---.[nv]-.i    	nom.sing
+Pp_.[sdx]---.g-.i		gen.sing
+Pp_.[sdx]---.a-.i		acc.sing
+Pp_.[sdx]---.d-.i		dat.sing
+Pp_.[sdx]---.[lbxci]-.i		unk.sing
+# plural
+Pp_.p---.[nv]-.i		nom.pl
+Pp_.p---.g-.i			gen.pl
+Pp_.p---.a-.i			acc.pl
+Pp_.p---.d-.i			dat.pl
+Pp_.p---.[lbxci]-.i		unk.pl
 
 # Pr: Relative Pronouns, done by lemma
+# singular
+Pr_.[sdx]---.[nv]-.i    	nom.sing
+Pr_.[sdx]---.g-.i		gen.sing
+Pr_.[sdx]---.a-.i		acc.sing
+Pr_.[sdx]---.d-.i		dat.sing
+Pr_.[sdx]---.[lbxci]-.i		unk.sing
+# plural
+Pr_.p---.[nv]-.i		nom.pl
+Pr_.p---.g-.i			gen.pl
+Pr_.p---.a-.i			acc.pl
+Pr_.p---.d-.i			dat.pl
+Pr_.p---.[lbxci]-.i		unk.pl
 
 # Ps: Possessive Pronouns
-Ps_-.---.[nv]-.i	ADJ-POS
-Ps_-.---.g-.i		ADJ$-POS
-Ps_-.---.a-.i		ADJA-POS
-Ps_-.---.d-.i		ADJD-POS
+Ps_..---.[nv]-.i	ADJ-POS
+Ps_..---.g-.i		ADJ$-POS
+Ps_..---.a-.i		ADJA-POS
+Ps_..---.d-.i		ADJD-POS
 
 # Px: Indefinite Pronouns, done by lemma
+# singular
+Px_.[sdx]---.[nv]-.i    	nom.sing
+Px_.[sdx]---.g-.i		gen.sing
+Px_.[sdx]---.a-.i		acc.sing
+Px_.[sdx]---.d-.i		dat.sing
+Px_.[sdx]---.[lbxci]-.i		unk.sing
+# plural
+Px_.p---.[nv]-.i		nom.pl
+Px_.p---.g-.i			gen.pl
+Px_.p---.a-.i			acc.pl
+Px_.p---.d-.i			dat.pl
+Px_.p---.[lbxci]-.i		unk.pl
 
 # R-: Prepositions
 R-_..........		P
@@ -200,14 +269,18 @@ V-_..rma....i		VBI-PRF
 # middle & passive
 V-_..[px]m[mep]....i	VBIP-IMPF
 V-_..am[mep]....i	VBIP-AOR
-V-_--rm[mep]....i	VBIP-PRF
+V-_..rm[mep]....i	VBIP-PRF
 # subjunctives
 # active
 V-_..[px]sa....i	VBS-IMPF
 V-_..asa....i		VBS-AOR
+V-_..rsa....i		VBS-PRF
+V-_..fsa....i		VBS-FUT
 # middle & passive
 V-_..[px]s[mep]....i	VBSP-IMPF
 V-_..as[mep]....i	VBSP-AOR
+V-_..rs[mep]....i	VBSP-PRF
+V-_..fs[mep]....i	VBSP-FUT
 # optatives
 # active
 V-_..[px]oa....i	VBO-IMPF
@@ -219,6 +292,6 @@ V-_..toa....i		VBO-FUT-PRF
 V-_..[px]o[mep]....i	VBOP-IMPF
 V-_..ao[mep]....i	VBOP-AOR
 V-_..ro[mep]....i	VBOP-PRF
-V-_--foa....i		VBOP-FUT
-V-_--toa....i		VBOP-FUT-PRF
+V-_..foa....i		VBOP-FUT
+V-_..toa....i		VBOP-FUT-PRF
 

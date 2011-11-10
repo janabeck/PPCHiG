@@ -17,9 +17,13 @@ def main():
     """Generates a POS map file based on regular expressions for use with morpheus.py."""
 
     try:
+        # file containing the regular expressions that define the translation from the Packard tags to Penn-style POS tags
+        # e.g., proiel-GNT-map.txt
         re_name = sys.argv[1]
         re_file = open(re_name, "rU")
 
+        # file containing a list of all the unique Packard morphological tags in the corpus
+        # e.g., GNT-unique-morph-list.txt
         morph_name = sys.argv[2]
         morph_file = open(morph_name, "rU")
 
@@ -28,19 +32,31 @@ def main():
 
         guide = {}
 
+        # list of the PROIEL POS tags not handled by regular expressions
+        done_by_lemma = ["C-", "Dq", "Du", "G-"]
+
         for line in re_file:
-            if not line.startswith("#")
+            if not line.startswith("#") and not line.isspace():
                 info = line.split()
                 guide[info[0]] = info[1]
-        
+
+        map_lines = set([])
+
         for line in morph_file:
             for key in guide:
                 if re.match(key, line):
-                    line = line.rstrip() + "\t" + guide[key]
-                    print >> out_file, line                
+                    new_line = line.rstrip() + "\t" + guide[key]
+                    break
+                else:
+                    if not line[:2] in done_by_lemma:
+                        new_line = line.rstrip() + "\tU"
+            map_lines.add(new_line)
+
+        for line in map_lines:
+            print >> out_file, line
         
     except IndexError:
-        print "Usage: python morpheus.py + regular expressions file + unique morph tags file + name of output file."
+        print "Usage: python cartographer.py + regular expressions file + unique morph tags file + name of output file."
         print
         print "Please try again."
         print
