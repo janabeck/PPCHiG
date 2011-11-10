@@ -340,7 +340,7 @@ The lemmas for tag I- are:
 ἔα
 οὐαί
 
-The lemmas for tag Ma are: 
+The lemmas for tag Ma are: NUM
 τέσσαρες
 μύριοι
 ἑξήκοντα
@@ -387,7 +387,7 @@ The lemmas for tag Ma are:
 ἑπτακισχίλιοι
 εἷς
 
-The lemmas for tag Mo are: 
+The lemmas for tag Mo are: ADJ
 δεύτερος
 τρίτος
 τέταρτος

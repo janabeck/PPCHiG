@@ -1,13 +1,13 @@
 C-	τέ		CLTE
 C-	ἤ		CONJ
-C- 	ἤ-τοι		CONJ+CLPRT
-C-	οὔ-τε		NEG+CLTE
-C-	μή-τε		NEG+CLTE
-C-	οὐ-δέ		NEG+CONJ
+C- 	ἤ-τοι		CONJ-CLPRT
+C-	οὔ-τε		NEG-CLTE
+C-	μή-τε		NEG-CLTE
+C-	οὐ-δέ		NEG-CONJ
 C-	καί		CONJ
 C-	εἴτε		CONJ
 C-	ἀλλά		CONJ
-C-	μη-δέ		NEG+CONJ
+C-	μη-δέ		NEG-CONJ
 Df	δίς		NUM
 Df	δή		CLPRT
 Df	καί		ADV
@@ -18,70 +18,70 @@ Df	πεντάκις		NUM
 Df	πάντ-οθεν	Q+ADV
 Df	δια-παντός	P+Q$
 Df	νή		P
-Df 	μεν-οῦν-γε	CLPRT+CLPRT+CLGE
-Df	πώ-ποτε		CLPRT+CLPRT
-Df	ὥσ-περ		WADV+CLPRT
-Df	οὐ-δέ-ποτε	NEG+CONJ+CLPRT
-Df	καί-τοι-γε	CONJ+CLPRT+CLGE
+Df 	μεν-οῦν-γε	CLPRT-CLPRT-CLGE
+Df	πώ-ποτε		CLPRT-CLPRT
+Df	ὥσ-περ		WADV-CLPRT
+Df	οὐ-δέ-ποτε	NEG-CONJ-CLPRT
+Df	καί-τοι-γε	CONJ-CLPRT-CLGE
 Df	πάντως		Q
 Df	ἑπτάκις		NUM
-Df	ἤ-περ		CONJ+CLPRT
-Df	τοι-γαρ-οῦν	CLPRT+CLPRT+CLPRT
+Df	ἤ-περ		CONJ-CLPRT
+Df	τοι-γαρ-οῦν	CLPRT-CLPRT-CLPRT
 Df	ἅπαξ		NUM
-Df	τοί-νυν		CLPRT+CLPRT
+Df	τοί-νυν		CLPRT-CLPRT
 Df	μέν		CLPRT
 Df	μηκ-έτι		NEG+ADV
-Df	μή-τι-γε		NEG+CLQ+CLGE
+Df	μή-τι-γε		NEG-CLQ-CLGE
 Df	παντα-χοῦ	Q+ADV
 Df	γάρ		CLPRT
-Df	μή-πω		NEG+CLPRT
+Df	μή-πω		NEG-CLPRT
 Df	ὅπως		WADV
-Df	διό-περ		C+CLPRT
-Df	οὔ-πω		NEG+CLPRT
+Df	διό-περ		C-CLPRT
+Df	οὔ-πω		NEG-CLPRT
 Df	οὖν		CLPRT
 Df	ποτε		CLPRT
 Df	τρίς		NUM
-Df	καί-γε		CONJ+CLGE
+Df	καί-γε		CONJ-CLGE
 Df	οὐκ-έτι		NEG+ADV
 Df	ὡς		WADV
 Df	ἤ		X
-Df	οὐ-δέ-πω	NEG+CONJ+CLPRT
+Df	οὐ-δέ-πω		NEG-CONJ-CLPRT
 Df	ὡσαύτως		WADV+SLF
-Df	ἐ-άν		C+AN
-Df	ὥσ-τε		WADV+CLTE
-Df	μηδ-αμῶς	NEG+ADV
+Df	ἐ-άν		C-AN
+Df	ὥσ-τε		WADV-CLTE
+Df	μηδ-αμῶς		NEG+ADV
 Df	μᾶλλον		QR
-Df	ὡσ-περεί		WADV+CLPRT
+Df	ὡσ-περεί		WADV-CLPRT
 Df	μή		NEG
-Df	μή-τι		NEG+CLQ
+Df	μή-τι		NEG-CLQ
 Df	οὐχί		NEG
-Df	μή-τε		NEG+CLTE
-Df	οὐδέ		NEG+CONJ		
+Df	μή-τε		NEG-CLTE
+Df	οὐδέ		NEG-CONJ		
 Df	μάλιστα		QS
 Df	ἄν		AN
 Df	εἰ#2		C	 
 Df	εἰ#1		P
-Df	οὐκ-οῦν		NEG+CLPRT
-Df	μή-ποτε		NEG+CLPRT
+Df	οὐκ-οῦν		NEG-CLPRT
+Df	μή-ποτε		NEG-CLPRT
 Df	πάντ-οτε		Q
-Df	μή-γε		NEG+CLGE
-Df	μη-δέ-ποτε	NEG+CONJ+CLPRT
-Df	μέν-τοι		CLPRT+CLPRT
+Df	μή-γε		NEG-CLGE
+Df	μη-δέ-ποτε	NEG-CONJ-CLPRT
+Df	μέν-τοι		CLPRT-CLPRT
 Df	πού		CLPRT
 Df	διό		C
 Df	τε		CLTE
-Df	οὐδ-αμῶς	NEG+ADV
+Df	οὐδ-αμῶς		NEG+ADV
 Df	γέ		CLGE
 Dq	ὡς		WADV
 Dq	καθώς		WADV
 Dq	καθά		WADV
 Dq	οὗ		WADV
-Dq	ὅτ-αν		WADV+AN	
+Dq	ὅτ-αν		WADV-AN	
 Dq	ὅθεν		WADV
 Dq	ὅτε		WADV
-Dq	καθά-περ		WADV+CLPRT
+Dq	καθά-περ		WADV-CLPRT
 Dq	ὁσάκις		WADV
-Dq	ὥσ-περ		WADV+CLPRT
+Dq	ὥσ-περ		WADV-CLPRT
 Dq	ὅπου		WADV		
 Dq	καθό		WADV
 Dq	ὅπως		WADV
@@ -90,49 +90,67 @@ Du	εἰ		WQ
 Du	ὅτι		WPRO
 Du	πότε		WADV
 Du	μήτι		PRTQ
-Du	ἱνα-τί		WADV+CLQ			
+Du	ἱνα-τί		WADV-CLQ			
 Du	ποσάκις		WADV
 Du	ποῦ		WADV
 Du	πόθεν		WADV
 Du	πότερον		WPRO
-F-	κούμ		FW
-F-	ἀθά		FW
-F-	μαρὰν		FW
-F-	ταλιθά		FW
-F-	ῥακά		FW
-F-	ἐφφαθά		FW
-F-	ἑλωΐ		FW
-F-	σαβαχθάνι	FW
-F-	Σαβαώθ		FW
-F-	λεμά		FW
-F-	κορβᾶν		FW
-G-	ἡνίκα		
+G-	ἡνίκα		C
 G-	μέχρις		C
-G-	ἐπει-δή		C+CLPRT
-ἀπό
-ὁπότε
-μέχρι
-ἵνα
-ὅτε
-εἴπως
-ὅτι
-ἄχρι
-καίπερ
-ὡς
-μήπως
-ἄν
-εἴτε
-μήποτε
-ἐπειδήπερ
-ἐπεί
-ἐπάν
-ἕως
-εἴπερ
-ἐάν
-εἰ
-πρίν
-ὥστε
-ἀντί
-καθότι
-διότι
-ὅπως
+G-	ἐπει-δή		C-CLPRT
+G-	ἀπό		P
+G-	ὁπότε		C
+G-	μέχρι		C
+G-	ἵνα		C
+G-	ὅτε		C
+G-	εἴ-πως		C-CLPRT		
+G-	ὅτι		C
+G-	ἄχρι		C
+G-	καί-περ		CONJ-CLPRT
+G-	ὡς		C
+G-	μή-πως		NEG-CLPRT
+G-	ἄν		AN
+G-	εἴ-τε		C-CLTE		
+G-	μή-ποτε		NEG-CLPRT
+G-	ἐπει-δή-περ	C-CLPRT-CLPRT
+G-	ἐπεί		C
+G-	ἐπ-άν		C-AN
+G-	ἕως		C
+G-	εἴ-περ		C-CLPRT
+G-	ἐ-άν		C-AN
+G-	εἰ		C
+G-	πρίν		P
+G-	ὥσ-τε		C-CLTE
+G-	ἀντί		C
+G-	καθ-ότι		C+WPROA
+G-	δι-ότι		C+WPROA
+G-	ὅπως		C
+Pd	ἐκεῖνος		D
+Pd	τοσοῦτος		Q
+Pd	αὐτός		D
+Pd	ὅδε		D
+Pd	τοιοῦτος		D
+Pd	τηλικοῦτος	ADJ
+Pd	οὗτος		D
+Pi	τίς		WPRO
+Pi	πόσος		WADJ
+Pi	ποῖος		WADJ
+Pi	ποταπός		WADJ
+Pp	ὁ		D
+Pp	ἐγώ		PRO
+Pp	αὐτός		PRO
+Pp	σύ		PRO
+Pp	ἡμεῖς		PRO
+Pp	ὅς		WPRO
+Pp	ὑμεῖς		PRO
+Pr	ὅσος		WADJ
+Pr	ὅστις		WPRO-CLQ
+Pr	οἷος		WADJ
+Pr	ὅς		WPRO
+Px	πᾶς		Q
+Px	οὐδείς		NEG+Q
+Px	ἄλλος		OTHER
+Px	τὶς		CLQ
+Px	ἅπας		Q
+Px	ἕκαστος		Q		
+Px	μηδείς		NEG+Q

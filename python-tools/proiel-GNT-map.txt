@@ -1,7 +1,7 @@
 # MORPHOLOGY_POSITIONAL_TAG_SEQUENCE =
 # [ :person, :number, :tense, :mood, :voice, :gender, :case, :degree, :strength, :inflection ]
 
-# Adjectives
+# A-: Adjectives
 A-_-.---.[nv][px].i	ADJ
 A-_-.---.g[px].i	ADJ$
 A-_-.---.a[px].i	ADJA
@@ -10,14 +10,34 @@ A-_-.---.[lbxci][px].i	ADJU
 A-_-.---..c.i		ADJR
 A-_-.---..s.i		ADJS
 
-# C- done by lemma
+# C-: Conjunctions, done by lemma
 
-# Df done by lemma
+# Df: Adverbs, some done by lemma, else:
+Df_..........	   	ADV
 
-# Foreign words
+# Dq: Relative adverbs, done by lemma
+
+# Du: Interrogative adverbs, done by lemma
+
+# F-: Foreign words
 F-_..........		FW
 
-# Common Nouns
+# G-: "Subjunctions", done by lemma
+
+# I-: Interjections
+I-_..........		INTJ
+
+# Ma: Cardinal Numbers
+Ma_..........		NUM
+
+# Mo: Ordinal Numbers
+Mo_-.---.[nv]..i	ADJ
+Mo_-.---.g..i		ADJ$
+Mo_-.---.a..i		ADJA
+Mo_-.---.d..i		ADJD
+Mo_-.---.[lbxci]..i	ADJU
+
+# Nb: Common Nouns
 # singular
 Nb_-[sdx]---.[nv]-.i	N
 Nb_-[sdx]---.g-.i	N$
@@ -31,7 +51,7 @@ Nb_-p---.a-.i		NSA
 Nb_-p---.d-.i		NSD
 Nb_-p---.[lbxci]-.i	NSU
 
-# Proper Nouns
+# Ne: Proper Nouns
 # singular
 Ne_-[sdx]---.[nv]-.i	NPR
 Ne_-[sdx]---.g-.i	NPR$
@@ -45,15 +65,160 @@ Ne_-p---.a-.i		NPRSA
 Ne_-p---.d-.i		NPRSD
 Ne_-p---.[lbxci]-.i	NPRSU
 
-# Articles
+# Pc: Reciprocal Pronouns
+Pc_-.---.[nv]-.i	PRO
+Pc_-.---.g-.i		PRO$
+Pc_-.---.a-.i		PROA
+Pc_-.---.d-.i		PROD
+Pc_-.---.[lbxci]-.i	PROU
+
+# Pd: Demonstrative Pronouns, done by lemma
+
+# Pi: Interrogative Pronouns, done by lemma
+
+# Pk: Personal Reflexive Pronouns
+Pk_-.---.[nv]-.i	PRO+SLF
+Pk_-.---.g-.i		PRO$+SLF
+Pk_-.---.a-.i		PROA+SLF
+Pk_-.---.d-.i		PROD+SLF
+
+# Pp: Personal Pronouns, done by lemma
+
+# Pr: Relative Pronouns, done by lemma
+
+# Ps: Possessive Pronouns
+Ps_-.---.[nv]-.i	ADJ-POS
+Ps_-.---.g-.i		ADJ$-POS
+Ps_-.---.a-.i		ADJA-POS
+Ps_-.---.d-.i		ADJD-POS
+
+# Px: Indefinite Pronouns, done by lemma
+
+# R-: Prepositions
+R-_..........		P
+
+# S-: Articles
 # singular
 S-_-[sdx]---.[nv]-.i	D
 S-_-[sdx]---.g-.i	D$
 S-_-[sdx]---.a-.i	DA
 S-_-[sdx]---.d-.i	DD
 S-_-[sdx]---.[lbxci]-.i	DU
+# plural
 S-_-p---.[nv]-.i	DS
 S-_-p---.g-.i		DS$
 S-_-p---.a-.i		DSA
 S-_-p---.d-.i		DSD
 S-_-p---.[lbxci]-.i	DSU
+
+# V-: Verbs
+# participles
+# active imperfective & unknown: [pix]pa
+V-_-.[pix]pa.[nv]-.i	 VPR-IMPF
+V-_-.[pix]pa.g-.i	 VPR$-IMPF
+V-_-.[pix]pa.a-.i	 VPRA-IMPF
+V-_-.[pix]pa.d-.i	 VPRD-IMPF
+V-_-.[pix]pa.[lbxci]-.i	 VPRU-IMPF
+# middle & passive imperfective & unknown: [pix]p[mep]
+V-_-.[pix]p[mep].[nv]-.i	 VPRP-IMPF
+V-_-.[pix]p[mep].g-.i		 VPRP$-IMPF
+V-_-.[pix]p[mep].a-.i		 VPRPA-IMPF
+V-_-.[pix]p[mep].d-.i		 VPRPD-IMPF
+V-_-.[pix]p[mep].[lbxci]-.i	 VPRPU-IMPF
+# active perfective: apa
+V-_-.apa.[nv]-.i	VPR-AOR
+V-_-.apa.g-.i    	VPR$-AOR
+V-_-.apa.a-.i    	VPRA-AOR
+V-_-.apa.d-.i	 	VPRD-AOR
+V-_-.apa.[lbxci]-.i	VPRU-AOR
+# middle & passive perfective: ap[mep]
+V-_-.ap[mep].[nv]-.i	VPRP-AOR
+V-_-.ap[mep].g-.i	VPRP$-AOR
+V-_-.ap[mep].a-.i	VPRPA-AOR
+V-_-.ap[mep].d-.i	VPRPD-AOR
+V-_-.ap[mep].[lbxci]-.i	VPRPU-AOR
+# active perfect: [lr]pa
+V-_-.[lr]pa.[nv]-.i	VPR-PRF
+V-_-.[lr]pa.g-.i	VPR$-PRF
+V-_-.[lr]pa.a-.i	VPRA-PRF
+V-_-.[lr]pa.d-.i	VPRD-PRF
+V-_-.[lr]pa.[lbxci]-.i	VPRU-PRF
+# middle & passive perfect: [lr]p[mep]
+V-_-.[lr]p[mep].[nv]-.i	    VPRP-PRF
+V-_-.[lr]p[mep].g-.i	    VPRP$-PRF
+V-_-.[lr]p[mep].a-.i	    VPRPA-PRF
+V-_-.[lr]p[mep].d-.i	    VPRPD-PRF
+V-_-.[lr]p[mep].[lbxci]-.i  VPRPU-PRF
+# active future: fpa
+V-_-.fpa.[nv]-.i	VPR-FUT
+V-_-.fpa.g-.i		VPR$-FUT
+V-_-.fpa.a-.i		VPRA-FUT
+V-_-.fpa.d-.i		VPRD-FUT
+V-_-.fpa.[lbxci]-.i	VPRU-FUT
+# middle & passive future: fp[mep]
+V-_-.fp[mep].[nv]-.i	VPRP-FUT
+V-_-.fp[mep].g-.i	VPRP$-FUT
+V-_-.fp[mep].a-.i	VPRPA-FUT
+V-_-.fp[mep].d-.i	VPRPD-FUT
+V-_-.fp[mep].[lbxci]-.i	VPRPU-FUT
+# finite indicative & primary sequence
+# active
+V-_..[px][ix]a....i   VBP-IMPF
+V-_..r[ix]a....i      VBP-PRF
+V-_..f[ix]a....i      VBP-FUT
+# middle & passive
+V-_..[px][ix][mep]....i   VBPP-IMPF
+V-_..r[ix][mep]....i      VBPP-PRF
+V-_..f[ix][mep]....i      VBPP-FUT
+V-_..t[ix][mep]....i	  VBPP-FUT-PRF
+# finite indicative & secondary sequence
+# active
+V-_..i[ix]a....i	VBD-IMPF
+V-_..a[ix]a....i	VBD-AOR
+V-_..l[ix]a....i	VBD-PRF
+# middle & passive
+V-_..i[ix][mep]....i	VBDP-IMPF
+V-_..a[ix][mep]....i	VBDP-AOR
+V-_..l[ix][mep]....i	VBDP-PRF
+# infinitives
+# active
+V-_--[pix]na....i	VBN-IMPF
+V-_--ana....i		VBN-AOR
+V-_--[rl]na....i	VBN-PRF
+V-_--fna....i		VBN-FUT
+# middle & passive
+V-_--[pix]n[mep]....i	VBNP-IMPF
+V-_--an[mep]....i	VBNP-AOR
+V-_--[rl]n[mep]....i	VBNP-PRF
+V-_--fn[mep]....i	VBNP-FUT
+V-_--tn[mep]....i	VBNP-FUT-PRF
+# imperatives
+# active
+V-_..[px]ma....i	VBI-IMPF
+V-_..ama....i		VBI-AOR
+V-_..rma....i		VBI-PRF
+# middle & passive
+V-_..[px]m[mep]....i	VBIP-IMPF
+V-_..am[mep]....i	VBIP-AOR
+V-_--rm[mep]....i	VBIP-PRF
+# subjunctives
+# active
+V-_..[px]sa....i	VBS-IMPF
+V-_..asa....i		VBS-AOR
+# middle & passive
+V-_..[px]s[mep]....i	VBSP-IMPF
+V-_..as[mep]....i	VBSP-AOR
+# optatives
+# active
+V-_..[px]oa....i	VBO-IMPF
+V-_..aoa....i		VBO-AOR
+V-_..roa....i		VBO-PRF
+V-_..foa....i		VBO-FUT
+V-_..toa....i		VBO-FUT-PRF
+# middle & passive
+V-_..[px]o[mep]....i	VBOP-IMPF
+V-_..ao[mep]....i	VBOP-AOR
+V-_..ro[mep]....i	VBOP-PRF
+V-_--foa....i		VBOP-FUT
+V-_--toa....i		VBOP-FUT-PRF
+
