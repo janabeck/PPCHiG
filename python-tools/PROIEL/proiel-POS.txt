@@ -1,0 +1,92 @@
+parts_of_speech:
+  A-: done with reg exp
+    abbreviated_summary: adj.
+    summary: adjective
+  C-: done by lemma
+    abbreviated_summary: conj.
+    summary: conjunction
+  Df: some done by lemma, else ADV
+    abbreviated_summary: adv.
+    summary: adverb
+  Dq: done by lemma
+    abbreviated_summary: rel. adv.
+    summary: relative adverb
+  Du: done by lemma
+    abbreviated_summary: interrog. adv.
+    summary: interrogative adverb
+  F-: done with reg exp
+    abbreviated_summary: foreign word
+    summary: foreign word
+  G-: done by lemma
+    abbreviated_summary: subj.
+    summary: subjunction
+  I-: done with reg exp
+    abbreviated_summary: interj.
+    summary: interjection
+  Ma: done with reg exp
+    abbreviated_summary: card. num.
+    summary: cardinal numeral
+  Mo: done with reg exp
+    abbreviated_summary: ord. num.
+    summary: ordinal numeral
+  Nb: done with reg exp
+    abbreviated_summary: common noun
+    summary: common noun
+  Ne: done with reg exp
+    abbreviated_summary: proper noun
+    summary: proper noun
+  Pc: done with reg exp
+    abbreviated_summary: recipr. pron.
+    summary: reciprocal pronoun
+  Pd: done by lemma
+    abbreviated_summary: dem. pron.
+    summary: demonstrative pronoun
+  Pi: done by lemma
+    abbreviated_summary: interrog. pron.
+    summary: interrogative pronoun
+  Pk: done with reg exp
+    abbreviated_summary: pers. refl. pron.
+    summary: personal reflexive pronoun
+  Pp: done by lemma
+    abbreviated_summary: pers. pron.
+    summary: personal pronoun
+  Pr: done by lemma
+    abbreviated_summary: rel. pron.
+    summary: relative pronoun
+  Ps: done with reg exp
+    abbreviated_summary: poss. pron.
+    summary: possessive pronoun
+  Pt: not in GNT!
+    abbreviated_summary: poss. refl. pron.
+    summary: possessive reflexive pronoun
+  Px: done by lemma
+    abbreviated_summary: indef. pron.
+    summary: indefinite pronoun
+  Py: not in GNT!
+    abbreviated_summary: quant.
+    summary: quantifier
+  R-: done with reg exp
+    abbreviated_summary: prep.
+    summary: preposition
+  S-: done with reg exp
+    abbreviated_summary: art.
+    summary: article
+  V-: done with reg exp
+    abbreviated_summary: verb
+    summary: verb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
