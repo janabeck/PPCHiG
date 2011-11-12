@@ -1,6 +1,0 @@
-<div>
-<title>Gospels</title>
-<word id="000001" proiel-id="266690" lemma="βίβλος" proiel-pos="Nb" lang="grc" morph="-s---fn--i" deprel="xobj" proiel-head-id="287650" proiel-form="Βίβλος">ΒΙΒΛΟΣ</word>
-<word id="000002" proiel-id="266691" lemma="γένεσις" proiel-pos="Nb" lang="grc" morph="-s---fg--i" deprel="atr" proiel-head-id="266690" proiel-form="γενέσεως">γενέσεως</word>
-<word id="000003" proiel-id="266692" lemma="Ἰησοῦς" proiel-pos="Ne" lang="grc" morph="-s---mg--i" deprel="atr" proiel-head-id="266691" proiel-form="Ἰησοῦ">Ἰησοῦ</word>
-</div>
