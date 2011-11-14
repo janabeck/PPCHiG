@@ -18,12 +18,12 @@ def main():
 
     try:
         # file containing the regular expressions that define the translation from the Packard tags to Penn-style POS tags
-        # e.g., proiel-GNT-map.txt
+        # e.g., chicago-herodotus-map.txt
         re_name = sys.argv[1]
         re_file = open(re_name, "rU")
 
         # file containing a list of all the unique Packard morphological tags in the corpus
-        # e.g., GNT-unique-morph-list.txt
+        # e.g., HDT-unique-morph-list.txt
         morph_name = sys.argv[2]
         morph_file = open(morph_name, "rU")
 
@@ -32,8 +32,8 @@ def main():
 
         guide = {}
 
-        # list of the PROIEL POS tags not handled by regular expressions
-        done_by_lemma = ["C-", "Dq", "Du", "G-"]
+        # list of the Chicago POS tags not handled by regular expressions
+        done_by_lemma = ["c-","g-"]
 
         for line in re_file:
             if not line.startswith("#") and not line.isspace():

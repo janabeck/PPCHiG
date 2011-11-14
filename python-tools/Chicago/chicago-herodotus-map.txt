@@ -1,0 +1,341 @@
+# 10 slots for morph: 
+#1 major part of speech a adj c conj d adverb e (w before vocs) g particle i interjection m numeral n noun r prepos p pronoun
+#2 minor part of speech ne ae de proper names/adjectives and derived adverbs; vc copula;  pp personal pronoun, r relative (with pron-s and adv-s) d demonst (with pron and adv) s possess x reflexive k reciprocal..  
+#3 person
+#4 number
+#5 tense r = perfect l = pluperf t = fut perf
+#6 mood 
+#7 voice (a m p; e = m-p)
+#8 gender includes c, common -- not always used in a principled way..:-(
+#9 case
+#10 degree
+
+# a-, ae: Adjectives
+a.......[nv]-	ADJ
+a.......g-	ADJ$
+a.......a-	ADJA
+a.......d-	ADJD
+a........c	ADJR
+a........s	ADJS
+
+# c-: Conjunctions, done by lemma, all non-inflecting
+
+# d-,dd,de: Adverbs
+d---------	ADV
+d--------c	ADVR
+d--------s	ADVS
+dd--------	ADV
+de--------	ADV
+
+# di: Interrogative Adverbs
+di--------	    WADV
+
+# dr: Relative Adverbs, done part by lemma, all non-inflecting
+dr--------     WADV
+
+# dx: Indefinite Adverbs
+dx--------	 CLPRT
+
+# e-: Exclamations
+e---------	INTJ
+
+# g-: Particles, done by lemma, all non-inflecting
+
+# gm: Modal Particle ἄν
+gm--------	AN
+
+# i-: Interjections
+i---------	INTJ
+
+# m-: Cardinal Numbers
+m.........     NUM
+
+# n-: Common Nouns
+# singular
+n--s---.[nv]-	N
+n--s---.g-	N$
+n--s---.a-	NA
+n--s---.d-	ND
+# plural
+n--[dp]---.[nv]-	NS
+n--[dp]---.g-		NS$
+n--[dp]---.a-		NSA
+n--[dp]---.d-		NSD
+# non-inflecting
+n---------	NU
+n------n--	NU
+
+# ne: Proper Nouns
+# singular
+ne-s---.[nv]-	NPR
+ne-s---.g-	NPR$
+ne-s---.a-	NPRA
+ne-s---.d-	NPRD
+# plural
+ne-[dp]---.[nv]-	NPRS
+ne-[dp]---.g-		NPRS$
+ne-[dp]---.a-		NPRSA
+ne-[dp]---.d-		NPRSD
+
+# pa: Articles
+# singular
+pa-s---.[nv]-	D
+pa-s---.g-	D$
+pa-s---.a-	DA
+pa-s---.d-	DD
+# plural
+pa-[dp]---.[nv]-	DS
+pa-[dp]---.g-		DS$
+pa-[dp]---.a-		DSA
+pa-[dp]---.d-		DSD
+
+# pc: Reciprocal Pronouns
+pc-p---.g-	 PRO$
+pc-p---.a-	 PROA
+pc-p---.d-	 PROD
+
+# pd,pi,pp,pr: Demonstrative, Interrogative, Personal, Relative Pronouns, done part by lemma
+# singular
+p[dipr].s---.[nv]-    nom.sing
+p[dipr].s---.g-	    gen.sing
+p[dipr].s---.a-	    acc.sing
+p[dipr].s---.d-	    dat.sing
+# plural
+p[dipr].[dp]---.[nv]-         nom.pl
+p[dipr].[dp]---.g-	    gen.pl
+p[dipr].[dp]---.a-	    acc.pl
+p[dipr].[dp]---.d-	    dat.pl
+
+# pk: Personal Reflexive Pronouns
+pk-[sp]---.g-  PRO$+SLF
+pk-[sp]---.a-  PROA+SLF
+pk-[sp]---.d-  PROD+SLF
+
+# ps: Possessive Pronouns
+ps-[sp]---.[nv]- ADJ-POS
+ps-[sp]---.g-	 ADJ$-POS
+ps-[sp]---.a-	 ADJA-POS
+ps-[sp]---.d-	 ADJD-POS
+
+# pi: Indefinite Pronouns
+px-[sp]---.[nv]- CLQ
+px-[sp]---.g-	 CLQ$
+px-[sp]---.a-	 CLQA
+px-[sp]---.d-	 CLQD
+
+# r-: Prepositions
+r---------	P
+
+# v-: Verbs
+# participles
+# active imperfective:
+v--.ppa.[nv]-	VPR-IMPF
+v--.ppa.g-	VPR$-IMPF
+v--.ppa.a-	VPRA-IMPF
+v--.ppa.d-	VPRD-IMPF
+# middle & passive imperfective:
+v--.pp[mep].[nv]-  VPRP-IMPF
+v--.pp[mep].g-	   VPRP$-IMPF
+v--.pp[mep].a-	   VPRPA-IMPF
+v--.pp[mep].d-	   VPRPD-IMPF
+# active perfective:
+v--.apa.[nv]-	VPR-AOR
+v--.apa.g-	VPR$-AOR
+v--.apa.a-	VPRA-AOR
+v--.apa.d-	VPRD-AOR
+# middle & passive perfective:
+v--.ap[mep].[nv]- VPRP-AOR
+v--.ap[mep].g-	   VPRP$-AOR
+v--.ap[mep].a-	   VPRPA-AOR
+v--.ap[mep].d-	   VPRPD-AOR
+# active perfect:
+v--.rpa.[nv]-	VPR-PRF
+v--.rpa.g-	VPR$-PRF
+v--.rpa.a-	VPRA-PRF
+v--.rpa.d-	VPRD-PRF
+# middle & passive perfect:
+v--.rp[mep].[nv]- VPRP-PRF
+v--.rp[mep].g-	   VPRP$-PRF
+v--.rp[mep].a-	   VPRPA-PRF
+v--.rp[mep].d-	   VPRPD-PRF
+# active future:
+v--.fpa.[nv]-	VPR-FUT
+v--.fpa.g-	VPR$-FUT
+v--.fpa.a-	VPRA-FUT
+v--.fpa.d-	VPRD-FUT
+# middle & passive future:
+v--.fp[mep].[nv]-	VPRP-FUT
+v--.fp[mep].g-		VPRP$-FUT
+v--.fp[mep].a-		VPRPA-FUT
+v--.fp[mep].d-		VPRPD-FUT
+# finite indicative & primary sequence
+# active
+v-..pia---	VBP-IMPF
+v-..ria---	VBP-PRF
+v-..fia---	VBP-FUT
+v-..tia---	VBP-FUT-PRF
+# middle & passive:
+v-..pi[mep]---	VBPP-IMPF
+v-..ri[mep]---	VBPP-PRF
+v-..fi[mep]---	VBPP-FUT
+v-..ti[mep]---	VBPP-FUT-PRF
+# finite indicative & secondary sequence
+# active
+v-..iia---	VBD-IMPF
+v-..aia---	VBD-AOR
+v-..lia---	VBD-PRF
+# middle & passive
+v-..ii[mep]---	VBDP-IMPF
+v-..ai[mep]---	VBDP-AOR
+v-..li[mep]---	VBDP-PRF
+# infinitives
+# active
+v---pna---	VBN-IMPF
+v---ana---	VBN-AOR
+v---rna---	VBN-PRF
+v---fna---	VBN-FUT
+# middle & passive
+v---pn[mep]---	VBNP-IMPF
+v---an[mep]---	VBNP-AOR
+v---rn[mep]---	VBNP-PRF
+v---fn[mep]---	VBNP-FUT
+# imperatives
+# active
+v-..pma---	VBI-IMPF
+v-..ama---	VBI-AOR
+v-..rma---	VBI-PRF
+# middle & passive
+v-..pm[mep]---	VBIP-IMPF
+v-..am[mep]---	VBIP-AOR
+v-..rm[mep]---	VBIP-PRF
+# subjunctives
+# active
+v-..psa---	VBS-IMPF
+v-..asa---	VBS-AOR
+v-..rsa---	VBS-PRF
+v-..fsa---	VBS-FUT
+# middle & passive
+v-..ps[mep]---	VBSP-IMPF
+v-..as[mep]---	VBSP-AOR
+v-..rs[mep]---	VBSP-PRF
+v-..fs[mep]---	VBSP-FUT
+# optatives
+# active
+v-..poa---	VBO-IMPF
+v-..aoa---	VBO-AOR
+v-..roa---	VBO-PRF
+v-..foa---	VBO-FUT
+v-..toa---	VBO-FUT-PRF
+# middle & passive
+v-..po[mep]---	VBOP-IMPF
+v-..ao[mep]---	VBOP-AOR
+v-..ro[mep]---	VBOP-PRF
+v-..fo[mep]---	VBOP-FUT
+v-..to[mep]---	VBOP-FUT-PRF
+
+# vc: Copula
+# participles
+# active imperfective:
+vc-.ppa.[nv]-	BPR-IMPF
+vc-.ppa.g-	BPR$-IMPF
+vc-.ppa.a-	BPRA-IMPF
+vc-.ppa.d-	BPRD-IMPF
+# middle & passive imperfective:
+vc-.pp[mep].[nv]-  BPRP-IMPF
+vc-.pp[mep].g-	   BPRP$-IMPF
+vc-.pp[mep].a-	   BPRPA-IMPF
+vc-.pp[mep].d-	   BPRPD-IMPF
+# active perfective:
+vc-.apa.[nv]-	BPR-AOR
+vc-.apa.g-	BPR$-AOR
+vc-.apa.a-	BPRA-AOR
+vc-.apa.d-	BPRD-AOR
+# middle & passive perfective:
+vc-.ap[mep].[nv]- BPRP-AOR
+vc-.ap[mep].g-	   BPRP$-AOR
+vc-.ap[mep].a-	   BPRPA-AOR
+vc-.ap[mep].d-	   BPRPD-AOR
+# active perfect:
+vc-.rpa.[nv]-	BPR-PRF
+vc-.rpa.g-	BPR$-PRF
+vc-.rpa.a-	BPRA-PRF
+vc-.rpa.d-	BPRD-PRF
+# middle & passive perfect:
+vc-.rp[mep].[nv]- BPRP-PRF
+vc-.rp[mep].g-	   BPRP$-PRF
+vc-.rp[mep].a-	   BPRPA-PRF
+vc-.rp[mep].d-	   BPRPD-PRF
+# active future:
+vc-.fpa.[nv]-	BPR-FUT
+vc-.fpa.g-	BPR$-FUT
+vc-.fpa.a-	BPRA-FUT
+vc-.fpa.d-	BPRD-FUT
+# middle & passive future:
+vc-.fp[mep].[nv]-	BPRP-FUT
+vc-.fp[mep].g-		BPRP$-FUT
+vc-.fp[mep].a-		BPRPA-FUT
+vc-.fp[mep].d-		BPRPD-FUT
+# finite indicative & primary sequence
+# active
+vc..pia---	BEP-IMPF
+vc..ria---	BEP-PRF
+vc..fia---	BEP-FUT
+vc..tia---	BEP-FUT-PRF
+# middle & passive:
+vc..pi[mep]---	BEPP-IMPF
+vc..ri[mep]---	BEPP-PRF
+vc..fi[mep]---	BEPP-FUT
+vc..ti[mep]---	BEPP-FUT-PRF
+# finite indicative & secondary sequence
+# active
+vc..iia---	BED-IMPF
+vc..aia---	BED-AOR
+vc..lia---	BED-PRF
+# middle & passive
+vc..ii[mep]---	BEDP-IMPF
+vc..ai[mep]---	BEDP-AOR
+vc..li[mep]---	BEDP-PRF
+# infinitives
+# active
+vc--pna---	BEN-IMPF
+vc--ana---	BEN-AOR
+vc--rna---	BEN-PRF
+vc--fna---	BEN-FUT
+# middle & passive
+vc--pn[mep]---	BENP-IMPF
+vc--an[mep]---	BENP-AOR
+vc--rn[mep]---	BENP-PRF
+vc--fn[mep]---	BENP-FUT
+# imperatives
+# active
+vc..pma---	BEI-IMPF
+vc..ama---	BEI-AOR
+vc..rma---	BEI-PRF
+# middle & passive
+vc..pm[mep]---	BEIP-IMPF
+vc..am[mep]---	BEIP-AOR
+vc..rm[mep]---	BEIP-PRF
+# subjunctives
+# active
+vc..psa---	BES-IMPF
+vc..asa---	BES-AOR
+vc..rsa---	BES-PRF
+vc..fsa---	BES-FUT
+# middle & passive
+vc..ps[mep]---	BESP-IMPF
+vc..as[mep]---	BESP-AOR
+vc..rs[mep]---	BESP-PRF
+vc..fs[mep]---	BESP-FUT
+# optatives
+# active
+vc..poa---	BEO-IMPF
+vc..aoa---	BEO-AOR
+vc..roa---	BEO-PRF
+vc..foa---	BEO-FUT
+vc..toa---	BEO-FUT-PRF
+# middle & passive
+vc..po[mep]---	BEOP-IMPF
+vc..ao[mep]---	BEOP-AOR
+vc..ro[mep]---	BEOP-PRF
+vc..fo[mep]---	BEOP-FUT
+vc..to[mep]---	BEOP-FUT-PRF

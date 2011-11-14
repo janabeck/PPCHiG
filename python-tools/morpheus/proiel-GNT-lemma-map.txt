@@ -122,8 +122,8 @@ G-	εἰ		C
 G-	πρίν		P
 G-	ὥστε		C-CLTE
 G-	ἀντί		C
-G-	καθότι		C+WPROA
-G-	διότι		C+WPROA
+G-	καθότι		C+WPRO-CLQ
+G-	διότι		C+WPRO-CLQ
 G-	ὅπως		C
 Pd	ἐκεῖνος		D
 Pd	τοσοῦτος		Q

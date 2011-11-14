@@ -1,0 +1,28 @@
+a-	regexp
+ae	regexp
+c-	lemma
+d-	part by lemma
+dd	regexp
+de	regexp
+di	regexp
+dr	part by lemma
+dx	regexp
+e-	regexp
+g-	lemma
+gm	regexp
+i-	regexp
+m-	regexp
+n-	regexp
+ne	regexp
+pa	regexp
+pc	regexp
+pd	part by lemma
+pi	part by lemma
+pk	regexp
+pp	part by lemma
+pr	part by lemma
+ps	regexp
+px	regexp
+r-	regexp
+v-	regexp
+vc	regexp

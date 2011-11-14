@@ -12,6 +12,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 import codecs
 import sys
 import re
+from sets import Set
 
 class Token:
     def __init__(self, parsed):
@@ -82,20 +83,21 @@ class Token:
                 # catches empty categories
                 elif "*" in item:
                     self.tree[index] = item
+                # catches null pieces of split words
+                elif "@" in item:
+                    self.tree[index] = item
                 # catches null elements
                 elif item == "0":
                     self.tree[index] = item
                 # catches milestones
-                elif ":" in item:
+                elif "VS:" in item:
                     self.text.append(item)
                     self.milestones.append(item)
                     self.tree[index] = item
-                    self.pos.append((item, lastitem))
                 # catches comments
-                elif "=" in item:
+                elif "COM:" in item:
                     self.tree[index] = item
                     self.comments.append(item)
-                    self.pos.append((item, lastitem))
                 # catches punctuation
                 elif "." in item or "," in item or ";" in item or u"·" in item or "\"" in item:
                     if ("." in lastitem or "," in lastitem or ";" in lastitem or "\"" in lastitem):
@@ -156,7 +158,7 @@ class Parsed:
                 sentence_id = "GreekNT," + book + "." + str(id_num)
                 token = self.tokens[sentence_id]
                 for item in token.text:
-                    if ":" in item:
+                    if "VS:" in item:
                         print >> out_file, "(CODE " + item + ")"
                     else:
                         print >> out_file, item
@@ -173,7 +175,7 @@ class Parsed:
 
         for token in self.token_list:
             for item in token.text:
-                if ":" in item:
+                if "VS:" in item:
                     print >> out_file, "(CODE " + item + ")"
                 else:
                     print >> out_file, item
@@ -227,28 +229,42 @@ class Parsed:
         print "Printing to .lex file completed."
         print
             
-    def pos_concordance(self, out_file):
+    def pos_concordance(self):
         """Prints a concordance of words and POS tags in the corpus."""
             
         # dictionary keyed by pos tag with all the words the tag applies to as values
         concordance = {}
+
+        lst = codecs.open("pos_list.txt", "w", "utf-8")
+
+        pos_out = codecs.open("pos_concordance.txt", "w", "utf-8")
             
         for token in self.token_list:
-            for word, postag in token.pos:
+            for tup in token.pos:
+                try:
+                    wl = tup[0].split("-")
+                    word = wl[1]
+                except IndexError:
+                    word = tup[0]
+                postag = tup[1]
                 if postag in concordance:
-                    if not word in concordance[postag]:
-                        concordance[postag].append(word)
-                    else:
-                        concordance[postag] = [word]
-                         
-        tag = raw_input("What POS tag do you want to see the words for? ")
+                    concordance[postag].add(word)
+                else:
+                    concordance[postag] = Set([word])
+
+        keys_list = []
+                    
+        for key in concordance:
+            keys_list.append(key)
+
+        keys_list.sort()
             
-        print "Here are the words:"
-        print
-            
-        for word in concordance[tag]:
-            print word
-            print >> out_file, word
+        for key in keys_list:
+            print >> lst, key
+            print >> pos_out, key + ": "
+            for word in concordance[key]:
+                print >> pos_out, word
+            print >> pos_out
                 
         print
         print "Printing completed."
@@ -396,7 +412,7 @@ def select(corpus):
     print "\td. Print the full tree of a token."
     print "\te. Print out the full tree of a token with additional continuity milestones."
     print "\tf. Print out the whole corpus in lexicon-mode ready format."
-    print "\tg. Print all the words that have a particular POS tag in the .psd file."
+    print "\tg. Print a concordance of POS tags and lemmas in the file."
     print "\th. Find the word count for the parsed portion of the .psd file."
     print "\ti. Print all and only the words in a .psd file. (For alignment with dependency corpora.)"
     print "\tj. Swap words and POS tags with words and POS tags from a word-by-word map file."
@@ -436,11 +452,7 @@ def select(corpus):
         out_file = codecs.open(out_name, "w", "utf-8")
         corpus.print_lex(out_file)
     elif choice == "g":
-        out_name = raw_input("What would you like the name of the output file to be?\nPlease do not include the file extension. ")
-        print
-        out_name = out_name + ".con"
-        out_file = codecs.open(out_name, "w", "utf-8")
-        corpus.pos_concordance(out_file)
+        corpus.pos_concordance()
     elif choice == "h":
         corpus.word_count()
     elif choice == "i":
