@@ -14,12 +14,6 @@ import sys
 
 from BeautifulSoup import BeautifulStoneSoup
 
-class Morpheus():
-    """A class that transforms Packard-style morphological tags into Penn-style POS tags."""
-
-    def __init__(self):
-        pass
-
 def main():
 
     try:

@@ -1,0 +1,460 @@
+# This Python file uses the following encoding: utf-8
+
+"""
+corpus_reader.py
+Created 2011/11/13
+@author: Jana E. Beck
+@copyright: GNU General Public License http://www.gnu.org/licenses/
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+@contact: jana.eliz.beck@gmail.com
+"""
+
+import codecs
+import sys
+import re
+
+class Token:
+    def __init__(self, parsed):
+        """Initialize a token."""
+        # id contains the token's ID as a string "Corpus,Book.x"
+        self.id = ""
+
+        # milestones contains all the milestones in a particular token
+        self.milestones = []
+        
+        # words contains all the words in a sentence token, exclusive of punctuation, as a list
+        self.words = []
+
+        # text contains all the words in a sentence token, including punctuation, as a list
+        self.text = []
+
+        # labels contains all phrase, pos, and CODE, and ID labels in the tree
+        self.labels = []
+            
+        # pos contains all the words in a sentence token with no punctuation or empty categories as a list of tuples
+        # in which the first item is a Greek word and the second a POS tag
+        self.pos = []
+
+        # comments contains any comments in the token, as a list of strings
+        self.comments = []
+
+        # fulltree contains the whole tree as a dictionary with the key = index of the item, and the value = item
+        self.tree = {}
+
+        # root contains the top-most phrase structure label, e.g., IP-MAT
+        self.root = ""
+        
+        # boolean indicating whether or not the sentence token has been parsed
+        self.parsed = parsed
+
+    def parse(self, sentence):
+        # breaks string into components
+        chunks = sentence.split()
+
+        # loops through components of sentence token to add them to current instance of Token's attributes
+        lastitem = ""
+        countl = 0
+        index = 0
+        for item in chunks:
+            # identifies labels
+            if lastitem.strip() == "(" and item.strip() != "(":
+                # identifies the root
+                if countl == 2:
+                    self.root = item
+                    self.tree[index] = item
+                else:
+                    self.labels.append(item)
+                    self.tree[index] = item
+            elif item == "(" and lastitem == ")":
+                item = "\n" + item
+                self.tree[index] = item
+            elif item == "(":
+                self.tree[index] = item
+                countl = countl + 1
+            elif item == ")":
+                    self.tree[index] = item
+            # catches terminal nodes
+            else:
+                # catches IDs
+                if ("GreekNT" in item  or "Herodotus" in item):
+                    self.id = item
+                    self.tree[index] = item
+                # catches empty categories
+                elif "*" in item:
+                    self.tree[index] = item
+                # catches null elements
+                elif item == "0":
+                    self.tree[index] = item
+                # catches milestones
+                elif ":" in item:
+                    self.text.append(item)
+                    self.milestones.append(item)
+                    self.tree[index] = item
+                    self.pos.append((item, lastitem))
+                # catches comments
+                elif "=" in item:
+                    self.tree[index] = item
+                    self.comments.append(item)
+                    self.pos.append((item, lastitem))
+                # catches punctuation
+                elif "." in item or "," in item or ";" in item or u"·" in item or "\"" in item:
+                    if ("." in lastitem or "," in lastitem or ";" in lastitem or "\"" in lastitem):
+                        self.text.append(item)
+                        self.pos.append((item, lastitem))
+                        self.tree[index] = item
+                # catches everything else
+                else:
+                    if lastitem.strip() != "(":
+                        if not "0" in item:
+                            self.text.append(item)
+                            self.pos.append((item, lastitem))
+                            self.tree[index] = item
+                            self.words.append(item)
+            index += 1
+            lastitem = item
+
+class Parsed:
+    def __init__(self):
+        """Initialize a database of tokens."""
+        # total number of tokens in file
+        self.total = 0
+
+        # dictionary with keys = ID #s and values as Token instances
+        self.tokens = {}
+
+        # list of all the Token instances in the database
+        self.token_list = []
+        
+        # list of all the parsed Token instances in the database
+        self.parsed_token_list = []
+
+    def add(self, atoken):
+        """Adds a Token instance to the database of tokens that Parsed is for."""
+        
+        self.token_list.append(atoken)
+        if atoken.parsed:
+            self.parsed_token_list.append(atoken)
+        self.tokens[atoken.id] = atoken
+        self.total += 1
+
+    def print_text(self, id):
+        """Prints only the text of a token."""
+
+        token = self.tokens[id]
+            
+        for item in token.text:
+            if not ":" in item:
+                print item,
+
+    def print_wmp(self, out_file, book):
+        """Prints milestones, text, and punctuation in one-per-line format."""
+            
+        id_num = 1
+            
+        try:
+            while id_num < self.total:
+                sentence_id = "GreekNT," + book + "." + str(id_num)
+                token = self.tokens[sentence_id]
+                for item in token.text:
+                    if ":" in item:
+                        print >> out_file, "(CODE " + item + ")"
+                    else:
+                        print >> out_file, item
+                id_num += 1
+                      
+            print "Printing to .wmp file completed."
+            print
+                
+        except KeyError:
+            sys.exit(0)
+
+    def print_all_wmp(self, out_file):
+        """Prints milestones, text, and punctuation in one-per-line format."""
+
+        for token in self.token_list:
+            for item in token.text:
+                if ":" in item:
+                    print >> out_file, "(CODE " + item + ")"
+                else:
+                    print >> out_file, item
+                              
+        print "Printing to .wmp file completed."
+        print
+
+    def print_all_words(self, out_file):
+        """Prints all and only the words in one-per-line format."""
+
+        for token in self.token_list:
+            for item in token.words:
+                print >> out_file, item
+
+        print "Print to .wds file completed."
+        print
+
+    def print_tree(self, id):
+        """Prints out a Token.fulltree as a string (for now!)."""
+
+        token = self.tokens[id]
+
+        keys = token.tree.keys()
+
+        keys.sort()
+
+        for key in keys:
+            print token.tree[key],
+
+    def add_milestones(self, out_file):
+        """Adds continuity milestones."""
+        pass
+
+    def print_lex(self, out_file):
+        """Prints lexicon-mode ready .pos file."""
+
+        id_num = 1
+        
+        label = raw_input("What is the ID label?\n\
+        Use the format 'Corpus,Book.':")
+        print
+
+        while id_num <= self.total:
+            sentence_id = label + str(id_num)
+            token = self.tokens[sentence_id]
+            for word, postag in token.pos:
+                print >> out_file, word + "/" + postag
+
+            id_num += 1
+                  
+        print "Printing to .lex file completed."
+        print
+            
+    def pos_concordance(self, out_file):
+        """Prints a concordance of words and POS tags in the corpus."""
+            
+        # dictionary keyed by pos tag with all the words the tag applies to as values
+        concordance = {}
+            
+        for token in self.token_list:
+            for word, postag in token.pos:
+                if postag in concordance:
+                    if not word in concordance[postag]:
+                        concordance[postag].append(word)
+                    else:
+                        concordance[postag] = [word]
+                         
+        tag = raw_input("What POS tag do you want to see the words for? ")
+            
+        print "Here are the words:"
+        print
+            
+        for word in concordance[tag]:
+            print word
+            print >> out_file, word
+                
+        print
+        print "Printing completed."
+        print
+        
+    def word_count(self):
+        """Prints a word count of the *parsed* portion of the .psd file."""
+        
+        word_count = 0
+        
+        for token in self.parsed_token_list:
+            for word in token.words:
+                word_count += 1
+                
+        print "You have parsed " + str(word_count) + " words in this file."
+        print
+        
+        print "You get a cookie!"
+        print
+
+    def swap(self, out_file):
+        """Swaps words and POS tags with those in a word-by-word map file."""
+
+        in_name = raw_input("What is the name of your POS map file?\nPlease include the file extension. ")
+
+        map_file = codecs.open(in_name, "rU", "utf-8")
+
+        new_tags = []
+
+        for line in map_file:
+            pair = line.split()
+            word_lemma = pair[0]
+            wl = word_lemma.split("-")
+            word = wl[0]
+            tag = pair[1]
+            new_tags.append((word, word_lemma, tag))
+
+        counter = 0
+
+        last_tag = len(new_tags)
+
+        print_list = []
+
+        for token in self.token_list:
+            keys = token.tree.keys()
+            for key in keys:
+                if counter < last_tag - 1:
+                    if token.tree[key] == new_tags[counter][0]:
+                        token.tree[key] = new_tags[counter][1]
+                        if new_tags[counter][2] == "NPRU":
+                            if token.tree[key - 1] == "N":
+                                token.tree[key - 1] = "NPR"
+                            elif token.tree[key - 1] == "N$":
+                                token.tree[key - 1] = "NPR$"
+                            elif token.tree[key - 1] == "NA":
+                                token.tree[key - 1] = "NPRA"
+                            elif token.tree[key - 1] == "ND":
+                                token.tree[key - 1] = "NPRD"
+                            elif token.tree[key - 1] == "NS":
+                                token.tree[key - 1] = "NPRS"
+                            if token.tree[key - 1] == "NS$":
+                                token.tree[key - 1] = "NPRS$"
+                            if token.tree[key - 1] == "NSA":
+                                token.tree[key - 1] = "NPRSA"
+                            if token.tree[key - 1] == "NSD":
+                                token.tree[key - 1] = "NPRSD"                                    
+                        elif new_tags[counter][2] != "X":
+                            token.tree[key - 1] = new_tags[counter][2]
+                        counter += 1
+
+            for key in keys:
+                if token.tree[key].find("(") != -1:
+                    print_list.append(" (")
+                elif token.tree[key - 1].find("(") != -1 and token.tree[key + 1].find("(") == -1:
+                    print_list.append(token.tree[key] + " ")
+                else:
+                    print_list.append(token.tree[key])
+
+            print_list.append("\n\n")
+
+        print >> out_file, "".join(print_list)
+
+def main():
+    try:
+        # name of .psd file interested in reading
+        filename = sys.argv[1]
+    except IndexError:
+        print "usage: corpus-reader.py .psd-file"
+        sys.exit(1)
+
+    corpus = read(filename)
+      
+    select(corpus)
+
+def read(filename):
+    print "Opening the .psd file..."
+    print
+      
+    # opens .psd file for reading
+    file = codecs.open(filename, "rU", "utf-8")
+      
+    # will contain text of a token
+    sentence = ""
+      
+    # creates an instance of the class Parsed to hold all the tokens in the file
+    aparsed = Parsed()
+    
+    # boolean variable for whether or not a sentence token has been parsed
+    parsed = True
+
+    print "Creating the database of tokens..."
+    print
+    # loops through file line by line to read tokens
+    for line in file:
+        # adds spaces around parentheses to make parsing easier
+        line = line.replace("(", " ( ")
+        line = line.replace(")", " ) ")
+        if "<+ end-count +>" in line:
+            parsed = False
+        # starts collecting text of token
+        elif "( ID" not in line:
+            sentence = sentence + line.rstrip()
+        # stops when finds an ID
+        else:
+            sentence = sentence + line.rstrip()
+            # creates an instance of Token class
+            atoken = Token(parsed)
+            # parses current sentence token
+            atoken.parse(sentence)
+            aparsed.add(atoken)
+            sentence = ""
+                  
+    print "Database completed."
+    print
+      
+    return aparsed
+      
+def select(corpus):
+    """Gives the user options of what to do now that the corpus has been read."""
+    
+    print "Select the option you wish to execute:"
+    print "\ta. Print the text of a token."
+    print "\tb. Print all the tokens in a sub-corpus of the .psd file in word, milestone, punctuation format."
+    print "\tc. Print all the tokens in a .psd file in word, milestone, punctuation format."
+    print "\td. Print the full tree of a token."
+    print "\te. Print out the full tree of a token with additional continuity milestones."
+    print "\tf. Print out the whole corpus in lexicon-mode ready format."
+    print "\tg. Print all the words that have a particular POS tag in the .psd file."
+    print "\th. Find the word count for the parsed portion of the .psd file."
+    print "\ti. Print all and only the words in a .psd file. (For alignment with dependency corpora.)"
+    print "\tj. Swap words and POS tags with words and POS tags from a word-by-word map file."
+    choice = raw_input("Please type only the letter of your choice: ")
+    print
+
+    if choice == "a":
+        token = raw_input("What is the ID # of the token in the format Corpus,Book.#? ")
+        print
+        corpus.print_text(token)
+    elif choice == "b":
+        book = raw_input("What is the name of the book you want to produce a .wmp file for? ")
+        print
+        out_name = book + ".wmp"
+        out_file = codecs.open(out_name, "w", "utf-8")
+        corpus.print_wmp(out_file, book)
+    elif choice == "c":
+        out_name = raw_input("What would you like the name of the output file to be?\nPlease do not include the file extension. ")
+        print
+        out_name = out_name + ".wmp"
+        out_file = codecs.open(out_name, "w", "utf-8")
+        corpus.print_all_wmp(out_file)
+    elif choice == "d":
+        token = raw_input("What is the ID # of the token in the format Corpus,Book.#? ")
+        print
+        corpus.print_tree(token)
+    elif choice == "e":
+        out_name = raw_input("What would you like the name of the output file to be?\nPlease do not include the file extension. ")
+        print
+        out_name = out_name + "-mm.psd"
+        out_file = codecs.open(out_name, "w", "utf-8")
+        corpus.print_tree_ms(out_file)
+    elif choice == "f":
+        out_name = raw_input("What would you like the name of the output file to be?\nPlease do not include the file extension. ")
+        print
+        out_name = out_name + ".lex"
+        out_file = codecs.open(out_name, "w", "utf-8")
+        corpus.print_lex(out_file)
+    elif choice == "g":
+        out_name = raw_input("What would you like the name of the output file to be?\nPlease do not include the file extension. ")
+        print
+        out_name = out_name + ".con"
+        out_file = codecs.open(out_name, "w", "utf-8")
+        corpus.pos_concordance(out_file)
+    elif choice == "h":
+        corpus.word_count()
+    elif choice == "i":
+        out_name = raw_input("What would you like the name of the output file to be?\nPlease do not include the file extension. ")
+        print
+        out_name = out_name + ".wds"
+        out_file = codecs.open(out_name, "w", "utf-8")
+        corpus.print_all_words(out_file)
+    elif choice == "j":
+        out_name = raw_input("What would you like the name of the output file to be?\nPlease do not include the file extension. ")
+        print
+        out_name = out_name + "-swap.psd"
+        out_file = codecs.open(out_name, "w", "utf-8")
+        corpus.swap(out_file)
+
+if __name__=="__main__":
+    main()
