@@ -33,7 +33,7 @@ def main():
         guide = {}
 
         # list of the PROIEL POS tags not handled by regular expressions
-        done_by_lemma = ["C-", "Dq", "Du", "G-"]
+        done_by_lemma = ["c-", "g-"]
 
         for line in re_file:
             if not line.startswith("#") and not line.isspace():

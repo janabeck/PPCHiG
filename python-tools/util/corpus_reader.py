@@ -39,6 +39,9 @@ class Token:
         # comments contains any comments in the token, as a list of strings
         self.comments = []
 
+        # comments contains any TODOs in the token, as a list of strings
+        self.todos = []
+
         # fulltree contains the whole tree as a dictionary with the key = index of the item, and the value = item
         self.tree = {}
 
@@ -98,6 +101,10 @@ class Token:
                 elif "COM:" in item:
                     self.tree[index] = item
                     self.comments.append(item)
+                # catches TODOs
+                elif "TODO:" in item:
+                    self.tree[index] = item
+                    self.todos.append(item)
                 # catches punctuation
                 elif "." in item or "," in item or ";" in item or u"·" in item or "\"" in item:
                     if ("." in lastitem or "," in lastitem or ";" in lastitem or "\"" in lastitem):
@@ -285,7 +292,7 @@ class Parsed:
         print "You get a cookie!"
         print
 
-    def swap(self, out_file):
+    def swap(self, out_file, lemmatized):
         """Swaps words and POS tags with those in a word-by-word map file."""
 
         in_name = raw_input("What is the name of your POS map file?\nPlease include the file extension. ")
@@ -297,16 +304,21 @@ class Parsed:
         for line in map_file:
             pair = line.split()
             word_lemma = pair[0]
-            wl = word_lemma.split("-")
-            word = wl[0]
             tag = pair[1]
-            new_tags.append((word, word_lemma, tag))
+            if not lemmatized:
+                wl = word_lemma.split("-")
+                word = wl[0]
+                new_tags.append((word, word_lemma, tag))
+            else:
+                new_tags.append((word_lemma, word_lemma, tag))
 
         counter = 0
 
         last_tag = len(new_tags)
 
         print_list = []
+
+        index = re.compile("[A-Z\-]+(\d)")
 
         for token in self.token_list:
             keys = token.tree.keys()
@@ -332,7 +344,13 @@ class Parsed:
                             if token.tree[key - 1] == "NSD":
                                 token.tree[key - 1] = "NPRSD"                                    
                         elif new_tags[counter][2] != "X":
-                            token.tree[key - 1] = new_tags[counter][2]
+                            if token.tree[key - 1].find("-PASS") != -1:
+                                token.tree[key - 1] = new_tags[counter][2] + "-PASS"
+                            elif re.match(index, token.tree[key - 1]):
+                                num = re.match(index, token.tree[key - 1])
+                                token.tree[key - 1] = new_tags[counter][2] + "-" + num.group(1)
+                            else:
+                                token.tree[key - 1] = new_tags[counter][2]
                         counter += 1
 
             for key in keys:
@@ -466,7 +484,12 @@ def select(corpus):
         print
         out_name = out_name + "-swap.psd"
         out_file = codecs.open(out_name, "w", "utf-8")
-        corpus.swap(out_file)
+        lemmatized = False
+        lem = raw_input("Is your current .psd file lemmatized? Please enter t or f. ")
+        print
+        if lem == "t":
+            lemmatized = True
+        corpus.swap(out_file, lemmatized)
 
 if __name__=="__main__":
     main()

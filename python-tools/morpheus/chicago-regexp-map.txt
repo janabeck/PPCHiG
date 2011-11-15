@@ -145,7 +145,6 @@ v-3pfia---	VBP-FUT
 vc1spoa---	BEO-IMPF
 v--srpamn-	VPR-PRF
 pc-p---mg-	PRO$
-g---------	U
 v-2sria---	VBP-PRF
 vc-pppafa-	BPRA-IMPF
 v--pppafn-	VPR-IMPF
@@ -343,7 +342,6 @@ v-3spme---	VBIP-IMPF
 v--pfppmn-	VPRP-FUT
 ps-p---fa-	ADJA-POS
 v--pppmma-	VPRPA-IMPF
-c---------	U
 pk-p---md-	PROD+SLF
 a--p---nns	ADJS
 n--p---cv-	NS

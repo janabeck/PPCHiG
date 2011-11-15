@@ -29,3 +29,5 @@
 δίς		NUM
 πάντοθεν		QV
 νή		P
+πάντως		QV
+NOT FINISHED!
