@@ -365,6 +365,38 @@ class Parsed:
 
         print >> out_file, "".join(print_list)
 
+    def mismatched(self, out_file):
+        """Outputs the ID numbers of tokens with mismatched indices."""
+
+        index1 = re.compile("[A-Z\-]+[\-=](\d)")
+
+        index2 = re.compile(".*\*\-(\d)")
+
+        labels = Set([])
+
+        terms = Set([])
+
+        for token in self.token_list:
+            keys = token.tree.keys()
+            for key in keys:
+                if index1.match(token.tree[key]) and "{" not in token.tree[key]:
+                    num = index1.match(token.tree[key])
+                    if num.group(1) not in labels:
+                        labels.add(num.group(1))
+                    else:
+                        terms.add(num.group(1))
+                elif index2.match(token.tree[key]):
+                    num = index2.match(token.tree[key])
+                    terms.add(num.group(1))
+
+            if len(labels) != len(terms):
+                print >> out_file, token.id
+
+            labels.clear()
+
+            terms.clear()
+            
+
 def main():
     try:
         # name of .psd file interested in reading
@@ -434,6 +466,7 @@ def select(corpus):
     print "\th. Find the word count for the parsed portion of the .psd file."
     print "\ti. Print all and only the words in a .psd file. (For alignment with dependency corpora.)"
     print "\tj. Swap words and POS tags with words and POS tags from a word-by-word map file."
+    print "\tk. Find trees with mis-matched indices."
     choice = raw_input("Please type only the letter of your choice: ")
     print
 
@@ -490,6 +523,13 @@ def select(corpus):
         if lem == "t":
             lemmatized = True
         corpus.swap(out_file, lemmatized)
+    elif choice == "k":
+        out_name = raw_input("What would you like the name of the output file to be?\nPlease do not include the file extension. ")
+        print
+        out_name = out_name + ".tokens"
+        out_file = codecs.open(out_name, "w", "utf-8")
+        print
+        corpus.mismatched(out_file)
 
 if __name__=="__main__":
     main()
