@@ -835,6 +835,10 @@
                         <entry>question (direct or indirect)</entry>
                     </row>
                     <row>
+                        <entry>CP-REL</entry>
+                        <entry>relative clause</entry>
+                    </row>
+                    <row>
                         <entry>CP-RES</entry>
                         <entry>result clause</entry>
                     </row>

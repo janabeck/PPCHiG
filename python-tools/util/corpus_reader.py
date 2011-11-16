@@ -368,7 +368,7 @@ class Parsed:
     def mismatched(self, out_file):
         """Outputs the ID numbers of tokens with mismatched indices."""
 
-        index1 = re.compile("[A-Z$\+\-]+[\-=](\d)")
+        index1 = re.compile("[A-Z0-9$\+\-]+[\-=](\d)")
 
         index2 = re.compile(".*\*\-(\d)")
 
@@ -390,6 +390,10 @@ class Parsed:
                     terms.add(num.group(1))
 
             if len(labels) != len(terms):
+                print token.id
+                print labels
+                print terms
+                print
                 print >> out_file, token.id
 
             labels.clear()
