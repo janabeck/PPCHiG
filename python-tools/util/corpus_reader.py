@@ -212,16 +212,67 @@ class Parsed:
 
         token = self.tokens[id]
 
-        keys = token.tree.keys()
-
-        keys.sort()
-
-        for key in keys:
+        for key in token.tree.keys():
             print token.tree[key],
 
     def add_milestones(self, out_file):
         """Adds continuity milestones."""
-        pass
+
+        lst_milestone = ""
+
+        lst_letter = 0
+
+        print_list = []
+
+        for token in self.token_list:
+            count = 0
+            vs = token.tree[5]
+            if not vs.startswith("{VS:"):
+                print_list.append(token.tree[0] + " " + token.tree[1])
+                count = 3
+                max_count = len(token.tree.keys())
+                if lst_letter == 0:
+                    print_list.append(token.tree[2] + " (CODE " + lst_milestone[:(len(lst_milestone)-1)] + "a})\n")
+                    lst_letter = 97
+                else:
+                    lst_letter += 1
+                    print_list.append(token.tree[2] + " (CODE " + lst_milestone[:(len(lst_milestone)-1)] + chr(lst_letter) + "})\n")
+                while count < max_count:
+                    if token.tree[count].startswith("{VS:"):
+                        lst_milestone = token.tree[count]
+                        lst_letter = 0
+                    if token.tree[count].find("(") != -1:
+                        print_list.append(" (")
+                    # catches labels
+                    elif token.tree[count - 1].find("(") != -1 and token.tree[count + 1].find("(") == -1:
+                        print_list.append(token.tree[count] + " ")
+                    # catches terminal nodes
+                    else:                              
+                        print_list.append(token.tree[count])
+                    count += 1
+            else:
+                for key in token.tree.keys():
+                    if token.tree[key].startswith("{VS:"):
+                        lst_milestone = token.tree[key]
+                        lst_letter = 0
+                    if token.tree[key].find("(") != -1:
+                        print_list.append(" (")
+                    # catches labels
+                    elif token.tree[key - 1].find("(") != -1 and token.tree[key + 1].find("(") == -1:                  
+                        print_list.append(token.tree[key] + " ")
+                    # catches terminal nodes
+                    else:
+                        print_list.append(token.tree[key])
+
+            print_list.append("\n\n")
+
+        print "Printing to the output file..."
+        print
+
+        print >> out_file, "".join(print_list)
+
+        print "Printing completed."
+        print
 
     ## def print_lex(self, out_file):
     ##     """Prints lexicon-mode ready .pos file."""
@@ -531,7 +582,7 @@ def select(corpus):
         print
         out_name = out_name + "-mm.psd"
         out_file = codecs.open(out_name, "w", "utf-8")
-        corpus.print_tree_ms(out_file)
+        corpus.add_milestones(out_file)
     elif choice == "f":
         out_name = raw_input("What would you like the name of the output file to be?\nPlease do not include the file extension. ")
         out_name = out_name + ".lem"
