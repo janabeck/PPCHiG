@@ -39,8 +39,11 @@ class Token:
         # comments contains any comments in the token, as a list of strings
         self.comments = []
 
-        # comments contains any TODOs in the token, as a list of strings
+        # todos contains any TODOs in the token, as a list of strings
         self.todos = []
+
+        # mans contains any MANs in the token, as a list of string
+        self.mans = []
 
         # fulltree contains the whole tree as a dictionary with the key = index of the item, and the value = item
         self.tree = {}
@@ -105,6 +108,10 @@ class Token:
                 elif "TODO:" in item:
                     self.tree[index] = item
                     self.todos.append(item)
+                # catches MANs
+                elif "MAN:" in item:
+                    self.tree[index] = item
+                    self.mans.append(item)
                 # catches punctuation
                 elif "." in item or "," in item or ";" in item or u"·" in item or "\"" in item:
                     if ("." in lastitem or "," in lastitem or ";" in lastitem or "\"" in lastitem):
@@ -216,25 +223,49 @@ class Parsed:
         """Adds continuity milestones."""
         pass
 
-    def print_lex(self, out_file):
-        """Prints lexicon-mode ready .pos file."""
+    ## def print_lex(self, out_file):
+    ##     """Prints lexicon-mode ready .pos file."""
 
-        id_num = 1
+    ##     id_num = 1
         
-        label = raw_input("What is the ID label?\n\
-        Use the format 'Corpus,Book.':")
-        print
+    ##     label = raw_input("What is the ID label?\n\
+    ##     Use the format 'Corpus,Book.':")
+    ##     print
 
-        while id_num <= self.total:
-            sentence_id = label + str(id_num)
-            token = self.tokens[sentence_id]
-            for word, postag in token.pos:
-                print >> out_file, word + "/" + postag
+    ##     while id_num <= self.total:
+    ##         sentence_id = label + str(id_num)
+    ##         token = self.tokens[sentence_id]
+    ##         for word, postag in token.pos:
+    ##             print >> out_file, word + "/" + postag
 
-            id_num += 1
+    ##         id_num += 1
                   
-        print "Printing to .lex file completed."
-        print
+    ##     print "Printing to .lex file completed."
+    ##     print
+
+    def lemmas(self, out_file):
+        """Prints all the unique lemmas in the file to the output file."""
+
+        lemmas = Set([])
+
+        for token in self.token_list:
+            for tup in token.pos:
+                try:
+                    wl = tup[0].split("-")
+                    lemma = wl[1]
+                    lemmas.add(lemma)
+                except IndexError:
+                    pass
+
+        lem_list = []
+
+        for lemma in lemmas:
+            lem_list.append(lemma)
+
+        lem_list.sort()
+
+        for lemma in lem_list:
+            print >> out_file, lemma
             
     def pos_concordance(self):
         """Prints a concordance of words and POS tags in the corpus."""
@@ -465,7 +496,8 @@ def select(corpus):
     print "\tc. Print all the tokens in a .psd file in word, milestone, punctuation format."
     print "\td. Print the full tree of a token."
     print "\te. Print out the full tree of a token with additional continuity milestones."
-    print "\tf. Print out the whole corpus in lexicon-mode ready format."
+    print "\tf. Print a list of all the unique lemmas in the file."
+    ## print "\tf. Print out the whole corpus in lexicon-mode ready format."
     print "\tg. Print a concordance of POS tags and lemmas in the file."
     print "\th. Find the word count for the parsed portion of the .psd file."
     print "\ti. Print all and only the words in a .psd file. (For alignment with dependency corpora.)"
@@ -502,10 +534,15 @@ def select(corpus):
         corpus.print_tree_ms(out_file)
     elif choice == "f":
         out_name = raw_input("What would you like the name of the output file to be?\nPlease do not include the file extension. ")
-        print
-        out_name = out_name + ".lex"
+        out_name = out_name + ".lem"
         out_file = codecs.open(out_name, "w", "utf-8")
-        corpus.print_lex(out_file)
+        corpus.lemmas(out_file)
+    ## elif choice == "f":
+    ##     out_name = raw_input("What would you like the name of the output file to be?\nPlease do not include the file extension. ")
+    ##     print
+    ##     out_name = out_name + ".lex"
+    ##     out_file = codecs.open(out_name, "w", "utf-8")
+    ##     corpus.print_lex(out_file)
     elif choice == "g":
         corpus.pos_concordance()
     elif choice == "h":
