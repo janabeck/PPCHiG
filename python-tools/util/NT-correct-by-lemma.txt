@@ -1,0 +1,2 @@
+πολύς	case	Q
+ἄλλος	case	OTHER

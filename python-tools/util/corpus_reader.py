@@ -447,6 +447,74 @@ class Parsed:
 
         print >> out_file, "".join(print_list)
 
+    def correct_by_lemma(self, out_file):
+        """Corrects POS by lemma, preserving properties such as case and number if needed."""
+
+        in_name = raw_input("What is the name of your file containing lemmas to correct?\nPlease include the file extension. ")
+
+        lem_file = codecs.open(in_name, "rU", "utf-8")
+
+        lemmas = {}
+
+        case = False
+
+        number = False
+
+        for line in lem_file:
+            triple = line.split()
+            lemmas[triple[0]] = triple[2]
+            attrs = triple[1].split(",")
+            if "case" in attrs:
+                case = True
+            if "number" in attrs:
+                number = True
+
+        print_list = []
+
+        for token in self.token_list:
+            keys = token.tree.keys()
+            for key in keys:
+                if "-" in token.tree[key] and token.tree[key + 1] == ")":
+                    wl = token.tree[key].split("-")
+                    lemma = wl[1]
+                try:
+                    if lemma in lemmas.keys():
+                        if case and number:
+                            # TODO
+                            pass
+                        elif case:
+                            tag = token.tree[key - 1].rstrip()
+                            if "$" in tag:
+                                new_tag = lemmas[lemma] + "$"
+                            elif tag.endswith("A"):
+                                new_tag = lemmas[lemma] + "A"
+                            elif tag.endswith("D"):
+                                new_tag = lemmas[lemma] + "D"
+                            elif tag.endswith("R"):
+                                new_tag = tag
+                            elif tag.endswith("S"):
+                                new_tag = tag
+                            else:
+                                new_tag = lemmas[lemma]
+                            token.tree[key - 1] = new_tag
+                        else:
+                            token.tree[key - 1] = lemmas[lemma]
+                except UnboundLocalError:
+                    pass
+                lemma = ""
+
+            for key in keys:
+                if token.tree[key].find("(") != -1:
+                    print_list.append(" (")
+                elif token.tree[key - 1].find("(") != -1 and token.tree[key + 1].find("(") == -1:
+                    print_list.append(token.tree[key] + " ")
+                else:
+                    print_list.append(token.tree[key])
+
+            print_list.append("\n\n")
+
+        print >> out_file, "".join(print_list)
+
     def mismatched(self, out_file):
         """Outputs the ID numbers of tokens with mismatched indices."""
 
@@ -554,6 +622,7 @@ def select(corpus):
     print "\ti. Print all and only the words in a .psd file. (For alignment with dependency corpora.)"
     print "\tj. Swap words and POS tags with words and POS tags from a word-by-word map file."
     print "\tk. Find trees with mis-matched indices."
+    print "\tl. Correct POS tags by lemma."
     choice = raw_input("Please type only the letter of your choice: ")
     print
 
@@ -622,6 +691,13 @@ def select(corpus):
         out_file = codecs.open(out_name, "w", "utf-8")
         print
         corpus.mismatched(out_file)
+    elif choice == "l":
+        out_name = raw_input("What would you like the name of the output file to be?\nPlease do not include the file extension. ")
+        print
+        out_name = out_name + ".new"
+        out_file = codecs.open(out_name, "w", "utf-8")
+        print
+        corpus.correct_by_lemma(out_file)        
 
 if __name__=="__main__":
     main()
