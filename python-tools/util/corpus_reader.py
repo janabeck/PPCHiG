@@ -83,7 +83,7 @@ class Token:
             # catches terminal nodes
             else:
                 # catches IDs
-                if ("GreekNT" in item  or "Herodotus" in item):
+                if lastitem == "ID":
                     self.id = item
                     self.tree[index] = item
                 # catches empty categories
