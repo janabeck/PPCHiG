@@ -614,7 +614,7 @@ def select(corpus):
     print "\tb. Print all the tokens in a sub-corpus of the .psd file in word, milestone, punctuation format."
     print "\tc. Print all the tokens in a .psd file in word, milestone, punctuation format."
     print "\td. Print the full tree of a token."
-    print "\te. Print out the full tree of a token with additional continuity milestones."
+    print "\te. Print out the .psd file with additional continuity milestones."
     print "\tf. Print a list of all the unique lemmas in the file."
     ## print "\tf. Print out the whole corpus in lexicon-mode ready format."
     print "\tg. Print a concordance of POS tags and lemmas in the file."
