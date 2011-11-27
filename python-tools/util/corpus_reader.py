@@ -90,7 +90,7 @@ class Token:
                 elif "*" in item:
                     self.tree[index] = item
                 # catches null pieces of split words
-                elif "@" in item:
+                elif item == "@":
                     self.tree[index] = item
                 # catches null elements
                 elif item == "0":
@@ -621,7 +621,7 @@ def select(corpus):
     print "\th. Find the word count for the parsed portion of the .psd file."
     print "\ti. Print all and only the words in a .psd file. (For alignment with dependency corpora.)"
     print "\tj. Swap words and POS tags with words and POS tags from a word-by-word map file."
-    print "\tk. Find trees with mis-matched indices."
+    print "\tk. Find trees with mismatched indices."
     print "\tl. Correct POS tags by lemma."
     choice = raw_input("Please type only the letter of your choice: ")
     print
