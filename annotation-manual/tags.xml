@@ -842,6 +842,10 @@
                         <entry>CP-RES</entry>
                         <entry>result clause</entry>
                     </row>
+                    <row>
+                        <entry>CP-THT</entry>
+                        <entry>complement clause (indicative)</entry>
+                    </row>
                 </tbody>
             </tgroup>
             <tgroup cols="2">
