@@ -81,8 +81,6 @@ function customCommands(){
     addCommand({ keycode: 83 }, setLabel, ["IP-MAT","IP-IMP","IP-SUB"]); // s
     addCommand({ keycode: 83, shift: true}, setLabel, ["IP"]); // shift + s
     addCommand({ keycode: 83, ctrl: true}, setLabel, ["IY"]); // ctrl + s
-    // -SPE IP-level extensions
-    addCommand({ keycode: 83, ctrl: true}, setLabel, ["IP-MAT-SPE","IP-IMP-SPE"]);
     // complement CPs
     addCommand({ keycode: 84 }, setLabel, ["CP-THT","CP-COM","CP-DEG"]); // t
 
