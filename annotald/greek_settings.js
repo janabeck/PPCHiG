@@ -189,13 +189,13 @@ function customConLeafBefore(){
 
 styleTag("CODE", "color: grey");
 // temporary fix since Aaron broke coloring of IP nodes in treedrawing.js
-styleTag("IP-MAT","background-color: grey");
-styleTag("IP-SUB","background-color: grey");
-styleTag("IP-IMP","background-color: grey");
-styleTag("IP-INF","background-color: grey");
-styleTag("IP-PPL","background-color: grey");
-styleTag("IP-ABS","background-color: grey");
-styleTag("IP-RRC","background-color: grey");
+styleTag("IP-MAT","background-color: rosybrown");
+styleTag("IP-SUB","background-color: rosybrown");
+styleTag("IP-IMP","background-color: rosybrown");
+styleTag("IP-INF","background-color: rosybrown");
+styleTag("IP-PPL","background-color: rosybrown");
+styleTag("IP-ABS","background-color: rosybrown");
+styleTag("IP-RRC","background-color: rosybrown");
 styleTag("FRAG","background-color: darkseagreen");
 styleTag("QTP","background-color: darkseagreen");;
 styleTag("XP","background-color: darkseagreen");
