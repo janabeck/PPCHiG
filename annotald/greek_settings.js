@@ -1,4 +1,4 @@
-// Copyright (c) 2011 Anton Karl Ingason, Aaron Ecay
+// Copyright (c) 2011 Anton Karl Ingason, Aaron Ecay, Jana Beck
 
 // This file is part of the Annotald program for annotating
 // phrase-structure treebanks in the Penn Treebank style.
@@ -129,11 +129,11 @@ function customCommands(){
 
 
 /*
- * Default phrase label suggestions in context menu 
+ * Default label suggestions in context menu 
  */
 var defaultConMenuGroup = ["VBP","VBPP","VBD","VBDP","VBN","VBNP","VBS","VBSP","VBO","VBOP","VBI","VBIP","VBDX","VBIX","VBNX","VBOX","VBPX","VBSX"];
 
-/**
+/*
  * Phrase labels that are suggested in context menu when one of the other ones is set
  */
 function customConMenuGroups(){
@@ -188,3 +188,14 @@ function customConLeafBefore(){
 // document.
 
 styleTag("CODE", "color: grey");
+// temporary fix since Aaron broke coloring of IP nodes in treedrawing.js
+styleTag("IP-MAT","background-color: grey");
+styleTag("IP-SUB","background-color: grey");
+styleTag("IP-IMP","background-color: grey");
+styleTag("IP-INF","background-color: grey");
+styleTag("IP-PPL","background-color: grey");
+styleTag("IP-ABS","background-color: grey");
+styleTag("IP-RRC","background-color: grey");
+styleTag("FRAG","background-color: darkseagreen");
+styleTag("QTP","background-color: darkseagreen");;
+styleTag("XP","background-color: darkseagreen");
