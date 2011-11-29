@@ -2,3 +2,4 @@
 ἄλλος	case	OTHER
 ἱκανός	null	ADJR
 ὅλος	case	Q
+ἅπας	case	Q
