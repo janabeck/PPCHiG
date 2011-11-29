@@ -188,6 +188,7 @@ function customConLeafBefore(){
 // document.
 
 styleTag("CODE", "color: grey");
+styleTag("MOVT", "color: salmon");
 // temporary fix since Aaron broke coloring of IP nodes in treedrawing.js
 styleTag("IP-MAT","background-color: rosybrown");
 styleTag("IP-SUB","background-color: rosybrown");
