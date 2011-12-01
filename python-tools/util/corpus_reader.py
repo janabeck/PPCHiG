@@ -549,6 +549,33 @@ class Parsed:
             labels.clear()
 
             terms.clear()
+
+    def add_indices(self, out_file):
+        """Adds numerical indices to the words in a file."""
+
+        print_list = []
+
+        count = 1
+
+        for token in self.token_list:
+            keys = token.tree.keys()
+            
+            for key in keys:
+                if token.tree[key].find("(") != -1:
+                    print_list.append(" (")
+                elif token.tree[key - 1].find("(") != -1 and token.tree[key + 1].find("(") == -1:
+                    print_list.append(token.tree[key] + " ")
+                elif token.tree[key] in token.words:
+                    print_list.append(token.tree[key] + "+" + str(count))
+                    count += 1
+                else:
+                    print_list.append(token.tree[key])
+
+            print_list.append("\n\n")
+
+            count = 1
+
+        print >> out_file, "".join(print_list)
             
 
 def main():
@@ -623,6 +650,7 @@ def select(corpus):
     print "\tj. Swap words and POS tags with words and POS tags from a word-by-word map file."
     print "\tk. Find trees with mismatched indices."
     print "\tl. Correct POS tags by lemma."
+    print "\tm. Add indices to the words in a file."
     choice = raw_input("Please type only the letter of your choice: ")
     print
 
@@ -697,7 +725,14 @@ def select(corpus):
         out_name = out_name + ".new"
         out_file = codecs.open(out_name, "w", "utf-8")
         print
-        corpus.correct_by_lemma(out_file)        
+        corpus.correct_by_lemma(out_file)
+    elif choice == "m":
+        out_name = raw_input("What would you like the name of the output file to be?\nPlease do not include the file extension. ")
+        print
+        out_name = out_name + ".psd.new"
+        out_file = codecs.open(out_name, "w", "utf-8")
+        print
+        corpus.add_indices(out_file)
 
 if __name__=="__main__":
     main()
