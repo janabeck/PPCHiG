@@ -576,10 +576,56 @@ class Parsed:
             count = 1
 
         print >> out_file, "".join(print_list)
-            
+
+    def renumber_ids(self, filename):
+        """Renumbers IDs and adds milestone information in the standard format."""
+
+        out_name = filename + ".new"
+
+        out_file = codecs.open(out_name, "w", "utf-8")
+
+        print_list = []
+
+        count = 1
+
+        for token in self.token_list:
+            keys = token.tree.keys()
+
+            for key in keys:
+                if key != 0 and token.tree[key - 1].find("ID") != -1:
+                    corpus = token.tree[key].split(",")[0]
+                    remain = token.tree[key].split(",")[1]
+                    book = remain.split(".")[0]
+                    num = count
+                    lst = token.milestones
+                    milestring = ""
+                    for stone in lst:
+                        tmp = stone.replace("{VS:","")
+                        new = tmp.replace("}","") + ";"
+                        milestring += new
+                    milestring = milestring[:-1]
+                    new_id = corpus + "," + book + ":" + milestring + "." + str(num)
+                    print_list.append(new_id)
+                elif token.tree[key].find("(") != -1:
+                    print_list.append(" (")
+                elif token.tree[key - 1].find("(") != -1 and token.tree[key + 1].find("(") == -1:
+                    print_list.append(token.tree[key] + " ")
+                else:
+                    print_list.append(token.tree[key])
+
+            print_list.append("\n\n")
+
+            count += 1
+
+        print >> out_file, "".join(print_list)
 
 def main():
+
+    flag = ""
+    
     try:
+        if sys.argv[1].startswith("-"):
+            flag = sys.argv.pop(1)
         # name of .psd file interested in reading
         filename = sys.argv[1]
     except IndexError:
@@ -587,8 +633,13 @@ def main():
         sys.exit(1)
 
     corpus = read(filename)
-      
-    select(corpus)
+
+    if flag == "-c":
+        corpus.word_count()
+    elif flag == "-i":
+        corpus.renumber_ids(filename)
+    else:
+        select(corpus)
 
 def read(filename):
     print "Opening the .psd file..."
