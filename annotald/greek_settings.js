@@ -39,9 +39,10 @@ var vextensions=["-PASS","-IND","-KJV","-FUT","-IMPF","-AOR","-PRF"];
  * Phrase labels in this list (including the same ones with indices and
  * extensions) get a different background color so that the annotator can
  * see the "floor" of the current clause
- * DOESN'T DO ANYTHING YET
+ * JEB: using styleTags() instead
  */
-var ipnodes=["IP-SUB","IP-MAT","IP-IMP","IP-INF","IP-PPL","RRC"];
+//var ipnodes=["IP-SUB","IP-MAT","IP-IMP","IP-INF","IP-PPL","RRC"];
+//styleIpNodes();
 
 /*
  * Keycode is from onKeyDown event.
@@ -190,13 +191,15 @@ function customConLeafBefore(){
 styleTag("CODE", "color: grey");
 styleTag("MOVT", "color: salmon");
 // temporary fix since Aaron broke coloring of IP nodes in treedrawing.js
-styleTag("IP-MAT","background-color: rosybrown");
-styleTag("IP-SUB","background-color: rosybrown");
-styleTag("IP-IMP","background-color: rosybrown");
-styleTag("IP-INF","background-color: rosybrown");
-styleTag("IP-PPL","background-color: rosybrown");
-styleTag("IP-ABS","background-color: rosybrown");
-styleTag("IP-RRC","background-color: rosybrown");
-styleTag("FRAG","background-color: darkseagreen");
-styleTag("QTP","background-color: darkseagreen");;
-styleTag("XP","background-color: darkseagreen");
+styleTags(["FRAG","QTP","XP"], "color: darkseagreen");
+styleTags(["IP-MAT","IP-SUB","IP-IMP","IP-INF","IP-PPL","IP-ABS","RRC"], "color: rosybrown");
+//styleTag("IP-MAT","background-color: rosybrown");
+//styleTag("IP-SUB","background-color: rosybrown");
+//styleTag("IP-IMP","background-color: rosybrown");
+//styleTag("IP-INF","background-color: rosybrown");
+//styleTag("IP-PPL","background-color: rosybrown");
+//styleTag("IP-ABS","background-color: rosybrown");
+//styleTag("IP-RRC","background-color: rosybrown");
+//styleTag("FRAG","background-color: darkseagreen");
+//styleTag("QTP","background-color: darkseagreen");;
+//styleTag("XP","background-color: darkseagreen");
