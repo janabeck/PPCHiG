@@ -167,18 +167,19 @@ function customConMenuGroups(){
  */
 function customConLeafBefore(){
         addConLeafBefore( "CODE", "{BKMK}");
-	addConLeafBefore( "NP-SBJ", "*con*");
-	addConLeafBefore( "NP-SBJ", "*pro*");
+        addConLeafBefore( "NP-SBJ", "*con*");
+        addConLeafBefore( "NP-SBJ", "*pro*");
         addConLeafBefore( "NP-SBJ", "*");
-	addConLeafBefore( "BEP-IMPF", "*");
-	addConLeafBefore( "BED-IMPF", "*");
-	addConLeafBefore( "WADVP", "0");
-	addConLeafBefore( "WNP", "0");
-	addConLeafBefore( "WADJP", "0");
-	addConLeafBefore( "C", "0");
-	addConLeafBefore( "CODE", "{COM:");	
-	addConLeafBefore( "CODE", "{TODO:");
-	addConLeafBefore( "CODE", "{MAN:");	
+        addConLeafBefore( "BEP-IMPF", "*");
+        addConLeafBefore( "BED-IMPF", "*");
+        addConLeafBefore( "WADVP", "0");
+        addConLeafBefore( "WNP", "0");
+        addConLeafBefore( "WADJP", "0");
+        addConLeafBefore( "C", "0");
+        addConLeafBefore( "CODE", "{END}");
+        addConLeafBefore( "CODE", "{COM:");        
+        addConLeafBefore( "CODE", "{TODO:");
+        addConLeafBefore( "CODE", "{MAN:");        
 }
 
 // An example of a CSS rule for coloring a POS tag.  The styleTag
