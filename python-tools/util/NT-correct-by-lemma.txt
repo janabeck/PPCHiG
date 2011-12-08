@@ -3,3 +3,4 @@
 ἱκανός	null	ADJR
 ὅλος	case	Q
 ἅπας	case	Q
+ὀλίγος	case	Q
