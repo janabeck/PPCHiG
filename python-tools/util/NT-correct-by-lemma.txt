@@ -5,3 +5,4 @@
 ἅπας	case	Q
 ὀλίγος	case	Q
 ἄρα	null	CLPRT
+ἕκαστος	case	Q
