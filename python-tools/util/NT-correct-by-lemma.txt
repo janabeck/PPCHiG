@@ -4,3 +4,4 @@
 ὅλος	case	Q
 ἅπας	case	Q
 ὀλίγος	case	Q
+ἄρα	null	CLPRT
