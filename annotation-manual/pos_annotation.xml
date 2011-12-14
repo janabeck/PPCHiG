@@ -188,12 +188,6 @@
                         and <emphasis>thousand</emphasis>, and tagged NUM. There may or may not be
                         Greek parallels to this type of case. </para>
                 </listitem>
-                <listitem>
-                    <para> When overtly marked for plural (<emphasis>dozens</emphasis>,
-                            <emphasis>scores</emphasis>, <emphasis>hundreds</emphasis>,
-                            <emphasis>thousands</emphasis>, etc.), cardinal numbers are tagged NS.
-                        This may not be consistently followed in the PPCNTG. </para>
-                </listitem>
             </itemizedlist>
         </sect2>
     </sect1>
