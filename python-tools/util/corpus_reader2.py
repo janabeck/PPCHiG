@@ -44,9 +44,6 @@ class Token():
 
         # text contains all the words in a sentence token, including punctuation, as a list
         self.text = []
-
-        # labels contains all phrase, pos, and CODE, and ID labels in the tree
-        self.labels = []
             
         # pos contains all the words in a sentence token with no punctuation or empty categories as a list of tuples
         # in which the first item is a Greek word and the second a POS tag
@@ -83,7 +80,21 @@ class Token():
                     tree = T.Tree("", [main_tree])
 
         id_str = re.compile("^(.*),(.*):[0-9_;a-z]*\.([0-9]*)$")
-                
+
+        # finds $ROOT and stores in self.root
+
+        subtrs = []
+
+        for tr in tree.subtrees():
+            subtrs.append(tr)
+
+        root = subtrs[1]
+
+        self.root = root.node
+        if self.root == "VERSION":
+            print self.root
+        
+        # gathers remaining info        
         for tup in tree.pos():
             tag = tup[1]
             leaf = tup[0]
@@ -135,14 +146,21 @@ class Corpus():
             self.tokens[count] = tok
             count += 1
 
-    def check_for_ids(self):
+    def check_for_ids(self, output):
         """Check to see that all trees have ID nodes."""
         
         for key in self.tokens.keys():
             tree = self.tokens[key]
-            if tree.id == "":
+            if tree.id == "" and tree.root != "VERSION":
                 print
                 print "Missing ID node in tree!"
+                print
+                print tree._tree
+                print
+                if output:
+                    print "From .out file."
+                else:
+                    print "From main corpus file."
                 print
                 print "Please run Corpus Reader with -i flag to renumber IDs and then try again."
                 print
@@ -158,7 +176,7 @@ class Corpus():
         for key in self.tokens.keys():
             tree = self.tokens[key]
             num = int(tree.id_num)
-            if num != old_num + 1:
+            if num != old_num + 1 and tree.id != "":
                 print
                 print "Tokens not sequentially numbered!"
                 print
@@ -222,7 +240,7 @@ class Corpus():
             tree = corpus2.tokens[key]
             out_ids.append(tree.id)
 
-        if self.check_for_ids() and corpus2.check_for_ids() and self.check_seq_ids():
+        if self.check_for_ids(False) and corpus2.check_for_ids(True) and self.check_seq_ids():
             for key in self.tokens.keys():
                 tree = self.tokens[key]
                 if tree.id in out_ids and tree.id == corpus2.tokens[index].id:
@@ -251,7 +269,7 @@ def main():
         corpus = Corpus()
         corpus.load(in_trees)
     except IndexError:
-        print "usage: corpus-reader.py [-flag] .psd-file [.psd.out-file]"
+        print "usage: corpus-reader2.py [-flag] .psd-file [.psd.out-file]"
         print
         print "flags:"
         print "-c to count words"
@@ -289,7 +307,7 @@ def read(filename, out):
         in_str = open(filename, "rU").read()
 
     # boolean for whether currently in comment block in CorpusSearch output file
-    comment = True
+    comment = False
     
     if out:
         # method for getting trees out of CorpusSearch output file
