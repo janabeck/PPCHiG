@@ -1,0 +1,44 @@
+;; RefTeX parse info file
+;; File: /Users/janabeck/myGit/PPCHiG/annotald/keyboard/cheat-sheet.tex
+;; User: janabeck (Jana Beck)
+
+(set reftex-docstruct-symbol '(
+
+
+(xr nil "\\\\\\\\\\\\")
+
+(index-tags)
+
+(is-multi nil)
+
+(bibview-cache)
+
+(master-dir . "/Users/janabeck/myGit/PPCHiG/annotald/keyboard/")
+
+(label-numbers)
+
+(bof "/Users/janabeck/myGit/PPCHiG/annotald/keyboard/cheat-sheet.tex")
+
+(toc "toc" "    1 Left Hand" "/Users/janabeck/myGit/PPCHiG/annotald/keyboard/cheat-sheet.tex" nil 2 "1" "\\section{Left Hand}" 366)
+
+("sec:shortcuts-commands" "s" "\\begin{tabular}{c c l} \\hline modifier & key & shortcut" "/Users/janabeck/myGit/PPCHiG/annotald/keyboard/cheat-sheet.tex" nil)
+
+(toc "toc" "      1.1 Letter Commands" "/Users/janabeck/myGit/PPCHiG/annotald/keyboard/cheat-sheet.tex" nil 3 "1.1" "\\subsection{Letter Commands}" 422)
+
+("sec:left-letter-commands" "s" nil "/Users/janabeck/myGit/PPCHiG/annotald/keyboard/cheat-sheet.tex" nil "")
+
+("sec:right--commands" "s" nil "/Users/janabeck/myGit/PPCHiG/annotald/keyboard/cheat-sheet.tex" nil "")
+
+(toc "toc" "      1.2 Number Commands" "/Users/janabeck/myGit/PPCHiG/annotald/keyboard/cheat-sheet.tex" nil 3 "1.2" "\\subsection{Number Commands}" 1792)
+
+("sec:left-number-commands" "s" nil "/Users/janabeck/myGit/PPCHiG/annotald/keyboard/cheat-sheet.tex" nil "")
+
+(toc "toc" "    2 Right Hand Commands" "/Users/janabeck/myGit/PPCHiG/annotald/keyboard/cheat-sheet.tex" nil 2 "2" "\\section{Right Hand Commands}" 2096)
+
+(toc "toc" "    2 Left Hand Number Commands" "/Users/janabeck/myGit/PPCHiG/annotald/keyboard/cheat-sheet.tex" nil 2 "2" "\\section{Left Hand Number Commands}" 1144)
+
+(toc "toc" "    2 Left Hand Number Commands" "/Users/janabeck/myGit/PPCHiG/annotald/keyboard/cheat-sheet.tex" nil 2 "2" "\\section{Left Hand Number Commands}" 1144)
+
+(eof "/Users/janabeck/myGit/PPCHiG/annotald/keyboard/cheat-sheet.tex")
+))
+
