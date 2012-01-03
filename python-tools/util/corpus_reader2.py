@@ -69,8 +69,6 @@ class Token():
 
     def parse(self, tree):
         """Fill Token data structure."""
-
-        
         
         # finds METADATA node, stores it, and then removes it so as not to interfere with word count, etc.
         for tr in tree.subtrees():
@@ -123,7 +121,7 @@ class Corpus():
 
     def __init__(self):
 
-        # trees contains keys = numerical indices corresponding to sequence of tokens in file and values = trees
+        # trees contains keys = numerical indices corresponding to sequence of tokens in file and values = Token instances
         self.tokens = {}
 
     def load(self, trees):
@@ -136,6 +134,40 @@ class Corpus():
             tok.parse(tok._tree)
             self.tokens[count] = tok
             count += 1
+
+    def check_for_ids(self):
+        """Check to see that all trees have ID nodes."""
+        
+        for key in self.tokens.keys():
+            tree = self.tokens[key]
+            if tree.id == "":
+                print
+                print "Missing ID node in tree!"
+                print
+                print "Please run Corpus Reader with -i flag to renumber IDs and then try again."
+                print
+                sys.exit()
+
+        return True
+
+    def check_seq_ids(self):
+        """Check to see that all ID numbers are sequential."""
+
+        old_num = 0
+
+        for key in self.tokens.keys():
+            tree = self.tokens[key]
+            num = int(tree.id_num)
+            if num != old_num + 1:
+                print
+                print "Tokens not sequentially numbered!"
+                print
+                print "Please run Corpus Reader with -i flag to renumber IDs and then try again."
+                print
+                sys.exit()
+            old_num = num
+
+        return True
 
     def word_count(self):
         """Count all and only the words in the .psd file."""
@@ -162,25 +194,60 @@ class Corpus():
 
         lst_milestone = ""
 
-        
+    def print_trees(self, filename):
+        """Just print the trees from an input file."""
+        # (i.e., remove CS comment blocks from .out files)
+
+        out_name = filename.replace(".out",".out.new")
+
+        out_file = open(out_name, "w")
+
+        for key in self.tokens.keys():
+            tree = self.tokens[key]
+            print >> out_file, tree._tree,
+            print >> out_file, "\n\n",
 
     def replace_tokens(self, filename, corpus2):
-        """Replace token in .psd file with edited tokens from output file."""
+        """Replace tokens in .psd file with edited tokens from output file."""
 
-        pass
+        out_name = filename + ".new"
+
+        out_file = open(out_name, "w")
+
+        index = 0
+
+        out_ids = []
+
+        for key in corpus2.tokens.keys():
+            tree = corpus2.tokens[key]
+            out_ids.append(tree.id)
+
+        if self.check_for_ids() and corpus2.check_for_ids() and self.check_seq_ids():
+            for key in self.tokens.keys():
+                tree = self.tokens[key]
+                if tree.id in out_ids and tree.id == corpus2.tokens[index].id:
+                    print >> out_file, corpus2.tokens[index]._tree,
+                    print >> out_file, "\n\n",
+                    index += 1
+                else:
+                    print >> out_file, tree._tree,
+                    print >> out_file, "\n\n",
 
 def main():
 
     flag = ""
 
-    count = 1
+    # boolean for whether file is CorpusSearch output file format
+    out = False
     
     try:
         if sys.argv[1].startswith("-"):
             flag = sys.argv.pop(1)
         # name of main .psd file interested in reading
         filename = sys.argv.pop(1)
-        in_trees = read(filename)
+        if filename.find(".out") != -1:
+            out = True
+        in_trees = read(filename, out)
         corpus = Corpus()
         corpus.load(in_trees)
     except IndexError:
@@ -190,6 +257,7 @@ def main():
         print "-c to count words"
         print "-i to renumber IDs"
         print "-m to add continuity milestones"
+        print "-p to print just the trees from a CS .out file"
         print "-r to replace tokens from output file"
         sys.exit(1)
 
@@ -199,20 +267,43 @@ def main():
         corpus.renumber_ids(filename)
     elif flag == "-m":
         corpus.add_milestones(filename)
+    elif flag == "-p":
+        corpus.print_trees(filename)
     elif flag == "-r":
-        count = 0
+        out = True
         output_filename = sys.argv.pop(1)
-        out_trees = read(output_filename)
+        out_trees = read(output_filename, out)
         corpus2 = Corpus()
-        corpus.load(out_trees)
+        corpus2.load(out_trees)
         corpus.replace_tokens(filename, corpus2)
     else:
         select(corpus)
 
-def read(filename):
+def read(filename, out):
     """Read in a .psd file and return a list of trees as strings."""
 
-    in_str = open(filename, "rU").read()
+    in_str = ""
+
+    if not out:
+        # method for getting trees out of regular .psd file
+        in_str = open(filename, "rU").read()
+
+    # boolean for whether currently in comment block in CorpusSearch output file
+    comment = True
+    
+    if out:
+        # method for getting trees out of CorpusSearch output file
+        in_file = open(filename, "rU")
+
+        for line in in_file:
+            if line.startswith("/*") or line.startswith("/~*"):
+                comment = True
+            elif not comment:
+                in_str = in_str + line
+            elif line.startswith("*/") or line.startswith("*~/"):
+                comment = False
+            else:
+                pass
 
     trees = in_str.split("\n\n")
 
