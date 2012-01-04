@@ -402,7 +402,7 @@ to-devise       [CP −COM    that   the body    the brother     cutting-down   
             (1 Corinthians 14.5) </para>
         <para> Often, parts of the comparative clause are elided. If only one element is missing, it
             is usually indicated by the generic empty category (X *). If more material is missing,
-            gapping is often employed. <programlisting>
+            gapping should not be employed. <programlisting>
 ( (IP-MAT (CODE {VS:7_9})
           (ADJP-PRD (ADJR κρεῖττον)
                     (CP-CMP *ICH*-1))
@@ -419,19 +419,19 @@ to-devise       [CP −COM    that   the body    the brother     cutting-down   
             </programlisting>
             <programlisting>
 (IP-MAT-SPE (CP-ADV (C+PRTG Ἐὰν)
-                    (IP-SUB-1 (BES-IMPF ᾖ)
-                              (NP-SBJ (D ὁ)
-                                      (N ἀριθμὸς)
-                                      (NP-ATR (DS$ τῶν)
-                                              (NS$ υἱῶν)
-                                              (NP-ATR (NPR$ Ἰσραὴλ))))
-                              (ADVP (CP-CMP (WADVP-2 (WADV ὡς))
-                                            (C 0)
-                                            (IP-SUB=1 (ADVP *T*-2)
-                                                      (NP-SBJ (D ἡ)
-                                                              (N ἄμμος)
-                                                              (NP-ATR (D$ τῆς) (N$ θαλάσσης))))
-                                      (, ,))))
+                    (IP-SUB (BES-IMPF ᾖ)
+                            (NP-SBJ (D ὁ)
+                                    (N ἀριθμὸς)
+                                    (NP-ATR (DS$ τῶν)
+                                            (NS$ υἱῶν)
+                                            (NP-ATR (NPR$ Ἰσραὴλ))))
+                            (ADVP (CP-CMP (WADVP-2 (WADV ὡς))
+                                          (C 0)
+                                          (IP-SUB (ADVP *T*-2)
+                                                  (NP-SBJ (D ἡ)
+                                                          (N ἄμμος)
+                                                          (NP-ATR (D$ τῆς) (N$ θαλάσσης))))
+                                  (, ,))))
             (NP-SBJ (D τὸ) (N κατάλειμμα))
             (VBPP-FUT-PASS σωθήσεται))                
             </programlisting>
