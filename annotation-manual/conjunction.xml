@@ -171,13 +171,28 @@
             verbs that differ only with respect to voice—see <xref linkend="word_level_conj"/>
             above), a CONJP is added. In most cases of single-word conjunction, the difference
             between conjoining like and unlike categories is an artifact of our system of labeling
-            rather than reflecting true conjunction of unlike categories. <!-- There are no Greek
-                examples of this type as of yet. -->
+            rather than reflecting true conjunction of unlike categories.
             <programlisting>
 (NODE (DON (DON done)
            (CONJP (CONJ and)
                   (VBN caused)))
       (ID CMMALORY,65.2185))                
+            </programlisting>
+            And a Greek example:
+            <programlisting>
+( (IP-MAT-SPE (CODE {VS:12_44a})
+              (CONJ καὶ-καί)
+              (IP-PPL (VPR-AOR ἐλθὸν-ἔρχομαι))
+              (NP-SBJ *pro*)
+              (VBP-IMPF εὑρίσκει-εὑρίσκω)
+              (IP-SMC (NP-SBJ *)
+                      (VPRA-IMPF (VPRA-IMPF σχολάζοντα-σχολάζω)
+                                 (CONJP (CONJ καὶ-καί)
+                                        (VPRPA-PRF-PASS σεσαρωμένον-σαρόω))
+                                 (CONJP (CONJ καὶ-καί)
+                                        (VPRPA-PRF-PASS κεκοσμημένον-κοσμέω))))
+              (. .))
+  (ID GreekNT,Matthew))                
             </programlisting>
         </para>
         <para> Cases involving the conjunction of unlike categories that result in morphological
