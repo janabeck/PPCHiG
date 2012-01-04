@@ -91,8 +91,6 @@ class Token():
         root = subtrs[1]
 
         self.root = root.node
-        if self.root == "VERSION":
-            print self.root
         
         # gathers remaining info        
         for tup in tree.pos():
