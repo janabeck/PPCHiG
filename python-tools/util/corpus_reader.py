@@ -484,7 +484,39 @@ class Parsed:
                             pass
                         elif case:
                             tag = token.tree[key - 1].rstrip()
-                            if "$" in tag:
+                            if "-" in tag:
+                                print tag
+                                pair = tag.split("-")
+                                index = pair[1]
+                                if "$" in pair[0]:
+                                    new_tag = lemmas[lemma] + "$-" + index
+                                elif pair[0].endswith("A"):
+                                    new_tag = lemmas[lemma] + "A-" + index
+                                elif pair[0].endswith("D"):
+                                    new_tag = lemmas[lemma] + "D-" + index
+                                elif pair[0].endswith("R"):
+                                    new_tag = tag
+                                elif pair[0].endswith("S"):
+                                    new_tag = tag
+                                else:
+                                    new_tag = lemmas[lemma] + "-" + index
+                            elif "=" in tag:
+                                print tag
+                                pair = tag.split("=")
+                                index = pair[1]
+                                if "$" in pair[0]:
+                                    new_tag = lemmas[lemma] + "$=" + index
+                                elif pair[0].endswith("A"):
+                                    new_tag = lemmas[lemma] + "A=" + index
+                                elif pair[0].endswith("D"):
+                                    new_tag = lemmas[lemma] + "D=" + index
+                                elif pair[0].endswith("R"):
+                                    new_tag = tag
+                                elif pair[0].endswith("S"):
+                                    new_tag = tag
+                                else:
+                                    new_tag = lemmas[lemma] + "=" + index
+                            elif "$" in tag:
                                 new_tag = lemmas[lemma] + "$"
                             elif tag.endswith("A"):
                                 new_tag = lemmas[lemma] + "A"
@@ -493,7 +525,7 @@ class Parsed:
                             elif tag.endswith("R"):
                                 new_tag = tag
                             elif tag.endswith("S"):
-                                new_tag = tag
+                                new_tag = tag      
                             else:
                                 new_tag = lemmas[lemma]
                             token.tree[key - 1] = new_tag
