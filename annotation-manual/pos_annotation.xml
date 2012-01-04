@@ -986,9 +986,13 @@
                     <para> The interrogative particle ἆρα is always tagged PRTQ. </para>
                 </listitem>
                 <listitem>
-                    <para> Other particles such as <link linkend="οὐχί">οὐχί</link> , <link
+                    <para> Other particles such as <link linkend="οὐχί">οὐχί</link>, <link
                             linkend="μήτι">μήτι</link>, and οὐκοῦν are only tagged PRTQ when they
                         appear in questions and do not have any of their negative force. </para>
+                </listitem>
+                <listitem>
+                    <para> When <link linkend="εἰ">εἰ</link> appears in a direct question (and
+                        doesn't get translated at all), it is tagged PRTQ instead of WQ. </para>
                 </listitem>
             </itemizedlist>
         </sect2>

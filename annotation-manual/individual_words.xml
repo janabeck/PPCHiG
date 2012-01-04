@@ -214,7 +214,9 @@
         <glossentry xml:id="εἰ">
             <glossterm>εἰ</glossterm>
             <glossdef>
-                <para> tagged C </para>
+                <para> tagged C when translated 'if'</para>
+                <para> tagged WQ when translated 'whether' and occurs in an indirect question</para>
+                <para> tagged PRTQ when not translated in a direct question</para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="εἰμί">
