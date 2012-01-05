@@ -226,6 +226,8 @@ class Corpus():
     def replace_tokens(self, filename, corpus2):
         """Replace tokens in .psd file with edited tokens from output file."""
 
+        self.word_count()
+
         out_name = filename + ".new"
 
         out_file = open(out_name, "w")
