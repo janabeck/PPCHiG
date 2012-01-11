@@ -188,6 +188,15 @@ class Corpus():
     def word_count(self):
         """Count all and only the words in the .psd file."""
 
+        if self.check_for_ids(False):
+            print "# # # # # # # # # # # # # # # #"
+            print
+            print "All sentences have IDs!"
+
+        if self.check_seq_ids():
+            print
+            print "All IDs in sequence!"
+
         word_count = 0
 
         keys = self.tokens.keys()
@@ -196,9 +205,11 @@ class Corpus():
             tok = self.tokens[key]
             for word in tok.words:
                 word_count += 1
-
+                
+        print
         print "There are " + str(word_count) + " words in this file, excluding empty categories and punctuation."
         print
+        print "# # # # # # # # # # # # # # # #"
 
     def renumber_ids(self, filename):
         """Renumber/add IDs in the .psd file."""
