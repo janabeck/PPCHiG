@@ -119,6 +119,9 @@ class Token():
             # catches null pieces of split words so that they don't get added to text or words
             elif leaf == "@":
                 self.pos.append((leaf, tag))
+            # catches (FORMAT dash)
+            elif leaf == "dash":
+                pass
             # catches everything else = just words
             else:
                 self.text.append(leaf)
