@@ -1,4 +1,4 @@
-/* check to be sure that all CPs have some sort of C */
+/* checks to be sure that all CPs have some sort of C */
 
 node: $ROOT
 
