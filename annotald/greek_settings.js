@@ -36,15 +36,6 @@ var extensions=["-XXX","-ZZZ","-SPE","-PRN","-RSP","-LFD","-SBJ"]
 var vextensions=["-PASS","-IND","-KJV","-FUT","-IMPF","-AOR","-PRF"];
 
 /*
- * Phrase labels in this list (including the same ones with indices and
- * extensions) get a different background color so that the annotator can
- * see the "floor" of the current clause
- * JEB: using styleTags() instead
- */
-//var ipnodes=["IP-SUB","IP-MAT","IP-IMP","IP-INF","IP-PPL","RRC"];
-//styleIpNodes();
-
-/*
  * Keycode is from onKeyDown event.
  * This can for example be tested here:
  * http://www.asquare.net/javascript/tests/KeyCode.html
@@ -192,7 +183,18 @@ function customConLeafBefore(){
 // document.
 
 styleTag("CODE", "color: grey");
-// temporary fix since Aaron broke coloring of IP nodes in treedrawing.js
+styleDashTag("FLAG", "color: #8467D7");
+styleDashTag("XXX", "color: #8467D7");
 styleTags(["FRAG","QTP","XP"], "background-color: darkseagreen");
-styleTags(["IP-MAT","IP-SUB","IP-IMP","IP-INF","IP-PPL","IP-ABS","RRC"], "background-color: rosybrown");
 styleTags(["FLAG"], "background-color: lightsteelblue");
+// I like this better than the color in treedrawing.js
+styleTags(["IP-MAT","IP-SUB","IP-IMP","IP-INF","IP-PPL","IP-ABS","RRC"], "background-color: #C5908E");
+
+/*
+ * Phrase labels in this list (including the same ones with indices and
+ * extensions) get a different background color so that the annotator can
+ * see the "floor" of the current clause
+ */
+
+//var ipnodes=["IP-MAT","IP-SUB","IP-IMP","IP-INF","IP-PPL","IP-ABS","RRC"];
+//styleIpNodes();
