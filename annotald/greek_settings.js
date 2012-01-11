@@ -95,6 +95,7 @@ function customCommands(){
 
     addCommand({ keycode: 88 }, makeNode, "XP"); // x
     addCommand({ keycode: 88, shift: true }, setLabel, ["XP"]); // shift + x
+    addCommand({ keycode: 88, ctrl: true}, toggleExtension, "-XXX"); // ctrl + x
 
     addCommand({ keycode: 90 }, undo); // z
 
@@ -195,4 +196,3 @@ styleTag("CODE", "color: grey");
 styleTags(["FRAG","QTP","XP"], "background-color: darkseagreen");
 styleTags(["IP-MAT","IP-SUB","IP-IMP","IP-INF","IP-PPL","IP-ABS","RRC"], "background-color: rosybrown");
 styleTags(["FLAG"], "background-color: lightsteelblue");
-
