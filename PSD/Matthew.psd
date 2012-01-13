@@ -1,3 +1,10 @@
+/*
+Released 2012/1/10
+Author: Jana E. Beck
+Contact: janabeck@babel.ling.upenn.edu
+License: This treebank file is built from the Perseus Digital Library's (website: http://www.perseus.tufts.edu/hopper/) collection of TEI-compliant XML texts licensed under the Creative Commons Attribution-ShareAlike 3.0 License. See http://creativecommons.org/licenses/by-sa/3.0/us/ for more information about this license. In accordance with the terms of the Perseus Digital Library's Creative Commons Attribution-ShareAlike 3.0 License, this treebank file is also licensed under a Creative Commons ShareAlike 3.0 License.
+*/
+
 ( (VERSION (FORMAT dash)))
 
 ( (FRAG (CODE {VS:1_1})

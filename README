@@ -1,0 +1,15 @@
+Penn Parsed Corpus of Historical Greek (PPCHiG)
+Version 0.1
+Copyright 2012 Jana E. Beck
+Website: http://www.ling.upenn.edu/~janabeck/greek-corpora.html
+Contact: janabeck@babel.ling.upenn.edu
+
+The Penn Parsed Corpus of Historical Greek is a set of software tools for developing a treebank and a treebank that is developed using the same tools. The treebank will contain Greek texts from the Homeric, Classical, New Testament, and Hellenistic periods of the language. See the website, http://www.ling.upenn.edu/~janabeck/greek-corpora.html, for further information.
+
+The treebank in this repository is built from the Perseus Digital Library's collection of TEI-compliant XML texts licensed under the Creative Commons Attribution-ShareAlike 3.0 License. See http://creativecommons.org/licenses/by-sa/3.0/us/ for more information about this license. In accordance with the terms of the Perseus Digital Library's Creative Commons Attribution-ShareAlike 3.0 License, the treebank is also licensed under a Creative Commons ShareAlike 3.0 License.
+
+The software in this repository is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
