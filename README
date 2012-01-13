@@ -8,8 +8,8 @@ The Penn Parsed Corpus of Historical Greek is a set of software tools for develo
 
 The treebank in this repository is built from the Perseus Digital Library's collection of TEI-compliant XML texts licensed under the Creative Commons Attribution-ShareAlike 3.0 License. See http://creativecommons.org/licenses/by-sa/3.0/us/ for more information about this license. In accordance with the terms of the Perseus Digital Library's Creative Commons Attribution-ShareAlike 3.0 License, the treebank is also licensed under a Creative Commons ShareAlike 3.0 License.
 
-The software in this repository is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+The software in this repository is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
-This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more details.
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 
-You should have received a copy of the GNU Lesser General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
+You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
