@@ -17,7 +17,7 @@ import nltk.tree as T
 
 class Token():
     """A class for Penn-style parsed trees."""
-    #TODO: represent lemmas in the data structure
+    #TODO: represent lemmas in the data structure separately from pos?
     
     def __init__(self, str):
         """Initialize a token."""
@@ -173,8 +173,7 @@ class Corpus():
 
         # trees contains keys = numerical indices corresponding to sequence of tokens in file and values = Token instances
         self.tokens = {}
-
-        #TODO: add a variable for what format the corpus is in: old (default), dash, deep
+        
         self.format = ""
 
     def load(self, trees):
