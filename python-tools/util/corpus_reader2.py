@@ -15,6 +15,34 @@ import re
 from sets import Set
 import nltk.tree as T
 
+class myT(T.ParentedTree):
+
+    def get_siblings(self):
+        """Return a list of all the children of the top node."""
+
+        subtrs = self.subtrees()
+
+        # pop the first
+        subtrs.next()
+
+        first = subtrs.next()
+
+        sibs = [first]
+
+        curr = first
+
+        done = False
+
+        while not done:
+            new = curr.right_sibling
+            if new == None:
+                done = True
+            else:
+                sibs.append(new)
+                curr = new
+
+        return sibs
+
 class Token():
     """A class for Penn-style parsed trees."""
     #TODO: represent lemmas in the data structure separately from pos?
@@ -140,7 +168,11 @@ class Token():
                 self.pos.append((leaf, tag))
             # catches (FORMAT dash)
             elif leaf == "dash":
-                pass
+                break
+            # deep format
+            elif tag.find("ORTHO") != -1:
+                self.text.append(leaf)
+                self.words.append(leaf)
             # catches everything else = just words
             else:
                 if format == "old":
@@ -157,13 +189,63 @@ class Token():
 
     def has_milestone_first(self):
         """Check to see that the tree starts with a (CODE {VS:...}) milestone."""
+        """Move any non-content (i.e., CODE) nodes preceding an initial milestone after the milestone."""
 
-        tree = self.main_tree
-        pos_list = tree.pos()
-        if pos_list[0][0].find("VS:") == -1 and pos_list[0][1] != "FORMAT":
-            self._tree.pprint()
-            return False
+        tree = myT(self.main_tree.pprint())
 
+        subtrs = tree.subtrees()
+
+        # pop the first
+        subtrs.next()
+
+        count = 1
+
+        content = False
+
+        code_nodes = []
+
+        # checking tokens to see if CODE and/or milestone first
+        while not content:
+            curr = subtrs.next()
+            if curr.node == "FORMAT":
+                return True
+            elif curr.node == "CODE":
+                if count == 1 and curr.pos()[0][0].find("VS:") != -1:
+                    return True
+                elif curr.pos()[0][0].find("VS:") != -1:
+                    code_nodes.append(curr)
+                    count += 1
+                    mile = curr
+                    content = True
+                else:
+                    code_nodes.append(curr)
+                    count += 1
+            else:
+                return False
+
+        sibs = tree.get_siblings()
+
+        start = False
+
+        new_tree = []
+
+        for sib in sibs:
+            if start:
+                new_tree.append(sib)
+            elif sib == mile:
+                start = True
+            else:
+                pass
+
+        for node in code_nodes:
+            new_tree.insert(0, node)
+
+        self.main_tree = T.Tree(self.root, new_tree)
+        new_wrapped = T.Tree("", [self.metadata, self.main_tree, self.id_tree])
+        self._tree = T.ParentedTree.convert(new_wrapped)
+
+        print "Switching the order of some CODE nodes to put milestones first..."
+        print
         return True
 
 class Corpus():
@@ -177,7 +259,7 @@ class Corpus():
         self.format = ""
 
     def load(self, trees):
-        """Initializes Token objects and fills corpus instance."""
+        """Initializes Token objects and fills Corpus instance."""
 
         count = 0
 
@@ -257,6 +339,8 @@ class Corpus():
         for key in self.tokens.keys():
             tree = self.tokens[key]
             if not tree.has_milestone_first():
+                print "Some token(s) didn't have milestones. Adding milestones now..."
+                print
                 return False
 
         return True
@@ -372,7 +456,7 @@ milestones before you renumber and/or add ID nodes!"
                         new_tree = T.Tree("", [tree.metadata, tree.main_tree, tree.id_tree])
                         tree._tree = T.ParentedTree.convert(new_tree)
                         
-            self.print_trees(filename)
+        self.print_trees(filename)
 
     def print_trees(self, filename):
         """Just print the trees from an input file."""
