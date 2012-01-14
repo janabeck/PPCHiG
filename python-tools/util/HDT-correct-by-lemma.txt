@@ -1,33 +1,33 @@
-ἄλλος		OTHER
-ἱκανός		ADJR
-πᾶς		Q
-ἅπας		Q
-σύμπας		Q
-ἀμφότερος	Q
-ὀλίγος		Q
-πολύς		Q
-ἕκαστος		Q
-οὐδείς		NEG+Q
-μηδείς		NEG+Q
-οὐδέτερος		NEG+Q
-μηδέτερος		NEG+Q
-οὐδαμός		NEG+ADJ
-μηδαμός		NEG+ADJ
-οὐδαμά		NEG+ADJ
-οὐκέτι		NEG+ADV
-μηκέτι		NEG+ADV
-οὐδέπω		NEG-CONJ-CLPRT
-μηδέπω		NEG-CONJ-CLPRT
-οὐδαμῶς		NEG+ADV
-μηδαμῶς		NEG+ADV
-οὔποτε		NEG-CLPRT
-οὐδέποτε		NEG-CONJ-CLPRT
-μηδέποτε		NEG-CONJ-CLPRT
-μήποτε		NEG-CLPRT
-οὐδαμόθι		NEG+ADV
-μηδαμόθι		NEG+ADV
-δίς		NUM
-πάντοθεν		QV
-νή		P
-πάντως		QV
+ἄλλος	case	OTHER
+ἱκανός	null	ADJR
+πᾶς	case	Q
+ἅπας	case	Q
+σύμπας	case	Q
+ἀμφότερος	case	Q
+ὀλίγος	case	Q
+πολύς	case	Q
+ἕκαστος	case	Q
+οὐδείς	case	NEG+Q
+μηδείς	case	NEG+Q
+οὐδέτερος	case	NEG+Q
+μηδέτερος	case	NEG+Q
+οὐδαμός	case	NEG+ADJ
+μηδαμός	case	NEG+ADJ
+οὐδαμά	case	NEG+ADJ
+οὐκέτι	null	NEG+ADV
+μηκέτι	null	NEG+ADV
+οὐδέπω	null	NEG-CONJ-CLPRT
+μηδέπω	null	NEG-CONJ-CLPRT
+οὐδαμῶς	null	NEG+ADV
+μηδαμῶς	null	NEG+ADV
+οὔποτε	null	NEG-CLPRT
+οὐδέποτε	null	NEG-CONJ-CLPRT
+μηδέποτε	null	NEG-CONJ-CLPRT
+μήποτε	null	NEG-CLPRT
+οὐδαμόθι	null	NEG+ADV
+μηδαμόθι	null	NEG+ADV
+δίς	null	NUM
+πάντοθεν	null	QV
+νή	null	P
+πάντως	null	QV
 NOT FINISHED!
