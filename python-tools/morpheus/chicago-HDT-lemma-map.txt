@@ -8,8 +8,8 @@ c-	μή	C
 c-	ἔστε	C
 c-	μηδέ	NEG-CONJ
 c-	ὡς	WADV
-c-	πλήν	C
-c-	ἤ	C
+c-	πλήν	CONJ
+c-	ἤ	CONJ
 c-	ἤτοι	CONJ-CLPRT
 c- 	εὖτε	C
 c-	μήτε	NEG-CLTE

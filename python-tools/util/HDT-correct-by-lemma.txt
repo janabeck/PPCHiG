@@ -30,4 +30,3 @@
 πάντοθεν	null	QV
 νή	null	P
 πάντως	null	QV
-NOT FINISHED!
