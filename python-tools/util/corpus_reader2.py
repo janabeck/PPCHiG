@@ -145,7 +145,7 @@ class Token():
                 self.mans.append(leaf)
             elif leaf.find("{TODO:") != -1:
                 self.todos.append(leaf)                
-            elif tag.find("ID") != -1:
+            elif tag == "ID":
                 self.id = leaf
                 try:
                     id_stuff = id_str.match(leaf)
@@ -171,8 +171,9 @@ class Token():
                 break
             # deep format
             elif tag.find("ORTHO") != -1:
-                self.text.append(leaf)
-                self.words.append(leaf)
+                if leaf.find("*") == -1 and leaf.find("0") == -1:
+                    self.text.append(leaf)
+                    self.words.append(leaf)
             # catches everything else = just words
             else:
                 if format == "old":
@@ -180,12 +181,21 @@ class Token():
                     self.pos.append((leaf, tag))
                     self.words.append(leaf)
                 elif format == "dash":
-                    match = ortho_lemma.match(leaf)
-                    ortho = match.group(1)
-                    lemma = match.group(2)
-                    self.text.append(ortho)
-                    self.pos.append(((ortho, lemma), tag))
-                    self.words.append(ortho)
+                    try:
+                        match = ortho_lemma.match(leaf)
+                        ortho = match.group(1)
+                        lemma = match.group(2)
+                        self.text.append(ortho)
+                        self.pos.append(((ortho, lemma), tag))
+                        self.words.append(ortho)
+                    except AttributeError:
+                        print
+                        print "Something went wrong here:" + leaf
+                        print
+                        print "...in this tree:"
+                        print
+                        print self._tree.pprint()
+                        print
 
     def has_milestone_first(self):
         """Check to see that the tree starts with a (CODE {VS:...}) milestone."""
