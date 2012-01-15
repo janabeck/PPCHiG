@@ -563,7 +563,8 @@ milestones before you renumber and/or add ID nodes!"
     def correct_by_lemma(self, filename, lemma_file):
         """Replace the POS tags of words having certain lemmas."""
 
-        pass
+        print "This function hasn't been written yet, sorry!"
+        print
 
 def main():
 
@@ -646,8 +647,8 @@ def select(corpus, filename):
 
     #TODO: write the selector for less common functions!
     print "Select a function:"
-    print "\ta. Correct the POS tags of words bearing certain lemmas in a corpus file."""
-    print "\tb. Swap the POS tags in a corpus file with those from a map file."
+    print "    a. Correct the POS tags of words bearing certain lemmas in a corpus file."""
+    print "    b. Swap the POS tags in a corpus file with those from a map file."
     print
 
     selection = raw_input("Please enter the letter of the function you would like to run. ")
