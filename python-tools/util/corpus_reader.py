@@ -8,7 +8,6 @@ Created 2011/12/14
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 @contact: jana.eliz.beck@gmail.com
 """
-
 import codecs
 import sys
 import re
@@ -509,6 +508,62 @@ milestones before you renumber and/or add ID nodes!"
                     print >> out_file, tree._tree,
                     print >> out_file, "\n\n",
 
+    def swap(self, filename, map_file):
+        """Insert the POS tags from the map file into the corpus file."""
+        
+        lemmatized = False
+        lem = raw_input("Is your current .psd file lemmatized? Please enter t or f. ")
+        print
+        if lem == "t":
+            lemmatized = True
+
+        new_tags = []
+
+        for line in map_file:
+            pair = line.split()
+            word_lemma = pair[0]
+            tag = pair[1]
+            if not lemmatized:
+                wl = word_lemma.split("-")
+                word = wl[0]
+                new_tags.append((word, word_lemma, tag))
+            else:
+                new_tags.append((word_lemma, word_lemma, tag))
+
+        re_index = re.compile(".*([-=][0-9])")
+
+        re_pass = re.compile(".*-PASS.*")
+
+        for key in self.tokens.keys():
+            tree = self.tokens[key]
+            leaves = tree._tree.leaves()
+            # get all the subtrees at the POS level
+            for tr in tree._tree.subtrees():
+                if tr[0] in leaves:
+                    word = tr[0]
+                    tag = tr.node
+                    ind_match = re_index.match(tag)
+                    pass_match = re_pass.match(tag)
+                    if ind_match:
+                        index = ind_match.group(1)
+                    else:
+                        index = ""
+                    if pass_match:
+                        append = "-PASS"
+                    else:
+                        append = ""
+                    if word == new_tags[0][0]:
+                        new_postr = T.Tree(new_tags[0][2] + append + index, [word])
+                        tree._tree[tr.treepos] = T.ParentedTree.convert(new_postr)
+                        new_tags.pop(0)
+
+        self.print_trees(filename)
+
+    def correct_by_lemma(self, filename, lemma_file):
+        """Replace the POS tags of words having certain lemmas."""
+
+        pass
+
 def main():
 
     flag = ""
@@ -553,7 +608,7 @@ def main():
         corpus2.load(out_trees)
         corpus.replace_tokens(filename, corpus2)
     else:
-        select(corpus)
+        select(corpus, filename)
 
 def read(filename, out):
     """Read in a .psd file and return a list of trees as strings."""
@@ -585,11 +640,30 @@ def read(filename, out):
 
     return trees
 
-def select(corpus):
+def select(corpus, filename):
     """Select another CR function from a menu."""
 
     #TODO: write the selector for less common functions!
-    pass
+    print "Select a function:"
+    print "\ta. Correct the POS tags of words bearing certain lemmas in a corpus file."""
+    print "\tb. Swap the POS tags in a corpus file with those from a map file."
+    print
+
+    selection = raw_input("Please enter the letter of the function you would like to run. ")
+    print
+    if selection == "a":
+        pass
+    elif selection == "b":
+        try:
+            map_file = open(sys.argv.pop(1), "rU")
+            corpus.swap(filename, map_file)
+        except IndexError:
+            print "You need to enter the name of the map file on the command line to run this function!"
+            print
+    else:
+        print "I'm sorry--I don't understand what you entered."
+        print
+        sys.exit()
 
 if __name__ == "__main__":
     main()
