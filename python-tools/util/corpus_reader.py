@@ -273,18 +273,19 @@ class Corpus():
         count = 0
 
         for tree in trees:
-            tok = Token(tree)
-            if count == 0:
-                if tree.find("VERSION") != -1:
-                    self.parse_version(tok._tree)
-                else:
-                    print
-                    print "This corpus file is in the old format."
-                    print
-                    self.format = "old"
-            tok.parse(tok._tree, self.format)
-            self.tokens[count] = tok
-            count += 1
+            if tree != "":
+                tok = Token(tree)
+                if count == 0:
+                    if tree.find("VERSION") != -1:
+                        self.parse_version(tok._tree)
+                    else:
+                        print
+                        print "This corpus file is in the old format."
+                        print
+                        self.format = "old"
+                tok.parse(tok._tree, self.format)
+                self.tokens[count] = tok
+                count += 1
 
     def parse_version(self, tree):
         """Record what format the corpus file is in."""
