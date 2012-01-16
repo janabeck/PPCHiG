@@ -8,7 +8,7 @@ Created 2011/12/14
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 @contact: jana.eliz.beck@gmail.com
 """
-import codecs
+
 import sys
 import re
 from sets import Set
@@ -257,6 +257,13 @@ class Token():
         print
         return True
 
+    def change_POS(self, new_tag, append, index, postr):
+        """Change the POS tag of the given postr subtree to new_tag with any appends or indices provided."""
+
+        new_postr = T.Tree(new_tag + append + index, [postr[0]])
+        
+        self._tree[postr.treepos] = T.ParentedTree.convert(new_postr)
+
 class Corpus():
     """A class for a database of Penn-style parsed trees."""
 
@@ -266,6 +273,10 @@ class Corpus():
         self.tokens = {}
         
         self.format = ""
+
+        self.re_index = re.compile(".*([-=][0-9])")
+
+        self.re_pass = re.compile(".*-PASS.*")
 
     def load(self, trees):
         """Initializes Token objects and fills Corpus instance."""
@@ -531,10 +542,6 @@ milestones before you renumber and/or add ID nodes!"
             else:
                 new_tags.append((word_lemma, word_lemma, tag))
 
-        re_index = re.compile(".*([-=][0-9])")
-
-        re_pass = re.compile(".*-PASS.*")
-
         for key in self.tokens.keys():
             tree = self.tokens[key]
             leaves = tree._tree.leaves()
@@ -554,18 +561,76 @@ milestones before you renumber and/or add ID nodes!"
                     else:
                         append = ""
                     if word == new_tags[0][0]:
-                        new_postr = T.Tree(new_tags[0][2] + append + index, [word])
-                        tree._tree[tr.treepos] = T.ParentedTree.convert(new_postr)
+                        tree.change_POS(new_tags[0][2], append, index, tr)
                         new_tags.pop(0)
 
         self.print_trees(filename)
 
-    def correct_by_lemma(self, filename, lemma_file):
+    def correct_by_lemma(self, filename, lem_file):
         """Replace the POS tags of words having certain lemmas."""
+        
+        #TODO: make this not hard-coded?
+        comp_and_sup = ["ADJR","ADJS","ADVR","ADVS","QR","QS"]
 
-        print "This function hasn't been written yet, sorry!"
-        print
+        lemmas = {}
 
+        for line in lem_file:
+            triple = line.split()
+            lemmas[triple[0]] = [triple[2], False, False]
+            attrs = triple[1].split(",")
+            if "case" in attrs:
+                lemmas[triple[0]][1] = True
+            if "number" in attrs:
+                lemmas[triple[0]][2] = True
+
+        for key in self.tokens.keys():
+            tree = self.tokens[key]
+            leaves = tree._tree.leaves()
+            # get all the subtrees at the POS level
+            for tr in tree._tree.subtrees():
+                if tr[0] in leaves:
+                    pair = tr[0]
+                    if "-" in pair:
+                        spl = pair.split("-")
+                        word = spl[0]
+                        lemma = spl[1]
+                    else:
+                        lemma = ""
+                    tag = tr.node
+                    ind_match = self.re_index.match(tag)
+                    pass_match = self.re_pass.match(tag)
+                    if ind_match:
+                        index = ind_match.group(1)
+                    else:
+                        index = ""
+                    if pass_match:
+                        append = "-PASS"
+                    else:
+                        append = ""
+                    if lemma in lemmas.keys():
+                        lem_to_change = lemmas[lemma]
+                        new_tag = lem_to_change[0]
+                        case = lem_to_change[1]
+                        number = lem_to_change[2]
+                        if case and number:
+                            #TODO
+                            pass
+                        elif case:
+                            if "$" in tag:
+                                tree.change_POS(new_tag + "$", append, index, tr)
+                            elif tag.endswith("A"):
+                                tree.change_POS(new_tag + "A", append, index, tr)
+                            elif tag.endswith("D"):
+                                tree.change_POS(new_tag + "D", append, index, tr)
+                            elif tag in comp_and_sup:
+                                pass
+                            else:
+                                tree.change_POS(new_tag, append, index, tr)
+                        else:
+                            tree.change_POS(new_tag, append, index, tr)
+                            
+        self.print_trees(filename)
+        
 def main():
 
     flag = ""
@@ -654,7 +719,12 @@ def select(corpus, filename):
     selection = raw_input("Please enter the letter of the function you would like to run. ")
     print
     if selection == "a":
-        pass
+        try:
+            lem_file = open(sys.argv.pop(1), "rU")
+            corpus.correct_by_lemma(filename, lem_file)
+        except IndexError:
+            print "You need to enter the name of the map file on the command line to run this function!"
+            print
     elif selection == "b":
         try:
             map_file = open(sys.argv.pop(1), "rU")
