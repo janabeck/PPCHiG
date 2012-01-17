@@ -6,3 +6,5 @@
 ὀλίγος	case	Q
 ἄρα	null	CLPRT
 ἕκαστος	case	Q
+Φαρισαῖος	case, number	NPR
+Ἡρῳδιανοί	case  NPRS
