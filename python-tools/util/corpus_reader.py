@@ -460,6 +460,15 @@ milestones before you renumber and/or add ID nodes!"
                         # rebuild tree with wrapper
                         new_tree = T.Tree("", [tree.metadata, tree.main_tree, tree.id_tree])
                         tree._tree = T.ParentedTree.convert(new_tree)
+                    elif match.group(2) != "":
+                        lst_letter += 1
+                        leaf = T.ParentedTree("CODE", ["{VS:" + lst_milestone + chr(lst_letter) + "}"])
+                        tree.milestones[0] = "{VS:" + lst_milestone + chr(lst_letter) + "}"
+                        # replace milestone as first leaf of main tree
+                        tree.main_tree[0] = leaf
+                        # rebuild tree with wrapper
+                        new_tree = T.Tree("", [tree.metadata, tree.main_tree, tree.id_tree])
+                        tree._tree = T.ParentedTree.convert(new_tree)
                     lst_milestone = match.group(1)
                     try:
                         lst_letter = ord(match.group(2))
