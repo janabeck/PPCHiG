@@ -57,7 +57,7 @@ function customCommands(){
     addCommand({ keycode: 69, ctrl: true }, setLabel, ["NY"]); // ctrl + e
     addCommand({ keycode: 70 }, setLabel, ["PP"]); // f
     addCommand({ keycode: 70, shift: true }, toggleVerbalExtension, "-FUT"); // shift + f
-    addCommand({ keycode: 70, ctrl: true }, setLabel, "FRAG"); // ctrl + f
+    addCommand({ keycode: 70, ctrl: true }, setLabel, ["FRAG"]); // ctrl + f
     // adjective phrase shortcuts
     addCommand({ keycode: 71 }, setLabel, ["ADJP","ADJP-PRD","ADJP-SPR","ADJX","ADJY"]); // g
     addCommand({ keycode: 71, shift: true }, setLabel, ["NP-AGT"]); // shift + g
