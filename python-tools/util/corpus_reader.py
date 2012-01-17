@@ -274,9 +274,9 @@ class Corpus():
         
         self.format = ""
 
-        self.re_index = re.compile(".*([-=][0-9])")
+        self.re_index = re.compile("(.*)([-=][0-9])")
 
-        self.re_pass = re.compile(".*-PASS.*")
+        self.re_pass = re.compile("(.*)-PASS.*")
 
     def load(self, trees):
         """Initializes Token objects and fills Corpus instance."""
@@ -553,7 +553,7 @@ milestones before you renumber and/or add ID nodes!"
                     ind_match = re_index.match(tag)
                     pass_match = re_pass.match(tag)
                     if ind_match:
-                        index = ind_match.group(1)
+                        index = ind_match.group(2)
                     else:
                         index = ""
                     if pass_match:
@@ -600,11 +600,13 @@ milestones before you renumber and/or add ID nodes!"
                     ind_match = self.re_index.match(tag)
                     pass_match = self.re_pass.match(tag)
                     if ind_match:
-                        index = ind_match.group(1)
+                        index = ind_match.group(2)
+                        tag = ind_match.group(1)
                     else:
                         index = ""
                     if pass_match:
                         append = "-PASS"
+                        tag = pass_match.group(1)
                     else:
                         append = ""
                     if lemma in lemmas.keys():
@@ -613,8 +615,24 @@ milestones before you renumber and/or add ID nodes!"
                         case = lem_to_change[1]
                         number = lem_to_change[2]
                         if case and number:
-                            #TODO
-                            pass
+                            if tag.endswith("S$"):
+                                tree.change_POS(new_tag + "S$", append, index, tr)
+                            elif tag.endswith("SA"):
+                                tree.change_POS(new_tag + "SA", append, index, tr)
+                            elif tag.endswith("SD"):
+                                tree.change_POS(new_tag + "SD", append, index, tr)
+                            elif tag.endswith("S"):
+                                tree.change_POS(new_tag + "S", append, index, tr)
+                            elif tag.endswith("$"):
+                                tree.change_POS(new_tag + "$", append, index, tr)
+                            elif tag.endswith("A"):
+                                tree.change_POS(new_tag + "A", append, index, tr)
+                            elif tag.endswith("D"):
+                                tree.change_POS(new_tag + "D", append, index, tr)
+                            elif tag in comp_and_sup:
+                                pass
+                            else:
+                                tree.change_POS(new_tag, append, index, tr)
                         elif case:
                             if "$" in tag:
                                 tree.change_POS(new_tag + "$", append, index, tr)
@@ -643,9 +661,7 @@ def main():
             flag = sys.argv.pop(1)
         # name of main .psd file interested in reading
         filename = sys.argv.pop(1)
-        if filename.find(".out") != -1:
-            out = True
-        in_trees = read(filename, out)
+        in_trees = read(filename)
         corpus = Corpus()
         corpus.load(in_trees)
     except IndexError:
@@ -677,31 +693,26 @@ def main():
     else:
         select(corpus, filename)
 
-def read(filename, out):
+def read(filename):
     """Read in a .psd file and return a list of trees as strings."""
 
     in_str = ""
-
-    if not out:
-        # method for getting trees out of regular .psd file
-        in_str = open(filename, "rU").read()
-
+    
     # boolean for whether currently in comment block in CorpusSearch output file
     comment = False
-    
-    if out:
-        # method for getting trees out of CorpusSearch output file
-        in_file = open(filename, "rU")
 
-        for line in in_file:
-            if line.startswith("/*") or line.startswith("/~*"):
-                comment = True
-            elif not comment:
-                in_str = in_str + line
-            elif line.startswith("*/") or line.startswith("*~/"):
-                comment = False
-            else:
-                pass
+    # method for getting trees out of CorpusSearch output file
+    in_file = open(filename, "rU")
+
+    for line in in_file:
+        if line.startswith("/*") or line.startswith("/~*"):
+            comment = True
+        elif not comment:
+            in_str = in_str + line
+        elif line.startswith("*/") or line.startswith("*~/"):
+            comment = False
+        else:
+            pass
 
     trees = in_str.split("\n\n")
 
