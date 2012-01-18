@@ -143,7 +143,9 @@ class Token():
             elif leaf.find("{MAN:") != -1:
                 self.mans.append(leaf)
             elif leaf.find("{TODO:") != -1:
-                self.todos.append(leaf)                
+                self.todos.append(leaf)
+            elif leaf.find("{BKMK}") != -1:
+                pass
             elif tag == "ID":
                 self.id = leaf
                 try:
@@ -188,7 +190,6 @@ class Token():
                         self.pos.append(((ortho, lemma), tag))
                         self.words.append(ortho)
                     except AttributeError:
-                        print
                         print "Something went wrong here:" + leaf
                         print
                         print "...in this tree:"
