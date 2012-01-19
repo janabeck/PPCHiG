@@ -1,3 +1,10 @@
+/*
+Released 2012/1/10
+Author: Jana E. Beck
+Contact: janabeck@babel.ling.upenn.edu
+License: This treebank file is built from the Perseus Digital Library's (website: http://www.perseus.tufts.edu/hopper/) collection of TEI-compliant XML texts licensed under the Creative Commons Attribution-ShareAlike 3.0 License. See http://creativecommons.org/licenses/by-sa/3.0/us/ for more information about this license. In accordance with the terms of the Perseus Digital Library's Creative Commons Attribution-ShareAlike 3.0 License, this treebank file is also licensed under a Creative Commons ShareAlike 3.0 License.
+*/
+
 ( (VERSION (FORMAT dash)))
 
 ( (FRAG (CODE {VS:1_1})
@@ -2455,13 +2462,13 @@
 	      (NP-SBJ *pro*)
 	      (VBP-IMPF ἰσχύει-ἰσχύω)
 	      (ADVP-TMP (ADV ἔτι-ἔτι))
-	      (PP (P εἰ-εἰ#1)
-		  (NEG μὴ-μή)
-		  (IP-INF (IP-PPL (VPRP-AOR-PASS βληθὲν-βάλλω)
-				  (ADVP-DIR (ADV ἔξω-ἔξω)))
-			  (VBNP-IMPF-PASS καταπατεῖσθαι-καταπατέω)
-			  (PP (P ὑπὸ-ὑπό)
-			      (NP-AGT (DS$ τῶν-ὁ) (NS$ ἀνθρώπων-ἄνθρωπος)))))
+	      (CP-ADV (C εἰ-εἰ#1)
+		      (NEG μὴ-μή)
+		      (IP-INF (IP-PPL (VPRP-AOR-PASS βληθὲν-βάλλω)
+				      (ADVP-DIR (ADV ἔξω-ἔξω)))
+			      (VBNP-IMPF-PASS καταπατεῖσθαι-καταπατέω)
+			      (PP (P ὑπὸ-ὑπό)
+				  (NP-AGT (DS$ τῶν-ὁ) (NS$ ἀνθρώπων-ἄνθρωπος)))))
 	      (. .))
   (ID GreekNT,Matthew:5_13b.166))
 
@@ -8448,8 +8455,8 @@
 		(VBP-IMPF ἐπιγινώσκει-ἐπιγινώσκω)
 		(NP-OB1 (DA τὸν-ὁ) (NA υἱὸν-υἱός))
 		(CP-ADV (C εἰ-εἰ#1)
-			(IP-SUB=1 (NEG μὴ-μή)
-				  (NP-SBJ (D ὁ-ὁ) (N πατήρ-πατήρ))))
+			(NEG μὴ-μή)
+			(IP-SUB=1 (NP-SBJ (D ὁ-ὁ) (N πατήρ-πατήρ))))
 		(, ,))
   (ID GreekNT,Matthew:11_27a.563))
 
@@ -8459,8 +8466,8 @@
 		(NP-SBJ (CLQ τις-τὶς))
 		(VBP-IMPF ἐπιγινώσκει-ἐπιγινώσκω)
 		(CP-ADV (C εἰ-εἰ#1)
-			(IP-SUB=1 (NEG μὴ-μή)
-				  (NP-SBJ (NP (D ὁ-ὁ) (N υἱὸς-υἱός))
+			(NEG μὴ-μή)
+			(IP-SUB=1 (NP-SBJ (NP (D ὁ-ὁ) (N υἱὸς-υἱός))
 					  (CONJP (CONJ καὶ-καί)
 						 (NP (CP-FRL (WNP-2 (WPROD ᾧ-ὅς))
 							     (C-AN ἐὰν-ἐάν)
@@ -8643,8 +8650,8 @@
 										    (PP (P μετ'-μετά)
 											(NP (PRO$ αὐτοῦ-αὐτός)))))
 								       (CP-ADV-SPE (C εἰ-εἰ#1)
-										   (IP-SUB-SPE=3 (NEG μὴ-μή)
-												 (NP-OB2 (DSD τοῖς-ὁ) (NSD ἱερεῦσιν-ἱερεύς) (ADV μόνοις-μόνος))))))
+										   (NEG μὴ-μή)
+										   (IP-SUB-SPE=3 (NP-OB2 (DSD τοῖς-ὁ) (NSD ἱερεῦσιν-ἱερεύς) (ADV μόνοις-μόνος))))))
 					     (. ;)))))
   (ID GreekNT,Matthew:12_4.575))
 
@@ -9063,8 +9070,8 @@
 			(VBP-IMPF ἐκβάλλει-ἐκβάλλω)
 			(NP-OB1 (DSA τὰ-ὁ) (NSA δαιμόνια-δαιμόνιον))
 			(CP-ADV (C εἰ-εἰ#1)
-				(IP-SUB=1 (NEG μὴ-μή)
-					  (PP (P ἐν-ἐν)
+				(NEG μὴ-μή)
+				(IP-SUB=1 (PP (P ἐν-ἐν)
 					      (NP (DD τῷ-ὁ)
 						  (NPRD Βεεζεβοὺλ-Βεελζεβούλ)
 						  (NP-PRN (ND ἄρχοντι-ἄρχων)
@@ -9483,8 +9490,8 @@
 		(VBPP-FUT-PASS δοθήσεται-δίδωμι)
 		(NP-OB2 (PROD αὐτῇ-αὐτός))
 		(CP-ADV (C εἰ-εἰ#1)
-			(IP-SUB=1 (NEG μὴ-μή)
-				  (NP-SBJ (DA τὸ-ὁ)
+			(NEG μὴ-μή)
+			(IP-SUB=1 (NP-SBJ (DA τὸ-ὁ)
 					  (NA σημεῖον-σημεῖον)
 					  (NP-ATR (NPR$ Ἰωνᾶ-Ἰωνᾶς)
 						  (NP-PRN (D$ τοῦ-ὁ) (N$ προφήτου-προφήτης))))))
@@ -11291,8 +11298,8 @@
 			(NP-SBJ (N προφήτης-προφήτης))
 			(ADJP-PRD (ADJ ἄτιμος-ἄτιμος))
 			(CP-ADV (C εἰ-εἰ#1)
-				(IP-SUB=1 (NEG μὴ-μή)
-					  (PP (PP (P ἐν-ἐν)
+				(NEG μὴ-μή)
+				(IP-SUB=1 (PP (PP (P ἐν-ἐν)
 						  (NP (DD τῇ-ὁ) (ND πατρίδι-πατρίς)))
 					      (CONJP (CONJ καὶ-καί)
 						     (PP (P ἐν-ἐν)
