@@ -78,4 +78,48 @@
             </programlisting>
         </para>
     </sect1>
+    <sect1 xml:id="if_not">
+        <title>'If not' = 'except'</title>
+        <para> The combination of εἰ + μή when it means 'except' can be tricky to represent. There
+            are two strategies we employ to make it easy to find instead of εἰ + μή = 'except.' <itemizedlist>
+                <listitem>
+                    <para> Instaces of <link linkend="εἰ">εἰ</link> in combination with μή to mean
+                        'except' receive a special lemma: εἰ#1. </para>
+                    <para> The negator <link linkend="μή">μή</link> is always represented as the
+                        immediate sister of εἰ, no matter what the larger structure of the phrase
+                        is. <programlisting>
+( (IP-MAT-SPE-1 (CODE {VS:11_27a})
+                (CONJ καὶ-καί)
+                (NP-SBJ (NEG+Q οὐδεὶς-οὐδείς))
+                (VBP-IMPF ἐπιγινώσκει-ἐπιγινώσκω)
+                (NP-OB1 (DA τὸν-ὁ) (NA υἱὸν-υἱός))
+                (CP-ADV (C εἰ-εἰ#1)
+                        (IP-SUB=1 (NEG μὴ-μή)
+                                  (NP-SBJ (D ὁ-ὁ) (N πατήρ-πατήρ))))
+                (, ,))
+  (ID GreekNT,Matthew:11_27a.563))                            
+                        </programlisting>
+                        <programlisting>
+( (IP-MAT (CODE {VS:14_17})
+          (NP-SBJ (DS οἱ-ὁ))
+          (CLPRT δὲ-δέ)
+          (VBP-IMPF λέγουσιν-λέγω)
+          (NP-OB2 (PROD αὐτῷ-αὐτός))
+          (IP-MAT-SPE (NEG Οὐκ-οὐ)
+                      (NP-SBJ *pro*)
+                      (VBP-IMPF ἔχομεν-ἔχω)
+                      (ADVP-LOC (ADV ὧδε-ὧδε))
+                      (PP (P εἰ-εἰ#1)
+                          (NEG μὴ-μή)
+                          (NP (NP (NUM πέντε-πέντε) (NSA ἄρτους-ἄρτος))
+                              (CONJP (CONJ καὶ-καί)
+                                     (NP (NUM δύο-δύο) (NSA ἰχθύας-ἰχθύς))))))
+          (. .))
+  (ID GreekNT,Matthew:14_17.783))                            
+                        </programlisting>
+                    </para>
+                </listitem>
+            </itemizedlist>
+        </para>
+    </sect1>
 </chapter>

@@ -212,11 +212,13 @@
             </glossdef>
         </glossentry>
         <glossentry xml:id="εἰ">
-            <glossterm>εἰ</glossterm>
+            <glossterm/>
             <glossdef>
                 <para> tagged C when translated 'if'</para>
                 <para> tagged WQ when translated 'whether' and occurs in an indirect question</para>
                 <para> tagged PRTQ when not translated in a direct question</para>
+                <para> given the lemma εἰ#1 when <link linkend="if_not">in combination with μή to
+                        mean 'except'</link></para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="εἰμί">
@@ -609,6 +611,9 @@
                 <para> usually tagged NEG, but tagged C when could be translated
                         <emphasis>lest</emphasis> and introducing a subordinate clause—e.g., a fear
                     clause </para>
+                <para> treated as the sister of εἰ when in a construction where <link
+                        linkend="if_not">εἰ + μή = 'except'</link>
+                </para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="μηδαμός">
