@@ -188,8 +188,6 @@ styleDashTag("FLAG", "color: #8467D7");
 styleDashTag("XXX", "color: #8467D7");
 styleTags(["FRAG","QTP","XP"], "background-color: darkseagreen");
 styleTags(["FLAG"], "background-color: lightsteelblue");
-// I like this better than the color in treedrawing.js
-styleTags(["IP-MAT","IP-SUB","IP-IMP","IP-INF","IP-PPL","IP-ABS","RRC"], "background-color: #C5908E");
 
 /*
  * Phrase labels in this list (including the same ones with indices and
@@ -197,5 +195,5 @@ styleTags(["IP-MAT","IP-SUB","IP-IMP","IP-INF","IP-PPL","IP-ABS","RRC"], "backgr
  * see the "floor" of the current clause
  */
 
-//var ipnodes=["IP-MAT","IP-SUB","IP-IMP","IP-INF","IP-PPL","IP-ABS","RRC"];
-//styleIpNodes();
+var ipnodes=["IP-MAT","IP-SUB","IP-IMP","IP-INF","IP-PPL","IP-ABS","RRC"];
+styleIpNodes();
