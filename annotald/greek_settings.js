@@ -33,7 +33,7 @@ var extensions=["-XXX","-ZZZ","-SPE","-PRN","-RSP","-LFD","-SBJ"]
 /* verbal extensions are treated as not part of the label for various purposes,
  * they are all binary, and they show up in the verbal extension menu (TODO)
  */ 
-var vextensions=["-PASS","-IND","-KJV","-FUT","-IMPF","-AOR","-PRF"];
+var vextensions=["-INTRNS","-PASS","-IND","-KJV","-FUT","-IMPF","-AOR","-PRF"];
 
 /*
  * Keycode is from onKeyDown event.
@@ -43,6 +43,8 @@ var vextensions=["-PASS","-IND","-KJV","-FUT","-IMPF","-AOR","-PRF"];
 function customCommands(){
     // left hand commands
     addCommand({ keycode: 65 }, toggleVerbalExtension, "-AOR"); // a
+    // shift + a still open
+    addCommand({ keycode: 65, ctrl: true }, toggleVerbalExtension, "-INTRNS"); // shift + a
     // adverb phrase shortcuts
     addCommand({ keycode: 66 }, setLabel, ["ADVP", "ADVP-DIR", "ADVP-LOC", "ADVP-TMP"]); // b
     // adverbial CPs
@@ -53,8 +55,7 @@ function customCommands(){
     addCommand({ keycode: 68, ctrl: true}, setLabel, ["NEG"]); // ctrl + d
     // NP-within-NP shortcuts
     addCommand({ keycode: 69 }, setLabel, ["NP-ATR","NP-PRN","NP-PAR","NP-CMP","NP-COM"]); // e
-    addCommand({ keycode: 69, shift: true }, setLabel, ["NP"]); // shift + e
-    addCommand({ keycode: 69, ctrl: true }, setLabel, ["NY"]); // ctrl + e
+    addCommand({ keycode: 69, shift: true }, setLabel, ["NP", "NY"]); // shift + e
     addCommand({ keycode: 70 }, setLabel, ["PP"]); // f
     addCommand({ keycode: 70, shift: true }, toggleVerbalExtension, "-FUT"); // shift + f
     addCommand({ keycode: 70, ctrl: true }, setLabel, ["FRAG"]); // ctrl + f
@@ -71,8 +72,8 @@ function customCommands(){
     addCommand({ keycode: 82, shift: true }, setLabel, ["RRC"]); // shift + r
     // basic sentence-level elements
     addCommand({ keycode: 83 }, setLabel, ["IP-MAT","IP-IMP","IP-SUB"]); // s
-    addCommand({ keycode: 83, shift: true}, setLabel, ["IP"]); // shift + s
-    addCommand({ keycode: 83, ctrl: true}, setLabel, ["IY"]); // ctrl + s
+    addCommand({ keycode: 83, shift: true}, setLabel, ["IP", "IY"]); // shift + s
+    addCommand({ keycode: 83, ctrl: true}, toggleVerbalExtension, "-PASS"); // ctrl + s
     // complement CPs
     addCommand({ keycode: 84 }, setLabel, ["CP-THT","CP-COM","CP-DEG"]); // t
 
