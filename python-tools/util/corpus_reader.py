@@ -223,7 +223,8 @@ class Token():
                 if count == 1 and curr.pos()[0][0].find("VS:") != -1:
                     return True
                 elif curr.pos()[0][0].find("VS:") != -1:
-                    code_nodes.append(curr)
+                    # insert milestone CODE node to make sure it's always first
+                    code_nodes.insert(0, curr)
                     count += 1
                     mile = curr
                     content = True
@@ -247,8 +248,11 @@ class Token():
             else:
                 pass
 
-        for node in code_nodes:
-            new_tree.insert(0, node)
+        while len(code_nodes) > 0:
+            length = len(code_nodes)
+            # last in, first out
+            this = code_nodes.pop(length - 1)
+            new_tree.insert(0, this)
 
         self.main_tree = T.Tree(self.root, new_tree)
         new_wrapped = T.Tree("", [self.metadata, self.main_tree, self.id_tree])
@@ -419,7 +423,7 @@ milestones before you renumber and/or add ID nodes!"
                         if tree.corpus == "" or tree.book == "":
                             tree.corpus = raw_input("What is the name of your corpus? ")
                             corp = tree.corpus
-                            tree.book = raw_input("What is the book (= filename with the extension)? ")
+                            tree.book = raw_input("What is the book (= filename without the extension)? ")
                             bk = tree.book
                         else:
                             corp = tree.corpus
