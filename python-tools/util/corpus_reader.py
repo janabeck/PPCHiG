@@ -131,6 +131,8 @@ class Token():
         self.root = self.main_tree.node
 
         ortho_lemma = re.compile("(.*)-(.*)")
+
+        punct_tags = [',', '.', '\'', '\"', '`', '[', ']']
         
         # gathers remaining info        
         for tup in tree.pos():
@@ -146,6 +148,8 @@ class Token():
                 self.todos.append(leaf)
             elif leaf.find("{BKMK}") != -1:
                 pass
+            elif tag.find("CODE") != -1:
+                pass
             elif tag == "ID":
                 self.id = leaf
                 try:
@@ -158,15 +162,15 @@ class Token():
                     self.corpus = id_stuff.group(1)
                     self.book = id_stuff.group(2)
                     self.id_num = id_stuff.group(3)                    
-            # catches punctuation. allowed punctuation POS tags are , . "
-            elif tag.find(",") != -1 or tag.find(".") != -1 or tag.find("\"") != -1:
+            # catches punctuation. allowed punctuation POS tags are , . ' " ` [ ] 
+            elif tag in punct_tags:
                 self.text.append(leaf)
             # catches empty categories so that they don't get added to text or words
             elif leaf.find("*") != -1 or leaf.find("0") != -1:
-                self.pos.append((leaf, tag))
+                pass
             # catches null pieces of split words so that they don't get added to text or words
             elif leaf == "@":
-                self.pos.append((leaf, tag))
+                pass
             # catches (FORMAT dash)
             elif leaf == "dash":
                 break
@@ -662,6 +666,50 @@ milestones before you renumber and/or add ID nodes!"
                             tree.change_POS(new_tag, append, index, tr)
                             
         self.print_trees(filename)
+
+    def pos_concordance(self):
+        """Prints a concordance of lemmas and POS tags in the corpus."""
+        
+        # dictionary keyed by pos tag with all the lemmas the tag applies to as values
+        concordance = {}
+
+        index = re.compile(".*-[0-9]")
+
+        lst = open("pos_list.txt", "w")
+
+        pos_out = open("pos_concordance.txt", "w")
+
+        for key in self.tokens.keys():
+            tree = self.tokens[key]
+            for tup in tree.pos:
+                if self.format == "dash":
+                    lemma = tup[0][1]
+                elif self.format == "old":
+                    lemma = tup[0]
+                else:
+                    #TODO: support deep format
+                    pass
+                postag = tup[1]
+                if index.match(postag):
+                    postag = re.sub("-[0-9]", "", postag)
+                if postag in concordance:
+                    concordance[postag].add(lemma)
+                else:
+                    concordance[postag] = Set([lemma])
+
+        keys_list = []
+                    
+        for key in concordance:
+            keys_list.append(key)
+
+        keys_list.sort()
+            
+        for key in keys_list:
+            print >> lst, key
+            print >> pos_out, key + ": "
+            for word in concordance[key]:
+                print >> pos_out, word
+            print >> pos_out
         
 def main():
 
@@ -737,8 +785,9 @@ def select(corpus, filename):
 
     #TODO: write the selector for less common functions!
     print "Select a function:"
-    print "    a. Correct the POS tags of words bearing certain lemmas in a corpus file."""
+    print "    a. Correct the POS tags of words bearing certain lemmas in a corpus file."
     print "    b. Swap the POS tags in a corpus file with those from a map file."
+    print "    c. Prints a concordance of lemmas and POS tags in the corpus."
     print
 
     selection = raw_input("Please enter the letter of the function you would like to run. ")
@@ -757,6 +806,8 @@ def select(corpus, filename):
         except IndexError:
             print "You need to enter the name of the map file on the command line to run this function!"
             print
+    elif selection == "c":
+        corpus.pos_concordance()
     else:
         print "I'm sorry--I don't understand what you entered."
         print
