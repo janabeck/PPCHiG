@@ -793,6 +793,45 @@ milestones before you renumber and/or add ID nodes!"
                 for s in sorted_lemmas:
                     print >> cat_out, s[0] + " (" + str(s[1]) + ")"
                 print >> cat_out
+
+    def unique_lemmas(self, sort):
+        """Prints all the unique lemmas (and their frequencies) in a corpus file."""
+
+        lemmas = {}
+
+        lem_out = open("unique-lemmas.txt", "w")
+
+        for key in self.tokens.keys():
+            tree = self.tokens[key]
+            for tup in tree.pos:
+                if self.format == "dash":
+                    lemma = tup[0][1]
+                elif self.format == "old":
+                    print
+                    print "I'm sorry, but this function is not compatible with the old corpus format."
+                    print
+                    sys.exit()
+                else:
+                    #TODO: support deep format
+                    pass
+                try:
+                    lemmas[lemma] += 1
+                except KeyError:
+                    lemmas[lemma] = 1
+
+        if sort == "freq":
+            sorted_lemmas = sorted(lemmas.iteritems(), key=operator.itemgetter(1))
+            sorted_lemmas.reverse()
+
+            for tup in sorted_lemmas:
+                print >> lem_out, tup[0] + ": " + str(tup[1])
+        elif sort == "alpha":
+            lem_list = []
+            for lemma in lemmas.keys():
+                lem_list.append(lemma)
+            lem_list.sort()
+            for lemma in lem_list:
+                print >> lem_out, lemma + ": " + str(lemmas[lemma])         
                                 
 def main():
 
@@ -872,6 +911,7 @@ def select(corpus, filename):
     print "    b. Swap the POS tags in a corpus file with those from a map file."
     print "    c. Prints a concordance of lemmas and POS tags in the corpus."
     print "    d. Prints a concordance of lemmas per category as defined in a input category definition file."
+    print "    e. Prints all the unique lemmas (and their frequences) in a corpus file."
     print
 
     selection = raw_input("Please enter the letter of the function you would like to run. ")
@@ -899,6 +939,12 @@ def select(corpus, filename):
         except IndexError:
             print "You need to enter the name of the category definition file on the command line to run this function!"
             print
+    elif selection == "e":
+        print "Would you like to sort the lemmas by frequency or alphabetically?"
+        print
+        sort = raw_input("Please type 'freq' to sort by frequency or 'alpha' to sort alphabetically. ")
+        print
+        corpus.unique_lemmas(sort)
     else:
         print "I'm sorry--I don't understand what you entered."
         print
