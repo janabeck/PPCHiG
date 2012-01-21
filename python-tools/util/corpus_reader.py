@@ -695,9 +695,9 @@ milestones before you renumber and/or add ID nodes!"
 
         index = re.compile(".*-[0-9]")
 
-        lst = open("pos_list.txt", "w")
+        lst = open("pos-list.txt", "w")
 
-        pos_out = open("pos_concordance.txt", "w")
+        pos_out = open("pos-concordance.txt", "w")
 
         for key in self.tokens.keys():
             tree = self.tokens[key]
@@ -731,9 +731,6 @@ milestones before you renumber and/or add ID nodes!"
 
         keys_list.sort()
 
-        for key in pos_freq.keys():
-            print key
-            
         for key in keys_list:
             print >> lst, key + " (" + str(pos_freq[key]) + ")"
             print >> pos_out, key + ": "
@@ -748,7 +745,7 @@ milestones before you renumber and/or add ID nodes!"
 
         index = re.compile(".*-[0-9]")
 
-        cat_out = open("category_concordance.txt", "w")
+        cat_out = open("category-concordance.txt", "w")
         
         # dictionary with key = category name from cat def file, value = tuple of either list of tags or RE and dictionary of lemmas with key = lemma, value = freq
         categories = {}
@@ -847,7 +844,7 @@ milestones before you renumber and/or add ID nodes!"
                 print >> lem_out, lemma + ": " + str(lemmas[lemma])         
 
     def lemma_concordance(self, lemma):
-        """Print a concordance of each word form (and its frequency) with the given lemma."""
+        """Print a concordance of the word forms (and their frequencies) for the given lemma."""
 
         if self.format != "dash":
             print "I'm sorry, but only the 'dash' format is supported for this function at the moment."
@@ -948,7 +945,7 @@ def select(corpus, filename):
     print "    c. Print a concordance of lemmas and POS tags in the corpus."
     print "    d. Print a concordance of lemmas per category as defined in a input category definition file."
     print "    e. Print all the unique lemmas (and their frequences) in a corpus file."
-    print "    f. Print a concordance of each word form (and its frequency) with the given lemma."
+    print "    f. Print a concordance of the word forms (and their frequencies) for the given lemma."
     print
 
     selection = raw_input("Please enter the letter of the function you would like to run. ")
