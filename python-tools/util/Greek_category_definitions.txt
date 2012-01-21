@@ -1,0 +1,31 @@
+adjective: ADJ.*
+adverb: ADV.*
+ἄν: .*AN
+be: BE.*|BPR.*
+complementizer: C.*
+γε: CLGE
+clitic-pronoun: CLPRO.*
+clitic-particle: CLPRT.*
+τε: .*CLTE.*
+indefinite-pronoun: .*CLQ.*
+conjunction: .*CONJ.*
+determiner: D.*
+foreign-word: FW
+interjection: INTJ
+κε: .*KE
+common-noun: N, N$, NA, ND, NS, NS$, NSA, NSD
+negation: NEG.*
+proper-noun: NPR.*
+number: NUM
+ἄλλος: OTHER.*
+preposition: P
+pronoun: PRO.*
+interrogative-particle: .*PRTQ.*
+quantifier: Q, Q$, QA, QD, QR, QS
+verb: VB.*|VPR.*
+wh-adjective: WADJ.*
+wh-nominal: WD.*|WPRO.*
+wh-adverb: .*WADV.*
+whether: WQ
+X: X
+Y: Y
