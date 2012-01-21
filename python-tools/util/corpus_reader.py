@@ -11,6 +11,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 import sys
 import re
+import operator
 from sets import Set
 import nltk.tree as T
 
@@ -726,7 +727,73 @@ milestones before you renumber and/or add ID nodes!"
             for lemma in concordance[key]:
                 print >> pos_out, lemma + " (" + str(lemmas[(key, lemma)]) + ")"
             print >> pos_out
+
+    def category_concordance(self, cat_file):
+        """Prints a concordance of lemmas per category as defined in a input category definition file."""
+
+        cat_line = re.compile("^(.*):\s(.*)$")
+
+        index = re.compile(".*-[0-9]")
+
+        cat_out = open("category_concordance.txt", "w")
         
+        # dictionary with key = category name from cat def file, value = tuple of either list of tags or RE and dictionary of lemmas with key = lemma, value = freq
+        categories = {}
+
+        for line in cat_file:
+            content = cat_line.match(line)
+            name = content.group(1)
+            desc = content.group(2)
+            if desc.find(",") != -1:
+                tags = desc.split(",")
+                categories[name] = (tags, {})
+            else:
+                reg_desc = re.compile(desc)
+                categories[name] = (reg_desc, {})
+
+        for key in self.tokens.keys():
+            tree = self.tokens[key]
+            for tup in tree.pos:
+                if self.format == "dash":
+                    lemma = tup[0][1]
+                elif self.format == "old":
+                    lemma = tup[0]
+                else:
+                    #TODO: support deep format
+                    pass
+                postag = tup[1]
+                if index.match(postag):
+                    tmp = re.sub("-[0-9]", "", postag)
+                    postag = tmp
+                for cat in categories:
+                    desc = categories[cat][0]
+                    lemmas = categories[cat][1]
+                    if isinstance(desc, list):
+                       for tag in desc:
+                           if postag == tag:
+                               try:
+                                   lemmas[lemma] += 1
+                               except KeyError:
+                                   lemmas[lemma] = 1
+                               break
+                    else:
+                        if desc.match(postag):
+                            try:
+                                lemmas[lemma] += 1
+                            except KeyError:
+                                lemmas[lemma] = 1
+
+        for cat in categories:
+            lemmas = categories[cat][1]
+            if lemmas:
+                # following 2 lines give a representation of the lemmas dict reverse sorted by value
+                sorted_lemmas = sorted(lemmas.iteritems(), key=operator.itemgetter(1))
+                sorted_lemmas.reverse()
+                print >> cat_out, cat + ":"
+                for s in sorted_lemmas:
+                    print >> cat_out, s[0] + " (" + str(s[1]) + ")"
+                print >> cat_out
+                                
 def main():
 
     flag = ""
@@ -804,6 +871,7 @@ def select(corpus, filename):
     print "    a. Correct the POS tags of words bearing certain lemmas in a corpus file."
     print "    b. Swap the POS tags in a corpus file with those from a map file."
     print "    c. Prints a concordance of lemmas and POS tags in the corpus."
+    print "    d. Prints a concordance of lemmas per category as defined in a input category definition file."
     print
 
     selection = raw_input("Please enter the letter of the function you would like to run. ")
@@ -824,6 +892,13 @@ def select(corpus, filename):
             print
     elif selection == "c":
         corpus.pos_concordance()
+    elif selection == "d":
+        try:
+            cat_file = open(sys.argv.pop(1), "rU")
+            corpus.category_concordance(cat_file)
+        except IndexError:
+            print "You need to enter the name of the category definition file on the command line to run this function!"
+            print
     else:
         print "I'm sorry--I don't understand what you entered."
         print
