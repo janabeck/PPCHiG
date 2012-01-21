@@ -670,8 +670,14 @@ milestones before you renumber and/or add ID nodes!"
     def pos_concordance(self):
         """Prints a concordance of lemmas and POS tags in the corpus."""
         
-        # dictionary keyed by pos tag with all the lemmas the tag applies to as values
+        # dictionary keyed by POS tag with all the lemmas the tag applies to as values
         concordance = {}
+
+        # dictionary keyed by (POS tag, lemma) tuple with frequency of lemma (per POS tag) as value
+        lemmas = {}
+
+        #dictionary keyed by POS tag with frequency of tag as value
+        pos_freq = {}
 
         index = re.compile(".*-[0-9]")
 
@@ -691,11 +697,18 @@ milestones before you renumber and/or add ID nodes!"
                     pass
                 postag = tup[1]
                 if index.match(postag):
-                    postag = re.sub("-[0-9]", "", postag)
+                    tmp = re.sub("-[0-9]", "", postag)
+                    postag = tmp
+                try:
+                    pos_freq[postag] += 1
+                except KeyError:
+                    pos_freq[postag] = 1
                 if postag in concordance:
                     concordance[postag].add(lemma)
+                    lemmas[(postag, lemma)] += 1
                 else:
                     concordance[postag] = Set([lemma])
+                    lemmas[(postag, lemma)] = 1
 
         keys_list = []
                     
@@ -703,12 +716,15 @@ milestones before you renumber and/or add ID nodes!"
             keys_list.append(key)
 
         keys_list.sort()
+
+        for key in pos_freq.keys():
+            print key
             
         for key in keys_list:
-            print >> lst, key
+            print >> lst, key + " (" + str(pos_freq[key]) + ")"
             print >> pos_out, key + ": "
-            for word in concordance[key]:
-                print >> pos_out, word
+            for lemma in concordance[key]:
+                print >> pos_out, lemma + " (" + str(lemmas[(key, lemma)]) + ")"
             print >> pos_out
         
 def main():
