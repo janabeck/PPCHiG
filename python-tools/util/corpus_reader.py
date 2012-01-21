@@ -194,6 +194,16 @@ class Token():
                         self.text.append(ortho)
                         self.pos.append(((ortho, lemma), tag))
                         self.words.append(ortho)
+                        if lemma in corpus.lemmas:
+                            forms = corpus.lemmas[lemma]
+                            if ortho in forms:
+                                forms[ortho] += 1
+                            else:
+                                forms[ortho] = 1
+                        else:
+                            corpus.lemmas[lemma] = {}
+                            corpus.lemmas[lemma][ortho] = 1
+                            
                     except AttributeError:
                         print "Something went wrong here:" + leaf
                         print
@@ -287,6 +297,9 @@ class Corpus():
         self.re_index = re.compile("(.*)([-=][0-9])")
 
         self.re_pass = re.compile("(.*)-PASS.*")
+
+        # lemmas is a dict keyed by the lemma, with the value itself a dict keyed by word-form (with freq as value)
+        self.lemmas = {}
 
     def load(self, trees):
         """Initializes Token objects and fills Corpus instance."""
@@ -669,7 +682,7 @@ milestones before you renumber and/or add ID nodes!"
         self.print_trees(filename)
 
     def pos_concordance(self):
-        """Prints a concordance of lemmas and POS tags in the corpus."""
+        """Print a concordance of lemmas and POS tags in the corpus."""
         
         # dictionary keyed by POS tag with all the lemmas the tag applies to as values
         concordance = {}
@@ -729,7 +742,7 @@ milestones before you renumber and/or add ID nodes!"
             print >> pos_out
 
     def category_concordance(self, cat_file):
-        """Prints a concordance of lemmas per category as defined in a input category definition file."""
+        """Print a concordance of lemmas per category as defined in a input category definition file."""
 
         cat_line = re.compile("^(.*):\s(.*)$")
 
@@ -795,7 +808,7 @@ milestones before you renumber and/or add ID nodes!"
                 print >> cat_out
 
     def unique_lemmas(self, sort):
-        """Prints all the unique lemmas (and their frequencies) in a corpus file."""
+        """Print all the unique lemmas (and their frequencies) in a corpus file."""
 
         lemmas = {}
 
@@ -832,6 +845,30 @@ milestones before you renumber and/or add ID nodes!"
             lem_list.sort()
             for lemma in lem_list:
                 print >> lem_out, lemma + ": " + str(lemmas[lemma])         
+
+    def lemma_concordance(self, lemma):
+        """Print a concordance of each word form (and its frequency) with the given lemma."""
+
+        if self.format != "dash":
+            print "I'm sorry, but only the 'dash' format is supported for this function at the moment."
+            print
+            sys.exit()
+
+        out_name = lemma + "-concordance.txt"
+
+        out_file = open(out_name, "w")
+
+        if lemma in self.lemmas:
+            forms = self.lemmas[lemma]
+            sorted_forms = sorted(forms.iteritems(), key=operator.itemgetter(1))
+            sorted_forms.reverse()
+            for form in sorted_forms:
+                print >> out_file, form[0] + ": " + str(form[1])
+        else:
+            print "I'm sorry. I couldn't find your lemma. Please check the spelling and try again."
+            print
+
+corpus = Corpus()
                                 
 def main():
 
@@ -846,7 +883,6 @@ def main():
         # name of main .psd file interested in reading
         filename = sys.argv.pop(1)
         in_trees = read(filename)
-        corpus = Corpus()
         corpus.load(in_trees)
     except IndexError:
         print "usage: corpus-reader2.py [-flag] .psd-file [.psd.out-file]"
@@ -909,9 +945,10 @@ def select(corpus, filename):
     print "Select a function:"
     print "    a. Correct the POS tags of words bearing certain lemmas in a corpus file."
     print "    b. Swap the POS tags in a corpus file with those from a map file."
-    print "    c. Prints a concordance of lemmas and POS tags in the corpus."
-    print "    d. Prints a concordance of lemmas per category as defined in a input category definition file."
-    print "    e. Prints all the unique lemmas (and their frequences) in a corpus file."
+    print "    c. Print a concordance of lemmas and POS tags in the corpus."
+    print "    d. Print a concordance of lemmas per category as defined in a input category definition file."
+    print "    e. Print all the unique lemmas (and their frequences) in a corpus file."
+    print "    f. Print a concordance of each word form (and its frequency) with the given lemma."
     print
 
     selection = raw_input("Please enter the letter of the function you would like to run. ")
@@ -945,6 +982,13 @@ def select(corpus, filename):
         sort = raw_input("Please type 'freq' to sort by frequency or 'alpha' to sort alphabetically. ")
         print
         corpus.unique_lemmas(sort)
+    elif selection == "f":
+        try:
+            lemma = sys.argv.pop(1)
+            corpus.lemma_concordance(lemma)
+        except IndexError:
+            print "You need to enter the lemma you are interested in on the command line to run this function!"
+            print
     else:
         print "I'm sorry--I don't understand what you entered."
         print
