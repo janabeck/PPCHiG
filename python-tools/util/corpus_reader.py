@@ -1,7 +1,7 @@
 # This Python file uses the following encoding: utf-8
 
 """
-corpus_reader2.py
+corpus_reader.py
 Created 2011/12/14
 @author: Jana E. Beck
 @copyright: GNU General Public License http://www.gnu.org/licenses/
