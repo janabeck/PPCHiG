@@ -133,7 +133,7 @@ class Token():
 
         ortho_lemma = re.compile("(.*)-(.*)")
 
-        punct_tags = [',', '.', '\'', '\"', '`', '[', ']']
+        punct_tags = [',', '.', '\'', '\"', '`', 'LPAREN', 'RPAREN']
         
         # gathers remaining info        
         for tup in tree.pos():
@@ -163,7 +163,7 @@ class Token():
                     self.corpus = id_stuff.group(1)
                     self.book = id_stuff.group(2)
                     self.id_num = id_stuff.group(3)                    
-            # catches punctuation. allowed punctuation POS tags are , . ' " ` [ ] 
+            # catches punctuation. allowed punctuation POS tags are , . ' " ` LPAREN RPAREN
             elif tag in punct_tags:
                 self.text.append(leaf)
             # catches empty categories so that they don't get added to text or words
