@@ -106,6 +106,7 @@ class ChicagoScrub(Scrub):
                                 tag = "\""
                             if tag != "":
                                 pair = "(" + tag + " " + ch.rstrip() + "-" + ch.rstrip() + ")"
+                                tag = ""
                             else:
                                 pair = "(" + ch.rstrip() + " " + ch.rstrip() + "-" + ch.rstrip() + ")"
                             if pair != "( -)":
@@ -137,17 +138,38 @@ class ChicagoScrub(Scrub):
         length = len(self.text)
         count = 0
 
+        open_quote = u"“"
+
+        close_quote = u"”"
+
+        in_quote = False
+
         for item in self.text:
-            if not "(. " in item:
-                print >> self.out_file, item
-                count += 1
+            if open_quote in item:
+                in_quote = True
+            if in_quote:
+                if not close_quote in item:
+                    print >> self.out_file, item
+                    count += 1
+                else:
+                    in_quote = False
+                    new_item = item + ")"
+                    print >> self.out_file, new_item
+                    print >> self.out_file, "(ID Herodotus,Histories.0))"
+                    count += 1
+                    if count < length:
+                        print >> self.out_file, "((IP-MAT "
             else:
-                new_item = item + ")"
-                print >> self.out_file, new_item
-                print >> self.out_file, "(ID Herodotus,Histories.0))"
-                count += 1
-                if count < length:
-                    print >> self.out_file, "((IP-MAT "
+                if not "(. " in item:
+                    print >> self.out_file, item
+                    count += 1
+                else:
+                    new_item = item + ")"
+                    print >> self.out_file, new_item
+                    print >> self.out_file, "(ID Herodotus,Histories.0))"
+                    count += 1
+                    if count < length:
+                        print >> self.out_file, "((IP-MAT "
 
         print "This file has " + str(self.count) + " words."
 

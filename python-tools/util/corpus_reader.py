@@ -582,8 +582,8 @@ milestones before you renumber and/or add ID nodes!"
                 if tr[0] in leaves:
                     word = tr[0]
                     tag = tr.node
-                    ind_match = re_index.match(tag)
-                    pass_match = re_pass.match(tag)
+                    ind_match = self.re_index.match(tag)
+                    pass_match = self.re_pass.match(tag)
                     if ind_match:
                         index = ind_match.group(2)
                     else:
