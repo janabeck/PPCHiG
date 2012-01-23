@@ -69,7 +69,10 @@ class ChicagoScrub(Scrub):
         for item in node.contents:
             try:
                 if item.name == "w":
-                    pair = "(X " + item.string + "-" + item["lemma"] + ")"
+                    if item["lemma"] !+ "":
+                        pair = "(X " + item.string + "-" + "lemma" + ")"
+                    else:
+                        pair = "(X " + item.string + "-" + item["lemma"] + ")"
                     self.text.append(pair)
                     self.count += 1
                 elif item.name == "milestone":
