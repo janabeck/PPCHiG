@@ -12,6 +12,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 import sys
 import re
 import operator
+import traceback
 from sets import Set
 import nltk.tree as T
 
@@ -563,6 +564,8 @@ milestones before you renumber and/or add ID nodes!"
 
         new_tags = []
 
+        count = 0
+
         for line in map_file:
             pair = line.split()
             word_lemma = pair[0]
@@ -592,9 +595,17 @@ milestones before you renumber and/or add ID nodes!"
                         append = "-PASS"
                     else:
                         append = ""
-                    if word == new_tags[0][0]:
-                        tree.change_POS(new_tags[0][2], append, index, tr)
-                        new_tags.pop(0)
+                    try:
+                        if word == new_tags[0][0]:
+                            tree.change_POS(new_tags[0][2], append, index, tr)
+                            new_tags.pop(0)
+                            count += 1
+                    except IndexError:
+                        print "I think I reached the end of the file!"
+                        print
+                        print "Word count is " + str(count) + "."
+                        print
+                        break
 
         self.print_trees(filename)
 
@@ -955,6 +966,7 @@ def select(corpus, filename):
             lem_file = open(sys.argv.pop(1), "rU")
             corpus.correct_by_lemma(filename, lem_file)
         except IndexError:
+            print traceback.print_exc(file=sys.stdout)
             print "You need to enter the name of the map file on the command line to run this function!"
             print
     elif selection == "b":
@@ -962,6 +974,7 @@ def select(corpus, filename):
             map_file = open(sys.argv.pop(1), "rU")
             corpus.swap(filename, map_file)
         except IndexError:
+            print traceback.print_exc(file=sys.stdout)
             print "You need to enter the name of the map file on the command line to run this function!"
             print
     elif selection == "c":
@@ -971,6 +984,7 @@ def select(corpus, filename):
             cat_file = open(sys.argv.pop(1), "rU")
             corpus.category_concordance(cat_file)
         except IndexError:
+            print traceback.print_exc(file=sys.stdout)
             print "You need to enter the name of the category definition file on the command line to run this function!"
             print
     elif selection == "e":
