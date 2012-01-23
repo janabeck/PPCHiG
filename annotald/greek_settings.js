@@ -80,7 +80,7 @@ function customCommands(){
     // participial clauses
     addCommand({ keycode: 86 }, setLabel, ["IP-PPL","IP-ABS","IP-SMC","IP-PPL-COM"]); // v
     // infinitive clauses
-    addCommand({ keycode: 86, shift: true }, setLabel, ["IP-INF","IP-INF-COM","IP-INF-PRP","IP-INF-SBJ","IP-INF-ABS"]); // shift + v
+    addCommand({ keycode: 86, shift: true }, setLabel, ["IP-INF","IP-INF-COM","IP-INF-PRP","IP-INF-SBJ","IP-INF-THT","IP-INF-ABS"]); // shift + v
     // argument NP shortcuts
     addCommand({ keycode: 87 }, setLabel, ["NP-SBJ","NP-OB1","NP-OB2","NP-OBP","NP-OBQ","NP-PRD"]); // w
     addCommand({ keycode: 87, shift: true }, setLabel, ["WADJP","WADVP","WNP","WPP","WQP"]); // shift + w
@@ -183,11 +183,16 @@ function customConLeafBefore(){
 // lower-level addStyle() function adds its argument as CSS code to the
 // document.
 
+// make CODE tags less visually salient
+styleTag("CODE", "background-color: lightgrey");
 styleTag("CODE", "color: grey");
-styleDashTag("FLAG", "color: #8467D7");
-styleDashTag("XXX", "color: #8467D7");
+// color things that occur in search results
+styleDashTag("FLAG", "background-color: paleturquoise !important");
+styleDashTag("XXX", "background-color: paleturquoise !important");
+styleTag("FLAG", "background-color: paleturquoise !important");
+// color things that should be visually salient
 styleTags(["FRAG","QTP","XP"], "background-color: darkseagreen");
-styleTags(["FLAG"], "background-color: lightsteelblue");
+styleTags(["VBPP","VBDP","VBNP","VBIP","VBSP","VBOP","VPRP","VPRP$","VPRPA","VPRPD"], "background-color: papayawhip");
 
 /*
  * Phrase labels in this list (including the same ones with indices and
