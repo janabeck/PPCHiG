@@ -171,9 +171,9 @@ function customConLeafBefore(){
         addConLeafBefore( "WADJP", "0");
         addConLeafBefore( "C", "0");
         addConLeafBefore( "CODE", "{END}");
-        addConLeafBefore( "CODE", "{COM:");        
-        addConLeafBefore( "CODE", "{TODO:");
-        addConLeafBefore( "CODE", "{MAN:");        
+        addConLeafBefore( "CODE", "{COM:}");        
+        addConLeafBefore( "CODE", "{TODO:}");
+        addConLeafBefore( "CODE", "{MAN:}");        
 }
 
 // An example of a CSS rule for coloring a POS tag.  The styleTag
