@@ -30,3 +30,6 @@
 πάντοθεν	null	QV
 νή	null	P
 πάντως	null	QV
+οὐ	null	NEG
+οὐδέ	null	NEG-CONJ
+μή	null	NEG
