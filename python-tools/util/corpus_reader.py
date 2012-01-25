@@ -76,7 +76,7 @@ class Token():
         # excludes lemmas, if dash format
         self.words = []
 
-        # text contains all the words in a sentence token, including punctuation, as a list
+        # text contains all the words in a sentence token, including punctuation and milestones, as a list
         # excludes lemmas, if dash format
         self.text = []
             
@@ -166,7 +166,7 @@ class Token():
                     self.id_num = id_stuff.group(3)                    
             # catches punctuation. allowed punctuation POS tags are , . ' " ` LPAREN RPAREN
             elif tag in punct_tags:
-                self.text.append(leaf)
+                self.text.append(leaf.split("-")[0])
             # catches empty categories so that they don't get added to text or words
             elif leaf.find("*") != -1 or leaf.find("0") != -1:
                 pass
@@ -876,6 +876,18 @@ milestones before you renumber and/or add ID nodes!"
             print "I'm sorry. I couldn't find your lemma. Please check the spelling and try again."
             print
 
+    def print_text(self, filename):
+        """Print just the text (words, punctuation, milestones)."""
+
+        out_name = filename.split(".")[0] + ".txt"
+
+        out_file = open(out_name, "w")
+
+        for key in self.tokens.keys():
+            token = self.tokens[key]
+            for word in token.text:
+                print >> out_file, word
+
 corpus = Corpus()
                                 
 def main():
@@ -957,6 +969,7 @@ def select(corpus, filename):
     print "    d. Print a concordance of lemmas per category as defined in a input category definition file."
     print "    e. Print all the unique lemmas (and their frequences) in a corpus file."
     print "    f. Print a concordance of the word forms (and their frequencies) for the given lemma."
+    print "    g. Print the text (words, punctuation, milestones) of the corpus file."
     print
 
     selection = raw_input("Please enter the letter of the function you would like to run. ")
@@ -1000,6 +1013,8 @@ def select(corpus, filename):
         except IndexError:
             print "You need to enter the lemma you are interested in on the command line to run this function!"
             print
+    elif selection == "g":
+        corpus.print_text(filename)
     else:
         print "I'm sorry--I don't understand what you entered."
         print
