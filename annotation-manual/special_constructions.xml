@@ -97,7 +97,7 @@
                         (IP-SUB=1 (NEG μὴ-μή)
                                   (NP-SBJ (D ὁ-ὁ) (N πατήρ-πατήρ))))
                 (, ,))
-  (ID GreekNT,Matthew:11_27a.563))                            
+  (ID GreekNT,Matthew))                            
                         </programlisting>
                         <programlisting>
 ( (IP-MAT (CODE {VS:14_17})
@@ -109,13 +109,13 @@
                       (NP-SBJ *pro*)
                       (VBP-IMPF ἔχομεν-ἔχω)
                       (ADVP-LOC (ADV ὧδε-ὧδε))
-                      (PP (P εἰ-εἰ#1)
-                          (NEG μὴ-μή)
-                          (NP (NP (NUM πέντε-πέντε) (NSA ἄρτους-ἄρτος))
-                              (CONJP (CONJ καὶ-καί)
-                                     (NP (NUM δύο-δύο) (NSA ἰχθύας-ἰχθύς))))))
+                      (NP-OB1 (PP (P εἰ-εἰ#1)
+                              (NEG μὴ-μή)
+                              (NP (NP (NUM πέντε-πέντε) (NSA ἄρτους-ἄρτος))
+                                  (CONJP (CONJ καὶ-καί)
+                                         (NP (NUM δύο-δύο) (NSA ἰχθύας-ἰχθύς)))))))
           (. .))
-  (ID GreekNT,Matthew:14_17.783))                            
+  (ID GreekNT,Matthew))                            
                         </programlisting>
                     </para>
                 </listitem>
