@@ -15796,7 +15796,7 @@ License: This treebank file is built from the Perseus Digital Library's (website
 
 ( (IP-IMP-SPE (CODE {VS:19_21c})
 	      (CONJ καὶ-καί)
-	      (ADVP-DIR (INTJ δεῦρο-δεῦρο))
+	      (ADVP-DIR (ADV δεῦρο-δεῦρο))
 	      (VBI-IMPF ἀκολούθει-ἀκολουθέω)
 	      (NP-OBQ (CLPROD μοι-ἐγώ))
 	      (. .))
