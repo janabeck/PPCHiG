@@ -70,15 +70,16 @@ function customCommands(){
     // relative clauses and variations thereof
     addCommand({ keycode: 82 }, setLabel, ["CP-REL","CP-CAR","CP-CMP","CP-EOP","CP-EXL","CP-FRL"]); // r
     addCommand({ keycode: 82, shift: true }, setLabel, ["RRC"]); // shift + r
+    addCommand({ keycode: 82, ctrl: true }, toggleExtension, "-RSP"); // ctrl + r
     // basic sentence-level elements
-    addCommand({ keycode: 83 }, setLabel, ["IP-MAT","IP-IMP","IP-SUB"]); // s
+    addCommand({ keycode: 83 }, setLabel, ["IP-SUB","IP-MAT","IP-IMP"]); // s
     addCommand({ keycode: 83, shift: true}, setLabel, ["IP", "IY"]); // shift + s
     addCommand({ keycode: 83, ctrl: true}, toggleVerbalExtension, "-PASS"); // ctrl + s
     // complement CPs
     addCommand({ keycode: 84 }, setLabel, ["CP-THT","CP-COM","CP-DEG"]); // t
 
     // participial clauses
-    addCommand({ keycode: 86 }, setLabel, ["IP-PPL","IP-ABS","IP-SMC","IP-PPL-COM"]); // v
+    addCommand({ keycode: 86 }, setLabel, ["IP-PPL","IP-ABS","IP-SMC","IP-PPL-COM","IP-PPL-THT"]); // v
     // infinitive clauses
     addCommand({ keycode: 86, shift: true }, setLabel, ["IP-INF","IP-INF-COM","IP-INF-PRP","IP-INF-SBJ","IP-INF-THT","IP-INF-ABS"]); // shift + v
     // argument NP shortcuts
@@ -95,7 +96,7 @@ function customCommands(){
     addCommand({ keycode: 49 }, leafBefore); // 1
     addCommand({ keycode: 50 }, leafAfter); // 2
     // non-argument NP shortcuts
-    addCommand({ keycode: 51 }, setLabel, ["NX","NP-ADT","NP-ADV","NP-AGT","NP-DIR","NP-INS","NP-LOC","NP-MSR","NP-SPR","NP-TMP","NP-VOC"]); // 3
+    addCommand({ keycode: 51 }, setLabel, ["NX","NP-ADV","NP-AGT","NP-DIR","NP-INS","NP-LOC","NP-MSR","NP-SPR","NP-TMP","NP-VOC","NP-ADT"]); // 3
     addCommand({ keycode: 52 }, toggleExtension, "-PRN"); // 4
     addCommand({ keycode: 53 }, toggleExtension, "-SPE"); // 5
 
@@ -107,6 +108,7 @@ function customCommands(){
     addCommand({ keycode: 75 }, toggleVerbalExtension, "-KJV"); // k
     addCommand({ keycode: 76 }, editLemmaOrLabel); // l
     addCommand({ keycode: 76, shift: true }, displayRename); // shift + l
+    addCommand({ keycode: 76, ctrl: true }, toggleExtension, "-LFD"); // ctrl + l
     //addCommand({ keycode: 77 }, ); // m
     //addCommand({ keycode: 78 }, ); // n
     //addCommand({ keycode: 79 }, ); // o
@@ -163,13 +165,14 @@ function customConLeafBefore(){
         addConLeafBefore( "CODE", "{BKMK}");
         addConLeafBefore( "NP-SBJ", "*con*");
         addConLeafBefore( "NP-SBJ", "*pro*");
+        addConLeafBefore( "C", "0");
+        addConLeafBefore( "XXX", "*T*");
         addConLeafBefore( "NP-SBJ", "*");
         addConLeafBefore( "BEP-IMPF", "*");
         addConLeafBefore( "BED-IMPF", "*");
         addConLeafBefore( "WADVP", "0");
         addConLeafBefore( "WNP", "0");
         addConLeafBefore( "WADJP", "0");
-        addConLeafBefore( "C", "0");
         addConLeafBefore( "CODE", "{END}");
         addConLeafBefore( "CODE", "{COM:}");        
         addConLeafBefore( "CODE", "{TODO:}");
