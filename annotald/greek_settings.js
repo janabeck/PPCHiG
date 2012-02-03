@@ -28,12 +28,12 @@ var caseTags=["N","NS","NPR","NPRS","PRO","D","NUM","ADJ","ADJR","ADJS","Q","QR"
 /* extensions are treated as not part of the label for various purposes, 
  * they are all binary, and they show up in the toggle extension menu  
  */
-var extensions=["-CL","-XXX","-ZZZ","-SPE","-PRN","-RSP","-LFD","-SBJ"]
+var extensions=["-XXX","-ZZZ","-SPE","-PRN","-RSP","-LFD","-SBJ"]
 
 /* verbal extensions are treated as not part of the label for various purposes,
  * they are all binary, and they show up in the verbal extension menu (TODO)
  */ 
-var vextensions=["-INTRNS","-PASS","-IND","-KJV","-FUT","-IMPF","-AOR","-PRF"];
+var vextensions=["-CL","-INTRNS","-PASS","-IND","-KJV","-FUT","-IMPF","-AOR","-PRF"];
 
 /*
  * Keycode is from onKeyDown event.
@@ -50,6 +50,7 @@ function customCommands(){
     // adverbial CPs
     addCommand({ keycode: 66, shift: true }, setLabel, ["CP-ADV","CP-PRP","CP-RES"]); // shift + b
     addCommand({ keycode: 67 }, coIndex); // c
+    addCommand({ keycode: 67, ctrl: true }, toggleVerbalExtension, "-CL"); // ctrl + c
     addCommand({ keycode: 68 }, pruneNode); // d
     addCommand({ keycode: 68, shift: true}, setLabel, ["CLPRT","INTJ","INTJP","PRTQ","FW","AN","KE"]); // shift + d
     addCommand({ keycode: 68, ctrl: true}, setLabel, ["NEG"]); // ctrl + d
