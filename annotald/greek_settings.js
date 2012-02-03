@@ -193,6 +193,7 @@ styleTag("CODE", "color: grey");
 styleDashTag("FLAG", "background-color: paleturquoise !important");
 styleDashTag("XXX", "background-color: paleturquoise !important");
 styleTag("FLAG", "background-color: paleturquoise !important");
+styleTag("CP", "background-color: lightsteelblue");
 // color things that should be visually salient
 styleTags(["FRAG","QTP","XP"], "background-color: darkseagreen");
 styleTags(["VBPP","VBDP","VBNP","VBIP","VBSP","VBOP","VPRP","VPRP$","VPRPA","VPRPD"], "background-color: papayawhip");
