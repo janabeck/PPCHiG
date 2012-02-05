@@ -893,9 +893,6 @@ corpus = Corpus()
 def main():
 
     flag = ""
-
-    # boolean for whether file is CorpusSearch output file format
-    out = False
     
     try:
         if sys.argv[1].startswith("-"):
@@ -924,9 +921,8 @@ def main():
     elif flag == "-p":
         corpus.print_trees(filename)
     elif flag == "-r":
-        out = True
         output_filename = sys.argv.pop(1)
-        out_trees = read(output_filename, out)
+        out_trees = read(output_filename)
         corpus2 = Corpus()
         corpus2.load(out_trees)
         corpus.replace_tokens(filename, corpus2)
