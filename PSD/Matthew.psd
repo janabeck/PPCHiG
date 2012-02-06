@@ -8802,6 +8802,7 @@ License: This treebank file is built from the Perseus Digital Library's (website
 					  (NP (NA βόθυνον-βόθυνος)))))
 	      (, ,)
 	      (PRTQ οὐχὶ-οὐχί)
+	      (C 0)
 	      (IP-SUB-SPE (IP-SUB-SPE-1 (NP-SBJ *pro*)
 					(VBP-FUT κρατήσει-κρατέω)
 					(NP-OB1 (PROA αὐτὸ-αὐτός)))
