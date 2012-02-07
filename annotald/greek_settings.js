@@ -33,7 +33,7 @@ var extensions=["-XXX","-ZZZ","-SPE","-PRN","-RSP","-LFD","-SBJ"]
 /* verbal extensions are treated as not part of the label for various purposes,
  * they are all binary, and they show up in the verbal extension menu (TODO)
  */ 
-var vextensions=["-CL","-INTRNS","-PASS","-IND","-KJV","-FUT","-IMPF","-AOR","-PRF"];
+var vextensions=["-CL","-TRNS1","-TRNS2","-INTRNS","-PASS","-IND","-KJV","-FUT","-IMPF","-AOR","-PRF"];
 
 /*
  * Keycode is from onKeyDown event.
@@ -78,6 +78,8 @@ function customCommands(){
     addCommand({ keycode: 83, ctrl: true}, toggleVerbalExtension, "-PASS"); // ctrl + s
     // complement CPs
     addCommand({ keycode: 84 }, setLabel, ["CP-THT","CP-COM","CP-DEG"]); // t
+    addCommand({ keycode: 84, shift: true}, toggleVerbalExtension, "-TRNS1"); // shift + s
+    addCommand({ keycode: 84, ctrl: true}, toggleVerbalExtension, "-TRNS2"); // ctrl + s
 
     // participial clauses
     addCommand({ keycode: 86 }, setLabel, ["IP-PPL","IP-ABS","IP-SMC","IP-PPL-COM","IP-PPL-THT"]); // v
@@ -193,7 +195,7 @@ styleTag("CODE", "color: grey");
 // color things that occur in search results
 styleDashTag("FLAG", "background-color: paleturquoise !important");
 styleDashTag("XXX", "background-color: paleturquoise !important");
-styleTag("FLAG", "background-color: paleturquoise !important");
+styleTag("FLAG", "background-color: paleturquoise");
 styleTag("CP", "background-color: lightsteelblue");
 // color things that should be visually salient
 styleTags(["FRAG","QTP","XP"], "background-color: darkseagreen");
