@@ -748,7 +748,8 @@ milestones before you renumber and/or add ID nodes!"
         for key in keys_list:
             print >> lst, key + " (" + str(pos_freq[key]) + ")"
             print >> pos_out, key + ": "
-            for lemma in concordance[key]:
+            lem_list = sorted(concordance[key])
+            for lemma in lem_list:
                 print >> pos_out, lemma + " (" + str(lemmas[(key, lemma)]) + ")"
             print >> pos_out
 
