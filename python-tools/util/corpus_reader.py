@@ -704,7 +704,7 @@ milestones before you renumber and/or add ID nodes!"
         #dictionary keyed by POS tag with frequency of tag as value
         pos_freq = {}
 
-        index = re.compile(".*-[0-9]")
+        index = re.compile(".*[-=][0-9]")
 
         lst = open("pos-list.txt", "w")
 
@@ -722,7 +722,7 @@ milestones before you renumber and/or add ID nodes!"
                     pass
                 postag = tup[1]
                 if index.match(postag):
-                    tmp = re.sub("-[0-9]", "", postag)
+                    tmp = re.sub("[-=][0-9]", "", postag)
                     postag = tmp
                 try:
                     pos_freq[postag] += 1
@@ -730,7 +730,10 @@ milestones before you renumber and/or add ID nodes!"
                     pos_freq[postag] = 1
                 if postag in concordance:
                     concordance[postag].add(lemma)
-                    lemmas[(postag, lemma)] += 1
+                    if (postag, lemma) in lemmas.keys():
+                        lemmas[(postag, lemma)] += 1
+                    else:
+                        lemmas[(postag, lemma)] = 1
                 else:
                     concordance[postag] = Set([lemma])
                     lemmas[(postag, lemma)] = 1
