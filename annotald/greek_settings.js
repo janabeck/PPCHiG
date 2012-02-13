@@ -194,6 +194,7 @@ styleTag("CODE", "background-color: lightgrey");
 styleTag("CODE", "color: grey");
 // color things that occur in search results
 styleDashTag("FLAG", "background-color: paleturquoise !important");
+styleDashTag{"OK", "background-color: lightpink !important");
 styleDashTag("XXX", "background-color: paleturquoise !important");
 styleTag("TRACE", "background-color: paleturquoise");
 styleTag("FLAG", "background-color: paleturquoise");
