@@ -1,11 +1,3 @@
-/*
-Released 2012/1/10
-Version 0.1 (Beta)
-Author: Jana E. Beck
-Contact: janabeck@babel.ling.upenn.edu
-License: This treebank file is built from the Perseus Digital Library's (website: http://www.perseus.tufts.edu/hopper/) collection of TEI-compliant XML texts licensed under the Creative Commons Attribution-ShareAlike 3.0 License. See http://creativecommons.org/licenses/by-sa/3.0/us/ for more information about this license. In accordance with the terms of the Perseus Digital Library's Creative Commons Attribution-ShareAlike 3.0 License, this treebank file is also licensed under a Creative Commons ShareAlike 3.0 License.
-*/
-
 ( (VERSION (FORMAT dash)))
 
 ( (FRAG (CODE {VS:1_1})
@@ -2495,8 +2487,8 @@ License: This treebank file is built from the Perseus Digital Library's (website
   (ID GreekNT,Matthew:5_14a.168))
 
 ( (IP-MAT-SPE (CODE {VS:5_15})
-	      (IP-MAT-SPE-1 (NEG-CONJ οὐδὲ-οὐδέ)
-			    (IP-MAT-SPE (NP-SBJ *pro*)
+	      (IP-MAT-SPE-1 (IP-MAT-SPE (NEG-CONJ οὐδὲ-οὐδέ)
+					(NP-SBJ *pro*)
 					(VBP-IMPF καίουσιν-καίω)
 					(NP-OB1 (NA λύχνον-λύχνος)))
 			    (CONJP (CONJ καὶ-καί)
@@ -3405,7 +3397,7 @@ License: This treebank file is built from the Perseus Digital Library's (website
 ( (IP-MAT-SPE (CODE {VS:6_1a})
 	      (CP-ADV-SPE (C εἰ-εἰ)
 			  (CLPRT δὲ-δέ)
-			  (IP-SUB-SPE (NEG-CLGE μήγε-μή)))
+			  (IP-SUB-SPE (NEG-CLGE μήγε-μήγε)))
 	      (, ,)
 	      (NP-OB1 (NA μισθὸν-μισθός))
 	      (NEG οὐκ-οὐ)
