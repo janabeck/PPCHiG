@@ -195,11 +195,7 @@ styleTag("CODE", "color: grey");
 // color things that occur in search results
 styleDashTag("FLAG", "background-color: paleturquoise !important");
 styleDashTag("XXX", "background-color: paleturquoise !important");
-styleDashTag("1", "color: hotpink");
-styleDashTag("2", "color: hotpink");
-styleDashTag("3", "color: hotpink");
-styleDashTag("4", "color: hotpink");
-styleDashTag("5", "color: hotpink");
+styleTag("TRACE", "background-color: paleturquoise");
 styleTag("FLAG", "background-color: paleturquoise");
 styleTag("CP", "background-color: lightsteelblue");
 // color things that should be visually salient
