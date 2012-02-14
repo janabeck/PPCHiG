@@ -1464,6 +1464,30 @@
                     </listitem>
                 </itemizedlist>
             </para>
+            <para>
+                If possible, the coindexation between a floated quantifier and the nominal that it modifies should be done at the word-level. When this is not possible because the modified nominal or the quantifier phrase contains more than one word, then the coindexation is done at the phrase level where necessary.
+                <itemizedlist>
+                    <listitem>
+                        <para>
+                            coindexation of a quantifier with a noun phrase:
+                            <programlisting>
+(IP-SUB-SPE (NP-SBJ (D ἡ-ὁ)
+                    (N χήρα-χήρα)
+                    (D αὕτη-οὗτος)
+                    (NP-PRN (D ἡ-ὁ) (ADJ πτωχὴ-πτωχός)))
+                    (ADJR-1 πλεῖον-πολύς)
+                    (Q$=2 πάντων-πᾶς)
+                    (VBP-PRF ἔβαλεν-βάλλω)
+                    (NP-OB1 (ADJP (ADJR *ICH*-1)
+                                  (NP-CMP-2 (DS$ τῶν-ὁ)
+                                            (RRC (VPR$-IMPF βαλλόντων-βάλλω)
+                                                 (PP (P εἰς-εἰς)
+                                                 (NP (DA τὸ-ὁ) (NA γαζοφυλάκιον-γαζοφυλάκιον))))))))                               
+                            </programlisting> (Mark 12.43)
+                        </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
             <important>
                 <para> Where a phrase is ambiguous between an ordinary subject and a floated
                     quantifier, it is treated as an ordinary subject.
