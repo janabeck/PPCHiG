@@ -488,6 +488,27 @@
                         </programlisting>
                         (Matthew 3.7) </para>
                 </sect4>
+                <sect4 xml:id="NP-OB2_gen_price">
+                    <title>NP-OB2 as the label for a genitive of price</title>
+                    <para> For lack of a better label, the genitive of price with verbs that select
+                        for such an argument is labeled NP-OB2. A comment indicating that the
+                        genitive is a genitive of price should also be included.
+                        <programlisting>
+( (IP-MAT-SPE (CODE {VS:26_9})
+              (VBDP-IMPF ἐδύνατο-δύναμαι)
+              (CLPRT γὰρ-γάρ)
+              (IP-INF-SBJ (IP-INF-1 (NP-SBJ (D τοῦτο-οὗτος))
+                                    (VBNP-AOR-PASS πραθῆναι-πιπράσκω)
+                                    (NP-OB2 (CODE {COM:genitive_of_price})
+                                            (Q$ πολλοῦ-πολύς)))
+                          (CONJP (CONJ καὶ-καί)
+                                 (IP-INF=1 (VBNP-AOR-PASS δοθῆναι-δίδωμι)
+                                           (NP-OB2 (ADJD πτωχοῖς-πτωχός)))))
+              (. .))
+  (ID GreekNT,Matthew))                            
+                        </programlisting>
+                    </para>
+                </sect4>
             </sect3>
             <sect3 xml:id="NP-OBP">
                 <title>NP-OBP</title>
@@ -1464,12 +1485,12 @@
                     </listitem>
                 </itemizedlist>
             </para>
-            <para>
-                If possible, the coindexation between a floated quantifier and the nominal that it modifies should be done at the word-level. When this is not possible because the modified nominal or the quantifier phrase contains more than one word, then the coindexation is done at the phrase level where necessary.
-                <itemizedlist>
+            <para> If possible, the coindexation between a floated quantifier and the nominal that
+                it modifies should be done at the word-level. When this is not possible because the
+                modified nominal or the quantifier phrase contains more than one word, then the
+                coindexation is done at the phrase level where necessary. <itemizedlist>
                     <listitem>
-                        <para>
-                            coindexation of a quantifier with a noun phrase:
+                        <para> coindexation of a quantifier with a noun phrase:
                             <programlisting>
 (IP-SUB-SPE (NP-SBJ (D ἡ-ὁ)
                     (N χήρα-χήρα)
@@ -1483,8 +1504,8 @@
                                             (RRC (VPR$-IMPF βαλλόντων-βάλλω)
                                                  (PP (P εἰς-εἰς)
                                                  (NP (DA τὸ-ὁ) (NA γαζοφυλάκιον-γαζοφυλάκιον))))))))                               
-                            </programlisting> (Mark 12.43)
-                        </para>
+                            </programlisting>
+                            (Mark 12.43) </para>
                     </listitem>
                 </itemizedlist>
             </para>
