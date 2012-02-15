@@ -6185,7 +6185,7 @@
 			  (C 0)
 			  (IP-SUB-SPE (NP-SBJ *T*-1)
 				      (BEP-IMPF ἐστιν-εἰμί)
-				      (CODE {MAN:example_of_predicate_IP_[in_manual]})
+				      (CODE {MAN:predicate_IP_[in_manual]})
 				      (IP-MAT-PRD (NP-OB1 (NP (NA Ἔλεος-ἔλεος))
 							  (CONJP *ICH*-2))
 						  (NP-SBJ *pro*)
@@ -8804,7 +8804,7 @@
   (ID GreekNT,Matthew:12_11a.584))
 
 ( (CP-EXL-SPE (CODE {VS:12_12})
-	      (CODE {COM:phrase_label_of_'πόσῳ'_is_difficult_to_determine_here,_but_def._adverbial_in_nature})
+	      (CODE {COM:phrase_label_of_"πόσῳ"_is_difficult_to_determine_here,_but_def._adverbial_in_nature})
 	      (WADVP-1 (WADJD πόσῳ-πόσος))
 	      (C 0)
 	      (IP-SUB-SPE (ADVP *T*-1)
