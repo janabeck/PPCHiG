@@ -142,6 +142,24 @@
           (. .))
   (ID GreekNT,John))                                    
                                 </programlisting>
+                                When αὐτός behaves as a non-argument reflexive to a
+                                    <emphasis>pro</emphasis>-dropped subject, the following
+                                structure (without an overt *pro* element) is used:
+                                <programlisting>
+( (IP-MAT-SPE (CODE {VS:23_4})
+              (NP-SBJ (NP-PRN (DS αὐτοὶ-αὐτός)))
+              (CLPRT δὲ-δέ)
+              (NP-1 (DD τῷ-ὁ)
+                    (ND δακτύλῳ-δάκτυλος)
+                    (NP-ATR (PRO$ αὐτῶν-αὐτός)))
+              (NEG οὐ-οὐ)
+              (VBP-IMPF θέλουσιν-θέλω)
+              (IP-INF-COM (NP-INS *ICH*-1)
+                          (VBN-AOR κινῆσαι-κινέω)
+                          (NP-OB1 (PROA αὐτά-αὐτός)))
+              (. .))
+  (ID GreekNT,Matthew))                                    
+                                </programlisting>
                             </para>
                         </listitem>
                     </itemizedlist>
