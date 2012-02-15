@@ -439,15 +439,18 @@ to-devise       [CP −COM    that   the body    the brother     cutting-down   
         <sect2 xml:id="full_correlative">
             <title>Correlative Comparatives</title>
             <para> The two comparative constituents in a correlative comparative construction are
-                not treated as a pair of left-dislocated (-LFD) and resumptive (-RSP) elements. An
-                initial ADVP or ADJP in a full correlative comparative is labeled -SPR unless there
-                is a more suitable dash tag, and an initial NP in a full correlative comparative is
-                labeled NP-ADT. <itemizedlist>
+                not treated as a pair of left-dislocated (-LFD) and resumptive (-RSP) elements. In a
+                full correlative comparative (one in which both the demonstrative and relative
+                elements are overt), the comparative clause headed by the relative is embedded
+                within the phrase headed by the demonstrative, via an *ICH* trace if necessary. Note
+                that the Greek corpora differ from the English corpora in this respect. (In the
+                English corpora, the demonstrative and relative head separate phrases and the
+                relative is usually tagged -SPR or -ADT depending on the category.) <itemizedlist>
                     <listitem>
                         <para> ADVP correlative:
                             <programlisting>
 ( (IP-MAT-SPE (CODE {VS:13_40})
-              (ADVP-SPR (CP-CMP (WADVP-1 (WADV ὥσπερ))
+              (ADVP (CP-CMP (WADVP-1 (WADV ὥσπερ))
                                 (CLPRT οὖν)
                                 (C 0)
                                 (IP-SUB (IP-SUB-2 (ADVP *T*-1)
@@ -456,8 +459,8 @@ to-devise       [CP −COM    that   the body    the brother     cutting-down   
                                         (CONJP (CONJ καὶ)
                                                (IP-SUB=2 (NP-INS (ND πυρὶ))
                                                          (VBPP-IMPF-PASS κατακαίεται)))))
-              (, ,)
-              (ADVP (ADV οὕτως))
+                    (, ,)
+                    (ADV οὕτως))
               (BEP-FUT ἔσται)
               (PP (P ἐν)
                   (NP (DD τῇ)
@@ -480,8 +483,8 @@ to-devise       [CP −COM    that   the body    the brother     cutting-down   
                                         (NP-SBJ (D ὁ)
                                                 (N θησαυρὸς)
                                                 (NP-ATR (PRO$ ὑμῶν)))))
-              (, ,)
-              (ADVP-LOC (ADV ἐκεῖ))
+                        (, ,)
+                        (ADV ἐκεῖ))
               (NP-SBJ (ADV καὶ)
                       (D ἡ)
                       (N καρδία)

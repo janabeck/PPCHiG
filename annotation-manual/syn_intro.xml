@@ -506,6 +506,63 @@
         (. .))                    
                 </programlisting>
             </para>
+            <para> Although it's not common, occasionally IPs can carry additional function tags
+                such as -SBJ or -PRD. In these cases, -SBJ or -PRD function tags
+                    <emphasis>follow</emphasis> the -SPE tag indicating direct speech, if
+                applicable. <itemizedlist>
+                    <listitem>
+                        <para> IP-MAT serving as a subject:
+                            <programlisting>
+( (IP-MAT (CODE {VS:4_4})
+          (NP-SBJ (D ὁ-ὁ))
+          (CLPRT δὲ-δέ)
+          (IP-PPL (VPRP-AOR ἀποκριθεὶς-ἀποκρίνομαι))
+          (VBD-AOR εἶπεν-λέγω)
+          (IP-MAT-SPE (VBPP-PRF-PASS Γέγραπται-γράφω)
+                      (IP-MAT-SPE-SBJ (PP (PP (NEG Οὐκ-οὐ)
+                                              (P ἐπ'-ἐπί)
+                                              (NP (ND ἄρτῳ-ἄρτος) (ADJD μόνῳ-μόνος)))
+                                          (CONJP *ICH*-1))
+                                      (VBPP-FUT ζήσεται-ζάω)
+                                      (NP-SBJ (D ὁ-ὁ) (N ἄνθρωπος-ἄνθρωπος))
+                                      (, ,)
+                                      (CONJP-1 (CONJ ἀλλ'-ἀλλά)
+                                               (PP (P ἐπὶ-ἐπί)
+                                                   (NP (QD παντὶ-πᾶς)
+                                                       (ND ῥήματι-ῥῆμα)
+                                                       (RRC (VPRPD-IMPF ἐκπορευομένῳ-ἐκπορεύομαι)
+                                               (PP (P διὰ-διά)
+                                                   (NP (N$ στόματος-στόμα)
+                                                       (NP-ATR (N$ θεοῦ-θεός))))))))))
+          (. .))
+  (ID GreekNT,Matthew))                            
+                        </programlisting>
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para> IP-MAT serving as a predicate:
+                            <programlisting>
+( (IP-IMP-SPE (CODE {VS:9_13})
+              (IP-PPL (VPRP-AOR πορευθέντες-πορεύομαι))
+              (CLPRT δὲ-δέ)
+              (VBI-AOR μάθετε-μανθάνω)
+              (CP-QUE-SPE (WNP-1 (WPRO τί-τίς))
+                          (C 0)
+                          (IP-SUB-SPE (NP-SBJ *T*-1)
+                                      (BEP-IMPF ἐστιν-εἰμί)
+                                      (IP-MAT-PRD (NP-OB1 (NP (NA Ἔλεος-ἔλεος))
+                                                  (CONJP *ICH*-2))
+                                                  (NP-SBJ *pro*)
+                                                  (VBP-IMPF θέλω-θέλω)
+                                                  (CONJP-2 (CONJ καὶ-καί)
+                                                           (NP (NEG οὐ-οὐ) (NA θυσίαν-θυσία))))))
+              (. .))
+  (ID GreekNT,Matthew))                                
+                            </programlisting>
+                        </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </sect2>
         <sect2 xml:id="imperatives">
             <title>Imperatives</title>
