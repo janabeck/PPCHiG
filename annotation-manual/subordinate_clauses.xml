@@ -378,11 +378,9 @@ to-devise       [CP −COM    that   the body    the brother     cutting-down   
     <sect1 xml:id="CP-RES">
         <title>Result Clauses</title>
         <para> Clauses of natural and actual result are similar to degree clauses except that there
-            is no adjectival or adverbial head that licenses them. 
-            <itemizedlist>
+            is no adjectival or adverbial head that licenses them. <itemizedlist>
                 <listitem>
-                    <para>
-                        natural result (infinitival):
+                    <para> natural result (infinitival):
                         <programlisting>
 ( (IP-MAT (CODE {VS:10_1})
           (CONJ Καὶ-καί)
@@ -410,8 +408,7 @@ to-devise       [CP −COM    that   the body    the brother     cutting-down   
                     </para>
                 </listitem>
                 <listitem>
-                    <para>
-                        actual result (finite):
+                    <para> actual result (finite):
                         <programlisting>
 ( (IP-MAT-SPE (CODE {VS:19_5b})
               (CONJ καὶ-καί)
@@ -422,12 +419,12 @@ to-devise       [CP −COM    that   the body    the brother     cutting-down   
               (. ;)
               (CODE {VS:19_6})
               (CP-RES-SPE (C-CLTE ὥστε-ὥστε)
-              (IP-SUB-SPE (ADVP-TMP (NEG+ADV οὐκέτι-οὐκέτι))
-                          (NP-SBJ *pro*)
-                          (BEP-IMPF εἰσὶν-εἰμί)
-                          (NP-PRD (NP (NUM δύο-δύο))
-                                  (CONJP (CONJ ἀλλὰ-ἀλλά)
-                                         (NP (N σὰρξ-σάρξ) (NUM μία-εἷς))))))
+                          (IP-SUB-SPE (ADVP-TMP (NEG+ADV οὐκέτι-οὐκέτι))
+                                      (NP-SBJ *pro*)
+                                      (BEP-IMPF εἰσὶν-εἰμί)
+                                      (NP-PRD (NP (NUM δύο-δύο))
+                                              (CONJP (CONJ ἀλλὰ-ἀλλά)
+                                                     (NP (N σὰρξ-σάρξ) (NUM μία-εἷς))))))
               (. .))
   (ID GreekNT,Matthew))                            
                         </programlisting>
