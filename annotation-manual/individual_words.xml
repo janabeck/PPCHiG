@@ -717,7 +717,7 @@
                             </para>
                         </listitem>
                         <listitem>
-                            <para>when μόνος does not agree in case and/or number with the noun it
+                            <para> when μόνος does not agree in case and/or number with the noun it
                                 modifies and it's used for focus, it is tagged ADV <programlisting>
 (NP-OB1 (DSA τοὺς-ὁ)
         (NSA ἀδελφοὺς-ἀδελφός)
@@ -726,6 +726,20 @@
                                 </programlisting>
                                 <quote>καὶ ἐὰν ἀσπάσησθε τοὺς ἀδελφοὺς ὑμῶν μόνον, τί περισσὸν
                                     ποιεῖτε;</quote> (Matthew 5.47) </para>
+                        </listitem>
+                        <listitem>
+                            <para> when μόνος serves as an adverbial modifier of a verb, it is
+                                tagged ADV
+                                <programlisting>
+( (IP-IMP-SPE (CODE {VS:8_8a})
+              (CONJ ἀλλὰ-ἀλλά)
+              (ADVP (ADV μόνον-μόνος))
+              (VBI-AOR εἰπὲ-λέγω)
+              (NP-ADV (ND λόγῳ-λόγος))
+              (, ,))
+  (ID GreekNT,Matthew))                                    
+                                </programlisting>
+                            </para>
                         </listitem>
                     </itemizedlist>
                 </para>
