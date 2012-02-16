@@ -87,19 +87,27 @@
                         'except' receive a special lemma: εἰ#1. </para>
                     <para> The negator <link linkend="μή">μή</link> is always represented as the
                         immediate sister of εἰ, no matter what the larger structure of the phrase
-                        is. <programlisting>
+                        is. The common types of εἰ + μή constructions are as follows: <itemizedlist>
+                            <listitem>
+                                <para> εἰ + μή in a CP-ADV introducing a gapped IP-SUB
+                                    <programlisting>
 ( (IP-MAT-SPE-1 (CODE {VS:11_27a})
                 (CONJ καὶ-καί)
                 (NP-SBJ (NEG+Q οὐδεὶς-οὐδείς))
                 (VBP-IMPF ἐπιγινώσκει-ἐπιγινώσκω)
                 (NP-OB1 (DA τὸν-ὁ) (NA υἱὸν-υἱός))
                 (CP-ADV (C εἰ-εἰ#1)
-                        (IP-SUB=1 (NEG μὴ-μή)
-                                  (NP-SBJ (D ὁ-ὁ) (N πατήρ-πατήρ))))
+                        (NEG μὴ-μή)
+                        (IP-SUB=1 (NP-SBJ (D ὁ-ὁ) (N πατήρ-πατήρ))))
                 (, ,))
-  (ID GreekNT,Matthew))                            
+  (ID GreekNT,Matthew))                           
                         </programlisting>
-                        <programlisting>
+                                </para>
+                            </listitem>
+                            <listitem>
+                                <para> εἰ + μή in a PP serving as the object of the main verb with a
+                                    null head noun:
+                                    <programlisting>
 ( (IP-MAT (CODE {VS:14_17})
           (NP-SBJ (DS οἱ-ὁ))
           (CLPRT δὲ-δέ)
@@ -110,13 +118,61 @@
                       (VBP-IMPF ἔχομεν-ἔχω)
                       (ADVP-LOC (ADV ὧδε-ὧδε))
                       (NP-OB1 (PP (P εἰ-εἰ#1)
-                              (NEG μὴ-μή)
-                              (NP (NP (NUM πέντε-πέντε) (NSA ἄρτους-ἄρτος))
-                                  (CONJP (CONJ καὶ-καί)
-                                         (NP (NUM δύο-δύο) (NSA ἰχθύας-ἰχθύς)))))))
+                                  (NEG μὴ-μή)
+                                  (NP (NP (NUM πέντε-πέντε) (NSA ἄρτους-ἄρτος))
+                                      (CONJP (CONJ καὶ-καί)
+                                             (NP (NUM δύο-δύο) (NSA ἰχθύας-ἰχθύς)))))))
           (. .))
   (ID GreekNT,Matthew))                            
                         </programlisting>
+                                </para>
+                            </listitem>
+                            <listitem>
+                                <para> εἰ + μή in a CP-ADV serving as a sort of associate to the
+                                    object of the main verb:
+                                    <programlisting>
+( (IP-MAT-1 (CODE {VS:21_19a})
+            (CONJ καὶ-καί)
+            (NP-OB1 (NEG+QA οὐδὲν-οὐδείς))
+            (NP-SBJ *con*)
+            (VBD-AOR εὗρεν-εὑρίσκω)
+            (PP (P ἐν-ἐν)
+                 (NP (PROD αὐτῇ-αὐτός)))
+            (CP-ADV (C εἰ-εἰ#1)
+                    (NEG μὴ-μή)
+                    (IP-SUB=1 (NP-OB1 (NSA φύλλα-φύλλον) (ADV μόνον-μόνος))))
+            (, ,))
+  (ID GreekNT,Matthew))                                        
+                                    </programlisting>
+                                </para>
+                            </listitem>
+                            <listitem>
+                                <para> εἰ + μή in a recursive PP (CP-ADV and IP-SUB gapping doesn't
+                                    seem appropriate):
+                                    <programlisting>
+( (IP-MAT (CODE {VS:15_24})
+          (NP-SBJ (D ὁ-ὁ))
+          (CLPRT δὲ-δέ)
+          (IP-PPL (VPRP-AOR ἀποκριθεὶς-ἀποκρίνομαι))
+          (VBD-AOR εἶπεν-λέγω)
+          (IP-MAT-SPE (NEG Οὐκ-οὐ)
+                      (NP-SBJ *pro*)
+                      (VBDP-AOR ἀπεστάλην-ἀποστέλλω)
+                      (PP (P εἰ-εἰ#1)
+                          (NEG μὴ-μή)
+                          (PP (P εἰς-εἰς)
+                              (NP (DSA τὰ-ὁ)
+                                  (NSA πρόβατα-πρόβατον)
+                                  (NP-PRN (DSA τὰ-ὁ)
+                                          (RRC (VPRA-PRF ἀπολωλότα-ἀπόλλυμι)))
+                                          (NP-ATR (N$ οἴκου-οἶκος)
+                                                  (NP-ATR (NPR$ Ἰσραήλ-Ἰσραήλ)))))))
+          (. .))
+  (ID GreekNT,Matthew))                                        
+                                    </programlisting>
+                                </para>
+                            </listitem>
+                        </itemizedlist>
                     </para>
                 </listitem>
             </itemizedlist>
