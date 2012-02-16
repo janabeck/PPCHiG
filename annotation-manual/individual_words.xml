@@ -701,18 +701,31 @@
                 <para>
                     <itemizedlist>
                         <listitem>
-                            <para> μόνος can be tagged an adjective <programlisting>
+                            <para> μόνος is most often tagged as an adjective <programlisting>
 (ADJP-PRD (ADJ μόνος))                        
                     </programlisting>
                                 <quote>καὶ οὐκ εἰμὶ μόνος, ὅτι ὁ πατὴρ μετ᾽ ἐμοῦ ἐστίν.</quote>
                                 (John 16.32) </para>
                         </listitem>
                         <listitem>
-                            <para> μόνος can be tagged an adverb when used for focus <programlisting>
+                            <para> μόνος is still tagged as an adjective when it is used for focus
+                                    <emphasis>if it agrees with the noun in modifies</emphasis>
+                                <programlisting>
 (NP (ND ἄρτῳ) (ADV μόνῳ))                                    
                                 </programlisting>
                                 <quote>Οὐκ ἐπ᾽ ἄρτῳ μόνῳ ζήσεται ὁ ἄνθρωπος</quote> (Matthew 4.4)
                             </para>
+                        </listitem>
+                        <listitem>
+                            <para>when μόνος does not agree in case and/or number with the noun it
+                                modifies and it's used for focus, it is tagged ADV <programlisting>
+(NP-OB1 (DSA τοὺς-ὁ)
+        (NSA ἀδελφοὺς-ἀδελφός)
+        (NP-ATR (PRO$ ὑμῶν-ὑμεῖς))
+        (ADV μόνον-μόνος))))                                    
+                                </programlisting>
+                                <quote>καὶ ἐὰν ἀσπάσησθε τοὺς ἀδελφοὺς ὑμῶν μόνον, τί περισσὸν
+                                    ποιεῖτε;</quote> (Matthew 5.47) </para>
                         </listitem>
                     </itemizedlist>
                 </para>
