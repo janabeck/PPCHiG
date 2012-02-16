@@ -375,6 +375,67 @@ to-devise       [CP −COM    that   the body    the brother     cutting-down   
             </programlisting>
         </para>
     </sect1>
+    <sect1 xml:id="CP-RES">
+        <title>Result Clauses</title>
+        <para> Clauses of natural and actual result are similar to degree clauses except that there
+            is no adjectival or adverbial head that licenses them. 
+            <itemizedlist>
+                <listitem>
+                    <para>
+                        natural result (infinitival):
+                        <programlisting>
+( (IP-MAT (CODE {VS:10_1})
+          (CONJ Καὶ-καί)
+          (IP-PPL (VPRP-AOR προσκαλεσάμενος-προσκαλέω)
+                  (NP-OB1 (DSA τοὺς-ὁ)
+                          (NUM δώδεκα-δώδεκα)
+                          (NSA μαθητὰς-μαθητής)
+                          (NP-ATR (PRO$ αὐτοῦ-αὐτός))))
+          (NP-SBJ *pro*)
+          (VBD-AOR ἔδωκεν-δίδωμι)
+          (NP-OB2 (PROD αὐτοῖς-αὐτός))
+          (NP-OB1 (NA ἐξουσίαν-ἐξουσία)
+                  (NP-COM (NS$ πνευμάτων-πνεῦμα) (ADJ$ ἀκαθάρτων-ἀκάθαρτος)))
+          (CP-RES (C-CLTE ὥστε-ὥστε)
+                  (IP-INF (IP-INF (VBN-IMPF ἐκβάλλειν-ἐκβάλλω)
+                                  (NP-OB1 (PROA αὐτὰ-αὐτός)))
+                          (CONJP (CONJ καὶ-καί)
+                                 (IP-INF (VBN-IMPF θεραπεύειν-θεραπεύω)
+                                         (NP-OB1 (NP (QA πᾶσαν-πᾶς) (NA νόσον-νόσος))
+                                                 (CONJP (CONJ καὶ-καί)
+                                                        (NP (QA πᾶσαν-πᾶς) (NA μαλακίαν-μαλακία))))))))
+          (. .))
+  (ID GreekNT,Matthew:10_1.449))                            
+                        </programlisting>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        actual result (finite):
+                        <programlisting>
+( (IP-MAT-SPE (CODE {VS:19_5b})
+              (CONJ καὶ-καί)
+              (BEPP-FUT ἔσονται-εἰμί)
+              (NP-SBJ (DS οἱ-ὁ) (NUM δύο-δύο))
+              (PP (P εἰς-εἰς)
+                  (NP (NA σάρκα-σάρξ) (NUM μίαν-εἷς)))
+              (. ;)
+              (CODE {VS:19_6})
+              (CP-RES-SPE (C-CLTE ὥστε-ὥστε)
+              (IP-SUB-SPE (ADVP-TMP (NEG+ADV οὐκέτι-οὐκέτι))
+                          (NP-SBJ *pro*)
+                          (BEP-IMPF εἰσὶν-εἰμί)
+                          (NP-PRD (NP (NUM δύο-δύο))
+                                  (CONJP (CONJ ἀλλὰ-ἀλλά)
+                                         (NP (N σὰρξ-σάρξ) (NUM μία-εἷς))))))
+              (. .))
+  (ID GreekNT,Matthew))                            
+                        </programlisting>
+                    </para>
+                </listitem>
+            </itemizedlist>
+        </para>
+    </sect1>
     <sect1 xml:id="CP-CMP">
         <title>Comparative Clauses</title>
         <para> The external structure of comparatives is as follows. The whole comparison is treated
