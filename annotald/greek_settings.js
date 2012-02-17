@@ -33,7 +33,7 @@ var extensions=["-XXX","-ZZZ","-SPE","-PRN","-RSP","-LFD","-SBJ"]
 /* verbal extensions are treated as not part of the label for various purposes,
  * they are all binary, and they show up in the verbal extension menu (TODO)
  */ 
-var vextensions=["-CL","-TRNS1","-TRNS2","-INTRNS","-PASS","-IND","-KJV","-FUT","-IMPF","-AOR","-PRF"];
+var vextensions=[["-CL"],["-IND","-KJV"],["-TRNS1","-TRNS2","-INTRNS","-PASS"],["-IMPF","-AOR","-PRF"],["-FUT"]];
 
 /*
  * Keycode is from onKeyDown event.
