@@ -28,7 +28,7 @@ var caseTags=["N","NS","NPR","NPRS","PRO","D","NUM","ADJ","ADJR","ADJS","Q","QR"
 /* extensions are treated as not part of the label for various purposes, 
  * they are all binary, and they show up in the toggle extension menu  
  */
-var extensions=["-XXX","-ZZZ","-SPE","-PRN","-RSP","-LFD","-SBJ"]
+var extensions=["-XXX","-ZZZ","-SBJ","-SPE","-PRN","-RSP","-LFD"]
 
 /* verbal extensions are treated as not part of the label for various purposes,
  * they are all binary, and they show up in the verbal extension menu (TODO)
