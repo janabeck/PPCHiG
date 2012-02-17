@@ -53,8 +53,7 @@
                     linkend="copular_verbs">copular verb</link> or <link linkend="IP-SMC">small
                     clause</link>. In addition to secondary predicates, ADJP-SPRs thus also include
                 adjectival adjuncts (parallel to adjunct <link linkend="IP-PPL">participial
-                    clauses</link>) and the first ADJP in <link linkend="full_correlative">full
-                    correlative comparatives</link>.
+                    clauses</link>).
                 <programlisting>
 (ADJP-PRD (ADJ καλόν))
 (NP-OB2 (PROD σοί))
@@ -85,6 +84,23 @@
               (. .))
   (ID GreekNT,Mark))                    
                 </programlisting>
+            </para>
+            <para> When a secondary predicate modifies a noun that is not the subject of the
+                sentence, coindexation is employed to indicate which noun phrase the secondary
+                predicate modifies.
+                <programlisting>
+(CP-ADV-SPE (WADVP-1 (WADV-AN ὅταν-ὅταν))
+            (C 0)
+            (IP-SUB-SPE (ADVP-TMP *T*-1)
+                        (NP-OB1-2 (PROA αὐτὸ-αὐτός))
+                        (NP-SBJ *pro*)
+                        (VBS-IMPF πίνω-πίνω)
+                        (ADJP-SPR-2 (ADJA καινὸν-καινός))
+                        (PP (P ἐν-ἐν)
+                            (NP (DD τῇ-ὁ)
+                                (ND βασιλείᾳ-βασιλεία)
+                                (NP-ATR (D$ τοῦ-ὁ) (N$ θεοῦ-θεός))))))                    
+                </programlisting> (Mark 14.25)
             </para>
         </sect2>
         <sect2 xml:id="ADJP_movt">
