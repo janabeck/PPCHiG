@@ -28,12 +28,12 @@ var caseTags=["N","NS","NPR","NPRS","PRO","D","NUM","ADJ","ADJR","ADJS","Q","QR"
 /* extensions are treated as not part of the label for various purposes, 
  * they are all binary, and they show up in the toggle extension menu  
  */
-var extensions=["-XXX","-ZZZ","-SBJ","-SPE","-PRN","-RSP","-LFD"]
+var clause_extensions=["-LFD","-RSP","-PRN","-SPE","-SBJ","-CL","-ZZZ","-XXX"]
 
 /* verbal extensions are treated as not part of the label for various purposes,
  * they are all binary, and they show up in the verbal extension menu (TODO)
- */ 
-var vextensions=[["-CL"],["-IND","-KJV"],["-TRNS1","-TRNS2","-INTRNS","-PASS"],["-IMPF","-AOR","-PRF"],["-FUT"]];
+ */
+var vextensions=["-FUT","-IMPF","-AOR","-PRF","-TRNS1","-TRNS2","-INTRNS","-PASS","-IND","-KJV","-CL"];
 
 /*
  * Keycode is from onKeyDown event.
