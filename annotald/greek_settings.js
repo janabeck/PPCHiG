@@ -209,5 +209,5 @@ styleTags(["VBPP","VBDP","VBNP","VBIP","VBSP","VBOP","VPRP","VPRP$","VPRPA","VPR
  * see the "floor" of the current clause
  */
 
-var ipnodes=["IP-MAT","IP-SUB","IP-IMP","IP-INF","IP-PPL","IP-ABS","RRC"];
+var ipnodes=["IP","RRC"];
 styleIpNodes();
