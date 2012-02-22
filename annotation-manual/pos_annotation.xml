@@ -1314,7 +1314,7 @@
                 </tbody>
             </tgroup>
         </table>
-        <table>
+        <table xml:id="ext_verb_tags">
             <title>Extended Verbal Dash Tags</title>
             <tgroup cols="2">
                 <thead>
@@ -1341,6 +1341,11 @@
                         <entry>marks optatives replacing indicatives in secondary sequence</entry>
                     </row>
                     <row>
+                        <entry>INTRNS</entry>
+                        <entry>marks middle or passive verbs that exhibit intransitive
+                            syntax</entry>
+                    </row>
+                    <row>
                         <entry>-KJV</entry>
                         <entry>marks optatives replacing subjunctives in secondary sequence</entry>
                     </row>
@@ -1351,6 +1356,18 @@
                     <row>
                         <entry>-PRF</entry>
                         <entry>perfect aspect</entry>
+                    </row>
+                    <row>
+                        <entry>TRNS1</entry>
+                        <entry>marks middle or (morphologically) passive verbs that exhibit
+                            transitive syntax, taking an NP-OB1, NP-OBP, or NP-OBQ</entry>
+                    </row>
+                    <row>
+                        <entry>TRNS2</entry>
+                        <entry>marks middle or (morphologically) passive verbs that exhibit a more
+                            abstract notion of transitive syntax, taking a complement infinitive
+                            (IP-INF-COM, IP-INF-THT), complementizer phrase (CP-COM, CP-THT), or
+                            small clause (IP-SMC).</entry>
                     </row>
                 </tbody>
             </tgroup>
@@ -1384,6 +1401,93 @@
                         to their syntax, regardless of whether they are ambiguously middle/passive
                         or unambiguously passive with respect to their morphology—receive the -PASS
                         dash tag. </para>
+                </listitem>
+                <listitem>
+                    <para>Syntactically active verbs that have middle or passive morphology receive
+                        either a -TRNS1 or a -TRNS2 dash tag, depending on what type of complement
+                        they take (see <link linkend="ext_verb_tags">the table above</link>).</para>
+                </listitem>
+                <listitem>
+                    <para> Verbs that have middle or passive morphology but do not have (obvious)
+                        active or passive syntax get the -INTRNS tag. This covers many situations: <itemizedlist>
+                            <listitem>
+                                <para> Normally transitive verbs that have a special, intransitive
+                                    meaning in the passive. </para>
+                                <para> For example, ὁράω 'see' can have the meaning 'appear' in the
+                                    passive:
+                                    <programlisting>
+( (IP-MAT (CODE {VS:17_3})
+          (CONJ καὶ-καί)
+          (INTJ ἰδοὺ-ἰδοὺ)
+          (VBDP-AOR-INTRNS ὤφθη-ὁράω)
+          (NP-OB2 (PROD αὐτοῖς-αὐτός))
+          (NP-SBJ (NPR Μωυσῆς-Μωϋσῆς) (CONJ καὶ-καί) (NPR Ἠλείας-Ἡλίας))
+          (IP-PPL (VPR-IMPF συνλαλοῦντες-συλλαλέω)
+                  (PP (P μετ'-μετά)
+                      (NP (PRO$ αὐτοῦ-αὐτός))))
+          (. .))
+  (ID GreekNT,Matthew))                                    
+                                </programlisting>
+                                </para>
+                                <para> When the meaning of a passive isn't sufficiently different
+                                    from the active, then -PASS should be used unless one of the
+                                    other situations described below applies. </para>
+                                <para> In the following example, for instance, the meaning of the
+                                    verb σείω 'shake' is not significantly different in the passive
+                                    (although it is metaphorical), so it gets a -PASS tag.
+                                    <programlisting>
+( (IP-MAT (CODE {VS:21_10})
+          (CONJ καὶ-καί)
+          (IP-ABS (VPR$-AOR εἰσελθόντος-εἰσέρχομαι)
+                  (NP-SBJ (PRO$ αὐτοῦ-αὐτός))
+                  (PP (P εἰς-εἰς)
+                      (NP (NPRA Ἰεροσόλυμα-Ἱεροσόλυμα))))
+          (VBDP-AOR-PASS ἐσείσθη-σείω)
+          (NP-SBJ (Q πᾶσα-πᾶς)
+                  (D ἡ-ὁ)
+                  (CODE {VS:21_11})
+                  (N πόλις-πόλις))
+          (IP-PPL (VPR-IMPF λέγουσα-λέγω)
+          (CP-QUE-SPE (WNP-1 (WPRO Τίς-τίς))
+                      (C 0)
+                      (IP-SUB-SPE (NP-PRD *T*-1)
+                                  (BEP-IMPF ἐστιν-εἰμί)
+                                  (NP-SBJ (D οὗτος-οὗτος)))))
+          (. ;))
+  (ID GreekNT,Matthew))                                        
+                                    </programlisting>
+                                </para>
+                            </listitem>
+                            <listitem>
+                                <para> Somewhat by convention, we treat morphologically middle or
+                                    passive verbs that depict a change-of-state (here: ψυγήσεται
+                                    'will grow cold') as intransitive and label them with -INTRNS.
+                                    <programlisting>
+( (IP-MAT-SPE (CODE {VS:24_12})
+              (CONJ καὶ-καί)
+              (PP (P διὰ-διά)
+                  (NP (DA τὸ-ὁ)
+                      (IP-INF (VBNP-AOR-INTRNS πληθυνθῆναι-πληθύνω)
+                              (NP-SBJ (DA τὴν-ὁ) (NA ἀνομίαν-ἀνομία)))))
+              (VBPP-FUT-INTRNS ψυγήσεται-ψύχω)
+              (NP-SBJ (D ἡ-ὁ)
+                      (N ἀγάπη-ἀγάπη)
+                      (NP-ATR (DS$ τῶν-ὁ) (Q$ πολλῶν-πολύς)))
+              (. .))
+  (ID GreekNT,Matthew))                                        
+                                    </programlisting>
+                                </para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                    Similarly, morphologically middle or passive verbs that depict an emotional change-of-state are labeled -INTRNS.
+                                    <programlisting>
+                                        
+                                    </programlisting>
+                                </para>
+                            </listitem>
+                        </itemizedlist>
+                    </para>
                 </listitem>
                 <listitem>
                     <para> Future verbs receive the -FUT dash tag, which extends a VBP* base POS

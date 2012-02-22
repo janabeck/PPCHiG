@@ -1296,6 +1296,10 @@
                         <entry>-INS</entry>
                         <entry>instrumental</entry>
                     </row>
+                    <row>
+                        <entry>-INTRNS</entry>
+                        <entry>intransitive</entry>
+                    </row>
                 </tbody>
             </tgroup>
             <tgroup cols="2">
@@ -1511,6 +1515,14 @@
                     <row>
                         <entry>-TMP</entry>
                         <entry>temporal</entry>
+                    </row>
+                    <row>
+                        <entry>-TRNS1</entry>
+                        <entry>(direct) transitive</entry>
+                    </row>
+                    <row>
+                        <entry>-TRNS2</entry>
+                        <entry>(abstract) transitive</entry>
                     </row>
                 </tbody>
             </tgroup>
