@@ -1397,7 +1397,7 @@
                         still receives the *P tag. </para>
                 </listitem>
                 <listitem>
-                    <para>Syntactically passive verbs—that is, verbs that are passive with respect
+                    <para> Syntactically passive verbs—that is, verbs that are passive with respect
                         to their syntax, regardless of whether they are ambiguously middle/passive
                         or unambiguously passive with respect to their morphology—receive the -PASS
                         dash tag. </para>
@@ -1406,6 +1406,44 @@
                     <para>Syntactically active verbs that have middle or passive morphology receive
                         either a -TRNS1 or a -TRNS2 dash tag, depending on what type of complement
                         they take (see <link linkend="ext_verb_tags">the table above</link>).</para>
+                    <para> Note that taking a NP-OB2 argument regularly does not qualify a verb for
+                        receiving a -TRNS1 or -TRNS2 tag. See ἐτάξετο and ἀπεκρίθη in the examples
+                        below. <programlisting>
+( (IP-MAT (CODE {VS:28_16})
+          (NP-SBJ (DS Οἱ-ὁ) (CLPRT δὲ-δέ) (NUM ἕνδεκα-ἕνδεκα) (NS μαθηταὶ-μαθητής))
+          (VBDP-AOR-INTRNS ἐπορεύθησαν-πορεύομαι)
+          (PP (P εἰς-εἰς)
+              (NP (DA τὴν-ὁ) (NPRA Γαλιλαίαν-Γαλιλαία)))
+          (PP (P εἰς-εἰς)
+              (NP (DA τὸ-ὁ)
+                  (NA ὄρος-ὄρος)
+          (CP-REL (WADVP-1 (WADV οὗ-οὗ))
+                  (C 0)
+                  (IP-SUB (ADVP-LOC *T*-1)
+                          (VBDP-AOR-INTRNS ἐτάξατο-τάσσω)
+                          (NP-OB2 (PROD αὐτοῖς-αὐτός))
+                          (NP-SBJ (D ὁ-ὁ) (NPR Ἰησοῦς-Ἰησοῦς))))))
+          (, ,))
+  (ID GreekNT,Matthew))                            
+                        </programlisting>
+                        <programlisting>
+( (IP-MAT (CODE {VS:27_14})
+          (CONJ καὶ-καί)
+          (NEG οὐκ-οὐ)
+          (NP-SBJ *pro*)
+          (VBDP-AOR-INTRNS ἀπεκρίθη-ἀποκρίνομαι)
+          (NP-OB2 (PROD αὐτῷ-αὐτός))
+          (PP (P πρὸς-πρός)
+              (NP (NEG-ADV οὐδὲ-οὐδέ) (NUM ἓν-εἷς) (NA ῥῆμα-ῥῆμα)))
+          (, ,)
+          (CP-RES (C-CLTE ὥστε-ὥστε)
+                  (IP-INF (VBN-IMPF θαυμάζειν-θαυμάζω)
+                          (NP-SBJ (DA τὸν-ὁ) (NA ἡγεμόνα-ἡγεμών))
+                          (ADVP (ADV λίαν-λίαν))))
+          (. .))
+  (ID GreekNT,Matthew))                            
+                        </programlisting>
+                    </para>
                 </listitem>
                 <listitem>
                     <para> Verbs that have middle or passive morphology but do not have (obvious)
@@ -1477,14 +1515,68 @@
   (ID GreekNT,Matthew))                                        
                                     </programlisting>
                                 </para>
-                            </listitem>
-                            <listitem>
-                                <para>
-                                    Similarly, morphologically middle or passive verbs that depict an emotional change-of-state are labeled -INTRNS.
+                                <para> When it seems particularly unlikely that a change-of-state
+                                    verb in the passive is actually a syntactic passive (because
+                                    there doesn't seem to be an implicit agent), then -INTRNS is
+                                    applied even if the verb is treated as passive elsewhere.
                                     <programlisting>
-                                        
+( (IP-MAT (CODE {VS:27_51a})
+          (CONJ καὶ-καί)
+          (NP-SBJ (D ἡ-ὁ) (N γῆ-γῆ))
+          (VBDP-AOR-INTRNS ἐσείσθη-σείω)
+          (, ,))
+  (ID GreekNT,Matthew))                                        
                                     </programlisting>
                                 </para>
+                            </listitem>
+                            <listitem>
+                                <para> Similarly, morphologically middle or passive verbs that
+                                    depict an emotional change-of-state are labeled -INTRNS.
+                                    <programlisting>
+( (IP-MAT (CODE {VS:14_14a})
+          (CONJ καὶ-καί)
+          (NP-SBJ *con*)
+          (VBDP-AOR-INTRNS ἐσπλαγχνίσθη-σπλαγχνίζομαι)
+          (PP (P ἐπ'-ἐπί)
+              (NP (PROD αὐτοῖς-αὐτός))))
+  (ID GreekNT,Matthew))                                        
+                                    </programlisting>
+                                </para>
+                            </listitem>
+                            <listitem>
+                                <para> (Likely) unergative verbs are also labeled -INTRNS when they
+                                    have middle or passive morphology.
+                                    <programlisting>
+( (IP-IMP-SPE (CODE {VS:24_20})
+              (VBIP-IMPF-INTRNS προσεύχεσθε-προσεύχομαι)
+              (CLPRT δὲ-δέ)
+              (CP-ADV-SPE (C ἵνα-ἵνα)
+                          (IP-SUB-SPE (NEG μὴ-μή)
+                                      (VBSP-AOR-INTRNS γένηται-γίνομαι)
+                                      (NP-SBJ (D ἡ-ὁ)
+                                              (N φυγὴ-φυγή)
+                                              (NP-ATR (PRO$ ὑμῶν-ὑμεῖς)))
+                                      (NP-TMP (N$ χειμῶνος-χειμών) (NEG-CONJ μηδὲ-μηδέ) (ND σαββάτῳ-σάββατον))))
+              (. .))
+  (ID GreekNT,Matthew))                                        
+                                    </programlisting>
+                                </para>
+                            </listitem>
+                            <listitem>
+                                <para> When a transitive verb has middle morphology but is being
+                                    used intransitively (either with a pro-dropped object, or a
+                                    simple intransitive use), then it also is labeled -INTRNS.
+                                    <programlisting>
+( (IP-MAT-SPE (CODE {VS:27_4a})
+              (NP-SBJ (PRO σὺ-σύ))
+              (VBPP-FUT-INTRNS ὄψῃ-ὁράω)
+              (. .))
+  (ID GreekNT,Matthew))                                        
+                                    </programlisting>
+                                </para>
+                            </listitem>
+                            <listitem>
+                                <para> </para>
                             </listitem>
                         </itemizedlist>
                     </para>
