@@ -392,6 +392,7 @@ class Corpus():
 
     def word_count(self):
         """Count all and only the words in the .psd file."""
+        """Returns word_count."""
 
         word_count = 0
 
@@ -420,6 +421,13 @@ class Corpus():
             print "All IDs in sequence!"
             print
             print "# # # # # # # # # # # # # # # #"
+
+    def words_per_hour(self, timelog):
+        """Calculates and returns words_per_hours."""
+
+        wc = self.word_count()
+
+        # TODO: finish this function
 
     def renumber_ids(self, filename):
         """Renumber/add IDs in the .psd file."""
