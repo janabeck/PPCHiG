@@ -401,7 +401,12 @@ class Corpus():
             tok = self.tokens[key]
             for word in tok.words:
                 word_count += 1
-        
+
+        return word_count
+
+    def print_word_count(self, word_count):
+        """Prints the word count to the terminal."""
+
         print "# # # # # # # # # # # # # # # #"        
         print
         print "There are " + str(word_count) + " words in this file, excluding empty categories and punctuation."
@@ -528,7 +533,7 @@ milestones before you renumber and/or add ID nodes!"
     def replace_tokens(self, filename, corpus2):
         """Replace tokens in .psd file with edited tokens from output file."""
 
-        self.word_count()
+        self.print_word_count(self.word_count())
 
         out_name = filename + ".new"
 
@@ -917,7 +922,7 @@ def main():
         sys.exit(1)
 
     if flag == "-c":
-        corpus.word_count()
+        corpus.print_word_count(corpus.word_count())
     elif flag == "-i":
         corpus.renumber_ids(filename)
     elif flag == "-m":
