@@ -11,6 +11,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 import sys
 import re
+import argparse
 import operator
 import traceback
 from sets import Set
@@ -909,41 +910,53 @@ corpus = Corpus()
                                 
 def main():
 
-    flag = ""
-    
-    try:
-        if sys.argv[1].startswith("-"):
-            flag = sys.argv.pop(1)
-        # name of main .psd file interested in reading
-        filename = sys.argv.pop(1)
-        in_trees = read(filename)
-        corpus.load(in_trees)
-    except IndexError:
-        print "usage: corpus-reader2.py [-flag] .psd-file [.psd.out-file]"
-        print
-        print "flags:"
-        print "-c to count words"
-        print "-i to renumber IDs"
-        print "-m to add continuity milestones"
-        print "-p to print just the trees from a CS .out file"
-        print "-r to replace tokens from output file"
-        sys.exit(1)
+    parser = argparse.ArgumentParser(description='Process the input files and command line options.')
+    parser.add_argument('psd', nargs='+')
+    parser.add_argument('-c', '--count', dest='count', action='store_true', help='Print the word count.')
+    parser.add_argument('-i', '--ids', dest='renumber_ids', action='store_true', help='Renumber the IDs in the .psd file.')
+    parser.add_argument('-m', '--milestones', dest='add_milestones', action='store_true', help='Add continuity milestones to the .psd file.')
+    parser.add_argument('-p', '--print', dest='print_trees', action='store_true', help='Print all the trees in the .psd file.')
+    parser.add_argument('-r', '--replace', dest='output_file', action='store', help='Insert the tokens from a CorpusSearch output file into the main .psd corpus file.')
+    args = parser.parse_args()
 
-    if flag == "-c":
+    if len(args.psd) == 1:
+        filename = args.psd[0]
+        in_trees = read(filename)
+        corpus = Corpus()
+        corpus.load(in_trees)
+    else:
+        response = raw_input("Is this your main corpus file " + args.psd[0] + "?\
+        Enter y or n. ")
+        print
+
+        if response == "y":
+            filename = args.psd[0]
+            in_trees = read(filename)
+            corpus.load(in_trees)
+        else:
+            print "You should enter the name of your .psd file *before* you enter the name of an additional input file when not using a command line option."
+            print
+            sys.exit()
+
+    if args.count:
         corpus.print_word_count(corpus.word_count())
-    elif flag == "-i":
+
+    if args.renumber_ids:
         corpus.renumber_ids(filename)
-    elif flag == "-m":
+
+    if args.add_milestones:
         corpus.add_milestones(filename)
-    elif flag == "-p":
+
+    if args.print_trees:
         corpus.print_trees(filename)
-    elif flag == "-r":
-        output_filename = sys.argv.pop(1)
-        out_trees = read(output_filename)
+
+    if args.output_file:
+        out_trees = read(output_file)
         corpus2 = Corpus()
         corpus2.load(out_trees)
         corpus.replace_tokens(filename, corpus2)
-    else:
+        
+    if not args.count and not args.renumber_ids and not args.add_milestones and not args.print_trees and not args.output_file:
         select(corpus, filename)
 
 def read(filename):
@@ -979,7 +992,7 @@ def select(corpus, filename):
     print "    a. Correct the POS tags of words bearing certain lemmas in a corpus file."
     print "    b. Swap the POS tags in a corpus file with those from a map file."
     print "    c. Print a concordance of lemmas and POS tags in the corpus."
-    print "    d. Print a concordance of lemmas per category as defined in a input category definition file."
+    print "    d. Print a concordance of lemmas per category as defined in an input category definition file."
     print "    e. Print all the unique lemmas (and their frequences) in a corpus file."
     print "    f. Print a concordance of the word forms (and their frequencies) for the given lemma."
     print "    g. Print the text (words, punctuation, milestones) of the corpus file."
