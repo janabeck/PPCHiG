@@ -11,6 +11,9 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 import sys
 import re
+import argparse
+import datetime
+import dateutil.parser
 import operator
 import traceback
 from sets import Set
@@ -392,6 +395,7 @@ class Corpus():
 
     def word_count(self):
         """Count all and only the words in the .psd file."""
+        """Returns word_count."""
 
         word_count = 0
 
@@ -401,7 +405,12 @@ class Corpus():
             tok = self.tokens[key]
             for word in tok.words:
                 word_count += 1
-        
+
+        return word_count
+
+    def print_word_count(self, word_count):
+        """Prints the word count to the terminal."""
+
         print "# # # # # # # # # # # # # # # #"        
         print
         print "There are " + str(word_count) + " words in this file, excluding empty categories and punctuation."
@@ -416,6 +425,55 @@ class Corpus():
             print
             print "# # # # # # # # # # # # # # # #"
 
+    def words_per_hour(self, filename, timelog):
+        """Calculates and returns words_per_hour."""
+
+        wc = self.word_count()
+
+        time = re.compile("^.*at\s(.*).")
+
+        intervals = []
+
+        for line in timelog:
+            if line.find(filename) != -1:
+                if line.find("Started") != -1:
+                    strt = dateutil.parser.parse(time.match(line).group(1))
+                elif line.find("Idled") != -1:
+                    stp = dateutil.parser.parse(time.match(line).group(1))
+                    intervals.append(stp - strt)
+                elif line.find("Resumed") != -1:
+                    strt = dateutil.parser.parse(time.match(line).group(1))
+                elif line.find("Stopped") != -1:
+                    stp = dateutil.parser.parse(time.match(line).group(1))
+                    intervals.append(stp - strt)
+                else:
+                    print "I didn't understand one of the lines in your timelog!"
+                    print
+                    sys.exit()
+
+        duration = datetime.timedelta()
+
+        for interval in intervals:
+            duration = duration + interval
+
+        rate = wc / (duration.total_seconds() / 3600)
+
+        hours, remainder = divmod(duration.total_seconds(), 3600)  
+        minutes, seconds = divmod(remainder, 60)   
+
+        if minutes >= 10:
+            duration_formatted = '%s:%s' % (int(hours), int(minutes))
+        else:
+            duration_formatted = '%s:0%s' % (int(hours), int(minutes))
+
+        return (wc, duration_formatted, int(rate))
+
+    def print_wph(self, wph):
+        """Prints the parsing speed to the terminal."""
+
+        print "You parsed " + str(wph[0]) + " words in " + str(wph[1]) + ", for a rate of " + str(wph[2]) + " words per hour!"
+        print
+                    
     def renumber_ids(self, filename):
         """Renumber/add IDs in the .psd file."""
 
@@ -528,7 +586,7 @@ milestones before you renumber and/or add ID nodes!"
     def replace_tokens(self, filename, corpus2):
         """Replace tokens in .psd file with edited tokens from output file."""
 
-        self.word_count()
+        self.print_word_count(self.word_count())
 
         out_name = filename + ".new"
 
@@ -896,42 +954,59 @@ corpus = Corpus()
                                 
 def main():
 
-    flag = ""
-    
-    try:
-        if sys.argv[1].startswith("-"):
-            flag = sys.argv.pop(1)
-        # name of main .psd file interested in reading
-        filename = sys.argv.pop(1)
-        in_trees = read(filename)
-        corpus.load(in_trees)
-    except IndexError:
-        print "usage: corpus-reader2.py [-flag] .psd-file [.psd.out-file]"
-        print
-        print "flags:"
-        print "-c to count words"
-        print "-i to renumber IDs"
-        print "-m to add continuity milestones"
-        print "-p to print just the trees from a CS .out file"
-        print "-r to replace tokens from output file"
-        sys.exit(1)
+    parser = argparse.ArgumentParser(description='Process the input files and command line options.')
+    # TODO: maybe gather additional filenames in a remainder arguments (see docs) instead of gathering into psd list?
+    parser.add_argument('-c', '--count', dest='count', action='store_true', help='Print the word count.')
+    parser.add_argument('-i', '--ids', dest='renumber_ids', action='store_true', help='Renumber the IDs in the .psd file.')
+    parser.add_argument('-m', '--milestones', dest='add_milestones', action='store_true', help='Add continuity milestones to the .psd file.')
+    parser.add_argument('-p', '--print', dest='print_trees', action='store_true', help='Print all the trees in the .psd file.')
+    parser.add_argument('-r', '--replace', dest='output_file', action='store', help='Insert the tokens from a CorpusSearch output file into the main .psd corpus file.')
+    parser.add_argument('-t', '--timelog', dest='timelog', action='store_const', const='timelog.txt', help='Calculate words per hour parsed from a timelog.txt.')
+    parser.add_argument('psd', nargs='+')
+    args = parser.parse_args()
 
-    if flag == "-c":
-        corpus.word_count()
-    elif flag == "-i":
+    if len(args.psd) == 1:
+        filename = args.psd[0]
+        in_trees = read(filename)
+        corpus = Corpus()
+        corpus.load(in_trees)
+    else:
+        response = raw_input("Is this your main corpus file " + args.psd[0] + "?\
+        Enter y or n. ")
+        print
+
+        if response == "y":
+            filename = args.psd[0]
+            in_trees = read(filename)
+            corpus.load(in_trees)
+        else:
+            print "You should enter the name of your .psd file *before* you enter the name of an additional input file when not using a command line option."
+            print
+            sys.exit()
+
+    if args.count:
+        corpus.print_word_count(corpus.word_count())
+
+    if args.renumber_ids:
         corpus.renumber_ids(filename)
-    elif flag == "-m":
+
+    if args.add_milestones:
         corpus.add_milestones(filename)
-    elif flag == "-p":
+
+    if args.print_trees:
         corpus.print_trees(filename)
-    elif flag == "-r":
-        output_filename = sys.argv.pop(1)
-        out_trees = read(output_filename)
+
+    if args.output_file:
+        out_trees = read(output_file)
         corpus2 = Corpus()
         corpus2.load(out_trees)
         corpus.replace_tokens(filename, corpus2)
-    else:
-        select(corpus, filename)
+
+    if args.timelog:
+        corpus.print_wph(corpus.words_per_hour(filename, open(args.timelog, 'rU')))
+        
+    if not args.count and not args.renumber_ids and not args.add_milestones and not args.print_trees and not args.output_file and not args.timelog:
+        select(corpus, filename, args.psd[1])
 
 def read(filename):
     """Read in a .psd file and return a list of trees as strings."""
@@ -958,7 +1033,7 @@ def read(filename):
 
     return trees
 
-def select(corpus, filename):
+def select(corpus, filename, add_file):
     """Select another CR function from a menu."""
 
     #TODO: write the selector for less common functions!
@@ -966,17 +1041,18 @@ def select(corpus, filename):
     print "    a. Correct the POS tags of words bearing certain lemmas in a corpus file."
     print "    b. Swap the POS tags in a corpus file with those from a map file."
     print "    c. Print a concordance of lemmas and POS tags in the corpus."
-    print "    d. Print a concordance of lemmas per category as defined in a input category definition file."
+    print "    d. Print a concordance of lemmas per category as defined in an input category definition file."
     print "    e. Print all the unique lemmas (and their frequences) in a corpus file."
     print "    f. Print a concordance of the word forms (and their frequencies) for the given lemma."
     print "    g. Print the text (words, punctuation, milestones) of the corpus file."
     print
 
+    # TODO: probably replace try/except blocks below
     selection = raw_input("Please enter the letter of the function you would like to run. ")
     print
     if selection == "a":
         try:
-            lem_file = open(sys.argv.pop(1), "rU")
+            lem_file = open(add_file, "rU")
             corpus.correct_by_lemma(filename, lem_file)
         except IndexError:
             print traceback.print_exc(file=sys.stdout)
@@ -984,7 +1060,7 @@ def select(corpus, filename):
             print
     elif selection == "b":
         try:
-            map_file = open(sys.argv.pop(1), "rU")
+            map_file = open(add_file, "rU")
             corpus.swap(filename, map_file)
         except IndexError:
             print traceback.print_exc(file=sys.stdout)
@@ -994,7 +1070,7 @@ def select(corpus, filename):
         corpus.pos_concordance()
     elif selection == "d":
         try:
-            cat_file = open(sys.argv.pop(1), "rU")
+            cat_file = open(add_file, "rU")
             corpus.category_concordance(cat_file)
         except IndexError:
             print traceback.print_exc(file=sys.stdout)
@@ -1008,7 +1084,7 @@ def select(corpus, filename):
         corpus.unique_lemmas(sort)
     elif selection == "f":
         try:
-            lemma = sys.argv.pop(1)
+            lemma = add_file
             corpus.lemma_concordance(lemma)
         except IndexError:
             print "You need to enter the lemma you are interested in on the command line to run this function!"
