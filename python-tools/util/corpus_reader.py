@@ -739,10 +739,9 @@ milestones before you renumber and/or add ID nodes!"
                             elif tag.endswith("A"):
                                 tree.change_POS(new_tag + "A", append, index, tr)
                             elif tag.endswith("D"):
-                                tree.change_POS(new_tag + "D", append, index, tr)
-                                #  "ADJR","ADJS","ADVR","ADVS","QR","QS"   
+                                tree.change_POS(new_tag + "D", append, index, tr) 
                             elif tag in comp_and_sup:
-                                if tag == "ADJR" and new_tag = "W":
+                                if tag == "ADJR" and new_tag = "Q":
                                     tree.change_POS(new_tag + "R", append, index, tr)
                                 elif tag == "ADJS" and new_tag = "Q":
                                     tree.change_POS(new_tag + "S", append, index, tr)
