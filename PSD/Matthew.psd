@@ -18438,7 +18438,7 @@ License: This treebank file is built from the Perseus Digital Library's (website
 ( (IP-MAT-SPE (CODE {VS:22_16a})
 	      (CONJ καὶ-καί)
 	      (NEG οὐ-οὐ)
-	      (CODE {COM:impersonal_construction})
+	      (CODE {COM:impersonal_construction[tag=impers]})
 	      (NP-SBJ *pro*)
 	      (VBP-IMPF μέλει-μέλει)
 	      (NP-OB2 (CLPROD σοι-σύ))
