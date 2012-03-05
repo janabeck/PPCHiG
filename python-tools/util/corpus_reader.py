@@ -331,10 +331,14 @@ class Corpus():
         pos_list = tree.pos()
         if pos_list[0][0] == "dash":
             print
+            print  "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"
+            print
             print "This corpus file is in the 'dash' format."
             print
             self.format = "dash"
         elif pos_list[0][0] == "deep":
+            print
+            print  "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"
             print
             print "This corpus file is in the 'deep' format."
             print
@@ -411,19 +415,21 @@ class Corpus():
     def print_word_count(self, word_count):
         """Prints the word count to the terminal."""
 
-        print "# # # # # # # # # # # # # # # #"        
+        print  "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"        
         print
         print "There are " + str(word_count) + " words in this file, excluding empty categories and punctuation."
 
         if self.check_for_ids(False):
-            print
-            print "All sentences have IDs!"
+            # print
+            # print "All sentences have IDs!"
+            pass
 
         if self.check_seq_ids():
+            # print
+            # print "All IDs in sequence!"
             print
-            print "All IDs in sequence!"
+            print "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"
             print
-            print "# # # # # # # # # # # # # # # #"
 
     def words_per_hour(self, filename, timelog):
         """Calculates and returns words_per_hour."""
