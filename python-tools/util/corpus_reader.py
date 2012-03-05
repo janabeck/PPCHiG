@@ -446,6 +446,8 @@ class Corpus():
                 elif line.find("Stopped") != -1:
                     stp = dateutil.parser.parse(time.match(line).group(1))
                     intervals.append(stp - strt)
+                elif line.find("Resumed") != -1:
+                    pass
                 else:
                     print "I didn't understand one of the lines in your timelog!"
                     print
@@ -998,7 +1000,7 @@ def main():
         corpus.print_trees(filename)
 
     if args.output_file:
-        out_trees = read(output_file)
+        out_trees = read(args.output_file)
         corpus2 = Corpus()
         corpus2.load(out_trees)
         corpus.replace_tokens(filename, corpus2)
