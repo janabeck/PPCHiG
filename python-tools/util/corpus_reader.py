@@ -446,10 +446,12 @@ class Corpus():
                 elif line.find("Stopped") != -1:
                     stp = dateutil.parser.parse(time.match(line).group(1))
                     intervals.append(stp - strt)
-                elif line.find("Resumed") != -1:
+                elif line.find("Saved") != -1:
                     pass
                 else:
                     print "I didn't understand one of the lines in your timelog!"
+                    print
+                    print line
                     print
                     sys.exit()
 
