@@ -313,6 +313,7 @@
   (ID Herodotus,Histories:2_1b.16))
 
 ( (IP-MAT (CODE {VS:2_1b})
+	  (CODE {COM:potential_optative_[tag=pot_opt]})
 	  (BEO-IMPF εἴησαν-εἰμί)
 	  (CLPRT δ’-δέ)
 	  (AN ἄν-ἄν)
