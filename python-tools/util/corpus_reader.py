@@ -965,10 +965,11 @@ def main():
     parser.add_argument('psd', nargs='+')
     args = parser.parse_args()
 
+    corpus = Corpus()
+
     if len(args.psd) == 1:
         filename = args.psd[0]
         in_trees = read(filename)
-        corpus = Corpus()
         corpus.load(in_trees)
     else:
         response = raw_input("Is this your main corpus file " + args.psd[0] + "?\
