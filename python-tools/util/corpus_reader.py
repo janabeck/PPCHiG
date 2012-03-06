@@ -696,6 +696,8 @@ milestones before you renumber and/or add ID nodes!"
                                         tree.split_POS(w1[0], w2[0], lemma, "@" + lemma + "@", "", index, tr, w1[1], w2[1])
                                 elif corr:
                                     tree.split_POS(tag1, tag2, lemma, "@" + lemma + "@", "", index, tr, w1, w2)
+                                elif not corr:
+                                    tree.change_POS(tag1 + "+" + tag2, "", index, tr)
                             except TypeError:
                                 pass
                             
@@ -762,6 +764,11 @@ milestones before you renumber and/or add ID nodes!"
             return self.check(tag1, tag2, w1, w2, rword, lemma)
         else:
             print "OK, we won't split this word."
+            print
+            pl = raw_input("Do you want to change the separator to a '+'? ")
+            print
+            if pl == "y":
+                return ("", "", lemma, False)
             print
 
     def swap(self, filename, map_file):
