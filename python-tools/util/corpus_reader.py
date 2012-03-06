@@ -16,6 +16,8 @@ import datetime
 import dateutil.parser
 import operator
 import traceback
+import warnings
+import codecs
 from sets import Set
 import nltk.tree as T
 
@@ -287,6 +289,33 @@ class Token():
         new_postr = T.Tree(new_tag + append + index, [postr[0]])
         
         self._tree[postr.treepos] = T.ParentedTree.convert(new_postr)
+
+    def split_POS(self, tag1, tag2, lem1, lem2, append, index, postr, word1, word2):
+        """Split a word into two halves with the same lemma."""
+
+        pair1 = str((unicode(word1.decode('utf-8')) + "-" + lem1).encode('utf-8'))
+
+        pair2 = str((unicode(word2.decode('utf-8')) + "-" + lem2).encode('utf-8'))
+        
+        new_postr = T.Tree(tag1 + append + index, [pair1])
+
+        new_postr2 = T.Tree(tag2 + append + index, [pair2])
+
+        position = len(postr.treepos) - 1
+
+        ins_point = postr.treepos[position] + 1
+
+        new_treepos = list(postr.treepos)
+
+        addy = new_treepos[:-1]
+
+        addy = tuple(addy)
+        
+        ptree = self._tree[addy]
+
+        ptree[ins_point - 1] = T.ParentedTree.convert(new_postr)
+
+        ptree.insert(ins_point, T.ParentedTree.convert(new_postr2))
 
 class Corpus():
     """A class for a database of Penn-style parsed trees."""
@@ -620,6 +649,120 @@ milestones before you renumber and/or add ID nodes!"
                 else:
                     print >> out_file, tree._tree,
                     print >> out_file, "\n\n",
+
+    def split_words(self, filename):
+        """Generate a dialog on the command line to split words with more than one POS tag."""
+
+        self.print_word_count(self.word_count())
+
+        exclude = re.compile("VB.*|VPR.*|BE.*|BPR.*")
+
+        count = 0
+
+        non_words = re.compile("dash|{|\*|0|Herodotus")
+
+        # try:
+        for key in self.tokens.keys():
+            tree = self.tokens[key]
+            leaves = tree._tree.leaves()
+            for tr in tree._tree.subtrees():
+                with warnings.catch_warnings(record=True):
+                    if tr[0] in leaves:
+                        word = unicode(tr[0].decode('utf-8'))
+                        pair = word.split("-")
+                        rword = unicode(pair[0])
+                        if not non_words.match(word):
+                            #print word
+                            lemma = pair[1]
+                        count += 1
+                        tag = tr.node
+                        if tag.find("-") != -1:
+                            pair2 = tag.split("-")
+                            tag1 = pair2[0]
+                            tag2 = pair2[1]
+                        ind_match = self.re_index.match(tag)
+                        if ind_match:
+                            index = ind_match.group(2)
+                            tag = tag.replace(index, "")
+                        else:
+                            index = ""
+                        if (not exclude.match(tag)) and tag.find("-") != -1 and (not word.find("*") != -1):
+                            try:
+                                (w1, w2, lemma, corr) = self.get_split(rword, lemma, tag1, tag2)
+                                if corr and isinstance(w1, tuple):
+                                    if isinstance(lemma, tuple):
+                                        tree.split_POS(w1[0], w2[0], lemma[0], lemma[1], "", index, tr, w1[1], w2[1])
+                                    else:
+                                        tree.split_POS(w1[0], w2[0], lemma, "@" + lemma + "@", "", index, tr, w1[1], w2[1])
+                                elif corr:
+                                    tree.split_POS(tag1, tag2, lemma, "@" + lemma + "@", "", index, tr, w1, w2)
+                            except TypeError:
+                                pass
+                            
+        # except IndexError:
+        #     print "I think I reached the end of the file!"
+        #     print
+        #     print "Word count is " + str(count) + "."
+        #     print
+
+        self.print_trees(filename)
+
+    def check(self, tag1, tag2, w1, w2, rword, lemma):
+        """Confirms word split."""
+        
+        corr = raw_input("Is this correct? The first part of the word will be: " + tag1 + " " + w1.encode('utf-8') \
+                        + "\nand the second part of the word will be: " + tag2 + " "  + w2.encode('utf-8') + " ")
+        print
+        if corr == "y":
+            pos = raw_input("Do you need to edit the POS tag for either word? ")
+            print
+            if pos == "y":
+                t1 = raw_input("Enter the POS tag for the first word. ENTER for no change. ")
+                if t1 != "":
+                    tag1 = t1
+                print
+                t2 = raw_input("Enter the POS tag for the second word. ENTER for no change. ")
+                if t2 != "":
+                    tag2 = t2
+                print
+            lem = raw_input("Do you need to edit the lemma for either word? ")
+            print
+            if lem == "y":
+                l1 = raw_input("Enter the lemma for the first word. ENTER for no change. ")
+                if l1 != "":
+                    lem1 = unicode(l1.decode('utf-8'))
+                else:
+                    lem1 = lemma
+                print
+                l2 = raw_input("Enter the lemma for the second word. ENTER for no change. ")
+                if l2 != "":
+                    lem2 = unicode(l2.decode('utf-8'))
+                else:
+                    lem2 = lemma
+                print
+                return ((tag1,w1.encode('utf-8')),(tag2,w2.encode('utf-8')),(lem1,lem2), corr)
+            if pos == "y":
+                return ((tag1,w1.encode('utf-8')),(tag2,w2.encode('utf-8')), lemma, corr)
+            else:
+                return (w1.encode('utf-8'), w2.encode('utf-8'), lemma, corr)
+
+        else:
+            self.get_split(rword, lemma, tag1, tag2)
+
+    def get_split(self, rword, lemma, tag1, tag2):
+        """Returns w1 and w2, the first and second halves a split word."""
+
+        bool = raw_input("Do you want to split this word? " + rword.encode('utf-8') + " ")
+        print
+        if bool == "y":
+            ind = int(raw_input("Enter the index of the first letter of the second half of the word. "))
+            print
+            w1 = rword[:ind] + "@"
+            w2 = "@" + rword[ind:]
+            return self.check(tag1, tag2, w1, w2, rword, lemma)
+        else:
+            print "OK, we won't split this word."
+            print
 
     def swap(self, filename, map_file):
         """Insert the POS tags from the map file into the corpus file."""
@@ -983,6 +1126,7 @@ def main():
     parser.add_argument('-p', '--print', dest='print_trees', action='store_true', help='Print all the trees in the .psd file.')
     parser.add_argument('-r', '--replace', dest='output_file', action='store', help='Insert the tokens from a CorpusSearch output file into the main .psd corpus file.')
     parser.add_argument('-t', '--timelog', dest='timelog', action='store_const', const='timelog.txt', help='Calculate words per hour parsed from a timelog.txt.')
+    parser.add_argument('-l', '--split_POS', dest='split', action='store_true', help='Split words that have more than one POS tag.')
     parser.add_argument('psd', nargs='+')
     args = parser.parse_args()
 
@@ -1006,28 +1150,40 @@ def main():
             print
             sys.exit()
 
+    picked = False
+
     if args.count:
         corpus.print_word_count(corpus.word_count())
+        picked = True
 
     if args.renumber_ids:
         corpus.renumber_ids(filename)
+        picked = True
 
     if args.add_milestones:
         corpus.add_milestones(filename)
+        picked = True
 
     if args.print_trees:
         corpus.print_trees(filename)
+        picked = True
 
     if args.output_file:
         out_trees = read(args.output_file)
         corpus2 = Corpus()
         corpus2.load(out_trees)
         corpus.replace_tokens(filename, corpus2)
+        picked = True
 
     if args.timelog:
         corpus.print_wph(corpus.words_per_hour(filename, open(args.timelog, 'rU')))
+        picked = True
+
+    if args.split:
+        corpus.split_words(filename)
+        picked = True
         
-    if not args.count and not args.renumber_ids and not args.add_milestones and not args.print_trees and not args.output_file and not args.timelog:
+    if not picked:
         select(corpus, filename, args.psd[1])
 
 def read(filename):
