@@ -680,6 +680,10 @@ milestones before you renumber and/or add ID nodes!"
                             pair2 = tag.split("-")
                             tag1 = pair2[0]
                             tag2 = pair2[1]
+                        elif tag.find("+") != -1:
+                            pair2 = tag.split("+")
+                            tag1 = pair2[0]
+                            tag2 = pair2[1]
                         ind_match = self.re_index.match(tag)
                         if ind_match:
                             index = ind_match.group(2)
