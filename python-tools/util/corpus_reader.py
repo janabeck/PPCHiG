@@ -287,6 +287,8 @@ class Token():
         """Change the POS tag of the given postr subtree to new_tag with any appends or indices provided."""
 
         new_postr = T.Tree(new_tag + append + index, [postr[0]])
+
+        print new_postr
         
         self._tree[postr.treepos] = T.ParentedTree.convert(new_postr)
 
@@ -775,6 +777,85 @@ milestones before you renumber and/or add ID nodes!"
                 return ("", "", lemma, False)
             print
 
+    def transform_case(self, filename):
+        """Change case tags from non-hyphenated suffixes to hyphenated extensions."""
+        #TODO: remove this and other Greek-specific methods before releasing with Annotald
+
+        participle = re.compile("VPR*|BPR*")
+
+        adj = ["ADJ", "ADJ$", "ADJA", "ADJD"]
+
+        be = ["BPR", "BPR$", "BPRA", "BPRD", "BPRP", "BPRP$", "BPRPA", "BPRPD"]
+
+        clpro = ["CLPRO", "CLPRO$", "CLPROA", "CLPROD"]
+
+        clq = ["CLQ", "CLQ$", "CLQA", "CLQD"]
+
+        det = ["D", "D$", "DA", "DD", "DS", "DS$", "DSA", "DSD"]
+
+        noun = ["N", "N$", "NA", "ND", "NS", "NS$", "NSA", "NSD"]
+
+        prnoun = ["NPR", "NPR$", "NPRA", "NPRD", "NPRS", "NPRS$", "NPRSA", "NPRSD"]
+
+        other = ["OTHER", "OTHER$", "OTHERA", "OTHERD"]
+
+        pro = ["PRO", "PRO$", "PROA", "PROD"]
+
+        quant = ["Q", "Q$", "QA", "QD"]
+
+        vb = ["VPR", "VPR$", "VPRA", "VPRD", "VPRP", "VPRP$", "VPRPA", "VPRPD"]
+
+        wadj = ["WADJ", "WADJ$", "WADJA", "WADJD"]
+
+        wd = ["WD", "WD$", "WDA", "WDD"]
+
+        wpro = ["WPRO", "WPRO$", "WPROA", "WPROD"]
+
+        cats = [adj, be, clpro, clq, det, noun, prnoun, other, pro, quant, vb, wadj, wd, wpro]
+
+        for key in self.tokens.keys():
+            tree = self.tokens[key]
+            leaves = tree._tree.leaves()
+            # get all the subtrees at the POS level
+            for tr in tree._tree.subtrees():
+                verb = False
+                remainder = ""
+                if tr[0] in leaves:
+                    word = tr[0]
+                    tag = tr.node
+                    ind_match = self.re_index.match(tag)
+                    if ind_match:
+                        index = ind_match.group(2)
+                        tag = tag.replace(index, "")
+                    else:
+                        index = ""
+                    if participle.match(tag):
+                        verb = True
+                        verb_group = tag.partition("-")
+                        tag = verb_group[0]
+                        remainder = verb_group[2]
+                    for lst in cats:
+                        if tag in lst:
+                            if tag.endswith("$"):
+                                coretag = tag[:-1]
+                                dash = "GEN"
+                            elif tag.endswith("A"):
+                                coretag = tag[:-1]
+                                dash = "ACC"
+                            elif len(tag) > 1 and tag.endswith("D"):
+                                coretag = tag[:-1]
+                                dash = "DAT"
+                            else:
+                                coretag = tag
+                                dash = "NOM"
+                            if verb:
+                                tag = "-".join([coretag, remainder, dash])
+                            else:
+                                tag = "-".join([coretag, dash])
+                            tree.change_POS(tag, "", index, tr)
+
+        self.print_trees(filename)
+
     def swap(self, filename, map_file):
         """Insert the POS tags from the map file into the corpus file."""
         
@@ -1195,7 +1276,10 @@ def main():
         picked = True
         
     if not picked:
-        select(corpus, filename, args.psd[1])
+        if len(args.psd) == 1:
+            select(corpus, filename, "")
+        else:
+            select(corpus, filename, args.psd[1])
 
 def read(filename):
     """Read in a .psd file and return a list of trees as strings."""
@@ -1234,6 +1318,7 @@ def select(corpus, filename, add_file):
     print "    e. Print all the unique lemmas (and their frequences) in a corpus file."
     print "    f. Print a concordance of the word forms (and their frequencies) for the given lemma."
     print "    g. Print the text (words, punctuation, milestones) of the corpus file."
+    print "    h. Transform case suffixes into dash tags."
     print
 
     # TODO: probably replace try/except blocks below
@@ -1243,17 +1328,17 @@ def select(corpus, filename, add_file):
         try:
             lem_file = open(add_file, "rU")
             corpus.correct_by_lemma(filename, lem_file)
-        except IndexError:
-            print traceback.print_exc(file=sys.stdout)
-            print "You need to enter the name of the map file on the command line to run this function!"
+        except IOError:
+            #print traceback.print_exc(file=sys.stdout)
+            print "You need to enter the name of the category definition file on the command line to run this function!"
             print
     elif selection == "b":
         try:
             map_file = open(add_file, "rU")
             corpus.swap(filename, map_file)
-        except IndexError:
-            print traceback.print_exc(file=sys.stdout)
-            print "You need to enter the name of the map file on the command line to run this function!"
+        except IOError:
+            #print traceback.print_exc(file=sys.stdout)
+            print "You need to enter the name of the category definition file on the command line to run this function!"
             print
     elif selection == "c":
         corpus.pos_concordance()
@@ -1261,8 +1346,8 @@ def select(corpus, filename, add_file):
         try:
             cat_file = open(add_file, "rU")
             corpus.category_concordance(cat_file)
-        except IndexError:
-            print traceback.print_exc(file=sys.stdout)
+        except IOError:
+            #print traceback.print_exc(file=sys.stdout)
             print "You need to enter the name of the category definition file on the command line to run this function!"
             print
     elif selection == "e":
@@ -1272,14 +1357,16 @@ def select(corpus, filename, add_file):
         print
         corpus.unique_lemmas(sort)
     elif selection == "f":
-        try:
+        if add_file != "":
             lemma = add_file
             corpus.lemma_concordance(lemma)
-        except IndexError:
+        else:
             print "You need to enter the lemma you are interested in on the command line to run this function!"
             print
     elif selection == "g":
         corpus.print_text(filename)
+    elif selection == "h":
+        corpus.transform_case(filename)
     else:
         print "I'm sorry--I don't understand what you entered."
         print
