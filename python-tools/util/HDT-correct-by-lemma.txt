@@ -33,3 +33,8 @@
 οὐ	null	NEG
 οὐδέ	null	NEG-CONJ
 μή	null	NEG
+Περίανδρος	case,number	NPR
+Κύψελος		case,number	NPR
+Θρασυβούλος	case,number	NPR
+Μίλητος		case,number	NPR
+Ἀλυάττης	case,number	NPR
