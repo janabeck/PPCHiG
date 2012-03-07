@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                  "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<article>
+  <articleinfo>
+    <title></title>
+  </articleinfo>
+<sect1 id="introduction">
+  <title>Introduction</title>
+  <para>
+    This guide offers a brief introduction to two things:
+  </para>
+  <orderedlist>
+    <listitem>
+      <para>
+        the Penn Treebank style of syntactic annotation, as implemented
+        for Ancient Greek
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        the CorpusSearch 2 query langauge for searching and modifying
+        Penn Treebank-style corpora
+      </para>
+    </listitem>
+  </orderedlist>
+  <sect2 id="penn-treebank-format">
+    <title>Penn-Treebank format</title>
+    <para>
+      The simple sentence <quote>I saw the man</quote> is represented in
+      Penn Treebank-style annotation as follows:
+    </para>
+    <programlisting>
+(IP-MAT (NP-SBJ (PRO I))  
+        (VBD saw)  
+        (NP-OB1 (D the)  
+                (N man)))  
+</programlisting>
+    <para>
+      where…
+    </para>
+    <orderedlist>
+      <listitem>
+        <para>
+          a pair of parentheses <literal>( )</literal> delineates each
+          level
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          each level contains two components:
+        </para>
+        <orderedlist>
+          <listitem>
+            <para>
+              a label on the left (e.g., a phrase label, a
+              part-of-speech (POS) label, etc.)
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              content on the right (e.g., phrase(s), word(s), etc.)
+            </para>
+          </listitem>
+        </orderedlist>
+      </listitem>
+    </orderedlist>
+  </sect2>
+  <sect2 id="basic-pos-tags">
+    <title>Basic POS tags</title>
+    <para>
+      The full list of POS tags used in the Penn Parsed Corpus of
+      Historical Greek (PPCHiG) can be found
+      <ulink url="http://www.ling.upenn.edu/~janabeck/PPCHiG_Annotation_Manual.xhtml#d0e116">here</ulink>.
+      In most categories, POS tags consist of a single string of
+      letters, but in some categories (e.g., verbs), the core tags are
+      <quote>extended</quote> with <quote>dash</quote> tags separated
+      from the core tag by a hyphen <literal>-</literal>. Some examples
+      of the most common and basic POS tags are as follows:
+    </para>
+    <table>
+      <title>
+        POS tag examples
+      </title>
+      <tgroup cols="2">
+        <colspec align="left" />
+        <colspec align="left" />
+        <thead>
+          <row>
+            <entry>
+              Tag
+            </entry>
+            <entry>
+              Meaning
+            </entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              N
+            </entry>
+            <entry>
+              common noun, nominative singular
+            </entry>
+          </row>
+          <row>
+            <entry>
+              NS
+            </entry>
+            <entry>
+              common noun, nominative plural
+            </entry>
+          </row>
+          <row>
+            <entry>
+              ND
+            </entry>
+            <entry>
+              common noun, dative singular
+            </entry>
+          </row>
+          <row>
+            <entry>
+              NPR
+            </entry>
+            <entry>
+              proper noun, nominative singular
+            </entry>
+          </row>
+          <row>
+            <entry>
+              VBP-IMPF
+            </entry>
+            <entry>
+              verb, present imperfective
+            </entry>
+          </row>
+          <row>
+            <entry>
+              VBD-AOR-PASS
+            </entry>
+            <entry>
+              verb, aorist passive
+            </entry>
+          </row>
+          <row>
+            <entry>
+              VBNP-PRF
+            </entry>
+            <entry>
+              verb, perfect middle/passive infinitive
+            </entry>
+          </row>
+          <row>
+            <entry>
+              C
+            </entry>
+            <entry>
+              complementizer (e.g., ὅτι <quote>that</quote>)
+            </entry>
+          </row>
+          <row>
+            <entry>
+              P
+            </entry>
+            <entry>
+              preposition
+            </entry>
+          </row>
+          <row>
+            <entry>
+              D
+            </entry>
+            <entry>
+              article, nominative singular (i.e., ὁ/ἡ/τό)
+            </entry>
+          </row>
+          <row>
+            <entry>
+              CLPRT
+            </entry>
+            <entry>
+              second-position particle (e.g., δέ, γάρ, περ, etc.)
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </sect2>
+  <sect2 id="representing-discontinuities">
+    <title>Representing Discontinuities</title>
+    <para>
+      Discontinuities are represented by means of placeholders—traces—in
+      the structure that:
+    </para>
+    <orderedlist>
+      <listitem>
+        <para>
+          show the origin of the displaced element
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          indicate the connection between the displaced element and the
+          trace by numerical co-indexation
+        </para>
+      </listitem>
+    </orderedlist>
+    <sect3 id="example-t-traces-for-wh--movement">
+      <title>Example: <literal>*T*</literal> Traces for
+      <quote>wh-</quote> Movement</title>
+      <programlisting>
+(CP-QUE (WNP-1 (WPRO What))          &lt;&lt; displaced element
+               (C 0)
+        (IP-SUB (NP-OB1 *T*-1)       &lt;&lt; co-indexed trace
+                (VBD did)               indicating functional
+                (NP-SBJ (PRO you))      position
+                (VB see)))
+</programlisting>
+    </sect3>
+  </sect2>
+</sect1>
+</article>
