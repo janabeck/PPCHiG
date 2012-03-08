@@ -24,8 +24,32 @@
       </para>
     </listitem>
   </orderedlist>
+  <sect2 id="the-penn-historical-treebank-philosophy">
+    <title>The Penn Historical Treebank philosophy</title>
+    <para>
+      A primary motivating principle behind Penn Treebank-style
+      annotation that is important to understand is that
+      <emphasis role="strong">the primary goal of the annotation is
+      facilitation of automated search</emphasis>,
+      <emphasis>not</emphasis> linguistically-accurate markup. To that
+      end, the trees in Penn Treebank-style annotation are quite
+      <quote>flat</quote> compared to those found in many current
+      theories (e.g., Minimalism) and are not binary-branching.
+    </para>
+    <para>
+      A corollary: Labels used in the annotation system should not be
+      taken as descriptive claims about the language but as atheoretical
+      tools to aid in the automatic classification of sentences
+      according to various patterns and properties. There are known
+      cases where a particular standard for annotation has been chosen
+      even with full knowledge that it might or perhaps even probably is
+      linguistically inaccurate. These cases are typically cases where
+      simplicity of annotation and search has been prioritized at the
+      expense of linguistic accuracy.
+    </para>
+  </sect2>
   <sect2 id="penn-treebank-format">
-    <title>Penn-Treebank format</title>
+    <title>Penn Treebank format</title>
     <para>
       The simple sentence <quote>I saw the man</quote> is represented in
       Penn Treebank-style annotation as follows:
@@ -73,14 +97,15 @@
       Historical Greek (PPCHiG) can be found
       <ulink url="http://www.ling.upenn.edu/~janabeck/PPCHiG_Annotation_Manual.xhtml#d0e116">here</ulink>.
       In most categories, POS tags consist of a single string of
-      letters, but in some categories (e.g., verbs), the core tags are
-      <quote>extended</quote> with <quote>dash</quote> tags separated
-      from the core tag by a hyphen <literal>-</literal>. Some examples
-      of the most common and basic POS tags are as follows:
+      letters, but in some categories (e.g., verbs, items that bear
+      case), the core tags are <quote>extended</quote> with
+      <quote>dash</quote> tags separated from the core tag by a hyphen
+      <literal>-</literal>. Some examples of the most common and basic
+      POS tags are as follows:
     </para>
     <table>
       <title>
-        POS tag examples
+        Some basic POS tags
       </title>
       <tgroup cols="2">
         <colspec align="left" />
@@ -98,71 +123,63 @@
         <tbody>
           <row>
             <entry>
-              N
+              <literal>D</literal>
             </entry>
             <entry>
-              common noun, nominative singular
-            </entry>
-          </row>
-          <row>
-            <entry>
-              NS
-            </entry>
-            <entry>
-              common noun, nominative plural
+              article (i.e., ὁ/ἡ/τό)
             </entry>
           </row>
           <row>
             <entry>
-              ND
+              <literal>N</literal>
             </entry>
             <entry>
-              common noun, dative singular
-            </entry>
-          </row>
-          <row>
-            <entry>
-              NPR
-            </entry>
-            <entry>
-              proper noun, nominative singular
+              common noun
             </entry>
           </row>
           <row>
             <entry>
-              VBP-IMPF
+              <literal>NPR</literal>
             </entry>
             <entry>
-              verb, present imperfective
-            </entry>
-          </row>
-          <row>
-            <entry>
-              VBD-AOR-PASS
-            </entry>
-            <entry>
-              verb, aorist passive
+              proper noun
             </entry>
           </row>
           <row>
             <entry>
-              VBNP-PRF
+              <literal>PRO</literal>
             </entry>
             <entry>
-              verb, perfect middle/passive infinitive
-            </entry>
-          </row>
-          <row>
-            <entry>
-              C
-            </entry>
-            <entry>
-              complementizer (e.g., ὅτι <quote>that</quote>)
+              pronoun
             </entry>
           </row>
           <row>
             <entry>
-              P
+              <literal>WPRO</literal>
+            </entry>
+            <entry>
+              relative or interrogative pronoun
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <literal>ADJ</literal>
+            </entry>
+            <entry>
+              adjective
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <literal>ADV</literal>
+            </entry>
+            <entry>
+              adverb
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <literal>P</literal>
             </entry>
             <entry>
               preposition
@@ -170,18 +187,966 @@
           </row>
           <row>
             <entry>
-              D
+              <literal>C</literal>
             </entry>
             <entry>
-              article, nominative singular (i.e., ὁ/ἡ/τό)
+              complementizer (e.g., ὅτι <quote>that</quote>)
             </entry>
           </row>
           <row>
             <entry>
-              CLPRT
+              <literal>BE</literal>…
             </entry>
             <entry>
-              second-position particle (e.g., δέ, γάρ, περ, etc.)
+              non-participial forms of the verb εἰμί <quote>be</quote>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <literal>BPR</literal>…
+            </entry>
+            <entry>
+              participial forms of the verb εἰμί <quote>be</quote>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <literal>VB</literal>…
+            </entry>
+            <entry>
+              non-participial verb forms
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <literal>VPR</literal>…
+            </entry>
+            <entry>
+              participial verb forms
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <sect3 id="unmarked-morphological-concepts">
+      <title>Unmarked morphological concepts</title>
+      <para>
+        There are three morphological features that are
+        <emphasis>never</emphasis> marked in the PPCHiG:
+      </para>
+      <itemizedlist>
+        <listitem>
+          <para>
+            gender
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            person
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            number on verbs
+          </para>
+        </listitem>
+      </itemizedlist>
+    </sect3>
+    <sect3 id="plurality">
+      <title>Plurality</title>
+      <para>
+        On nominals and <emphasis>some</emphasis> related elements
+        (determiners, etc.), plurality is represent by adding an
+        <literal>S</literal> to the end of the POS tag.
+      </para>
+      <table>
+        <title>
+          Plural POS tags
+        </title>
+        <tgroup cols="2">
+          <colspec align="left" />
+          <colspec align="left" />
+          <thead>
+            <row>
+              <entry>
+                Tag
+              </entry>
+              <entry>
+                Meaning
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <literal>DS</literal>
+              </entry>
+              <entry>
+                article, plural (i.e., οἱ/αἱ/τά)
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <literal>NS</literal>
+              </entry>
+              <entry>
+                common noun, plural
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <literal>NPRS</literal>
+              </entry>
+              <entry>
+                proper noun, plural
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <para>
+        Following the format established in the
+        <ulink url="http://www.ling.upenn.edu/hist-corpora/annotation/index.html">Penn
+        Parsed Corpora of Historical English (PPCHiE)</ulink> any
+        <quote>non-core</quote> nominal and related elements
+        <emphasis>do not</emphasis> mark plurality. These include (but
+        are not limited to):
+      </para>
+      <itemizedlist>
+        <listitem>
+          <para>
+            adjectives
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            pronouns
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            participles
+          </para>
+        </listitem>
+      </itemizedlist>
+    </sect3>
+    <sect3 id="case">
+      <title>Case</title>
+      <para>
+        Case is represented on almost all types of words that have this
+        property. Like plurality, case is represented by means of adding
+        a letter to the end of a POS tag.
+      </para>
+      <table>
+        <title>
+          Case <quote>suffixes</quote>
+        </title>
+        <tgroup cols="2">
+          <colspec align="left" />
+          <colspec align="left" />
+          <thead>
+            <row>
+              <entry>
+                Suffix
+              </entry>
+              <entry>
+                Meaning
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                null
+              </entry>
+              <entry>
+                nominative
+              </entry>
+            </row>
+            <row>
+              <entry>
+                …<literal>$</literal>
+              </entry>
+              <entry>
+                genitive
+              </entry>
+            </row>
+            <row>
+              <entry>
+                …<literal>A</literal>
+              </entry>
+              <entry>
+                accusative
+              </entry>
+            </row>
+            <row>
+              <entry>
+                …<literal>D</literal>
+              </entry>
+              <entry>
+                dative
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <para>
+        For example, <literal>DSD</literal> is a dative plural
+        determiner (i.e., τοῖς/ταῖς). <literal>ADJA</literal> is an
+        accusative adjective, <emphasis>singular or plural</emphasis>.
+      </para>
+    </sect3>
+    <sect3 id="verbal-pos-tags">
+      <title>Verbal POS tags</title>
+      <para>
+        Penn Treebank-style annotation was originally designed for
+        modern and historical English, a language that expresse the
+        verbal concepts of tense, mood, and voice in an analytic
+        fashion, via combinations of distinct verbs—that is, one or more
+        auxiliary verbs together with a main verb in participial form.
+      </para>
+      <itemizedlist>
+        <listitem>
+          <para>
+            simple past: I wrote.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            present progressive: I am writing.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            present perfect passive: It has been written.
+          </para>
+        </listitem>
+      </itemizedlist>
+      <para>
+        In contrast to languages like English, Ancient Greek expresses
+        these verbal concepts within one synthetic verbal form, the main
+        verb of the sentence.
+      </para>
+      <itemizedlist>
+        <listitem>
+          <para>
+            ἔγραψα <quote>I wrote</quote>
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            γράφω <quote>I write/I am writing.</quote>
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            γέγραπται <quote>It has been written.</quote>
+          </para>
+        </listitem>
+      </itemizedlist>
+      <para>
+        There are just 7 verbal POS tags in the PPCHiE.
+      </para>
+      <table>
+        <title>
+          Verbal POS tags in the PPCHiE
+        </title>
+        <tgroup cols="2">
+          <colspec align="left" />
+          <colspec align="left" />
+          <thead>
+            <row>
+              <entry>
+                Tag
+              </entry>
+              <entry>
+                Meaning
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <literal>VAG</literal>
+              </entry>
+              <entry>
+                present participle
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <literal>VAN</literal>
+              </entry>
+              <entry>
+                passive participle
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <literal>VB</literal>
+              </entry>
+              <entry>
+                infinitive
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <literal>VBD</literal>
+              </entry>
+              <entry>
+                past
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <literal>VBI</literal>
+              </entry>
+              <entry>
+                imperative
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <literal>VBN</literal>
+              </entry>
+              <entry>
+                perfect participle
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <literal>VBP</literal>
+              </entry>
+              <entry>
+                present
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <para>
+        Adopting the same strategy for Ancient Greek, using a single tag
+        to represent each distinct tense, aspect, mood, voice, and
+        finiteness combination, would require over 100 distinct tags.
+        Alternatively, <quote>dash</quote> tags separated from the main
+        verbal tag by a hyphen can be used to add information about
+        different verbal features without exploding the number of verbal
+        tags. Using this strategy reduces the number of distinct verbal
+        POS tags for Ancient Greek.
+      </para>
+      <sect4 id="basic-verbal-pos-tags-for-ancient-greek">
+        <title>Basic Verbal POS tags for Ancient Greek</title>
+        <table>
+          <title>
+            Core verbal POS tags
+          </title>
+          <tgroup cols="2">
+            <colspec align="left" />
+            <colspec align="left" />
+            <thead>
+              <row>
+                <entry>
+                  Tag
+                </entry>
+                <entry>
+                  Meaning
+                </entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>
+                  <literal>VBP</literal>…
+                </entry>
+                <entry>
+                  primary sequence verb (includes present, future, and
+                  present perfect)
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  <literal>VBD</literal>…
+                </entry>
+                <entry>
+                  secondary sequence verb (includes imperfect/past
+                  imperfective, aorist/past perfective, and pluperfect)
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  <literal>VBN</literal>…
+                </entry>
+                <entry>
+                  infinitive
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  <literal>VBI</literal>…
+                </entry>
+                <entry>
+                  imperative
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  <literal>VBS</literal>…
+                </entry>
+                <entry>
+                  subjunctive
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  <literal>VBO</literal>…
+                </entry>
+                <entry>
+                  optative
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  <literal>VPR</literal>…
+                </entry>
+                <entry>
+                  participle
+                </entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+        <para>
+          The pattern is the same for the copular verb εἰμί, which
+          receives a special tag beginning in <literal>BE</literal>. For
+          example, the core tag <literal>BEO</literal> appears on an
+          optative form of εἰμί—e.g., εἴη.
+        </para>
+      </sect4>
+      <sect4 id="the-p-suffix">
+        <title>The …<literal>P</literal> Suffix</title>
+        <para>
+          Verbs that are morphologically middle, passive, or
+          (morphologically speaking) ambiguously middle or passive,
+          receive a <literal>P</literal> added to the core tag. For
+          example, <literal>VBNP</literal> is the core tag that would
+          appear on a middle or passive infinitive.
+        </para>
+      </sect4>
+      <sect4 id="case-on-participles">
+        <title>Case on participles</title>
+        <para>
+          Participial verbs (core tags <literal>VPR</literal> for verbs
+          and <literal>BPR</literal> for εἰμί) take the same
+          <quote>suffixes</quote> as nominal elements (see
+          <link linkend="case">Case</link> above) to indicate their
+          case. The case suffixes appear <emphasis>outside</emphasis>
+          the <literal>P</literal> that may be present to mark middle or
+          passive morphology. For example, <literal>VPRP$</literal> is a
+          middle or passive participle in the genitive.
+        </para>
+      </sect4>
+      <sect4 id="aspect-tense-etc.">
+        <title>Aspect, tense, etc.</title>
+        <para>
+          The verbal concepts of aspect, tense, voice, and some
+          functions of the optative are indicated with
+          <quote>dash</quote> tags.
+        </para>
+        <table>
+          <title>
+            Extended verbal tags
+          </title>
+          <tgroup cols="2">
+            <colspec align="left" />
+            <colspec align="left" />
+            <thead>
+              <row>
+                <entry>
+                  Dash Tag
+                </entry>
+                <entry>
+                  Meaning
+                </entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>
+                  <literal>-AOR</literal>
+                </entry>
+                <entry>
+                  aorist (perfective aspect)
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  <literal>-FUT</literal>
+                </entry>
+                <entry>
+                  future
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  <literal>-IMPF</literal>
+                </entry>
+                <entry>
+                  imperfective aspect
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  <literal>-IND</literal>
+                </entry>
+                <entry>
+                  marks optatives replacing indicatives in secondary
+                  sequence
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  <literal>-KJV</literal>
+                </entry>
+                <entry>
+                  marks optatives replacing subjunctives in secondary
+                  sequence
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  <literal>-PRF</literal>
+                </entry>
+                <entry>
+                  perfect aspect
+                </entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+        <para>
+          Examples:
+        </para>
+        <orderedlist>
+          <listitem>
+            <para>
+              ἴδμεν = <literal>VBP-PRF</literal>
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              προβήσομαι = <literal>VBPP-FUT-INTRNS</literal> (see
+              <link linkend="marking-transitivity">next section</link>
+              for <literal>-INTRNS</literal>)
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              ἀπῆλθε = <literal>VBD-AOR</literal>
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              εἴη = <literal>BEO-IMPF-KJV</literal>
+            </para>
+            <para>
+              ὅκως μὲν εἴη ἐν τῇ γῇ καρπὸς ἁδρός, τηνικαῦτα ἐσέβαλλε τὴν
+              στρατιήν… (Hdt. 1.17.1, temporal clause equivalent of
+              protasis of a past general conditional)
+            </para>
+            <para>
+              <quote>When the crops in the land were ripe, he would
+              invade…</quote>
+            </para>
+          </listitem>
+        </orderedlist>
+      </sect4>
+      <sect4 id="marking-transitivity">
+        <title>Marking transitivity</title>
+        <table>
+          <title>
+            Tags for marking transitivity on morphologically
+            middle/passive verbs
+          </title>
+          <tgroup cols="2">
+            <colspec align="left" />
+            <colspec align="left" />
+            <thead>
+              <row>
+                <entry>
+                  Dash Tag
+                </entry>
+                <entry>
+                  Meaning
+                </entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>
+                  <literal>-INTRNS</literal> intr
+                </entry>
+                <entry>
+                  ansitive
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  <literal>-PASS</literal>
+                </entry>
+                <entry>
+                  syntactic passive (not middle!)
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  <literal>-TRNS1</literal> (dir
+                </entry>
+                <entry>
+                  ect) transitive
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  <literal>-TRNS2</literal> (ind
+                </entry>
+                <entry>
+                  irect) transitive
+                </entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+        <para>
+          <literal>P</literal> marks verbal forms whose
+          <emphasis>morphology</emphasis> is non-active. In contrast,
+          <literal>-PASS</literal> marks verbal forms in a clause where
+          the <emphasis>syntax</emphasis> involves the promotion of a
+          typical object in an active construction to the subject of the
+          sentence. Finally, the tags
+        </para>
+        <para>
+          Syntactic passives can have morphological forms that are
+          either ambiguous between middle and passive voice or
+          unambiguously passive, but the converse is not true: there are
+          verb forms that are unambiguously passive with respect to
+          their morphology but that have active (intransitive) syntax,
+          not passive syntax.
+        </para>
+        <orderedlist>
+          <listitem>
+            <para>
+              middle/passive morphology, active syntax =
+              <literal>VBPP-IMPF</literal>
+            </para>
+            <para>
+              …ἅμα δὲ κιθῶνι ἐκδυομένῳ συνεκδύεται καὶ τὴν αἰδῶ γυνή.
+              (Hdt. 1.8.3)
+            </para>
+            <para>
+              <quote>…but at the same time as she removes her tunic, a
+              woman dispenses with her modesty too.</quote>
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              middle/passive morphology, passive syntax =
+              <literal>VBPP-PRF-PASS</literal>
+            </para>
+            <para>
+              οὕτως γὰρ γέγραπται διὰ τοῦ προφήτου… (Matthew 2.5)
+            </para>
+            <para>
+              <quote>For thus it has been written through the
+              prophet…</quote>
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              passive morphology, intransitive syntax:
+              <literal>VBDP-AOR</literal>
+            </para>
+            <para>
+              …ἄγγελος Κυρίου κατ᾽ ὄναρ ἐφάνη αὐτῷ… (Matthew 1.20)
+            </para>
+            <para>
+              <quote>…an angel of the Lord appeared to him in a
+              dream…</quote>
+            </para>
+          </listitem>
+        </orderedlist>
+        <para>
+          <literal>-INTRNS</literal> marks verbs that have middle or
+          passive morphology and exhibit intransitive syntax in the
+          sentence. <literal>-INTRNS</literal> should be thought of as a
+          set which includes <literal>-PASS</literal> as a subset:
+          sometimes the decision between marking a verb as
+          <literal>-INTRNS</literal> or <literal>-PASS</literal> is
+          quite arbitrary.
+          <ulink url="http://www.ling.upenn.edu/~janabeck/PPCHiG_Annotation_Manual.xhtml#http://www.ling.upenn.edu/~janabeck/PPCHiG_Annotation_Manual.xhtml#VB_BE_notes">This
+          section in the PPCHiG annotation manual</ulink> describes in
+          more detail the various classes of verbs that typically get
+          treated as passive or intransitive.
+        </para>
+        <para>
+          Finally, the <literal>-TRNS1</literal> and
+          <literal>-TRNS2</literal> tags are automatically generated by
+          query in the course of annotation in order to help make it
+          easier to find verbs that need to be marked as
+          <literal>-PASS</literal> or <literal>-INTRNS</literal>. For
+          more information on the situations in which these tags are
+          applied, see
+          <ulink url="http://www.ling.upenn.edu/~janabeck/PPCHiG_Annotation_Manual.xhtml#ext_verb_tags">here</ulink>.
+        </para>
+      </sect4>
+    </sect3>
+  </sect2>
+  <sect2 id="basic-phrases-and-function-tags">
+    <title>Basic phrases and function tags</title>
+    <para>
+      An extended list of common phrase + function tag combinations can
+      be found
+      <ulink url="http://www.ling.upenn.edu/~janabeck/PPCHiG_Annotation_Manual.xhtml#d0e932">here</ulink>.
+      Phrase labels in most cases consist of the core tag for a
+      particular category with an added <literal>P</literal> for
+      <quote>phrase.</quote> Phrase labels are extended with one or more
+      <quote>dash</quote> tags separated from the phrase label by a
+      hyphen to indicate their function in the sentence.
+    </para>
+    <table>
+      <title>
+        A few basic phrase labels
+      </title>
+      <tgroup cols="2">
+        <colspec align="left" />
+        <colspec align="left" />
+        <thead>
+          <row>
+            <entry>
+              Label
+            </entry>
+            <entry>
+              Meaning
+            </entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <literal>NP</literal>
+            </entry>
+            <entry>
+              noun phrase
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <literal>ADJP</literal>
+            </entry>
+            <entry>
+              adjective phrase
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <literal>PP</literal>
+            </entry>
+            <entry>
+              prepositional phrase
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <literal>IP</literal>
+            </entry>
+            <entry>
+              inflectional phrase (clause)
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <literal>CP</literal>
+            </entry>
+            <entry>
+              complementizer phrase
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <table>
+      <title>
+        A few of the most common function <quote>dash</quote> tags
+      </title>
+      <tgroup cols="2">
+        <colspec align="left" />
+        <colspec align="left" />
+        <thead>
+          <row>
+            <entry>
+              Tag
+            </entry>
+            <entry>
+              Meaning
+            </entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <literal>-SBJ</literal>
+            </entry>
+            <entry>
+              subject
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <literal>-OB1</literal>
+            </entry>
+            <entry>
+              direct object
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <literal>-OB2</literal>
+            </entry>
+            <entry>
+              indirect object
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <literal>-ATR</literal>
+            </entry>
+            <entry>
+              attributive (includes possessive)
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <literal>-COM</literal>
+            </entry>
+            <entry>
+              complement
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <literal>-PRD</literal>
+            </entry>
+            <entry>
+              predicate
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <literal>-MAT</literal>
+            </entry>
+            <entry>
+              matrix (clause)
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <literal>-SUB</literal>
+            </entry>
+            <entry>
+              subordinate (clause)
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <para>
+      Many function tags can appear on more than one type of phrase. For
+      example, noun phrases can be subjects <literal>NP-SBJ</literal>,
+      but so can clauses <literal>CP-THT-SBJ</literal>. Noun phrases can
+      be complements <literal>NP-COM</literal> (e.g., to adjectives such
+      as ἄξιος), but so can infinitival clauses
+      <literal>IP-INF-COM</literal> selected for by verb such as ἐθέλω,
+      and participial phrases <literal>IP-PPL-COM</literal> (in the case
+      of supplementary participles to verbs such as τυγχάνω).
+    </para>
+    <para>
+      Extended tags on IPs and CPs tend to be more particular to those
+      categories alone, since they identify the type of clause. The most
+      common types are:
+    </para>
+    <table>
+      <title>
+        Common <literal>IP</literal>s and <literal>CP</literal>s
+      </title>
+      <tgroup cols="2">
+        <colspec align="left" />
+        <colspec align="left" />
+        <thead>
+          <row>
+            <entry>
+              Label
+            </entry>
+            <entry>
+              Meaning
+            </entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <literal>IP-MAT</literal>
+            </entry>
+            <entry>
+              matrix (main) clause
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <literal>IP-SUB</literal>
+            </entry>
+            <entry>
+              subordinate clause
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <literal>IP-INF</literal>
+            </entry>
+            <entry>
+              infinitival clause
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <literal>IP-PPL</literal>
+            </entry>
+            <entry>
+              participial clause
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <literal>CP-THT</literal>
+            </entry>
+            <entry>
+              complement clause, indicative (where
+              <literal>THT</literal> is mnemonic for English
+              <quote>that</quote>)
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <literal>CP-QUE</literal>
+            </entry>
+            <entry>
+              direct or indirect question
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <literal>CP-REL</literal>
+            </entry>
+            <entry>
+              relative clause
             </entry>
           </row>
         </tbody>
@@ -218,6 +1183,575 @@
                 (NP-SBJ (PRO you))      position
                 (VB see)))
 </programlisting>
+      <para>
+        Different types of traces indicate different types of movement.
+      </para>
+      <table>
+        <title>
+          Types of traces
+        </title>
+        <tgroup cols="2">
+          <colspec align="left" />
+          <colspec align="left" />
+          <thead>
+            <row>
+              <entry>
+                Trace
+              </entry>
+              <entry>
+                Meaning
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <literal>*</literal>
+              </entry>
+              <entry>
+                A-movement (rare—only A-movement in a passive is marked,
+                and only in certain situations)
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <literal>*T*</literal>
+              </entry>
+              <entry>
+                <quote>wh-</quote> movement
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <literal>*ICH*</literal>
+              </entry>
+              <entry>
+                other A’-movement (<literal>ICH</literal> mnemonic for
+                <literal>I</literal>nterpret
+                <literal>C</literal>onstituent <literal>H</literal>ere)
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <literal>*CL*</literal>
+              </entry>
+              <entry>
+                clitic displacement (clitic pronouns and verbs only)
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </sect3>
+  </sect2>
+  <sect2 id="using-corpussearch-2-to-search-the-penn-style-historical-treebanks">
+    <title>Using CorpusSearch 2 to search the Penn-style Historical
+    Treebanks</title>
+    <blockquote>
+      <para>
+        &quot; A corpus without a search program is like the Internet
+        without a search engine.&quot;
+      </para>
+      <blockquote>
+        <para>
+          Beth Randall
+        </para>
+      </blockquote>
+    </blockquote>
+    <para>
+      The software program CorpusSearch 2 (CS2) is used to query the
+      Penn Historical Treebanks. This software is available for free
+      download
+      <ulink url="http://sourceforge.net/projects/corpussearch/">here</ulink>
+      for any operating system (Windows, Mac, Linux) and
+      <ulink url="http://corpussearch.sourceforge.net/CS-manual/Contents.html">the
+      manual is also available on the web</ulink>.
+    </para>
+    <para>
+      The interface to CS2 is on the command line.
+    </para>
+    <sect3 id="running-cs2-on-windows">
+      <title>Running CS2 on Windows</title>
+      <para>
+        On Windows, you can access the command line via Start &gt; Run…
+        and then typing <literal>cmd</literal> into the Run… dialog box.
+      </para>
+      <para>
+        The command to run CS2 on Windows is:
+      </para>
+      <programlisting>
+java -classpath &quot;C:\&lt;path-on-your-computer&gt;\CS_2.003.jar&quot; csearch/CorpusSearch &lt;path-to-query&gt;\&lt;query&gt;.q &lt;path-to-corpus-file&gt;\&lt;parsed-file&gt;.psd
+</programlisting>
+      <para>
+        <emphasis role="strong">NB:</emphasis> In the above command,
+        anything between <literal>&lt;</literal> and
+        <literal>&gt;</literal> will be particular either to your
+        computer/filesystem or the query you’re running.
+      </para>
+    </sect3>
+    <sect3 id="running-cs2-on-a-macintosh">
+      <title>Running CS2 on a Macintosh</title>
+      <para>
+        On a Mac, you access the command line via the Terminal app from
+        the Utilities folder (Appications/Utilities/).
+      </para>
+      <para>
+        The command to run CS2 on a Mac is:
+      </para>
+      <programlisting>
+java -classpath /Users/&lt;you&gt;/&lt;path-on-your-computer&gt;/CS_2.003.jar csearch/CorpusSearch &lt;path-to-query&gt;/&lt;query&gt;.q &lt;path-to-query&gt;/&lt;parsed-file&gt;.psd 
+</programlisting>
+      <para>
+        <emphasis role="strong">NB:</emphasis> In the above command,
+        anything between <literal>&lt;</literal> and
+        <literal>&gt;</literal> will be particular either to your
+        computer/filesystem or the query you’re running.
+      </para>
+    </sect3>
+    <sect3 id="demo-web-interface">
+      <title>Demo Web Interface</title>
+      <para>
+        There is also a demo web interface for the book of Mark from the
+        Greek New Testament
+        <ulink url="http://csearch2.ling.upenn.edu/GREEK/queryparsed.shtml">here</ulink>.
+        This demo allows you to query the book of Mark using a web
+        implementation of the most basic functions of CorpusSearch 2.
+      </para>
+      <para>
+        <emphasis role="strong">NB:</emphasis> The web interface does
+        not yet allow for search using Unicode Greek characters, so
+        searches on the web interface are limited to searches for phrase
+        and POS labels.
+      </para>
+    </sect3>
+    <sect3 id="fundamentals-of-corpussearch-2">
+      <title>Fundamentals of CorpusSearch 2</title>
+      <para>
+        Two fundamental components are necessary to conduct a query with
+        CorpusSearch 2, whether in the web interface or via a desktop
+        installation.
+      </para>
+      <orderedlist>
+        <listitem>
+          <para>
+            a search domain
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            the query
+          </para>
+        </listitem>
+      </orderedlist>
+      <sect4 id="the-search-domain">
+        <title>The search domain</title>
+        <para>
+          The search domain tells CorpusSearch where to look for
+          matches. For example, if you want to limit your search to
+          match only within noun phrases (<literal>NP</literal>s), the
+          top line of your CS2 query file will read:
+        </para>
+        <programlisting>
+node: NP*
+</programlisting>
+        <para>
+          Here the <literal>*</literal> is a wildcard that allows for
+          <emphasis>zero or more</emphasis> characters to follow the
+          characters you have specified (in this case,
+          <literal>NP</literal>).
+        </para>
+        <para>
+          In other words, all of the following (among many other
+          possibilities) would be possible domains in which CS2 would
+          search for matches:
+        </para>
+        <itemizedlist>
+          <listitem>
+            <para>
+              NP-SBJ
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              NP-COM
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              NP-2
+            </para>
+          </listitem>
+        </itemizedlist>
+        <para>
+          In order to specify that CS2 search
+          <emphasis>anywhere</emphasis> in each tree token for matches,
+          you must use a special variable since different tokens can
+          have different categories at the top level (e.g.,
+          <literal>IP-MAT</literal> or <literal>CP-QUE</literal>). The
+          special variable to search anywhere within each tree token is
+          <literal>$ROOT</literal>. Many CS2 queries will thus begin
+          with the line:
+        </para>
+        <programlisting>
+node: $ROOT
+</programlisting>
+      </sect4>
+      <sect4 id="the-query">
+        <title>The query</title>
+        <para>
+          A full list of the search functions that CS2 contains can be
+          found in the manual
+          <ulink url="http://corpussearch.sourceforge.net/CS-manual/SearchFunctions.html">here</ulink>.
+          The most import functions are two sets of functions that query
+          for dominance relations and precedence relations.
+        </para>
+        <sect5 id="dominance">
+          <title>Dominance</title>
+          <para>
+            There are two basic search functions for dominance:
+            <literal>Doms</literal> and <literal>iDoms</literal> (see
+            the manual for alternate possible spellings).
+          </para>
+          <simplesect id="doms">
+            <title><literal>Doms</literal></title>
+            <para>
+              <literal>Doms</literal> queries for dominance at any
+              level. In the query <literal>(x Doms y)</literal>, any
+              <literal>y</literal> will match the query if
+              <literal>y</literal> is contained within the subtree
+              dominated by <literal>x</literal>.
+            </para>
+            <para>
+              For example, in the first sentence of Matthew in the Greek
+              New Testament, if <literal>x</literal> is
+              <literal>NP-SBJ</literal> and <literal>y</literal> is
+              <literal>N*</literal> (which means anything that starts
+              with N and contains zero or more characters following the
+              initial <literal>N</literal>), any POS label or phrase
+              label in the tree could be a match for the query.
+            </para>
+            <programlisting>
+( (FRAG (CODE {VS:1_1})
+        (NP-SBJ (N ΒΙΒΛΟΣ-βίβλος)
+                (NP-ATR (N$ γενέσεως-γένεσις)
+                        (NP-ATR (NPR$ Ἰησοῦ-Ἰησοῦς)
+                                (NP-PRN (NP (NPR$ Χριστοῦ-Χριστός))
+                                            (CONJP (NP (N$ υἱοῦ-υἱός)
+                                                       (NP-ATR (NPR$ Δαυεὶδ-Δαυίδ)
+                                                               (NP-PRN (N$ υἱοῦ-υἱός)
+                                                                       (NP-ATR (NPR$ Ἀβρααμ-Ἀβραάμ))))))))))
+  (. .))
+  (ID GreekNT,Matthew:1_1.1))
+</programlisting>
+            <para>
+              The query described above would look be the following:
+            </para>
+            <programlisting>
+node: $ROOT
+
+query: (NP-SBJ Doms N*)
+</programlisting>
+            <para>
+              And the output looks like this:
+            </para>
+            <programlisting>
+/*
+PREFACE:  
+Copyright 2010 Beth Randall
+Date:  Thu Mar 08 02:29:58 EST 2012
+
+command file:     Doms-example.q
+output file:      Doms-example.out
+
+node:   $ROOT
+query:  (NP-SBJ Doms  N*) 
+*/
+/*
+HEADER:
+source file:  Test.psd
+*/
+
+/~*
+ΒΙΒΛΟΣ-βίβλος γενέσεως-γένεσις Ἰησοῦ-Ἰησοῦς Χριστοῦ-Χριστός υἱοῦ-υἱός
+Δαυεὶδ-Δαυίδ υἱοῦ-υἱός Ἀβρααμ-Ἀβραάμ.
+(GreekNT,Matthew:1_1.1)
+*~/
+/*
+1 FRAG:  4 NP-SBJ, 5 N
+1 FRAG:  4 NP-SBJ, 7 NP-ATR
+1 FRAG:  4 NP-SBJ, 8 N$
+1 FRAG:  4 NP-SBJ, 10 NP-ATR
+1 FRAG:  4 NP-SBJ, 11 NPR$
+1 FRAG:  4 NP-SBJ, 13 NP-PRN
+1 FRAG:  4 NP-SBJ, 14 NP
+1 FRAG:  4 NP-SBJ, 15 NPR$
+1 FRAG:  4 NP-SBJ, 18 NP
+1 FRAG:  4 NP-SBJ, 19 N$
+1 FRAG:  4 NP-SBJ, 21 NP-ATR
+1 FRAG:  4 NP-SBJ, 22 NPR$
+1 FRAG:  4 NP-SBJ, 24 NP-PRN
+1 FRAG:  4 NP-SBJ, 25 N$
+1 FRAG:  4 NP-SBJ, 27 NP-ATR
+1 FRAG:  4 NP-SBJ, 28 NPR$
+*/
+( (FRAG (CODE {VS:1_1})
+        (NP-SBJ (N ΒΙΒΛΟΣ-βίβλος)
+                (NP-ATR (N$ γενέσεως-γένεσις)
+                        (NP-ATR (NPR$ Ἰησοῦ-Ἰησοῦς)
+                                (NP-PRN (NP (NPR$ Χριστοῦ-Χριστός))
+                                            (CONJP (NP (N$ υἱοῦ-υἱός)
+                                                       (NP-ATR (NPR$ Δαυεὶδ-Δαυίδ)
+                                                               (NP-PRN (N$ υἱοῦ-υἱός)
+                                                                       (NP-ATR (NPR$ Ἀβρααμ-Ἀβραάμ))))))))))
+  (. .))
+  (ID GreekNT,Matthew:1_1.1))
+/*
+FOOTER
+  source file, hits/tokens/total
+  Test.psd      1/1/1
+*/
+/*
+SUMMARY:  
+source files, hits/tokens/total
+  Test.psd      1/1/1
+whole search, hits/tokens/total
+            1/1/1
+*/
+</programlisting>
+            <para>
+              Here <literal>NP-SBJ</literal> matched everything below it
+              that started with an <literal>N</literal>, which in this
+              case meant everything else in the tree. But note that the
+              number of hits in this sentence is still just 1: that’s
+              because there’s only one <literal>NP-SBJ</literal> in the
+              sentence to match. There are many
+              <emphasis>possible</emphasis> matches in the sentence, but
+              CS2 only counts one match per unique identifier.
+            </para>
+            <para>
+              In other words, the query
+              <literal>(NP-SBJ Doms N*)</literal> is asking a simple
+              yes/no question of the sentence we fed it: does this
+              sentence contain the pattern? In fact, the sentence
+              contains the pattern over a dozen times, but that doesn’t
+              matter, the only answer CS2 cares about is
+              <emphasis>yes</emphasis> or <emphasis>no</emphasis>—1 or
+              0.
+            </para>
+            <para>
+              From this example, you might think that it isn’t possible
+              to get more than one hit per sentence token in CS2, but in
+              fact it is. You can match a query multiple times in one
+              tree token if you manipulate the search domain. So,
+              modifying the previous example a bit so that we’re
+              searching within noun phrases (<literal>NP*</literal>) and
+              looking for any noun phrase (<literal>NP*</literal>) that
+              dominates any noun or noun phrase (<literal>N*</literal>),
+              the query would look like this:
+            </para>
+            <programlisting>
+node: NP*
+
+query: (NP* Doms N*)
+</programlisting>
+            <para>
+              And the output would be as follows, with the expected
+              explosion of possibilities now that there are 3 wildcards
+              in the query:
+            </para>
+            <programlisting>
+/*
+PREFACE:  
+Copyright 2010 Beth Randall
+Date:  Thu Mar 08 02:43:31 EST 2012
+
+command file:     Doms-example.q
+output file:      Doms-example.out
+
+node:   NP*
+query:  (NP* Doms  N*) 
+*/
+/*
+HEADER:
+source file:  Test.psd
+*/
+
+/~*
+ΒΙΒΛΟΣ-βίβλος γενέσεως-γένεσις Ἰησοῦ-Ἰησοῦς Χριστοῦ-Χριστός υἱοῦ-υἱός
+Δαυεὶδ-Δαυίδ υἱοῦ-υἱός Ἀβρααμ-Ἀβραάμ.
+(GreekNT,Matthew:1_1.1)
+*~/
+/*
+4 NP-SBJ:  4 NP-SBJ, 5 N
+4 NP-SBJ:  4 NP-SBJ, 7 NP-ATR
+7 NP-ATR:  7 NP-ATR, 8 N$
+4 NP-SBJ:  4 NP-SBJ, 8 N$
+7 NP-ATR:  7 NP-ATR, 10 NP-ATR
+4 NP-SBJ:  4 NP-SBJ, 10 NP-ATR
+10 NP-ATR:  10 NP-ATR, 11 NPR$
+7 NP-ATR:  7 NP-ATR, 11 NPR$
+4 NP-SBJ:  4 NP-SBJ, 11 NPR$
+10 NP-ATR:  10 NP-ATR, 13 NP-PRN
+7 NP-ATR:  7 NP-ATR, 13 NP-PRN
+4 NP-SBJ:  4 NP-SBJ, 13 NP-PRN
+13 NP-PRN:  13 NP-PRN, 14 NP
+10 NP-ATR:  10 NP-ATR, 14 NP
+7 NP-ATR:  7 NP-ATR, 14 NP
+4 NP-SBJ:  4 NP-SBJ, 14 NP
+14 NP:  14 NP, 15 NPR$
+13 NP-PRN:  13 NP-PRN, 15 NPR$
+10 NP-ATR:  10 NP-ATR, 15 NPR$
+7 NP-ATR:  7 NP-ATR, 15 NPR$
+4 NP-SBJ:  4 NP-SBJ, 15 NPR$
+13 NP-PRN:  13 NP-PRN, 18 NP
+10 NP-ATR:  10 NP-ATR, 18 NP
+7 NP-ATR:  7 NP-ATR, 18 NP
+4 NP-SBJ:  4 NP-SBJ, 18 NP
+18 NP:  18 NP, 19 N$
+13 NP-PRN:  13 NP-PRN, 19 N$
+10 NP-ATR:  10 NP-ATR, 19 N$
+7 NP-ATR:  7 NP-ATR, 19 N$
+4 NP-SBJ:  4 NP-SBJ, 19 N$
+18 NP:  18 NP, 21 NP-ATR
+13 NP-PRN:  13 NP-PRN, 21 NP-ATR
+10 NP-ATR:  10 NP-ATR, 21 NP-ATR
+7 NP-ATR:  7 NP-ATR, 21 NP-ATR
+4 NP-SBJ:  4 NP-SBJ, 21 NP-ATR
+21 NP-ATR:  21 NP-ATR, 22 NPR$
+18 NP:  18 NP, 22 NPR$
+13 NP-PRN:  13 NP-PRN, 22 NPR$
+10 NP-ATR:  10 NP-ATR, 22 NPR$
+7 NP-ATR:  7 NP-ATR, 22 NPR$
+4 NP-SBJ:  4 NP-SBJ, 22 NPR$
+21 NP-ATR:  21 NP-ATR, 24 NP-PRN
+18 NP:  18 NP, 24 NP-PRN
+13 NP-PRN:  13 NP-PRN, 24 NP-PRN
+10 NP-ATR:  10 NP-ATR, 24 NP-PRN
+7 NP-ATR:  7 NP-ATR, 24 NP-PRN
+4 NP-SBJ:  4 NP-SBJ, 24 NP-PRN
+24 NP-PRN:  24 NP-PRN, 25 N$
+21 NP-ATR:  21 NP-ATR, 25 N$
+18 NP:  18 NP, 25 N$
+13 NP-PRN:  13 NP-PRN, 25 N$
+10 NP-ATR:  10 NP-ATR, 25 N$
+7 NP-ATR:  7 NP-ATR, 25 N$
+4 NP-SBJ:  4 NP-SBJ, 25 N$
+24 NP-PRN:  24 NP-PRN, 27 NP-ATR
+21 NP-ATR:  21 NP-ATR, 27 NP-ATR
+18 NP:  18 NP, 27 NP-ATR
+13 NP-PRN:  13 NP-PRN, 27 NP-ATR
+10 NP-ATR:  10 NP-ATR, 27 NP-ATR
+7 NP-ATR:  7 NP-ATR, 27 NP-ATR
+4 NP-SBJ:  4 NP-SBJ, 27 NP-ATR
+27 NP-ATR:  27 NP-ATR, 28 NPR$
+24 NP-PRN:  24 NP-PRN, 28 NPR$
+21 NP-ATR:  21 NP-ATR, 28 NPR$
+18 NP:  18 NP, 28 NPR$
+13 NP-PRN:  13 NP-PRN, 28 NPR$
+10 NP-ATR:  10 NP-ATR, 28 NPR$
+7 NP-ATR:  7 NP-ATR, 28 NPR$
+4 NP-SBJ:  4 NP-SBJ, 28 NPR$
+*/
+( (FRAG (CODE {VS:1_1})
+        (NP-SBJ (N ΒΙΒΛΟΣ-βίβλος)
+                (NP-ATR (N$ γενέσεως-γένεσις)
+                        (NP-ATR (NPR$ Ἰησοῦ-Ἰησοῦς)
+                                (NP-PRN (NP (NPR$ Χριστοῦ-Χριστός))
+                                            (CONJP (NP (N$ υἱοῦ-υἱός)
+                                                       (NP-ATR (NPR$ Δαυεὶδ-Δαυίδ)
+                                                               (NP-PRN (N$ υἱοῦ-υἱός)
+                                                                       (NP-ATR (NPR$ Ἀβρααμ-Ἀβραάμ))))))))))
+  (. .))
+  (ID GreekNT,Matthew:1_1.1))
+/*
+FOOTER
+  source file, hits/tokens/total
+  Test.psd      9/1/1
+*/
+/*
+SUMMARY:  
+source files, hits/tokens/total
+  Test.psd      9/1/1
+whole search, hits/tokens/total
+            9/1/1
+*/
+</programlisting>
+          </simplesect>
+          <simplesect id="idoms">
+            <title><literal>iDoms</literal></title>
+            <para>
+              <literal>iDoms</literal> is mnemonic for
+              <quote>immediately dominates.</quote> In all other
+              respects, the <literal>iDoms</literal> function behaves
+              exactly like the <literal>Doms</literal> function except
+              that <literal>y</literal> only <literal>iDoms</literal>
+              <literal>x</literal> if <literal>x</literal> is a daughter
+              of <literal>y</literal>.
+            </para>
+            <para>
+              For example, consider the following query, which is trying
+              to match a noun phrase subject with an appositive noun
+              phrase that is its daughter. (<literal>-PRN</literal> is
+              mnemonic for <quote>parenthetical</quote>; the same
+              function tag is used for parenthetical
+              <literal>IP</literal>s as well as appositives within the
+              NP domain.)
+            </para>
+            <programlisting>
+node: $ROOT
+
+query: (NP-SBJ iDoms NP-PRN)
+</programlisting>
+            <para>
+              The result of this query is zero matches because the only
+              daughter of <literal>NP-SBJ</literal> in the first sentece
+              of Matthew is <literal>NP-ATR</literal>.
+            </para>
+            <programlisting>
+/*
+PREFACE:  
+Copyright 2010 Beth Randall
+Date:  Thu Mar 08 02:50:06 EST 2012
+
+command file:     Doms-example.q
+output file:      Doms-example.out
+
+node:   $ROOT
+query:  (NP-SBJ iDoms  NP-PRN) 
+*/
+/*
+HEADER:
+source file:  Test.psd
+*/
+/*
+FOOTER
+  source file, hits/tokens/total
+  Test.psd      0/0/1
+*/
+/*
+SUMMARY:  
+source files, hits/tokens/total
+  Test.psd      0/0/1
+whole search, hits/tokens/total
+            0/0/1
+*/
+</programlisting>
+          </simplesect>
+        </sect5>
+        <sect5 id="precedence">
+          <title>Precedence</title>
+          <simplesect id="precedes">
+            <title><literal>Precedes</literal></title>
+            <para>
+            </para>
+          </simplesect>
+          <simplesect id="iprecedes">
+            <title><literal>iPrecedes</literal></title>
+            <para>
+            </para>
+          </simplesect>
+        </sect5>
+      </sect4>
     </sect3>
   </sect2>
 </sect1>
