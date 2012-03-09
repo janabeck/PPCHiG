@@ -1,0 +1,41 @@
+# Introduction
+  ## The Penn Historical Treebank philosophy
+  ## Penn Treebank format
+# POS Annotation
+  ## Basic POS tags
+  ## Unmarked morphological concepts
+  ## Plurality
+  ## Case
+  ## Verbal POS tags
+     ### Basic Verbal POS tags for Ancient Greek
+     ### The ...`P` Suffix
+     ### Case on participles
+     ### Aspect, tense, etc.
+     ### Marking transitivity
+# Syntactic annotation
+  ## Basic phrases and function tags
+  ## Representing Discontinuities
+     #### Example: `*T*` Traces for 'wh-' Movement
+# Search Queries with CorpusSearch 2
+  ## CorpusSearch 2 on the Desktop
+     ### Running CS2 on Windows
+     ### Running CS2 on a Macintosh
+  ## Demo Web Interface
+  ## Fundamentals of CorpusSearch 2
+     ### The search domain
+     ### The query
+     	 #### Dominance
+	      ##### `Doms`
+	      ##### `iDoms`
+	 #### Precedence
+	      ##### `Precedes`
+	      ##### `iPrecedes`
+     ### Complex queries
+     	 #### Combining dominance and precedence searches
+	 #### Example: finding instances of extraction out of DPs
+     ### Logical operators
+     	 #### The `!` operator
+	 #### The `|` operator
+  ## Advanced CorpusSearch 2 functions
+     ### Coding queries
+     ### Revision queries
