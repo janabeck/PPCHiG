@@ -200,10 +200,6 @@ styleTag("CODE", "color: grey");
 // color things that occur in search results
 styleDashTag("FLAG", "background-color: paleturquoise !important");
 styleDashTag("XXX", "background-color: paleturquoise !important");
-styleDashTag("NOM","color: grey");
-styleDashTag("GEN","color: grey");
-styleDashTag("ACC","color: grey");
-styleDashTag("DAT","color: grey");
 styleTag("ANT", "background-color: lightpink !important");
 styleTag("CODING", "background-color: lightpink");
 styleTag("TRACE", "background-color: paleturquoise");
