@@ -38,7 +38,7 @@ var clause_extensions=["-PRN","-SPE","-SBJ","-ZZZ","-XXX"]
 /* verbal extensions are treated as not part of the label for various purposes,
  * they are all binary, and they show up in the verbal extension menu (TODO)
  */
-var vextensions=["-FUT","-IMPF","-AOR","-PRF","-TRNS1","-TRNS2","-INTRNS","-PASS","-IND","-KJV","-CL"];
+var vextensions=["-FUT","-IMPF","-AOR","-PRF","-TRNS1","-TRNS2","-INTRNS","-PASS","-IND","-KJV","-NOM","-GEN","-ACC","-DAT","-CL"];
 
 /*
  * Keycode is from onKeyDown event.
@@ -200,6 +200,10 @@ styleTag("CODE", "color: grey");
 // color things that occur in search results
 styleDashTag("FLAG", "background-color: paleturquoise !important");
 styleDashTag("XXX", "background-color: paleturquoise !important");
+styleDashTag("NOM","color: grey");
+styleDashTag("GEN","color: grey");
+styleDashTag("ACC","color: grey");
+styleDashTag("DAT","color: grey");
 styleTag("ANT", "background-color: lightpink !important");
 styleTag("CODING", "background-color: lightpink");
 styleTag("TRACE", "background-color: paleturquoise");
