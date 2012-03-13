@@ -471,6 +471,10 @@ class Corpus():
 
         intervals = []
 
+        if filename.startswith("/Users/"):
+            filematch = re.search("^.*?([0-9A-Za-z\-\.]*)$", filename)
+            filename = filematch.group(1)
+
         for line in timelog:
             if line.find(filename) != -1:
                 if line.find("Started") != -1:
@@ -511,8 +515,11 @@ class Corpus():
 
     def print_wph(self, wph):
         """Prints the parsing speed to the terminal."""
-
+        print "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"
+        print
         print "You parsed " + str(wph[0]) + " words in " + str(wph[1]) + ", for a rate of " + str(wph[2]) + " words per hour!"
+        print
+        print "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"
         print
                     
     def renumber_ids(self, filename):
