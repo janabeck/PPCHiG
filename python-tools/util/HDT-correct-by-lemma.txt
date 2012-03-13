@@ -26,7 +26,7 @@
 μήποτε	null	NEG-CLPRT
 οὐδαμόθι	null	NEG+ADV
 μηδαμόθι	null	NEG+ADV
-δίς	null	NUM
+		δίς	null	NUM
 πάντοθεν	null	QV
 νή	null	P
 πάντως	null	QV
@@ -38,3 +38,6 @@
 Θρασυβούλος	case,number	NPR
 Μίλητος		case,number	NPR
 Ἀλυάττης	case,number	NPR
+ἄν	null	AN
+οὐδαμῇ	null	NEG+ADV
+ὥσπερ	null	WADV-CLPRT
