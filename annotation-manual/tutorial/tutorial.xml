@@ -1388,22 +1388,22 @@ node: NP*
       <itemizedlist>
         <listitem>
           <para>
-            NP-SBJ
+            <literal>NP-SBJ</literal>
           </para>
         </listitem>
         <listitem>
           <para>
-            NP-COM
+            <literal>NP-COM</literal>
           </para>
         </listitem>
         <listitem>
           <para>
-            NP-2
+            <literal>NP-2</literal>
           </para>
         </listitem>
         <listitem>
           <para>
-            NPR
+            <literal>NPR</literal>
           </para>
         </listitem>
       </itemizedlist>

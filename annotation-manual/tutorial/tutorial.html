@@ -906,10 +906,10 @@ table tr:nth-child(even),table td:nth-child(even)
 <p>Here the <code>*</code> is a wildcard that allows for <em>zero or more</em> characters to follow the characters you have specified (in this case, <code>NP</code>)<sup><a href="#fn2" class="footnoteRef" id="fnref2">2</a></sup>.</p>
 <p>In other words, all of the following (among many other possibilities) would be possible domains in which CS2 would search for matches:</p>
 <ul>
-<li>NP-SBJ</li>
-<li>NP-COM</li>
-<li>NP-2</li>
-<li>NPR</li>
+<li><code>NP-SBJ</code></li>
+<li><code>NP-COM</code></li>
+<li><code>NP-2</code></li>
+<li><code>NPR</code></li>
 </ul>
 <p>In order to specify that CS2 search <em>anywhere</em> in each tree token for matches, you must use a special variable since different tokens can have different categories at the top level (e.g., <code>IP-MAT</code> or <code>CP-QUE</code>). The special variable to search anywhere within each tree token is <code>$ROOT</code>. Many CS2 queries will thus begin with the line:</p>
 <pre><code>node: $ROOT</code></pre>

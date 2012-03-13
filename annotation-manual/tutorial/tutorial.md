@@ -347,10 +347,10 @@ Here the `*` is a wildcard that allows for _zero or more_ characters to follow t
 
 In other words, all of the following (among many other possibilities) would be possible domains in which CS2 would search for matches:
 
-+ NP-SBJ
-+ NP-COM
-+ NP-2
-+ NPR
++ `NP-SBJ`
++ `NP-COM`
++ `NP-2`
++ `NPR`
 
 In order to specify that CS2 search _anywhere_ in each tree token for matches, you must use a special variable since different tokens can have different categories at the top level (e.g., `IP-MAT` or `CP-QUE`). The special variable to search anywhere within each tree token is `$ROOT`. Many CS2 queries will thus begin with the line:
 
