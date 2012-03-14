@@ -26,10 +26,9 @@
 μήποτε	null	NEG-CLPRT
 οὐδαμόθι	null	NEG+ADV
 μηδαμόθι	null	NEG+ADV
-		δίς	null	NUM
+δίς	null	NUM
 πάντοθεν	null	QV
 νή	null	P
-πάντως	null	QV
 οὐ	null	NEG
 οὐδέ	null	NEG-CONJ
 μή	null	NEG
