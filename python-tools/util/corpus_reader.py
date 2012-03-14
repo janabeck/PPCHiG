@@ -287,8 +287,6 @@ class Token():
         """Change the POS tag of the given postr subtree to new_tag with any appends or indices provided."""
 
         new_postr = T.Tree(new_tag + append + index, [postr[0]])
-
-        print new_postr
         
         self._tree[postr.treepos] = T.ParentedTree.convert(new_postr)
 
