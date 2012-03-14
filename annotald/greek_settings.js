@@ -83,8 +83,8 @@ function customCommands(){
     addCommand({ keycode: 83, ctrl: true}, toggleVerbalExtension, "-PASS"); // ctrl + s
     // complement CPs
     addCommand({ keycode: 84 }, setLabel, ["CP-THT","CP-COM","CP-DEG"]); // t
-    addCommand({ keycode: 84, shift: true}, toggleVerbalExtension, "-TRNS1"); // shift + s
-    addCommand({ keycode: 84, ctrl: true}, toggleVerbalExtension, "-TRNS2"); // ctrl + s
+    addCommand({ keycode: 84, shift: true}, toggleVerbalExtension, "-TRNS1"); // shift + t
+    addCommand({ keycode: 84, ctrl: true}, toggleVerbalExtension, "-TRNS2"); // ctrl + t
 
     // participial clauses
     addCommand({ keycode: 86 }, setLabel, ["IP-PPL","IP-ABS","IP-SMC","IP-PPL-COM","IP-PPL-THT"]); // v
@@ -120,8 +120,7 @@ function customCommands(){
     //addCommand({ keycode: 77 }, ); // m
     //addCommand({ keycode: 78 }, ); // n
     //addCommand({ keycode: 79 }, ); // o
-    addCommand({ keycode: 80 }, toggleVerbalExtension, "-PASS"); // p
-    addCommand({ keycode: 80, shift: true }, toggleVerbalExtension, "-PRF"); // shift + p
+    addCommand({ keycode: 80 }, toggleVerbalExtension, "-PRF"); // p
 
     //addCommand({ keycode: 85 }, ); // u
 
