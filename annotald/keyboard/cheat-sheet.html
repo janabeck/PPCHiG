@@ -1,0 +1,509 @@
+<!DOCTYPE html>  
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>cheat-sheet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+/* 
+ This document has been created with Marked.app <http://markedapp.com>, Copyright 2011 Brett Terpstra
+ Please leave this notice in place, along with any additional credits below.
+ ---------------------------------------------------------------
+ Antique.css by Brett Terpstra
+ */
+body { font: normal 0.8764em/1.5em Georgia,"Times New Roman",serif;margin:0 }
+html>body { font-size: 14px; } 
+p { margin: 1.3125em  0; font-size: 1.1429em; line-height: 1.3125em; }
+ul {list-style:square}
+ul ul {list-style:circle}
+li {
+  	font-size: 110%;
+}
+li li {
+  	font-size: 100%;
+}
+li p {
+    font-size: 100%;
+}
+h1 { margin: 0.6563em 0; font-size: 2.2857em; line-height: 1.6563em; }
+h2 { margin: 0.875em 0; font-size: 1.7143em; line-height: 0.875em; }
+h3 { margin: 1em 0; font-size: 1.5em; line-height: 1em; }
+h4 { margin: 1.1667em 0; font-size: 1.2857em; line-height: 1.1667em; }
+h5 { margin: 1.3125em 0; font-size: 1.1429em; line-height: 1.3125em; }
+h6 { margin: 1.5em 0; font-size: 1em; line-height: 1.5em; }
+h1,h2,h3 {
+  	font-weight: normal;
+  	border-bottom: solid 1px #ccc;
+  	padding-bottom: .4em;
+  	padding-top:1em;
+  	border-color: #b8b4a4;
+  	color: #514d3f;
+  	font-family:"Hoefler Text";
+    line-height:1.5em;
+}
+body,p,td,div {
+    color: #45462f;
+    word-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+}
+a {
+    color: hsl(185, 33%, 33%);
+    text-decoration: none;
+    -webkit-transition: color .2s ease-in-out;
+}
+a:hover {
+    color: #7aa45c
+}
+strong {
+	font-weight: 600;
+	color: #605b4b;
+}
+/*h2 em {
+    color: #111;
+    text-shadow: 0 1px 0 #FFF;
+    padding-left: 10px
+}*/
+
+.footnote {
+    font-size: .8em;
+    vertical-align: super;
+    color: rgb(13,110,161)
+}
+#wrapper img {
+    max-width: 100%
+}
+dt {
+    font-weight: bold
+}
+dd {
+    margin-bottom: 1em
+}
+@media print {
+    body {
+        overflow: auto;
+        background:#fff;
+        color: #000 !important
+    }
+    img, pre, blockquote, table, figure {
+        page-break-inside: avoid
+    }
+    .footnotes { page-break-before: always }
+
+    #wrapper {
+        background: #fff;
+        position: relative;
+        color: #000;
+        text-indent: 0px;
+        padding: 1in;
+        font-size:85%;
+    }
+}
+@media screen {
+    body { height: 100%; background: rgba(240, 237, 227, 1); }
+    .inverted { background:rgba(57, 54, 47, 1) }
+    .inverted p,.inverted td,.inverted li,.inverted h1,.inverted h2,
+    .inverted h3,.inverted h4, .inverted h5, .inverted h6, .inverted pre,
+    .inverted code,.inverted th,.inverted hr, .inverted strong,.inverted em {
+        color:rgba(240, 237, 227, 1) !important;
+        border-color:rgba(66, 61, 47, 1);
+        background:rgba(57, 54, 47, 1) !important
+    }
+    .inverted hr {
+        border-color: rgba(52, 52, 52, .3);
+    }
+    .inverted a { color:#fff;text-decoration:underline;border-bottom:none }
+    #wrapper {
+		color: #514d3f;
+        overflow: auto;
+        text-indent: 0px;
+        padding: 25px;
+	}
+}
+li > p:first-child {
+    margin:0;
+}
+li p {
+    margin:.5em 0;
+}
+ul ul,ul ol {
+    margin-bottom: .4em
+}
+caption,col,colgroup,table,tbody,td,tfoot,th,thead,tr{
+    border-spacing:0;
+}
+table{
+    display:table;
+    table-layout:fixed;
+    border-collapse:collapse;
+    empty-cells:hide;
+    margin:0;padding:0;
+    margin-bottom:24px;
+    border:0;
+}
+caption{
+    display:table-caption;
+    font-weight:bold;
+}
+col{display:table-column;}
+colgroup{display:table-column-group;}
+tbody{display:table-row-group;}
+tfoot{display:table-footer-group;}
+thead{display:table-header-group;}
+td,th{display:table-cell;}
+th{font-weight:bold;}
+tr{display:table-row;}
+
+table{
+    margin-top:-1px;
+    margin-bottom:23px;
+    border:1px solid rgba(0,0,0,0.25);
+}
+table th,
+table td{
+    padding:0 1em;
+    font-size:1.1em;
+    line-height:23px;
+}
+table thead{
+    background-color:rgba(0,0,0,0.15);
+}
+table tbody{
+    background-color:rgba(0,0,0,0.05);
+}
+table tfoot{
+    background-color:rgba(0,0,0,0.15);
+}
+table tr:nth-child(odd){background-color:rgba(255,255,255,0.06);}
+table tr:nth-child(even){background-color:rgba(0,0,0,0.06);}
+table th:nth-child(odd),
+table td:nth-child(odd){background-color:rgba(255,255,255,0.06);}
+
+table td:nth-child(even){background-color:rgba(0,0,0,0.06);}
+
+table thead{
+    border:1px solid rgba(0,0,0,0.15);
+    border-bottom:1px solid rgba(0,0,0,0.2);
+}
+table tfoot{
+    border:1px solid rgba(0,0,0,0.15);
+    border-top:1px solid rgba(0,0,0,0.2);
+}
+figure {position:relative;display:inline-block;margin-bottom:2em}
+figcaption {text-align:center;position:absolute;background:rgba(0,0,0,.5);width:100%;left:0;bottom:-20px;color:rgba(255,255,255,.7);-webkit-transition:all .2s ease-in-out;
+}
+figure:hover {
+    cursor:pointer
+}
+figcaption:hover {background:rgba(0,0,0,.56);color:rgba(255,255,255,1);}
+
+.poetry pre {
+    font-family:Georgia, Garamond, serif !important;
+    font-style:italic;
+    font-size:110% !important;
+    line-height:1.6em;
+    display:block;
+    margin-left:1em;
+}
+
+.poetry pre code {
+    font-family:Georgia, Garamond, serif !important;
+}
+
+
+sup,sub,a.footnote {
+	font-size: 1.4ex;
+	height: 0;
+	line-height: 1;
+	vertical-align: super;
+	position: relative;
+}
+
+sub {
+    vertical-align: sub;
+    top: -1px;
+}
+
+</style>
+
+</head>
+<body class="normal">
+  <div id="wrapper">
+      <h1 id="annotald-keyboard-shortcuts-greek">Annotald Keyboard Shortcuts (Greek)</h1>
+<h3 id="jana-e.-beck">Jana E. Beck</h3>
+<h2 id="left-hand-commands">Left Hand Commands</h2>
+<h3 id="letter-commands">Letter Commands</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="center">modifier</th>
+<th align="center">key</th>
+<th align="left">shortcut</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"><code>a</code></td>
+<td align="left">-AOR</td>
+</tr>
+<tr class="even">
+<td align="center"><code>shift</code></td>
+<td align="center"><code>a</code></td>
+<td align="left">-INTRNS</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"><code>b</code></td>
+<td align="left">adverb phrases</td>
+</tr>
+<tr class="even">
+<td align="center"><code>shift</code></td>
+<td align="center"><code>b</code></td>
+<td align="left">adverbial CPs</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"><code>c</code></td>
+<td align="left">coIndex</td>
+</tr>
+<tr class="even">
+<td align="center"><code>ctrl</code></td>
+<td align="center"><code>c</code></td>
+<td align="left">-CL</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"><code>d</code></td>
+<td align="left">pruneNode</td>
+</tr>
+<tr class="even">
+<td align="center"><code>shift</code></td>
+<td align="center"><code>d</code></td>
+<td align="left">particles and interjections, foreign words</td>
+</tr>
+<tr class="odd">
+<td align="center"><code>ctrl</code></td>
+<td align="center"><code>d</code></td>
+<td align="left">neg</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center"><code>e</code></td>
+<td align="left">NP-within-NP shortcuts</td>
+</tr>
+<tr class="odd">
+<td align="center"><code>shift</code></td>
+<td align="center"><code>e</code></td>
+<td align="left">NP, NY</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center"><code>f</code></td>
+<td align="left">PP</td>
+</tr>
+<tr class="odd">
+<td align="center"><code>shift</code></td>
+<td align="center"><code>f</code></td>
+<td align="left">-FUT</td>
+</tr>
+<tr class="even">
+<td align="center"><code>ctrl</code></td>
+<td align="center"><code>f</code></td>
+<td align="left">FRAG</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"><code>g</code></td>
+<td align="left">adjective phrases</td>
+</tr>
+<tr class="even">
+<td align="center"><code>shift</code></td>
+<td align="center"><code>g</code></td>
+<td align="left">NP-AGT</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"><code>q</code></td>
+<td align="left">CONJP</td>
+</tr>
+<tr class="even">
+<td align="center"><code>shift</code></td>
+<td align="center"><code>q</code></td>
+<td align="left">CP-QUE</td>
+</tr>
+<tr class="odd">
+<td align="center"><code>ctrl</code></td>
+<td align="center"><code>q</code></td>
+<td align="left">QP, QTP, QX, QY</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center"><code>r</code></td>
+<td align="left">relative clauses and variations thereof</td>
+</tr>
+<tr class="odd">
+<td align="center"><code>shift</code></td>
+<td align="center"><code>r</code></td>
+<td align="left">RRC</td>
+</tr>
+<tr class="even">
+<td align="center"><code>ctrl</code></td>
+<td align="center"><code>r</code></td>
+<td align="left">-RSP</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"><code>s</code></td>
+<td align="left">IPs</td>
+</tr>
+<tr class="even">
+<td align="center"><code>shift</code></td>
+<td align="center"><code>s</code></td>
+<td align="left">IP, IY</td>
+</tr>
+<tr class="odd">
+<td align="center"><code>ctrl</code></td>
+<td align="center"><code>s</code></td>
+<td align="left">-PASS</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center"><code>t</code></td>
+<td align="left">complement CPs</td>
+</tr>
+<tr class="odd">
+<td align="center"><code>shift</code></td>
+<td align="center"><code>t</code></td>
+<td align="left">-TRNS1</td>
+</tr>
+<tr class="even">
+<td align="center"><code>ctrl</code></td>
+<td align="center"><code>t</code></td>
+<td align="left">-TRNS2</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"><code>v</code></td>
+<td align="left">participial clauses</td>
+</tr>
+<tr class="even">
+<td align="center"><code>shift</code></td>
+<td align="center"><code>v</code></td>
+<td align="left">infinitive clauses</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"><code>w</code></td>
+<td align="left">argument NP shortcuts</td>
+</tr>
+<tr class="even">
+<td align="center"><code>shift</code></td>
+<td align="center"><code>w</code></td>
+<td align="left">wh- phrases</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"><code>x</code></td>
+<td align="left">make XP</td>
+</tr>
+<tr class="even">
+<td align="center"><code>shift</code></td>
+<td align="center"><code>x</code></td>
+<td align="left">XP</td>
+</tr>
+<tr class="odd">
+<td align="center"><code>ctrl</code></td>
+<td align="center"><code>x</code></td>
+<td align="left">-XXX</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center"><code>z</code></td>
+<td align="left">undo</td>
+</tr>
+</tbody>
+</table>
+<h3 id="number-commands">Number Commands</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="center">key</th>
+<th align="left">shortcut</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><code>1</code></td>
+<td align="left">leafBefore</td>
+</tr>
+<tr class="even">
+<td align="center"><code>2</code></td>
+<td align="left">leafAfter</td>
+</tr>
+<tr class="odd">
+<td align="center"><code>3</code></td>
+<td align="left">non-argument NP shortcuts</td>
+</tr>
+<tr class="even">
+<td align="center"><code>4</code></td>
+<td align="left">-PRN</td>
+</tr>
+<tr class="odd">
+<td align="center"><code>5</code></td>
+<td align="left">-SPE</td>
+</tr>
+</tbody>
+</table>
+<h2 id="right-hand-commands">Right Hand Commands</h2>
+<h3 id="letter-commands-1">Letter Commands</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">modifier</th>
+<th align="left">key</th>
+<th align="center">shortcut</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"><code>i</code></td>
+<td align="center">-IMPF</td>
+</tr>
+<tr class="even">
+<td align="left"><code>shift</code></td>
+<td align="left"><code>i</code></td>
+<td align="center">-IND</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"><code>k</code></td>
+<td align="center">-KJV</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"><code>l</code></td>
+<td align="center">edit lemma</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>shift</code></td>
+<td align="left"><code>l</code></td>
+<td align="center">edit POS tag and lemma</td>
+</tr>
+<tr class="even">
+<td align="left"><code>ctrl</code></td>
+<td align="left"><code>l</code></td>
+<td align="center">-LFD</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"><code>p</code></td>
+<td align="center">-PRF</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</body>
+</html>

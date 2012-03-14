@@ -1,8 +1,9 @@
 \documentclass[10pt]{article}
-\usepackage[right=1in,left=1in,top=1in,bottom=1in, landscape]{geometry}
+\usepackage[right=1in,left=1in,top=1in,bottom=1in]{geometry}
 \title{Jana's Annotald Keyboard Shortcuts}
 \author{Jana E. Beck}
-\usepackage{multicol}
+\usepackage[table]{xcolor}
+\definecolor{lightgray}{gray}{0.9}
 \pagestyle{empty}
 \begin{document}
 %\maketitle
@@ -10,33 +11,31 @@
 \Large{\textbf{Annotald Keyboard Shortcuts (Greek)}}\\
 Jana E. Beck
 \end{center}
-\vskip .1in
-\begin{multicols}{2}
-\section{Left Hand Commands}
-\label{sec:left-commands}
 
-\subsection{Letter Commands}
-\label{sec:left-letter-commands}
-
+\begin{table}[ht]
+\caption{Left Hand Commands}
+\begin{center}
+\rowcolors{1}{}{lightgray}
 \begin{tabular}{c c l}
 \hline
 modifier & key & shortcut\\
 \hline
 \hline
 & \texttt{a} & -AOR\\
+\texttt{shift} & \texttt{a} & -INTRNS\\
 \hline
 & \texttt{b} & adverb phrases\\
 \texttt{shift} & \texttt{b} & adverbial CPs\\
 \hline
 & \texttt{c} & coIndex\\
+\texttt{ctrl} & \texttt{c} & -CL\\
 \hline
 & \texttt{d} & pruneNode\\
 \texttt{shift} & \texttt{d} & particles and interjections, foreign words\\
 \texttt{ctrl} & \texttt{d} & neg\\
 \hline
 & \texttt{e} & NP-within-NP shortcuts\\
-\texttt{shift} & \texttt{e} & NP\\
-\texttt{ctrl} & \texttt{e} & NY\\
+\texttt{shift} & \texttt{e} & NP, NY\\
 \hline
 & \texttt{f} & PP\\
 \texttt{shift} & \texttt{f} & -FUT\\
@@ -51,12 +50,15 @@ modifier & key & shortcut\\
 \hline
 & \texttt{r} & relative clauses and variations thereof\\
 \texttt{shift} & \texttt{r} & RRC\\
+\texttt{ctrl} & \texttt{r} & -RSP\\
 \hline
 & \texttt{s} & IPs\\
-\texttt{shift} & \texttt{s} & IP\\
-\texttt{ctrl} & \texttt{s} & IY\\
+\texttt{shift} & \texttt{s} & IP, IY\\
+\texttt{ctrl} & \texttt{s} & -PASS\\
 \hline
 & \texttt{t} & complement CPs\\
+\texttt{shift} & \texttt{t} & -TRNS1\\
+\texttt{ctrl} & \texttt{t} & -TRNS2\\
 \hline
 & \texttt{v} & participial clauses\\
 \texttt{shift} & \texttt{v} & infinitive clauses\\
@@ -66,14 +68,18 @@ modifier & key & shortcut\\
 \hline
 & \texttt{x} & make XP\\
 \texttt{shift} & \texttt{x} & XP\\
+\texttt{ctrl} & \texttt{x} & -XXX\\
 \hline
 & \texttt{z} & undo\\
 \hline
 \end{tabular}
+\end{center}
+\end{table}
 
-\subsection{Number Commands}
-\label{sec:left-number-commands}
-
+\begin{table}[ht]
+\caption{Number Commands}
+\begin{center}
+\rowcolors{1}{}{lightgray}
 \begin{tabular}{c l}
 \hline
 key & shortcut\\
@@ -90,10 +96,13 @@ key & shortcut\\
 \texttt{5} & -SPE\\
 \hline
 \end{tabular}
+\end{center}
+\end{table}
 
-\section{Right Hand Commands}
-\label{sec:right-commands}
-
+\begin{table}[ht]
+\caption{Right Hand Commands}
+\begin{center}
+\rowcolors{1}{}{lightgray}
 \begin{tabular}{l l c}
 \hline
 modifier & key & shortcut\\
@@ -106,11 +115,12 @@ modifier & key & shortcut\\
 \hline
 & \texttt{l} & edit lemma\\
 \texttt{shift} & \texttt{l} & edit POS tag and lemma\\
+\texttt{ctrl} & \texttt{l} & -LFD\\
 \hline
-& \texttt{p} & -PASS\\
-\texttt{shift} & \texttt{p} & -PRF\\
+& \texttt{p} & -PRF\\
 \hline
 \end{tabular}
+\end{center}
+\end{table}
 
-\end{multicols}
 \end{document}
