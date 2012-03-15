@@ -49,6 +49,8 @@ class myT(T.ParentedTree):
 
         return sibs
 
+	#END_DEF get_siblings
+
 class Token():
     """A class for Penn-style parsed trees."""
     #TODO: represent lemmas in the data structure separately from pos?
@@ -106,6 +108,8 @@ class Token():
 
         # metadata contains the METADATA sub-tree if present
         self.metadata = ""
+
+	#END_DEF __init__
 
     def parse(self, tree, format):
         """Fill Token data structure."""
@@ -217,6 +221,8 @@ class Token():
                         print
                         print self._tree.pprint()
                         print
+	
+	#END_DEF parse
 
     def has_milestone_first(self):
         """Check to see that the tree starts with a (CODE {VS:...}) milestone."""
@@ -283,12 +289,16 @@ class Token():
         print
         return True
 
+	#END_DEF has_milestone_first
+
     def change_POS(self, new_tag, append, index, postr):
         """Change the POS tag of the given postr subtree to new_tag with any appends or indices provided."""
 
         new_postr = T.Tree(new_tag + append + index, [postr[0]])
         
         self._tree[postr.treepos] = T.ParentedTree.convert(new_postr)
+
+	#END_DEF change_POS
 
     def split_POS(self, tag1, tag2, lem1, lem2, append, index, postr, word1, word2):
         """Split a word into two halves with the same lemma."""
@@ -317,6 +327,10 @@ class Token():
 
         ptree.insert(ins_point, T.ParentedTree.convert(new_postr2))
 
+	#END_DEF split_POS
+	
+#END_DEF Token
+
 class Corpus():
     """A class for a database of Penn-style parsed trees."""
 
@@ -333,6 +347,8 @@ class Corpus():
 
         # lemmas is a dict keyed by the lemma, with the value itself a dict keyed by word-form (with freq as value)
         self.lemmas = {}
+
+	#END_DEF __init__
 
     def load(self, trees):
         """Initializes Token objects and fills Corpus instance."""
@@ -354,6 +370,8 @@ class Corpus():
                 self.tokens[count] = tok
                 count += 1
 
+	#END_DEF load
+
     def parse_version(self, tree):
         """Record what format the corpus file is in."""
 
@@ -372,6 +390,8 @@ class Corpus():
             print "This corpus file is in the 'deep' format."
             print
             self.format = "deep"
+
+	#END_DEF parse_version
             
     def check_for_ids(self, output):
         """Check to see that all trees have ID nodes."""
@@ -395,6 +415,8 @@ class Corpus():
 
         return True
 
+	#END_DEF check_for_ids
+
     def check_seq_ids(self):
         """Check to see that all ID numbers are sequential."""
 
@@ -414,6 +436,8 @@ class Corpus():
 
         return True
 
+	#END_DEF check_seq_ids
+
     def check_milestones(self):
         """Check to see that every token starts with a (CODE {VS:...}) milestone."""
 
@@ -425,6 +449,8 @@ class Corpus():
                 return False
 
         return True
+
+	#END_DEF check_milestones
 
     def word_count(self):
         """Count all and only the words in the .psd file."""
@@ -440,6 +466,8 @@ class Corpus():
                 word_count += 1
 
         return word_count
+
+	#END_DEF word_count
 
     def print_word_count(self, word_count):
         """Prints the word count to the terminal."""
@@ -459,6 +487,8 @@ class Corpus():
             print
             print "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"
             print
+			
+	#END_DEF print_word_count
 
     def words_per_hour(self, filename, timelog):
         """Calculates and returns words_per_hour."""
@@ -511,6 +541,8 @@ class Corpus():
 
         return (wc, duration_formatted, int(rate))
 
+	#END_DEF words_per_hour
+
     def print_wph(self, wph):
         """Prints the parsing speed to the terminal."""
         print "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"
@@ -519,6 +551,8 @@ class Corpus():
         print
         print "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"
         print
+
+	#END_DEF print_wph
                     
     def renumber_ids(self, filename):
         """Renumber/add IDs in the .psd file."""
@@ -563,6 +597,8 @@ milestones before you renumber and/or add ID nodes!"
                     count += 1
 
             self.print_trees(filename)
+
+	#END_DEF renumber_ids
                 
     def add_milestones(self, filename):
         """Add continuity milestones in the .psd file."""
@@ -616,6 +652,8 @@ milestones before you renumber and/or add ID nodes!"
                         
         self.print_trees(filename)
 
+	#END_DEF add_milestones
+
     def print_trees(self, filename):
         """Just print the trees from an input file."""
         # (i.e., remove CS comment blocks from .out files)
@@ -628,6 +666,8 @@ milestones before you renumber and/or add ID nodes!"
             tree = self.tokens[key]
             print >> out_file, tree._tree,
             print >> out_file, "\n\n",
+
+	#END_DEF print_trees
 
     def replace_tokens(self, filename, corpus2):
         """Replace tokens in .psd file with edited tokens from output file."""
@@ -656,6 +696,8 @@ milestones before you renumber and/or add ID nodes!"
                 else:
                     print >> out_file, tree._tree,
                     print >> out_file, "\n\n",
+
+	#END_DEF replace_tokens
 
     def split_words(self, filename):
         """Generate a dialog on the command line to split words with more than one POS tag."""
@@ -720,6 +762,8 @@ milestones before you renumber and/or add ID nodes!"
 
         self.print_trees(filename)
 
+	#END_DEF split_words
+
     def check(self, tag1, tag2, w1, w2, rword, lemma):
         """Confirms word split."""
         
@@ -762,6 +806,8 @@ milestones before you renumber and/or add ID nodes!"
         else:
             self.get_split(rword, lemma, tag1, tag2)
 
+	#END_DEF check
+
     def get_split(self, rword, lemma, tag1, tag2):
         """Returns w1 and w2, the first and second halves a split word."""
 
@@ -781,6 +827,8 @@ milestones before you renumber and/or add ID nodes!"
             if pl == "y":
                 return ("", "", lemma, False)
             print
+
+	#END_DEF get_split
 
     def transform_case(self, filename):
         """Change case tags from non-hyphenated suffixes to hyphenated extensions."""
@@ -886,6 +934,8 @@ milestones before you renumber and/or add ID nodes!"
 
         self.print_trees(filename)
 
+	#END_DEF transform_case
+
     def swap(self, filename, map_file):
         """Insert the POS tags from the map file into the corpus file."""
         
@@ -941,6 +991,8 @@ milestones before you renumber and/or add ID nodes!"
                         break
 
         self.print_trees(filename)
+
+	#END_DEF swap
 
     def correct_by_lemma(self, filename, lem_file):
         """Replace the POS tags of words having certain lemmas."""
@@ -1036,6 +1088,8 @@ milestones before you renumber and/or add ID nodes!"
                             
         self.print_trees(filename)
 
+	#END_DEF correct_by_lemma
+
     def pos_concordance(self):
         """Print a concordance of lemmas and POS tags in the corpus."""
         
@@ -1096,6 +1150,8 @@ milestones before you renumber and/or add ID nodes!"
             for lemma in lem_list:
                 print >> pos_out, lemma + " (" + str(lemmas[(key, lemma)]) + ")"
             print >> pos_out
+
+	#END_DEF pos_concordance
 
     def category_concordance(self, cat_file):
         """Print a concordance of lemmas per category as defined in a input category definition file."""
@@ -1163,6 +1219,8 @@ milestones before you renumber and/or add ID nodes!"
                     print >> cat_out, s[0] + " (" + str(s[1]) + ")"
                 print >> cat_out
 
+	#END_DEF category_concordance
+
     def unique_lemmas(self, sort):
         """Print all the unique lemmas (and their frequencies) in a corpus file."""
 
@@ -1200,7 +1258,9 @@ milestones before you renumber and/or add ID nodes!"
                 lem_list.append(lemma)
             lem_list.sort()
             for lemma in lem_list:
-                print >> lem_out, lemma + ": " + str(lemmas[lemma])         
+                print >> lem_out, lemma + ": " + str(lemmas[lemma])
+
+	#END_DEF unique_lemmas
 
     def lemma_concordance(self, lemma):
         """Print a concordance of the word forms (and their frequencies) for the given lemma."""
@@ -1224,6 +1284,8 @@ milestones before you renumber and/or add ID nodes!"
             print "I'm sorry. I couldn't find your lemma. Please check the spelling and try again."
             print
 
+	#END_DEF lemma_concordance
+
     def print_text(self, filename):
         """Print just the text (words, punctuation, milestones)."""
 
@@ -1235,6 +1297,10 @@ milestones before you renumber and/or add ID nodes!"
             token = self.tokens[key]
             for word in token.text:
                 print >> out_file, word
+
+	#END_DEF print_text
+	
+#END_DEF Corpus
 
 corpus = Corpus()
                                 
@@ -1311,6 +1377,8 @@ def main():
         else:
             select(corpus, filename, args.psd[1])
 
+#END_DEF main
+
 def read(filename):
     """Read in a .psd file and return a list of trees as strings."""
 
@@ -1335,6 +1403,8 @@ def read(filename):
     trees = in_str.split("\n\n")
 
     return trees
+
+#END_DEF read
 
 def select(corpus, filename, add_file):
     """Select another CR function from a menu."""
@@ -1401,6 +1471,8 @@ def select(corpus, filename, add_file):
         print "I'm sorry--I don't understand what you entered."
         print
         sys.exit()
+
+#END_DEF select
 
 if __name__ == "__main__":
     main()
