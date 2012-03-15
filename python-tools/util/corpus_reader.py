@@ -1456,6 +1456,7 @@ def select(corpus, filename, add_file):
     print "    f. Print a concordance of the word forms (and their frequencies) for the given lemma."
     print "    g. Print the text (words, punctuation, milestones) of the corpus file."
     print "    h. Transform case suffixes into dash tags."
+	print "    i. Transform case dash tags back into suffixes."
     print
 
     # TODO: probably replace try/except blocks below
@@ -1504,6 +1505,8 @@ def select(corpus, filename, add_file):
         corpus.print_text(filename)
     elif selection == "h":
         corpus.transform_case(filename)
+	elif selection == "i":
+		corpus.transform_back(filename)
     else:
         print "I'm sorry--I don't understand what you entered."
         print
