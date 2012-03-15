@@ -459,11 +459,19 @@ class Corpus():
         word_count = 0
 
         keys = self.tokens.keys()
+        
+        split = False
 
         for key in keys:
             tok = self.tokens[key]
             for word in tok.words:
-                word_count += 1
+                if word.find("@") != -1 and word != "@":
+                    split = True
+                elif split:
+                    split = False
+                    word_count += 2
+                else:
+                    word_count += 1
 
         return word_count
 
