@@ -465,11 +465,11 @@ class Corpus():
         for key in keys:
             tok = self.tokens[key]
             for word in tok.words:
-                if word.find("@") != -1 and word != "@":
+                if word.endswith("@") and word != "@":
                     split = True
-                elif split:
+                elif word.startswith("@") and word != "@":
                     split = False
-                    word_count += 2
+                    word_count +=1
                 else:
                     word_count += 1
 
