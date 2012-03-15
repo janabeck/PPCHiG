@@ -1352,7 +1352,7 @@ milestones before you renumber and/or add ID nodes!"
     def print_text(self, filename):
         """Print just the text (words, punctuation, milestones)."""
 
-        out_name = filename.split(".")[0] + ".txt"
+        out_name = filename.replace(".psd",".txt")
 
         out_file = open(out_name, "w")
 
@@ -1363,6 +1363,31 @@ milestones before you renumber and/or add ID nodes!"
 
     #END_DEF print_text
     
+    def print_words(self, filename):
+        """Print just the words."""
+        
+        out_name = filename.replace(".psd",".txt")
+
+        out_file = open(out_name, "w")
+        
+        split = False
+        
+        for key in self.tokens.keys():
+            token = self.tokens[key]
+            for word in token.words:
+                if split:
+                    tmp2 = word.replace("@","")
+                    print >> out_file, tmp + tmp2
+                    tmp = ""
+                    split = False
+                elif word.find("@") != -1:
+                    tmp = word.replace("@","")
+                    split = True
+                else:
+                    print >> out_file, word
+                    
+    #END_DEF print_words
+                    
 #END_DEF Corpus
 
 corpus = Corpus()
@@ -1481,8 +1506,9 @@ def select(corpus, filename, add_file):
     print "    e. Print all the unique lemmas (and their frequences) in a corpus file."
     print "    f. Print a concordance of the word forms (and their frequencies) for the given lemma."
     print "    g. Print the text (words, punctuation, milestones) of the corpus file."
-    print "    h. Transform case suffixes into dash tags."
-    print "    i. Transform case dash tags back into suffixes."
+    print "    h  Print just the words of the corpus file."
+    print "    i. Transform case suffixes into dash tags."
+    print "    j. Transform case dash tags back into suffixes."
     print
 
     # TODO: probably replace try/except blocks below
@@ -1530,8 +1556,10 @@ def select(corpus, filename, add_file):
     elif selection == "g":
         corpus.print_text(filename)
     elif selection == "h":
-        corpus.transform_case(filename)
+        corpus.print_words(filename)
     elif selection == "i":
+        corpus.transform_case(filename)
+    elif selection == "j":
         corpus.transform_back(filename)
     else:
         print "I'm sorry--I don't understand what you entered."
