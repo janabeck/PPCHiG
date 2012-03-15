@@ -936,7 +936,44 @@ milestones before you renumber and/or add ID nodes!"
 
 	#END_DEF transform_case
 
-    def swap(self, filename, map_file):
+    def transform_back(self, filename):
+		"""Transforms case tags back from dash tags to suffixes."""
+		
+		dashes = ["NOM","GEN","ACC","DAT"]
+		
+		participle = re.compile("VPR*|BPR*")
+		
+		for key in self.tokens.keys():
+			tree = self.tokens[key]
+            leaves = tree._tree.leaves()
+            # get all the subtrees at the POS level
+            for tr in tree._tree.subtrees():
+            	if tr[0] in leaves:
+                    word = tr[0]
+                    tag = tr.node
+					for dash in dashes:
+						remainder = ""
+						if dash in tag:
+							if "SLF" in tag:
+								tag = tag.replace("-SLF","")
+								tag = "SLF-" + tag
+							elif participle.match(tag):
+								verb_group = tag.partition("-")
+								tag = verb_group[0]
+								remainder = verb_group[2]
+							if dash == "NOM":
+								tag = tag.replace(dash, "")
+							elif dash == "GEN":
+								tag = tag.replace(dash, "$")
+							elif dash == "ACC":
+								tag = tag.replace(dash, "A")
+							elif dash == "DAT":
+								tag = tag.replace(dash, "D")
+							tree.change_POS(tag + remainder, "", "", tr)
+							
+		self.print_trees(filename)
+
+	def swap(self, filename, map_file):
         """Insert the POS tags from the map file into the corpus file."""
         
         lemmatized = False
