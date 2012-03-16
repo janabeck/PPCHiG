@@ -23,7 +23,7 @@
  *  for this purpose
  */ 
 var displayCaseMenu = false;
-var caseTags=["N","NS","NPR","NPRS","PRO","D","NUM","ADJ","ADJR","ADJS","Q","QR","QS"];
+var caseTags=[];
 
 /* extensions are treated as not part of the label for various purposes, 
  * they are all binary, and they show up in the toggle extension menu  
@@ -54,7 +54,9 @@ function customCommands(){
     addCommand({ keycode: 66 }, setLabel, ["ADVP", "ADVP-DIR", "ADVP-LOC", "ADVP-TMP"]); // b
     // adverbial CPs
     addCommand({ keycode: 66, shift: true }, setLabel, ["CP-ADV","CP-PRP","CP-RES"]); // shift + b
+    addCommand({ keycode: 66, ctrl: true }, addBkmk); // ctrl + b
     addCommand({ keycode: 67 }, coIndex); // c
+    addCommand({ keycode: 67, shift: true}, addCom); // shift + c
     addCommand({ keycode: 67, ctrl: true }, toggleVerbalExtension, "-CL"); // ctrl + c
     addCommand({ keycode: 68 }, pruneNode); // d
     addCommand({ keycode: 68, shift: true}, setLabel, ["CLPRT","INTJ","INTJP","PRTQ","FW","AN","KE"]); // shift + d
@@ -70,8 +72,8 @@ function customCommands(){
     addCommand({ keycode: 71, shift: true }, setLabel, ["NP-AGT"]); // shift + g
 
     addCommand({ keycode: 81 }, setLabel, ["CONJP"]); // q
-    addCommand({ keycode: 81, shift: true}, setLabel, ["CP-QUE"]); // shift + q
-    addCommand({ keycode: 81, ctrl: true}, setLabel, ["QP","QTP","QX","QY"]); // ctrl + q
+    addCommand({ keycode: 81, shift: true}, autoConjoin); // shift + q
+    addCommand({ keycode: 81, ctrl: true}, setLabel, ["CP-QUE","QP","QTP","QX","QY"]); // ctrl + q
     
     // relative clauses and variations thereof
     addCommand({ keycode: 82 }, setLabel, ["CP-REL","CP-CAR","CP-CMP","CP-EOP","CP-EXL","CP-FRL"]); // r
@@ -105,6 +107,8 @@ function customCommands(){
     addCommand({ keycode: 50 }, leafAfter); // 2
     // non-argument NP shortcuts
     addCommand({ keycode: 51 }, setLabel, ["NX","NP-ADV","NP-AGT","NP-DIR","NP-INS","NP-LOC","NP-MSR","NP-SPR","NP-TMP","NP-VOC","NP-ADT"]); // 3
+    addCommand({ keycode: 51, shift: true}, addTodo); // shift + 3
+    addCommand({ keycode: 51, ctrl: true}, addMan); // ctrl + 3
     addCommand({ keycode: 52 }, toggleExtension, "-PRN"); // 4
     addCommand({ keycode: 53 }, toggleExtension, "-SPE"); // 5
 
@@ -169,21 +173,60 @@ function customConMenuGroups(){
  * Context menu items for "leaf before" shortcuts
  */
 function customConLeafBefore(){
-        addConLeafBefore( "CODE", "{BKMK}");
         addConLeafBefore( "NP-SBJ", "*con*");
         addConLeafBefore( "NP-SBJ", "*pro*");
-        addConLeafBefore( "C", "0");
-        addConLeafBefore( "XXX", "*T*");
+        addConLeafBefore( "NP-SBJ", "*mat*");
+        addConLeafBefore( "NP-SBJ", "*exp*");
         addConLeafBefore( "NP-SBJ", "*");
         addConLeafBefore( "BEP-IMPF", "*");
         addConLeafBefore( "BED-IMPF", "*");
         addConLeafBefore( "WADVP", "0");
         addConLeafBefore( "WNP", "0");
         addConLeafBefore( "WADJP", "0");
-        addConLeafBefore( "CODE", "{END}");
-        addConLeafBefore( "CODE", "{COM:}");        
-        addConLeafBefore( "CODE", "{TODO:}");
-        addConLeafBefore( "CODE", "{MAN:}");        
+        addConLeafBefore( "C", "0");       
+}
+
+// My functions
+
+function addCom() {
+    makeLeaf(true, "CODE", "{COM:}");
+}
+
+function addTodo() {
+    makeLeaf(true, "CODE", "{TODO:}");
+}
+
+function addMan() {
+    makeLeaf(true, "CODE", "{MAN:}");
+}
+
+function addBkmk() {
+    makeLeaf(true, "CODE", "{BKMK}");
+}
+
+// Aaron's magical autoConjoin
+
+function autoConjoin() {
+    if (!startnode || endnode) return;
+    var savestartnode = startnode;
+    var selnode = $(startnode);
+    var label = getLabel(selnode);
+    var conjnode = selnode.children(".CONJ").first();
+    if (conjnode) {
+        startnode = selnode.children().first().get(0);
+        endnode = conjnode.prev().get(0);
+        makeNode(label);
+        startnode = conjnode.get(0);
+        endnode = selnode.children().last().get(0);
+        makeNode("CONJP");
+        var conjpnode = $(startnode);
+        startnode = conjpnode.children().get(1);
+        endnode = conjpnode.children().last().get(0);
+        makeNode(label);
+        startnode = savestartnode;
+        endnode = undefined;
+        updateSelection();
+    }
 }
 
 // An example of a CSS rule for coloring a POS tag.  The styleTag
