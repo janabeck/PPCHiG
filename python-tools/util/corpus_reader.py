@@ -568,7 +568,7 @@ class Corpus():
         if not self.check_milestones():
             print
             print "Please run Corpus Reader with the -m option to add continuity \
-milestones before you renumber and/or add ID nodes!"
+            milestones before you renumber and/or add ID nodes!"
             print
             sys.exit()
         else:
@@ -1570,5 +1570,3 @@ def select(corpus, filename, add_file):
 
 if __name__ == "__main__":
     main()
-
-
