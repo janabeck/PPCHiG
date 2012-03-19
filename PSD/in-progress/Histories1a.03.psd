@@ -44,7 +44,7 @@
 								       (NP-SBJ *pro*)
 								       (VBSP-IMPF-INTRNS βουλεύηται-βουλεύω)))))))
 	  (. .-.))
-  (ID Herodotus,Histories:20_1a.1))
+  (ID Herodotus,Histories1:20_1a.1))
 
 ( (IP-MAT (CODE {VS:21_1})
 	  (NP-SBJ (ADJ-NOM Μιλήσιοι-Μιλήσιος))
@@ -55,7 +55,7 @@
 	  (IP-INF-THT (ADVP *ICH*-1)
 		      (VBNP-AOR-INTRNS γενέσθαι-γίγνομαι))
 	  (. .-.))
-  (ID Herodotus,Histories:21_1.2))
+  (ID Herodotus,Histories1:21_1.2))
 
 ( (IP-MAT (CODE {VS:21_1a})
 	  (NP-SBJ (N-NOM Ἀλυάττης-Ἀλυάττης))
@@ -84,7 +84,7 @@
 						      (NP-SBJ *pro*)
 						      (VBS-IMPF οἰκοδομέῃ-οἰκοδομέω))))))
 	  (. .-.))
-  (ID Herodotus,Histories:21_1a.3))
+  (ID Herodotus,Histories1:21_1a.3))
 
 ( (IP-MAT (CODE {VS:21_1b})
 	  (NP-SBJ (D-NOM ὁ-ὁ) (CLPRT μὲν-μέν) (CLPRT δὴ-δή) (N-NOM ἀπόστολος-ἀπόστολος))
@@ -92,7 +92,7 @@
 	      (NP (D-ACC τὴν-ὁ) (N-ACC Μίλητον-Μίλητος)))
 	  (BED-IMPF ἦν-εἰμί)
 	  (, ,-,))
-  (ID Herodotus,Histories:21_1b.4))
+  (ID Herodotus,Histories1:21_1b.4))
 
 ( (IP-MAT (CODE {VS:21_1c})
 	  (NP-SBJ (N-NOM Θρασύβουλος-Θρασυβούλος))
@@ -113,7 +113,7 @@
 	  (VBPP-IMPF μηχανᾶται-μηχανάομαι)
 	  (NP-OB1 (DS-ACC τοιάδε-τοιόσδε))
 	  (. ·-·))
-  (ID Herodotus,Histories:21_1c.5))
+  (ID Herodotus,Histories1:21_1c.5))
 
 ( (IP-MAT (CODE {VS:21_2})
 	  (NP-LFD (CP-FRL (WADJ-NOM-1 ὅσος-ὅσος)
@@ -151,7 +151,7 @@
 					 (PP (P ἐς-εἰς)
 					     (NP (NSA-RCP ἀλλήλους-ἀλλήλων))))))
 	  (. .-.))
-  (ID Herodotus,Histories:21_2.6))
+  (ID Herodotus,Histories1:21_2.6))
 
 ( (IP-MAT (CODE {VS:22_1})
 	  (NP-OB1 (DS-ACC ταῦτα-οὗτος))
@@ -181,7 +181,7 @@
 				  (VBS-AOR ἀγγείλῃ-ἀγγέλλω)
 				  (NP-OB2 (N-DAT Ἀλυάττῃ-Ἀλυάττης)))))
 	  (. ·-·))
-  (ID Herodotus,Histories:22_1.7))
+  (ID Herodotus,Histories1:22_1.7))
 
 ( (IP-MAT (CODE {VS:22_2})
 	  (NP-SBJ (WPRO-NOM τὰ-ὅς))
@@ -189,7 +189,7 @@
 	  (ADVP (ADV καὶ-καί))
 	  (VBDP-AOR-INTRNS ἐγένετο-γίγνομαι)
 	  (. .-.))
-  (ID Herodotus,Histories:22_2.8))
+  (ID Herodotus,Histories1:22_2.8))
 
 ( (IP-MAT (CODE {VS:22_2a})
 	  (ADVP (ADV ὡς-ὡς))
@@ -211,7 +211,7 @@
 	  (PP (P ἐς-εἰς)
 	      (NP (DS-ACC τὰς-ὁ) (NS-ACC Σάρδις-Σάρδεις)))
 	  (, ,-,))
-  (ID Herodotus,Histories:22_2a.9))
+  (ID Herodotus,Histories1:22_2a.9))
 
 ( (IP-MAT (CODE {VS:22_2b})
 	  (ADVP-PRN (CP-CMP (WADVP-1 (WADV ὡς-ὡς))
@@ -225,7 +225,7 @@
 	  (VBDP-AOR-INTRNS ἐγένετο-γίγνομαι)
 	  (NP-SBJ (D-NOM ἡ-ὁ) (N-NOM διαλλαγή-διαλλαγή))
 	  (. .-.))
-  (ID Herodotus,Histories:22_2b.10))
+  (ID Herodotus,Histories1:22_2b.10))
 
 ( (IP-MAT (CODE {VS:22_3})
 	  (VPR-IMPF-NOM-1 ἐλπίζων-ἐλπίζω)
@@ -264,7 +264,7 @@
 				(NP-SBJ (NP-PRN (PRO-NOM αὐτὸς-αὐτός)))
 				(VBD-IMPF κατεδόκεε-καταδοκέω)))
 		(. .-.)))
-  (ID Herodotus,Histories:22_3.11))
+  (ID Herodotus,Histories1:22_3.11))
 
 ( (IP-MAT (CODE {VS:22_4})
 	  (ADVP-TMP (ADV μετὰ-μετά))
@@ -285,7 +285,7 @@
 			  (BEN-IMPF εἶναι-εἰμί)
 			  (CONJP-2 (CONJ καὶ-καί) (ADJ-ACC συμμάχους-σύμμαχος))))
 	  (, ,-,))
-  (ID Herodotus,Histories:22_4.12))
+  (ID Herodotus,Histories1:22_4.12))
 
 ( (IP-MAT (CODE {VS:22_4a})
 	  (CONJ καὶ-καί)
@@ -301,7 +301,7 @@
 	  (PP (P ἐν-ἐν)
 	      (NP (D-DAT τῇ-ὁ) (N-DAT Ἀσσησῷ-Ἀσσησός)))
 	  (, ,-,))
-  (ID Herodotus,Histories:22_4a.13))
+  (ID Herodotus,Histories1:22_4a.13))
 
 ( (IP-MAT (CODE {VS:22_4b})
 	  (NP-SBJ (PRO-NOM *con*)
@@ -311,7 +311,7 @@
 	      (NP (D-GEN τῆς-ὁ) (N-GEN νούσου-νόσος)))
 	  (VBD-AOR ἀνέστη-ἀνίστημι)
 	  (. .-.))
-  (ID Herodotus,Histories:22_4b.14))
+  (ID Herodotus,Histories1:22_4b.14))
 
 ( (IP-MAT (CODE {VS:22_4c})
 	  (CODE {TODO:subjectless_sentence...add_to_manual?})
@@ -326,7 +326,7 @@
 	  (NP-SBJ *exp*)
 	  (VBD-AOR ἔσχε-ἔχω)
 	  (. .-.))
-  (ID Herodotus,Histories:22_4c.15))
+  (ID Herodotus,Histories1:22_4c.15))
 
 ( (IP-MAT (CODE {VS:23_1})
 	  (NP-SBJ (N-NOM Περίανδρος-Περίανδρος))
@@ -340,7 +340,7 @@
 			       (NP-OB1 (D-ACC τὸ-ὁ) (N-ACC χρηστήριον-χρηστήριον))
 			       (VPR-AOR-NOM μηνύσας-μηνύω))))
 	  (. ·-·))
-  (ID Herodotus,Histories:23_1.16))
+  (ID Herodotus,Histories1:23_1.16))
 
 ( (IP-MAT (CODE {VS:23_1a})
 	  (VBD-IMPF ἐτυράννευε-τυραννεύω)
@@ -348,7 +348,7 @@
 	  (NP-SBJ (D-NOM ὁ-ὁ) (N-NOM Περίανδρος-Περίανδρος))
 	  (NP-OBQ (N-GEN Κορίνθου-Κόρινθος))
 	  (. ·-·))
-  (ID Herodotus,Histories:23_1a.17))
+  (ID Herodotus,Histories1:23_1a.17))
 
 ( (IP-MAT (CODE {VS:23_1b})
 	  (NP-1 (D-DAT τῷ-ὁ))
@@ -402,7 +402,7 @@
 							  (PP (P ἐν-ἐν)
 							      (NP (N-DAT Κορίνθῳ-Κόρινθος)))))))))
 	  (. .-.))
-  (ID Herodotus,Histories:23_1b.18))
+  (ID Herodotus,Histories1:23_1b.18))
 
 ( (IP-MAT (CODE {VS:24_1})
 	  (NP-1 (D-ACC τοῦτον-οὗτος) (D-ACC τὸν-ὁ) (N-ACC Ἀρίονα-Ἀρίων))
@@ -421,7 +421,7 @@
 				  (PP (P ἐς-εἰς)
 				      (NP (N-ACC Ἰταλίην-Ἰταλία) (CLTE τε-τε) (CONJ καὶ-καί) (N-ACC Σικελίην-Σικελία)))))
 	  (, ,-,))
-  (ID Herodotus,Histories:24_1.19))
+  (ID Herodotus,Histories1:24_1.19))
 
 ( (IP-INF-THT (CODE {VS:24_1a})
 	      (IP-PPL (VPRP-AOR-ACC ἐργασάμενον-ἐργάζομαι)
@@ -434,7 +434,7 @@
 			      (NP (N-ACC Κόρινθον-Κόρινθος)))
 			  (VBNP-AOR-INTRNS ἀπικέσθαι-ἀφικνέομαι))
 	      (. .-.))
-  (ID Herodotus,Histories:24_1a.20))
+  (ID Herodotus,Histories1:24_1a.20))
 
 ( (IP-INF-THT (CODE {VS:24_2})
 	      (NP-SBJ *con*)
@@ -444,7 +444,7 @@
 	      (PP (P ἐκ-ἐκ)
 		  (NP (N-GEN Τάραντος-Τάρας)))
 	      (, ,-,))
-  (ID Herodotus,Histories:24_2.21))
+  (ID Herodotus,Histories1:24_2.21))
 
 ( (IP-INF-THT (CODE {VS:24_2a})
 	      (IP-PPL (VPR-IMPF-ACC πιστεύοντα-πιστεύω)
@@ -460,7 +460,7 @@
 	      (NP-OB1 (N-ACC πλοῖον-πλοῖον)
 		      (NP-ATR (NS-GEN ἀνδρῶν-ἀνήρ) (ADJ-GEN Κορινθίων-Κορίνθιος)))
 	      (. .-.))
-  (ID Herodotus,Histories:24_2a.22))
+  (ID Herodotus,Histories1:24_2a.22))
 
 ( (IP-INF-THT (CODE {VS:24_2b})
 	      (NP-SBJ (DS-ACC τοὺς-ὁ))
@@ -473,7 +473,7 @@
 			  (VBN-IMPF ἔχειν-ἔχω)
 			  (NP-OB1 (DS-ACC τὰ-ὁ) (NS-ACC χρήματα-χρῆμα)))
 	      (. .-.))
-  (ID Herodotus,Histories:24_2b.23))
+  (ID Herodotus,Histories1:24_2b.23))
 
 ( (IP-INF-THT (CODE {VS:24_2c})
 	      (NP-SBJ (D-ACC τὸν-ὁ))
@@ -492,7 +492,7 @@
 				     (CLPRT-1 δὲ-δέ)
 				     (VPRP-IMPF-ACC παραιτεόμενον-παραιτέομαι))))
 	      (. .-.))
-  (ID Herodotus,Histories:24_2c.24))
+  (ID Herodotus,Histories1:24_2c.24))
 
 ( (IP-INF-THT (CODE {VS:24_3})
 	      (NEG-CLPRT οὔκων-οὔκουν)
@@ -501,7 +501,7 @@
 	      (NP-SBJ (PRO-ACC αὐτὸν-αὐτός))
 	      (NP-OBQ (DS-DAT τούτοισι-οὗτος))
 	      (, ,-,))
-  (ID Herodotus,Histories:24_3.25))
+  (ID Herodotus,Histories1:24_3.25))
 
 ( (IP-INF-THT (CODE {VS:24_3a})
 	      (CONJ ἀλλὰ-ἀλλά)
@@ -527,7 +527,7 @@
 						 (NP (D-ACC τὴν-ὁ) (N-ACC θάλασσαν-θάλασσα)))
 					     (NP-ADV (D-ACC τὴν-ὁ) (ADJS ταχίστην-ταχύς)))))
 	      (. ·-·))
-  (ID Herodotus,Histories:24_3a.26))
+  (ID Herodotus,Histories1:24_3a.26))
 
 ( (IP-INF-THT (CODE {VS:24_4})
 	      (VPRP-AOR-PASS-ACC-1 ἀπειληθέντα-ἀπειλέω)
@@ -554,7 +554,7 @@
 					  (NP (DS-DAT τοῖσι-ὁ) (NS-DAT ἑδωλίοισι-ἑδώλιον)))
 				      (VBN-AOR ἀεῖσαι-ἀείδω)))
 	      (. ·-·))
-  (ID Herodotus,Histories:24_4.27))
+  (ID Herodotus,Histories1:24_4.27))
 
 ( (IP-MAT (CODE {VS:24_4a})
 	  (IP-PPL (VPR-AOR-NOM ἀείσας-ἀείδω))
@@ -564,7 +564,7 @@
 	  (IP-INF-COM (NP-OB1 (PRO+SLF-ACC ἑωυτὸν-ἑαυτοῦ))
 		      (VBNP-AOR κατεργάσασθαι-κατεργάζομαι))
 	  (. .-.))
-  (ID Herodotus,Histories:24_4a.28))
+  (ID Herodotus,Histories1:24_4a.28))
 
 ( (IP-INF-THT (CODE {VS:24_5})
 	      (CONJ καὶ-καί)
@@ -582,7 +582,7 @@
 						  (NP-PAR (NS-GEN ἀνθρώπων-ἄνθρωπος))
 						  (N-GEN ἀοιδοῦ-ἀοιδός)))))
 	      (, ,-,))
-  (ID Herodotus,Histories:24_5.29))
+  (ID Herodotus,Histories1:24_5.29))
 
 ( (IP-INF-THT (CODE {VS:24_5a})
 	      (VBN-AOR ἀναχωρῆσαι-ἀναχωρέω)
@@ -591,7 +591,7 @@
 	      (PP (P ἐς-εἰς)
 		  (NP (ADJ-ACC μέσην-μέσος) (N-ACC νέα-ναῦς)))
 	      (. .-.))
-  (ID Herodotus,Histories:24_5a.30))
+  (ID Herodotus,Histories1:24_5a.30))
 
 ( (IP-INF-THT (CODE {VS:24_5b})
 	      (NP-SBJ (D-ACC τὸν-ὁ))
@@ -610,7 +610,7 @@
 	      (NP-OB1 (N-ACC νόμον-νόμος)
 		      (NP-PRN (D-ACC τὸν-ὁ) (ADJ-ACC ὄρθιον-ὄρθιος)))
 	      (, ,-,))
-  (ID Herodotus,Histories:24_5b.31))
+  (ID Herodotus,Histories1:24_5b.31))
 
 ( (IP-INF-THT (CODE {VS:24_5c})
 	      (IP-ABS (VPR-IMPF-GEN τελευτῶντος-τελευτάω)
@@ -629,7 +629,7 @@
 				    (PP (P σὺν-σύν)
 					(NP (D-DAT τῇ-ὁ) (N-DAT σκευῇ-σκευή) (Q-DAT πάσῃ-πᾶς))))))
 	      (. .-.))
-  (ID Herodotus,Histories:24_5c.32))
+  (ID Herodotus,Histories1:24_5c.32))
 
 ( (IP-INF-THT (CODE {VS:24_6})
 	      (CONJ καὶ-καί)
@@ -639,7 +639,7 @@
 	      (PP (P ἐς-εἰς)
 		  (NP (N-ACC Κόρινθον-Κόρινθος)))
 	      (, ,-,))
-  (ID Herodotus,Histories:24_6.33))
+  (ID Herodotus,Histories1:24_6.33))
 
 ( (IP-MAT (CODE {VS:24_6a})
 	  (NP-1 (D-ACC τὸν-ὁ))
@@ -654,7 +654,7 @@
 		      (PP (P ἐπὶ-ἐπί)
 			  (NP (N-ACC Ταίναρον-Ταίναρος))))
 	  (. .-.))
-  (ID Herodotus,Histories:24_6a.34))
+  (ID Herodotus,Histories1:24_6a.34))
 
 ( (IP-INF-THT (CODE {VS:24_6b})
 	      (IP-PPL (VPR-AOR-ACC ἀποβάντα-ἀποβαίνω))
@@ -666,7 +666,7 @@
 	      (PP (P σὺν-σύν)
 		  (NP (D-DAT τῇ-ὁ) (N-DAT σκευῇ-σκευή)))
 	      (, ,-,))
-  (ID Herodotus,Histories:24_6b.35))
+  (ID Herodotus,Histories1:24_6b.35))
 
 ( (IP-INF-THT (CODE {VS:24_6c})
 	      (CONJ καὶ-καί)
@@ -677,7 +677,7 @@
 		      (D-ACC τὸ-ὁ)
 		      (RRC (VPR-PRF-ACC γεγονός-γίγνομαι)))
 	      (. .-.))
-  (ID Herodotus,Histories:24_6c.36))
+  (ID Herodotus,Histories1:24_6c.36))
 
 ( (IP-INF-THT (CODE {VS:24_7})
 	      (NP-SBJ (N-ACC Περίανδρον-Περίανδρος))
@@ -692,7 +692,7 @@
 	      (IP-PPL (ADVP (NEG+ADV οὐδαμῇ-οὐδαμῇ))
 		      (VPR-IMPF-ACC μετιέντα-μεθίημι))
 	      (, ,-,))
-  (ID Herodotus,Histories:24_7.37))
+  (ID Herodotus,Histories1:24_7.37))
 
 ( (IP-INF-THT (CODE {VS:24_7a})
 	      (ADVP (ADV ἀνακῶς-ἀνακῶς))
@@ -701,7 +701,7 @@
 	      (VBN-IMPF ἔχειν-ἔχω)
 	      (NP-OBQ (DS-GEN τῶν-ὁ) (NS-GEN πορθμέων-πορθμεύς))
 	      (. .-.))
-  (ID Herodotus,Histories:24_7a.38))
+  (ID Herodotus,Histories1:24_7a.38))
 
 ( (IP-INF-THT (CODE {VS:24_7b})
 	      (CP-ADV (C ὡς-ὡς)
@@ -721,7 +721,7 @@
 			      (PP (P περὶ-περί)
 				  (NP (N-GEN Ἀρίονος-Ἀρίων)))))
 	      (. .-.))
-  (ID Herodotus,Histories:24_7b.39))
+  (ID Herodotus,Histories1:24_7b.39))
 
 ( (IP-INF-THT (CODE {VS:24_7c})
 	      (IP-ABS (VPRP-IMPF-TRNS2-GEN φαμένων-φημί)
@@ -753,7 +753,7 @@
 				    (NP-SBJ *pro*)
 				    (VBD-AOR ἐξεπήδησε-ἐκπηδάω))))
 	      (. ·-·))
-  (ID Herodotus,Histories:24_7c.40))
+  (ID Herodotus,Histories1:24_7c.40))
 
 ( (IP-INF-THT (CODE {VS:24_7d})
 	      (CONJ καὶ-καί)
@@ -765,7 +765,7 @@
 	      (IP-INF-COM (IP-PPL (VPRP-IMPF-PASS-ACC ἐλεγχομένους-ἐλέγχω))
 			  (VBNP-IMPF-INTRNS ἀρνέεσθαι-ἀρνέομαι))
 	      (. .-.))
-  (ID Herodotus,Histories:24_7d.41))
+  (ID Herodotus,Histories1:24_7d.41))
 
 ( (IP-MAT (CODE {VS:24_8})
 	  (NP-OB1 (DS-ACC ταῦτα-οὗτος))
@@ -774,7 +774,7 @@
 	  (NP-SBJ (ADJ-NOM Κορίνθιοί-Κορίνθιος) (CLTE τε-τε) (CONJ καὶ-καί) (ADJ-NOM Λέσβιοι-Λέσβιος))
 	  (VBP-IMPF λέγουσι-λέγω)
 	  (, ,-,))
-  (ID Herodotus,Histories:24_8.42))
+  (ID Herodotus,Histories1:24_8.42))
 
 ( (IP-MAT (CODE {VS:24_8a})
 	  (CONJ καὶ-καί)
@@ -794,7 +794,7 @@
 		     (VPR-IMPF-NOM ἐπεὼν-ἔπειμι))
 		(N-NOM ἄνθρωπος-ἄνθρωπος))
 	  (. .-.))
-  (ID Herodotus,Histories:24_8a.43))
+  (ID Herodotus,Histories1:24_8a.43))
 
 ( (IP-MAT (CODE {VS:25_1})
 	  (NP-SBJ (N-NOM Ἀλυάττης-Ἀλυάττης)
@@ -812,7 +812,7 @@
 		  (NP-MSR (NS-ACC ἔτεα-ἔτος)
 			  (NUMP (NUM ἑπτὰ-ἑπτά) (CONJ καὶ-καί) (NUM πεντήκοντα-πεντήκοντα))))
 	  (. .-.))
-  (ID Herodotus,Histories:25_1.44))
+  (ID Herodotus,Histories1:25_1.44))
 
 ( (IP-MAT (CODE {VS:25_2})
 	  (VBD-AOR ἀνέθηκε-ἀνατίθημι)
@@ -852,7 +852,7 @@
 						    (N-ACC κόλλησιν-κόλλησις))
 					    (VBD-AOR ἐξεῦρε-ἐξευρίσκω)))))
 	  (. .-.))
-  (ID Herodotus,Histories:25_2.45))
+  (ID Herodotus,Histories1:25_2.45))
 
 ( (IP-MAT (CODE {VS:26_1})
 	  (IP-ABS (VPR-AOR-GEN τελευτήσαντος-τελευτάω)
@@ -870,7 +870,7 @@
 		  (NP-PRD (NS-GEN *ICH*-1)
 			  (NUMP (NUM πέντε-πέντε) (CONJ καὶ-καί) (NUM τριήκοντα-τριάκοντα))))
 	  (. ·-·))
-  (ID Herodotus,Histories:26_1.46))
+  (ID Herodotus,Histories1:26_1.46))
 
 ( (IP-MAT (CODE {VS:26_1a})
 	  (CODE {TODO:add_continuative_relatives_to_manual...arg._for_not_clause-adjoined_is_position_of_CLPRT!})
@@ -882,7 +882,7 @@
 	  (NP-OBP (ADJP *ICH*-1)
 		  (ADJ-DAT Ἐφεσίοισι-Ἐφέσιος))
 	  (. .-.))
-  (ID Herodotus,Histories:26_1a.47))
+  (ID Herodotus,Histories1:26_1a.47))
 
 ( (IP-MAT (CODE {VS:26_2})
 	  (ADVP-TMP (ADV ἔνθα-ἔνθα))
@@ -902,7 +902,7 @@
 		  (PP (P ἐς-εἰς)
 		      (NP (D-ACC τὸ-ὁ) (N-ACC τεῖχος-τεῖχος))))
 	  (. .-.))
-  (ID Herodotus,Histories:26_2.48))
+  (ID Herodotus,Histories1:26_2.48))
 
 ( (IP-MAT (CODE {VS:26_2a})
 	  (BEP-IMPF-CL ἔστι-εἰμί)
@@ -923,7 +923,7 @@
 			 (NP (D-GEN τοῦ-ὁ) (N-GEN νηοῦ-ναός)))))
 	  (NP-SBJ (NUM ἑπτὰ-ἑπτά) (NS-NOM στάδιοι-στάδιον))
 	  (. .-.))
-  (ID Herodotus,Histories:26_2a.49))
+  (ID Herodotus,Histories1:26_2a.49))
 
 ( (IP-MAT (CODE {VS:26_3})
 	  (IP-MAT-1 (ADJP-SPR-2 (ADJ-DAT πρώτοισι-πρῶτος))
@@ -962,7 +962,7 @@
 						  (NP-OB1 (ADV καὶ-καί) (ADJ-ACC φαῦλα-φαῦλος))
 						  (VPR-IMPF-NOM ἐπιφέρων-ἐπιφέρω))))))
 	  (. .-.))
-  (ID Herodotus,Histories:26_3.50))
+  (ID Herodotus,Histories1:26_3.50))
 
 ( (IP-MAT (CODE {VS:27_1})
 	  (CP-ADV (C ὡς-ὡς)
@@ -986,7 +986,7 @@
 		      (VBN-IMPF ἐπιχειρέειν-ἐπιχειρέω)
 		      (NP-OBP (DS-DAT τοῖσι-ὁ) (NS-DAT νησιώτῃσι-νησιώτης)))
 	  (. .-.))
-  (ID Herodotus,Histories:27_1.51))
+  (ID Herodotus,Histories1:27_1.51))
 
 ( (IP-MAT-1 (CODE {VS:27_2})
 	    (IP-ABS (BPR-IMPF-GEN ἐόντων-εἰμί)
@@ -1030,7 +1030,7 @@
 			  (VBN-AOR καταπαῦσαι-καταπαύω)
 			  (NP-OB1 (D-ACC τὴν-ὁ) (N-ACC ναυπηγίην-ναυπηγία)))
 	    (. ·-·))
-  (ID Herodotus,Histories:27_2.52))
+  (ID Herodotus,Histories1:27_2.52))
 
 ( (IP-MAT-SPE (CODE {VS:27_3})
 	      (" “-“)
@@ -1056,7 +1056,7 @@
 				  (VBNP-IMPF-INTRNS στρατεύεσθαι-στρατεύω)))
 	      (. .-.)
 	      (" ”-”))
-  (ID Herodotus,Histories:27_3.53))
+  (ID Herodotus,Histories1:27_3.53))
 
 ( (IP-INF-THT (CODE {VS:27_3a})
 	      (NP-SBJ (N-ACC Κροῖσον-Κροῖσος))
@@ -1067,7 +1067,7 @@
 				  (NP-OB1 (ADJ-ACC ἀληθέα-ἀληθής))))
 	      (VBN-AOR εἰπεῖν-λέγω)
 	      (. ·-·))
-  (ID Herodotus,Histories:27_3a.54))
+  (ID Herodotus,Histories1:27_3a.54))
 
 ( (CP-EXL-SPE (CODE {VS:27_3b})
 	      (" “-“)
@@ -1090,7 +1090,7 @@
 				    (NP (NS-DAT ἵπποισι-ἵππος)))))
 	      (. .-.)
 	      (" ”-”))
-  (ID Herodotus,Histories:27_3b.55))
+  (ID Herodotus,Histories1:27_3b.55))
 
 ( (IP-INF-THT (CODE {VS:27_4})
 	      (NP-SBJ (D-ACC τὸν-ὁ))
@@ -1098,7 +1098,7 @@
 	      (IP-PPL (VPR-AOR-ACC ὑπολαβόντα-ὑπολαμβάνω))
 	      (VBN-AOR φάναι-φαίνω)
 	      (. ·-·))
-  (ID Herodotus,Histories:27_4.56))
+  (ID Herodotus,Histories1:27_4.56))
 
 ( (IP-MAT-SPE (CODE {VS:27_4a})
 	      (" “-“)
@@ -1120,7 +1120,7 @@
 	      (IP-PPL (NP-OB1 (RRC (VPR-PRF-ACC οἰκότα-εἰκός)))
 		      (VPR-IMPF-NOM ἐλπίζων-ἐλπίζω))
 	      (. .-.))
-  (ID Herodotus,Histories:27_4a.57))
+  (ID Herodotus,Histories1:27_4a.57))
 
 ( (CP-QUE-SPE (CODE {VS:27_4b})
 	      (NP-1 (NS-ACC νησιώτας-νησιώτης))
@@ -1172,7 +1172,7 @@
 												  (VBP-IMPF ἔχεις-ἔχω)))))))))))
 	      (. ;-;)
 	      (" ”-”))
-  (ID Herodotus,Histories:27_4b.58))
+  (ID Herodotus,Histories1:27_4b.58))
 
 ( (IP-INF-THT (CODE {VS:27_5})
 	      (IP-INF-THT (ADVP (ADV κάρτα-κάρτα))
@@ -1194,7 +1194,7 @@
 				 (VBNP-AOR παύσασθαι-παύω)
 				 (NP-OBQ (D-GEN τῆς-ὁ) (N-GEN ναυπηγίης-ναυπηγία))))
 	      (. .-.))
-  (ID Herodotus,Histories:27_5.59))
+  (ID Herodotus,Histories1:27_5.59))
 
 ( (IP-MAT (CODE {VS:27_5a})
 	  (CONJ καὶ-καί)
@@ -1207,4 +1207,4 @@
 	  (NP-SBJ *con*)
 	  (VBDP-AOR συνεθήκατο-συντίθημι)
 	  (. .-.))
-  (ID Herodotus,Histories:27_5a.60))
+  (ID Herodotus,Histories1:27_5a.60))

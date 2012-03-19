@@ -10,7 +10,7 @@
 		      (NP (NPRS-DAT Δελφοῖσι-Δελφοί)))
 		  (N-GEN χρηστηρίου-χρηστήριον)))
 	  (. .-.))
-  (ID Herodotus,Histories:13_1a.1))
+  (ID Herodotus,Histories1:13_1a.1))
 
 ( (IP-MAT (CODE {VS:13_1b})
 	  (CP-ADV (C ὡς-ὡς)
@@ -69,14 +69,14 @@
 				       (NP (NPRS-ACC Ἡρακλείδας-Ἡρακλείδης)))
 				   (NP-OB1 (D-ACC τὴν-ὁ) (N-ACC ἀρχήν-ἀρχή)))))
 	  (. .-.))
-  (ID Herodotus,Histories:13_1b.2))
+  (ID Herodotus,Histories1:13_1b.2))
 
 ( (IP-MAT (CODE {VS:13_2})
 	  (VBD-AOR ἀνεῖλέ-ἀναιρέω)
 	  (CLTE τε-τε)
 	  (CLPRT δὴ-δή)
 	  (NP-SBJ (D-NOM τὸ-ὁ) (N-NOM χρηστήριον-χρηστήριον)))
-  (ID Herodotus,Histories:13_2.3))
+  (ID Herodotus,Histories1:13_2.3))
 
 ( (IP-MAT (CODE {VS:13_2a})
 	  (CONJ καὶ-καί)
@@ -84,7 +84,7 @@
 	  (ADVP (ADV οὕτω-οὕτως))
 	  (NP-SBJ (NPR-NOM Γύγης-Γύγης))
 	  (. .-.))
-  (ID Herodotus,Histories:13_2a.4))
+  (ID Herodotus,Histories1:13_2a.4))
 
 ( (IP-MAT (CODE {VS:13_2b})
 	  (CP-THT (C 0)
@@ -107,7 +107,7 @@
 				    (ADJ-ACC ἀπόγονον-ἀπόγονος)
 				    (NP-ATR (NPR-GEN Γύγεω-Γύγης))))))
 	  (. .-.))
-  (ID Herodotus,Histories:13_2b.5))
+  (ID Herodotus,Histories1:13_2b.5))
 
 ( (IP-MAT (CODE {VS:13_2c})
 	  (NP-1 (D-GEN τούτου-οὗτος) (D-GEN τοῦ-ὁ) (N-GEN ἔπεος-ἔπος))
@@ -127,7 +127,7 @@
 		  (IP-SUB (NP-SBJ *pro*)
 			  (VBDP-AOR-PASS ἐπετελέσθη-ἐπιτελέω)))
 	  (. .-.))
-  (ID Herodotus,Histories:13_2c.6))
+  (ID Herodotus,Histories1:13_2c.6))
 
 ( (IP-MAT (CODE {VS:14_1})
 	  (NP-OB1 (D-ACC τὴν-ὁ) (CLPRT μὲν-μέν) (CLPRT δὴ-δή) (N-ACC τυραννίδα-τυραννίς))
@@ -137,7 +137,7 @@
 	  (IP-PPL (NP-OB1 (DS-ACC τοὺς-ὁ) (NPRS-ACC Ἡρακλείδας-Ἡρακλείδης))
 		  (VPRP-AOR-TRNS1-NOM ἀπελόμενοι-ἀφαιρέω))
 	  (, ,-,))
-  (ID Herodotus,Histories:14_1.7))
+  (ID Herodotus,Histories1:14_1.7))
 
 ( (IP-MAT (CODE {VS:14_1a})
 	  (NP-SBJ (NPR-NOM Γύγης-Γύγης))
@@ -149,7 +149,7 @@
 	      (NP (NPRS-ACC Δελφοὺς-Δελφοί)))
 	  (QP=1 (NEG οὐκ-οὐ) (Q-ACC ὀλίγα-ὀλίγος))
 	  (, ,-,))
-  (ID Herodotus,Histories:14_1a.8))
+  (ID Herodotus,Histories1:14_1a.8))
 
 ( (CP-EXL (CODE {VS:14_1b})
 	  (CONJ ἀλλ’-ἀλλά)
@@ -166,7 +166,7 @@
 		  (PP (P ἐν-ἐν)
 		      (NP (NPRS-DAT Δελφοῖσι-Δελφοί))))
 	  (, ,-,))
-  (ID Herodotus,Histories:14_1b.9))
+  (ID Herodotus,Histories1:14_1b.9))
 
 ( (IP-MAT (CODE {VS:14_1c})
 	  (PP (P πάρεξ-παρέξ)
@@ -190,7 +190,7 @@
 						   (VBN-IMPF ἔχειν-ἔχω))
 				       (BEP-IMPF ἐστί-εἰμί)))))
 	  (, ,-,))
-  (ID Herodotus,Histories:14_1c.10))
+  (ID Herodotus,Histories1:14_1c.10))
 
 ( (IP-MAT (CODE {VS:14_1d})
 	  (NP-AGT *CL*-1)
@@ -202,7 +202,7 @@
 	  (CODE {COM:Sheets_"ἀνακέαται...here,_as_often,_functions_as_the_perf._pass._of_ἀνατίθημι"})
 	  (VBPP-IMPF-PASS ἀνακέαται-ἀνάκειμαι)
 	  (. .-.))
-  (ID Herodotus,Histories:14_1d.11))
+  (ID Herodotus,Histories1:14_1d.11))
 
 ( (IP-MAT (CODE {VS:14_2})
 	  (VBP-PRF ἑστᾶσι-ἵστημι)
@@ -217,7 +217,7 @@
 		  (VPR-IMPF-NOM ἔχοντες-ἔχω)
 		  (NP-OB1 (NUM τριήκοντα-τριάκοντα) (NS-ACC τάλαντα-τάλαντον)))
 	  (. ·-·))
-  (ID Herodotus,Histories:14_2.12))
+  (ID Herodotus,Histories1:14_2.12))
 
 ( (IP-MAT (CODE {VS:14_2a})
 	  (IP-MAT-1 (NP-ADV (RRC (NP-OBQ (ADJ-DAT ἀληθέι-ἀληθής) (CLPRT δὲ-δέ) (N-DAT λόγῳ-λόγος))
@@ -234,7 +234,7 @@
 		 (IP-MAT=1 (NP-PRD (NPR-GEN Κυψέλου-Κύψελος)
 				   (NP-ATR (D-GEN τοῦ-ὁ) (NPR-GEN Ἠετίωνος-Ἠετίων)))))
 	  (. .-.))
-  (ID Herodotus,Histories:14_2a.13))
+  (ID Herodotus,Histories1:14_2a.13))
 
 ( (IP-MAT (CODE {VS:14_2b})
 	  (NP-SBJ (D-NOM οὗτος-οὗτος) (CLPRT δὲ-δέ) (D-NOM ὁ-ὁ) (NPR-NOM Γύγης-Γύγης))
@@ -257,7 +257,7 @@
 			  (NP-COM (NPR-GEN Φρυγίης-Φρυγία))
 			  (N-ACC βασιλέα-βασιλεύς))))
 	  (. .-.))
-  (ID Herodotus,Histories:14_2b.14))
+  (ID Herodotus,Histories1:14_2b.14))
 
 ( (IP-MAT (CODE {VS:14_3})
 	  (VBD-AOR ἀνέθηκε-ἀνατίθημι)
@@ -278,7 +278,7 @@
 		  (RRC (BPR-IMPF-ACC ἐόντα-εἰμί)
 		       (ADJP-PRD (ADJ-ACC ἀξιοθέητον-ἀξιοθέατος))))
 	  (. ·-·))
-  (ID Herodotus,Histories:14_3.15))
+  (ID Herodotus,Histories1:14_3.15))
 
 ( (IP-MAT-1 (CODE {VS:14_3a})
 	    (VBPP-IMPF-INTRNS κεῖται-κεῖμαι)
@@ -292,7 +292,7 @@
 						(NP-ATR (D-GEN τοῦ-ὁ) (NPR-GEN Γύγεω-Γύγης))
 						(NS-NOM κρητῆρες-κρατήρ)))))
 	    (. .-.))
-  (ID Herodotus,Histories:14_3a.16))
+  (ID Herodotus,Histories1:14_3a.16))
 
 ( (IP-MAT (CODE {VS:14_3b})
 	  (NP-SBJ-1 (NP (D-NOM ὁ-ὁ) (CLPRT δὲ-δέ) (N-NOM χρυσὸς-χρυσός) (D-NOM οὗτος-οὗτος))
@@ -314,7 +314,7 @@
 		  (RRC (VPR-AOR-GEN ἀναθέντος-ἀνατίθημι))))
 	  (NP-ADV (N-ACC ἐπωνυμίην-ἐπωνυμία))
 	  (. .-.))
-  (ID Herodotus,Histories:14_3b.17))
+  (ID Herodotus,Histories1:14_3b.17))
 
 ( (IP-MAT (CODE {VS:15_1})
 	  (VBD-AOR ἐσέβαλε-εἰσβάλλω)
@@ -332,7 +332,7 @@
 		     (PP (P ἐς-εἰς)
 			 (NP (NPR-ACC Σμύρνην-Σμύρνα)))))
 	  (, ,-,))
-  (ID Herodotus,Histories:15_1.18))
+  (ID Herodotus,Histories1:15_1.18))
 
 ( (IP-MAT (CODE {VS:15_1a})
 	  (CONJ καὶ-καί)
@@ -342,7 +342,7 @@
 	  (NP-SBJ *con*)
 	  (VBD-AOR εἷλε-αἱρέω)
 	  (. ·-·))
-  (ID Herodotus,Histories:15_1a.19))
+  (ID Herodotus,Histories1:15_1a.19))
 
 ( (IP-MAT (CODE {VS:15_1b})
 	  (CONJ ἀλλ’-ἀλλά)
@@ -360,7 +360,7 @@
 			 (NUM τεσσεράκοντα-τεσσαράκοντα)
 			 (NS-ACC ἔτεα-ἔτος)))
 	  (, ,-,))
-  (ID Herodotus,Histories:15_1b.20))
+  (ID Herodotus,Histories1:15_1b.20))
 
 ( (IP-MAT (CODE {VS:15_1c})
 	  (NP-OB1 (D-ACC τοῦτον-οὗτος))
@@ -370,7 +370,7 @@
 	  (IP-PPL (NP-OB1 (Q-ACC τοσαῦτα-τοσοῦτος))
 		  (VPRP-AOR-TRNS1-NOM ἐπιμνησθέντες-ἐπιμιμνήσκομαι))
 	  (, ,-,))
-  (ID Herodotus,Histories:15_1c.21))
+  (ID Herodotus,Histories1:15_1c.21))
 
 ( (IP-MAT (CODE {VS:15_1d})
 	  (NP-OB1 (NP-COM (NPR-GEN Ἄρδυος-Ἄρδυς)
@@ -383,7 +383,7 @@
 	  (NP-SBJ *con*)
 	  (VBPP-FUT-TRNS1 ποιήσομαι-ποιέω)
 	  (. .-.))
-  (ID Herodotus,Histories:15_1d.22))
+  (ID Herodotus,Histories1:15_1d.22))
 
 ( (IP-MAT (CODE {VS:15_1e})
 	  (NP-SBJ (D-NOM οὗτος-οὗτος))
@@ -391,7 +391,7 @@
 	  (NP-OB1 (NPRS-ACC Πριηνέας-Πριηνεύς))
 	  (CLTE τε-τε)
 	  (VBD-AOR εἷλε-αἱρέω))
-  (ID Herodotus,Histories:15_1e.23))
+  (ID Herodotus,Histories1:15_1e.23))
 
 ( (IP-MAT (CODE {VS:15_1f})
 	  (PP (P ἐς-εἰς)
@@ -400,7 +400,7 @@
 	  (NP-SBJ *con*)
 	  (VBD-AOR ἐσέβαλε-εἰσβάλλω)
 	  (, ,-,))
-  (ID Herodotus,Histories:15_1f.24))
+  (ID Herodotus,Histories1:15_1f.24))
 
 ( (IP-MAT (CODE {VS:15_1g})
 	  (PP (P ἐπὶ-ἐπί)
@@ -418,7 +418,7 @@
 	  (VBDP-AOR-INTRNS ἀπίκοντο-ἀφικνέομαι)
 	  (PP (P ἐς-εἰς)
 	      (NP (D-ACC τὴν-ὁ) (NPR-ACC Ἀσίην-Ἀσία))))
-  (ID Herodotus,Histories:15_1g.25))
+  (ID Herodotus,Histories1:15_1g.25))
 
 ( (IP-MAT (CODE {VS:15_1h})
 	  (CONJ καὶ-καί)
@@ -428,7 +428,7 @@
 	  (NP-SBJ *con*)
 	  (VBD-AOR εἷλον-αἱρέω)
 	  (. .-.))
-  (ID Herodotus,Histories:15_1h.26))
+  (ID Herodotus,Histories1:15_1h.26))
 
 ( (IP-MAT (CODE {VS:16_1})
 	  (IP-ABS (NP-SBJ (NPR-GEN Ἄρδυος-Ἄρδυς))
@@ -443,7 +443,7 @@
 		  (NP-PRN (D-NOM ὁ-ὁ)
 			  (NP-ATR (NPR-GEN Ἄρδυος-Ἄρδυς))))
 	  (, ,-,))
-  (ID Herodotus,Histories:16_1.27))
+  (ID Herodotus,Histories1:16_1.27))
 
 ( (IP-MAT (CODE {VS:16_1a})
 	  (IP-MAT-1 (CONJ καὶ-καί)
@@ -455,7 +455,7 @@
 				   (CLPRT δὲ-δέ)
 				   (NPR-NOM Ἀλυάττης-Ἀλυάττης))))
 	  (. .-.))
-  (ID Herodotus,Histories:16_1a.28))
+  (ID Herodotus,Histories1:16_1a.28))
 
 ( (IP-MAT (CODE {VS:16_2})
 	  (NP-SBJ (D-NOM οὗτος-οὗτος))
@@ -471,7 +471,7 @@
 	  (CONJP-1 (CONJ καὶ-καί)
 		   (NP (NPRS-DAT Μήδοισι-Μῆδος)))
 	  (, ,-,))
-  (ID Herodotus,Histories:16_2.29))
+  (ID Herodotus,Histories1:16_2.29))
 
 ( (IP-MAT (CODE {VS:16_2a})
 	  (NP-OB1 (ADJ-ACC Κιμμερίους-Κιμμέριος))
@@ -481,7 +481,7 @@
 	  (NP-SBJ *con*)
 	  (VBD-AOR ἐξήλασε-ἐξελαύνω)
 	  (, ,-,))
-  (ID Herodotus,Histories:16_2a.30))
+  (ID Herodotus,Histories1:16_2a.30))
 
 ( (IP-MAT (CODE {VS:16_2b})
 	  (NP-OB1 (NPR-ACC Σμύρνην-Σμύρνα)
@@ -493,7 +493,7 @@
 	  (NP-SBJ *con*)
 	  (VBD-AOR εἷλε-αἱρέω)
 	  (, ,-,))
-  (ID Herodotus,Histories:16_2b.31))
+  (ID Herodotus,Histories1:16_2b.31))
 
 ( (IP-MAT (CODE {VS:16_2c})
 	  (PP (P ἐς-εἰς)
@@ -502,7 +502,7 @@
 	  (NP-SBJ *con*)
 	  (VBD-AOR ἐσέβαλε-εἰσβάλλω)
 	  (. .-.))
-  (ID Herodotus,Histories:16_2c.32))
+  (ID Herodotus,Histories1:16_2c.32))
 
 ( (IP-MAT (CODE {VS:16_2d})
 	  (PP (P ἀπὸ-ἀπό)
@@ -522,7 +522,7 @@
 		   (IP-PPL (VPR-AOR-NOM προσπταίσας-προσπταίω)
 			   (ADVP (ADV μεγάλως-μέγας))))
 	  (. ·-·))
-  (ID Herodotus,Histories:16_2d.33))
+  (ID Herodotus,Histories1:16_2d.33))
 
 ( (IP-MAT (CODE {VS:16_2e})
 	  (NP-OB1 (OTHER-ACC ἄλλα-ἄλλος)
@@ -537,7 +537,7 @@
 	  (CODE {COM:Smyth_section_1178f.})
 	  (NP-1 (ADJS ἀξιαπηγητότατα-ἀξιαφήγητος) (DS-ACC τάδε-ὅδε))
 	  (. .-.))
-  (ID Herodotus,Histories:16_2e.34))
+  (ID Herodotus,Histories1:16_2e.34))
 
 ( (IP-MAT (CODE {VS:17_1})
 	  (NP-SBJ *con*)
@@ -549,7 +549,7 @@
 		  (PP (P παρὰ-παρά)
 		      (NP (D-GEN τοῦ-ὁ) (N-GEN πατρός-πατήρ))))
 	  (. .-.))
-  (ID Herodotus,Histories:17_1.35))
+  (ID Herodotus,Histories1:17_1.35))
 
 ( (IP-MAT (CODE {VS:17_1a})
 	  (IP-PPL (VPR-IMPF-NOM ἐπελαύνων-ἐπελαύνω))
@@ -559,7 +559,7 @@
 	  (NP-OB1 (D-ACC τὴν-ὁ) (NPR-ACC Μίλητον-Μίλητος))
 	  (NP-ADV (N-DAT τρόπῳ-τρόπος) (D-DAT τοιῷδε-τοιόσδε))
 	  (. ·-·))
-  (ID Herodotus,Histories:17_1a.36))
+  (ID Herodotus,Histories1:17_1a.36))
 
 ( (IP-MAT (CODE {VS:17_1b})
 	  (ADVP-TMP (CP-REL (WADVP-1 (WADV ὅκως-ὅπως))
@@ -577,7 +577,7 @@
 	  (VBD-IMPF ἐσέβαλλε-εἰσβάλλω)
 	  (NP-OB1 (D-ACC τὴν-ὁ) (N-ACC στρατιήν-στρατιά))
 	  (. ·-·))
-  (ID Herodotus,Histories:17_1b.37))
+  (ID Herodotus,Histories1:17_1b.37))
 
 ( (IP-MAT (CODE {VS:17_1c})
 	  (NP-SBJ *con*)
@@ -592,7 +592,7 @@
 			 (NP (N-GEN αὐλοῦ-αὐλός)
 			     (ADJP (ADJ-GEN γυναικηίου-γυναικεῖος) (CLTE τε-τε) (CONJ καὶ-καί) (ADJ-GEN ἀνδρηίου-ἀνδρεῖος))))))
 	  (. .-.))
-  (ID Herodotus,Histories:17_1c.38))
+  (ID Herodotus,Histories1:17_1c.38))
 
 ( (IP-MAT (CODE {VS:17_2})
 	  (CP-ADV (C ὡς-ὡς)
@@ -609,7 +609,7 @@
 			      (NP (DS-GEN τῶν-ὁ) (NS-GEN ἀγρῶν-ἀγρός)))))
 	  (NP-SBJ *con*)
 	  (VBD-IMPF (NEG οὔ@-οὔτε) (CLTE @τε-@οὔτε@) (VBD-IMPF κατέβαλλε-καταβάλλω) (NEG οὔ@-οὔτε) (CLTE @τε-@οὔτε@) (VBD-IMPF ἐνεπίμπρη-ἐμπίμπρημι)))
-  (ID Herodotus,Histories:17_2.39))
+  (ID Herodotus,Histories1:17_2.39))
 
 ( (IP-MAT (CODE {VS:17_2a})
 	  (NEG οὔ@-οὔτε)
@@ -618,7 +618,7 @@
 	  (NP-SBJ *con*)
 	  (VBD-IMPF ἀπέσπα-ἀποσπάω)
 	  (, ,-,))
-  (ID Herodotus,Histories:17_2a.40))
+  (ID Herodotus,Histories1:17_2a.40))
 
 ( (IP-MAT (CODE {VS:17_2b})
 	  (NP-SBJ *con*)
@@ -628,7 +628,7 @@
 			  (NP (N-ACC χώρην-χώρα)))
 		      (VBN-PRF ἑστάναι-ἵστημι))
 	  (. ·-·))
-  (ID Herodotus,Histories:17_2b.41))
+  (ID Herodotus,Histories1:17_2b.41))
 
 ( (IP-MAT (CODE {VS:17_2c})
 	  (NP-SBJ (D-NOM ὁ-ὁ))
@@ -648,7 +648,7 @@
 	  (VBDP-IMPF-INTRNS ἀπαλλάσσετο-ἀπαλλάσσω)
 	  (ADVP-DIR (ADV ὀπίσω-ὀπίσω))
 	  (. .-.))
-  (ID Herodotus,Histories:17_2c.42))
+  (ID Herodotus,Histories1:17_2c.42))
 
 ( (IP-MAT (CODE {VS:17_3})
 	  (NP-OBQ (D-GEN τῆς-ὁ) (CLPRT γὰρ-γάρ) (N-GEN θαλάσσης-θάλασσα))
@@ -664,7 +664,7 @@
 				  (N-ACC ἔργον-ἔργον))
 			  (NP-OB2 (D-DAT τῇ-ὁ) (N-DAT στρατιῇ-στρατιά))))
 	  (. .-.))
-  (ID Herodotus,Histories:17_3.43))
+  (ID Herodotus,Histories1:17_3.43))
 
 ( (IP-MAT (CODE {VS:17_3a})
 	  (NP-OB1 (DS-ACC τὰς-ὁ) (CLPRT δὲ-δέ) (NS-ACC οἰκίας-οἰκία))
@@ -694,7 +694,7 @@
 							     (VBNP-IMPF-TRNS1 σίνεσθαι-σίνομαι))
 						 (IP-PPL (VPR-IMPF-NOM ἐσβάλλων-εἰσβάλλω)))))))
 	  (. .-.))
-  (ID Herodotus,Histories:17_3a.44))
+  (ID Herodotus,Histories1:17_3a.44))
 
 ( (IP-MAT (CODE {VS:18_1})
 	  (IP-PPL (NP-OB1 (DS-ACC ταῦτα-οὗτος))
@@ -703,7 +703,7 @@
 	  (VBD-IMPF ἐπολέμεε-πολεμέω)
 	  (NP-MSR (NS-ACC ἔτεα-ἔτος) (NUM ἕνδεκα-ἕνδεκα))
 	  (, ,-,))
-  (ID Herodotus,Histories:18_1.45))
+  (ID Herodotus,Histories1:18_1.45))
 
 ( (IP-MAT (CODE {VS:18_1a})
 	  (PP (P ἐν-ἐν)
@@ -727,7 +727,7 @@
 			      (NP (NP-ATR (NPR-GEN Μαιάνδρου-Μαίανδρος))
 				  (N-DAT πεδίῳ-πεδίον)))))
 	  (. .-.))
-  (ID Herodotus,Histories:18_1a.46))
+  (ID Herodotus,Histories1:18_1a.46))
 
 ( (IP-MAT (CODE {VS:18_2})
 	  (NP-MSR (DS-ACC τὰ-ὁ)
@@ -743,7 +743,7 @@
 	  (NP-OBQ (NPRS-GEN Λυδῶν-Λυδός))
 	  (VBD-IMPF ἦρχε-ἄρχω)
 	  (, ,-,))
-  (ID Herodotus,Histories:18_2.47))
+  (ID Herodotus,Histories1:18_2.47))
 
 ( (IP-PPL (CODE {VS:18_2a})
 	  (CODE {TODO:move_into_previous_token_as_IP-PPL?_or_keep_separate_because_it_has_its_own_SBJ?})
@@ -754,7 +754,7 @@
 	      (NP (D-ACC τὴν-ὁ) (ADJ-ACC Μιλησίην-Μιλήσιος)))
 	  (NP-OB1 (D-ACC τὴν-ὁ) (N-ACC στρατιήν-στρατιά))
 	  (. ·-·))
-  (ID Herodotus,Histories:18_2a.48))
+  (ID Herodotus,Histories1:18_2a.48))
 
 ( (IP-MAT (CODE {VS:18_2b})
 	  (CODE {COM:syntax_unclear_[tag=hard]})
@@ -768,7 +768,7 @@
 	  (RRC-2 (NP-OB1 *ICH*-1)
 		 (VPR-AOR-NOM συνάψας-συνάπτω))
 	  (. ·-·))
-  (ID Herodotus,Histories:18_2b.49))
+  (ID Herodotus,Histories1:18_2b.49))
 
 ( (IP-MAT (CODE {VS:18_2c})
 	  (NP-MSR (DS-ACC τὰ-ὁ)
@@ -803,7 +803,7 @@
 			    (VBD-IMPF προσεῖχε-προσέχω)
 			    (ADVP (ADV ἐντεταμένως-ἐντεταμένως))))
 	  (. .-.))
-  (ID Herodotus,Histories:18_2c.50))
+  (ID Herodotus,Histories1:18_2c.50))
 
 ( (IP-MAT-1 (CODE {VS:18_3})
 	    (NP-OBP (DS-DAT τοῖσι-ὁ) (CLPRT δὲ-δέ) (ADJ-DAT Μιλησίοισι-Μιλήσιος))
@@ -816,7 +816,7 @@
 		    (IP-SUB=1 (NEG μὴ-μή)
 			      (NP-SBJ (ADJ-NOM Χῖοι-Χῖος) (ADJ-NOM μοῦνοι-μόνος))))
 	    (. .-.))
-  (ID Herodotus,Histories:18_3.51))
+  (ID Herodotus,Histories1:18_3.51))
 
 ( (IP-MAT (CODE {VS:18_3a})
 	  (NP-SBJ (DS-NOM οὗτοι-οὗτος))
@@ -825,7 +825,7 @@
 		  (VPR-IMPF-NOM ἀνταποδιδόντες-ἀνταποδίδωμι))
 	  (VBD-IMPF ἐτιμώρεον-τιμωρέω)
 	  (. ·-·))
-  (ID Herodotus,Histories:18_3a.52))
+  (ID Herodotus,Histories1:18_3a.52))
 
 ( (IP-MAT (CODE {VS:18_3b})
 	  (CONJ καὶ-καί)
@@ -840,7 +840,7 @@
 		  (N-ACC πόλεμον-πόλεμος))
 	  (VBD-AOR συνδιήνεικαν-συνδιαφέρω)
 	  (. .-.))
-  (ID Herodotus,Histories:18_3b.53))
+  (ID Herodotus,Histories1:18_3b.53))
 
 ( (IP-MAT (CODE {VS:19_1})
 	  (NP-TMP (D-DAT τῷ-ὁ) (CLPRT δὲ-δέ) (ADJ-DAT δυωδεκάτῳ-δωδέκατος) (N-DAT ἔτεϊ-ἔτος))
@@ -854,7 +854,7 @@
 	  (NP-SBJ (NY *ICH*-1)
 		  (N-ACC πρῆγμα-πρᾶγμα))
 	  (. ·-·))
-  (ID Herodotus,Histories:19_1.54))
+  (ID Herodotus,Histories1:19_1.54))
 
 ( (IP-MAT (CODE {VS:19_1a})
 	  (CP-ADV (CODE {COM:another_ὡς_τάχιστα})
@@ -872,7 +872,7 @@
 			  (NP-PRN (NP-ADV (N-ACC ἐπίκλησιν-ἐπίκλησις))
 				  (ADJ-GEN Ἀσσησίης-Ἀσσήσιος))))
 	  (, ,-,))
-  (ID Herodotus,Histories:19_1a.55))
+  (ID Herodotus,Histories1:19_1a.55))
 
 ( (IP-MAT (CODE {VS:19_1b})
 	  (IP-PPL (VPRP-AOR-INTRNS-NOM ἁφθεὶς-ἅπτω))
@@ -880,7 +880,7 @@
 	  (NP-SBJ (D-NOM ὁ-ὁ) (N-NOM νηὸς-ναός))
 	  (VBDP-AOR-INTRNS κατεκαύθη-κατακαίω)
 	  (. .-.))
-  (ID Herodotus,Histories:19_1b.56))
+  (ID Herodotus,Histories1:19_1b.56))
 
 ( (IP-MAT (CODE {VS:19_2})
 	  (CONJ καὶ-καί)
@@ -889,7 +889,7 @@
 	  (NP-SBJ (N-NOM λόγος-λόγος) (NEG+Q-NOM οὐδεὶς-οὐδείς))
 	  (VBDP-AOR-INTRNS ἐγένετο-γίγνομαι)
 	  (, ,-,))
-  (ID Herodotus,Histories:19_2.57))
+  (ID Herodotus,Histories1:19_2.57))
 
 ( (IP-MAT (CODE {VS:19_2a})
 	  (ADVP-TMP (ADV μετὰ-μετά))
@@ -901,7 +901,7 @@
 	  (VBD-AOR ἐνόσησε-νοσέω)
 	  (NP-SBJ (D-NOM ὁ-ὁ) (N-NOM Ἀλυάττης-Ἀλυάττης))
 	  (. .-.))
-  (ID Herodotus,Histories:19_2a.58))
+  (ID Herodotus,Histories1:19_2a.58))
 
 ( (IP-MAT (CODE {VS:19_2b})
 	  (IP-ABS (ADJP-PRD (ADJR μακροτέρης-μακρός))
@@ -929,7 +929,7 @@
 					     (PP (P περὶ-περί)
 						 (NP (D-GEN τῆς-ὁ) (N-GEN νούσου-νόσος)))))))
 	  (. .-.))
-  (ID Herodotus,Histories:19_2b.59))
+  (ID Herodotus,Histories1:19_2b.59))
 
 ( (IP-MAT (CODE {VS:19_3})
 	  (DS-DAT-1 τοῖσι-ὁ)
@@ -962,7 +962,7 @@
 								(NP (NP-ATR *ICH*-3)
 								    (N-DAT Ἀσσησῷ-Ἀσσησός)))))))))
 	  (. .-.))
-  (ID Herodotus,Histories:19_3.60))
+  (ID Herodotus,Histories1:19_3.60))
 
 ( (IP-MAT (CODE {VS:20_1})
 	  (NP-1 (NS-GEN Δελφῶν-Δελφοί))
@@ -974,4 +974,4 @@
 	  (IP-INF-THT (ADVP *ICH*-2)
 		      (VBNP-AOR-INTRNS γενέσθαι-γίγνομαι))
 	  (. ·-·))
-  (ID Herodotus,Histories:20_1.61))
+  (ID Herodotus,Histories1:20_1.61))
