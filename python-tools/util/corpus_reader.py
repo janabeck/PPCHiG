@@ -327,7 +327,7 @@ class Token():
 
         ptree.insert(ins_point, T.ParentedTree.convert(new_postr2))
 
-    #END_DEF split_POS
+            #END_DEF split_POS
     
 #END_DEF Token
 
@@ -714,42 +714,47 @@ class Corpus():
 
         exclude = re.compile("VB.*|VPR.*|BE.*|BPR.*")
 
-        count = 0
+        non_words = re.compile("dash|{|\*|0|Herodotus|GreekNT")
 
-        non_words = re.compile("dash|{|\*|0|Herodotus")
+        #cases = ["NOM","GEN","ACC","DAT"]
 
         # try:
         for key in self.tokens.keys():
             tree = self.tokens[key]
             leaves = tree._tree.leaves()
             for tr in tree._tree.subtrees():
+                #dontask = False
                 with warnings.catch_warnings(record=True):
                     if tr[0] in leaves:
                         word = unicode(tr[0].decode('utf-8'))
                         pair = word.split("-")
                         rword = unicode(pair[0])
                         if not non_words.match(word):
-                            #print word
                             lemma = pair[1]
-                        count += 1
                         tag = tr.node
-                        if tag.find("-") != -1:
-                            pair2 = tag.split("-")
-                            tag1 = pair2[0]
-                            tag2 = pair2[1]
-                        elif tag.find("+") != -1:
-                            pair2 = tag.split("+")
-                            tag1 = pair2[0]
-                            tag2 = pair2[1]
+                        #for case in cases:
+                        #    if tag.find(case) != -1:
+                        #        dontask = True
+                        #if not dontask:
                         ind_match = self.re_index.match(tag)
                         if ind_match:
                             index = ind_match.group(2)
                             tag = tag.replace(index, "")
                         else:
                             index = ""
-                        if (not exclude.match(tag)) and tag.find("-") != -1 and (not word.find("*") != -1):
+                        if tag.find("-") != -1:
+                            pair2 = tag.split("-")
+                            tag1 = pair2[0]
+                            tag2 = pair2[1]
+                            sep = "-"
+                        elif tag.find("+") != -1:
+                            pair2 = tag.split("+")
+                            tag1 = pair2[0]
+                            tag2 = pair2[1]
+                            sep = "+"
+                        if (not exclude.match(tag)) and (tag.find("-") != -1 or tag.find("+") != -1) and (not word.find("*") != -1):
                             try:
-                                (w1, w2, lemma, corr) = self.get_split(rword, lemma, tag1, tag2)
+                                (w1, w2, lemma, corr) = self.get_split(rword, lemma, tag1, tag2, sep)
                                 if corr and isinstance(w1, tuple):
                                     if isinstance(lemma, tuple):
                                         tree.split_POS(w1[0], w2[0], lemma[0], lemma[1], "", index, tr, w1[1], w2[1])
@@ -761,13 +766,7 @@ class Corpus():
                                     tree.change_POS(tag1 + "+" + tag2, "", index, tr)
                             except TypeError:
                                 pass
-                            
-        # except IndexError:
-        #     print "I think I reached the end of the file!"
-        #     print
-        #     print "Word count is " + str(count) + "."
-        #     print
-
+                                
         self.print_trees(filename)
 
     #END_DEF split_words
@@ -816,10 +815,10 @@ class Corpus():
 
     #END_DEF check
 
-    def get_split(self, rword, lemma, tag1, tag2):
+    def get_split(self, rword, lemma, tag1, tag2, sep):
         """Returns w1 and w2, the first and second halves a split word."""
 
-        bool = raw_input("Do you want to split this word? " + rword.encode('utf-8') + " ")
+        bool = raw_input("Do you want to split this word? " + rword.encode('utf-8') + " " + tag1 + sep + tag2 + " ")
         print
         if bool == "y":
             ind = int(raw_input("Enter the index of the first letter of the second half of the word. "))
@@ -830,11 +829,12 @@ class Corpus():
         else:
             print "OK, we won't split this word."
             print
-            pl = raw_input("Do you want to change the separator to a '+'? ")
-            print
-            if pl == "y":
-                return ("", "", lemma, False)
-            print
+            if sep == "-":
+                pl = raw_input("Do you want to change the separator to a '+'? ")
+                print
+                if pl == "y":
+                    return ("", "", lemma, False)
+                print
 
     #END_DEF get_split
 
@@ -884,6 +884,7 @@ class Corpus():
                 verb = False
                 reflexive = False
                 compound = False
+                special = False
                 remainder = ""
                 no_change = False
                 if tr[0] in leaves:
@@ -909,6 +910,11 @@ class Corpus():
                         tag = comp_group[2]
                         remainder = comp_group[0] + "+"
                         compound = True
+                    elif tag.find("POS") != -1 or tag.find("RCP") != -1:
+                        comp_group = tag.partition("-")
+                        tag = comp_group[0]
+                        remainder = "-" + comp_group[2]
+                        special = True
                     if participle.match(tag):
                         verb = True
                         verb_group = tag.partition("-")
@@ -936,6 +942,8 @@ class Corpus():
                                         tag = "".join([coretag, remainder, "-" + dash])
                                     else:
                                         tag = "".join([remainder, coretag, "-" + dash])
+                                elif special:
+                                    tag = "".join([coretag, "-" + dash, remainder])
                                 else:
                                     tag = "-".join([coretag, dash])
                                 tree.change_POS(tag, "", index, tr)
@@ -971,6 +979,12 @@ class Corpus():
                             if "SLF" in tag:
                                 tag = tag.replace("+SLF","")
                                 remainder = "+SLF"
+                            elif "POS" in tag:
+                                tag = tag.replace("-POS","")
+                                remainder = "POS"
+                            elif "RCP" in tag:
+                                tag = tag.repalce("-RCP","")
+                                remainder = "RCP"
                             elif participle.match(tag):
                                 verb_group = tag.partition("-")
                                 tag = verb_group[0]
