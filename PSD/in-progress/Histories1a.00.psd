@@ -410,7 +410,7 @@
 	      (VBNP-AOR-TRNS2 ὑποκρίνασθαι-ὑποκρίνομαι)
 	      (CP-THT (C ὡς-ὡς)
 		      (IP-SUB (NEG οὐ@-οὐδέ)
-			      (CLPRT @δὲ-@οὐδέ@)
+			      (CLADV @δὲ-@οὐδέ@)
 			      (NP-SBJ (DS-NOM ἐκεῖνοι-ἐκεῖνος))
 			      (NP-1 (NP-PRN (NPR-GEN Ἰοῦς-Ἰώ))
 				    (D-GEN τῆς-ὁ)
@@ -427,7 +427,7 @@
 
 ( (IP-MAT (CODE {VS:2_3b})
 	  (NEG-1 οὐ@-οὐδέ)
-	  (CLPRT-1 @δὲ-@οὐδέ@)
+	  (CLADV-1 @δὲ-@οὐδέ@)
 	  (CLPRT ὦν-οὖν)
 	  (NP-SBJ (NP-PRN (PRO-NOM αὐτοὶ-αὐτός)))
 	  (CODE {COM:ellipsed_verb_of_saying--e.g.,_λέγουσι})

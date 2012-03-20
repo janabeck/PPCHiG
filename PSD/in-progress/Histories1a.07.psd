@@ -596,7 +596,7 @@
 		    (NEG οὐ-οὐ)
 		    (CLPRT γὰρ-γάρ)
 		    (CLPRT ὦν-οὖν)
-		    (NP-SBJ (NEG οὐ@-οὐδέ) (ADV @δὲ-@οὐδέ@) (D-NOM τοῦτο-οὗτος))
+		    (NP-SBJ (NEG οὐ@-οὐδέ) (CLADV @δὲ-@οὐδέ@) (D-NOM τοῦτο-οὗτος))
 		    (VBPP-IMPF-PASS λέγεται-λέγω)
 		    (RPAREN RPAREN-RPAREN))
 	  (, ,-,)

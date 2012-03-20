@@ -372,7 +372,7 @@
 		    (CP-DEG (C ὥσ@-ὥστε)
 			    (CLTE @τε-@ὥστε@)
 			    (IP-INF (NEG μη@-μηδέ)
-				    (CLPRT @δὲ-@μηδέ@)
+				    (CLADV @δὲ-@μηδέ@)
 				    (VBN-AOR μαθεῖν-μανθάνω)
 				    (NP-SBJ (CLPRO-ACC μιν-μιν))
 				    (IP-PPL-THT (VPRP-AOR-PASS-ACC ὀφθεῖσαν-ὁράω)
