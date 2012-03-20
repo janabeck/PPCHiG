@@ -33,7 +33,7 @@ var extensions=["-SBJ","-LFD","-RSP","-PRN","-SPE","-CL","-ZZZ","-XXX"]
 /* clause extensions are treated as not part of the label for various purposes,
  * they are all binary, and they show up in the toggle extension menu
  */
-var clause_extensions=["-PRN","-SPE","-SBJ","-ZZZ","-XXX"]
+var clause_extensions=["-IMP","-PRN","-SPE","-SBJ","-ZZZ","-XXX"]
 
 /* verbal extensions are treated as not part of the label for various purposes,
  * they are all binary, and they show up in the verbal extension menu (TODO)
@@ -116,6 +116,7 @@ function customCommands(){
     //addCommand({ keycode: 72 }, ); // h
     addCommand({ keycode: 73 }, toggleVerbalExtension, "-IMPF"); // i
     addCommand({ keycode: 73, shift: true }, toggleVerbalExtension, "-IND"); // shift + i
+    addCommand({ keycode: 73, ctrl: true }, toggleExtension, "-IMP"); // ctrl + i
     //addCommand({ keycode: 74 }, ); // j
     addCommand({ keycode: 75 }, toggleVerbalExtension, "-KJV"); // k
     addCommand({ keycode: 76 }, editLemmaOrLabel); // l
@@ -259,3 +260,7 @@ styleTags(["VBPP","VBDP","VBNP","VBIP","VBSP","VBOP","VPRP","VPRP$","VPRPA","VPR
 
 var ipnodes=["IP","RRC"];
 styleIpNodes();
+
+// Local Variables:
+// indent-tabs-mode: nil
+// End:
