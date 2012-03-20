@@ -714,9 +714,21 @@ class Corpus():
 
         exclude = re.compile("VB.*|VPR.*|BE.*|BPR.*")
 
-        non_words = re.compile("dash|{|\*|0|Herodotus|GreekNT")
+        non_words = re.compile("dash|{|\*|0|Herodotus|GreekNT|@")
 
         #cases = ["NOM","GEN","ACC","DAT"]
+
+        # for key in self.tokens.keys():
+        #     tree = self.tokens[key]
+        #     leaves = tree._tree.leaves()
+        #     for tr in tree._tree.subtrees():
+        #         if tr[0] in leaves:
+        #             word = unicode(tr[0].decode('utf-8'))
+        #             pair = word.split("-")
+        #             rword = unicode(pair[0])
+        #             if not non_words.match(word):
+        #                 print word
+        #                 lemma = pair[1]    
 
         # try:
         for key in self.tokens.keys():
@@ -771,7 +783,7 @@ class Corpus():
 
     #END_DEF split_words
 
-    def check(self, tag1, tag2, w1, w2, rword, lemma):
+    def check(self, tag1, tag2, w1, w2, rword, lemma, sep):
         """Confirms word split."""
         
         corr = raw_input("Is this correct? The first part of the word will be: " + tag1 + " " + w1.encode('utf-8') \
@@ -811,7 +823,7 @@ class Corpus():
                 return (w1.encode('utf-8'), w2.encode('utf-8'), lemma, corr)
 
         else:
-            self.get_split(rword, lemma, tag1, tag2)
+            self.get_split(rword, lemma, tag1, tag2, sep)
 
     #END_DEF check
 
@@ -825,7 +837,7 @@ class Corpus():
             print
             w1 = rword[:ind] + "@"
             w2 = "@" + rword[ind:]
-            return self.check(tag1, tag2, w1, w2, rword, lemma)
+            return self.check(tag1, tag2, w1, w2, rword, lemma, sep)
         else:
             print "OK, we won't split this word."
             print
