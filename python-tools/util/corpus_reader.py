@@ -636,11 +636,12 @@ class Corpus():
                         lst_letter += 1
                         leaf = T.ParentedTree("CODE", ["{VS:" + lst_milestone + chr(lst_letter) + "}"])
                         tree.milestones[0] = "{VS:" + lst_milestone + chr(lst_letter) + "}"
-                        # replace milestone as first leaf of main tree
-                        tree.main_tree[0] = leaf
-                        # rebuild tree with wrapper
-                        new_tree = T.Tree("", [tree.metadata, tree.main_tree, tree.id_tree])
-                        tree._tree = T.ParentedTree.convert(new_tree)
+                        if key != 1:
+                            # replace milestone as first leaf of main tree, unless first tree in file
+                            tree.main_tree[0] = leaf
+                            # rebuild tree with wrapper
+                            new_tree = T.Tree("", [tree.metadata, tree.main_tree, tree.id_tree])
+                            tree._tree = T.ParentedTree.convert(new_tree)
                     lst_milestone = match.group(1)
                     try:
                         lst_letter = ord(match.group(2))
