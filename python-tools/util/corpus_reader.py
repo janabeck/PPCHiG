@@ -1416,8 +1416,6 @@ class Corpus():
     #END_DEF print_words
                     
 #END_DEF Corpus
-
-corpus = Corpus()
                                 
 def main():
 
