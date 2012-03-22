@@ -10,6 +10,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 """
 
 import sys
+import runpy
 import re
 import argparse
 import datetime
@@ -708,14 +709,12 @@ class Corpus():
 
     #END_DEF replace_tokens
 
-    def split_words(self, filename):
+    def split_words(self, filename, exclude, non_words):
         """Generate a dialog on the command line to split words with more than one POS tag."""
+        """(Optionally) pass this method a regular expression describing tags to exclude."""
+        """(Optionally) pass this method a regular expression describing non-words."""
 
         self.print_word_count(self.word_count())
-
-        exclude = re.compile("VB.*|VPR.*|BE.*|BPR.*")
-
-        non_words = re.compile("dash|{|\*|0|Herodotus|GreekNT|@")
 
         #cases = ["NOM","GEN","ACC","DAT"]
 
@@ -1416,11 +1415,14 @@ class Corpus():
     #END_DEF print_words
                     
 #END_DEF Corpus
+
+corpus = Corpus()
                                 
 def main():
 
     parser = argparse.ArgumentParser(description='Process the input files and command line options.')
     # TODO: maybe gather additional filenames in a remainder arguments (see docs) instead of gathering into psd list?
+    parser.add_argument('-s', '--settings', dest='settings_path', action='store', help='Direct Corpus Reader to your language-specific settings file.')
     parser.add_argument('-c', '--count', dest='count', action='store_true', help='Print the word count.')
     parser.add_argument('-i', '--ids', dest='renumber_ids', action='store_true', help='Renumber the IDs in the .psd file.')
     parser.add_argument('-m', '--milestones', dest='add_milestones', action='store_true', help='Add continuity milestones to the .psd file.')
@@ -1430,8 +1432,6 @@ def main():
     parser.add_argument('-l', '--split_POS', dest='split', action='store_true', help='Split words that have more than one POS tag.')
     parser.add_argument('psd', nargs='+')
     args = parser.parse_args()
-
-    corpus = Corpus()
 
     if len(args.psd) == 1:
         filename = args.psd[0]
@@ -1452,6 +1452,12 @@ def main():
             sys.exit()
 
     picked = False
+
+    if args.settings_path:
+        settings = runpy.run_path(args.settings_path)
+        sett = True
+    else:
+        sett = False
 
     if args.count:
         corpus.print_word_count(corpus.word_count())
@@ -1481,7 +1487,13 @@ def main():
         picked = True
 
     if args.split:
-        corpus.split_words(filename)
+        if sett:
+            exclude = settings['exclude']
+            non_words = settings['non_words']
+        else:
+            exclude = ""
+            non_words = ""
+        corpus.split_words(filename, exclude, non_words)
         picked = True
         
     if not picked:
