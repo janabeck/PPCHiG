@@ -351,6 +351,33 @@ class Corpus():
 
     #END_DEF __init__
 
+    def read(self, filename):
+        """Read in a .psd file and return a list of trees as strings."""
+
+        in_str = ""
+        
+        # boolean for whether currently in comment block in CorpusSearch output file
+        comment = False
+
+        # method for getting trees out of CorpusSearch output file
+        in_file = open(filename, "rU")
+
+        for line in in_file:
+            if line.startswith("/*") or line.startswith("/~*"):
+                comment = True
+            elif not comment:
+                in_str = in_str + line
+            elif line.startswith("*/") or line.startswith("*~/"):
+                comment = False
+            else:
+                pass
+
+        trees = in_str.split("\n\n")
+
+        self.load(trees)
+
+    #END_DEF read
+
     def load(self, trees):
         """Initializes Token objects and fills Corpus instance."""
 
@@ -1412,7 +1439,7 @@ class Corpus():
                 else:
                     print >> out_file, word
                     
-    #END_DEF print_words
+        #END_DEF print_words
                     
 #END_DEF Corpus
 
@@ -1435,8 +1462,7 @@ def main():
 
     if len(args.psd) == 1:
         filename = args.psd[0]
-        in_trees = read(filename)
-        corpus.load(in_trees)
+        corpus.read(filename)
     else:
         response = raw_input("Is this your main corpus file " + args.psd[0] + "?\
         Enter y or n. ")
@@ -1444,8 +1470,7 @@ def main():
 
         if response == "y":
             filename = args.psd[0]
-            in_trees = read(filename)
-            corpus.load(in_trees)
+            corpus.read(filename)
         else:
             print "You should enter the name of your .psd file *before* you enter the name of an additional input file when not using a command line option."
             print
@@ -1476,9 +1501,8 @@ def main():
         picked = True
 
     if args.output_file:
-        out_trees = read(args.output_file)
         corpus2 = Corpus()
-        corpus2.load(out_trees)
+        corpus2.read(args.output_file)
         corpus.replace_tokens(filename, corpus2)
         picked = True
 
@@ -1495,7 +1519,7 @@ def main():
             non_words = ""
         corpus.split_words(filename, exclude, non_words)
         picked = True
-        
+
     if not picked:
         if len(args.psd) == 1:
             select(corpus, filename, "")
