@@ -1,6 +1,6 @@
 import re
 
-# variables for split_words
+# variables for split_words function
 
 exclude = re.compile("VB.*|VPR.*|BE.*|BPR.*")
 
