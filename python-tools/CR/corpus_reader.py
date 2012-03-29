@@ -1237,7 +1237,7 @@ def select(corpus, filename, add_file):
     print "    b. Print a concordance of lemmas per category as defined in an input category definition file."
     print "    c. Print all the unique lemmas (and their frequences) in a corpus file."
     print "    d. Print a concordance of the word forms (and their frequencies) for the given lemma."
-    print "    e. Print the text (words, punctuation, milestones) of the corpus file."
+    print "    e. Print the text (words, punctuation) of the corpus file."
     print "    f. Print just the words of the corpus file."
     print
 
