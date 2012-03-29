@@ -15,10 +15,10 @@ import re
 from corpus_reader import Corpus
 
 class GreekCorpus(Corpus):
-	"""Greek-specific Corpus Reader functions."""
+    """Greek-specific Corpus Reader functions."""
 
-	def transform_case(self, filename):
-	    """Change case tags from non-hyphenated suffixes to hyphenated extensions."""
+    def transform_case(self, filename):
+        """Change case tags from non-hyphenated suffixes to hyphenated extensions."""
 
         participle = re.compile("VPR*|BPR*")
 
@@ -134,17 +134,17 @@ class GreekCorpus(Corpus):
 
 def main():
 
-	print "Hello, world"
+    print "Hello, world"
 
-	corpus = GreekCorpus()
+    corpus = GreekCorpus()
 
-	filename = sys.argv[1]
+    filename = sys.argv[1]
 
-	print filename
+    print filename
 
-	corpus.read(filename)
+    corpus.read(filename)
 
-	corpus.transform_case(filename)
+    corpus.transform_case(filename)
 
 if __name__ == "__main__":
-	main()
+    main()
