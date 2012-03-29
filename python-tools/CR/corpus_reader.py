@@ -56,8 +56,11 @@ class Token():
     """A class for Penn-style parsed trees."""
     #TODO: represent lemmas in the data structure separately from pos?
     
-    def __init__(self, str):
+    def __init__(self, str, corpus):
         """Initialize a token."""
+
+        # corpus is the Corpus object containing the Token
+        self.corpus = corpus
 
         # _tree contains the token as an nltk Tree
         self._tree = T.ParentedTree(str)
@@ -71,8 +74,8 @@ class Token():
         # id_tree contains the ID subtree
         self.id_tree = ""
         
-        # corpus contains the corpus part of the ID as a string
-        self.corpus = ""
+        # corpusID contains the corpus part of the ID as a string
+        self.corpusID = ""
 
         # book contains the book (= filename) part of the ID as a string
         self.book = ""
@@ -166,12 +169,12 @@ class Token():
                 self.id = leaf
                 try:
                     id_stuff = id_str.match(leaf)
-                    self.corpus = id_stuff.group(1)
+                    self.corpusID = id_stuff.group(1)
                     self.book = id_stuff.group(2)
                     self.id_num = id_stuff.group(3)
                 except AttributeError:
                     id_stuff = alt_id_str.match(leaf)
-                    self.corpus = id_stuff.group(1)
+                    self.corpusID = id_stuff.group(1)
                     self.book = id_stuff.group(2)
                     self.id_num = id_stuff.group(3)                    
             # catches punctuation. allowed punctuation POS tags are , . ' " ` LPAREN RPAREN
@@ -205,15 +208,15 @@ class Token():
                         self.text.append(ortho)
                         self.pos.append(((ortho, lemma), tag))
                         self.words.append(ortho)
-                        if lemma in corpus.lemmas:
-                            forms = corpus.lemmas[lemma]
+                        if lemma in self.corpus.lemmas:
+                            forms = self.corpus.lemmas[lemma]
                             if ortho in forms:
                                 forms[ortho] += 1
                             else:
                                 forms[ortho] = 1
                         else:
-                            corpus.lemmas[lemma] = {}
-                            corpus.lemmas[lemma][ortho] = 1
+                            self.corpus.lemmas[lemma] = {}
+                            self.corpus.lemmas[lemma][ortho] = 1
                             
                     except AttributeError:
                         print "Something went wrong here:" + leaf
@@ -385,7 +388,7 @@ class Corpus():
 
         for tree in trees:
             if tree != "":
-                tok = Token(tree)
+                tok = Token(tree, self)
                 if count == 0:
                     if tree.find("VERSION") != -1:
                         self.parse_version(tok._tree)
@@ -1442,10 +1445,10 @@ class Corpus():
         #END_DEF print_words
                     
 #END_DEF Corpus
-
-corpus = Corpus()
                                 
 def main():
+
+    corpus = Corpus()
 
     parser = argparse.ArgumentParser(description='Process the input files and command line options.')
     # TODO: maybe gather additional filenames in a remainder arguments (see docs) instead of gathering into psd list?
