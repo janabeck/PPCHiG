@@ -1,0 +1,12 @@
+Greek-specific functions:
+a. Correct the POS tags of words bearing certain lemmas in a corpus file.
+  + on the command line after the .psd file name, give the name of a file where you have listed the following on each line:
+    lemma-to-be-corrected<tab>attributes-to-be-preserved-separated-by-comma-and-no-spaces<tab>new-POS-tag
+  + lemmas to be corrected are listed without the dash '-'
+  + attributes to be preserved so far include case and number, but the way this is implemented is specific to the
+  Greek POS tagset
+b. Swap the POS tags in a corpus file with those from a map file.
+  + on the command line after the .psd file name, give the name of your "map file"
+  + a "map file" has the format word-lemma<tab>POS-tag on each line
+c. Transform case suffixes into dash tags.
+d. Transform case dash tags back into suffixes.
