@@ -1232,42 +1232,20 @@ def read(filename):
 def select(corpus, filename, add_file):
     """Select another CR function from a menu."""
 
-    #TODO: write the selector for less common functions!
     print "Select a function:"
-    print "    a. Correct the POS tags of words bearing certain lemmas in a corpus file."
-    print "    b. Swap the POS tags in a corpus file with those from a map file."
-    print "    c. Print a concordance of lemmas and POS tags in the corpus."
-    print "    d. Print a concordance of lemmas per category as defined in an input category definition file."
-    print "    e. Print all the unique lemmas (and their frequences) in a corpus file."
-    print "    f. Print a concordance of the word forms (and their frequencies) for the given lemma."
-    print "    g. Print the text (words, punctuation, milestones) of the corpus file."
-    print "    h  Print just the words of the corpus file."
-    print "    i. Transform case suffixes into dash tags."
-    print "    j. Transform case dash tags back into suffixes."
+    print "    a. Print a concordance of lemmas and POS tags in the corpus."
+    print "    b. Print a concordance of lemmas per category as defined in an input category definition file."
+    print "    c. Print all the unique lemmas (and their frequences) in a corpus file."
+    print "    d. Print a concordance of the word forms (and their frequencies) for the given lemma."
+    print "    e. Print the text (words, punctuation, milestones) of the corpus file."
+    print "    f. Print just the words of the corpus file."
     print
 
-    # TODO: probably replace try/except blocks below
     selection = raw_input("Please enter the letter of the function you would like to run. ")
     print
     if selection == "a":
-        try:
-            lem_file = open(add_file, "rU")
-            corpus.correct_by_lemma(filename, lem_file)
-        except IOError:
-            #print traceback.print_exc(file=sys.stdout)
-            print "You need to enter the name of the category definition file on the command line to run this function!"
-            print
-    elif selection == "b":
-        try:
-            map_file = open(add_file, "rU")
-            corpus.swap(filename, map_file)
-        except IOError:
-            #print traceback.print_exc(file=sys.stdout)
-            print "You need to enter the name of the category definition file on the command line to run this function!"
-            print
-    elif selection == "c":
         corpus.pos_concordance()
-    elif selection == "d":
+    elif selection == "b":
         try:
             cat_file = open(add_file, "rU")
             corpus.category_concordance(cat_file)
@@ -1275,27 +1253,23 @@ def select(corpus, filename, add_file):
             #print traceback.print_exc(file=sys.stdout)
             print "You need to enter the name of the category definition file on the command line to run this function!"
             print
-    elif selection == "e":
+    elif selection == "c":
         print "Would you like to sort the lemmas by frequency or alphabetically?"
         print
         sort = raw_input("Please type 'freq' to sort by frequency or 'alpha' to sort alphabetically. ")
         print
         corpus.unique_lemmas(sort)
-    elif selection == "f":
+    elif selection == "d":
         if add_file != "":
             lemma = add_file
             corpus.lemma_concordance(lemma)
         else:
             print "You need to enter the lemma you are interested in on the command line to run this function!"
             print
-    elif selection == "g":
+    elif selection == "e":
         corpus.print_text(filename)
-    elif selection == "h":
+    elif selection == "f":
         corpus.print_words(filename)
-    elif selection == "i":
-        corpus.transform_case(filename)
-    elif selection == "j":
-        corpus.transform_back(filename)
     else:
         print "I'm sorry--I don't understand what you entered."
         print
