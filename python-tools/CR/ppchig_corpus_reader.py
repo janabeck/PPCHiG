@@ -360,7 +360,7 @@ def main():
 
     corpus.read(filename)
 
-    corpus.select(corpus, filename, add_file)
+    select(corpus, filename, add_file)
 
 def select(corpus, filename, add_file):
     """Select a Greek-specific CR function."""
