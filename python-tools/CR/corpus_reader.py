@@ -616,13 +616,13 @@ class Corpus():
                     ms_lst = ms_lst + match.group(1) + ";"
                 if tree.root != "VERSION":
                     if count == 1:
-                        if tree.corpus == "" or tree.book == "":
-                            tree.corpus = raw_input("What is the name of your corpus? ")
-                            corp = tree.corpus
+                        if tree.corpusID == "" or tree.book == "":
+                            tree.corpusID = raw_input("What is the name of your corpus? ")
+                            corp = tree.corpusID
                             tree.book = raw_input("What is the book (= filename without the extension)? ")
                             bk = tree.book
                         else:
-                            corp = tree.corpus
+                            corp = tree.corpusID
                             bk = tree.book
                     ## print "Old ID was " + tree.id
                     ## print
