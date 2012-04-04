@@ -36,15 +36,16 @@ class ChicagoScrub(Scrub):
         
         print "Finding major divisions in the XML file..."
         print
+
+        count = 1
         
         # gets sub-trees for all books
         divisions = soup.findAll(type="book")
-        book = 1
+        book = raw_input("What number book of Herodotus would you like to scrub? ")
         for division in divisions:
-            self.scrub(division, book)
-            book += 1
-            if book == 2:
-                break
+            if count == int(book):
+                self.scrub(division, book)
+            count += 1
 
     def scrub(self, division, book):
         """Scrubs the XML in the division passed to it to prep the content for output."""
@@ -69,7 +70,7 @@ class ChicagoScrub(Scrub):
         for item in node.contents:
             try:
                 if item.name == "w":
-                    if item["lemma"] !+ "":
+                    if item["lemma"] == "":
                         pair = "(X " + item.string + "-" + "lemma" + ")"
                     else:
                         pair = "(X " + item.string + "-" + item["lemma"] + ")"
