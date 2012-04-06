@@ -353,9 +353,9 @@ def main():
 
     filename = sys.argv[1]
 
-    if sys.argv[2]:
+    try:
         add_file = sys.argv[2]
-    else:
+    except IndexError:
         add_file = ""
 
     corpus.read(filename)
