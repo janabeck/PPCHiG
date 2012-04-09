@@ -97,7 +97,7 @@
   (ID Herodotus,Histories1:8_1a.4))
 
 ( (IP-MAT (CODE {VS:8_1b})
-	  (IP-PPL (ADVP (WADV ὥσ@-ὥστε) (CLTE @τε-@ὥστε@))
+	  (IP-PPL (ADVP (ADV ὥσ@-ὥστε) (CLTE @τε-@ὥστε@))
 		  (CLPRT δὲ-δέ)
 		  (NP-OB1 (DS-ACC ταῦτα-οὗτος))
 		  (VPR-IMPF-NOM νομίζων-νομίζω))
