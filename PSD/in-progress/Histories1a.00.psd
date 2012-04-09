@@ -686,7 +686,7 @@
 ( (IP-INF-THT (CODE {VS:4_4})
 	      (PP (P ἀπὸ-ἀπό)
 		  (NP (D-GEN τούτου-οὗτος)))
-	      (ADVP-TMP (ADV αἰεὶ-ἀεί))
+	      (ADVP (ADV αἰεὶ-ἀεί))
 	      (NP-SBJ *pro*)
 	      (VBNP-AOR ἡγήσασθαι-ἡγέομαι)
 	      (IP-INF-THT (NP-SBJ (D-ACC τὸ-ὁ) (ADJ-ACC Ἑλληνικὸν-Ἑλληνικός))
