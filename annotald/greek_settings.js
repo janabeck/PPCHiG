@@ -25,6 +25,15 @@
 var displayCaseMenu = false;
 var caseTags=[];
 
+/*
+ * These two functions should return true if the string argument is a valid
+ * label for a branching (-Phrase-) and non-branching (-Leaf-) label, and
+ * false otherwise.  The utility function basesAndDashes is provided.  It
+ * takes two arguments, a list of base tags and a list of dash tags.  It
+ * returns a function suitable for assigning to one of these variables.*/
+var testValidPhraseLabel = undefined;
+var testValidLeafLabel   = undefined;
+
 /* extensions are treated as not part of the label for various purposes, 
  * they are all binary, and they show up in the toggle extension menu  
  */
@@ -154,7 +163,7 @@ function customConMenuGroups(){
     addConMenuGroup( [",","."] );
     addConMenuGroup( ["BED","BEI","BEN","BEO","BEP","BES","BPR"] );
     addConMenuGroup( ["CLGE","CLPRO","CLPRO$","CLPROA","CLPROD","CLPRT","CLQ","CLQ$","CLQA","CLQD","CLTE"] );
-    addConMenuGroup( ["C","CONJ","ADV","WADV"] );
+    addConMenuGroup( ["C","P","CONJ","ADV","WADV"] );
     addConMenuGroup( ["D","D$","DA","DD","DS","DS$","DSA","DSD"] );
     addConMenuGroup( ["INTJ","INTJP","FW","PRTQ"] );
     addConMenuGroup( ["Q","Q$","QA","QD","QR","QS","QV"] );
