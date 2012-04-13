@@ -2,8 +2,7 @@ word_tag <-
  ( nominal | verbal | adverb | clitic | fn_cat | other_word | punct )
 
 nominal <-
- ('N' ?'PR' ?'S' case) | ('ADJ' ?('R' | 'S' | case)) | ('D' ?'S' case) |
-  'NUM' | ('PRO' case) | ('Q' ?('R' | 'S' | case) | ('OTHER' case)
+ ('N' ?'PR' ?'S' case) | ('ADJ' ?('R' | 'S' | case)) | ('D' ?'S' case) | 'NUM' | ('PRO' case) | ('Q' ?('R' | 'S' | case)) | ('OTHER' case)
 
 case <-
  '-NOM' | '-GEN' | '-ACC' | '-DAT'
