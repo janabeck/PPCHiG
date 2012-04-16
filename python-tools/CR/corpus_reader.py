@@ -22,6 +22,8 @@ import codecs
 from sets import Set
 import nltk.tree as T
 
+from leaf_grammar import Parser as LP
+
 class myT(T.ParentedTree):
 
     def get_siblings(self):
@@ -1114,6 +1116,29 @@ class Corpus():
                     print >> out_file, word
                     
         #END_DEF print_words
+
+    def validate_POS(self):
+        """Validate all POS-level tags."""
+
+        out_file = open("POS-validation.log","w")
+
+        p = LP()
+
+        for key in self.tokens.keys():
+            tree = self.tokens[key]
+            for tup in tree.pos:
+                tag = tup[1]
+                res = p.parse(tag)
+                print >> out_file, tag + ":"
+                print >> out_file, res
+                print >> out_file
+
+    def validate_phrase(self):
+        """Validate all phrase-level tags."""
+
+        print "Phrase-level validation isn't ready yet!"
+        print
+        sys.exit()
                     
 #END_DEF Corpus
                                 
@@ -1131,6 +1156,7 @@ def main():
     parser.add_argument('-r', '--replace', dest='output_file', action='store', help='Insert the tokens from a CorpusSearch output file into the main .psd corpus file.')
     parser.add_argument('-t', '--timelog', dest='timelog', action='store_const', const='timelog.txt', help='Calculate words per hour parsed from a timelog.txt.')
     parser.add_argument('-l', '--split_POS', dest='split', action='store_true', help='Split words that have more than one POS tag.')
+    parser.add_argument('-v', '--validate', dest='valid_type', action='store', help='Validate at the pos or phrase level.')
     parser.add_argument('psd', nargs='+')
     args = parser.parse_args()
 
@@ -1192,6 +1218,16 @@ def main():
             exclude = ""
             non_words = ""
         corpus.split_words(filename, exclude, non_words)
+        picked = True
+
+    if args.valid_type:
+        if args.valid_type == "pos":
+            corpus.validate_POS()
+        elif args.valid_type == "phrase":
+            corpus.validate_phrase()
+        else:
+            "I didn't understand your validation type."
+            sys.exit()
         picked = True
 
     if not picked:
