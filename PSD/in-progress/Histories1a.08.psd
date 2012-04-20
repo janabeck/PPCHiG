@@ -2489,7 +2489,7 @@
 			  (ADJP-PRD (ADJ-NOM οἷοί-οἷος)
 				    (IP-INF-COM *ICH*-2))
 			  (CLTE τε-τε)
-			  (NP-SBJ *pro*)
+			  (NP-SBJ *exp*)
 			  (VBDP-IMPF-INTRNS ἐγίνοντο-γίγνομαι)
 			  (IP-INF-2 (VBN-AOR *ICH*-1)
 				    (NP-OB1 (D-ACC τὴν-ὁ)
