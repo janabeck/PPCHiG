@@ -7,6 +7,7 @@
 ὀλίγος	case	Q
 πολύς	case	Q
 ἕκαστος	case	Q
+ἑκάτερος	case	Q
 οὐδείς	case	NEG+Q
 μηδείς	case	NEG+Q
 οὐδέτερος	case	NEG+Q
