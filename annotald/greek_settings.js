@@ -37,17 +37,17 @@ var testValidLeafLabel   = undefined;
 /* extensions are treated as not part of the label for various purposes, 
  * they are all binary, and they show up in the toggle extension menu  
  */
-var extensions=["-SBJ","-LFD","-RSP","-PRN","-SPE","-CL","-ZZZ","-XXX"]
+var extensions=["-SBJ","-LFD","-RSP","-PRN","-SPE","-CL","-ZZZ","-XXX","-FLAG"]
 
 /* clause extensions are treated as not part of the label for various purposes,
  * they are all binary, and they show up in the toggle extension menu
  */
-var clause_extensions=["-IMP","-PRN","-SPE","-SBJ","-ZZZ","-XXX"]
+var clause_extensions=["-IMP","-PRN","-SPE","-SBJ","-ZZZ","-XXX","-FLAG"]
 
 /* verbal extensions are treated as not part of the label for various purposes,
  * they are all binary, and they show up in the verbal extension menu (TODO)
  */
-var vextensions=["-FUT","-IMPF","-AOR","-PRF","-TRNS1","-TRNS2","-INTRNS","-PASS","-IND","-KJV","-NOM","-GEN","-ACC","-DAT","-CL"];
+var vextensions=["-FUT","-IMPF","-AOR","-PRF","-TRNS1","-TRNS2","-INTRNS","-PASS","-IND","-KJV","-NOM","-GEN","-ACC","-DAT","-CL","-FLAG"];
 
 /*
  * Keycode is from onKeyDown event.
@@ -73,6 +73,7 @@ function customCommands(){
     // NP-within-NP shortcuts
     addCommand({ keycode: 69 }, setLabel, ["NP-ATR","NP-PRN","NP-PAR","NP-CMP","NP-COM"]); // e
     addCommand({ keycode: 69, shift: true }, setLabel, ["NP", "NY"]); // shift + e
+    addCommand({ keycode: 69, ctrl: true }, fixError); // ctrl + e
     addCommand({ keycode: 70 }, setLabel, ["PP"]); // f
     addCommand({ keycode: 70, shift: true }, toggleVerbalExtension, "-FUT"); // shift + f
     addCommand({ keycode: 70, ctrl: true }, setLabel, ["FRAG"]); // ctrl + f
@@ -85,8 +86,8 @@ function customCommands(){
     addCommand({ keycode: 81, ctrl: true}, setLabel, ["CP-QUE","QP","QTP","QX","QY"]); // ctrl + q
     
     // relative clauses and variations thereof
-    addCommand({ keycode: 82 }, setLabel, ["CP-REL","CP-CAR","CP-CMP","CP-EOP","CP-EXL","CP-FRL"]); // r
-    addCommand({ keycode: 82, shift: true }, setLabel, ["RRC"]); // shift + r
+    addCommand({ keycode: 82 }, setLabel, ["CP-REL","RRC","CP-CMP","CP-FRL","CP-EOP","CP-EXL","CP-CAR"]); // r
+    addCommand({ keycode: 82, shift: true }, setLabel, ["NP-FLAG","NP#"]); // shift + r
     addCommand({ keycode: 82, ctrl: true }, toggleExtension, "-RSP"); // ctrl + r
     // basic sentence-level elements
     addCommand({ keycode: 83 }, setLabel, ["IP-SUB","IP-MAT","IP-IMP"]); // s
@@ -251,7 +252,7 @@ function autoConjoin() {
 styleTag("CODE", "background-color: lightgrey");
 styleTag("CODE", "color: grey");
 // color things that occur in search results
-styleDashTag("FLAG", "background-color: paleturquoise !important");
+styleDashTag("FLAG", "background-color: paleturquoise");
 styleDashTag("XXX", "background-color: paleturquoise !important");
 styleTag("ANT", "background-color: lightpink !important");
 styleTag("CODING", "background-color: lightpink");
