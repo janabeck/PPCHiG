@@ -156,28 +156,28 @@ var defaultConMenuGroup = ["VBP","VBPP","VBD","VBDP","VBN","VBNP","VBS","VBSP","
  * Phrase labels that are suggested in context menu when one of the other ones is set
  */
 function customConMenuGroups(){
-    addConMenuGroup( ["ADJ","ADJ$","ADJA","ADJD","ADJR","ADJS"] );
+    addConMenuGroup( ["ADJ-NOM","ADJ-GEN","ADJ-ACC","ADJ-DAT","ADJR","ADJS"] );
     addConMenuGroup( ["ADJP","ADJP-PRD","ADJP-SPR","ADJX","ADJY"] );
     addConMenuGroup( ["ADV","ADVR","ADVS","NEG","P"] );
     addConMenuGroup( ["ADVP","ADVP-DIR","ADVP-LOC","ADVP-TMP","PP"] );
     addConMenuGroup( ["AN","KE"] );
     addConMenuGroup( [",","."] );
     addConMenuGroup( ["BED","BEI","BEN","BEO","BEP","BES","BPR"] );
-    addConMenuGroup( ["CLGE","CLPRO","CLPRO$","CLPROA","CLPROD","CLPRT","CLQ","CLQ$","CLQA","CLQD","CLTE"] );
+    addConMenuGroup( ["CLGE","CLPRO-NOM","CLPRO-GEN","CLPRO-ACC","CLPRO-DAT","CLPRT","CLQ-NOM","CLQ-GEN","CLQ-ACC","CLQ-DAT","CLTE"] );
     addConMenuGroup( ["C","P","CONJ","ADV","WADV"] );
-    addConMenuGroup( ["D","D$","DA","DD","DS","DS$","DSA","DSD"] );
+    addConMenuGroup( ["D-NOM","D-GEN","D-ACC","D-DAT","DS-NOM","CLPRO-DAT","DS-GEN","DS-ACC","DS-DAT"] );
     addConMenuGroup( ["INTJ","INTJP","FW","PRTQ"] );
-    addConMenuGroup( ["Q","Q$","QA","QD","QR","QS","QV"] );
-    addConMenuGroup( ["N","N$","NA","ND","NS","NS$","NSA","NSD","NPR","NPR$","NPRA","NPRD","NPRS","NPRS$","NPRSA","NPRSD"] );
+    addConMenuGroup( ["Q-NOM","Q-GEN","Q-ACC","Q-DAT","QR","QS","QV"] );
+    addConMenuGroup( ["N-NOM","N-GEN","N-ACC","N-DAT","NS-NOM","NS-GEN","NS-ACC","NS-DAT","NPR-NOM","NPR-GEN","NPR-ACC","NPR-DAT","NPRS-NOM","NPRS-GEN","NPRS-ACC","NPRS-DAT"] );
     addConMenuGroup( ["NX","NY","NP-ADT","NP-ADV","NP-AGT","NP-DIR","NP-INS","NP-LFD","NP-LOC","NP-MSR","NP-RSP","NP-SPR","NP-TMP","NP-VOC","QP"] );
     addConMenuGroup( ["NP-SBJ","NP-OB1","NP-OB2","NP-OBP","NP-OBQ","NP-PRD","NP-ATR","NP-PRN","NP-PAR","NP-CMP","NP-COM"] );
-    addConMenuGroup( ["VPR","VPRP","VPR$","VPRP$","VPRA","VPRPA","VPRD","VPRPD"] );
-    addConMenuGroup( ["WADJ","WADJ$","WADJA","WADJD","WD","WD$","WDA","WDD","WP","WPRO","WPRO$","WPROA","WPROD","WQ"] );
+    addConMenuGroup( ["VPR-NOM","VPRP-NOM","VPR-GEN","VPRP-GEN","VPR-ACC","VPRP-ACC","VPR-DAT","VPRP-DAT"] );
+    addConMenuGroup( ["WADJ-NOM","WADJ-GEN","WADJ-ACC","WADJ-DAT","WD-NOM","WD-GEN","WD-ACC","WD-DAT","WP","WPRO-NOM","WPRO-GEN","WPRO-ACC","WPRO-DAT","WQ"] );
     addConMenuGroup( ["WADJP","WADJX","WADVP","WADVX","WNP","WNX","WPP","WQP"] );
     addConMenuGroup( ["CP","CP-ADV","CP-CAR","CP-COM","CP-CMP","CP-DEG","CP-EOP","CP-EXL","CP-FRL","CP-PRP","CP-QUE","CP-REL","CP-RES","CP-THT"] );
     addConMenuGroup( ["IP","IY","RRC","IP-ABS","IP-IMP","IP-INF","IP-INF-COM","IP-INF-PRP","IP-INF-SBJ","IP-MAT","IP-PPL","IP-PPL-COM","IP-SMC","IP-SUB"] );
     addConMenuGroup( ["QP","QX","QY"] );
-    addConMenuGroup( ["OTHER","OTHER$","OTHERA","OTHERD"] );
+    addConMenuGroup( ["OTHER-NOM","OTHER-GEN","OTHER-ACC","OTHER-DAT"] );
     //addConMenuGroup( [] );
 }
 
