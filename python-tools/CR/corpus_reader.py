@@ -22,7 +22,10 @@ import codecs
 from sets import Set
 import nltk.tree as T
 
-from leaf_grammar import Parser as LP
+try:
+    from leaf_grammar import Parser as LP
+except ImportError:
+    pass
 
 class myT(T.ParentedTree):
 
