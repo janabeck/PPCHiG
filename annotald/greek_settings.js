@@ -165,14 +165,16 @@ function customConMenuGroups(){
     addConMenuGroup( ["BED","BEI","BEN","BEO","BEP","BES","BPR"] );
     addConMenuGroup( ["CLGE","CLPRO-NOM","CLPRO-GEN","CLPRO-ACC","CLPRO-DAT","CLPRT","CLQ-NOM","CLQ-GEN","CLQ-ACC","CLQ-DAT","CLTE"] );
     addConMenuGroup( ["C","P","CONJ","ADV","WADV"] );
-    addConMenuGroup( ["D-NOM","D-GEN","D-ACC","D-DAT","DS-NOM","CLPRO-DAT","DS-GEN","DS-ACC","DS-DAT"] );
+    addConMenuGroup( ["D-NOM","DS-NOM","CLPRO-DAT","WPRO-NOM","WD-NOM","D-ACC","DS-ACC","WPRO-ACC","WD-ACC"] );
+    addConMenuGroup( ["D-GEN","DS-GEN","WPRO-GEN","WD-GEN"] );
+    addConMenuGroup( ["D-DAT","DS-DAT","WPRO-DAT","WD-DAT"] );
     addConMenuGroup( ["INTJ","INTJP","FW","PRTQ"] );
     addConMenuGroup( ["Q-NOM","Q-GEN","Q-ACC","Q-DAT","QR","QS","QV"] );
     addConMenuGroup( ["N-NOM","N-GEN","N-ACC","N-DAT","NS-NOM","NS-GEN","NS-ACC","NS-DAT","NPR-NOM","NPR-GEN","NPR-ACC","NPR-DAT","NPRS-NOM","NPRS-GEN","NPRS-ACC","NPRS-DAT"] );
     addConMenuGroup( ["NX","NY","NP-ADT","NP-ADV","NP-AGT","NP-DIR","NP-INS","NP-LFD","NP-LOC","NP-MSR","NP-RSP","NP-SPR","NP-TMP","NP-VOC","QP"] );
     addConMenuGroup( ["NP-SBJ","NP-OB1","NP-OB2","NP-OBP","NP-OBQ","NP-PRD","NP-ATR","NP-PRN","NP-PAR","NP-CMP","NP-COM"] );
     addConMenuGroup( ["VPR-NOM","VPRP-NOM","VPR-GEN","VPRP-GEN","VPR-ACC","VPRP-ACC","VPR-DAT","VPRP-DAT"] );
-    addConMenuGroup( ["WADJ-NOM","WADJ-GEN","WADJ-ACC","WADJ-DAT","WD-NOM","WD-GEN","WD-ACC","WD-DAT","WP","WPRO-NOM","WPRO-GEN","WPRO-ACC","WPRO-DAT","WQ"] );
+    addConMenuGroup( ["WADJ-NOM","WADJ-GEN","WADJ-ACC","WADJ-DAT","WD-NOM","WD-GEN","WD-ACC","WD-DAT","WP","WQ"] );
     addConMenuGroup( ["WADJP","WADJX","WADVP","WADVX","WNP","WNX","WPP","WQP"] );
     addConMenuGroup( ["CP","CP-ADV","CP-CAR","CP-COM","CP-CMP","CP-DEG","CP-EOP","CP-EXL","CP-FRL","CP-PRP","CP-QUE","CP-REL","CP-RES","CP-THT"] );
     addConMenuGroup( ["IP","IY","RRC","IP-ABS","IP-IMP","IP-INF","IP-INF-COM","IP-INF-PRP","IP-INF-SBJ","IP-MAT","IP-PPL","IP-PPL-COM","IP-SMC","IP-SUB"] );
