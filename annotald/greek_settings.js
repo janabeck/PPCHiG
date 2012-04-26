@@ -37,17 +37,17 @@ var testValidLeafLabel   = undefined;
 /* extensions are treated as not part of the label for various purposes, 
  * they are all binary, and they show up in the toggle extension menu  
  */
-var extensions=["-SBJ","-LFD","-RSP","-PRN","-SPE","-CL","-ZZZ","-XXX","-FLAG"]
+var extensions=["-SBJ","-LFD","-RSP","-PRN","-SPE","-CL","-ZZZ","-XXX","FLAG"]
 
 /* clause extensions are treated as not part of the label for various purposes,
  * they are all binary, and they show up in the toggle extension menu
  */
-var clause_extensions=["-IMP","-PRN","-SPE","-SBJ","-ZZZ","-XXX","-FLAG"]
+var clause_extensions=["-IMP","-PRN","-SPE","-SBJ","-ZZZ","-XXX","FLAG"]
 
 /* verbal extensions are treated as not part of the label for various purposes,
  * they are all binary, and they show up in the verbal extension menu (TODO)
  */
-var vextensions=["-FUT","-IMPF","-AOR","-PRF","-TRNS1","-TRNS2","-INTRNS","-PASS","-IND","-KJV","-NOM","-GEN","-ACC","-DAT","-CL","-FLAG"];
+var vextensions=["-FUT","-IMPF","-AOR","-PRF","-TRNS1","-TRNS2","-INTRNS","-PASS","-IND","-KJV","-NOM","-GEN","-ACC","-DAT","-CL","FLAG"];
 
 /*
  * Keycode is from onKeyDown event.
