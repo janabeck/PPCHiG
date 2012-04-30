@@ -28,7 +28,7 @@
 οὐδαμόθι	null	NEG+ADV
 μηδαμόθι	null	NEG+ADV
 δίς	null	NUM
-πάντοθεν	null	QV
+πάντοθεν	null	ADVQ
 νή	null	P
 οὐ	null	NEG
 οὐδέ	null	NEG-CONJ
@@ -41,3 +41,4 @@
 ἄν	null	AN
 οὐδαμῇ	null	NEG+ADV
 ὥσπερ	null	WADV-CLPRT
+ἀλλήλων	case	PRO-RCP
