@@ -1229,7 +1229,7 @@ def main():
         elif args.valid_type == "phrase":
             corpus.validate_phrase()
         else:
-            "I didn't understand your validation type."
+            print "I didn't understand your validation type."
             sys.exit()
         picked = True
 
