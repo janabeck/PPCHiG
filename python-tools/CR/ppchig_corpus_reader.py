@@ -30,7 +30,7 @@ class GreekCorpus(Corpus):
 
         clq = ["CLQ", "CLQ$", "CLQA", "CLQD"]
 
-        det = ["D", "D$", "DA", "DD", "DS", "DS$", "DSA", "DSD"]
+        det = ["D", "D$", "DA", "DD", "DS", "DS$", "DSA", "DSD", "DEM", "DEM$", "DEMA", "DEMD", "DEMS", "DEMS$", "DEMSA", "DEMSD"]
 
         noun = ["N", "N$", "NA", "ND", "NS", "NS$", "NSA", "NSD"]
 
@@ -121,7 +121,7 @@ class GreekCorpus(Corpus):
                                     else:
                                         tag = "".join([remainder, coretag, "-" + dash])
                                 elif special:
-                                    tag = "".join([coretag, "-" + dash, remainder])
+                                    tag = "".join([coretag, remainder, "-" + dash])
                                 else:
                                     tag = "-".join([coretag, dash])
                                 tree.change_POS(tag, "", index, tr)
@@ -161,7 +161,7 @@ class GreekCorpus(Corpus):
                                 tag = tag.replace("-POS","")
                                 remainder = "POS"
                             elif "RCP" in tag:
-                                tag = tag.repalce("-RCP","")
+                                tag = tag.replace("-RCP","")
                                 remainder = "RCP"
                             elif participle.match(tag):
                                 verb_group = tag.partition("-")
