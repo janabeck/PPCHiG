@@ -1642,7 +1642,7 @@
 	  (NP-SBJ *pro*)
 	  (VBP-IMPF ἀναλείχουσι-ἀναλείχω)
 	  (NP-OB1 (NY *ICH*-1)
-		  (NP-ATR (PRO-GEN ἀλλήλων-ἀλλήλων)))
+		  (NP-ATR (PRO-RCP-GEN ἀλλήλων-ἀλλήλων)))
 	  (. .-.))
   (ID Herodotus,Histories1:74_5a.82))
 
@@ -2044,7 +2044,7 @@
 	  (VBDP-IMPF ἐπειρῶντο-πειράω)
 	  (PP (P κατὰ-κατά)
 	      (NP (D-ACC τὸ-ὁ) (ADJ-ACC ἰσχυρὸν-ἰσχυρός)))
-	  (NP-OBQ (PRO-GEN ἀλλήλων-ἀλλήλων))
+	  (NP-OBQ (PRO-RCP-GEN ἀλλήλων-ἀλλήλων))
 	  (. .-.))
   (ID Herodotus,Histories1:76_3b.99))
 

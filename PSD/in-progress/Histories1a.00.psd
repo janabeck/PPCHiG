@@ -550,7 +550,7 @@
 	      (NP-SBJ (NS-ACC ἁρπαγὰς-ἁρπαγή) (ADJ-ACC μούνας-μόνος))
 	      (BEN-IMPF εἶναι-εἰμί)
 	      (PP (P παρ’-παρά)
-		  (NP (PRO-GEN ἀλλήλων-ἀλλήλων)))
+		  (NP (PRO-RCP-GEN ἀλλήλων-ἀλλήλων)))
 	      (. ,-,))
   (ID Herodotus,Histories1:4_1.28))
 
