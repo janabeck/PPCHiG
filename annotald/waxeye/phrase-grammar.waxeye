@@ -1,0 +1,62 @@
+tag <-
+ (clause_tag ?index) | (phrase_tag ?index)
+
+index <-
+ ('-' | '=') +[0-9]
+
+clause_tag <-
+ (ip | cp) *('-' ext) *('-' clause_dash_tag) | other
+
+other <-
+ 'FRAG' | 'RRC' | 'QTP'
+
+ip <-
+ 'IP' *('-' ip_dash_tag)
+
+ip_dash_tag <-
+ 'ABS' | 'IMP' | 'INF' ?('-' inf_type) | 'MAT' | 'PPL' ?('-' ppl_type) | 'SMC' | 'SUB'
+
+inf_type <-
+ 'COM' | 'PRP' | 'SBJ' | 'THT' | 'ABS'
+
+ppl_type <-
+ 'COM' | 'THT'
+
+cp <-
+ ('CP' *('-' cp_dash_tag))
+
+cp_dash_tag <-
+ 'ADV' | 'CAR' | 'COM' | 'CMP' | 'DEG' | 'EOP' | 'EXL' | 'FRL' | 'PRP' | 'QUE' | 'REL' | 'RES' | 'THT'
+
+ext <-
+ 'PRN' | 'SPE'
+
+clause_dash_tag <-
+ 'SBJ'
+
+phrase_tag <-
+ (np | adjp | advp | pp | conjp | wh_phrase) *('-' ext)
+
+np <-
+ 'NP' ?np_tag
+
+np_tag <-
+ '-' np_fn_tag
+
+np_fn_tag <-
+ ?('SBJ' | 'OB1' | 'OB2' | 'OBP' | 'OBQ' | 'PRD' | 'ATR' | 'PRN' | 'PAR' | 'COM' | 'CMP' | 'ADV' | 'AGT' | 'DIR' | 'INS' | 'LOC' | 'MSR' | 'SPR' | 'TMP' | 'VOC' | 'ADT') ?('-RSP' | '-LFD')
+
+adjp <-
+ 'ADJP' ?('-PRD' | '-SPR')
+
+advp <-
+ 'ADVP' ?('-' ('DIR' | 'LOC' | 'TMP'))
+
+pp <- 
+ 'PP'
+
+conjp <-
+ 'CONJP'
+
+wh_phrase <-
+ 'W' ('ADJ' | 'ADV' | 'N' | 'P') 'P'
