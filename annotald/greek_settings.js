@@ -28,23 +28,18 @@ var caseTags=[];
 /*
  * These two functions should return true if the string argument is a valid
  * label for a branching (-Phrase-) and non-branching (-Leaf-) label, and
- * false otherwise.  The utility function basesAndDashes is provided.  It
- * takes two arguments, a list of base tags and a list of dash tags.  It
- * returns a function suitable for assigning to one of these variables.*/
-var testValidPhraseLabel = undefined;
-var testValidLeafLabel   = undefined;
+ * false otherwise.
+ */
+var leaf_parser = new leaf_grammar_parser();
+var phrase_parser = new phrase_grammar_parser();
 
-// USE THESE ONCE YOU'VE DEFINED GRAMMARS
-// var leaf_parser = new leaf_grammar_parser();
-// var phrase_parser = new phrase_grammar_parser();
+function testValidPhraseLabel (str) {
+   return phrase_parser.parse(str) instanceof waxeye.AST;
+}
 
-// function testValidPhraseLabel (str) {
-//    return phrase_parser.parse(str) instanceof waxeye.AST;
-// }
-
-// function testValidLeafLabel (str) {
-//    return leaf_parser.parse(str) instanceof waxeye.AST;
-// }
+function testValidLeafLabel (str) {
+   return leaf_parser.parse(str) instanceof waxeye.AST;
+}
 
 /* extensions are treated as not part of the label for various purposes, 
  * they are all binary, and they show up in the toggle extension menu  
