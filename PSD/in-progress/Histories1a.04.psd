@@ -576,7 +576,7 @@
 		      (NP-ADV (D-DAT τῇ-ὁ) (N-DAT Ἥρῃ-Ἥρα))
 		      (NP-OB2 (DS-DAT τοῖσι-ὁ) (ADJ-DAT Ἀργείοισι-Ἀργεῖος)))
 	      (VBD-IMPF ἔδεε-δεῖ)
-	      (ADVP (QV πάντως-πᾶς))
+	      (ADVP (ADVQ πάντως-πᾶς))
 	      (IP-INF-SBJ (NP-SBJ (D-ACC τὴν-ὁ)
 				  (N-ACC μητέρα-μήτηρ)
 				  (NP-ATR (PRO-GEN αὐτῶν-αὐτός)))

@@ -13,7 +13,7 @@
 			    (NP-ATR (D-GEN τοῦ-ὁ) (NPR-GEN Ἄτυος-Ἄτυς))
 			    (, ,-,)
 			    (CP-REL (WPP-1 (WP ἀπ’-ἀπό)
-					   (WNP (WPRO+CLQ$ ὅτευ-ὅστις)))
+					   (WNP (WPRO+CLQ-GEN ὅτευ-ὅστις)))
 				    (C 0)
 				    (IP-SUB (PP *T*-1)
 					    (NP-SBJ-2 (D-NOM ὁ-ὁ)

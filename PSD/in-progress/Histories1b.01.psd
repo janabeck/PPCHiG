@@ -1360,7 +1360,7 @@
 		  (, ,-,)
 		  (CONJP (CONJ καὶ-καί)
 			 (CP-QUE (NP-ADT (DS-ACC τοὺς-ὁ) (NPR-NOM Πέρσας-Πέρσης))
-				 (WNP-2 (WPRO+CLQD ὅτεῳ-ὅστις) (N-DAT τρόπῳ-τρόπος))
+				 (WNP-2 (WPRO+CLQ-DAT ὅτεῳ-ὅστις) (N-DAT τρόπῳ-τρόπος))
 				 (C 0)
 				 (IP-SUB (NP-ADV *T*-2)
 					 (NP-SBJ *pro*)

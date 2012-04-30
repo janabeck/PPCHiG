@@ -465,7 +465,7 @@
 				  (NP-SBJ (N-ACC γυναῖκα-γυνή)))
 		      (, ,-,)
 		      (IP-PPL (VPRP-IMPF-TRNS2-ACC ἐπιστάμενον-ἐπίσταμαι)
-			      (ADVP (QV πάντως-πᾶς))
+			      (ADVP (ADVQ πάντως-πᾶς))
 			      (CP-THT (C ὅτι-ὅτι2)
 				      (IP-SUB (NEG οὐ-οὐ)
 					      (NP-SBJ *pro*)

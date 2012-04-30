@@ -1619,7 +1619,7 @@
 		  (CP-REL (WNP-1 (WPRO-NOM ὅς-ὅς))
 			  (C 0)
 			  (IP-SUB (NP-SBJ *T*-1)
-				  (IP-PPL (NP-OBP (CLRPOD οἱ-ἕ))
+				  (IP-PPL (NP-OBP (CLPRO-DAT οἱ-ἕ))
 					  (VPR-IMPF-NOM προσιὼν-πρόσειμι2))
 				  (VBS-IMPF χρᾷ-χράω)
 				  (PP (P ἐν-ἐν)

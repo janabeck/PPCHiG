@@ -1112,7 +1112,7 @@
 			  (IP-INF-COM (NP-OB1 (NS-ACC ἀκροθίνια-ἀκροθίνιον) (DS-ACC ταῦτα-οὗτος))
 				      (VBN-FUT καταγιεῖν-καταγίζω)
 				      (NP-OB2 (NP-PAR (NS-GEN θεῶν-θεός))
-					      (WPRO-CLQD ὅτεῳ-ὅστις))
+					      (WPRO+CLQ-DAT ὅτεῳ-ὅστις))
 				      (CLPRT δή-δή)))
 		  (, ,-,)
 		  (CONJP (CONJ εἴτε-εἴτε)
@@ -2171,7 +2171,7 @@
 				  (NP-OB2 *ICH*-2)
 				  (VPR-IMPF-NOM ἐπηγορέων-ἐπηγορέω))
 			  (NP-SBJ *pro*)
-			  (VBOP-IMPF-IND-TRNS1 παραιτέοιτο-παραιτέομαι)))
+			  (VBOP-IMPF-TRNS1-IND παραιτέοιτο-παραιτέομαι)))
 	  (. .-.))
   (ID Herodotus,Histories1:90_2a.116))
 
