@@ -719,7 +719,7 @@
 			 (CLTE τε-τε)
 			 (NP (NPR-DAT Λιμενηίῳ-Λιμενήιον)
 			     (NP-ATR (N-GEN χώρης-χώρα)
-				     (NP-PRN (D-GEN τῆς-ὁ) (ADJ-GEN-POS σφετέρης-σφέτερος)))))
+				     (NP-PRN (D-GEN τῆς-ὁ) (ADJ-POS-GEN σφετέρης-σφέτερος)))))
 		     (CONJP *ICH*-2))
 		 (VPRP-AOR-INTRNS-GEN μαχεσαμένων-μάχομαι)
 		 (CONJP-2 (CONJ καὶ-καί)

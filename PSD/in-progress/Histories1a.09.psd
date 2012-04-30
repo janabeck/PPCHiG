@@ -944,7 +944,7 @@
 ( (IP-MAT-SPE (CODE {VS:71_3e})
 	      (IP-PPL (VPRP-AOR-INTRNS-NOM γευσάμενοι-γεύω))
 	      (CLPRT γὰρ-γάρ)
-	      (NP-OBP (DS-GEN τῶν-ὁ) (ADJ-GEN-POS ἡμετέρων-ἡμέτερος) (ADJ-GEN ἀγαθῶν-ἀγαθός))
+	      (NP-OBP (DS-GEN τῶν-ὁ) (ADJ-POS-GEN ἡμετέρων-ἡμέτερος) (ADJ-GEN ἀγαθῶν-ἀγαθός))
 	      (NP-SBJ *pro*)
 	      (VBPP-FUT-TRNS1 περιέξονται-περιέχω))
   (ID Herodotus,Histories1:71_3e.44))

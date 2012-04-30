@@ -680,7 +680,7 @@
 					(NP-OBQ (N-GEN χρήματος-χρῆμα) (NEG+Q-GEN οὐδενὸς-οὐδείς))
 					(IP-PPL (VPR-IMPF-NOM μένων-μένω)
 						(PP (P ἐν-ἐν)
-						    (NP (ADJ-GEN-POS ἡμετέρου-ἡμέτερος)))))))
+						    (NP (ADJ-POS-GEN ἡμετέρου-ἡμέτερος)))))))
 	      (, ,-,))
   (ID Herodotus,Histories1:35_4b.42))
 
