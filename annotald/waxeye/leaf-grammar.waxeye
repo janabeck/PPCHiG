@@ -1,8 +1,11 @@
 word_tag <-
- ( nominal | verbal | adverb | clitic | fn_cat | other_word | punct )
+ ( nominal | verbal | adverb | clitic | fn_cat | neg | other_word | punct ) ?index
+
+index <-
+ ('-' | '=') +[0-9]
 
 nominal <-
- ('N' ?'PR' ?'S' case) | ('ADJ' ?('R' | 'S' | case)) | ('D' ?'S' case) | 'NUM' | ('PRO' case) | ('Q' ?('R' | 'S' | case)) | ('OTHER' case)
+ ('N' ?'PR' ?'S' case) | ('ADJ' ?('R' | 'S') ?'-POS' ?case) | (('D' | 'DEM') ?'S' case) | 'NUM' | ('PRO' ?('-RCP' | '+SLF') case) | ('Q' ?('R' | 'S' | case)) | ('OTHER' case)
 
 case <-
  '-NOM' | '-GEN' | '-ACC' | '-DAT'
@@ -11,28 +14,31 @@ verbal <-
  verb | participle
 
 verb <-
- ('BE' | 'VB') ('P' | 'D' | 'I' | 'N' | 'O' | 'S') ?'P' aspect ?voice ?opt 
+ ('BE' | 'VB') ('P' | 'D' | 'I' | 'N' | 'O' | 'S') ?'P' aspect ?('-' voice) ?opt ?'-CL'
 
 participle <-
- ('BPR' | 'VPR') ?'P' aspect ?voice case
+ ('BPR' | 'VPR') ?'P' aspect ?('-' voice) case
 
 aspect <-
  '-AOR' | '-FUT' | '-IMPF' | '-PRF'
 
 voice <-
- '-PASS' | '-INTRNS' | '-TRNS1' | '-TRNS2'
+ 'PASS' | 'INTRNS' | 'TRNS1' | 'TRNS2'
 
 opt <-
  '-KJV' | '-IND'
 
 adverb <-
- ('ADV' ?('R' | 'S')) | 'NEG' | 'QV'
+ ('ADV' ?('R' | 'S' | 'Q' | '+SLF'))
 
 clitic <-
- 'CL' ?('GE' | 'PRO' ?(case) | 'Q' ?(case) | 'PRT' | 'TE')
+ 'CL' ?('GE' | 'PRO' ?(case) | 'Q' ?(case) | 'PRT' | 'TE' | 'ADV')
+
+neg <- 
+ 'NEG' ?('+' (nominal | adverb))
 
 fn_cat <-
- 'AN' | 'KE' | 'INTJ' | 'PRTQ' | 'C' | 'CONJ' | 'P' | ('W' (('ADJ' case) | 'ADV' | 'D' | 'P' | ('PRO' case) | 'Q'))
+ 'AN' | 'KE' | 'INTJ' | 'PRTQ' | 'C' | 'CONJ' | 'P' | ('W' (('ADJ' case) | 'ADV' ?'+SLF' | ('D' case) | 'P' | ('PRO' (case |'+' clitic)) | 'Q'))
 
 other_word <-
  'CODE' | 'FW' | 'X' | 'Y'
