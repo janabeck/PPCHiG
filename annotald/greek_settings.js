@@ -34,6 +34,18 @@ var caseTags=[];
 var testValidPhraseLabel = undefined;
 var testValidLeafLabel   = undefined;
 
+// USE THESE ONCE YOU'VE DEFINED GRAMMARS
+// var leaf_parser = new leaf_grammar_parser();
+// var phrase_parser = new phrase_grammar_parser();
+
+// function testValidPhraseLabel (str) {
+//    return phrase_parser.parse(str) instanceof waxeye.AST;
+// }
+
+// function testValidLeafLabel (str) {
+//    return leaf_parser.parse(str) instanceof waxeye.AST;
+// }
+
 /* extensions are treated as not part of the label for various purposes, 
  * they are all binary, and they show up in the toggle extension menu  
  */
