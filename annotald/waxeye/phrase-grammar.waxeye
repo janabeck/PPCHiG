@@ -1,8 +1,11 @@
 tag <-
- (clause_tag ?index) | (phrase_tag ?index)
+ (clause_tag ?index) | (phrase_tag ?index) | (intermediate ?index)
 
 index <-
  ('-' | '=') +[0-9]
+
+intermediate <-
+ 'ADJY' | 'IY' | 'NY' | 'ADJX' | 'NX'
 
 clause_tag <-
  (ip | cp) *('-' ext) *('-' clause_dash_tag) | other
@@ -38,13 +41,7 @@ phrase_tag <-
  (np | adjp | advp | pp | conjp | wh_phrase) *('-' ext)
 
 np <-
- 'NP' ?np_tag
-
-np_tag <-
- '-' np_fn_tag
-
-np_fn_tag <-
- ?('SBJ' | 'OB1' | 'OB2' | 'OBP' | 'OBQ' | 'PRD' | 'ATR' | 'PRN' | 'PAR' | 'COM' | 'CMP' | 'ADV' | 'AGT' | 'DIR' | 'INS' | 'LOC' | 'MSR' | 'SPR' | 'TMP' | 'VOC' | 'ADT') ?('-RSP' | '-LFD')
+ 'NP' ?('-SBJ' | '-OB1' | '-OB2' | '-OBP' | '-OBQ' | '-PRD' | '-ATR' | '-PRN' | '-PAR' | '-COM' | '-CMP' | '-ADV' | '-AGT' | '-DIR' | '-INS' | '-LOC' | '-MSR' | '-SPR' | '-TMP' | '-VOC' | '-ADT') ?('-' ('RSP' | 'LFD'))
 
 adjp <-
  'ADJP' ?('-PRD' | '-SPR')
