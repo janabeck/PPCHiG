@@ -29,7 +29,7 @@ opt <-
  '-KJV' | '-IND'
 
 adverb <-
- ('ADV' ?('R' | 'S' | 'Q' | '+SLF'))
+ (?'CL' 'ADV' ?('R' | 'S' | 'Q' | '+SLF'))
 
 clitic <-
  'CL' ?('GE' | 'PRO' ?(case) | 'Q' ?(case) | 'PRT' | 'TE' | 'ADV')
