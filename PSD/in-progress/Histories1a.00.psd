@@ -432,7 +432,7 @@
 	  (NP-SBJ (NP-PRN (PRO-NOM αὐτοὶ-αὐτός)))
 	  (CODE {COM:ellipsed_verb_of_saying--e.g.,_λέγουσι})
 	  (VBP-IMPF *)
-	  (IP-INF-THT (NEG-ADV *ICH*-1)
+	  (IP-INF-THT (NEG+CLADV *ICH*-1)
 		      (VBN-FUT δώσειν-δίδωμι)
 		      (NP-OB2 (DS-DAT ἐκείνοισι-ἐκεῖνος)))
 	  (. .-.))
