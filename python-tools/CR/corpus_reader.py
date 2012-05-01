@@ -1130,7 +1130,7 @@ class Corpus():
     #END_DEF print_words
 
     def validate(self):
-        """Validate all POS-level tags."""
+        """Validate all POS- and phrase-level tags."""
 
         err_file = open("errors.log", "w")
 
