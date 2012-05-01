@@ -24,6 +24,8 @@ import nltk.tree as T
 
 try:
     from leaf_grammar import Parser as LP
+    from phrase_grammar import Parser as PP
+    import waxeye
 except ImportError:
     pass
 
@@ -99,6 +101,9 @@ class Token():
         # pos contains all the words in a sentence token with no punctuation or empty categories as a list of tuples
         # in which the first item is a Greek word and the second a POS tag
         self.pos = []
+
+        # labels contains all the non-POS-level labels as list
+        self.labels = []
 
         # comments contains any comments in the token, as a list of strings
         self.comments = []
@@ -230,6 +235,10 @@ class Token():
                         print
                         print self._tree.pprint()
                         print
+
+        for rule in tree.productions():
+            label = str(rule.lhs())
+            self.labels.append(label)
     
     #END_DEF parse
 
@@ -1118,30 +1127,47 @@ class Corpus():
                 else:
                     print >> out_file, word
                     
-        #END_DEF print_words
+    #END_DEF print_words
 
-    def validate_POS(self):
+    def validate(self):
         """Validate all POS-level tags."""
 
-        out_file = open("POS-validation.log","w")
+        err_file = open("errors.log", "w")
 
-        p = LP()
+        pos_file = open("POS.log", "w")
+
+        phr_file = open("phrase.log", "w")
+
+        lp = LP()
+
+        pp = PP()
+
+        dont_count = ['','VERSION','FORMAT','CODE','ID']
 
         for key in self.tokens.keys():
             tree = self.tokens[key]
-            for tup in tree.pos:
-                tag = tup[1]
-                res = p.parse(tag)
-                print >> out_file, tag + ":"
-                print >> out_file, res
-                print >> out_file
+            for label in tree.labels:
+                if label not in dont_count:
+                    pos_res = lp.parse(label)
+                    if isinstance(pos_res, waxeye.AST):
+                        print >> pos_file, label + ":"
+                        print >> pos_file, pos_res
+                        print >> pos_file
+                    elif isinstance(pos_res, waxeye.ParseError):
+                        phr_res = pp.parse(label)
+                        if isinstance(phr_res, waxeye.AST):
+                            print >> phr_file, label + ":"
+                            print >> phr_file, phr_res
+                            print >> phr_file
+                        else:
+                            print >> err_file, label + ":"
+                            print >> err_file, pos_res
+                            print >> err_file, phr_res
+                            print >> err_file
+                    else:
+                        print "Whaaaa?"
 
-    def validate_phrase(self):
-        """Validate all phrase-level tags."""
-
-        print "Phrase-level validation isn't ready yet!"
-        print
-        sys.exit()
+    #END_DEF validate
                     
 #END_DEF Corpus
                                 
@@ -1159,7 +1185,7 @@ def main():
     parser.add_argument('-r', '--replace', dest='output_file', action='store', help='Insert the tokens from a CorpusSearch output file into the main .psd corpus file.')
     parser.add_argument('-t', '--timelog', dest='timelog', action='store_const', const='timelog.txt', help='Calculate words per hour parsed from a timelog.txt.')
     parser.add_argument('-l', '--split_POS', dest='split', action='store_true', help='Split words that have more than one POS tag.')
-    parser.add_argument('-v', '--validate', dest='valid_type', action='store', help='Validate at the pos or phrase level.')
+    parser.add_argument('-v', '--validate', dest='valid', action='store_true', help='Validate at the POS and phrase level.')
     parser.add_argument('psd', nargs='+')
     args = parser.parse_args()
 
@@ -1223,14 +1249,8 @@ def main():
         corpus.split_words(filename, exclude, non_words)
         picked = True
 
-    if args.valid_type:
-        if args.valid_type == "pos":
-            corpus.validate_POS()
-        elif args.valid_type == "phrase":
-            corpus.validate_phrase()
-        else:
-            print "I didn't understand your validation type."
-            sys.exit()
+    if args.valid:
+        corpus.validate()
         picked = True
 
     if not picked:
