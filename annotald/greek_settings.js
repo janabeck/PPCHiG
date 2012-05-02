@@ -64,8 +64,8 @@ var vextensions=["-FUT","-IMPF","-AOR","-PRF","-TRNS1","-TRNS2","-INTRNS","-PASS
 function customCommands(){
     // left hand commands
     addCommand({ keycode: 65 }, toggleVerbalExtension, "-AOR"); // a
-    // shift + a still open
-    addCommand({ keycode: 65, ctrl: true }, toggleVerbalExtension, "-INTRNS"); // shift + a
+    addCommand({ keycode: 65, shift: true}, nextAndValidate); // shift + a
+    addCommand({ keycode: 65, ctrl: true }, toggleVerbalExtension, "-INTRNS"); // ctrl + a
     // adverb phrase shortcuts
     addCommand({ keycode: 66 }, setLabel, ["ADVP", "ADVP-DIR", "ADVP-LOC", "ADVP-TMP"]); // b
     // adverbial CPs
@@ -248,6 +248,17 @@ function autoConjoin() {
         endnode = undefined;
         updateSelection();
     }
+}
+
+function nextAndValidate() {
+   var tmp, tmp2;
+   do {
+       tmp2 = currentText($("#editpane"));
+       advanceTree("/nextTree", undefined, false);
+       validateTreesSync(false);
+       tmp = $("#editpane").html();
+   }
+   while (!/-FLAG/.test(tmp) && tmp2 != currentText($("#editpane")))
 }
 
 // An example of a CSS rule for coloring a POS tag.  The styleTag
