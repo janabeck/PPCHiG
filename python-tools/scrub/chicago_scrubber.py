@@ -86,7 +86,11 @@ class ChicagoScrub(Scrub):
                     self.filter(item, chapter, section)
                 elif item.name == "l":
                     self.filter(item, chapter, section)
+                elif item.name == "cit":
+                    self.filter(item, chapter, section)
                 elif item.name == "ref":
+                    pass
+                elif item.name == "bibl":
                     pass
                 else:
                     print "Uh oh! I found something else!"
