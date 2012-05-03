@@ -14,7 +14,7 @@ import nltk.tree as T
 import runpy
 
 # TODO: fix this to run in Annotald!
-vs = runpy.run_path("validation_settings.py")
+vs = runpy.run_path(SCRIPT_DIR + "/../../../../../Git/Academic/PPCHiG/annotald/validation-scripts/validation_settings.py")
 
 data = sys.stdin.read()
 trees = data.split("\n\n")
