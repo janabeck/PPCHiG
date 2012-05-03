@@ -1090,6 +1090,13 @@ class Corpus():
 
     #END_DEF lemma_concordance
 
+    def rule_concordance(self, lemma):
+        """Produce a concordance of syntactic rules."""
+
+        pass
+
+    #END_DEF rule_concordance
+
     def print_text(self, filename):
         """Print just the text (words, punctuation, milestones)."""
 
