@@ -38,7 +38,7 @@ clause_dash_tag <-
  'SBJ'
 
 phrase_tag <-
- (np | adjp | advp | pp | conjp | wh_phrase) *('-' ext)
+ (np | adjp | advp | pp | conjp | wh_phrase | nump) *('-' ext)
 
 np <-
  'NP' ?('-SBJ' | '-OB1' | '-OB2' | '-OBP' | '-OBQ' | '-PRD' | '-ATR' | '-PRN' | '-PAR' | '-COM' | '-CMP' | '-ADV' | '-AGT' | '-DIR' | '-INS' | '-LOC' | '-MSR' | '-SPR' | '-TMP' | '-VOC' | '-ADT') ?('-' ('RSP' | 'LFD'))
@@ -54,6 +54,9 @@ pp <-
 
 conjp <-
  'CONJP'
+
+nump <-
+ 'NUMP'
 
 wh_phrase <-
  'W' ('ADJ' | 'ADV' | 'N' | 'P') 'P'
