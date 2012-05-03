@@ -18,6 +18,8 @@ det = ["D","DS"]
 
 dem = ["DEM","DEMS"]
 
+quant = ["Q","CLQ"]
+
 all_together = ["N","NPR","NS","NPRS","D","DEM","DS","DEMS","ADJ","Q","CLQ","OTHER"]
 
 all_cases = []
