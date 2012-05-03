@@ -118,6 +118,7 @@ function customCommands(){
     addCommand({ keycode: 88, ctrl: true}, toggleExtension, "-XXX"); // ctrl + x
 
     addCommand({ keycode: 90 }, undo); // z
+    addCommand({ keycode: 90, shift: true }, splitWord); // shift + z
 
     // left hand number commands
     addCommand({ keycode: 49 }, leafBefore); // 1
@@ -172,7 +173,7 @@ function customConMenuGroups(){
     addConMenuGroup( ["BED","BEI","BEN","BEO","BEP","BES","BPR"] );
     addConMenuGroup( ["CLGE","CLPRO-NOM","CLPRO-GEN","CLPRO-ACC","CLPRO-DAT","CLPRT","CLQ-NOM","CLQ-GEN","CLQ-ACC","CLQ-DAT","CLTE"] );
     addConMenuGroup( ["C","P","CONJ","ADV","WADV"] );
-    addConMenuGroup( ["D-NOM","DS-NOM","CLPRO-DAT","WPRO-NOM","WD-NOM","D-ACC","DS-ACC","WPRO-ACC","WD-ACC"] );
+    addConMenuGroup( ["D-NOM","DS-NOM","DEM-NOM","DEMS-NOM","CLPRO-DAT","WPRO-NOM","WD-NOM","D-ACC","DS-ACC","DEM-ACC","DEMS-ACC","WPRO-ACC","WD-ACC"] );
     addConMenuGroup( ["D-GEN","DS-GEN","WPRO-GEN","WD-GEN"] );
     addConMenuGroup( ["D-DAT","DS-DAT","WPRO-DAT","WD-DAT"] );
     addConMenuGroup( ["INTJ","INTJP","FW","PRTQ"] );
