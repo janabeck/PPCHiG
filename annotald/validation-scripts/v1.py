@@ -13,7 +13,6 @@ import nltk.tree as T
 
 import runpy
 
-# TODO: fix this to run in Annotald!
 vs = runpy.run_path(SCRIPT_DIR + "/../../../../../Git/Academic/PPCHiG/annotald/validation-scripts/validation_settings.py")
 
 data = sys.stdin.read()
@@ -27,6 +26,7 @@ for tree in trees:
             nom_re = re.compile("|".join(map(lambda x: x + case, num[0])))
             det_re = re.compile("|".join(map(lambda x: x + case, num[1])))
             dem_re = re.compile("|".join(map(lambda x: x + case, num[2])))
+            quant_re = re.compile("|".join(map(lambda x: x + case, vs['quant'])))
 
             # does DEM + D + any nominal combinations
             trans.findNodes(hasLabel(dem_re) & hasParent(hasLabel("IP-MAT")) & hasImmRightSister(hasLabel(det_re)))
@@ -39,6 +39,16 @@ for tree in trees:
             trans.addParentNodeSpanning("NP"+case, hasLabel(nom_re))
             trans.findNodes(hasLabel("NP"+case))
             trans.extendUntil(hasLabel(dem_re), immediate=True)
+
+            # does quantifier + D + any nominal combinations
+            trans.findNodes(hasLabel(quant_re) & hasParent(hasLabel("IP-MAT")) & hasImmRightSister(hasLabel(det_re)))
+            trans.addParentNodeSpanning("NP"+case, hasLabel(det_re))
+            trans.findNodes(hasLabel("NP"+case))
+            trans.extendUntil(hasLabel(nom_re), immediate=True)
+
+            # does D + any nominal + quantifier combinations
+            trans.findNodes(hasLabel(det_re) & hasParent(hasLabel("IP-MAT")) & hasImmRightSister(hasLabel(nom_re)))
+            # TODO: finish!
 
             # does D/DEM + clitic + any nominal
             trans.findNodes((hasLabel(dem_re) | hasLabel(det_re)) & hasParent(hasLabel("IP-MAT")) 
