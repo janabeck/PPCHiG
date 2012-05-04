@@ -158,7 +158,7 @@ function customCommands(){
 /*
  * Default label suggestions in context menu 
  */
-var defaultConMenuGroup = ["VBP","VBPP","VBD","VBDP","VBN","VBNP","VBS","VBSP","VBO","VBOP","VBI","VBIP","VBDX","VBIX","VBNX","VBOX","VBPX","VBSX"];
+var defaultConMenuGroup = ["VBP","VBPP","VBD","VBDP","VBN","VBNP","VBS","VBSP","VBO","VBOP","VBI","VBIP","VPR","VPRP"];
 
 /*
  * Phrase labels that are suggested in context menu when one of the other ones is set
