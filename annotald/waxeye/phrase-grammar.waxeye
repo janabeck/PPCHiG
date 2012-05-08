@@ -38,10 +38,10 @@ clause_dash_tag <-
  'SBJ'
 
 phrase_tag <-
- (np | adjp | advp | pp | conjp | wh_phrase | nump) *('-' ext)
+ (nump| np | adjp | advp | pp | conjp | wh_phrase) *('-' ext)
 
 np <-
- 'NP' ?('-SBJ' | '-OB1' | '-OB2' | '-OBP' | '-OBQ' | '-PRD' | '-ATR' | '-PRN' | '-PAR' | '-COM' | '-CMP' | '-ADV' | '-AGT' | '-DIR' | '-INS' | '-LOC' | '-MSR' | '-SPR' | '-TMP' | '-VOC' | '-ADT') ?('-' ('RSP' | 'LFD'))
+ 'NP' ?('-SBJ' | '-OB1' | '-OB2' | '-OBP' | '-OBQ' | '-PRD' | '-ATR' | '-PRN' | '-PAR' | '-COM' | '-CMP' | '-ADV' | '-AGT' | '-DIR' | '-INS' | '-LOC' | '-MSR' | '-SPR' | '-TMP' | '-VOC' | '-ADT' | '-CL') ?('-' ('RSP' | 'LFD'))
 
 adjp <-
  'ADJP' ?('-PRD' | '-SPR')
@@ -52,11 +52,13 @@ advp <-
 pp <- 
  'PP'
 
+nump <-
+ 'NUMP'
+
 conjp <-
  'CONJP'
 
-nump <-
- 'NUMP'
+
 
 wh_phrase <-
  'W' ('ADJ' | 'ADV' | 'N' | 'P') 'P'
