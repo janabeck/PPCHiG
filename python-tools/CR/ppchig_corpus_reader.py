@@ -48,7 +48,7 @@ class GreekCorpus(Corpus):
 
         wd = ["WD", "WD$", "WDA", "WDD"]
 
-        wpro = ["WPRO", "WPRO$", "WPROA", "WPROD"]
+        wpro = ["WPRO", "WPRO$", "WPROA", "WPROD", "WPRO+CLQ", "WPRO+CLQ$", "WPRO+CLQA", "WPRO+CLQD"]
 
         cats = [adj, be, clpro, clq, det, noun, prnoun, other, pro, quant, vb, wadj, wd, wpro]
 
@@ -83,7 +83,7 @@ class GreekCorpus(Corpus):
                         remainder = "+" + comp_group[2]
                         reflexive = True
                         compound = True
-                    elif "+" in tag and "NEG" in tag:
+                    elif "+" in tag and ("NEG" in tag or "CLQ" in tag):
                         comp_group = tag.partition("+")
                         tag = comp_group[2]
                         remainder = comp_group[0] + "+"
