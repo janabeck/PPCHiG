@@ -41,4 +41,3 @@
 ἄν	null	AN
 οὐδαμῇ	null	NEG+ADV
 ὥσπερ	null	WADV-CLPRT
-ἀλλήλων	case	PRO-RCP
