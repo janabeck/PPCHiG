@@ -48,7 +48,9 @@ for tree in trees:
 
             # does D + any nominal + quantifier combinations
             trans.findNodes(hasLabel(det_re) & hasParent(hasLabel("IP-MAT")) & hasImmRightSister(hasLabel(nom_re)))
-            # TODO: finish!
+            trans.addParentNodeSpanning("NP"+case,hasLabel(nom_re))
+            trans.findNodes(hasLabel("NP"+case))
+            trans.extendUntil(hasLabel(quant_re),immediate=True)
 
             # does D/DEM + clitic + any nominal
             trans.findNodes((hasLabel(dem_re) | hasLabel(det_re)) & hasParent(hasLabel("IP-MAT")) 
