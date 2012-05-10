@@ -1090,10 +1090,37 @@ class Corpus():
 
     #END_DEF lemma_concordance
 
-    def rule_concordance(self, lemma):
+    def rule_concordance(self, filename, phrase_type):
         """Produce a concordance of syntactic rules."""
 
-        pass
+        out_name = filename.replace(".psd","_rules.txt")
+
+        out_file = open(out_name, "w")
+
+        rules = {}
+
+        cases = ["-NOM","-GEN","-ACC","-DAT"]
+
+        for key in self.tokens.keys():
+            token = self.tokens[key]
+            tree = token._tree
+            lst = tree.productions()
+            for rule in lst:
+                if rule.is_nonlexical():
+                    lft = rule.lhs()
+                    if str(lft).find(phrase_type) != -1:
+                        if len(rule.rhs()) > 1:
+                            try:
+                                rules[str(rule.rhs())] += 1
+                            except KeyError:
+                                rules[str(rule.rhs())] = 1
+
+        sorted_rules = sorted(rules.iteritems(), key=operator.itemgetter(1))
+        sorted_rules.reverse()
+
+        for rule in sorted_rules:
+            if rule[1] > 9:
+                print >> out_file, rule[0] + " : " + str(rule[1])
 
     #END_DEF rule_concordance
 
@@ -1303,8 +1330,9 @@ def select(corpus, filename, add_file):
     print "    b. Print a concordance of lemmas per category as defined in an input category definition file."
     print "    c. Print all the unique lemmas (and their frequences) in a corpus file."
     print "    d. Print a concordance of the word forms (and their frequencies) for the given lemma."
-    print "    e. Print the text (words, punctuation) of the corpus file."
-    print "    f. Print just the words of the corpus file."
+    print "    e. Print a concordance of all the syntactic productions (rules) in a corpus file."
+    print "    f. Print the text (words, punctuation) of the corpus file."
+    print "    g. Print just the words of the corpus file."
     print
 
     selection = raw_input("Please enter the letter of the function you would like to run. ")
@@ -1333,8 +1361,12 @@ def select(corpus, filename, add_file):
             print "You need to enter the lemma you are interested in on the command line to run this function!"
             print
     elif selection == "e":
-        corpus.print_text(filename)
+        pt = raw_input("What phrase type are you interesting in building a rule concordance for? (e.g., NP, PP) ")
+        print
+        corpus.rule_concordance(filename, pt)
     elif selection == "f":
+        corpus.print_text(filename)
+    elif selection == "g":
         corpus.print_words(filename)
     else:
         print "I'm sorry--I don't understand what you entered."
