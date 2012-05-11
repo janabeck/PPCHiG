@@ -14,6 +14,8 @@ nom = ["N","NPR","NS","NPRS","ADJ","Q","CLQ","OTHER"]
 
 np_re = re.compile("|".join(map(lambda x: "NP" + x, cases)))
 
+pro_re = re.compile("|".join(map(lambda x: "PRO" + x, cases) + map(lambda x: "CLPRO" + x, cases)))
+
 det = ["D","DS"]
 
 dem = ["DEM","DEMS"]
