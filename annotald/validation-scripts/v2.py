@@ -39,7 +39,7 @@ for tree in trees:
 
         trans.findNodes(hasLabel("P", True) & hasParent(hasLabel("IP-MAT")))
         trans.addParentNode("PP")
-        trans.findNodes(hasLabel("PP") & ~hasDaughter(hasLabel("NP-FLAG")))
+        trans.findNodes(hasLabel("PP") & ~hasDaughter(hasLabel("NP-FLAG") | hasLabel("NP")))
         trans.extendUntil(hasLabel("NP-FLAG"), immediate=True)
 
     for case in vs['cases']:
@@ -59,7 +59,7 @@ for tree in trees:
 
         trans.findNodes(hasLabel("P", True) & hasParent(hasLabel("IP-MAT")))
         trans.addParentNode("PP")
-        trans.findNodes(hasLabel("PP"))
+        trans.findNodes(hasLabel("PP") & ~hasDaughter(hasLabel("NP-FLAG") | hasLabel("NP")))
         trans.extendUntil(hasLabel("NP-FLAG"), immediate=True)
 
     print trans.pt() + "\n\n"
