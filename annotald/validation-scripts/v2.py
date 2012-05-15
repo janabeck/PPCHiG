@@ -37,7 +37,6 @@ for tree in trees:
             trans.findNodes(hasLabel(nom_re) & hasParent(hasLabel("IP-MAT")) & hasImmRightSister(hasLabel(nom_re)))
             trans.addParentNodeSpanning("NP-FLAG", hasLabel(nom_re))
 
-
         trans.findNodes(hasLabel("P", True) & hasParent(hasLabel("IP-MAT")))
         trans.addParentNode("PP")
         trans.findNodes(hasLabel("PP") & ~hasDaughter(hasLabel("NP-FLAG")))
