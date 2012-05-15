@@ -48,9 +48,9 @@ for tree in trees:
         dem_re = re.compile("|".join(map(lambda x: x + case, vs['dem'])))
         all_re = re.compile("|".join(map(lambda x: x + case, vs['nom'])+ map(lambda x: x + case, vs['det'])+ map(lambda x: x + case, vs['dem'])))
 
-        # does lone nominals that aren't neighbors with anything else nominal-like or with CONJ
+        # does lone nominals that aren't neighbors with anything else nominal-like or with CONJ or CLPRT
         trans.findNodes((hasLabel(nom_re) | hasLabel(det_re) | hasLabel(dem_re)) & hasParent(hasLabel("IP-MAT"))
-            & (hasImmLeftSister(~(hasLabel(all_re) | hasLabel("CONJ"))) & hasImmRightSister(~(hasLabel(all_re) | hasLabel("CONJ")))))
+            & (hasImmLeftSister(~(hasLabel(all_re) | hasLabel("CONJ"))) & hasImmRightSister(~(hasLabel(all_re) | hasLabel("CONJ") | hasLabel("CLPRT")))))
         trans.addParentNode("NP-FLAG")
 
         # does lone pronouns
