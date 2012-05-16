@@ -29,7 +29,9 @@ for tree in trees:
             gen_re = re.compile("|".join(map(lambda x: x + "-GEN", vs['all_together'])))
 
             # does D + center-embedded genitive noun + nom
-            #TODO!
+            trans.findNodes(hasLabel(det_re) & hasParent(hasLabel("IP-MAT")) & hasImmRightSister(
+                hasLabel(gen_re) & hasImmRightSister(hasLabel(nom_re))))
+            trans.addParentNodeSpanning("NP-FLAG", hasLabel(nom_re))
 
             # does D + center-embedded genitive NP + nom
             trans.findNodes(hasLabel(det_re) & hasParent(hasLabel("IP-MAT")) & hasImmRightSister(
