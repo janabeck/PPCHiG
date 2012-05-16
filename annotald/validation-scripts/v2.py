@@ -68,7 +68,7 @@ for tree in trees:
         trans.extendUntil(hasLabel("NP-FLAG"), immediate=True)
 
         if case == "-NOM":
-            trans.findNodes(hasLabel("NP") & hasParent(hasLabel("IP-MAT")))
+            trans.findNodes(hasLabel("NP") & hasParent(hasLabel("IP-MAT")) & hasDaughter(hasLabel(all_re)))
             trans.changeLabel("NP-SBJ")
 
     print trans.pt() + "\n\n"
