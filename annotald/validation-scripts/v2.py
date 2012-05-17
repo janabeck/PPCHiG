@@ -64,8 +64,13 @@ for tree in trees:
 
         trans.findNodes(hasLabel("P", True) & hasParent(hasLabel("IP-MAT")))
         trans.addParentNode("PP")
+        # first pass puts together PPs that are separated from their NP by a CLPRT
+        trans.findNodes(hasLabel("PP") & ~hasDaughter(hasLabel("NP-FLAG") | hasLabel("NP")) & hasImmRightSister(
+            hasLabel("CLPRT") & hasImmRightSister(hasLabel("NP-FLAG") | hasLabel("NP"))))
+        trans.extendUntil((hasLabel("NP-FLAG") | hasLabel("NP")), immediate=False)
+        # second pass does regular case
         trans.findNodes(hasLabel("PP") & ~hasDaughter(hasLabel("NP-FLAG") | hasLabel("NP")))
-        trans.extendUntil(hasLabel("NP-FLAG"), immediate=True)
+        trans.extendUntil((hasLabel("NP-FLAG") | hasLabel("NP")), immediate=True)
 
         if case == "-NOM":
             trans.findNodes(hasLabel("NP") & hasParent(hasLabel("IP-MAT")) & hasDaughter(hasLabel(all_re)))
