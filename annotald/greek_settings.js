@@ -154,7 +154,6 @@ function customCommands(){
 
 }
 
-
 /*
  * Default label suggestions in context menu 
  */
@@ -292,6 +291,8 @@ styleTags(["VBPP","VBDP","VBNP","VBIP","VBSP","VBOP","VPRP","VPRP$","VPRPA","VPR
 
 var ipnodes=["IP","RRC"];
 styleIpNodes();
+
+disableUndo = null;
 
 // Local Variables:
 // indent-tabs-mode: nil
