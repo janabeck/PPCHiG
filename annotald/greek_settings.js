@@ -269,19 +269,17 @@ function nextAndValidate() {
 // document.
 
 // make CODE tags less visually salient
-styleTag("CODE", "background-color: lightgrey");
-styleTag("CODE", "color: grey");
+styleTag("CODE", "background-color: #D8D8D8");
+styleTag("CODE", "color: #6E6E6E");
 // color things that occur in search results
-styleDashTag("FLAG", "background-color: paleturquoise");
-styleDashTag("XXX", "background-color: paleturquoise !important");
-styleTag("ANT", "background-color: lightpink !important");
-styleTag("CODING", "background-color: lightpink");
-styleTag("TRACE", "background-color: paleturquoise");
-styleTag("FLAG", "background-color: paleturquoise");
-styleTag("CP", "background-color: lightsteelblue");
+styleDashTag("FLAG", "background-color:  #C98FC9");
+styleDashTag("XXX", "background-color:  #C98FC9 !important");
+styleTag("CODING", "background-color: #BAEF9E");
+styleTag("FLAG", "background-color:  #C98FC9");
+styleTag("CP", "background-color: #85A5C0");
 // color things that should be visually salient
-styleTags(["FRAG","QTP","XP"], "background-color: darkseagreen");
-styleTags(["VBPP","VBDP","VBNP","VBIP","VBSP","VBOP","VPRP","VPRP$","VPRPA","VPRPD"], "background-color: papayawhip");
+styleTags(["FRAG","QTP","XP"], "background-color: #8FBC9C");
+styleTags(["VBPP","VBDP","VBNP","VBIP","VBSP","VBOP","VPRP","VPRP$","VPRPA","VPRPD"], "background-color: #FFDBDB");
 
 /*
  * Phrase labels in this list (including the same ones with indices and
@@ -293,6 +291,18 @@ var ipnodes=["IP","RRC"];
 styleIpNodes();
 
 disableUndo = null;
+
+function displayWarning(text) {
+    $("#messageBoxInner").text(text).css("color", "#C75C5C");
+}
+
+function displayInfo(text) {
+    $("#messageBoxInner").text(text).css("color", "#4682B4");
+}
+
+function displayError(text) {
+    $("#messageBoxInner").text(text).css("color", "#64C465");
+}
 
 // Local Variables:
 // indent-tabs-mode: nil
