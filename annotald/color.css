@@ -31,6 +31,14 @@ body {
     background-color: #E6E6E6;
 }
 
+#sn0 {
+    background-color: #A27C7C;
+    border: 1px solid black;
+    margin-left: 10%;
+    margin-right: 5%;
+    display: inline-block;
+}
+
 .snodesel {
     /* This needs to override any user-supplied background colors, since
      * selection is more important.
@@ -92,4 +100,10 @@ body {
 /* Message box */
 #messageBox {
     background-color: #E6E6E6;
+}
+
+/* Idle status */
+#idlestatus {
+    font-weight: bold;
+    color: #64C465;
 }
