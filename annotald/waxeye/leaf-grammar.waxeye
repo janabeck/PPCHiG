@@ -1,5 +1,5 @@
 word_tag <-
- ( nominal | verbal | adverb | clitic | fn_cat | neg | other_word | punct ) ?index
+ ( other_word | nominal | verbal | adverb | clitic | fn_cat | neg | punct ) ?index
 
 index <-
  ('-' | '=') +[0-9]

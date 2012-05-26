@@ -12,13 +12,13 @@ if (typeof module !== 'undefined') {
 var leaf_grammar_parser = (function() {
 
     var parser = function() { return this; };
-    parser.prototype = new waxeye.WaxeyeParser(0, true, [new waxeye.FA("word_tag", [new waxeye.State([new waxeye.Edge(2, 1, false),
+    parser.prototype = new waxeye.WaxeyeParser(0, true, [new waxeye.FA("word_tag", [new waxeye.State([new waxeye.Edge(14, 1, false),
+                new waxeye.Edge(2, 1, false),
                 new waxeye.Edge(4, 1, false),
                 new waxeye.Edge(10, 1, false),
                 new waxeye.Edge(11, 1, false),
                 new waxeye.Edge(13, 1, false),
                 new waxeye.Edge(12, 1, false),
-                new waxeye.Edge(14, 1, false),
                 new waxeye.Edge(15, 1, false)], false),
             new waxeye.State([new waxeye.Edge(1, 2, false)], true),
             new waxeye.State([], true)], waxeye.FA.LEFT),
