@@ -1,0 +1,95 @@
+/*
+base color: rosybrown = #BC8F8F
+from analogous: #D39F96 (lighter rosybrown), #C98FC9 (lavender), #D396B4 (dusty rose), #C9A08F (buff)
+from monochromatic: #3C2E2E (dark brown), #896868 (darker rosybrown), #C75C5C (bright orange)
+from triad: #C7C7AB (light, greenish), #5B7789 (dark blue)
+from complementary: #8FBC9C (light green), #FFDBDB (extremely light rosybrown)
+from compound: #64C465 (bright green), #BAEF9E (bright light green)
+from shades: #A27C7C (slightly darker rosybrown)
+blue (for selection, etc.) = #4682B4 (plus monochromatic #85A5C0)
+shades of gray: lightest (#E6E6E6), silver (#BDBDBD), medium (#D8D8D8), dark (#6E6E6E), darkest (#424242)
+
+example of CSS variables:
+@variables {
+  CorporateLogoBGColor: #fe8d12;
+}
+
+div.logoContainer {
+  background-color: var(CorporateLogoBGColor);
+}
+*/
+
+/* Whole document */
+body {
+    background-color: #896868;
+}
+
+/* Nodes */
+.snode {
+    border: 1px solid #BDBDBD;
+    border-left: 4px solid #4682B4;
+    background-color: #E6E6E6;
+}
+
+.snodesel {
+    /* This needs to override any user-supplied background colors, since
+     * selection is more important.
+     */
+    background-color: #4682B4 !important;
+}
+
+/* Menus */
+.menuPane {
+    background: #D39F96;
+    border: 1px solid #3C2E2E;
+}
+
+.menuTitle {
+    background-color: #424242;
+}
+
+#treeIndexDisplay {
+    color: #4682B4;
+    font-weight: bold;
+}
+
+/* Tag/word editor */
+#editpane {
+    border: 1px solid #3C2E2E;
+    background-color: #C7C7AB;
+}
+
+.labeledit {
+    background-color: #8FBC9C;
+}
+
+/* Dialog box */
+
+#dialogBox {
+    background-color: #A27C7C;
+}
+
+/* Context menu */
+#conMenu {
+    background-color: #E6E6E6;
+}
+
+.conMenuHeading {
+    color: #C7C7AB;
+    background-color: #424242;
+    border-bottom: 1px solid #BDBDBD;
+    border-left: 1px solid #BDBDBD;
+}
+
+.conMenuItem:hover {
+    background-color: #BDBDBD;
+}
+
+#conLeft, #conRight {
+    border-right: 1px solid #BDBDBD;
+}
+
+/* Message box */
+#messageBox {
+    background-color: #E6E6E6;
+}
