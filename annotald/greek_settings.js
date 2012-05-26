@@ -17,15 +17,6 @@
 // <http://www.gnu.org/licenses/>.
 
 /*
- *  Displays a context menu for setting case extensions according to
- *  the IcePaHC annotation scheme
- *  caseTags indicates which tags should be interpreted as case tags
- *  for this purpose
- */ 
-var displayCaseMenu = false;
-var caseTags=[];
-
-/*
  * These two functions should return true if the string argument is a valid
  * label for a branching (-Phrase-) and non-branching (-Leaf-) label, and
  * false otherwise.
@@ -75,8 +66,8 @@ function customCommands(){
     addCommand({ keycode: 67, shift: true}, addCom); // shift + c
     addCommand({ keycode: 67, ctrl: true }, toggleVerbalExtension, "-CL"); // ctrl + c
     addCommand({ keycode: 68 }, pruneNode); // d
-    addCommand({ keycode: 68, shift: true}, setLabel, ["CLPRT","INTJ","INTJP","PRTQ","FW","AN","KE"]); // shift + d
-    addCommand({ keycode: 68, ctrl: true}, setLabel, ["NEG"]); // ctrl + d
+    addCommand({ keycode: 68, shift: true}, toggleCase); // shift + d
+    addCommand({ keycode: 68, ctrl: true}, setLabel, ["NUMP"]); // ctrl + d
     // NP-within-NP shortcuts
     addCommand({ keycode: 69 }, setLabel, ["NP-ATR","NP-PRN","NP-PAR","NP-CMP","NP-COM"]); // e
     addCommand({ keycode: 69, shift: true }, setLabel, ["NP", "NY"]); // shift + e
@@ -94,11 +85,11 @@ function customCommands(){
     
     // relative clauses and variations thereof
     addCommand({ keycode: 82 }, setLabel, ["CP-REL","RRC","CP-CMP","CP-FRL","CP-EOP","CP-EXL","CP-CAR"]); // r
-    addCommand({ keycode: 82, shift: true }, setLabel, ["NP-FLAG","NP#"]); // shift + r
+    addCommand({ keycode: 82, shift: true }, setLabel, ["NP-FLAG","NP"]); // shift + r
     addCommand({ keycode: 82, ctrl: true }, toggleExtension, "-RSP"); // ctrl + r
     // basic sentence-level elements
-    addCommand({ keycode: 83 }, setLabel, ["IP-SUB","IP-MAT","IP-IMP"]); // s
-    addCommand({ keycode: 83, shift: true}, setLabel, ["IP", "IY"]); // shift + s
+    addCommand({ keycode: 83 }, setLabel, ["IP-SUB","IP-MAT","IP-IMP","IY"]); // s
+    addCommand({ keycode: 83, shift: true}, split); // shift + s
     addCommand({ keycode: 83, ctrl: true}, toggleVerbalExtension, "-PASS"); // ctrl + s
     // complement CPs
     addCommand({ keycode: 84 }, setLabel, ["CP-THT","CP-COM","CP-DEG"]); // t
@@ -223,6 +214,45 @@ function addMan() {
 
 function addBkmk() {
     makeLeaf(true, "CODE", "{BKMK}");
+}
+
+function split() {
+    makeLeaf(true, "CODE", "{SPLIT}");
+}
+
+// TODO: dump this into treedrawing.js and reinstate cases variable in settings file so that everyone can use this
+function toggleCase() {
+    var label = getLabel($(startnode));
+    var cs = new RegExp("-NOM|-GEN|-ACC|-DAT");
+    var cases = ["-NOM","-GEN","-ACC","-DAT"];
+    for (i = 0; i < cases.length; i++) {
+        if(label.search(cases[i]) !== -1) {
+            m = label.match(cs);
+            console.log(m[0]);
+            switch(m[0]) {
+            case "-NOM":
+                new_label = label.replace("-NOM","-GEN");
+                console.log(new_label);
+                setNodeLabel($(startnode), new_label, false);
+                break;
+            case "-GEN":
+                new_label = label.replace("-GEN","-DAT");
+                setNodeLabel($(startnode), new_label, false);
+                break;
+            case "-DAT":
+                new_label = label.replace("-DAT","-ACC");
+                setNodeLabel($(startnode), new_label, false);
+                break;
+            case "-ACC":
+                new_label = label.replace("-ACC","-NOM");
+                setNodeLabel($(startnode), new_label, false);
+                break;
+            default:
+                setNodeLabel($(startnode), new_label, false);
+                break;
+            }
+        }
+    }
 }
 
 // Aaron's magical autoConjoin
