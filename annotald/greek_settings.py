@@ -17,7 +17,7 @@ extraJavascripts=["/Users/janabeck/Downloads/waxeye-0.8.0/src/javascript/waxeye.
 debugJs = False
 
 # Set this to True if you have defined a color.css file in the css directory
-colorCSS = False
+colorCSS = True
 
 from lovett.annotald import stdinValidator, flagIf
 from collections import OrderedDict
