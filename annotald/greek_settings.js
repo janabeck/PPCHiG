@@ -17,6 +17,15 @@
 // <http://www.gnu.org/licenses/>.
 
 /*
+ *  Displays a context menu for setting case extensions according to
+ *  the IcePaHC annotation scheme
+ *  caseTags indicates which tags should be interpreted as case tags
+ *  for this purpose
+ */ 
+var displayCaseMenu = false; // This feature is inoperative, pending modularization
+var caseTags=[];
+
+/*
  * These two functions should return true if the string argument is a valid
  * label for a branching (-Phrase-) and non-branching (-Leaf-) label, and
  * false otherwise.
