@@ -19,6 +19,8 @@ debugJs = False
 # Set this to True if you have defined a color.css file in the css directory
 colorCSS = True
 
+colorCSSPath = current_dir + "/color.css"
+
 from lovett.annotald import stdinValidator, flagIf
 from collections import OrderedDict
 validators = OrderedDict([
