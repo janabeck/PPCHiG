@@ -67,7 +67,7 @@ function customCommands(){
     addCommand({ keycode: 65, shift: true}, nextAndValidate); // shift + a
     addCommand({ keycode: 65, ctrl: true }, toggleVerbalExtension, "-INTRNS"); // ctrl + a
     // adverb phrase shortcuts
-    addCommand({ keycode: 66 }, setLabel, ["ADVP", "ADVP-DIR", "ADVP-LOC", "ADVP-TMP"]); // b
+    addCommand({ keycode: 66 }, setLabel, ["ADVP", "ADVP-TMP", "ADVP-DIR", "ADVP-LOC"]); // b
     // adverbial CPs
     addCommand({ keycode: 66, shift: true }, setLabel, ["CP-ADV","CP-PRP","CP-RES"]); // shift + b
     addCommand({ keycode: 66, ctrl: true }, addBkmk); // ctrl + b
@@ -79,7 +79,7 @@ function customCommands(){
     addCommand({ keycode: 68, ctrl: true}, setLabel, ["NUMP"]); // ctrl + d
     // NP-within-NP shortcuts
     addCommand({ keycode: 69 }, setLabel, ["NP-ATR","NP-PRN","NP-PAR","NP-CMP","NP-COM"]); // e
-    addCommand({ keycode: 69, shift: true }, setLabel, ["NP", "NY"]); // shift + e
+    addCommand({ keycode: 69, shift: true }, setLabel, ["NP", "NX", "NY"]); // shift + e
     addCommand({ keycode: 69, ctrl: true }, fixError); // ctrl + e
     addCommand({ keycode: 70 }, setLabel, ["PP"]); // f
     addCommand({ keycode: 70, shift: true }, toggleVerbalExtension, "-FUT"); // shift + f
@@ -87,14 +87,14 @@ function customCommands(){
     // adjective phrase shortcuts
     addCommand({ keycode: 71 }, setLabel, ["ADJP","ADJP-PRD","ADJP-SPR","ADJX","ADJY"]); // g
     addCommand({ keycode: 71, shift: true }, setLabel, ["NP-AGT"]); // shift + g
-
+    // ctrl + g
     addCommand({ keycode: 81 }, setLabel, ["CONJP"]); // q
     addCommand({ keycode: 81, shift: true}, autoConjoin); // shift + q
     addCommand({ keycode: 81, ctrl: true}, setLabel, ["CP-QUE","QP","QTP","QX","QY"]); // ctrl + q
     
     // relative clauses and variations thereof
     addCommand({ keycode: 82 }, setLabel, ["CP-REL","RRC","CP-CMP","CP-FRL","CP-EOP","CP-EXL","CP-CAR"]); // r
-    addCommand({ keycode: 82, shift: true }, setLabel, ["NP-FLAG","NP"]); // shift + r
+    // shift + r
     addCommand({ keycode: 82, ctrl: true }, toggleExtension, "-RSP"); // ctrl + r
     // basic sentence-level elements
     addCommand({ keycode: 83 }, setLabel, ["IP-SUB","IP-MAT","IP-IMP","IY"]); // s
@@ -109,9 +109,11 @@ function customCommands(){
     addCommand({ keycode: 86 }, setLabel, ["IP-PPL","IP-ABS","IP-SMC","IP-PPL-COM","IP-PPL-THT"]); // v
     // infinitive clauses
     addCommand({ keycode: 86, shift: true }, setLabel, ["IP-INF","IP-INF-COM","IP-INF-PRP","IP-INF-SBJ","IP-INF-THT","IP-INF-ABS"]); // shift + v
+    // ctrl + v
     // argument NP shortcuts
     addCommand({ keycode: 87 }, setLabel, ["NP-SBJ","NP-OB1","NP-OB2","NP-OBP","NP-OBQ","NP-PRD"]); // w
     addCommand({ keycode: 87, shift: true }, setLabel, ["WADJP","WADVP","WNP","WPP","WQP"]); // shift + w
+    // ctrl + w
 
     addCommand({ keycode: 88 }, makeNode, "XP"); // x
     addCommand({ keycode: 88, shift: true }, setLabel, ["XP"]); // shift + x
@@ -124,7 +126,7 @@ function customCommands(){
     addCommand({ keycode: 49 }, leafBefore); // 1
     addCommand({ keycode: 50 }, leafAfter); // 2
     // non-argument NP shortcuts
-    addCommand({ keycode: 51 }, setLabel, ["NX","NP-ADV","NP-AGT","NP-DIR","NP-INS","NP-LOC","NP-MSR","NP-SPR","NP-TMP","NP-VOC","NP-ADT"]); // 3
+    addCommand({ keycode: 51 }, setLabel, ["NP-ADV","NP-AGT","NP-DIR","NP-INS","NP-LOC","NP-MSR","NP-SPR","NP-TMP","NP-VOC","NP-ADT"]); // 3
     addCommand({ keycode: 51, shift: true}, addTodo); // shift + 3
     addCommand({ keycode: 51, ctrl: true}, addMan); // ctrl + 3
     addCommand({ keycode: 52 }, toggleExtension, "-PRN"); // 4
@@ -134,7 +136,6 @@ function customCommands(){
     //addCommand({ keycode: 72 }, ); // h
     addCommand({ keycode: 73 }, toggleVerbalExtension, "-IMPF"); // i
     addCommand({ keycode: 73, shift: true }, toggleVerbalExtension, "-IND"); // shift + i
-    addCommand({ keycode: 73, ctrl: true }, toggleExtension, "-IMP"); // ctrl + i
     //addCommand({ keycode: 74 }, ); // j
     addCommand({ keycode: 75 }, toggleVerbalExtension, "-KJV"); // k
     addCommand({ keycode: 76 }, editLemmaOrLabel); // l
