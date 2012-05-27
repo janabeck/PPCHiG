@@ -31,6 +31,7 @@
    `shift`    `q`  Aaron's autoConjoin function
     `ctrl`    `q`  CP-QUE, QP, QTP, QX, QY
               `r`  relative clauses and variations thereof
+   `shift`    `r`  untilSuccess (accomplishes various common binary changes such as ADV » CLPRT)
     `ctrl`    `r`  -RSP
               `s`  IPs
    `shift`    `s`  split
