@@ -8,29 +8,32 @@
    modifier   key  shortcut
   ---------- ----- --------------------------------------------
               `a`  -AOR
-   `shift`    `a`  -INTRNS
+   `shift`    `a`  nextAndValidate
+    `ctrl`    `a`  -INTRNS
               `b`  adverb phrases
    `shift`    `b`  adverbial CPs
+    `ctrl`    `b`  addBkmk
               `c`  coIndex
+   `shift`    `c`  addCom	      
     `ctrl`    `c`  -CL
               `d`  pruneNode
-   `shift`    `d`  particles and interjections, foreign words
-    `ctrl`    `d`  neg
+   `shift`    `d`  toggleCase
+    `ctrl`    `d`  NUMP
               `e`  NP-within-NP shortcuts
    `shift`    `e`  NP, NY
+    `ctrl`    `e`  fixError (i.e., remove -FLAG)
               `f`  PP
    `shift`    `f`  -FUT
     `ctrl`    `f`  FRAG
               `g`  adjective phrases
    `shift`    `g`  NP-AGT
               `q`  CONJP
-   `shift`    `q`  CP-QUE
-    `ctrl`    `q`  QP, QTP, QX, QY
+   `shift`    `q`  Aaron's autoConjoin function
+    `ctrl`    `q`  CP-QUE, QP, QTP, QX, QY
               `r`  relative clauses and variations thereof
-   `shift`    `r`  RRC
     `ctrl`    `r`  -RSP
               `s`  IPs
-   `shift`    `s`  IP, IY
+   `shift`    `s`  split
     `ctrl`    `s`  -PASS
               `t`  complement CPs
    `shift`    `t`  -TRNS1
@@ -43,16 +46,18 @@
    `shift`    `x`  XP
     `ctrl`    `x`  -XXX
               `z`  undo
+   `shift`    `z`  splitWord
 
 ### Number Commands
-
-   key  shortcut
-  ----- ---------------------------
-   `1`  leafBefore
-   `2`  leafAfter
-   `3`  non-argument NP shortcuts
-   `4`  -PRN
-   `5`  -SPE
+   modifier   key  shortcut
+  ---------- ----- --------------------------------------------
+              `1`  leafBefore
+              `2`  leafAfter
+              `3`  non-argument NP shortcuts
+   `shift`    `3`  addTodo
+    `ctrl`    `3`  addMan
+              `4`  -PRN
+              `5`  -SPE
 
 ## Right Hand Commands
 
