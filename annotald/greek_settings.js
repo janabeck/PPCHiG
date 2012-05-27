@@ -94,7 +94,7 @@ function customCommands(){
     
     // relative clauses and variations thereof
     addCommand({ keycode: 82 }, setLabel, ["CP-REL","RRC","CP-CMP","CP-FRL","CP-EOP","CP-EXL","CP-CAR"]); // r
-    addCommand({keycode: 82 }, untilSuccess,
+    addCommand({keycode: 82 , shift: true}, untilSuccess,
                [setLabel, ["ADV", "CLPRT"]]); // shift + r
     addCommand({ keycode: 82, ctrl: true }, toggleExtension, "-RSP"); // ctrl + r
     // basic sentence-level elements
@@ -232,6 +232,7 @@ function split() {
 }
 
 // TODO: dump this into treedrawing.js and reinstate cases variable in settings file so that everyone can use this
+
 function toggleCase() {
     var label = getLabel($(startnode));
     var cs = new RegExp("-NOM|-GEN|-ACC|-DAT");
@@ -239,11 +240,9 @@ function toggleCase() {
     for (i = 0; i < cases.length; i++) {
         if(label.search(cases[i]) !== -1) {
             m = label.match(cs);
-            console.log(m[0]);
             switch(m[0]) {
             case "-NOM":
                 new_label = label.replace("-NOM","-GEN");
-                console.log(new_label);
                 setNodeLabel($(startnode), new_label, false);
                 break;
             case "-GEN":
