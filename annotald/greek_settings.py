@@ -25,5 +25,6 @@ from lovett.annotald import stdinValidator, flagIf
 from collections import OrderedDict
 validators = OrderedDict([
     ("v1", stdinValidator("/Users/janabeck/Git/Academic/PPCHiG/annotald/validation-scripts/v1.py")),
-    ("v2", stdinValidator("/Users/janabeck/Git/Academic/PPCHiG/annotald/validation-scripts/v2.py"))
+    ("v2", stdinValidator("/Users/janabeck/Git/Academic/PPCHiG/annotald/validation-scripts/v2.py")),
+    ("sanity", stdinValidator("/Users/janabeck/Git/Academic/PPCHiG/annotald/validation-scripts/sanity.py"))
 ])
