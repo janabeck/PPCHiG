@@ -9,6 +9,7 @@ sys.path.append(SCRIPT_DIR + "/../../../../../Git/Academic/TreeTransformer")
 import re
 import lovett.transformer as TT
 from lovett.searchfns import *
+from lovett.annotald import flagIf
 import nltk.tree as T
 
 import runpy
@@ -28,7 +29,7 @@ for tree in trees:
     trans.addSister("C-FLAG", "0")
 
     # adds (NP-SBJ *pro*) where needed
-    trans.findNodes(hasLabel(vs['finite']) & hasParent(hasLabel(vs['subj_ips']) & ~hasDaughter(hasLabel(r(".*\-SBJ.*")))))
+    trans.findNodes(hasLabel(vs['finite']) & hasParent(hasLabel(vs['subj_ips']) & ~hasDaughter(hasLabel(vs['subject']))))
     trans.addSister("NP-SBJ-FLAG", "*pro*")
 
     # flags optatives for review
