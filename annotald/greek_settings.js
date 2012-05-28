@@ -301,6 +301,9 @@ function nextAndValidate() {
    while (!/-FLAG/.test(tmp) && tmp2 != currentText($("#editpane")))
 }
 
+var ipnodes=["IP","RRC"];
+styleIpNodes();
+
 // An example of a CSS rule for coloring a POS tag.  The styleTag
 // function takes care of setting up a (somewhat complex) CSS rule that
 // applies the given style to any node that has the given label.  Dash tags
@@ -312,8 +315,8 @@ function nextAndValidate() {
 styleTag("CODE", "background-color: #D8D8D8");
 styleTag("CODE", "color: #6E6E6E");
 // color things that occur in search results
-styleDashTag("FLAG", "color:  #BAEF9E");
-styleTag("CODING", "background-color: #BAEF9E");
+styleDashTag("FLAG", "background-color:  #C98FC9");
+styleTag("CODING", "background-color: #C98FC9");
 styleTag("FLAG", "background-color:  #C98FC9");
 styleTag("CP", "background-color: #85A5C0");
 // color things that should be visually salient
@@ -325,9 +328,6 @@ styleTags(["VBPP","VBDP","VBNP","VBIP","VBSP","VBOP","VPRP","VPRP$","VPRPA","VPR
  * extensions) get a different background color so that the annotator can
  * see the "floor" of the current clause
  */
-
-var ipnodes=["IP","RRC"];
-styleIpNodes();
 
 disableUndo = null;
 
