@@ -29,3 +29,10 @@ all_cases = []
 for item in all_together:
     for case in cases:
         all_cases.append(item+case)
+
+# primarily for sanity checks
+
+# IPs that need subjects
+subj_ips = re.compile("IP-MAT*|IP-SUB*|IP-SMC*|IP-INF-THT*|IP-PPL-THT*")
+
+finite = re.compile("VB[PDSO]*|BE[PDSO]*")
