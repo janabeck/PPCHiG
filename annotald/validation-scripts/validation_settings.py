@@ -8,7 +8,7 @@ pl = ["NS","NPRS","ADJ","Q","CLQ","OTHER"]
 
 numbers = [(sing, ["D"], ["DEM"]), (pl, ["DS"],["DEMS"])]
 
-ignore = re.compile("CLPRT*|CLTE*|CLGE*|CLPRO*")
+ignore = re.compile("CLPRT|CLTE|CLGE|CLPRO.*|CLQ.*")
 
 nom = ["N","NPR","NS","NPRS","ADJ","Q","CLQ","OTHER"]
 
@@ -33,6 +33,8 @@ for item in all_together:
 # primarily for sanity checks
 
 # IPs that need subjects
-subj_ips = re.compile("IP-MAT*|IP-SUB*|IP-SMC*|IP-INF-THT*|IP-PPL-THT*")
+subj_ips = re.compile("IP-MAT.*|IP-SUB.*|IP-SMC.*|IP-INF-THT.*|IP-PPL-THT.*")
 
-finite = re.compile("VB[PDSO]*|BE[PDSO]*")
+finite = re.compile("VB[PDSO].*|BE[PDSO].*")
+
+subject = re.compile(".*\-SBJ.*")
