@@ -312,8 +312,7 @@ function nextAndValidate() {
 styleTag("CODE", "background-color: #D8D8D8");
 styleTag("CODE", "color: #6E6E6E");
 // color things that occur in search results
-styleDashTag("FLAG", "background-color:  #C98FC9");
-styleDashTag("XXX", "background-color:  #C98FC9 !important");
+styleDashTag("FLAG", "color:  #BAEF9E");
 styleTag("CODING", "background-color: #BAEF9E");
 styleTag("FLAG", "background-color:  #C98FC9");
 styleTag("CP", "background-color: #85A5C0");
