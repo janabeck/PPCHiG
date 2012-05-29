@@ -123,6 +123,9 @@ class Token():
         # metadata contains the METADATA sub-tree if present
         self.metadata = ""
 
+        # parsed indicates whether the token is parsed or not
+        self.parsed = True
+
     #END_DEF __init__
 
     def parse(self, tree, format):
@@ -172,7 +175,7 @@ class Token():
             elif leaf.find("{TODO:") != -1:
                 self.todos.append(leaf)
             elif leaf.find("{BKMK}") != -1:
-                pass
+                self.parsed = False
             elif tag.find("CODE") != -1:
                 pass
             elif tag == "ID":
@@ -497,7 +500,7 @@ class Corpus():
 
     #END_DEF check_milestones
 
-    def word_count(self):
+    def word_count(self, parsed_only = False):
         """Count all and only the words in the .psd file."""
         """Returns word_count."""
 
@@ -509,6 +512,9 @@ class Corpus():
 
         for key in keys:
             tok = self.tokens[key]
+            if parsed_only:
+                if not tok.parsed:
+                    return word_count
             for word in tok.words:
                 if word.endswith("@") and word != "@":
                     split = True
@@ -522,12 +528,15 @@ class Corpus():
 
     #END_DEF word_count
 
-    def print_word_count(self, word_count):
+    def print_word_count(self, word_count, parsed_only = False):
         """Prints the word count to the terminal."""
 
         print  "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"        
         print
-        print "There are " + str(word_count) + " words in this file, excluding empty categories and punctuation."
+        if parsed_only:
+            print "You have parsed " + str(word_count) + " words in this file."
+        else:
+            print "There are " + str(word_count) + " words in this file, excluding empty categories and punctuation."
 
         if self.check_for_ids(False):
             # print
@@ -1213,6 +1222,7 @@ def main():
     # TODO: maybe gather additional filenames in a remainder arguments (see docs) instead of gathering into psd list?
     parser.add_argument('-s', '--settings', dest='settings_path', action='store', help='Direct Corpus Reader to your language-specific settings file.')
     parser.add_argument('-c', '--count', dest='count', action='store_true', help='Print the word count.')
+    parser.add_argument('-C', '--count_parsed', dest='count_parsed', action='store_true', help='Print the word count before BKMK.')
     parser.add_argument('-i', '--ids', dest='renumber_ids', action='store_true', help='Renumber the IDs in the .psd file.')
     parser.add_argument('-m', '--milestones', dest='add_milestones', action='store_true', help='Add continuity milestones to the .psd file.')
     parser.add_argument('-p', '--print', dest='print_trees', action='store_true', help='Print all the trees in the .psd file.')
@@ -1249,6 +1259,10 @@ def main():
 
     if args.count:
         corpus.print_word_count(corpus.word_count())
+        picked = True
+
+    if args.count_parsed:
+        corpus.print_word_count(corpus.word_count(True), True)
         picked = True
 
     if args.renumber_ids:
