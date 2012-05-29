@@ -1060,8 +1060,6 @@
 		      (IP-INF-SBJ (NP-SBJ (D-ACC τόν-ὁ) (CLGE γε-γε) (ADV ἀληθέως-ἀληθής) (N-ACC τοκέα-τοκεύς))
 				  (PP (P ὑπὸ-ὑπό)
 				      (NP (D-GEN τοῦ-ὁ)
-					  (CODE {TODO:delete_following_comma...typo!})
-					  (, ,-,)
 					  (NP-ATR (PRO+SLF-GEN ἑωυτοῦ-ἑαυτοῦ))
 					  (N-GEN παιδὸς-παῖς)))
 				  (VBN-IMPF ἀποθνήσκειν-ἀποθνῄσκω)))
