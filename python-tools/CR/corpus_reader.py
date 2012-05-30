@@ -348,7 +348,30 @@ class Token():
 
         ptree.insert(ins_point, T.ParentedTree.convert(new_postr2))
 
-            #END_DEF split_POS
+    #END_DEF split_POS
+
+    def join_POS(self, postr1, postr2, tag1, tag2, word1, word2, lemma1, index1):
+        """Join two words into a single word."""
+
+        pair = str((word1.replace("@","") + word2.replace("@","") + "-" + lemma1).encode('utf-8'))
+
+        new_postr = T.Tree(tag1 + "+" + tag2 + index1, [pair])
+
+        position = len(postr1.treepos) - 1
+
+        ins_point = postr1.treepos[position] + 1
+
+        new_treepos = list(postr1.treepos)
+
+        addy = new_treepos[:-1]
+
+        addy = tuple(addy)
+
+        ptree = self._tree[addy]
+
+        ptree[ins_point - 1] = ""
+
+        ptree[ins_point] = T.ParentedTree.convert(new_postr)
     
 #END_DEF Token
 
@@ -762,6 +785,37 @@ class Corpus():
 
     #END_DEF replace_tokens
 
+    def join_words(self, filename):
+        """Generate a dialog on the command line to join previously split words."""
+
+        for key in self.tokens.keys():
+            tree = self.tokens[key]
+            leaves = tree._tree.leaves()
+            for tr in tree._tree.subtrees():
+                with warnings.catch_warnings(record=True):
+                    if tr[0] in leaves:
+                        word = unicode(tr[0].decode('utf-8'))
+                        pair = word.split("-")
+                        rword = unicode(pair[0])
+                        tag = tr.node
+                        ind_match = self.re_index.match(tag)
+                        if ind_match:
+                            index = ind_match.group(2)
+                            tag = tag.replace(index, "")
+                        else:
+                            index = ""
+                        if rword.endswith("@"):
+                            lemma = pair[1]
+                            first = [tr,rword,lemma,tag,index]
+                        elif rword.startswith("@"):
+                            if self.get_join(first[1], first[3], rword, tag):
+                                tree.join_POS(first[0], tr, first[3], tag, first[1], rword, first[2], first[4])
+                            first = []
+
+        self.print_trees(filename)
+
+    #END_DEF join_words
+
     def split_words(self, filename, exclude, non_words):
         """Generate a dialog on the command line to split words with more than one POS tag."""
         """(Optionally) pass this method a regular expression describing tags to exclude."""
@@ -879,6 +933,16 @@ class Corpus():
             self.get_split(rword, lemma, tag1, tag2, sep)
 
     #END_DEF check
+
+    def get_join(self, rword1, tag1, rword2, tag2):
+        """Returns boolean for whether two words should be joined."""
+
+        bool = raw_input("Do you want to join these words? " + rword1.encode('utf-8') + " " + rword2.encode('utf-8') + ":" + tag1 + "+" + tag2 + " ")
+        print
+        if bool == "y":
+            return True
+        else:
+            return False
 
     def get_split(self, rword, lemma, tag1, tag2, sep):
         """Returns w1 and w2, the first and second halves a split word."""
@@ -1229,6 +1293,7 @@ def main():
     parser.add_argument('-r', '--replace', dest='output_file', action='store', help='Insert the tokens from a CorpusSearch output file into the main .psd corpus file.')
     parser.add_argument('-t', '--timelog', dest='timelog', action='store_const', const='timelog.txt', help='Calculate words per hour parsed from a timelog.txt.')
     parser.add_argument('-l', '--split_POS', dest='split', action='store_true', help='Split words that have more than one POS tag.')
+    parser.add_argument('-j', '--join_POS', dest='join', action='store_true', help='Join words that were previously split.')
     parser.add_argument('-v', '--validate', dest='valid', action='store_true', help='Validate at the POS and phrase level.')
     parser.add_argument('psd', nargs='+')
     args = parser.parse_args()
@@ -1295,6 +1360,10 @@ def main():
             exclude = ""
             non_words = ""
         corpus.split_words(filename, exclude, non_words)
+        picked = True
+
+    if args.join:
+        corpus.join_words(filename)
         picked = True
 
     if args.valid:
