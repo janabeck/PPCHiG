@@ -87,7 +87,7 @@ class Scrub:
             if choice2 == "y":
                 out_name = raw_input("What would you like to name the output file? (It will be given a .txt extension.) ")
                 # gets sub_trees for all books
-                divisions = soup.findAll(type="book")
+                divisions = soup.findAll(type="Book")
                 for division in divisions:
                     self.scrub(division)
                 self.open_out(out_name)
@@ -96,7 +96,7 @@ class Scrub:
                 out_name = raw_input("What book do you want to output? ")
                 print
                 # stores the sub-tree of interest
-                division = soup.find(type="book", n=out_name)
+                division = soup.find(type="Book", n=out_name)
                 self.scrub(division)
                 self.open_out(out_name)
                 self.output()
@@ -129,18 +129,32 @@ class Scrub:
                 if item.name == "milestone":
                     if item['unit'] == "chapter":
                         chapter = item['n']
-                    if item['unit'] == "verse" or item['unit'] == "section":
+                    elif item['unit'] == "verse" or item['unit'] == "section":
                         verse = item['n']
                         milestone = "(CODE " + str(chapter) + ":" + str(verse) + ")"
                         self.text.append(milestone.rstrip())
+                        for n in item.contents:
+                            if n.string:
+                                self.tokenize(n.string)
+                            elif n.name == "name":
+                                print n.contents[0].string
+                                self.tokenize(n.contents[0].string)
+                    elif item['unit'] == "para":
+                        for n in item.contents:
+                            if n.string:
+                                self.tokenize(n.string)
+                            elif n.name == "name":
+                                print n.contents[0].string
+                                self.tokenize(n.contents[0].string)                                
                 # extracts text from name and placeName nodes
-                if item.name == "name":
+                elif item.name == "name":
                     if item['type'] == "place":
+                        print item.contents[0].string
                         self.tokenize(item.contents[0].string)
                     else:
                         self.tokenize(item.string)
                 # extracts text from <quote> nodes
-                if item.name == "quote":
+                elif item.name == "quote":
                     for node in item.contents:
                         try:
                             if node.name == "l":
@@ -161,14 +175,14 @@ class Scrub:
                                     except AttributeError:
                                         if not leaf.isspace():
                                             self.tokenize(leaf)
-                            if node.name == "milestone":
+                            elif node.name == "milestone":
                                 if node['unit'] == "chapter":
                                     chapter = node['n']
                                 if node['unit'] == "verse":
                                     verse = node['n']
                                     milestone = "(CODE " + str(chapter) + ":" + str(verse) + ")"
                                     self.text.append(milestone.rstrip())
-                            if node.name == "name":
+                            elif node.name == "name":
                                 if item['type'] == "place":
                                     self.tokenize(item.contents[0].string)
                                 else:
@@ -185,7 +199,7 @@ class Scrub:
                                 if answer == "n":
                                     sys.exit()
                 # extracts text from <q> nodes
-                if item.name == "q":
+                elif item.name == "q":
                     for node in item.contents:
                         try:
                             if node.name == "l":
@@ -198,7 +212,7 @@ class Scrub:
                                                 verse = leaf['n']
                                                 milestone = "(CODE " + str(chapter) + ":" + str(verse) + ")"
                                                 self.text.append(milestone.rstrip())
-                                        if leaf.name == "quote":
+                                        elif leaf.name == "quote":
                                             for shoot in leaf.contents:
                                                 try:
                                                     if shoot.name == "milestone":
@@ -214,22 +228,22 @@ class Scrub:
                                     except AttributeError:
                                         if not leaf.isspace():
                                             self.tokenize(leaf)
-                            if node.name == "milestone":
+                            elif node.name == "milestone":
                                 if node['unit'] == "chapter":
                                     chapter = node['n']
-                                if node['unit'] == "verse":
+                                elif node['unit'] == "verse":
                                     verse = node['n']
                                     milestone = "(CODE " + str(chapter) + ":" + str(verse) + ")"
                                     self.text.append(milestone.rstrip())
-                            if node.name == "quote":
+                            elif node.name == "quote":
                                 for leaf in node.contents:
                                     try:
                                         if leaf.name == "l":
                                             self.tokenize(leaf.string)
-                                        if leaf.name == "milestone":
+                                        elif leaf.name == "milestone":
                                             if leaf['unit'] == "chapter":
                                                 chapter = leaf['n']
-                                            if leaf['unit'] == "verse":
+                                            elif leaf['unit'] == "verse":
                                                 verse = leaf['n']
                                                 milestone = "(CODE " + str(chapter) + ":" + str(verse) + ")"
                                                 self.text.append(milestone.rstrip())
@@ -239,11 +253,13 @@ class Scrub:
                         except AttributeError:
                             if not node.isspace():
                                 self.tokenize(node)
+                elif item.string:
+                    self.tokenize(item.string)
             # an exception occurs when the node is a NavigableText object (i.e., a block of text)
             except AttributeError:
                 try:
                     if not item.isspace():
-                        self.tokenize(item)
+                        self.tokenize(item.string)
                 except TypeError:
                     print "This node is of type " + item.name + ". Would you like to continue?"
                     answer = raw_input("Please type y or n. ")
