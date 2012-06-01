@@ -48,8 +48,9 @@ validators = OrderedDict([
     ("v1", stdinValidator("/Users/janabeck/Git/Academic/PPCHiG/annotald/validation-scripts/v1.py")),
     ("v2", stdinValidator("/Users/janabeck/Git/Academic/PPCHiG/annotald/validation-scripts/v2.py")),
     ("sanity", stdinValidator("/Users/janabeck/Git/Academic/PPCHiG/annotald/validation-scripts/sanity.py")),
-    ("CPs without C", CPwithoutC),
-    ("Missing subject", missingSBJ),
-    ("Infinitive on a finite spine", spineINF),
-    ("Multiple subjects", multipleSBJ)
+    ("CP without C", CPwithoutC),
+    ("missing subject", missingSBJ),
+    ("infinitive on a finite spine", spineINF),
+    ("multiple subjects", multipleSBJ),
+    ("middle and passive verbs", stdinValidator("/Users/janabeck/Git/Academic/PPCHiG/annotald/validation-scripts/mid_pass.py"))
 ])
