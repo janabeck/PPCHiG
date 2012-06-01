@@ -137,14 +137,12 @@ class Scrub:
                             if n.string:
                                 self.tokenize(n.string)
                             elif n.name == "name":
-                                print n.contents[0].string
                                 self.tokenize(n.contents[0].string)
                     elif item['unit'] == "para":
                         for n in item.contents:
                             if n.string:
                                 self.tokenize(n.string)
                             elif n.name == "name":
-                                print n.contents[0].string
                                 self.tokenize(n.contents[0].string)                                
                 # extracts text from name and placeName nodes
                 elif item.name == "name":
