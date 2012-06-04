@@ -2,6 +2,8 @@ import re
 
 cases = ["-NOM","-GEN","-ACC","-DAT"]
 
+voices = ["-INTRNS","-PASS","-TRNS1","-TRNS2"]
+
 sing = ["N","NPR","ADJ","Q","CLQ","OTHER"]
 
 pl = ["NS","NPRS","ADJ","Q","CLQ","OTHER"]
@@ -29,6 +31,12 @@ all_cases = []
 for item in all_together:
     for case in cases:
         all_cases.append(item+case)
+
+fin = re.compile("VB.P.*|BE.P.*")
+
+nonfin = re.compile("VPRP.*|BPRP.*")
+
+intrans_lemmas = ["γίνομαι","γίγνομαι","κατάκειμαι","ἔρχομαι","πορεύομαι","κεῖμαι","καθέζομαι","κάθημαι","ἀφικνέομαι"]
 
 # primarily for sanity checks
 
