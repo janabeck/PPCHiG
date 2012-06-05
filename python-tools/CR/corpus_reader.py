@@ -1166,7 +1166,7 @@ class Corpus():
     def rule_concordance(self, filename, phrase_type):
         """Produce a concordance of syntactic rules."""
 
-        out_name = filename.replace(".psd","_rules.txt")
+        out_name = filename.replace(".psd","_rules.csv")
 
         out_file = open(out_name, "w")
 
@@ -1193,7 +1193,7 @@ class Corpus():
 
         for rule in sorted_rules:
             if rule[1] > 9:
-                print >> out_file, rule[0] + " : " + str(rule[1])
+                print >> out_file, rule[0] + "\t" + str(rule[1])
 
     #END_DEF rule_concordance
 
