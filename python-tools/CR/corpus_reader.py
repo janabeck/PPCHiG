@@ -1181,7 +1181,7 @@ class Corpus():
             for rule in lst:
                 if rule.is_nonlexical():
                     lft = rule.lhs()
-                    if str(lft).find(phrase_type) != -1:
+                    if str(lft).find(phrase_type) == 0:
                         if len(rule.rhs()) > 1:
                             try:
                                 rules[str(rule.rhs())] += 1
