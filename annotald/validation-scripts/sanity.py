@@ -34,7 +34,7 @@ for tree in trees:
 
     # flags optatives for review
     trans.findNodes(hasLabel(r("VBO.*|BEO.*")))
-    trans.addParentNode("FLAG")
+    trans.changeLabel(lambda x: x + "-FLAG")
 
     print trans.pt() + "\n\n"
 sys.stdout.close()
