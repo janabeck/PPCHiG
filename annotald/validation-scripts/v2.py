@@ -69,7 +69,7 @@ for tree in trees:
             hasLabel("CLPRT") & hasImmRightSister(hasLabel("NP-FLAG") | hasLabel("NP"))))
         trans.extendUntil((hasLabel("NP-FLAG") | hasLabel("NP")), immediate=False)
         # second pass does regular case
-        trans.findNodes(hasLabel("PP") & ~hasDaughter(hasLabel("NP-FLAG") | hasLabel("NP")))
+        trans.findNodes(hasLabel("PP") & ~hasDaughter((hasLabel("NP-FLAG") | hasLabel("NP")) & hasDaughter(hasLabel(re.compile(".*-NOM")))))
         trans.extendUntil((hasLabel("NP-FLAG") | hasLabel("NP")), immediate=True)
 
         if case == "-NOM":

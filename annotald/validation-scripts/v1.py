@@ -70,7 +70,7 @@ for tree in trees:
 
         trans.findNodes(hasLabel("P", True) & hasParent(hasLabel("IP-MAT")))
         trans.addParentNode("PP")
-        trans.findNodes(hasLabel("PP") & ~hasDaughter(hasLabel("NP-FLAG")))
+        trans.findNodes(hasLabel("PP") & ~hasDaughter(hasLabel("NP-FLAG") & hasDaughter(hasLabel(re.compile(".*-NOM")))))
         trans.extendUntil(hasLabel("NP-FLAG"), immediate=True)
 
     print trans.pt() + "\n\n"
