@@ -95,7 +95,7 @@ function customCommands(){
     // relative clauses and variations thereof
     addCommand({ keycode: 82 }, setLabel, ["CP-REL","RRC","CP-CMP","CP-FRL","CP-EOP","CP-EXL","CP-CAR"]); // r
     addCommand({keycode: 82 , shift: true}, untilSuccess,
-               [setLabel, ["ADV", "CLPRT", "P", "WP"]]); // shift + r
+               [setLabel, ["ADV", "CLPRT", "P", "WP", ",", "."]]); // shift + r
     addCommand({ keycode: 82, ctrl: true }, toggleExtension, "-RSP"); // ctrl + r
     // basic sentence-level elements
     addCommand({ keycode: 83 }, setLabel, ["IP-SUB","IP-MAT","IP-IMP","IY"]); // s
