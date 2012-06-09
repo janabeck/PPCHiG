@@ -18,6 +18,8 @@ vs = runpy.run_path(SCRIPT_DIR + "/../../../../../Git/Academic/PPCHiG/annotald/v
 data = sys.stdin.read()
 trees = data.split("\n\n")
 
+r = re.compile
+
 for tree in trees:
     trans = TT.TreeTransformer(T.ParentedTree(tree))
 
@@ -29,7 +31,8 @@ for tree in trees:
             quant_re = re.compile("|".join(map(lambda x: x + case, vs['quant'])))
 
             # does DEM + D + any nominal combinations
-            trans.findNodes(hasLabel(dem_re) & hasParent(hasLabel("IP-MAT")) & hasImmRightSister(hasLabel(det_re)))
+            trans.findNodes(hasLabel(dem_re) & hasParent(hasLabel("IP-MAT")) & 
+                ignoring(hasLabel(r("CL.*")), hasImmRightSister(hasLabel(det_re))))
             trans.addParentNodeSpanning("NP"+case, hasLabel(det_re))
             trans.findNodes(hasLabel("NP"+case))
             trans.extendUntil(hasLabel(nom_re), immediate=True)
@@ -70,7 +73,7 @@ for tree in trees:
 
         trans.findNodes(hasLabel("P", True) & hasParent(hasLabel("IP-MAT")))
         trans.addParentNode("PP")
-        trans.findNodes(hasLabel("PP") & ~hasDaughter(hasLabel("NP-FLAG") & hasDaughter(hasLabel(re.compile(".*-NOM")))))
+        trans.findNodes(hasLabel("PP") & ~hasDaughter(hasLabel(r("NP-FLAG|NP")) & hasDaughter(hasLabel(r(".*-NOM")))))
         trans.extendUntil(hasLabel("NP-FLAG"), immediate=True)
 
     print trans.pt() + "\n\n"
