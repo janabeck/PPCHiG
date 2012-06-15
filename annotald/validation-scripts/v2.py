@@ -64,6 +64,12 @@ for tree in trees:
                 hasImmRightSister(~(hasLabel(all_re) | hasLabel("CONJ") | hasLabel(r("CL.*"))))))
         trans.addParentNode("NP-FLAG")
 
+        # does WNP
+        trans.findNodes(hasLabel("WPRO"+case) & hasParent(hasLabel("IP-MAT")))
+        trans.addParentNode("WNP")
+        trans.findNodes(hasLabel("WNP") & ignoring(hasLabel(r("CL.*")), hasImmRightSister(hasLabel("CLQ"+case))))
+        trans.extendUntil(hasLabel("CLQ"+case)
+
         # does lone pronouns
         trans.findNodes(hasLabel(vs['pro_re']) & hasParent(hasLabel("IP-MAT")))
         trans.addParentNode("NP-FLAG")
@@ -77,6 +83,14 @@ for tree in trees:
         if case == "-NOM":
             trans.findNodes(hasLabel("NP") & hasParent(hasLabel("IP-MAT")) & hasDaughter(hasLabel(all_re)))
             trans.changeLabel("NP-SBJ")
+
+    # does WADVP
+    trans.findNodes(hasLabel("WADV") & ~hasLemma("ὡς") & hasParent(hasLabel("IP-MAT")))
+    trans.addParentNode("WADVP")
+
+    # does WADJP
+    trans.findNodes(hasLabel("WADJ") & hasParent(hasLabel("IP-MAT")))
+    trans.addParentNode("WADJP")
 
     print trans.pt() + "\n\n"
 sys.stdout.close()
