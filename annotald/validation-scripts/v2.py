@@ -18,6 +18,8 @@ vs = runpy.run_path(SCRIPT_DIR + "/../../../../../Git/Academic/PPCHiG/annotald/v
 data = sys.stdin.read()
 trees = data.split("\n\n")
 
+r = re.compile
+
 for tree in trees:
     trans = TT.TreeTransformer(T.ParentedTree(tree))
 
@@ -29,23 +31,26 @@ for tree in trees:
             gen_re = re.compile("|".join(map(lambda x: x + "-GEN", vs['all_together'])))
 
             # does D + center-embedded genitive noun + nom
-            trans.findNodes(hasLabel(det_re) & hasParent(hasLabel("IP-MAT")) & hasImmRightSister(
-                hasLabel(gen_re) & hasImmRightSister(hasLabel(nom_re))))
+            trans.findNodes(hasLabel(det_re) & hasParent(hasLabel("IP-MAT")) & 
+                ignoring(hasLabel(r("CL.*")), (hasImmRightSister(hasLabel(gen_re)) & hasImmRightSister(hasLabel(nom_re)))))
             trans.addParentNodeSpanning("NP-FLAG", hasLabel(nom_re))
 
             # does D + center-embedded genitive NP + nom
-            trans.findNodes(hasLabel(det_re) & hasParent(hasLabel("IP-MAT")) & hasImmRightSister(
-                hasLabel("NP") & hasDaughter(hasLabel(gen_re)) & hasImmRightSister(hasLabel(nom_re))))
+            trans.findNodes(hasLabel(det_re) & hasParent(hasLabel("IP-MAT")) & 
+                ignoring(hasLabel(r("CL.*")), hasImmRightSister(hasLabel("NP") & 
+                    hasDaughter(hasLabel(gen_re)) & hasImmRightSister(hasLabel(nom_re)))))
             trans.addParentNodeSpanning("NP-FLAG", hasLabel(nom_re))
 
             # does nom + nom
-            trans.findNodes(hasLabel(nom_re) & hasParent(hasLabel("IP-MAT")) & hasImmRightSister(hasLabel(nom_re)))
+            trans.findNodes(hasLabel(nom_re) & hasParent(hasLabel("IP-MAT")) & 
+                ignoring(hasLabel(r("CL.*")), hasImmRightSister(hasLabel(nom_re))))
             trans.addParentNodeSpanning("NP-FLAG", hasLabel(nom_re))
 
         trans.findNodes(hasLabel("P", True) & hasParent(hasLabel("IP-MAT")))
         trans.addParentNode("PP")
-        trans.findNodes(hasLabel("PP") & ~hasDaughter(hasLabel("NP-FLAG") | hasLabel("NP")))
-        trans.extendUntil(hasLabel("NP-FLAG"), immediate=True)
+        trans.findNodes(hasLabel("PP") & ~hasDaughter(hasLabel(r("NP-FLAG|NP")) & hasDaughter(hasLabel(r(".*-NOM"))))
+            & ignoring(hasLabel(r("CL.*")), hasImmRightSister(hasLabel(r("NP-FLAG|NP")))))
+        trans.extendUntil(hasLabel("NP-FLAG") | hasLabel("NP"))
 
     for case in vs['cases']:
         nom_re = re.compile("|".join(map(lambda x: x + case, vs['nom'])))
@@ -55,7 +60,8 @@ for tree in trees:
 
         # does lone nominals that aren't neighbors with anything else nominal-like or with CONJ or CLPRT
         trans.findNodes((hasLabel(nom_re) | hasLabel(det_re) | hasLabel(dem_re)) & hasParent(hasLabel("IP-MAT"))
-            & (hasImmLeftSister(~(hasLabel(all_re) | hasLabel("CONJ"))) & hasImmRightSister(~(hasLabel(all_re) | hasLabel("CONJ") | hasLabel("CLPRT")))))
+            & (hasImmLeftSister(~(hasLabel(all_re) | hasLabel("CONJ"))) & 
+                hasImmRightSister(~(hasLabel(all_re) | hasLabel("CONJ") | hasLabel(r("CL.*"))))))
         trans.addParentNode("NP-FLAG")
 
         # does lone pronouns
@@ -64,15 +70,9 @@ for tree in trees:
 
         trans.findNodes(hasLabel("P", True) & hasParent(hasLabel("IP-MAT")))
         trans.addParentNode("PP")
-        # first pass puts together PPs that are separated from their NP by a CLPRT
-        trans.findNodes(hasLabel("PP") & ~hasDaughter(hasLabel("NP-FLAG") | hasLabel("NP")) & 
-            hasImmRightSister(hasLabel("CLPRT") & hasImmRightSister((hasLabel("NP-FLAG") | hasLabel("NP")) 
-                & ~hasDaughter(hasLabel(re.compile(".*-NOM"))))))
-        trans.extendUntil((hasLabel("NP-FLAG") | hasLabel("NP")), immediate=False)
-        # second pass does regular case
-        trans.findNodes(hasLabel("PP") & ~hasDaughter((hasLabel("NP-FLAG") | hasLabel("NP")) 
-            & hasDaughter(hasLabel(re.compile(".*-NOM")))))
-        trans.extendUntil((hasLabel("NP-FLAG") | hasLabel("NP")), immediate=True)
+        trans.findNodes(hasLabel("PP") & ~hasDaughter(hasLabel(r("NP-FLAG|NP")) & hasDaughter(hasLabel(r(".*-NOM"))))
+            & ignoring(hasLabel(r("CL.*")), hasImmRightSister(hasLabel(r("NP-FLAG|NP")))))
+        trans.extendUntil(hasLabel("NP-FLAG") | hasLabel("NP"))
 
         if case == "-NOM":
             trans.findNodes(hasLabel("NP") & hasParent(hasLabel("IP-MAT")) & hasDaughter(hasLabel(all_re)))
