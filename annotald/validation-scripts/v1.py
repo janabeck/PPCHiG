@@ -38,31 +38,29 @@ for tree in trees:
             trans.extendUntil(hasLabel(nom_re), immediate=True)
 
             # does D + any nominal + DEM combinations
-            trans.findNodes(hasLabel(det_re) & hasParent(hasLabel("IP-MAT")) & hasImmRightSister(hasLabel(nom_re)))
+            trans.findNodes(hasLabel(det_re) & hasParent(hasLabel("IP-MAT")) & 
+                ignoring(hasLabel(r("CL.*")), hasImmRightSister(hasLabel(nom_re))))
             trans.addParentNodeSpanning("NP"+case, hasLabel(nom_re))
             trans.findNodes(hasLabel("NP"+case))
             trans.extendUntil(hasLabel(dem_re), immediate=True)
 
             # does quantifier + D + any nominal combinations
-            trans.findNodes(hasLabel(quant_re) & hasParent(hasLabel("IP-MAT")) & hasImmRightSister(hasLabel(det_re)))
+            trans.findNodes(hasLabel(quant_re) & hasParent(hasLabel("IP-MAT")) & 
+                ignoring(hasLabel(r("CL.*")), hasImmRightSister(hasLabel(det_re))))
             trans.addParentNodeSpanning("NP"+case, hasLabel(det_re))
             trans.findNodes(hasLabel("NP"+case))
             trans.extendUntil(hasLabel(nom_re), immediate=True)
 
             # does D + any nominal + quantifier combinations
-            trans.findNodes(hasLabel(det_re) & hasParent(hasLabel("IP-MAT")) & hasImmRightSister(hasLabel(nom_re)))
+            trans.findNodes(hasLabel(det_re) & hasParent(hasLabel("IP-MAT")) & 
+                ignoring(hasLabel(r("CL.*")), hasImmRightSister(hasLabel(nom_re))))
             trans.addParentNodeSpanning("NP"+case,hasLabel(nom_re))
             trans.findNodes(hasLabel("NP"+case))
             trans.extendUntil(hasLabel(quant_re),immediate=True)
 
             # does D/DEM + clitic + any nominal
             trans.findNodes((hasLabel(dem_re) | hasLabel(det_re)) & hasParent(hasLabel("IP-MAT")) 
-                & hasImmRightSister(hasLabel(vs['ignore']) & hasImmRightSister(hasLabel(nom_re))))
-            trans.addParentNodeSpanning("NP"+case, hasLabel(nom_re))
-
-            # does D/DEM + any nominal
-            trans.findNodes((hasLabel(dem_re) | hasLabel(det_re)) & hasParent(hasLabel("IP-MAT"))
-                & hasImmRightSister(hasLabel(nom_re)))
+                & ignoring(hasLabel(r("CL.*")), hasImmRightSister(hasLabel(nom_re))))
             trans.addParentNodeSpanning("NP"+case, hasLabel(nom_re))
 
             trans.findNodes(hasLabel("NP"+case))
@@ -73,8 +71,9 @@ for tree in trees:
 
         trans.findNodes(hasLabel("P", True) & hasParent(hasLabel("IP-MAT")))
         trans.addParentNode("PP")
-        trans.findNodes(hasLabel("PP") & ~hasDaughter(hasLabel(r("NP-FLAG|NP")) & hasDaughter(hasLabel(r(".*-NOM")))))
-        trans.extendUntil(hasLabel("NP-FLAG"), immediate=True)
+        trans.findNodes(hasLabel("PP") & ~hasDaughter(hasLabel(r("NP-FLAG|NP")) & hasDaughter(hasLabel(r(".*-NOM"))))
+            & ignoring(hasLabel(r("CL.*")), hasImmRightSister(hasLabel(r("NP-FLAG|NP")))))
+        trans.extendUntil(hasLabel("NP-FLAG") | hasLabel("NP"))
 
     print trans.pt() + "\n\n"
 sys.stdout.close()
