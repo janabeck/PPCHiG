@@ -99,7 +99,7 @@ function customCommands(){
     addCommand({ keycode: 82, ctrl: true }, toggleExtension, "-RSP"); // ctrl + r
     // basic sentence-level elements
     addCommand({ keycode: 83 }, setLabel, ["IP-SUB","IP-MAT","IP-IMP","IY"]); // s
-    addCommand({ keycode: 83, shift: true}, split); // shift + s
+    addCommand({ keycode: 83, shift: true}, prev); // shift + s
     addCommand({ keycode: 83, ctrl: true}, toggleVerbalExtension, "-PASS"); // ctrl + s
     // complement CPs
     addCommand({ keycode: 84 }, setLabel, ["CP-THT","CP-COM","CP-DEG"]); // t
@@ -227,10 +227,6 @@ function addBkmk() {
     makeLeaf(true, "CODE", "{BKMK}");
 }
 
-function split() {
-    makeLeaf(true, "CODE", "{SPLIT}");
-}
-
 // TODO: dump this into treedrawing.js and reinstate cases variable in settings file so that everyone can use this
 
 function toggleCase() {
@@ -292,6 +288,10 @@ function autoConjoin() {
 
 function next() {
     advanceTree("/nextTree", undefined, false);
+}
+
+function prev() {
+    advanceTree("/prevTree", undefined, false);
 }
 
 function nextAndValidate() {
