@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# This Python file uses the following encoding: utf-8
 
 import os.path
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -68,7 +69,7 @@ for tree in trees:
         trans.findNodes(hasLabel("WPRO"+case) & hasParent(hasLabel("IP-MAT")))
         trans.addParentNode("WNP")
         trans.findNodes(hasLabel("WNP") & ignoring(hasLabel(r("CL.*")), hasImmRightSister(hasLabel("CLQ"+case))))
-        trans.extendUntil(hasLabel("CLQ"+case)
+        trans.extendUntil(hasLabel("CLQ"+case))
 
         # does lone pronouns
         trans.findNodes(hasLabel(vs['pro_re']) & hasParent(hasLabel("IP-MAT")))
