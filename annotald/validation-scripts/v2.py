@@ -58,6 +58,12 @@ for tree in trees:
         det_re = re.compile("|".join(map(lambda x: x + case, vs['det'])))
         dem_re = re.compile("|".join(map(lambda x: x + case, vs['dem'])))
         all_re = re.compile("|".join(map(lambda x: x + case, vs['nom'])+ map(lambda x: x + case, vs['det'])+ map(lambda x: x + case, vs['dem'])))
+        adj_re = re.compile("|".join(map(lambda x: x + case, ["ADJ"])))
+
+        # does ADJP around lone adjectives
+        trans.findNodes(hasLabel(adj_re) & hasParent(hasLabel("IP-MAT")) & hasImmLeftSister(~(hasLabel(all_re) | hasLabel("CONJ"))) 
+            & hasImmRightSister(~(hasLabel(all_re) | hasLabel("CONJ"))))
+        trans.addParentNode("ADJP-FLAG")
 
         # does lone nominals that aren't neighbors with anything else nominal-like or with CONJ or CLPRT
         trans.findNodes((hasLabel(nom_re) | hasLabel(det_re) | hasLabel(dem_re)) & hasParent(hasLabel("IP-MAT"))
@@ -75,12 +81,6 @@ for tree in trees:
         trans.findNodes(hasLabel(vs['pro_re']) & hasParent(hasLabel("IP-MAT")))
         trans.addParentNode("NP-FLAG")
 
-        trans.findNodes(hasLabel("P", True) & hasParent(hasLabel("IP-MAT")))
-        trans.addParentNode("PP")
-        trans.findNodes(hasLabel("PP") & ~hasDaughter(hasLabel(r("NP-FLAG|NP")) & hasDaughter(hasLabel(r(".*-NOM"))))
-            & ignoring(hasLabel(r("CL.*")), hasImmRightSister(hasLabel(r("NP-FLAG|NP")))))
-        trans.extendUntil(hasLabel("NP-FLAG") | hasLabel("NP"))
-
         if case == "-NOM":
             trans.findNodes(hasLabel("NP") & hasParent(hasLabel("IP-MAT")) & hasDaughter(hasLabel(all_re)))
             trans.changeLabel("NP-SBJ")
@@ -92,6 +92,12 @@ for tree in trees:
     # does WADJP
     trans.findNodes(hasLabel("WADJ") & hasParent(hasLabel("IP-MAT")))
     trans.addParentNode("WADJP")
+
+    trans.findNodes(hasLabel("P", True) & hasParent(hasLabel("IP-MAT")))
+    trans.addParentNode("PP")
+    trans.findNodes(hasLabel("PP") & ~hasDaughter(hasLabel("NP-FLAG") | hasLabel("NP", True))
+        & ignoring(hasLabel(r("CL.*")), hasImmRightSister((hasLabel("NP-FLAG") | hasLabel("NP", True)) & ~hasDaughter(hasLabel(r(".*-NOM"))))))
+    trans.extendUntil(hasLabel("NP-FLAG") | hasLabel("NP", True), immediate=True)
 
     print trans.pt() + "\n\n"
 sys.stdout.close()
