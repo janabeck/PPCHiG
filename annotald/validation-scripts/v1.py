@@ -69,11 +69,11 @@ for tree in trees:
             trans.findNodes(hasLabel(vs['np_re']))
             trans.changeLabel("NP-FLAG")
 
-        trans.findNodes(hasLabel("P", True) & hasParent(hasLabel("IP-MAT")))
-        trans.addParentNode("PP")
-        trans.findNodes(hasLabel("PP") & ~hasDaughter(hasLabel(r("NP-FLAG|NP")) & hasDaughter(hasLabel(r(".*-NOM"))))
-            & ignoring(hasLabel(r("CL.*")), hasImmRightSister(hasLabel(r("NP-FLAG|NP")))))
-        trans.extendUntil(hasLabel("NP-FLAG") | hasLabel("NP"))
+    trans.findNodes(hasLabel("P", True) & hasParent(hasLabel("IP-MAT")))
+    trans.addParentNode("PP")
+    trans.findNodes(hasLabel("PP") & ~hasDaughter(hasLabel("NP-FLAG") | hasLabel("NP", True))
+        & ignoring(hasLabel(r("CL.*")), hasImmRightSister((hasLabel("NP-FLAG") | hasLabel("NP", True)) & ~hasDaughter(hasLabel(r(".*-NOM"))))))
+    trans.extendUntil(hasLabel("NP-FLAG") | hasLabel("NP", True), immediate=True)
 
     print trans.pt() + "\n\n"
 sys.stdout.close()
