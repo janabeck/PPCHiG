@@ -47,12 +47,6 @@ for tree in trees:
                 ignoring(hasLabel(r("CL.*")), hasImmRightSister(hasLabel(nom_re))))
             trans.addParentNodeSpanning("NP-FLAG", hasLabel(nom_re))
 
-        trans.findNodes(hasLabel("P", True) & hasParent(hasLabel("IP-MAT")))
-        trans.addParentNode("PP")
-        trans.findNodes(hasLabel("PP") & ~hasDaughter(hasLabel(r("NP-FLAG|NP")) & hasDaughter(hasLabel(r(".*-NOM"))))
-            & ignoring(hasLabel(r("CL.*")), hasImmRightSister(hasLabel(r("NP-FLAG|NP")))))
-        trans.extendUntil(hasLabel("NP-FLAG") | hasLabel("NP"))
-
     for case in vs['cases']:
         nom_re = re.compile("|".join(map(lambda x: x + case, vs['nom'])))
         det_re = re.compile("|".join(map(lambda x: x + case, vs['det'])))
@@ -93,11 +87,9 @@ for tree in trees:
     trans.findNodes(hasLabel("WADJ") & hasParent(hasLabel("IP-MAT")))
     trans.addParentNode("WADJP")
 
-    trans.findNodes(hasLabel("P", True) & hasParent(hasLabel("IP-MAT")))
-    trans.addParentNode("PP")
     trans.findNodes(hasLabel("PP") & ~hasDaughter(hasLabel("NP-FLAG") | hasLabel("NP", True))
-        & ignoring(hasLabel(r("CL.*")), hasImmRightSister((hasLabel("NP-FLAG") | hasLabel("NP", True)) & ~hasDaughter(hasLabel(r(".*-NOM"))))))
-    trans.extendUntil(hasLabel("NP-FLAG") | hasLabel("NP", True), immediate=True)
+        & ignoring(hasLabel(r("CL.*")), (hasImmRightSister((hasLabel("NP-FLAG") | hasLabel("NP", True)) & ~hasDaughter(hasLabel(r(".*-NOM")))))))
+    trans.extendUntil((hasLabel("NP-FLAG") | hasLabel("NP", True)), immediate=True)
 
     print trans.pt() + "\n\n"
 sys.stdout.close()
