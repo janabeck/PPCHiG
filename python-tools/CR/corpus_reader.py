@@ -649,7 +649,7 @@ class Corpus():
             print
             sys.exit()
         else:
-            milestone = re.compile("{VS:([0-9]+_[0-9]+[a-z]*)}")
+            milestone = re.compile("{VS:([0-9]+[A-Z]*_[0-9]+[a-z]*)}")
             count = 1
             corp = ""
             bk = ""
@@ -688,7 +688,7 @@ class Corpus():
     def add_milestones(self, filename):
         """Add continuity milestones in the .psd file."""
 
-        milestone = re.compile("{VS:([0-9]+_[0-9]+)([a-z]*)}")
+        milestone = re.compile("{VS:([0-9]+[A-Z]*_[0-9]+)([a-z]*)}")
 
         if not self.check_milestones():
             lst_milestone = ""
@@ -719,7 +719,10 @@ class Corpus():
                             # rebuild tree with wrapper
                             new_tree = T.Tree("", [tree.metadata, tree.main_tree, tree.id_tree])
                             tree._tree = T.ParentedTree.convert(new_tree)
-                    lst_milestone = match.group(1)
+                    try:
+                        lst_milestone = match.group(1)
+                    except AttributeError:
+                        print tree._tree
                     try:
                         lst_letter = ord(match.group(2))
                     except TypeError:
@@ -1409,7 +1412,7 @@ def select(corpus, filename, add_file):
     """Select another CR function from a menu."""
 
     print "Select a function:"
-    print "    a. Print a concordance of lemmas and POS tags in the corpus."
+    print "    a. Print ©a concordance of lemmas and POS tags in the corpus."
     print "    b. Print a concordance of lemmas per category as defined in an input category definition file."
     print "    c. Print all the unique lemmas (and their frequences) in a corpus file."
     print "    d. Print a concordance of the word forms (and their frequencies) for the given lemma."
