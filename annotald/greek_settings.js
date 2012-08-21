@@ -80,7 +80,7 @@ function customCommands(){
     // NP-within-NP shortcuts
     addCommand({ keycode: 69 }, setLabel, ["NP-ATR","NP-PRN","NP-PAR","NP-CMP","NP-COM"]); // e
     addCommand({ keycode: 69, shift: true }, setLabel, ["NP", "NX", "NY"]); // shift + e
-    addCommand({ keycode: 69, ctrl: true }, next); // ctrl + e
+    addCommand({ keycode: 69, ctrl: true }, nextTree); // ctrl + e
     addCommand({ keycode: 70 }, setLabel, ["PP"]); // f
     addCommand({ keycode: 70, shift: true }, toggleVerbalExtension, "-FUT"); // shift + f
     addCommand({ keycode: 70, ctrl: true }, setLabel, ["FRAG"]); // ctrl + f
@@ -99,7 +99,7 @@ function customCommands(){
     addCommand({ keycode: 82, ctrl: true }, toggleExtension, "-RSP"); // ctrl + r
     // basic sentence-level elements
     addCommand({ keycode: 83 }, setLabel, ["IP-SUB","IP-MAT","IP-IMP","IY"]); // s
-    addCommand({ keycode: 83, shift: true}, prev); // shift + s
+    addCommand({ keycode: 83, shift: true}, prevTree); // shift + s
     addCommand({ keycode: 83, ctrl: true}, toggleVerbalExtension, "-PASS"); // ctrl + s
     // complement CPs
     addCommand({ keycode: 84 }, setLabel, ["CP-THT","CP-COM","CP-DEG"]); // t
@@ -286,19 +286,11 @@ function autoConjoin() {
     }
 }
 
-function next() {
-    advanceTree("/nextTree", undefined, false);
-}
-
-function prev() {
-    advanceTree("/prevTree", undefined, false);
-}
-
 function nextAndValidate() {
    var tmp, tmp2;
    do {
        tmp2 = currentText($("#editpane"));
-       advanceTree("/nextTree", undefined, false);
+       nextTree();
        validateTreesSync(false);
        tmp = $("#editpane").html();
    }
