@@ -288,7 +288,7 @@
 	  (NP-SBJ *pro*)
 	  (VBD-IMPF ἔφη-φημί)
 	  (, ,-,)
-	  (CP-ADV (C+WPROA διότι-διότι)
+	  (CP-ADV (C+WPRO-ACC διότι-διότι)
 		  (C 0)
 		  (IP-INF (VBNP-AOR-PASS ταφῆναί-θάπτω)
 			  (NP-SBJ (NP-ATR (CLPRO-DAT οἱ-ἑ))
