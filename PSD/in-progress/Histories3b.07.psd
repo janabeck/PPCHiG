@@ -1475,7 +1475,7 @@
 	      (. .-.))
   (ID Herodotus,Histories3:142_3a.89))
 
-( (IP-MAT (CODE {VS:142_3b})
+( (IP-MAT-SPE (CODE {VS:142_3b})
 	  (NP-SBJ (PRO-NOM ἐγὼ-ἐγώ)
 		  (NP-PRN *ICH*-2))
 	  (CLPRT δὲ-δέ)
