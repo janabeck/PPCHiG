@@ -7,7 +7,7 @@ import sys
 sys.path.append(current_dir + "/../../../../Git/Academic/TreeTransformer")
 
 from lovett.annotald import flagIf, stdinValidator
-from lovett.searchfns import *
+from lovett.cs.searchfns import *
 from collections import OrderedDict
 
 import runpy
