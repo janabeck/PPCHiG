@@ -6,6 +6,7 @@ Test.psd*
 *.aux
 *.synctex.gz
 *.rel
+*.ooo
 _region_.tex
 aaron-examples/
 waxeye-0.8.0/
