@@ -1,23 +1,48 @@
-  52 a
-  49 c
-15122 e
- 133 f
-   3 l
-  40 o
-  48 s
-  87 v
+  12 o:a
+  24 o:c
+12308 o:e
+  72 o:f
+   3 o:l
+  32 o:o
+  32 o:s
+  63 o:v
 
-52 + 49 + 133 + 40 + 48 + 87 = 409
+2817 p:e
+  86 p:f
+  10 p:o
+  58 p:p
+  17 p:s
 
-13% first position and pre-verbal (ambiguous)
-12% second position and pre-verbal (ambiguous)
-32% unambiguously first position
+OVERALL:
+
+12 + 24 + (72 + 86) + (32 + 10) + (32 + 17) + (63 + 58) = 406
+
+3% first position and pre-verbal (ambiguous)
+6% second position and pre-verbal (ambiguous)
+39% unambiguously first position
 10% other
 12% unambiguously "second" position (often second following a phrase, not a word)
-21% pre-verbal
+30% pre-verbal
 
 to summarize:
-32% unambiguously first position
-46% pre-verbal
+39% unambiguously first position
+39% pre-verbal
 12% unambiguously "second" position (often second following a phrase, not a word)
 10% other
+
+NON-PRO ONLY:
+
+12 + 24 + 72 + 32 + 32 + 63 = 235
+
+5% first position and pre-verbal (ambiguous)
+10% second position and pre-verbal (ambiguous)
+31% unambiguously first position
+13.5% other
+13.5% unambiguously "second" position (often second following a phrase, not a word)
+27% pre-verbal
+
+to summarize:
+31% unambiguously first position
+42% pre-verbal
+13.5% unambiguously "second" position (often second following a phrase, not a word)
+13.5% other
