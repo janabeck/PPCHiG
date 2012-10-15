@@ -19,7 +19,11 @@ coding_query:
 1: { p: (IP-MAT*|IP-SUB* iDoms NP-SBJ*) AND (NP-SBJ* iDoms \*pro\*|\*con\*)
      o: ELSE }
 
-2: { l: (IP-MAT*|IP-SUB* iDomsFirst NEG) AND (IP-MAT*|IP-SUB* domsWords 1) AND (NEG iDoms !*@*)
+2: { o: (IP-MAT*|IP-SUB* iDoms NEG) AND (NEG iDoms !*@*) AND (NEG iDoms *-οὐ)
+     m: (IP-MAT*|IP-SUB* iDoms NEG) AND (NEG iDoms !*@*) AND (NEG iDoms *-μή)
+     e: ELSE }
+
+3: { l: (IP-MAT*|IP-SUB* iDomsFirst NEG) AND (IP-MAT*|IP-SUB* domsWords 1) AND (NEG iDoms !*@*)
      a: (IP-MAT*|IP-SUB* iDomsFirst NEG) AND (NEG iPrecedes VB*|BE*) AND (NEG iDoms !*@*)
      f: (IP-MAT*|IP-SUB* iDomsFirst NEG) AND (NEG iDoms !*@*)
      c: (IP-MAT*|IP-SUB* iDoms VB*|BE*) AND (VB*|BE* iDoms !\*ICH\**) AND (NEG iPrecedes VB*|BE*) AND (NEG iDoms !*@*) AND (IP-MAT*|IP-SUB* iDomsNumber 2 NEG)
