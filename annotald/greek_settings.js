@@ -63,9 +63,9 @@ var vextensions=["-FUT","-IMPF","-AOR","-PRF","-TRNS1","-TRNS2","-INTRNS","-PASS
  */
 function customCommands(){
     // left hand commands
-    addCommand({ keycode: 65 }, toggleVerbalExtension, "-AOR"); // a
+    addCommand({ keycode: 65 }, toggleExtension, "-AOR"); // a
     addCommand({ keycode: 65, shift: true}, nextAndValidate); // shift + a
-    addCommand({ keycode: 65, ctrl: true }, toggleVerbalExtension, "-INTRNS"); // ctrl + a
+    addCommand({ keycode: 65, ctrl: true }, toggleExtension, "-INTRNS"); // ctrl + a
     // adverb phrase shortcuts
     addCommand({ keycode: 66 }, setLabel, ["ADVP", "ADVP-TMP", "ADVP-DIR", "ADVP-LOC"]); // b
     // adverbial CPs
@@ -73,7 +73,7 @@ function customCommands(){
     addCommand({ keycode: 66, ctrl: true }, addBkmk); // ctrl + b
     addCommand({ keycode: 67 }, coIndex); // c
     addCommand({ keycode: 67, shift: true}, addCom); // shift + c
-    addCommand({ keycode: 67, ctrl: true }, toggleVerbalExtension, "-CL"); // ctrl + c
+    addCommand({ keycode: 67, ctrl: true }, toggleExtension, "-CL"); // ctrl + c
     addCommand({ keycode: 68 }, pruneNode); // d
     addCommand({ keycode: 68, shift: true}, toggleCase); // shift + d
     addCommand({ keycode: 68, ctrl: true}, setLabel, ["NUMP"]); // ctrl + d
@@ -82,7 +82,7 @@ function customCommands(){
     addCommand({ keycode: 69, shift: true }, setLabel, ["NP", "NX", "NY"]); // shift + e
     addCommand({ keycode: 69, ctrl: true }, nextTree); // ctrl + e
     addCommand({ keycode: 70 }, setLabel, ["PP"]); // f
-    addCommand({ keycode: 70, shift: true }, toggleVerbalExtension, "-FUT"); // shift + f
+    addCommand({ keycode: 70, shift: true }, toggleExtension, "-FUT"); // shift + f
     addCommand({ keycode: 70, ctrl: true }, setLabel, ["FRAG"]); // ctrl + f
     // adjective phrase shortcuts
     addCommand({ keycode: 71 }, setLabel, ["ADJP","ADJP-PRD","ADJP-SPR","ADJX","ADJY"]); // g
@@ -100,11 +100,11 @@ function customCommands(){
     // basic sentence-level elements
     addCommand({ keycode: 83 }, setLabel, ["IP-SUB","IP-MAT","IP-IMP","IY"]); // s
     addCommand({ keycode: 83, shift: true}, prevTree); // shift + s
-    addCommand({ keycode: 83, ctrl: true}, toggleVerbalExtension, "-PASS"); // ctrl + s
+    addCommand({ keycode: 83, ctrl: true}, toggleExtension, "-PASS"); // ctrl + s
     // complement CPs
     addCommand({ keycode: 84 }, setLabel, ["CP-THT","CP-COM","CP-DEG"]); // t
-    addCommand({ keycode: 84, shift: true}, toggleVerbalExtension, "-TRNS1"); // shift + t
-    addCommand({ keycode: 84, ctrl: true}, toggleVerbalExtension, "-TRNS2"); // ctrl + t
+    addCommand({ keycode: 84, shift: true}, toggleExtension, "-TRNS1"); // shift + t
+    addCommand({ keycode: 84, ctrl: true}, toggleExtension, "-TRNS2"); // ctrl + t
 
     // participial clauses
     addCommand({ keycode: 86 }, setLabel, ["IP-PPL","IP-ABS","IP-SMC","IP-PPL-COM","IP-PPL-THT"]); // v
@@ -135,17 +135,17 @@ function customCommands(){
 
     // right hand commands
     //addCommand({ keycode: 72 }, ); // h
-    addCommand({ keycode: 73 }, toggleVerbalExtension, "-IMPF"); // i
-    addCommand({ keycode: 73, shift: true }, toggleVerbalExtension, "-IND"); // shift + i
+    addCommand({ keycode: 73 }, toggleExtension, "-IMPF"); // i
+    addCommand({ keycode: 73, shift: true }, toggleExtension, "-IND"); // shift + i
     //addCommand({ keycode: 74 }, ); // j
-    addCommand({ keycode: 75 }, toggleVerbalExtension, "-KJV"); // k
-    addCommand({ keycode: 76 }, editLemmaOrLabel); // l
+    addCommand({ keycode: 75 }, toggleExtension, "-KJV"); // k
+    addCommand({ keycode: 76 }, editNode); // l
     addCommand({ keycode: 76, shift: true }, displayRename); // shift + l
     addCommand({ keycode: 76, ctrl: true }, toggleExtension, "-LFD"); // ctrl + l
     //addCommand({ keycode: 77 }, ); // m
     //addCommand({ keycode: 78 }, ); // n
     //addCommand({ keycode: 79 }, ); // o
-    addCommand({ keycode: 80 }, toggleVerbalExtension, "-PRF"); // p
+    addCommand({ keycode: 80 }, toggleExtension, "-PRF"); // p
 
     //addCommand({ keycode: 85 }, ); // u
 
@@ -338,6 +338,10 @@ function displayInfo(text) {
 function displayError(text) {
     $("#messageBoxInner").text(text).css("color", "#64C465");
 }
+
+var commentTypes = ["COM","MAN","TODO","TAG"];
+
+var logDetail = false;
 
 // Local Variables:
 // indent-tabs-mode: nil
