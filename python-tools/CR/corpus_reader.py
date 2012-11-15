@@ -75,8 +75,8 @@ class Token():
         # id contains the token's ID as a string "Corpus,Book:[milestones].num
         self.id = ""
 
-        # id_num contains the numerical index of the ID as an integer
-        self.id_num = 0
+        # id_num contains the numerical index of the ID as a string
+        self.id_num = ""
 
         # id_tree contains the ID subtree
         self.id_tree = ""
@@ -1239,6 +1239,41 @@ class Corpus():
                     
     #END_DEF print_words
 
+    def pprint(self, id_str):
+        """Print the text of the token to the console."""
+
+        id_num = int(id_str)
+
+        the_key = ""
+
+        for key in self.tokens.keys():
+            if self.tokens[key].id_num == id_str:
+                the_key = key
+                break
+
+        token = self.tokens[the_key]
+
+        split = False
+
+        to_print = ""
+
+        for word in token.words:
+            if split:
+                pair = word.split("-")
+                tmp2 = pair[0].replace("@","")
+                to_print += tmp + tmp2 + " "
+                tmp = ""
+                split = False
+            elif word.find("@") != -1:
+                pair = word.split("-")
+                tmp = pair[0].replace("@", "")
+                split = True
+            else:
+                pair = word.split("-")
+                to_print += pair[0] + " "
+
+        print to_print.rstrip()
+
     def validate(self):
         """Validate all POS- and phrase-level tags."""
 
@@ -1419,6 +1454,7 @@ def select(corpus, filename, add_file):
     print "    e. Print a concordance of all the syntactic productions (rules) in a corpus file."
     print "    f. Print the text (words, punctuation) of the corpus file."
     print "    g. Print just the words of the corpus file."
+    print "    h. Pretty print the text of a particular token from the corpus file to the console."
     print
 
     selection = raw_input("Please enter the letter of the function you would like to run. ")
@@ -1454,6 +1490,8 @@ def select(corpus, filename, add_file):
         corpus.print_text(filename)
     elif selection == "g":
         corpus.print_words(filename)
+    elif selection == "h":
+        corpus.pprint(raw_input("What is the number of the token you'd like to print? "))
     else:
         print "I'm sorry--I don't understand what you entered."
         print
