@@ -1412,7 +1412,7 @@ def select(corpus, filename, add_file):
     """Select another CR function from a menu."""
 
     print "Select a function:"
-    print "    a. Print ©a concordance of lemmas and POS tags in the corpus."
+    print "    a. Print a concordance of lemmas and POS tags in the corpus."
     print "    b. Print a concordance of lemmas per category as defined in an input category definition file."
     print "    c. Print all the unique lemmas (and their frequences) in a corpus file."
     print "    d. Print a concordance of the word forms (and their frequencies) for the given lemma."
