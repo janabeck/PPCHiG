@@ -317,7 +317,7 @@ class Token():
 
         new_postr = T.Tree(new_tag + append + index, [postr[0]])
         
-        self._tree[postr.treepos] = T.ParentedTree.convert(new_postr)
+        self._tree[postr.treeposition()] = T.ParentedTree.convert(new_postr)
 
     #END_DEF change_POS
 
@@ -332,11 +332,11 @@ class Token():
 
         new_postr2 = T.Tree(tag2 + append + index, [pair2])
 
-        position = len(postr.treepos) - 1
+        position = len(postr.treeposition) - 1
 
-        ins_point = postr.treepos[position] + 1
+        ins_point = postr.treeposition[position] + 1
 
-        new_treepos = list(postr.treepos)
+        new_treepos = list(postr.treeposition)
 
         addy = new_treepos[:-1]
 
@@ -357,13 +357,13 @@ class Token():
 
         new_postr = T.Tree(tag1 + "+" + tag2 + index1, [pair])
 
-        position = len(postr1.treepos) - 1
+        position = len(postr1.treeposition) - 1
 
-        ins_point = postr1.treepos[position] + 1
+        ins_point = postr1.treeposition[position] + 1
 
-        new_treepos = list(postr1.treepos)
+        new_treepos = list(postr1.treeposition)
 
-        addy = new_treepos[:-1]
+        addy = new_treeposition[:-1]
 
         addy = tuple(addy)
 
@@ -495,16 +495,18 @@ class Corpus():
 
         for key in self.tokens.keys():
             tree = self.tokens[key]
-            num = int(tree.id_num)
-            if num != old_num + 1 and tree.id != "":
-                print
-                print "Tokens not sequentially numbered!"
-                print
-                print "Please run Corpus Reader with -i flag to renumber IDs and then try again."
-                print
-                sys.exit()
-            old_num = num
-
+            try:
+                num = int(tree.id_num)
+                if num != old_num + 1 and tree.id != "" and tree.root != "VERSION":
+                    print
+                    print "Tokens not sequentially numbered!"
+                    print
+                    print "Please run Corpus Reader with -i flag to renumber IDs and then try again."
+                    print
+                    sys.exit()
+                old_num = num
+            except ValueError:
+                pass
         return True
 
     #END_DEF check_seq_ids
