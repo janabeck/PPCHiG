@@ -21,7 +21,7 @@
     `ctrl`    `d`  NUMP
               `e`  NP-within-NP shortcuts
    `shift`    `e`  NP, NY
-    `ctrl`    `e`  fixError (i.e., remove -FLAG)
+    `ctrl`    `e`  nextTree
               `f`  PP
    `shift`    `f`  -FUT
     `ctrl`    `f`  FRAG
@@ -34,7 +34,7 @@
    `shift`    `r`  untilSuccess (accomplishes various common binary changes such as ADV » CLPRT)
     `ctrl`    `r`  -RSP
               `s`  IPs
-   `shift`    `s`  split
+   `shift`    `s`  prevTree
     `ctrl`    `s`  -PASS
               `t`  complement CPs
    `shift`    `t`  -TRNS1
