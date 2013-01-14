@@ -11,6 +11,9 @@ node: IP-MAT*|IP-SUB*
 4: order of subject and verb (s = subject first, v = verb first)
 5: order of object and verb (o = object first, v = verb first)
 6: order of subject and object (s = subject first, o = object first)
+7: more than one object (t = more than one, f = only one)
+8: verb is first thing in clause (t = initial, f = not initial)
+9: verb is last thing in clause (t = final, f = not final)
 */
 
 coding_query:
@@ -42,4 +45,16 @@ coding_query:
 
 6: { s: (IP-MAT*|IP-SUB* iDoms NP-SBJ*) AND (IP-MAT*|IP-SUB* iDoms NP-OB*) AND (NP-SBJ* Precedes NP-OB*)
      o: (IP-MAT*|IP-SUB* iDoms NP-SBJ*) AND (IP-MAT*|IP-SUB* iDoms NP-OB*) AND (NP-OB* Precedes NP-SBJ*)
+}
+
+7: { t: (IP-MAT*|IP-SUB* iDoms [1]NP-OB*) AND (IP-MAT*|IP-SUB* iDoms [2]NP-OB*)
+     f: ELSE
+}
+
+8: { t: (IP-MAT*|IP-SUB* iDomsFirst finite)
+     f: ELSE
+}
+
+9: { t: (IP-MAT*|IP-SUB* iDomsLast finite)
+     f: ELSE
 }
