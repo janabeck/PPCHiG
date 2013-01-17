@@ -44,7 +44,7 @@ function testValidLeafLabel (str) {
 /* extensions are treated as not part of the label for various purposes, 
  * they are all binary, and they show up in the toggle extension menu  
  */
-var extensions=["-SBJ","-LFD","-RSP","-PRN","-SPE","-CL","-ZZZ","-XXX","FLAG"]
+var extensions=["-SBJ","-LFD","-RSP","-PRN","-SPE","-CL","-ZZZ","-XXX","FLAG","-PSTV","-PRV"]
 
 /* clause extensions are treated as not part of the label for various purposes,
  * they are all binary, and they show up in the toggle extension menu
@@ -121,11 +121,12 @@ function customCommands(){
     addCommand({ keycode: 88, ctrl: true}, toggleExtension, "-XXX"); // ctrl + x
 
     addCommand({ keycode: 90 }, undo); // z
-    addCommand({ keycode: 90, shift: true }, splitWord); // shift + z
+    addCommand({ keycode: 90, shift: true }, fixError); // shift + z
 
     // left hand number commands
     addCommand({ keycode: 49 }, leafBefore); // 1
     addCommand({ keycode: 50 }, leafAfter); // 2
+    addCommand({ keycode: 50, shift: true }, splitWord); // shift + 2 (= @)
     // non-argument NP shortcuts
     addCommand({ keycode: 51 }, setLabel, ["NP-ADV","NP-AGT","NP-DIR","NP-INS","NP-LOC","NP-MSR","NP-SPR","NP-TMP","NP-VOC","NP-ADT"]); // 3
     addCommand({ keycode: 51, shift: true}, addTodo); // shift + 3
@@ -142,8 +143,8 @@ function customCommands(){
     addCommand({ keycode: 76 }, editNode); // l
     addCommand({ keycode: 76, shift: true }, displayRename); // shift + l
     addCommand({ keycode: 76, ctrl: true }, toggleExtension, "-LFD"); // ctrl + l
-    //addCommand({ keycode: 77 }, ); // m
-    //addCommand({ keycode: 78 }, ); // n
+    addCommand({ keycode: 77 }, toggleExtension, "-PSTV"); // m
+    addCommand({ keycode: 78 }, toggleExtension, "-PRV"); // n
     //addCommand({ keycode: 79 }, ); // o
     addCommand({ keycode: 80 }, toggleExtension, "-PRF"); // p
 
