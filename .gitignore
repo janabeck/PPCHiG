@@ -1,4 +1,5 @@
 .DS_Store
+test.xml
 Test.psd*
 *.out
 *.pyc
