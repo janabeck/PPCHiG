@@ -1,5 +1,5 @@
 .DS_Store
-test.xml
+test/
 Test.psd*
 *.out
 *.pyc
