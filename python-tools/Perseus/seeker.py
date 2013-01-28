@@ -1,5 +1,6 @@
 import argparse
 from lxml import etree
+import re
 
 class Token():
 	"""A Perseus dependency tree."""
@@ -78,7 +79,6 @@ class Seeker():
 
 	def _get_dependents(self, ident, head):
 		"""Return a list of the @ids of the dependents of the @id ('head') passed in."""
-		#TODO: This needs to be recursive!
 
 		dependents = self.doc.xpath("//sentence[@id=" + ident + "]/word[@head=" + str(head) + "]/@id")
 
@@ -97,36 +97,25 @@ class Seeker():
 		return True
 
 	def get_relation(self, relation, pos_re):
-		#TODO: rewrite utilizing Token data structure
+		"""Returns a dictionary where keys = sentece IDs and values = heads that have the specified relation."""
 
 		sentence_IDs = self.doc.xpath("//sentence/word[@relation='" + relation + "' and re:test(@postag, '" + pos_re + 
 			"')]/../@id", namespaces=self.RE)
 
-		rels = {}
+		results = {}
 
 		for ident in sentence_IDs:
 			heads = self.doc.xpath("//sentence[@id=" + ident + "]/word[@relation='" + relation + "' and re:test(@postag, '" +
 				pos_re + "')]/@id", namespaces=self.RE)
 
-			full_rels = {}
+			relations = self.doc.xpath("//sentence[@id=" + ident + "]/word[@relation='" + relation + "' and re:test(@postag, '" +
+				pos_re + "')]/@relation", namespaces=self.RE)
 
-			for head in heads:
-				dependents = self._get_dependents(ident, head)
-				self._turtles(ident, dependents, dependents)
-				recurs_deps = self.tmp
-				print "the recursive dependents are: " + str(recurs_deps)
-				recurs_deps.append(int(head))
-				recurs_deps.sort()
-				rel = [recurs_deps]
-				rel.append(self._check_sequence(rel))
-				full_rels[head] = rel
-				print
-				print ident, full_rels
-				print
+			results[ident] = heads
 
-			rels[ident] = full_rels
-
-		print rels
+		print "Heads with " + relation + " relation:"
+		print
+		print results
 
 def main():
 
@@ -136,7 +125,7 @@ def main():
 
 	seeker = Seeker(args.xml_name)
 
-	seeker._print_all()
+	seeker.get_relation('OBJ', 'n-.---..-')
 
 if __name__ == '__main__':
 	main()
