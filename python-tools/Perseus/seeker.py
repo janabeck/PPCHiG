@@ -257,6 +257,20 @@ class Seeker():
         else:
             coding_string += "-:"
 
+        # more than one object
+        obj_heads = []
+
+        for stree in self.trees[ident].dependencies.values():
+            if stree.relation == "OBJ" and stree.head == rtree.root:
+                obj_heads.append(stree.root)
+
+        if len(obj_heads) > 1:
+            coding_string += "t:"
+        elif len(obj_heads) == 1:
+            coding_string += "f:"
+        else:
+            coding_string += "-:"
+
         return coding_string
 
     def clause_types(self):
