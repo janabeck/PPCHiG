@@ -307,13 +307,17 @@ class Seeker():
         for stree in self.trees[ident].dependencies.values():
             if stree.head == rtree.root:
                 heads.append(int(stree.root))
-                
-        if max(heads) < int(rtree.root):
-            coding_string += "t"
-        elif max(heads) > int(rtree.root):
-            coding_string += "f"
-        else:
-            coding_string += "-"
+
+        try:
+            if max(heads) < int(rtree.root):
+                coding_string += "t"
+            elif max(heads) > int(rtree.root):
+                coding_string += "f"
+            else:
+                coding_string += "-"
+        except ValueError:
+            rtree.print_subtree()
+            coding_string += "-" 
 
         return coding_string
 
