@@ -186,28 +186,6 @@ class Seeker():
 
         return coding_string
 
-    def get_relation(self, relation, pos_re):
-        """Returns a dictionary where keys = sentence IDs and values = heads that have the specified relation."""
-        #TODO: rewrite with new Subtree() subclass structure
-
-        sentence_IDs = self.doc.xpath("//sentence/word[@relation='" + relation + "' and re:test(@postag, '" + pos_re + 
-            "')]/../@id", namespaces=self.RE)
-
-        results = {}
-
-        for ident in sentence_IDs:
-            heads = self.doc.xpath("//sentence[@id=" + ident + "]/word[@relation='" + relation + "' and re:test(@postag, '" +
-                pos_re + "')]/@id", namespaces=self.RE)
-
-            relations = self.doc.xpath("//sentence[@id=" + ident + "]/word[@relation='" + relation + "' and re:test(@postag, '" +
-                pos_re + "')]/@relation", namespaces=self.RE)
-
-            results[ident] = heads
-
-        print "Heads with " + relation + " relation:"
-        print
-        print results
-
     def clause_types(self):
         """Returns a dict where keys = sentence IDs and values = coding strings identical to that produced by clause_types.c."""
 
@@ -236,8 +214,6 @@ def main():
     args = parser.parse_args()
 
     seeker = Seeker(args.xml_name)
-
-    #seeker.get_relation('OBJ', 'n-.---..-')
 
     seeker.clause_types()
 
