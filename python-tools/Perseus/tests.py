@@ -1,7 +1,7 @@
 from unittest import TestCase
 from seeker import Seeker, Token
 
-class TreeTestCase(TestCase):
+class MappingTestCase(TestCase):
 	"""Test that dependency trees are getting mapped correctly."""
 
 	def runTest(self):
@@ -34,9 +34,25 @@ class TreeTestCase(TestCase):
 			for key in tree.list_form:
 				self.assertEqual(tree.list_form[key], hand_dict[key])
 
+class ClauseTypesTestCase(TestCase):
+
+	def runTest(self):
+
+		s = Seeker('test/unit_test.xml')
+
+		dct = s.clause_types()
+
+		hand_dict = {'2185541': ['o:e:t:-:o:-:t:f:f', 'v:p:-:s:-:-:-:f:f', 'v:e:n:-:o:-:f:f:t']}
+
+		for key in dct:
+			self.assertEqual(dct[key], hand_dict[key])
+
 def main():
-	test = TreeTestCase()
-	test.runTest()
+	t1 = MappingTestCase()
+	t1.runTest()
+
+	t2 = ClauseTypesTestCase()
+	t2.runTest()
 
 if __name__ == '__main__':
 	main()
