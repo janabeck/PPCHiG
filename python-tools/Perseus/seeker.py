@@ -49,8 +49,11 @@ class Seeker():
         self.doc = etree.parse(xml_name)
 
         # temp variable for returning recursive list of a head's dependents
+        # also used for returning extra coding strings
         # kind of a klugey solution, tbh
         self.tmp = []
+
+        self.recursed = False
 
         self.sentences = self.doc.xpath("//sentence/@id")
 
@@ -184,6 +187,8 @@ class Seeker():
 
         found = False
 
+        additional_clauses = []
+
         # type of subject
         for stree in self.trees[ident].dependencies.values():
             if stree.relation == "SBJ" and stree.head == rtree.root:
@@ -202,6 +207,16 @@ class Seeker():
                             coding_string += "p:"
                         else:
                             coding_string += "n:"
+            # looks for embedded finite clauses in e.g., relative or adverbial clauses
+            if finite_verb.match(stree.postag) and int(stree.root) in rtree.deps and not self.recursed:
+                additional_clauses.append(stree.root)
+
+        if not self.recursed:
+            self.recursed = True
+            self.tmp = []
+            for a in additional_clauses:
+                #print(self._code_clause(ident, a), self.trees[ident].dependencies[a].lemma)
+                self.tmp.append(self._code_clause(ident, a))
 
         if not found:
             coding_string += "e:"
@@ -239,7 +254,7 @@ class Seeker():
 
         # order of subject and verb
         if subj_head:
-            if sbj.root < rtree.root:
+            if int(sbj.root) < int(rtree.root):
                 coding_string += "s:"
             else:
                 coding_string += "v:"
@@ -248,7 +263,7 @@ class Seeker():
 
         # order of object and verb (first object only considered, if more than one)
         if obj_head:
-            if obj.root < rtree.root:
+            if int(obj.root) < int(rtree.root):
                 coding_string += "o:"
             else:
                 coding_string += "v:"
@@ -257,7 +272,7 @@ class Seeker():
 
         # order of subject and object (first object only considered, if more than one)
         if subj_head and obj_head:
-            if sbj.root < obj.root:
+            if int(sbj.root) < int(obj.root):
                 coding_string += "s:"
             else:
                 coding_string += "o:"
@@ -279,9 +294,9 @@ class Seeker():
             coding_string += "-:"
 
         # verb is first in clause
-        if rtree.root == 1:
+        if int(rtree.root) == 1:
             coding_string += "t:"
-        elif rtree.root > 1:
+        elif int(rtree.root) > 1:
             coding_string += "f:"
         else:
             coding_string += "-:"
@@ -291,11 +306,11 @@ class Seeker():
 
         for stree in self.trees[ident].dependencies.values():
             if stree.head == rtree.root:
-                heads.append(stree.head)
+                heads.append(int(stree.root))
                 
-        if max(heads) < rtree.root:
+        if max(heads) < int(rtree.root):
             coding_string += "t"
-        elif max(heads) > rtree.root:
+        elif max(heads) > int(rtree.root):
             coding_string += "f"
         else:
             coding_string += "-"
@@ -311,17 +326,21 @@ class Seeker():
             root_id, root_type = self._classify_root(ident)
             if root_type == "PRED":
                 results[ident] = [self._code_clause(ident, root_id)]
+                results[ident] += self.tmp
+                self.recursed = False
             elif root_type.find('ExD') != -1:
                 results[ident] = [self._code_clause(ident, root_id)]
+                results[ident] += self.tmp
+                self.recursed = False
             else:
                 lst = []
                 for clause_head in self._split_coord(ident):
                     lst.append(self._code_clause(ident, clause_head))
+                    lst = lst + self.tmp
+                    self.recursed = False
                 results[ident] = lst
 
-        print
-        print results
-        print
+        return results
 
 def main():
 
@@ -331,7 +350,11 @@ def main():
 
     seeker = Seeker(args.xml_name)
 
-    seeker.clause_types()
+    dct = seeker.clause_types()
+
+    print
+    print dct
+    print
 
     #seeker._print_all()
 
