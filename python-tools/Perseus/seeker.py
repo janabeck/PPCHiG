@@ -11,6 +11,8 @@ class Token():
 
         self.dependencies = {}
 
+        self.list_form = {}
+
 class Subtree():
     """A subtree encoded with head, inclusive dependents, relation, postag, lemma, and continuity."""
 
@@ -51,14 +53,14 @@ class Seeker():
             tok = Token()
             tok.id = token
             self._map_tree(token, tok)
-            self.trees[token] = tok.dependencies
+            self.trees[token] = tok
 
     def _print_all(self):
         """Print all Token instances."""
 
         for ident in self.sentences:
             print "Sentence ID #" + ident + ":"
-            for key,s in self.trees[ident].items():
+            for key,s in self.trees[ident].dependencies.items():
                 print key + ": " + str(s.deps) + ", " + s.relation + ", " + s.postag + ", " + s.lemma + ", " + str(s.continuity)
             print
 
@@ -68,6 +70,8 @@ class Seeker():
         heads = self.doc.xpath("//sentence[@id=" + ident + "]/word/@id")
 
         full_tree = {}
+
+        list_form = {}
 
         for head in heads:
             dependents = self._get_dependents(ident, head)
@@ -84,8 +88,13 @@ class Seeker():
             subtree.lemma = self.doc.xpath("//sentence[@id=" + ident + "]/word[@id=" + head + "]/@lemma")[0]
             subtree.continuity = self._check_sequence(recurs_deps)
             full_tree[head] = subtree
+            # list form for easier unit test
+            lst = [recurs_deps]
+            lst = lst + [head, subtree.head, subtree.relation, subtree.postag, subtree.lemma, subtree.continuity]
+            list_form[head] = lst
 
         tok.dependencies = full_tree
+        tok.list_form = list_form
 
     def _turtles(self, ident, deps, new_deps):
         """Facilitate recursive getting of dependents."""
@@ -145,7 +154,7 @@ class Seeker():
 
         coding_string = ""
 
-        rtree = self.trees[ident][root]
+        rtree = self.trees[ident].dependencies[root]
 
         # verb must be finite, non-imperative
         finite_verb = re.compile('v...[iso].---')
@@ -165,7 +174,7 @@ class Seeker():
         found = False
 
         # type of subject
-        for stree in self.trees[ident].values():
+        for stree in self.trees[ident].dependencies.values():
             if stree.relation == "SBJ" and stree.head == rtree.root:
                 found = True
                 if not stree.continuity:
@@ -217,7 +226,7 @@ def main():
 
     seeker.clause_types()
 
-    #seeker._print_all()
+    seeker._print_all()
 
 if __name__ == '__main__':
     main()
