@@ -32,6 +32,13 @@ class Subtree():
 
         self.continuity = False
 
+    def print_subtree(self):
+
+        print "Root: " + self.root
+        print "Head: " + self.head
+        print str(self.deps) + ", " + self.relation + ", " + self.postag + ", " + self.lemma + ", " + str(self.continuity)
+        print
+
 class Seeker():
     """Utility for searching the Perseus Ancient Greek Dependency Treebanks."""
 
@@ -270,6 +277,28 @@ class Seeker():
             coding_string += "f:"
         else:
             coding_string += "-:"
+
+        # verb is first in clause
+        if rtree.root == 1:
+            coding_string += "t:"
+        elif rtree.root > 1:
+            coding_string += "f:"
+        else:
+            coding_string += "-:"
+
+        # verb is last in clause
+        heads = []
+
+        for stree in self.trees[ident].dependencies.values():
+            if stree.head == rtree.root:
+                heads.append(stree.head)
+                
+        if max(heads) < rtree.root:
+            coding_string += "t"
+        elif max(heads) > rtree.root:
+            coding_string += "f"
+        else:
+            coding_string += "-"
 
         return coding_string
 
