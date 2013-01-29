@@ -156,7 +156,11 @@ class Seeker():
 
         rtree = self.trees[ident].dependencies[root]
 
-        # verb must be finite, non-imperative
+        subj_head = ""
+        obj_head = ""
+
+        # type of verb
+        # 'v' must be finite, non-imperative
         finite_verb = re.compile('v...[iso].---')
 
         if finite_verb.match(rtree.postag):
@@ -176,6 +180,8 @@ class Seeker():
         # type of subject
         for stree in self.trees[ident].dependencies.values():
             if stree.relation == "SBJ" and stree.head == rtree.root:
+                subj_head = stree.root
+                sbj = self.trees[ident].dependencies[subj_head]
                 found = True
                 if not stree.continuity:
                     coding_string += "t:"
@@ -192,6 +198,64 @@ class Seeker():
 
         if not found:
             coding_string += "e:"
+
+        found = False
+
+        # type of object (first object only considered, if more than one)
+        for stree in self.trees[ident].dependencies.values():
+            if stree.relation == "OBJ" and stree.head == rtree.root:
+                obj_head = stree.root
+                obj = self.trees[ident].dependencies[obj_head]
+                found = True
+                if not stree.continuity:
+                    coding_string += "t:"
+                    break
+                else:
+                    if len(stree.deps) > 1:
+                        coding_string += "n:"
+                        break
+                    elif len(stree.deps) == 1:
+                        if pronoun.match(stree.postag):
+                            coding_string += "p:"
+                            break
+                        elif article.match(stree.postag):
+                            coding_string += "p:"
+                            break
+                        else:
+                            coding_string += "n:"
+                            break
+
+        if not found:
+            coding_string += "-:"
+
+        found = False
+
+        # order of subject and verb
+        if subj_head:
+            if sbj.root < rtree.root:
+                coding_string += "s:"
+            else:
+                coding_string += "v:"
+        else:
+            coding_string += "-:"
+
+        # order of object and verb (first object only considered, if more than one)
+        if obj_head:
+            if obj.root < rtree.root:
+                coding_string += "o:"
+            else:
+                coding_string += "v:"
+        else:
+            coding_string += "-:"
+
+        # order of subject and object (first object only considered, if more than one)
+        if subj_head and obj_head:
+            if sbj.root < obj.root:
+                coding_string += "s:"
+            else:
+                coding_string += "o:"
+        else:
+            coding_string += "-:"
 
         return coding_string
 
@@ -226,7 +290,7 @@ def main():
 
     seeker.clause_types()
 
-    seeker._print_all()
+    #seeker._print_all()
 
 if __name__ == '__main__':
     main()
