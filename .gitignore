@@ -1,5 +1,8 @@
 .DS_Store
 test/
+xml/
+codings/
+logs/
 Test.psd*
 *.out
 *.pyc
