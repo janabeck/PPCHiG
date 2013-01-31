@@ -1,6 +1,7 @@
 import argparse
 from lxml import etree
 import re
+import sys
 
 class Token():
     """A Perseus dependency tree."""
@@ -44,7 +45,7 @@ class Seeker():
 
     RE = dict(re="http://exslt.org/regular-expressions")
 
-    def __init__(self, xml_name):
+    def __init__(self, file_base, xml_name, n):
 
         self.doc = etree.parse(xml_name)
 
@@ -64,6 +65,12 @@ class Seeker():
             tok.id = token
             self._map_tree(token, tok)
             self.trees[token] = tok
+
+        self.log = open("logs/log" + str(n) + ".txt", 'w')
+
+        self.codings = open("codings/" + file_base[:2] + "_codings" + str(n) + ".txt", 'w')
+
+        self.coding_strings = []
 
     def _print_all(self):
         """Print all Token instances."""
@@ -146,18 +153,49 @@ class Seeker():
 
         ids = self.doc.xpath("//sentence[@id=" + ident + "]/word[@head='0']/@id")
 
-        if len(ids) > 2:
-            print "More than 2 roots in this sentence!"
+        true_roots = []
+
+        for i in ids:
+            rel = self.doc.xpath("//sentence[@id=" + ident + "]/word[@id=" + i + "]/@relation")
+            if not rel[0].startswith('Aux'):
+                true_roots.append((i, rel[0]))
+
+        if len(true_roots) == 1:
+            return true_roots[0]
+        elif len(true_roots) > 1:
+            # don't care if sentence doesn't have a finite verb
+            # 'v' must be finite, non-imperative
+            finite_verb = re.compile('v...[iso].---')
+
+            verb = False
+
+            for i in true_roots:
+                if finite_verb.match(i[1]):
+                    verb = True
+                    break
+
+            if verb:
+                print "More than 2 roots here: " + ident
+                print
+                sys.exit(0)
+            else:
+                print >> self.log, "Skipped sentence " + ident + " because no finite verb."
+                print >> self.log
+                return None
+
         else:
-            for i in ids:
-                rel = self.doc.xpath("//sentence[@id=" + ident + "]/word[@id=" + i + "]/@relation")
-                if rel != 'AuxK':
-                    return (i, rel[0])
+            print >> self.log, "Skipped " + ident + " because no 'true' root."
+            print >> self.log
 
     def _split_coord(self, ident):
         """Return a list of @ids (indices) of words with PRED_CO relation."""
 
-        return self.doc.xpath("//sentence[@id=" + ident + "]/word[@relation='PRED_CO']/@id")
+        lst = self.doc.xpath("//sentence[@id=" + ident + "]/word[@relation='PRED_CO']/@id")
+
+        if lst:
+            return lst
+        else:
+            return self.doc.xpath("//sentence[@id=" + ident + "]/word[@relation='PRED']/@id")
 
     def _code_clause(self, ident, root):
         """Returns a coding string identical to that produced by clause_types.c."""
@@ -316,7 +354,6 @@ class Seeker():
             else:
                 coding_string += "-"
         except ValueError:
-            rtree.print_subtree()
             coding_string += "-" 
 
         return coding_string
@@ -327,40 +364,58 @@ class Seeker():
         results = {}
 
         for ident in self.sentences:
-            root_id, root_type = self._classify_root(ident)
-            if root_type == "PRED":
-                results[ident] = [self._code_clause(ident, root_id)]
-                results[ident] += self.tmp
-                self.recursed = False
-            elif root_type.find('ExD') != -1:
-                results[ident] = [self._code_clause(ident, root_id)]
-                results[ident] += self.tmp
-                self.recursed = False
-            else:
-                lst = []
-                for clause_head in self._split_coord(ident):
-                    lst.append(self._code_clause(ident, clause_head))
-                    lst = lst + self.tmp
+            try:
+                root_id, root_type = self._classify_root(ident)
+                if root_type == "PRED":
+                    results[ident] = [self._code_clause(ident, root_id)]
+                    results[ident] += self.tmp
                     self.recursed = False
-                results[ident] = lst
+                elif root_type.find('ExD') != -1:
+                    results[ident] = [self._code_clause(ident, root_id)]
+                    results[ident] += self.tmp
+                    self.recursed = False
+                elif root_type.find('COORD') != -1:
+                    lst = []
+                    for clause_head in self._split_coord(ident):
+                        lst.append(self._code_clause(ident, clause_head))
+                        lst = lst + self.tmp
+                        self.recursed = False
+                    results[ident] = lst
+                else:
+                    print "Found an unknown root type!"
+                    print ident, root_id, root_type
+                    sys.exit(0)
+            except TypeError:
+                pass
+
+        for ident in results:
+            if not results[ident]:
+                print >> self.log, "No coding string for " + ident + "."
+                print >> self.log
+            for i in results[ident]:
+                self.coding_strings.append(i)
 
         return results
+
+    def print_coding_strings(self):
+        """Print coding strings, one per line."""
+
+        for s in self.coding_strings:
+            print >> self.codings, s
 
 def main():
 
     parser = argparse.ArgumentParser(description='Process the input files.')
-    parser.add_argument('-x', '--xml', action = 'store', dest = "xml_name", help='name of Perseus XML file')
+    parser.add_argument('-f', '--file_base', action = 'store', dest = "file_base", help='base of file names')
     args = parser.parse_args()
 
-    seeker = Seeker(args.xml_name)
+    n = 1
 
-    dct = seeker.clause_types()
-
-    print
-    print dct
-    print
-
-    #seeker._print_all()
+    while n < 3:
+        seeker = Seeker(args.file_base, "xml/" + args.file_base + str(n) + ".xml", n) 
+        seeker.clause_types()
+        seeker.print_coding_strings()
+        n += 1
 
 if __name__ == '__main__':
     main()
