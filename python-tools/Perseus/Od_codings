@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cat codings/Od_codings* > Od_codings.txt
+
+sort Od_codings.txt | uniq -c > Od_codings_sorted.txt
+
+grep 'v:[ne]:n:.:.:.:f:.:.' Od_codings_sorted.txt > Od_codings_selected.txt
