@@ -66,7 +66,7 @@ class Seeker():
             self._map_tree(token, tok)
             self.trees[token] = tok
 
-        self.log = open("logs/log" + str(n) + ".txt", 'w')
+        self.log = open("logs/" + file_base[:2] + "_log" + str(n) + ".txt", 'w')
 
         self.codings = open("codings/" + file_base[:2] + "_codings" + str(n) + ".txt", 'w')
 
@@ -246,7 +246,7 @@ class Seeker():
                         else:
                             coding_string += "n:"
             # looks for embedded finite clauses in e.g., relative or adverbial clauses
-            if finite_verb.match(stree.postag) and int(stree.root) in rtree.deps and not self.recursed:
+            if finite_verb.match(stree.postag) and int(stree.root) in rtree.deps and not self.recursed and not stree.root == rtree.root:
                 additional_clauses.append(stree.root)
 
         if not self.recursed:
@@ -263,6 +263,8 @@ class Seeker():
 
         # type of object (first object only considered, if more than one)
         for stree in self.trees[ident].dependencies.values():
+            if found:
+                break
             if stree.relation == "OBJ" and stree.head == rtree.root:
                 obj_head = stree.root
                 obj = self.trees[ident].dependencies[obj_head]
@@ -374,13 +376,20 @@ class Seeker():
                     results[ident] = [self._code_clause(ident, root_id)]
                     results[ident] += self.tmp
                     self.recursed = False
-                elif root_type.find('COORD') != -1:
+                elif root_type.find('COORD') != -1 or root_type.find('PRED_CO') != -1:
                     lst = []
                     for clause_head in self._split_coord(ident):
                         lst.append(self._code_clause(ident, clause_head))
                         lst = lst + self.tmp
                         self.recursed = False
                     results[ident] = lst
+                elif root_type.find('ADV') != -1 or root_type.find('ATR') != -1 or root_type.find('APOS') != -1 or root_type.find('SBJ') != -1:
+                    results[ident] = [self._code_clause(ident, root_id)]
+                    results[ident] += self.tmp
+                    self.recursed = False
+                elif root_type.find('OBJ') != -1:
+                    print >> self.log, "Skipped " + ident + " because no 'true' root."
+                    print >> self.log
                 else:
                     print "Found an unknown root type!"
                     print ident, root_id, root_type
@@ -393,6 +402,8 @@ class Seeker():
                 print >> self.log, "No coding string for " + ident + "."
                 print >> self.log
             for i in results[ident]:
+                if len(i) > 18:
+                    print ident, i
                 self.coding_strings.append(i)
 
         return results
@@ -407,15 +418,23 @@ def main():
 
     parser = argparse.ArgumentParser(description='Process the input files.')
     parser.add_argument('-f', '--file_base', action = 'store', dest = "file_base", help='base of file names')
+    parser.add_argument('-x', '--xml_file', action = 'store', dest = "xml_name", help='XML file')
     args = parser.parse_args()
 
-    n = 1
-
-    while n < 3:
-        seeker = Seeker(args.file_base, "xml/" + args.file_base + str(n) + ".xml", n) 
+    if args.xml_name:
+        seeker = Seeker('TS', args.xml_name, 0)
         seeker.clause_types()
         seeker.print_coding_strings()
-        n += 1
+    elif args.file_base:
+        n = 1
+
+        while n < 25:
+            seeker = Seeker(args.file_base, "xml/" + args.file_base + str(n) + ".xml", n) 
+            seeker.clause_types()
+            seeker.print_coding_strings()
+            n += 1
+
+        print '\a'
 
 if __name__ == '__main__':
     main()
