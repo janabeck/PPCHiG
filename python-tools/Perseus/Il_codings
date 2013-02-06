@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cat codings/Il_codings* > Il_codings.txt
+
+sort Il_codings.txt | uniq -c > Il_codings_sorted.txt
+
+grep 'v:[ne]:n:.:.:.:f:.:.' Il_codings_sorted.txt > Il_codings_selected.txt
