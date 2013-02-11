@@ -6,7 +6,7 @@ class MappingTestCase(TestCase):
 
 	def runTest(self):
 
-		s = Seeker('test/unit_test.xml')
+		s = Seeker('TS', 'test/unit_test.xml', 0)
 
 		hand_dict = {
 		'1': [[1,7,8,9,10,11,12,13,14,15,16,17,18],'1','3','OBJ','n-s---ma-','a)nh/r1',False],
@@ -38,7 +38,7 @@ class ClauseTypesTestCase(TestCase):
 
 	def runTest(self):
 
-		s = Seeker('test/unit_test.xml')
+		s = Seeker('TS', 'test/unit_test.xml', 0)
 
 		dct = s.clause_types()
 
@@ -47,12 +47,30 @@ class ClauseTypesTestCase(TestCase):
 		for key in dct:
 			self.assertEqual(dct[key], hand_dict[key])
 
+class ClassifyDiscontinuousTestCase(TestCase):
+
+	def runTest(self):
+
+		s = Seeker('TS', 'test/test.xml', 0)
+
+		dct = s.classify_discontinuous('OBJ|SBJ')
+
+		hand_dict = {'yxxv': 0, 'xxv': 2, 'yxvx': 2, 'xvx': 2, 'vxx': 0}
+
+		for key in dct:
+			try:
+				self.assertEqual(dct[key], hand_dict[key])
+			except AssertionError:
+				print "Generated " + key + " " + str(dct[key]) + " does not equal hand-calculated " + str(hand_dict[key] ) + "."
 def main():
 	t1 = MappingTestCase()
 	t1.runTest()
 
 	t2 = ClauseTypesTestCase()
 	t2.runTest()
+
+	t3 = ClassifyDiscontinuousTestCase()
+	t3.runTest()	
 
 if __name__ == '__main__':
 	main()
