@@ -1,0 +1,14 @@
+#!/bin/bash
+
+cat codings/Od_codings* > tmp
+
+cat codings/Il_codings* > tmp2
+
+cat tmp tmp2 > All_codings.txt
+
+sort All_codings.txt | uniq -c > All_codings_sorted.txt
+
+grep 'v:[ne]:n:.:.:.:f:.:.' All_codings_sorted.txt > All_codings_selected.txt
+
+rm -f tmp
+rm -f tmp2
