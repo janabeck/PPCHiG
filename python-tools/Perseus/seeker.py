@@ -47,6 +47,8 @@ class Seeker():
 
     def __init__(self, file_base, xml_name, n):
 
+        self.FINITE_VERB = re.compile('v...[iso].---')
+
         self.doc = etree.parse(xml_name)
 
         # temp variable for returning recursive list of a head's dependents
@@ -165,12 +167,11 @@ class Seeker():
         elif len(true_roots) > 1:
             # don't care if sentence doesn't have a finite verb
             # 'v' must be finite, non-imperative
-            finite_verb = re.compile('v...[iso].---')
 
             verb = False
 
             for i in true_roots:
-                if finite_verb.match(i[1]):
+                if self.FINITE_VERB.match(i[1]):
                     verb = True
                     break
 
@@ -209,9 +210,8 @@ class Seeker():
 
         # type of verb
         # 'v' must be finite, non-imperative
-        finite_verb = re.compile('v...[iso].---')
 
-        if finite_verb.match(rtree.postag):
+        if self.FINITE_VERB.match(rtree.postag):
             if rtree.lemma.find('ei)mi/') == -1:
                 coding_string += "v:"
             else:
@@ -246,7 +246,7 @@ class Seeker():
                         else:
                             coding_string += "n:"
             # looks for embedded finite clauses in e.g., relative or adverbial clauses
-            if finite_verb.match(stree.postag) and int(stree.root) in rtree.deps and not self.recursed and not stree.root == rtree.root:
+            if self.FINITE_VERB.match(stree.postag) and int(stree.root) in rtree.deps and not self.recursed and not stree.root == rtree.root:
                 additional_clauses.append(stree.root)
 
         if not self.recursed:
@@ -408,6 +408,77 @@ class Seeker():
 
         return results
 
+    def classify_discontinuous(self, rel):
+        """Classify discontinuous phrases with relation 'rel'."""
+
+        yxxv = 0
+        xxv = 0
+        yxvx = 0
+        xvx = 0
+        vxx = 0
+
+        rel_re = re.compile(rel)
+
+        for tok in self.trees.values():
+            for s in tok.list_form.values():
+                if rel_re.match(s[3]) and s[6] == False:
+                    disc_root = s[1]
+                    disc_min = min(s[0])
+                    disc_max = max(s[0])
+                    if self.FINITE_VERB.match(tok.list_form[s[2]][4]):
+                        verb_index = int(s[2])
+                        clause = tok.list_form[s[2]][0]
+                        if tok.list_form[s[2]][2] != '0':
+                            clause.append(int(tok.list_form[s[2]][2]))
+                        clause_beginning = min(clause)
+                    
+                        try:
+                            if disc_max < verb_index and disc_min > clause_beginning:
+                                yxxv +=1
+                                print "yxxv " + tok.id
+                                print disc_root, disc_min, disc_max
+                                print verb_index, clause_beginning
+                                print
+                            elif disc_max < verb_index:
+                                xxv += 1
+                                print "xxv " + tok.id
+                                print disc_root, disc_min, disc_max
+                                print verb_index, clause_beginning
+                                print
+                            elif disc_min < verb_index and disc_max > verb_index and disc_min > clause_beginning:
+                                yxvx += 1
+                                print "yxvx " + tok.id
+                                print disc_root, disc_min, disc_max
+                                print verb_index, clause_beginning
+                                print
+                            elif disc_min < verb_index and disc_max > verb_index:
+                                xvx += 1
+                                print "xvx " + tok.id
+                                print disc_root, disc_min, disc_max
+                                print verb_index, clause_beginning
+                                print
+                            elif verb_index > disc_min:
+                                vxx += 1
+                                print "vxx " + tok.id
+                                print disc_root, disc_min, disc_max
+                                print verb_index, clause_beginning
+                                print
+                        except UnboundLocalError:
+                            pass             
+
+        print "#...X...X...V: " + str(yxxv)
+        print
+        print "#X...X...V: " + str(xxv)
+        print
+        print "#...X...V...X: " + str(yxvx)
+        print
+        print "#X...V...X: " + str(xvx)
+        print
+        print "#(...)V...X...X: " + str(vxx)
+        print
+
+        return {'yxxv': yxxv, 'xxv': xxv, 'yxvx': yxvx, 'xvx': xvx, 'vxx': vxx}
+                        
     def print_coding_strings(self):
         """Print coding strings, one per line."""
 
@@ -423,15 +494,17 @@ def main():
 
     if args.xml_name:
         seeker = Seeker('TS', args.xml_name, 0)
-        seeker.clause_types()
-        seeker.print_coding_strings()
+        seeker.classify_discontinuous('OBJ|SBJ')
+        #seeker.clause_types()
+        #seeker.print_coding_strings()
     elif args.file_base:
         n = 1
 
-        while n < 25:
+        while n < 3:
             seeker = Seeker(args.file_base, "xml/" + args.file_base + str(n) + ".xml", n) 
-            seeker.clause_types()
-            seeker.print_coding_strings()
+            seeker.classify_discontinuous('OBJ|SBJ')
+            #seeker.clause_types()
+            #seeker.print_coding_strings()
             n += 1
 
         print '\a'
