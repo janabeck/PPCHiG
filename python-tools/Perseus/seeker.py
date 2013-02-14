@@ -72,6 +72,8 @@ class Seeker():
 
         self.codings = open("codings/" + file_base[:2] + "_codings" + str(n) + ".txt", 'w')
 
+        self.discontinuous = open("tallies/" + file_base[:2] + "_discont" + ".txt", 'w')
+
         self.coding_strings = []
 
     def _print_all(self):
@@ -407,6 +409,12 @@ class Seeker():
                 self.coding_strings.append(i)
 
         return results
+                        
+    def print_coding_strings(self):
+        """Print coding strings, one per line."""
+
+        for s in self.coding_strings:
+            print >> self.codings, s
 
     def classify_discontinuous(self, rel):
         """Classify discontinuous phrases with relation 'rel'."""
@@ -419,52 +427,55 @@ class Seeker():
 
         rel_re = re.compile(rel)
 
-        for tok in self.trees.values():
-            for s in tok.list_form.values():
-                if rel_re.match(s[3]) and s[6] == False:
-                    disc_root = s[1]
-                    disc_min = min(s[0])
-                    disc_max = max(s[0])
-                    if self.FINITE_VERB.match(tok.list_form[s[2]][4]):
-                        verb_index = int(s[2])
-                        clause = tok.list_form[s[2]][0]
-                        if tok.list_form[s[2]][2] != '0':
-                            clause.append(int(tok.list_form[s[2]][2]))
-                        clause_beginning = min(clause)
-                    
-                        try:
-                            if disc_max < verb_index and disc_min > clause_beginning:
-                                yxxv +=1
-                                print "yxxv " + tok.id
-                                print disc_root, disc_min, disc_max
-                                print verb_index, clause_beginning
-                                print
-                            elif disc_max < verb_index:
-                                xxv += 1
-                                print "xxv " + tok.id
-                                print disc_root, disc_min, disc_max
-                                print verb_index, clause_beginning
-                                print
-                            elif disc_min < verb_index and disc_max > verb_index and disc_min > clause_beginning:
-                                yxvx += 1
-                                print "yxvx " + tok.id
-                                print disc_root, disc_min, disc_max
-                                print verb_index, clause_beginning
-                                print
-                            elif disc_min < verb_index and disc_max > verb_index:
-                                xvx += 1
-                                print "xvx " + tok.id
-                                print disc_root, disc_min, disc_max
-                                print verb_index, clause_beginning
-                                print
-                            elif verb_index > disc_min:
-                                vxx += 1
-                                print "vxx " + tok.id
-                                print disc_root, disc_min, disc_max
-                                print verb_index, clause_beginning
-                                print
-                        except UnboundLocalError:
-                            pass             
+        try:
+            for tok in self.trees.values():
+                for s in tok.list_form.values():
+                    if rel_re.match(s[3]) and s[6] == False:
+                        disc_root = s[1]
+                        disc_min = min(s[0])
+                        disc_max = max(s[0])
+                        if self.FINITE_VERB.match(tok.list_form[s[2]][4]):
+                            verb_index = int(s[2])
+                            clause = tok.list_form[s[2]][0]
+                            if tok.list_form[s[2]][2] != '0':
+                                clause.append(int(tok.list_form[s[2]][2]))
+                            clause_beginning = min(clause)
+                        
+                            try:
+                                if disc_max < verb_index and disc_min > clause_beginning:
+                                    yxxv +=1
+                                    #print "yxxv " + tok.id
+                                    #print disc_root, disc_min, disc_max
+                                    #print verb_index, clause_beginning
+                                    #print
+                                elif disc_max < verb_index:
+                                    xxv += 1
+                                    #print "xxv " + tok.id
+                                    #print disc_root, disc_min, disc_max
+                                    #print verb_index, clause_beginning
+                                    #print
+                                elif disc_min < verb_index and disc_max > verb_index and disc_min > clause_beginning:
+                                    yxvx += 1
+                                    #print "yxvx " + tok.id
+                                    #print disc_root, disc_min, disc_max
+                                    #print verb_index, clause_beginning
+                                    #print
+                                elif disc_min < verb_index and disc_max > verb_index:
+                                    xvx += 1
+                                    #print "xvx " + tok.id
+                                    #print disc_root, disc_min, disc_max
+                                    #print verb_index, clause_beginning
+                                    #print
+                                elif verb_index > disc_min:
+                                    vxx += 1
+                                    #print "vxx " + tok.id
+                                    #print disc_root, disc_min, disc_max
+                                    #print verb_index, clause_beginning
+                                    #print
+                            except UnboundLocalError:
+                                pass             
+        except KeyError:
+            pass
 
         print "#...X...X...V: " + str(yxxv)
         print
@@ -478,12 +489,11 @@ class Seeker():
         print
 
         return {'yxxv': yxxv, 'xxv': xxv, 'yxvx': yxvx, 'xvx': xvx, 'vxx': vxx}
-                        
-    def print_coding_strings(self):
-        """Print coding strings, one per line."""
 
-        for s in self.coding_strings:
-            print >> self.codings, s
+    def classify_multicomps(self):
+        """Classify ordering of direct and indirect objects in clauses with both."""
+
+        pass
 
 def main():
 
@@ -492,22 +502,42 @@ def main():
     parser.add_argument('-x', '--xml_file', action = 'store', dest = "xml_name", help='XML file')
     args = parser.parse_args()
 
+    disc_master = {'yxxv': 0, 'xxv': 0, 'yxvx': 0, 'xvx': 0, 'vxx': 0}
+
     if args.xml_name:
         seeker = Seeker('TS', args.xml_name, 0)
-        seeker.classify_discontinuous('OBJ|SBJ')
+        dct = seeker.classify_discontinuous('OBJ')
+        file_base = args.xml_name.split('/')[1]
+        disc_log = open("tallies/" + file_base[:2] + "_discont.txt", 'w')
+        for kind in dct:
+            disc_master[kind] += dct[kind]
         #seeker.clause_types()
         #seeker.print_coding_strings()
     elif args.file_base:
         n = 1
 
-        while n < 3:
+        while n < 25:
             seeker = Seeker(args.file_base, "xml/" + args.file_base + str(n) + ".xml", n) 
-            seeker.classify_discontinuous('OBJ|SBJ')
+            dct = seeker.classify_discontinuous('OBJ')
+            disc_log = open("tallies/" + args.file_base[:2] + "_discont.txt", 'w')
+            for kind in dct:
+                disc_master[kind] += dct[kind]
             #seeker.clause_types()
             #seeker.print_coding_strings()
             n += 1
 
         print '\a'
+
+    print >> disc_log, "#...X...X...V: " + str(disc_master['yxxv'])
+    print >> disc_log
+    print >> disc_log, "#X...X...V: " + str(disc_master['xxv'])
+    print >> disc_log
+    print >> disc_log, "#...X...V...X: " + str(disc_master['yxvx'])
+    print >> disc_log
+    print >> disc_log, "#X...V...X: " + str(disc_master['xvx'])
+    print >> disc_log
+    print >> disc_log, "#(...)V...X...X: " + str(disc_master['vxx'])
+    print >> disc_log
 
 if __name__ == '__main__':
     main()
