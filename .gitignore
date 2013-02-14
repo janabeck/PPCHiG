@@ -3,6 +3,7 @@ test/
 xml/
 codings/
 logs/
+tallies/
 Test.psd*
 *.out
 *.pyc
