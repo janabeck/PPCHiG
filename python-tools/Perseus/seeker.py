@@ -1,5 +1,6 @@
 import argparse
 from lxml import etree
+import pickle
 import re
 import sys
 
@@ -61,19 +62,22 @@ class Seeker():
 
         self.sentences = self.doc.xpath("//sentence/@id")
 
-        self.trees = {}
+        self.numbered_file_base = xml_name.replace('xml/','')
 
-        for token in self.sentences:
-            tok = Token()
-            tok.id = token
-            self._map_tree(token, tok)
-            self.trees[token] = tok
+        try:
+            self.trees = pickle.load(open('pickles/' + self.numbered_file_base.replace('.xml', '.p'), 'rb'))
+        except IOError:
+            self.trees = {}
+            for token in self.sentences:
+                tok = Token()
+                tok.id = str(token)
+                self._map_tree(token, tok)
+                self.trees[str(token)] = tok
+            pickle.dump(self.trees, open('pickles/' + self.numbered_file_base.replace('.xml', '.p'), 'wb'))
 
         self.log = open("logs/" + file_base[:2] + "_log" + str(n) + ".txt", 'w')
 
         self.codings = open("codings/" + file_base[:2] + "_codings" + str(n) + ".txt", 'w')
-
-        self.discontinuous = open("tallies/" + file_base[:2] + "_discont" + ".txt", 'w')
 
         self.coding_strings = []
 
@@ -102,20 +106,20 @@ class Seeker():
             recurs_deps.append(int(head))
             recurs_deps.sort()
             subtree = Subtree()
-            subtree.root = head
-            subtree.head = self.doc.xpath("//sentence[@id=" + ident + "]/word[@id=" + head + "]/@head")[0]
+            subtree.root = str(head)
+            subtree.head = str(self.doc.xpath("//sentence[@id=" + ident + "]/word[@id=" + head + "]/@head")[0])
             subtree.deps = recurs_deps
-            subtree.relation = self.doc.xpath("//sentence[@id=" + ident + "]/word[@id=" + head + "]/@relation")[0]
-            subtree.postag = self.doc.xpath("//sentence[@id=" + ident + "]/word[@id=" + head + "]/@postag")[0]
-            subtree.lemma = self.doc.xpath("//sentence[@id=" + ident + "]/word[@id=" + head + "]/@lemma")[0]
+            subtree.relation = str(self.doc.xpath("//sentence[@id=" + ident + "]/word[@id=" + head + "]/@relation")[0])
+            subtree.postag = str(self.doc.xpath("//sentence[@id=" + ident + "]/word[@id=" + head + "]/@postag")[0])
+            subtree.lemma = str(self.doc.xpath("//sentence[@id=" + ident + "]/word[@id=" + head + "]/@lemma")[0])
             subtree.continuity = self._check_sequence(recurs_deps)
             full_tree[head] = subtree
             # list form for easier unit test
             lst = [recurs_deps]
-            lst = lst + [head, subtree.head, subtree.relation, subtree.postag, subtree.lemma, subtree.continuity]
-            list_form[head] = lst
+            lst = lst + [subtree.root, subtree.head, subtree.relation, subtree.postag, subtree.lemma, subtree.continuity]
+            list_form[subtree.root] = lst
 
-        tok.dependencies = full_tree
+        #tok.dependencies = full_tree
         tok.list_form = list_form
 
     def _turtles(self, ident, deps, new_deps):
@@ -502,10 +506,19 @@ class Seeker():
 
         verb = re.compile('[vt].......-')
 
-        # list_form: [recurs_deps, head/root, subtree.head, subtree.relation, subtree.postag, subtree.lemma, subtree.continuity]
+        oov = 0
 
-        do_first = 0
-        io_first = 0
+        ovo = 0
+
+        voo = 0
+
+        oovo = 0
+
+        ovoo = 0
+
+        oovoo = 0
+
+        # list_form: [recurs_deps, head/root, subtree.head, subtree.relation, subtree.postag, subtree.lemma, subtree.continuity]
 
         try:
             for tok in self.trees.values():
@@ -523,25 +536,56 @@ class Seeker():
                             # check to see if head is verbal (incl. participle)
                             and verb.match(tok.list_form[s1[2]][4]) 
                             # check to see if either of the pair is a pronoun
-                            and not pronoun.match(s1[4]) and not pronoun.match(s2[4]) 
-                            # check to see if either of the pair is discontinuous and that one is dative and one is accusative
-                            and s1[6] and s2[6]) and acc_nom.match(s1[4]) and dat_nom.match(s2[4]):
+                            and not pronoun.match(s1[4]) and not pronoun.match(s2[4])):
                             # prevents both (a,b) and (b,a) pairs being added
-                            if (s2, s1) not in obj_pairs:
-                                obj_pairs.append((s1, s2))
+                            if (s2, s1, tok.list_form[s1[2]]) not in obj_pairs:
+                                obj_pairs.append((s1, s2, tok.list_form[s1[2]]))
 
                 for pair in obj_pairs:
-                    print tok.id, pair
-                    print
-                    if max(pair[0][0]) < min(pair[1][0]):
-                        do_first += 1
+                    o1 = pair[0]
+                    o2 = pair[1]
+                    v = pair[2]
+                    vi = int(v[1])
+                    mx1 = max(o1[0])
+                    mn1 = min(o1[0])
+                    mx2 = max(o2[0])
+                    mn2 = min(o2[0])
+                    if o1[6] and o2[6]:
+                        #OOV
+                        if ((mx1 < mn2 and mx2 < vi) 
+                            or (mx2 < mn1 and mx1 < vi)):
+                            print "oov " + tok.id
+                            oov += 1
+                        #OVO
+                        elif ((mx1 < vi and vi < mn2)
+                            or (mx2 < vi and vi < mn1)):
+                            print "ovo " + tok.id
+                            ovo += 1
+                        #VOO
+                        elif ((vi < mn1 and mx1 < mn2)
+                            or (vi < mn2 and mx2 < mn1)):
+                            print "voo " + tok.id
+                            voo += 1
                     else:
-                        io_first += 1
+                        #OOVO
+                        if ((mn1 < mn2 and mn2 < vi and vi < mx1)
+                            or (mn2 < mn1 and mn1 < vi and vi < mx2)):
+                            print "oovo " + tok.id
+                            oovo += 1
+                        #OVOO
+                        elif ((mn1 < vi and vi < mn2 and vi < mx1)
+                            or (mn2 < vi and vi < mn1 and vi < mx2)):
+                            print "ovoo " + tok.id
+                            ovoo += 1
+                        #OOVOO
+                        elif mn1 < vi and mn2 < vi and vi < mx1 and vi < mx2:
+                            print "oovoo " + tok.ident
+                            oovoo += 1
 
         except KeyError:
             pass
 
-        return do_first, io_first
+        return {'oov': oov, 'ovo': ovo, 'oovo': oovo, 'voo': voo, 'ovoo': ovoo, 'oovoo': oovoo}
 
 def main():
 
@@ -553,24 +597,24 @@ def main():
 
     disc_master = {'yxxv': 0, 'xxv': 0, 'yxvx': 0, 'xvx': 0, 'vxx': 0}
 
-    mult_master = {'DO_first': 0, 'IO_first': 0}
+    mult_master = {'oov': 0, 'ovo': 0, 'oovo': 0, 'voo': 0, 'ovoo': 0, 'oovoo': 0}
 
     if args.xml_name:
-        seeker = Seeker('TS', args.xml_name, 0)
-
         file_base = args.xml_name.split('/')[1]
+
+        seeker = Seeker('test', args.xml_name, 0)
 
         disc_log = open("tallies/" + file_base[:2] + "_discont.txt", 'w')
         mult_log = open("tallies/" + file_base[:2] + "_mult.txt" , 'w')
 
         if args.disc:
-            dct = seeker.classify_discontinuous('OBJ')
+            dct = seeker.classify_discontinuous('OBJ|SBJ')
             
             for kind in dct:
                 disc_master[kind] += dct[kind]
-        do, io = seeker.classify_multicomps()
-        mult_master['DO_first'] += do
-        mult_master['IO_first'] += io
+        mdct = seeker.classify_multicomps()
+        for kind in mdct:
+            mult_master[kind] += mdct[kind]
         #seeker.clause_types()
         #seeker.print_coding_strings()
     elif args.file_base:
@@ -582,23 +626,22 @@ def main():
         while n < 25:
             seeker = Seeker(args.file_base, "xml/" + args.file_base + str(n) + ".xml", n) 
             if args.disc:
-                dct = seeker.classify_discontinuous('OBJ')
+                dct = seeker.classify_discontinuous('OBJ|SBJ')
                 for kind in dct:
                     disc_master[kind] += dct[kind]
             seeker.classify_multicomps()
-            do, io = seeker.classify_multicomps()
-            mult_master['DO_first'] += do
-            mult_master['IO_first'] += io
+            mdct = seeker.classify_multicomps()
+            for kind in mdct:
+                mult_master[kind] += mdct[kind]
             #seeker.clause_types()
             #seeker.print_coding_strings()
             n += 1
 
         print '\a'
 
-    print >> mult_log, "DO before IO = " + str(mult_master['DO_first'])
-    print >> mult_log
-    print >> mult_log, "IO before DO = " + str(mult_master['IO_first'])
-    print >> mult_log
+    for kind in mult_master:
+        print >> mult_log, kind + " : " + str(mult_master[kind])
+        print >> mult_log
 
     if args.disc:
         print >> disc_log, "#...X...X...V: " + str(disc_master['yxxv'])
