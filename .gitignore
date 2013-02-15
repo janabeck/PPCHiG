@@ -4,6 +4,7 @@ xml/
 codings/
 logs/
 tallies/
+pickles/
 Test.psd*
 *.out
 *.pyc
