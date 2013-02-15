@@ -122,6 +122,7 @@ function customCommands(){
 
     addCommand({ keycode: 90 }, undo); // z
     addCommand({ keycode: 90, shift: true }, fixError); // shift + z
+    addCommand({ keycode: 90, ctrl: true }, nextValidationError); // ctrl + z
 
     // left hand number commands
     addCommand({ keycode: 49 }, leafBefore); // 1
