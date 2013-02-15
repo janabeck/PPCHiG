@@ -12,6 +12,7 @@ class Token():
 
         self.dependencies = {}
 
+        # key = [recurse_deps, head/root, subtree.head, subtree.relation, subtree.postag, subtree.lemma, subtree.continuity]
         self.list_form = {}
 
 class Subtree():
@@ -493,51 +494,123 @@ class Seeker():
     def classify_multicomps(self):
         """Classify ordering of direct and indirect objects in clauses with both."""
 
-        pass
+        pronoun = re.compile('p..---..-')
+
+        acc_nom = re.compile('n-.---.a-')
+
+        dat_nom = re.compile('n-.---.d-')
+
+        verb = re.compile('[vt].......-')
+
+        # list_form: [recurs_deps, head/root, subtree.head, subtree.relation, subtree.postag, subtree.lemma, subtree.continuity]
+
+        do_first = 0
+        io_first = 0
+
+        try:
+            for tok in self.trees.values():
+                tok_objects = []
+
+                for s in tok.list_form.values():
+                    if s[3] == 'OBJ':
+                        tok_objects.append(s)
+
+                obj_pairs = []
+                for s1 in tok_objects:
+                    for s2 in tok_objects:
+                        # check to see that both have the same head and that pair is non-trivial
+                        if (s1[2] == s2[2] and s1[1] != s2[1] 
+                            # check to see if head is verbal (incl. participle)
+                            and verb.match(tok.list_form[s1[2]][4]) 
+                            # check to see if either of the pair is a pronoun
+                            and not pronoun.match(s1[4]) and not pronoun.match(s2[4]) 
+                            # check to see if either of the pair is discontinuous and that one is dative and one is accusative
+                            and s1[6] and s2[6]) and acc_nom.match(s1[4]) and dat_nom.match(s2[4]):
+                            # prevents both (a,b) and (b,a) pairs being added
+                            if (s2, s1) not in obj_pairs:
+                                obj_pairs.append((s1, s2))
+
+                for pair in obj_pairs:
+                    print tok.id, pair
+                    print
+                    if max(pair[0][0]) < min(pair[1][0]):
+                        do_first += 1
+                    else:
+                        io_first += 1
+
+        except KeyError:
+            pass
+
+        return do_first, io_first
 
 def main():
 
     parser = argparse.ArgumentParser(description='Process the input files.')
     parser.add_argument('-f', '--file_base', action = 'store', dest = "file_base", help='base of file names')
     parser.add_argument('-x', '--xml_file', action = 'store', dest = "xml_name", help='XML file')
+    parser.add_argument('-d', '--classify_discontinuous', action = 'store_true', dest = "disc", help='Classify discontinuous DPs?')
     args = parser.parse_args()
 
     disc_master = {'yxxv': 0, 'xxv': 0, 'yxvx': 0, 'xvx': 0, 'vxx': 0}
 
+    mult_master = {'DO_first': 0, 'IO_first': 0}
+
     if args.xml_name:
         seeker = Seeker('TS', args.xml_name, 0)
-        dct = seeker.classify_discontinuous('OBJ')
+
         file_base = args.xml_name.split('/')[1]
+
         disc_log = open("tallies/" + file_base[:2] + "_discont.txt", 'w')
-        for kind in dct:
-            disc_master[kind] += dct[kind]
+        mult_log = open("tallies/" + file_base[:2] + "_mult.txt" , 'w')
+
+        if args.disc:
+            dct = seeker.classify_discontinuous('OBJ')
+            
+            for kind in dct:
+                disc_master[kind] += dct[kind]
+        do, io = seeker.classify_multicomps()
+        mult_master['DO_first'] += do
+        mult_master['IO_first'] += io
         #seeker.clause_types()
         #seeker.print_coding_strings()
     elif args.file_base:
         n = 1
 
+        disc_log = open("tallies/" + args.file_base[:2] + "_discont.txt", 'w')
+        mult_log = open("tallies/" + args.file_base[:2] + "_mult.txt" , 'w')
+
         while n < 25:
             seeker = Seeker(args.file_base, "xml/" + args.file_base + str(n) + ".xml", n) 
-            dct = seeker.classify_discontinuous('OBJ')
-            disc_log = open("tallies/" + args.file_base[:2] + "_discont.txt", 'w')
-            for kind in dct:
-                disc_master[kind] += dct[kind]
+            if args.disc:
+                dct = seeker.classify_discontinuous('OBJ')
+                for kind in dct:
+                    disc_master[kind] += dct[kind]
+            seeker.classify_multicomps()
+            do, io = seeker.classify_multicomps()
+            mult_master['DO_first'] += do
+            mult_master['IO_first'] += io
             #seeker.clause_types()
             #seeker.print_coding_strings()
             n += 1
 
         print '\a'
 
-    print >> disc_log, "#...X...X...V: " + str(disc_master['yxxv'])
-    print >> disc_log
-    print >> disc_log, "#X...X...V: " + str(disc_master['xxv'])
-    print >> disc_log
-    print >> disc_log, "#...X...V...X: " + str(disc_master['yxvx'])
-    print >> disc_log
-    print >> disc_log, "#X...V...X: " + str(disc_master['xvx'])
-    print >> disc_log
-    print >> disc_log, "#(...)V...X...X: " + str(disc_master['vxx'])
-    print >> disc_log
+    print >> mult_log, "DO before IO = " + str(mult_master['DO_first'])
+    print >> mult_log
+    print >> mult_log, "IO before DO = " + str(mult_master['IO_first'])
+    print >> mult_log
+
+    if args.disc:
+        print >> disc_log, "#...X...X...V: " + str(disc_master['yxxv'])
+        print >> disc_log
+        print >> disc_log, "#X...X...V: " + str(disc_master['xxv'])
+        print >> disc_log
+        print >> disc_log, "#...X...V...X: " + str(disc_master['yxvx'])
+        print >> disc_log
+        print >> disc_log, "#X...V...X: " + str(disc_master['xvx'])
+        print >> disc_log
+        print >> disc_log, "#(...)V...X...X: " + str(disc_master['vxx'])
+        print >> disc_log
 
 if __name__ == '__main__':
     main()
