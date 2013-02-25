@@ -25959,6 +25959,7 @@ License: This treebank file is built from the Perseus Digital Library's (website
 		  (NP-ATR (D-GEN τοῦ-ὁ) (N-GEN αἰῶνος-αἰών))))
 	  (. .-.))
   (ID GreekNT,Matthew:28_20a.1757))
+
 ( (VERSION (FORMAT dash)))
 
 ( (FRAG (CODE {VS:1_1})
