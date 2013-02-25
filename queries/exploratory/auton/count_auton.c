@@ -7,12 +7,13 @@ node: IP-MAT*|IP-SUB*
 2: form of αὐτός is only word in phrase
 3: case of αὐτός
 4: form of αὐτός precedes subject
+5: object is NP-OB2
 */
 
 coding_query:
 
-1: { b: (IP-MAT*|IP-SUB* iDoms NP-OB*-PRV)
-     a: (IP-MAT*|IP-SUB* iDoms NP-OB*-PSTV)
+1: { b: (IP-MAT*|IP-SUB* iDoms NP-OB*-PRV*)
+     a: (IP-MAT*|IP-SUB* iDoms NP-OB*-PSTV*)
 }
 
 2: { t: (IP-MAT*|IP-SUB* iDoms NP-OB*) AND (NP-OB* iDomsOnly PRO*) AND (PRO* iDoms *-αὐτός)
@@ -25,5 +26,9 @@ coding_query:
 }
 
 4: { t: (IP-MAT*|IP-SUB* iDoms NP-OB*) AND (NP-OB* iDomsOnly PRO*) AND (PRO* iDoms *-αὐτός) AND (IP-MAT*|IP-SUB* iDoms NP-SBJ*) AND (NP-OB* Precedes NP-SBJ*) AND (NP-SBJ* iDoms !\*pro\**)
+     f: ELSE
+}
+
+5: { t: (IP-MAT*|IP-SUB* iDoms NP-OB2-PRV*|NP-OB2-PSTV*)
      f: ELSE
 }
