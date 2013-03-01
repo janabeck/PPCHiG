@@ -518,72 +518,102 @@ class Seeker():
 
         oovoo = 0
 
+        io_do_v = 0
+
+        do_io_v = 0
+
+        do_v_io = 0
+
+        io_v_do = 0
+
+        v_io_do = 0
+
+        v_do_io = 0
+
         # list_form: [recurs_deps, head/root, subtree.head, subtree.relation, subtree.postag, subtree.lemma, subtree.continuity]
 
-        try:
-            for tok in self.trees.values():
-                tok_objects = []
+        for key in self.trees:
+            tok = self.trees[key]
+            tok_objects = []
 
-                for s in tok.list_form.values():
-                    if s[3] == 'OBJ':
-                        tok_objects.append(s)
+            for s in tok.list_form.values():
+                if s[3] == 'OBJ':
+                    tok_objects.append(s)
 
-                obj_pairs = []
-                for s1 in tok_objects:
-                    for s2 in tok_objects:
-                        # check to see that both have the same head and that pair is non-trivial
-                        if (s1[2] == s2[2] and s1[1] != s2[1] 
-                            # check to see if head is verbal (incl. participle)
-                            and verb.match(tok.list_form[s1[2]][4]) 
-                            # check to see if either of the pair is a pronoun
-                            and not pronoun.match(s1[4]) and not pronoun.match(s2[4])):
-                            # prevents both (a,b) and (b,a) pairs being added
-                            if (s2, s1, tok.list_form[s1[2]]) not in obj_pairs:
-                                obj_pairs.append((s1, s2, tok.list_form[s1[2]]))
+            obj_pairs = []
+            for s1 in tok_objects:
+                for s2 in tok_objects:
+                    # check to see that both have the same head and that pair is non-trivial
+                    if (s1[2] == s2[2] and s1[1] != s2[1] 
+                        # check to see if head is verbal (incl. participle)
+                        and verb.match(tok.list_form[s1[2]][4]) 
+                        # check to see if either of the pair is a pronoun
+                        and not pronoun.match(s1[4]) and not pronoun.match(s2[4])):
+                        # prevents both (a,b) and (b,a) pairs being added
+                        if (s2, s1, tok.list_form[s1[2]]) not in obj_pairs:
+                            obj_pairs.append((s1, s2, tok.list_form[s1[2]]))
 
-                for pair in obj_pairs:
-                    o1 = pair[0]
-                    o2 = pair[1]
-                    v = pair[2]
-                    vi = int(v[1])
-                    mx1 = max(o1[0])
-                    mn1 = min(o1[0])
-                    mx2 = max(o2[0])
-                    mn2 = min(o2[0])
-                    if o1[6] and o2[6]:
-                        #OOV
-                        if ((mx1 < mn2 and mx2 < vi) 
-                            or (mx2 < mn1 and mx1 < vi)):
-                            print "oov " + tok.id
-                            oov += 1
-                        #OVO
-                        elif ((mx1 < vi and vi < mn2)
-                            or (mx2 < vi and vi < mn1)):
-                            print "ovo " + tok.id
-                            ovo += 1
-                        #VOO
-                        elif ((vi < mn1 and mx1 < mn2)
-                            or (vi < mn2 and mx2 < mn1)):
-                            print "voo " + tok.id
-                            voo += 1
-                    else:
-                        #OOVO
-                        if ((mn1 < mn2 and mn2 < vi and vi < mx1)
-                            or (mn2 < mn1 and mn1 < vi and vi < mx2)):
-                            print "oovo " + tok.id
-                            oovo += 1
-                        #OVOO
-                        elif ((mn1 < vi and vi < mn2 and vi < mx1)
-                            or (mn2 < vi and vi < mn1 and vi < mx2)):
-                            print "ovoo " + tok.id
-                            ovoo += 1
-                        #OOVOO
-                        elif mn1 < vi and mn2 < vi and vi < mx1 and vi < mx2:
-                            print "oovoo " + tok.ident
-                            oovoo += 1
-
-        except KeyError:
-            pass
+            for pair in obj_pairs:
+                o1 = pair[0]
+                o2 = pair[1]
+                v = pair[2]
+                vi = int(v[1])
+                mx1 = max(o1[0])
+                mn1 = min(o1[0])
+                mx2 = max(o2[0])
+                mn2 = min(o2[0])
+                if o1[6] and o2[6]:
+                    #OOV
+                    if ((mx1 < mn2 and mx2 < vi) 
+                        or (mx2 < mn1 and mx1 < vi)):
+                        #print "oov " + tok.id
+                        oov += 1
+                        if mx2 + 1 == vi and mx1 + 1 == mn2:
+                            if acc_nom.match(o1[4]) and dat_nom.match(o2[4]):
+                                do_io_v += 1
+                                print 'do_io_v'
+                            elif dat_nom.match(o1[4]) and acc_nom.match(o2[4]):
+                                io_do_v += 1
+                                print 'io_do_v'
+                    #OVO
+                    elif ((mx1 < vi and vi < mn2)
+                        or (mx2 < vi and vi < mn1)):
+                        #print "ovo " + tok.id
+                        ovo += 1
+                        if mx1 + 1 == vi and vi + 1 == mn2:
+                            if acc_nom.match(o1[4]) and dat_nom.match(o2[4]):
+                                do_v_io += 1
+                                print 'do_v_io'
+                            elif dat_nom.match(o1[4]) and acc_nom.match(o2[4]):
+                                io_v_do += 1
+                                print 'io_v_do'
+                    #VOO
+                    elif ((vi < mn1 and mx1 < mn2)
+                        or (vi < mn2 and mx2 < mn1)):
+                        #print "voo " + tok.id
+                        voo += 1
+                        if vi + 1 == mn1 and mx1 + 1 == mn2:
+                            if acc_nom.match(o1[4]) and dat_nom.match(o2[4]):
+                                v_do_io += 1
+                                print 'v_do_io'
+                            elif dat_nom.match(o1[4]) and acc_nom.match(o2[4]):
+                                v_io_do += 1
+                                print 'v_do_io'
+                else:
+                    #OOVO
+                    if ((mn1 < mn2 and mn2 < vi and vi < mx1)
+                        or (mn2 < mn1 and mn1 < vi and vi < mx2)):
+                        #print "oovo " + tok.id
+                        oovo += 1
+                    #OVOO
+                    elif ((mn1 < vi and vi < mn2 and vi < mx1)
+                        or (mn2 < vi and vi < mn1 and vi < mx2)):
+                        #print "ovoo " + tok.id
+                        ovoo += 1
+                    #OOVOO
+                    elif mn1 < vi and mn2 < vi and vi < mx1 and vi < mx2:
+                        #print "oovoo " + tok.id
+                        oovoo += 1
 
         return {'oov': oov, 'ovo': ovo, 'oovo': oovo, 'voo': voo, 'ovoo': ovoo, 'oovoo': oovoo}
 
@@ -629,7 +659,6 @@ def main():
                 dct = seeker.classify_discontinuous('OBJ|SBJ')
                 for kind in dct:
                     disc_master[kind] += dct[kind]
-            seeker.classify_multicomps()
             mdct = seeker.classify_multicomps()
             for kind in mdct:
                 mult_master[kind] += mdct[kind]
