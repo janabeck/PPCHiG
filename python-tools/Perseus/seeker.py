@@ -617,12 +617,83 @@ class Seeker():
 
         return {'oov': oov, 'ovo': ovo, 'oovo': oovo, 'voo': voo, 'ovoo': ovoo, 'oovoo': oovoo}
 
+    def restructuring(self):
+        """Classify word orders in restructuring contexts."""
+
+        infinitive = re.compile('v...n..--')
+
+        inf_clauses = []
+
+        for key in self.trees:
+            tok = self.trees[key]
+            tok_objects = []
+
+            # list_form: [recurs_deps, head/root, subtree.head, subtree.relation, subtree.postag, subtree.lemma, subtree.continuity]
+            for s in tok.list_form.values():
+                if s[3] == 'OBJ' and infinitive.match(s[4]):    
+                    inf_clauses.append((key, s[1]))
+
+
+        for pair in inf_clauses:
+            #making sure to reset these to zero since they are conditionally set based on result of 'if' clause
+            subject = ""
+            subject_position = 0
+            inf_object = ""
+            inf_object_position = 0
+
+            positions = []
+            dct = {}
+
+            tok = self.trees[pair[0]]
+
+            infinitive = tok.list_form[pair[1]]
+            inf_position = int(pair[1])
+            positions.append(inf_position)
+            dct[inf_position] = 'Inf'
+
+            matrix_verb = tok.list_form[infinitive[2]]
+            matrix_position = int(matrix_verb[1])
+            positions.append(matrix_position)
+            dct[matrix_position] = 'V'
+
+            # check to see if verb is finite and non-'be'
+            if not self.FINITE_VERB.match(matrix_verb[4]):
+                break
+            # looking through the rest of token to find the subject and object of the infinitive (if any)
+            for s in tok.list_form.values():
+                if s[3] == 'SBJ' and infinitive[2] == s[1]:
+                    subject = s
+                    subject_position = int(subject[1])
+                    positions.append(subject_position)
+                    dct[subject_position] = "SBJ"
+                if s[3] == 'OBJ' and s[2] == infinitive[1] and s[6]:
+                    inf_object = s
+                    inf_object_position = int(inf_object[1])
+                    positions.append(inf_object_position)
+                    if inf_object[4][7] == 'a': 
+                        dct[inf_object_position] = 'OBJ_ACC'
+                    elif inf_object[4][7] == 'd':
+                        dct[inf_object_position] = 'OBJ_DAT'
+                    elif inf_object[4][7] == 'g':
+                        dct[inf_object_position] = 'OBJ_GEN'
+                    else:
+                        dct[inf_object_position] = 'OBJ_' + inf_object[4]
+
+            # now actually classifying the orders of S, V, Inf, and (O)
+            #if subject != "":
+            positions.sort()
+            for n in positions:
+                print dct[n], 
+
+            print
+
 def main():
 
     parser = argparse.ArgumentParser(description='Process the input files.')
     parser.add_argument('-f', '--file_base', action = 'store', dest = "file_base", help='base of file names')
     parser.add_argument('-x', '--xml_file', action = 'store', dest = "xml_name", help='XML file')
     parser.add_argument('-d', '--classify_discontinuous', action = 'store_true', dest = "disc", help='Classify discontinuous DPs?')
+    parser.add_argument('-m', '--classify_multicomps', action = 'store_true', dest = "mult", help='Classify sentences with multiple complements?')
     args = parser.parse_args()
 
     disc_master = {'yxxv': 0, 'xxv': 0, 'yxvx': 0, 'xvx': 0, 'vxx': 0}
@@ -642,9 +713,11 @@ def main():
             
             for kind in dct:
                 disc_master[kind] += dct[kind]
-        mdct = seeker.classify_multicomps()
-        for kind in mdct:
-            mult_master[kind] += mdct[kind]
+        if args.mult:
+            mdct = seeker.classify_multicomps()
+            for kind in mdct:
+                mult_master[kind] += mdct[kind]
+        seeker.restructuring()
         #seeker.clause_types()
         #seeker.print_coding_strings()
     elif args.file_base:
@@ -659,9 +732,11 @@ def main():
                 dct = seeker.classify_discontinuous('OBJ|SBJ')
                 for kind in dct:
                     disc_master[kind] += dct[kind]
-            mdct = seeker.classify_multicomps()
-            for kind in mdct:
-                mult_master[kind] += mdct[kind]
+            if args.mult:
+                mdct = seeker.classify_multicomps()
+                for kind in mdct:
+                    mult_master[kind] += mdct[kind]
+            seeker.restructuring()
             #seeker.clause_types()
             #seeker.print_coding_strings()
             n += 1
