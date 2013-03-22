@@ -113,13 +113,13 @@ class Seeker():
             subtree.postag = str(self.doc.xpath("//sentence[@id=" + ident + "]/word[@id=" + head + "]/@postag")[0])
             subtree.lemma = str(self.doc.xpath("//sentence[@id=" + ident + "]/word[@id=" + head + "]/@lemma")[0])
             subtree.continuity = self._check_sequence(recurs_deps)
-            full_tree[head] = subtree
+            full_tree[str(head)] = subtree
             # list form for easier unit test
             lst = [recurs_deps]
             lst = lst + [subtree.root, subtree.head, subtree.relation, subtree.postag, subtree.lemma, subtree.continuity]
             list_form[subtree.root] = lst
 
-        #tok.dependencies = full_tree
+        tok.dependencies = full_tree
         tok.list_form = list_form
 
     def _turtles(self, ident, deps, new_deps):
@@ -402,6 +402,7 @@ class Seeker():
                     print ident, root_id, root_type
                     sys.exit(0)
             except TypeError:
+                print "caught!"
                 pass
 
         for ident in results:
@@ -694,6 +695,8 @@ def main():
     parser.add_argument('-x', '--xml_file', action = 'store', dest = "xml_name", help='XML file')
     parser.add_argument('-d', '--classify_discontinuous', action = 'store_true', dest = "disc", help='Classify discontinuous DPs?')
     parser.add_argument('-m', '--classify_multicomps', action = 'store_true', dest = "mult", help='Classify sentences with multiple complements?')
+    parser.add_argument('-c', '--clause_types', action = 'store_true', dest = "clause", help="Generate clause type coding strings?")
+    parser.add_argument('-i', '--inf_clauses', action = 'store_true', dest = "inf_clauses", help="Classify clauses with infinitives?")
     args = parser.parse_args()
 
     disc_master = {'yxxv': 0, 'xxv': 0, 'yxvx': 0, 'xvx': 0, 'vxx': 0}
@@ -717,9 +720,11 @@ def main():
             mdct = seeker.classify_multicomps()
             for kind in mdct:
                 mult_master[kind] += mdct[kind]
-        seeker.restructuring()
-        #seeker.clause_types()
-        #seeker.print_coding_strings()
+        if args.inf_clauses:
+            seeker.restructuring()
+        if args.clause:
+            seeker.clause_types()
+            seeker.print_coding_strings()
     elif args.file_base:
         n = 1
 
@@ -736,9 +741,11 @@ def main():
                 mdct = seeker.classify_multicomps()
                 for kind in mdct:
                     mult_master[kind] += mdct[kind]
-            seeker.restructuring()
-            #seeker.clause_types()
-            #seeker.print_coding_strings()
+            if args.inf_clauses:
+                seeker.restructuring()
+            if args.clause:
+                seeker.clause_types()
+                seeker.print_coding_strings()
             n += 1
 
         print '\a'
