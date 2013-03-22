@@ -30,7 +30,7 @@ coding_query:
 }
 
 3: { p: (IP-MAT*|IP-SUB* iDoms NP-OB*) AND (NP-OB* iDoms PRO*|CLPRO*)
-     d: (IP-MAT*|IP-SUB* iDoms NP-OB*) AND (NP-OB* iDoms D*)
+     d: (IP-MAT*|IP-SUB* iDoms NP-OB*) AND (NP-OB* iDomsOnly D*)
      t: (IP-MAT*|IP-SUB* iDoms NP-OB*) AND (NP-OB* Doms \*ICH\**|\*T\**)
      n: (IP-MAT*|IP-SUB* iDoms NP-OB*)
 }
