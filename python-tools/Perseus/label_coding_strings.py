@@ -87,35 +87,35 @@ def main():
 	print >> out_file
 
 	for i in s1:
-		print >> out_file, "\t" + i + "\t" + str(ov_pairs[i]) + " (" + str(round(((ov_pairs[i]/ov)*100),2)) + "%)"
+		print >> out_file, "\t" + i + "\t" + str(ov_pairs[i]) + " (" + str(round(((ov_pairs[i]/total1)*100),2)) + "%)"
 
 	print >> out_file
 	print >> out_file, "VO Sentences: " + str(vo) + " (" + str(round(((vo/total1) * 100),2)) + "%)"
 	print >> out_file
 
 	for i in s2:
-		print >> out_file, "\t" + i + "\t" + str(vo_pairs[i]) + " (" + str(round(((vo_pairs[i]/vo)*100),2)) + "%)"
+		print >> out_file, "\t" + i + "\t" + str(vo_pairs[i]) + " (" + str(round(((vo_pairs[i]/total1)*100),2)) + "%)"
 
 	print >> out_file
 	print >> out_file, "Verb-initial Sentences: " + str(vi) + " (" + str(round(((vi/total2) * 100),2)) + "%)"
 	print >> out_file
 
 	for i in v1:
-		print >> out_file, "\t" + i + "\t" + str(verb_initial[i]) + " (" + str(round(((verb_initial[i]/vi)*100),2)) + "%)"
+		print >> out_file, "\t" + i + "\t" + str(verb_initial[i]) + " (" + str(round(((verb_initial[i]/total2)*100),2)) + "%)"
 
 	print >> out_file
 	print >> out_file, "Verb-medial Sentences: " + str(vm) + " (" + str(round(((vm/total2) * 100),2)) + "%)"
 	print >> out_file
 
 	for i in v2:
-		print >> out_file, "\t" + i + "\t" + str(verb_medial[i]) + " (" + str(round(((verb_medial[i]/vm)*100),2)) + "%)"
+		print >> out_file, "\t" + i + "\t" + str(verb_medial[i]) + " (" + str(round(((verb_medial[i]/total2)*100),2)) + "%)"
 
 	print >> out_file
 	print >> out_file, "Verb-final Sentences: " + str(vf) + " (" + str(round(((vf/total2) * 100),2)) + "%)"
 	print >> out_file
 
 	for i in v3:
-		print >> out_file, "\t" + i + "\t" + str(verb_final[i]) + " (" + str(round(((verb_final[i]/vf)*100),2)) + "%)"
+		print >> out_file, "\t" + i + "\t" + str(verb_final[i]) + " (" + str(round(((verb_final[i]/total2)*100),2)) + "%)"
 
 	print >> out_file
 
