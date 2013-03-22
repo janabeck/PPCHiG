@@ -402,7 +402,6 @@ class Seeker():
                     print ident, root_id, root_type
                     sys.exit(0)
             except TypeError:
-                print "caught!"
                 pass
 
         for ident in results:
