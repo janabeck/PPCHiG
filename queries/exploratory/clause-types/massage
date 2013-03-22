@@ -1,0 +1,10 @@
+#!/bin/bash
+
+sort *.cod.ooo | uniq -c > tmp
+
+grep 'v:[ne]:n:.:.:.:f:.:.' tmp > tmp2
+
+python ../../../python-tools/Perseus/label_coding_strings.py tmp2 tmp.results
+
+rm -f tmp
+rm -f tmp2
