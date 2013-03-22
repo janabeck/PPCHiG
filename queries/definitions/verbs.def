@@ -1,3 +1,5 @@
 finite: VB[PDSO]-.*|VB[PDSO]P-.* 
 
 finite_be: BE[PDSO]-.*|BE[PDSO]P-.*
+
+infinitive: VB[N]-.*|VB[N]P-.*
