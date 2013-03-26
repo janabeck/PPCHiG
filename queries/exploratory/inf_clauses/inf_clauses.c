@@ -18,6 +18,8 @@ node: IP-MAT*|IP-SUB*
 11: order of inf. and dat. object (i = inf. first, d = dat. first)
 12: order of subject and acc. object (s = subject first, a = acc. first)
 13: order of subject and dat. object (s = subject first, d = dat. first)
+14: order of subject and inf. (s = subject first, i = inf. first)
+15: order of objects (a = acc. first, d = dat. first)
 */
 
 coding_query:
@@ -55,16 +57,16 @@ coding_query:
      v: (IP-MAT*|IP-SUB* iDoms NP-SBJ*) AND (IP-MAT*|IP-SUB* iDoms finite) AND (finite Precedes NP-SBJ*)
 }
 
-7: { i: (IP-INF-COM* iDoms infinitive) AND (IP-MAT*|IP-SUB* iDoms finite) AND (infinitive Precedes finite)
-     v: (IP-INF-COM* iDoms infinitive) AND (IP-MAT*|IP-SUB* iDoms finite) AND (finite Precedes infinitive)
+7: { i: (IP-MAT*|IP-SUB* iDoms IP-INF-COM*) AND (IP-INF-COM* iDoms infinitive) AND (IP-MAT*|IP-SUB* iDoms finite) AND (infinitive Precedes finite)
+     v: (IP-MAT*|IP-SUB* iDoms IP-INF-COM*) AND (IP-INF-COM* iDoms infinitive) AND (IP-MAT*|IP-SUB* iDoms finite) AND (finite Precedes infinitive)
 }
 
-8: { a: (IP-INF-COM* iDoms NP-OB1*) AND (IP-MAT*|IP-SUB* iDoms finite) AND (NP-OB1* Precedes finite)
-     v: (IP-INF-COM* iDoms NP-OB1*) AND (IP-MAT*|IP-SUB* iDoms finite) AND (finite Precedes NP-OB1*)
+8: { a: (IP-MAT*|IP-SUB* iDoms IP-INF-COM*) AND (IP-INF-COM* iDoms NP-OB1*) AND (IP-MAT*|IP-SUB* iDoms finite) AND (NP-OB1* Precedes finite)
+     v: (IP-MAT*|IP-SUB* iDoms IP-INF-COM*) AND (IP-INF-COM* iDoms NP-OB1*) AND (IP-MAT*|IP-SUB* iDoms finite) AND (finite Precedes NP-OB1*)
 }
 
-9: { d: (IP-INF-COM* iDoms NP-OB2*) AND (IP-MAT*|IP-SUB* iDoms finite) AND (NP-OB2* Precedes finite)
-     v: (IP-INF-COM* iDoms NP-OB2*) AND (IP-MAT*|IP-SUB* iDoms finite) AND (finite Precedes NP-OB2*)
+9: { d: (IP-MAT*|IP-SUB* iDoms IP-INF-COM*) AND (IP-INF-COM* iDoms NP-OB2*) AND (IP-MAT*|IP-SUB* iDoms finite) AND (NP-OB2* Precedes finite)
+     v: (IP-MAT*|IP-SUB* iDoms IP-INF-COM*) AND (IP-INF-COM* iDoms NP-OB2*) AND (IP-MAT*|IP-SUB* iDoms finite) AND (finite Precedes NP-OB2*)
 }
 
 10: { i: (IP-INF-COM* iDoms infinitive) AND (IP-INF-COM* iDoms NP-OB1*) AND (infinitive Precedes NP-OB1*)
@@ -75,10 +77,18 @@ coding_query:
       d: (IP-INF-COM* iDoms infinitive) AND (IP-INF-COM* iDoms NP-OB2*) AND (NP-OB2* Precedes infinitive)
 }
 
-12: { a: (IP-INF-COM* iDoms NP-OB1*) AND (IP-MAT*|IP-SUB* iDoms NP-SBJ*) AND (NP-OB1* Precedes NP-SBJ*)
-      s: (IP-INF-COM* iDoms NP-OB1*) AND (IP-MAT*|IP-SUB* iDoms NP-SBJ*) AND (NP-SBJ* Precedes NP-OB1*)
+12: { a: (IP-MAT*|IP-SUB* iDoms IP-INF-COM*) AND (IP-INF-COM* iDoms NP-OB1*) AND (IP-MAT*|IP-SUB* iDoms NP-SBJ*) AND (NP-OB1* Precedes NP-SBJ*)
+      s: (IP-MAT*|IP-SUB* iDoms IP-INF-COM*) AND (IP-INF-COM* iDoms NP-OB1*) AND (IP-MAT*|IP-SUB* iDoms NP-SBJ*) AND (NP-SBJ* Precedes NP-OB1*)
 }
 
-13: { d: (IP-INF-COM* iDoms NP-OB2*) AND (IP-MAT*|IP-SUB* iDoms NP-SBJ*) AND (NP-OB2* Precedes NP-SBJ*)
-      s: (IP-INF-COM* iDoms NP-OB2*) AND (IP-MAT*|IP-SUB* iDoms NP-SBJ*) AND (NP-SBJ* Precedes NP-OB2*)
+13: { d:  (IP-MAT*|IP-SUB* iDoms IP-INF-COM*) AND (IP-INF-COM* iDoms NP-OB2*) AND (IP-MAT*|IP-SUB* iDoms NP-SBJ*) AND (NP-OB2* Precedes NP-SBJ*)
+      s:  (IP-MAT*|IP-SUB* iDoms IP-INF-COM*) AND (IP-INF-COM* iDoms NP-OB2*) AND (IP-MAT*|IP-SUB* iDoms NP-SBJ*) AND (NP-SBJ* Precedes NP-OB2*)
+}
+
+14: { i: (IP-INF-COM* iDoms infinitive) AND (IP-MAT*|IP-SUB* iDoms IP-INF-COM*) AND (IP-MAT*|IP-SUB* iDoms NP-SBJ*) AND (infinitive Precedes NP-SBJ*)
+      s: (IP-INF-COM* iDoms infinitive) AND (IP-MAT*|IP-SUB* iDoms IP-INF-COM*) AND (IP-MAT*|IP-SUB* iDoms NP-SBJ*) AND (NP-SBJ* Precedes infinitive)
+}
+
+15: { d: (IP-INF-COM* iDoms NP-OB2*) AND (IP-INF-COM* iDoms NP-OB1*) AND (NP-OB2* Precedes NP-OB1*)
+      a: (IP-INF-COM* iDoms NP-OB2*) AND (IP-INF-COM* iDoms NP-OB1*) AND (NP-OB1* Precedes NP-OB2*)
 }
