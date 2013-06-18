@@ -2,6 +2,7 @@
 
 """
 corpus_reader.py
+See README.md for usage.
 Created 2011/12/14
 @author: Jana E. Beck
 @copyright: GNU General Public License http://www.gnu.org/licenses/
