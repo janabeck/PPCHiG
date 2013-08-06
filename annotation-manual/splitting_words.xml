@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.oasis-open.org/docbook/xml/5.0/rng/docbookxi.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="splitting_words">
+    <title>Splitting Words</title>
+    <sect1 xml:id="splitting_syntax">
+        <title>Syntax for Splitting Words</title>
+        <para></para>
+    </sect1>
+    <sect1 xml:id="always_split">
+        <title>Situations that <emphasis>always</emphasis> result in splitting</title>
+        <para> In the following cases, a compound words should <emphasis>always</emphasis> be broken
+            down into its components and the appropriate lemma applied to each component word.
+        </para>
+    </sect1>
+    <sect1 xml:id="never_split">
+        <title>Situations that <emphasis>never</emphasis> result in splitting</title>
+        <para></para>
+    </sect1>
+</chapter>

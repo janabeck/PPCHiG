@@ -22,6 +22,7 @@
         <title>Introduction</title>
         <xi:include href="general_intro.xml"/>
         <xi:include href="tags.xml"/>
+        <xi:include href="splitting_words.xml"/>
         <xi:include href="individual_words.xml"/>
         <xi:include href="pos_annotation.xml"/>
     </part>
