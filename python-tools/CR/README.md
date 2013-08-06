@@ -120,6 +120,7 @@ c. Print all the unique lemmas (and their frequences) in a corpus file.
 			etc.
 
     + option to sort by frequency or alphabetically
+    
 d. Print a concordance of the word forms (and their frequencies) for the given lemma.
 
     + give the lemma you're interested in on the command line after the name of your .psd file
