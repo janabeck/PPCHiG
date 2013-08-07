@@ -358,13 +358,13 @@ class Token():
 
         new_postr = T.Tree(tag1 + "+" + tag2 + index1, [pair])
 
-        position = len(postr1.treeposition) - 1
+        position = len(postr1.treeposition()) - 1
 
-        ins_point = postr1.treeposition[position] + 1
+        ins_point = postr1.treeposition()[position] + 1
 
-        new_treepos = list(postr1.treeposition)
+        new_treepos = list(postr1.treeposition())
 
-        addy = new_treeposition[:-1]
+        addy = new_treepos[:-1]
 
         addy = tuple(addy)
 
@@ -811,6 +811,7 @@ class Corpus():
                         else:
                             index = ""
                         if rword.endswith("@"):
+                            print "Tree #" + tree.id_num
                             lemma = pair[1]
                             first = [tr,rword,lemma,tag,index]
                         elif rword.startswith("@"):
