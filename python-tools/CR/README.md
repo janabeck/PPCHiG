@@ -46,6 +46,8 @@ non_words = re.compile("dash|{|\*|0|Herodotus|GreekNT|@")
 
     - If you have punctuation that is tagged otherwise, let me know so that I can potentially add it to the list of punctuation tags.
 
+`-C` same as above, but to count only *parsed* words (based on location of `(CODE {BKMK})` leaf)
+
 `-i` to renumber IDs
 
 + This function will also add IDs to tokens that don't have them.
@@ -72,6 +74,10 @@ Corpus,Book:<milestones-separated-by-semicolons>.<#>
 + If you have certain POS tags that contains `-` or `+` and are _always_ ineligible for splitting (e.g., words with dash tags to indicate case in some of the Penn-style corpora), you may name a variable `exclude` in a settings file that contains a regular expression for the tags to exclude.
 
 + You may also find it necessary to define (in the settings file) a variable `non_words` that contains a regular expression for non-words to exclude.
+
+`-j` to open a dialog on the command line that will help you join any previously split words (i.e., words ending or beginning with `@`)
+
+`-v` to validate the corpus file at the POS and phrase level
 
 #### Less common functions
 
