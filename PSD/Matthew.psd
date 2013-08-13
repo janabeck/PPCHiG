@@ -14357,7 +14357,7 @@ License: This treebank file is built from the Perseus Digital Library's (website
 	  (VBD-IMPF ἔφη-φημί)
 	  (NP-OB2 (PRO-DAT αὐτῷ-αὐτός))
 	  (NP-SBJ (D-NOM ὁ-ὁ) (NPR-NOM Ἰησοῦς-Ἰησοῦς))
-	  (IP-MAT-SPE (ADVP (ADV Ἄρα@-ἆρα) (CLGE @γε-@ἆρα@))
+	  (IP-MAT-SPE (ADVP (ADV Ἄρα@-ἆραγε) (CLGE @γε-@ἆραγε@))
 		      (ADJP-PRD (ADJ-NOM ἐλεύθεροί-ἐλεύθερος))
 		      (BEP-IMPF εἰσιν-εἰμί)
 		      (NP-SBJ (DS-NOM οἱ-ὁ) (NS-NOM υἱοί-υἱός)))
