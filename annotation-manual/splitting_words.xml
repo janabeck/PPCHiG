@@ -80,8 +80,9 @@
                 </listitem>
                 <listitem>
                     <para><link linkend="ὅστις">ὅστις</link> when case is doubly-marked (e.g., ὅστις
-                        and ὅντινα) but not when case is only singly-marked (e.g., ὅτις and
-                        ὅτου).</para>
+                        and ὅντινα) but not when case is only singly-marked (e.g., ὅτις and ὅτου).
+                        In ambiguous cases such as ἥτις, the assumption is that case is, rather than
+                        is not, doubly-marked.</para>
                 </listitem>
             </itemizedlist>
         </para>
