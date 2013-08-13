@@ -333,11 +333,11 @@ class Token():
 
         new_postr2 = T.Tree(tag2 + append + index, [pair2])
 
-        position = len(postr.treeposition) - 1
+        position = len(postr.treeposition()) - 1
 
-        ins_point = postr.treeposition[position] + 1
+        ins_point = postr.treeposition()[position] + 1
 
-        new_treepos = list(postr.treeposition)
+        new_treepos = list(postr.treeposition())
 
         addy = new_treepos[:-1]
 
