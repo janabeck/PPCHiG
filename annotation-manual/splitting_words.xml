@@ -72,7 +72,11 @@
                 </listitem>
                 <listitem>
                     <para>Clusters of adverbials with <link linkend="CL">CLPRT</link>, e.g.,
-                        ὥσπερ).</para>
+                        ὥσπερ.</para>
+                </listitem>
+                <listitem>
+                    <para>Most combinations of an element with <link linkend="CL">CLGE</link>, e.g.,
+                        ἐγώγε</para>
                 </listitem>
                 <listitem>
                     <para><link linkend="ὅστις">ὅστις</link> when case is doubly-marked (e.g., ὅστις
@@ -91,7 +95,9 @@
                             >CLPRT</link></para>
                 </listitem>
                 <listitem>
-                    <para>Compound negatives of any type.</para>
+                    <para>Compound negatives of any type. This rule takes precedence over other
+                        rules, such that something like e.g., μήγε (NEG+CLGE) or οὐκοῦν (NEG+CLPRT)
+                        does <emphasis>not</emphasis> get split.</para>
                 </listitem>
                 <listitem>
                     <para>Compound reflexives.</para>
