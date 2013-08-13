@@ -5,16 +5,103 @@
     <title>Splitting Words</title>
     <sect1 xml:id="splitting_syntax">
         <title>Syntax for Splitting Words</title>
-        <para></para>
+        <para> There are two syntaxes for splitting words. The first applies only in cases of
+            crasis, while the second is the default applying in every other case.<itemizedlist>
+                <listitem>
+                    <para>Crasis:</para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Components are split according to the logical division between
+                                words, with the leftmost component word containing all breathing
+                                marks. The leftmost component word ends with @, and the rightmost
+                                component word starts with @. In the case that three (or more) words
+                                are combined due to crasis, the middle word(s) would have @ both
+                                prefixed and suffixed to the word.</para>
+                        </listitem>
+                        <listitem>
+                            <para>The lemma of each (sub-)word component in the case of crasis is
+                                just the lemma that would have appeared had the word not appeared in
+                                a phonological environment resulting in crasis.
+                                <programlisting>
+(CP-ADV-SPE (ADV κἂ@-καί)
+            (C @@-εἰ#1)
+            (IP-SUB-SPE (AN @ν-ἄν)
+                        ...))
+                                </programlisting>
+                            </para>
+                        </listitem>
+                        <listitem>
+                            <para>Elsewhere:</para>
+                            <itemizedlist>
+                                <listitem>
+                                    <para>Components are split according to the logical division
+                                        between component parts. The leftmost component ends with @,
+                                        and the rightmost component begins with @. In the case that
+                                        three (or more) parts are combined, the middle part(s) would
+                                        have @ both prefixed and suffixed.</para>
+                                </listitem>
+                                <listitem>
+                                    <para>The lemma of the first component part in every non-crasis
+                                        situation is just the lemma representing the combination of
+                                        parts. The second (as well as third, or any additional)
+                                        component parts take the same lemma prefixed and suffixed
+                                        with @ as their lemma.
+                                        <programlisting>
+(ADVP-TMP (NEG+CONJ Οὐδέ@-οὐδέποτε) (CLPRT @ποτε-@οὐδέποτε@))                             
+                                        </programlisting>
+                                    </para>
+                                </listitem>
+                            </itemizedlist>
+                        </listitem>
+                    </itemizedlist>
+                </listitem>
+            </itemizedlist></para>
     </sect1>
     <sect1 xml:id="always_split">
         <title>Situations that <emphasis>always</emphasis> result in splitting</title>
-        <para> In the following cases, a compound words should <emphasis>always</emphasis> be broken
-            down into its components and the appropriate lemma applied to each component word.
+        <para> In the following cases, a compound word should <emphasis>always</emphasis> be broken
+            down into its components and the appropriate lemma applied to each component word. <itemizedlist>
+                <listitem>
+                    <para>Crasis.</para>
+                </listitem>
+                <listitem>
+                    <para>Any combination of another word with <link linkend="ἄν">ἄν</link>.</para>
+                </listitem>
+                <listitem>
+                    <para>Clusters of <link linkend="CL">CLPRT</link>, e.g., μέντοι.</para>
+                </listitem>
+                <listitem>
+                    <para>Clusters of adverbials with <link linkend="CL">CLPRT</link>, e.g.,
+                        ὥσπερ).</para>
+                </listitem>
+                <listitem>
+                    <para><link linkend="ὅστις">ὅστις</link> when case is doubly-marked (e.g., ὅστις
+                        and ὅντινα) but not when case is only singly-marked (e.g., ὅτις and
+                        ὅτου).</para>
+                </listitem>
+            </itemizedlist>
         </para>
     </sect1>
     <sect1 xml:id="never_split">
         <title>Situations that <emphasis>never</emphasis> result in splitting</title>
-        <para></para>
+        <para>In the following cases, a compound word should <emphasis>never</emphasis> be broken
+            down into its components. <itemizedlist>
+                <listitem>
+                    <para>Clusters of <link linkend="CONJ_CLTE">CONJ</link> and <link linkend="CL"
+                            >CLPRT</link></para>
+                </listitem>
+                <listitem>
+                    <para>Compound negatives of any type.</para>
+                </listitem>
+                <listitem>
+                    <para>Compound reflexives.</para>
+                </listitem>
+                <listitem>
+                    <para><link linkend="ὅστις">ὅστις</link> when case is singly-marked (e.g., ὅτις
+                        and ὅτου) but not when case is only singly-marked (e.g., ὅστις and
+                        ὅντινα).</para>
+                </listitem>
+            </itemizedlist>
+        </para>
     </sect1>
 </chapter>

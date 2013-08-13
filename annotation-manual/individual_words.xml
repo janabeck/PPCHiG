@@ -227,6 +227,8 @@
             <glossterm>*ἑαυτός</glossterm>
             <glossdef>
                 <para> tagged PRO*+SLF; no nominative </para>
+                <para> never split into component words; see <link linkend="splitting_words"
+                        >splitting words</link> for details </para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="εἰ">
@@ -470,7 +472,7 @@
         <glossentry xml:id="ἵνατί">
             <glossterm>ἵνατί</glossterm>
             <glossdef>
-                <para> tagged WADV+CLQA </para>
+                <para> tagged C+CLQA; never split into component parts </para>
             </glossdef>
         </glossentry>
     </glossdiv>
@@ -485,10 +487,11 @@
         <glossentry xml:id="κἀγώ">
             <glossterm>κἀγώ</glossterm>
             <glossdef>
-                <para> crasis for καὶ ἐγώ; split into two words suffixed and prefixed with @:
+                <para> crasis for καὶ ἐγώ; split into two words (see <link linkend="splitting_words"
+                        >splitting words</link> for details) suffixed and prefixed with @:
                     <programlisting>
-(NODE (CONJ κἀ@)
-      (PRO @γώ))
+(NODE (CONJ κἀ@-καί)
+      (PRO @γώ-ἐγώ))
                     </programlisting>
                 </para>
             </glossdef>
@@ -565,7 +568,7 @@
         <glossentry xml:id="καίτοι">
             <glossterm>καίτοι</glossterm>
             <glossdef>
-                <para> lemma καί-τοι; tagged CONJ-CLPRT </para>
+                <para> tagged CONJ+CLPRT </para>
             </glossdef>
         </glossentry>
     </glossdiv>
@@ -828,12 +831,16 @@
             <glossterm>ὅστις</glossterm>
             <glossdef>
                 <para> tagged WPRO+CLQ </para>
+                <para> split into two words when case is doubly-marked but not when case is
+                    singly-marked; see <link linkend="splitting_words">splitting words</link> for
+                    details </para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="ὅταν">
             <glossterm>ὅταν</glossterm>
             <glossdef>
-                <para> tagged C+AN </para>
+                <para> split into components and tagged C, AN respectively; see <link
+                        linkend="splitting_words">splitting words</link> for details </para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="ὅτε">
@@ -924,7 +931,7 @@
         <glossentry xml:id="οὐκοῦν">
             <glossterm>οὐκοῦν</glossterm>
             <glossdef>
-                <para> usually tagged CLPRT, but tagged as PRTQ in a question </para>
+                <para> usually tagged NEG+CLPRT, but tagged as PRTQ in a question </para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="οὖν">
@@ -1154,7 +1161,8 @@
         <glossentry xml:id="τοίνυν">
             <glossterm>τοίνυν</glossterm>
             <glossdef>
-                <para> lemma τοί-νυν; tagged CLPRT-CLPRT </para>
+                <para> split into components and tagged CLPRT, CLPRT respectively; see <link
+                        linkend="splitting_words">splitting words</link> for details </para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="τοσοῦτος">
@@ -1297,6 +1305,12 @@
             <glossterm>ὡσαννά</glossterm>
             <glossdef>
                 <para> tagged INTJ </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="ὥστε">
+            <glossterm>ὥστε</glossterm>
+            <glossdef>
+                <para> tagged C+CLTE; never split into component parts </para>
             </glossdef>
         </glossentry>
     </glossdiv>
