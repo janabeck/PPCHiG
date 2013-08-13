@@ -4591,7 +4591,7 @@ License: This treebank file is built from the Perseus Digital Library's (website
 
 ( (CP-QUE-SPE (CODE {VS:7_9})
 	      (CONJ ἢ-ἤ)
-	      (WNP-1 (W-DAT τίς-τίς)
+	      (WNP-1 (WPRO-NOM τίς-τίς)
 		     (WPP (WP ἐξ-ἐκ)
 			  (WNP (PRO-GEN ὑμῶν-ὑμεῖς)))
 		     (N-NOM ἄνθρωπος-ἄνθρωπος)
