@@ -154,7 +154,7 @@ function customCommands(){
     //addCommand({ keycode: 89 }, ); // y
 
     addCommand({ keycode: 32 }, clearSelection); // spacebar
-    addCommand({ keycode: 192 }, toggleLemmata); // `
+    addCommand({ keycode: 220 }, toggleLemmata); // \
 
 }
 

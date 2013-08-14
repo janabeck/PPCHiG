@@ -20,7 +20,7 @@
    `shift`    `d`  toggleCase
     `ctrl`    `d`  NUMP
               `e`  NP-within-NP shortcuts
-   `shift`    `e`  NP, NY
+   `shift`    `e`  NP, NX, NY
     `ctrl`    `e`  nextTree
               `f`  PP
    `shift`    `f`  -FUT
@@ -47,13 +47,15 @@
    `shift`    `x`  XP
     `ctrl`    `x`  -XXX
               `z`  undo
-   `shift`    `z`  splitWord
+   `shift`    `z`  fixError
+    `ctrl`    `z`  nextValidationError
 
 ### Number Commands
    modifier   key  shortcut
   ---------- ----- --------------------------------------------
               `1`  leafBefore
               `2`  leafAfter
+   `shift`    `2`  splitWord
               `3`  non-argument NP shortcuts
    `shift`    `3`  addTodo
     `ctrl`    `3`  addMan
@@ -64,14 +66,21 @@
 
 ### Letter Commands
 
-  modifier   key           shortcut
+   modifier   key  shortcut
   ---------- ----- ------------------------
-             `i`            -IMPF
-  `shift`    `i`             -IND
-             `k`             -KJV
-             `l`          edit lemma
-  `shift`    `l`    edit POS tag and lemma
-  `ctrl`     `l`             -LFD
-             `p`             -PRF
+             `i`   -IMPF
+  `shift`    `i`   -IND
+             `k`   -KJV
+             `l`   edit lemma
+  `shift`    `l`   edit POS tag and lemma
+  `ctrl`     `l`   -LFD
+             `m`   -PSTV
+             `n`   -PRV
+             `p`   -PRF
 
+## Symbol Commands
 
+   modifier      key     shortcut
+  ---------- ----------- ------------------------
+             `SPACEBAR`  clearSelection
+             `\`         toggleLemmata
