@@ -10,7 +10,7 @@ or
 ( (VERISON (FORMAT deep)))
 ```
 
-All corpus output files are named with your original filename plus `.new`--e.g., `Test.psd.new`.
+All corpus output files are named with your original filename plus `.new` (e.g., `Test.psd.new`).
 
 ```
 usage: corpus_reader.py [-h] [-s SETTINGS_PATH] [-c] [-i] [-m] [-p]
@@ -42,7 +42,7 @@ non_words = re.compile("dash|{|\*|0|Herodotus|GreekNT|@")
    
 + punctuation is recognized by POS tag:
 
-    - `,` `.` `'` `"` ` ` ` `LPAREN` `RPAREN`
+    - `,` `.` `'` `"` `` ` `` `LPAREN` `RPAREN`
 
     - If you have punctuation that is tagged otherwise, let me know so that I can potentially add it to the list of punctuation tags.
 
@@ -69,9 +69,11 @@ Corpus,Book:<milestones-separated-by-semicolons>.<#>
 
 `-t` to generate a speed report (in words-per-hour) from Annotald's timelog.txt
 
++ **NB:** This is no longer supported in the current version of Annotald, which no longer produces a timelog.txt.
+
 `-l` to open a dialog on the command line that will help you split any words that have compound POS tags (separated by `-` or `+`)
 
-+ If you have certain POS tags that contains `-` or `+` and are _always_ ineligible for splitting (e.g., words with dash tags to indicate case in some of the Penn-style corpora), you may name a variable `exclude` in a settings file that contains a regular expression for the tags to exclude.
++ If you have certain POS tags that contain `-` or `+` and are _always_ ineligible for splitting (e.g., words with dash tags to indicate case in some of the Penn-style corpora), you may name a variable `exclude` in a settings file that contains a regular expression for the tags to exclude.
 
 + You may also find it necessary to define (in the settings file) a variable `non_words` that contains a regular expression for non-words to exclude.
 
@@ -85,66 +87,66 @@ If you don't enter a command-line option, you will be presented with a menu of t
 
 a. Print a concordance of lemmas and POS tags in the corpus.
 
-    + output is two files
++ output is two files
     
-        - `pos_list.txt`, which lists all the unique POS tags in your corpus (abstracting away from movement indices if present)
+ - `pos_list.txt`, which lists all the unique POS tags in your corpus (abstracting away from movement indices if present)
     
-        - `pos_concordance.txt`, which lists (in an unsorted manner) all the lemmas that occur with each POS tag in the following format:
+ - `pos_concordance.txt`, which lists (in an unsorted manner) all the lemmas that occur with each POS tag in the following format:
 	  		       
-			       TAG1:
-			       lemma1 (frequency of lemma1)
-			       lemma2 (freqency of lemma2)
-			       etc.
+   TAG1:
+   lemma1 (frequency of lemma1)
+   lemma2 (freqency of lemma2)
+   etc.
 
-			       TAG2:
-			       lemma3 (frequency of lemma3)
-			       etc.
+   TAG2:
+   lemma3 (frequency of lemma3)
+   etc.
 
 b. Print a concordance of lemmas per category as defined in a input category definition file.
     
-    + input (on the command line after your .psd file name) is a text file containing the following information on each line:
++ input (on the command line after your .psd file name) is a text file containing the following information on each line:
 
-        - category-name: regular expression or list of POS tags separated by commas
-        - for example:
+ - category-name: regular expression or list of POS tags separated by commas
+ - for example:
 
-			```
-			noun: N, N$, NS, NS$
-			proper-noun: NPR*
-			```
+```
+noun: N, N$, NS, NS$
+proper-noun: NPR*
+```
 
-    + output is the file `category-concordance.txt`, in the following format:
++ output is the file `category-concordance.txt`, in the following format:
 
-			 category-name:
-			 lemma1 (frequency of lemma1)
-			 etc.
+category-name:
+lemma1 (frequency of lemma1)
+etc.
 
 c. Print all the unique lemmas (and their frequences) in a corpus file.
 
-    + output file is `unique-lemmas.txt` in the following format:
++ output file is `unique-lemmas.txt` in the following format:
 
-			lemma1: frequency-of-lemma-1
-			etc.
+lemma1: frequency-of-lemma-1
+etc.
 
-    + option to sort by frequency or alphabetically
++ option to sort by frequency or alphabetically
     
 d. Print a concordance of the word forms (and their frequencies) for the given lemma.
 
-    + give the lemma you're interested in on the command line after the name of your .psd file
++ give the lemma you're interested in on the command line after the name of your .psd file
 
-    + output is `<lemma>-concordance.txt` (where <lemma> is the lemma you entered) in the following format:
++ output is `<lemma>-concordance.txt` (where &lt;lemma&gt; is the lemma you entered) in the following format:
 
-			word-form1: frequency-of-word-form1
-			etc.
+word-form1: frequency-of-word-form1
+etc.
 
 e. Print the text (words, punctuation) of the corpus file.
 
-    + Extension is `.txt` instead of `.new`.
++ Extension is `.txt` instead of `.new`.
 
-    + Prints words and punctuation one-per-line.
++ Prints words and punctuation one-per-line.
 
 f. Print just the words of the corpus file.
 
-    + Extension is `.txt` instead of `.new`.
++ Extension is `.txt` instead of `.new`.
 
-    + Prints words one-per-line.
++ Prints words one-per-line.
 
