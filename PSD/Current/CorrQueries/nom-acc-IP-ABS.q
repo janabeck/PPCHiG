@@ -1,0 +1,5 @@
+node: $ROOT
+
+query: ({1}IP-ABS* iDoms NP-SBJ*) AND (NP-SBJ* iDoms CLPRO|N|NPR|NPRS|NS|PRO|WPRO|CLPROA|NA|NPRA|NPRSA|NSA|PROA|WPROA)
+
+add_internal_node{1}: FLAG
