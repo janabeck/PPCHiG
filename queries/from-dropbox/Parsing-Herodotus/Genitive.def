@@ -1,0 +1,10 @@
+adjective: ADJ$
+article: D$|DS$
+noun: N$|NS$
+pronoun: PRO$|CLPRO$
+nominal: PRO$|N$|NS$
+any: ADJ$|D$|DS$|N$|NS$|PRO$
+sa: D$
+pa: DS$
+sn: N$
+pn: NS$

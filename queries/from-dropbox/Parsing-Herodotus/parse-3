@@ -1,0 +1,60 @@
+#!/bin/bash
+
+CS="java -classpath $HOME/Dropbox/GK/CorpusSearch/CS_2.002.69.jar csearch/CorpusSearch"
+
+AB="$HOME/Dropbox/GK/HDT/add-blurb"
+
+RB="$HOME/Dropbox/GK/HDT/remove-blurb"
+
+FILE=$1
+
+cp -f $FILE $FILE.bk3
+
+mv $FILE.bk3 $FILE.bk/
+
+# adds WNP around WPRO*
+
+$CS wnp.q $FILE
+mv -f $FILE.out $FILE
+
+# adds WPP around P preceding WNP
+
+$CS wpp.q $FILE
+mv -f $FILE.out $FILE
+
+# adds WPP around P following WNP
+
+$CS wpp-postpos.q $FILE
+mv -f $FILE.out $FILE
+
+# adds CP-IR around any WNP or WPP
+
+$CS cp-ir.q $FILE
+mv -f $FILE.out $FILE
+
+# adds CP-XXX around any Cs
+
+$CS cp-xxx.q $FILE
+mv -f $FILE.out $FILE
+
+# adds NP-XXX around floating articles
+
+$CS float-articles.q $FILE
+mv -f $FILE.out $FILE
+
+# adds IP-INF around all infinitives
+
+$CS ip-inf.q $FILE
+mv -f $FILE.out $FILE
+
+$AB $FILE
+
+echo "Now you can parse!"
+
+echo ""
+
+echo "Press RETURN to continue."
+
+read nothing
+
+$RB $FILE

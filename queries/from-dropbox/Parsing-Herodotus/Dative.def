@@ -1,0 +1,10 @@
+adjective: ADJD
+article: DD|DSD
+noun: ND|NSD
+pronoun: PROD|CLPROD
+nominal: PROD|ND|NSD
+any: ADJD|DD|DSD|ND|NSD|PROD
+sa: DD
+pa: DSD
+sn: ND
+pn: NSD

@@ -1,0 +1,97 @@
+#!/bin/bash
+
+CS="java -classpath $HOME/Dropbox/GK/CorpusSearch/CS_2.003.jar csearch/CorpusSearch"
+
+AB="$HOME/Dropbox/GK/HDT/add-blurb"
+
+RB="$HOME/Dropbox/GK/HDT/remove-blurb"
+
+FILE=$1
+
+cp -f $FILE $FILE.bk1
+
+mkdir $FILE.bk
+
+mv $FILE.bk1 $FILE.bk/
+
+echo "Remember to fix all X POS tags before you start!"
+
+echo ""
+
+echo "Press RETURN to continue."
+
+read nothing
+
+# change token-initial CONJ to CONJ0 so that it won't get a CONJP later
+
+$CS conj0.q $FILE
+mv -f $FILE.out $FILE
+
+# conjunction structures
+
+# adjective conjunction structures
+
+$CS adj-conj-adj.q $FILE
+mv -f $FILE.out $FILE
+
+$CS adjg-conj-adjg.q $FILE
+mv -f $FILE.out $FILE
+
+$CS adjd-conj-adjd.q $FILE
+mv -f $FILE.out $FILE
+
+$CS adja-conj-adja.q $FILE
+mv -f $FILE.out $FILE
+
+# adverb conjunction structures
+
+$CS adv-conj-adv.q $FILE
+mv -f $FILE.out $FILE
+
+# pronoun conjunction structures
+
+$CS pro-conj-pro.q $FILE
+mv -f $FILE.out $FILE
+
+$CS prog-conj-prog.q $FILE
+mv -f $FILE.out $FILE
+
+$CS prod-conj-prod.q $FILE
+mv -f $FILE.out $FILE
+
+$CS proa-conj-proa.q $FILE
+mv -f $FILE.out $FILE
+
+# noun conjunction structures...these seem to cause some problems when there is a long list of nouns connected by 'and'
+
+$CS n-conj-n.q $FILE
+mv -f $FILE.out $FILE
+
+$CS ng-conj-ng.q $FILE
+mv -f $FILE.out $FILE
+
+$CS nd-conj-nd.q $FILE
+mv -f $FILE.out $FILE
+
+$CS na-conj-na.q $FILE
+mv -f $FILE.out $FILE
+
+# put two NUMs in a row into a NUMP
+
+$CS num-num.q $FILE
+mv -f $FILE.out $FILE
+
+$CS num-conj-num.q $FILE
+mv -f $FILE.out $FILE
+
+$AB $FILE
+
+echo "Now go through and look for all ADJPs, NPs, ADVPs, and NUMPs. Fix any that are incorrect."
+
+echo ""
+
+echo "Press RETURN to continue."
+
+read nothing
+
+$RB $FILE

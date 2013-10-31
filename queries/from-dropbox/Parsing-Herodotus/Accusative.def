@@ -1,0 +1,10 @@
+adjective: ADJA
+article: DA|DSA
+noun: ND|NSA
+pronoun: PROA|CLPROA
+nominal: PROA|NA|NSA
+any: ADJA|DA|DSA|NA|NSA|PROA
+sa: DA
+pa: DSA
+sn: NA
+pn: NSA

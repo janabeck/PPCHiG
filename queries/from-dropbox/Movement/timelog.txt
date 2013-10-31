@@ -1,0 +1,2 @@
+both.out: Started at 2012-07-23T10:29:41.033637.
+both.out: Stopped at 2012-07-23T10:29:55.519800.
