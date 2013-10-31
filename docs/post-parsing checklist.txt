@@ -1,0 +1,13 @@
+0   run Corpus Reader -m, then -i to fix milestones and IDs
+
+1   in Annotald:
+    - sanity (search for FLAG and review)
+    - CP without C
+    - missing subject
+    - infinitive on a finite spine
+    - multiple subjects
+    - middle and passive verbs
+
+2   in Queries/Movement/: see “[PPCHiG] how to check movement.txt”
+
+3   run .../Queries/Maintenance/tagged.q to removed TAGGED nodes from middle and passive verbs query

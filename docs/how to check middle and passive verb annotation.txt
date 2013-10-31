@@ -1,0 +1,21 @@
+1   Run find-mid-pass.q query with Corpus Search. This inserts a FLAG leaf before every mid/pass verbal form that doesn’t already have a transitivity tag.
+
+2   Run exclude-pass.q on find-mid-pass.out to delete FLAG leaf before every mid/pass verbal form that’s already been marked as passive.
+        ⁃   rename find-mid-pass.out.out to current.out
+        
+3   Run exclude-np-objs.q on current.out to delete FLAG leaf before every mid/pass verbal form that has NP-OB1, -OBQ, or -OBP as sister. Also adds -TRNS1 to mid/pass verbal form’s tag.
+        ⁃   rename current.out.out to current.out
+        
+4   Run exclude-coms.q on current.out to delete FLAG leaf before every mid/pass verbal form that has some other non-object type of complement as sister. Also adds -TRNS2 to mid/pass verbal form’s tag.
+        ⁃   rename current.out.out to current.out
+        
+5   Run intrans-by-lemma.q on current.out to delete FLAG leaf before every mid/pass verbal form that has a lemma that is exclusively intransitive. Also adds -INTRNS to mid/pass verbal form’s tag. Current list of always-intransitive lemmas:
+        ⁃   γίνομαι
+        ⁃   κατάκειμαι
+        ⁃   ἔρχομαι
+        ⁃   πορεύομαι
+        ⁃   κεῖμαι
+        ⁃   καθέζομαι
+        ⁃   κάθημαι
+        
+6   Rename current.out.out to current.out. Run find-flag.q to extract only tokens containing a FLAG. Go through flagged tokens (in find-flag.out) to add transitivity dash tags where necessary.

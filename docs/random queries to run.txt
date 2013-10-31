@@ -1,0 +1,19 @@
+◦   query for CP-QUEs with (. ;-;) as sister and move punctuation into question
+◦   query for all non-nominative personal pronouns to check that clitics are labeled properly
+◦   query to check that in every case of word-level movement, the same POS tag appears on the trace and the word (modulo -CL tag)
+◦   query for all -ἀλλήλων in the GNT and HDT and mark with -RCP if not already
+◦   query for all BE* and add -CL where appropriate
+◦   all extraposed appositives should only have -PRN tag on the trace, not in the extraposed location, as is normal for all function tags with *ICH* movement
+◦   query for CP-ADV with C = ὡς, etc.   subj. in IP-SUB to find possible purpose clauses and assess for scope and whether should get PRP tag
+◦   fix non-clitic forms of νῦν getting CLPRT in HDT
+◦   perhaps query for all NPs dominating two Ns and add a -HD to mark the head of the phrase?
+◦   query for all tokens containing pro-drop_obj tag and make consistent whether mid./pass. examples get -INTRNS or -TRNS1
+◦   check to be sure only doing word-level leftward movement when phrase-level movement is impossible (because the word does constitute a full phrase on its own)
+◦   query for all instances of ἀντέχω and make sure complement is NP-OBP and not NP-OBQ (was listed on both lemma lists for a while)
+◦   standardize how adverbial accusatives such as πρῶτα and δευτέρα are treated...query for all labels that immediately dominate only ADJ-ACC and change label to ADVP
+◦   query for all ὅσος/τοσοῦτος to standardize treatment
+◦   query for all dative NP-ATRs (possibly just in copular sentences) to decide whether to treat all these consistently as NP-OB2s or not
+◦   query for all floated quantifiers and make movement traces (too hard to tell difference between movement and floating quantifiers in Greek)
+◦   ἄν should have default high attachment--not in IP-SUB unless it must be
+◦   make sure all WPRO have the proper lemma
+◦   review all χρέωνται--most probably VBPP-IMPF, not VBSP-IMPF

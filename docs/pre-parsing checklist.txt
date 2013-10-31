@@ -1,0 +1,15 @@
+1   run Corpus Reader with -m option to add continuity milestones
+
+2   run Corpus Reader with -i option to add/renumber IDs
+
+3   run Corpus Reader with correct-by-lemma function @done
+ 
+4   run PRO-to-CLPRO.q (in HDT/Current/RevQueries) @done
+
+5   run RCP.q (in HDT/Current/RevQueries) @done
+
+6   split words with pcr -l
+
+7   transform to case dash tags with ppcr
+
+8   run D-to-DEM.q and DS-to-DEMS.q (in HDT/Current/RevQueries)

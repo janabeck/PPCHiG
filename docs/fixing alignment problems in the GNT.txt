@@ -1,0 +1,4 @@
+1   fix alignment in PPCHiG/python-tools/align/my-gospels.wds and proiel-gospels.wds
+2   generate new aligned-gospels.wds by pasting together my-gospels.wds and proiel-gospels.wds
+3   re-run slipstream.py to generate new gospels-database.xml
+4   move new gospels-database.xml to morpheus/

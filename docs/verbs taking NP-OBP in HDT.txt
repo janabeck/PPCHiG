@@ -1,0 +1,106 @@
+ἀναφαίνω w/dat. ‘appear’
+ἀντέχω w/gen. ‘hold on by, cling to’
+ἀπαλλάσσω w/gen. ‘escape, depart from’
+ἀπείργω w/gen. ‘keep away from, debar from’
+ἀπέχω w/gen. ‘keep off, away from’
+ἀπόζω w/gen. ‘smell of’
+ἀποκλείω w/gen. ‘shut off from, cut off from’
+ἀποκρίνω w/gen. ‘distinguish from’
+ἀπολείπω w/gen. ‘be wanting of/in; be absent or distant from’
+ἀπολύω w/gen. ‘loose, release from’
+ἀποπαύω w/gen. ‘stop from, hinder from’
+ἀποπέμπω w/gen. ‘send away’
+ἀπορραίνω w/gen. ‘spirt out, shed about; sprinkle’
+ἐγκολάπτω w/dat. ‘carve on’
+ἐγκυρέω/ἐγκύρω w/dat. ‘light upon, meet with’
+ἐγχρίμπτω w/dat. ‘bring near to, approach’
+ἐκκλείω w/gen. ‘shut out, exclude from’
+ἐναγίζω w/dat. ‘offer sacrifice to the dead’
+ἐναγωνίζομαι w/dat. ‘compete in a contest with’
+ἐνδέω w/dat. ‘bind in/on’
+ἐνέχω w/dat. ‘be held, caught, entangled in’
+ἐνίστημι w/dat. ‘befall; put/place in’
+ἐνσκήπτω w/dat. ‘hurl/cast upon’
+ἐντυγχάνω w/dat. ‘light upon, fall in with, meet with’
+ἐξαμελέω w/gen. ‘be utterly careless of’
+ἐπαισχύνομαι w/dat. ‘be ashamed at/of’
+ἐπανίστημι w/dat. ‘rise up against, rise in insurrection against’
+ἐπαπειλέω w/dat. ‘threaten’
+ἐπαρκέω w/dat. ‘help, assist’
+ἔπειμι w/gen. ‘lie upon’
+ἐπελαύνω w/dat. ‘force (something upon someone)’
+ἐπέχω w/dat. ‘intend, purpose’
+ἐπιβαίνω w/gen. ‘set foot on, mount’
+ἐπιβάλλω w/dat. ‘lay on, impose’
+ἐπιβατεύω w/gen. ‘set one’s foot upon, occupy; usurp’
+ἐπιβουλεύω w/dat. ‘plot against, lay snares for; form designs upon, aim at’
+ἐπιγίγνομαι w/dat. ‘come after, befall’
+ἐπικαλέω w/dat. ‘summon, invite, invoke’
+ἐπικατασφάζω w/dat. ‘slay upon/over’
+ἐπικρατέω w/dat. ‘prevail (over)’
+ἐπιλαμβάνω w/gen. ‘lay hold of, get, obtain’
+ἐπιμελέομαι w/gen. ‘take care of, have charge or management of’
+ἐπιπνέω w/dat. ‘blow furiously on’
+ἐπίσταμαι w/dat. ‘stand by, appear to’
+ἐπιτίθημι w/dat. ‘set out (upon)’
+ἐπιτρέπω w/dat. ‘rely upon, leave to’
+ἐπιχειρέω w/dat. ‘attack’
+ἐπιφαίνω w/dat. ‘display, appear’
+ἐπιφέρω w/dat. ‘bring, put, lay upon; bring as a charge against’
+ἐπιφοιτάω w/dat. ‘visit’
+καθίστημι w/dat. ‘come into a certain state, become’
+καθυβρίζω w/dat. ‘insult’
+καταδικάζω w/gen. ‘condemn (someone, gen.) (to something, acc.)’
+καταλύω w/gen. ‘destroy’
+καταράομαι w/dat. ‘call down curses upon’
+μεταδίδωμι w/gen. ‘give part of, give a share of’
+μέτειμι w/gen. ‘have a share in or claim to’
+μετέχω w/gen. ‘partake of, enjoy a share of, share in, take part in’
+παραιρέω w/gen. ‘take away from beside, withdraw, remove’
+παραλαμβάνω w/gen. ‘receive from’
+παρατείνω w/dat. ‘stretch or lie beside or along’
+παραφορέω w/dat. ‘set before’
+παρεγγυάω w/dat. ‘hand over, entrust’
+πάρειμι w/dat. ‘be by or near, be present in or at’
+παρέχω w/dat. ‘produce, furnish’
+παρίστημι w/dat. ‘have come, be at hand, be present’
+παροράω w/dat. ‘see (acc.) in (dat.)’
+περιγίγνομαι w/gen. ‘be superior to others, prevail over’
+περιέχω w/gen. ‘cling to, be fond of (person or thing)’
+περιπίπτω w/dat. ‘fall in with, fall into’
+προέχω w/gen. ‘surpass, excel’
+προΐστημι w/gen. ‘be set over, be at the head of’
+προμηθέομαι w/gen. ‘take care beforehand, provide for’
+προοράω w/gen. ‘take thought or care, make provision for’
+προτίθημι w/gen. ‘set before’
+προσάγω w/dat. ‘bring to, move towards, apply’
+προσβάλλω w/dat. ‘assign to, procure for’
+προσδιαλέγομαι w/dat. ‘answer in conversation or disputation’
+πρόσειμι2 w/dat. ‘go to or towards, approach’
+προσεπικτάομαι w/dat. ‘gain, acquire besides/in addition’
+προσίστημι w/dat. ‘stand near to or by’
+προσήκω w/dat. ‘belong to’
+πρόσκειμαι w/dat. ‘be assigned to, fall to, belong to’
+προλαμβάνω w/gen. ‘be beforehand, anticipate, get the start of’
+προστάσσω w/dat. ‘appoint; command, order’
+προστίθημι w/dat. ‘give one's assent, agree’
+συγκαταγηράσκω w/dat. ‘grow old together with’
+συμβαίνω w/dat. ‘agree with’
+συμβάλλω w/dat. ‘come together; come to blows, engage’
+συμβουλεύω w/dat. ‘advise, counsel’
+συμμίγνυμι w/dat. ‘join forces’
+συμπέμπω w/dat. ‘send with’
+συμπίπτω w/dat. ‘fall upon, happen to’
+συμφέρω w/dat. ‘come to pass (for someone)’
+συνάπτω w/dat. ‘join together’
+συνδιαφέρω w/dat. ‘bear (along with somebody)’
+συνεκπλέω w/dat. ‘sail away (with)’
+συνεπελαφρύνω w/dat. ‘help to make light (something for someone)’
+συνοικέω w/dat. ‘live with’
+συντίθημι w/dat. ‘put together; agree on, conclude’
+ὑπερφρονέω w/dat. ‘be proud in or of a thing’
+ὑποδέχομαι w/dat. ‘receive (in)’
+ὑποτίθημι w/dat. ‘advise, admonish’
+ὑποχρίω w/dat. ‘besmear, annoint’
+ὑποχωρέω w/gen. ‘withdraw from’
+ψεύδω w/gen. ‘cheat, balk, disappoint (one of a thing)’

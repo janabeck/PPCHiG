@@ -1,0 +1,9 @@
+Queries in Dropbox/GK/Queries/Movement/
+
+1   Run the coding query find_movt.c on the corpus.
+2   Run the query both.q on find_movt.cod.
+    - Check movement in both.out and run CR with replace function if tokens were changed.
+3   Run the query right.q on find_movt.cod.
+    - Check movement in right.out and run CR with replace function if tokens were changed.
+4   Run the query left.q on find_movt.cod.
+    - Check movement in left.out and run CR with replace function if tokens were changed.
