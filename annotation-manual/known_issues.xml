@@ -3,5 +3,128 @@
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="known_issues">
     <title>Known Issues</title>
-    <para>Coming soon.</para>
+    <sect1 xml:id="corpus_state">
+        <title>State of the Corpora</title>
+        <para> As of November 1, 2013, the Penn Parsed Corpora of Historical Greek are no longer
+            being developed. This chapter gives the details of the state of the corpus and advice on
+            proceeding with the work to get the corpus into a state where it can be used&#8212;with
+            confidence&#8212;for research. </para>
+    </sect1>
+    <sect1>
+        <title>State of Each Corpus</title>
+        <para>
+            <itemizedlist>
+                <listitem>
+                    <para>Herodotus, <emphasis>Histories</emphasis>: Books 1-3 parsed, some TODOs on
+                        individual sentences remaining (indicated with (CODE {TODO:[...desc. of
+                        TODO]}) tags), but otherwise corrected and sanity-checked. </para>
+                    <para> Filenames: <itemizedlist>
+                            <listitem>
+                                <para>Book 1: Histories1.psd</para>
+                            </listitem>
+                            <listitem>
+                                <para>Book 2: Histories2.psd</para>
+                            </listitem>
+                            <listitem>
+                                <para>Book 3: Histories3.psd</para>
+                            </listitem>
+                        </itemizedlist>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>Greek New Testament: all parsed, in various states of correction</para>
+                    <para> Filenames and progress details: <itemizedlist>
+                            <listitem>
+                                <para> Matthew: Matthew.psd parsed, corrected and sanity-checked, no
+                                    TODOs remaining </para>
+                                <para> Mark: Mark.psd parsed, corrected and sanity-checked, no TODOs
+                                    remaining </para>
+                                <para> Luke: parsed, correction and sanity-checking following update
+                                    to new POS tags and update to parsing guidelines (see <xref
+                                        linkend="new_POS"/>) in progress, currrently working on file
+                                    LukeA.04.psd (in PSD/Luke; files were split using Aaron Ecay's
+                                    split_file.py for better loading in Annotald). </para>
+                                <para> John: parsed, correction and sanity-checking following update
+                                    to new POS tags and update to parsing guidelines (see <xref
+                                        linkend="new_POS"/>) not yet started.</para>
+                                <para> Acts and remaining books: parsed, not yet updated to <link
+                                        linkend="new_POS">new POS tags and parsing
+                                    guidelines</link></para>
+                            </listitem>
+                        </itemizedlist>
+                    </para>
+                </listitem>
+            </itemizedlist>
+        </para>
+    </sect1>
+    <sect1 xml:id="new_POS">
+        <title>New POS Tags (and Parsing Guidelines)</title>
+        <para>Since the Penn Parsed Corpora of Historical Greek were designed following the model of
+            the Penn Parsed Corpora of Historical English, at first the POS tags used mirrored the
+            English tags quite closely and&#8212;given the vast differences between English and
+            Greek&#8212;inappropriately. At a later stage, the corpora were switched to use an
+            expanded POS tagging and parsing scheme (as described, for the most part, in this
+            manual, although Matthew and Mark from the Greek New Testament and the first book of
+            Herodotus' <emphasis>Histories</emphasis> should be taken as the gold standard), but
+            this transition was not completed for the Gospels beyond Matthew and Mark, and from Acts
+            to the remainder of the New Testament, the corpus remains in the original, English-style
+            format.</para>
+        <sect2>
+            <title>To Be Revised</title>
+            <para> When revising the Greek New Testament corpus beyond Matthew and Mark, in general
+                the following things all need to be checked: <itemizedlist>
+                    <listitem>
+                        <para>add NP-ATR and NP-PAR where appropriate</para>
+                    </listitem>
+                    <listitem>
+                        <para>add NP-OBP and NP-OBQ where appropriate</para>
+                    </listitem>
+                    <listitem>
+                        <para>add -PASS where appropriate</para>
+                    </listitem>
+                    <listitem>
+                        <para>fix CP-CMPs where needed</para>
+                    </listitem>
+                    <listitem>
+                        <para>add -TAG dash tag to tag questions where appropriate</para>
+                    </listitem>
+                    <listitem>
+                        <para>fix movement (see "How to Check Movement" in docs/ directory of GitHub
+                            repo)</para>
+                    </listitem>
+                    <listitem>
+                        <para>syntactic and POS correction queries (see "GNT Correction Queries" in
+                            docs/ directory of GitHub repo)</para>
+                    </listitem>
+                    <listitem>
+                        <para>check that words are split correctly (in particular, find all cases of
+                            crasis and fix any cases where breathing marks are not in the first part
+                            of the split word)</para>
+                    </listitem>
+                    <listitem>
+                        <para>collect D lemmas from Matthew and Mark for D-to-DEM, etc.
+                            queries</para>
+                    </listitem>
+                    <listitem>
+                        <para>write and run Matthew and Mark D-to-DEM, etc. queries</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </sect2>
+    </sect1>
+    <sect1>
+        <title>Revisions to Herodotus</title>
+        <para> Some things should also be checked in Herodotus' <emphasis>Histories</emphasis>. <itemizedlist>
+                <listitem>
+                    <para>make sure all books of HDT have D vs. DEM distinction</para>
+                </listitem>
+                <listitem>
+                    <para>check that all clitic pronouns in HDT have CL* tags</para>
+                </listitem>
+                <listitem>
+                    <para>fix TODOs in HDT</para>
+                </listitem>
+            </itemizedlist>
+        </para>
+    </sect1>
 </chapter>

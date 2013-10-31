@@ -3,6 +3,12 @@
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="general_intro">
     <title>General Introduction</title>
+    <sect1 xml:id="state">
+        <title>Current State of the Project</title>
+        <para> As of November 1, 2013, the Penn Parsed Corpora of Historical Greek are <emphasis>no
+                longer being developed.</emphasis>
+        </para>
+    </sect1>
     <sect1 xml:id="philosophy_and_goals">
         <title>Philosophy and Goals</title>
         <para>
@@ -57,7 +63,7 @@
     <sect1 xml:id="file_formats">
         <title>File Formats</title>
         <para>At present, the corpus is only available in the default .psd format. However, in the
-            future (see <xref linkend="development"/>) we plan to release the corpus in three
+            future we plan to release the corpus in three
             different formats: <itemizedlist>
                 <listitem>
                     <para>part-of-speech (POS) tagged: .pos</para>

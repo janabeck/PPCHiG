@@ -42,7 +42,6 @@
 
     <part>
         <title>Planned Corpus Development and Known Issues</title>
-        <xi:include href="development.xml"/>
         <xi:include href="known_issues.xml"/>
     </part>
 

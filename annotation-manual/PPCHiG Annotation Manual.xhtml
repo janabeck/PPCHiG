@@ -29,14 +29,16 @@
                             <dt><span class="chapter"><a href="#general_intro">1. General
                                         Introduction</a></span></dt>
                             <dd><dl>
+                                    <dt><span class="sect1"><a href="#state">Current State of the
+                                                Project</a></span></dt>
                                     <dt><span class="sect1"><a href="#philosophy_and_goals"
                                                 >Philosophy and Goals</a></span></dt>
                                     <dt><span class="sect1"><a href="#file_formats">File
                                             Formats</a></span></dt>
                                     <dd><dl>
-                                            <dt><span class="sect2"><a href="#d0e77">Part-of-Speech
+                                            <dt><span class="sect2"><a href="#d0e83">Part-of-Speech
                                                   (POS) Tagged Files (.pos)</a></span></dt>
-                                            <dt><span class="sect2"><a href="#d0e82">Parsed Files
+                                            <dt><span class="sect2"><a href="#d0e88">Parsed Files
                                                   (.psd)</a></span></dt>
                                         </dl></dd>
                                     <dt><span class="sect1"><a href="#textual_markup">Textual
@@ -45,9 +47,9 @@
                             <dt><span class="chapter"><a href="#tags">2. List of Tags and Empty
                                         Categories</a></span></dt>
                             <dd><dl>
-                                    <dt><span class="sect1"><a href="#d0e116">Part-of-Speech (POS)
+                                    <dt><span class="sect1"><a href="#d0e122">Part-of-Speech (POS)
                                                 Tags</a></span></dt>
-                                    <dt><span class="sect1"><a href="#d0e932">Syntactic
+                                    <dt><span class="sect1"><a href="#d0e938">Syntactic
                                             Tags</a></span></dt>
                                 </dl></dd>
                             <dt><span class="chapter"><a href="#splitting_words">3. Splitting
@@ -187,7 +189,7 @@
                                                 Tags</a></span></dt>
                                 </dl></dd>
                         </dl></dd>
-                    <dt><span class="part"><a href="#d0e5048">II. Syntactic
+                    <dt><span class="part"><a href="#d0e5054">II. Syntactic
                         Annotation</a></span></dt>
                     <dd><dl>
                             <dt><span class="chapter"><a href="#syn_intro">5.
@@ -610,17 +612,25 @@
                                     <dt><span class="sect1"><a href="#tag">Tag</a></span></dt>
                                 </dl></dd>
                         </dl></dd>
-                    <dt><span class="part"><a href="#d0e9452">III. Planned Corpus Development and
+                    <dt><span class="part"><a href="#d0e9458">III. Planned Corpus Development and
                                 Known Issues</a></span></dt>
                     <dd><dl>
-                            <dt><span class="chapter"><a href="#development">14. Corpus
-                                        Development</a></span></dt>
-                            <dd><dl>
-                                    <dt><span class="sect1"><a href="#schedule">Tentative Corpus
-                                                Development Schedule</a></span></dt>
-                                </dl></dd>
-                            <dt><span class="chapter"><a href="#known_issues">15. Known
+                            <dt><span class="chapter"><a href="#known_issues">14. Known
                                     Issues</a></span></dt>
+                            <dd><dl>
+                                    <dt><span class="sect1"><a href="#corpus_state">State of the
+                                                Corpora</a></span></dt>
+                                    <dt><span class="sect1"><a href="#d0e9470">State of Each
+                                                Corpus</a></span></dt>
+                                    <dt><span class="sect1"><a href="#new_POS">New POS Tags (and
+                                                Parsing Guidelines)</a></span></dt>
+                                    <dd><dl>
+                                            <dt><span class="sect2"><a href="#d0e9528">To Be
+                                                  Revised</a></span></dt>
+                                        </dl></dd>
+                                    <dt><span class="sect1"><a href="#d0e9565">Revisions to
+                                                Herodotus</a></span></dt>
+                                </dl></dd>
                         </dl></dd>
                     <dt><span class="appendix"><a href="#appendix">A. Appendix</a></span></dt>
                     <dd><dl>
@@ -634,31 +644,31 @@
                                         Verbs</a></span></dt>
                         </dl></dd>
                 </dl></div><div class="list-of-tables"><p><strong>List of Tables</strong></p><dl>
-                    <dt>2.1. <a href="#d0e119">Legal POS Tags</a></dt>
-                    <dt>2.2. <a href="#d0e882">Extended Verbal Tags</a></dt>
-                    <dt>2.3. <a href="#d0e937">Basic Syntactic Tags</a></dt>
-                    <dt>2.4. <a href="#d0e1405">Dash Tags</a></dt>
-                    <dt>2.5. <a href="#d0e1802">Extended Dash Tags</a></dt>
-                    <dt>2.6. <a href="#d0e1855">Empty Categories</a></dt>
-                    <dt>4.1. <a href="#d0e3122">ADJ and ADV Tags</a></dt>
-                    <dt>4.2. <a href="#d0e3279">NUM Tags</a></dt>
-                    <dt>4.3. <a href="#d0e3359">CL Tags</a></dt>
-                    <dt>4.4. <a href="#d0e3533">C Tags</a></dt>
-                    <dt>4.5. <a href="#d0e3580">CONJ and CLTE Tags</a></dt>
-                    <dt>4.6. <a href="#d0e3668">D Tags</a></dt>
-                    <dt>4.7. <a href="#d0e3766">FW Tags</a></dt>
-                    <dt>4.8. <a href="#d0e3808">INTJ Tags</a></dt>
-                    <dt>4.9. <a href="#d0e3872">NEG Tags</a></dt>
-                    <dt>4.10. <a href="#d0e3960">Nominal Tags</a></dt>
-                    <dt>4.11. <a href="#d0e4208">Particle Tags</a></dt>
-                    <dt>4.12. <a href="#d0e4308">P Tags</a></dt>
-                    <dt>4.13. <a href="#d0e4354">Punctuation Tags</a></dt>
-                    <dt>4.14. <a href="#d0e4411">Q Tags</a></dt>
-                    <dt>4.15. <a href="#d0e4523">VB* and BE* Tags</a></dt>
+                    <dt>2.1. <a href="#d0e125">Legal POS Tags</a></dt>
+                    <dt>2.2. <a href="#d0e888">Extended Verbal Tags</a></dt>
+                    <dt>2.3. <a href="#d0e943">Basic Syntactic Tags</a></dt>
+                    <dt>2.4. <a href="#d0e1411">Dash Tags</a></dt>
+                    <dt>2.5. <a href="#d0e1808">Extended Dash Tags</a></dt>
+                    <dt>2.6. <a href="#d0e1861">Empty Categories</a></dt>
+                    <dt>4.1. <a href="#d0e3128">ADJ and ADV Tags</a></dt>
+                    <dt>4.2. <a href="#d0e3285">NUM Tags</a></dt>
+                    <dt>4.3. <a href="#d0e3365">CL Tags</a></dt>
+                    <dt>4.4. <a href="#d0e3539">C Tags</a></dt>
+                    <dt>4.5. <a href="#d0e3586">CONJ and CLTE Tags</a></dt>
+                    <dt>4.6. <a href="#d0e3674">D Tags</a></dt>
+                    <dt>4.7. <a href="#d0e3772">FW Tags</a></dt>
+                    <dt>4.8. <a href="#d0e3814">INTJ Tags</a></dt>
+                    <dt>4.9. <a href="#d0e3878">NEG Tags</a></dt>
+                    <dt>4.10. <a href="#d0e3966">Nominal Tags</a></dt>
+                    <dt>4.11. <a href="#d0e4214">Particle Tags</a></dt>
+                    <dt>4.12. <a href="#d0e4314">P Tags</a></dt>
+                    <dt>4.13. <a href="#d0e4360">Punctuation Tags</a></dt>
+                    <dt>4.14. <a href="#d0e4417">Q Tags</a></dt>
+                    <dt>4.15. <a href="#d0e4529">VB* and BE* Tags</a></dt>
                     <dt>4.16. <a href="#ext_verb_tags">Extended Verbal Dash Tags</a></dt>
-                    <dt>4.17. <a href="#d0e4841">W Tags</a></dt>
-                    <dt>5.1. <a href="#d0e5256">Common IP-Dash Tag Combinations</a></dt>
-                    <dt>5.2. <a href="#d0e5337">Common CP-Dash Tag Combinations</a></dt>
+                    <dt>4.17. <a href="#d0e4847">W Tags</a></dt>
+                    <dt>5.1. <a href="#d0e5262">Common IP-Dash Tag Combinations</a></dt>
+                    <dt>5.2. <a href="#d0e5343">Common CP-Dash Tag Combinations</a></dt>
                 </dl></div><div class="part" title="Part I. Introduction"><div class="titlepage"
                                 ><div><div><h1 class="title"><a id="d0e27"
                                 ></a>Part I. Introduction</h1></div></div></div><div class="toc"
@@ -666,14 +676,16 @@
                         <dt><span class="chapter"><a href="#general_intro">1. General
                                     Introduction</a></span></dt>
                         <dd><dl>
+                                <dt><span class="sect1"><a href="#state">Current State of the
+                                            Project</a></span></dt>
                                 <dt><span class="sect1"><a href="#philosophy_and_goals">Philosophy
                                             and Goals</a></span></dt>
                                 <dt><span class="sect1"><a href="#file_formats">File
                                         Formats</a></span></dt>
                                 <dd><dl>
-                                        <dt><span class="sect2"><a href="#d0e77">Part-of-Speech
+                                        <dt><span class="sect2"><a href="#d0e83">Part-of-Speech
                                                   (POS) Tagged Files (.pos)</a></span></dt>
-                                        <dt><span class="sect2"><a href="#d0e82">Parsed Files
+                                        <dt><span class="sect2"><a href="#d0e88">Parsed Files
                                                   (.psd)</a></span></dt>
                                     </dl></dd>
                                 <dt><span class="sect1"><a href="#textual_markup">Textual
@@ -682,9 +694,9 @@
                         <dt><span class="chapter"><a href="#tags">2. List of Tags and Empty
                                     Categories</a></span></dt>
                         <dd><dl>
-                                <dt><span class="sect1"><a href="#d0e116">Part-of-Speech (POS)
+                                <dt><span class="sect1"><a href="#d0e122">Part-of-Speech (POS)
                                             Tags</a></span></dt>
-                                <dt><span class="sect1"><a href="#d0e932">Syntactic
+                                <dt><span class="sect1"><a href="#d0e938">Syntactic
                                     Tags</a></span></dt>
                             </dl></dd>
                         <dt><span class="chapter"><a href="#splitting_words">3. Splitting
@@ -824,19 +836,27 @@
                         class="titlepage"><div><div><h2 class="title"><a id="general_intro"
                                     ></a>Chapter 1. General Introduction</h2></div></div></div><div
                         class="toc"><p><strong>Table of Contents</strong></p><dl>
+                            <dt><span class="sect1"><a href="#state">Current State of the
+                                        Project</a></span></dt>
                             <dt><span class="sect1"><a href="#philosophy_and_goals">Philosophy and
                                         Goals</a></span></dt>
                             <dt><span class="sect1"><a href="#file_formats">File
                                 Formats</a></span></dt>
                             <dd><dl>
-                                    <dt><span class="sect2"><a href="#d0e77">Part-of-Speech (POS)
+                                    <dt><span class="sect2"><a href="#d0e83">Part-of-Speech (POS)
                                                 Tagged Files (.pos)</a></span></dt>
-                                    <dt><span class="sect2"><a href="#d0e82">Parsed Files
+                                    <dt><span class="sect2"><a href="#d0e88">Parsed Files
                                             (.psd)</a></span></dt>
                                 </dl></dd>
                             <dt><span class="sect1"><a href="#textual_markup">Textual
                                     Markup</a></span></dt>
-                        </dl></div><div class="sect1" title="Philosophy and Goals"><div
+                        </dl></div><div class="sect1" title="Current State of the Project"><div
+                            class="titlepage"><div><div><h2 class="title" style="clear: both"><a
+                                            id="state"></a>Current State of the
+                                Project</h2></div></div></div><p> As of November 1, 2013, the Penn
+                            Parsed Corpora of Historical Greek are <span class="emphasis"><em>no
+                                    longer being developed.</em></span>
+                        </p></div><div class="sect1" title="Philosophy and Goals"><div
                             class="titlepage"><div><div><h2 class="title" style="clear: both"><a
                                             id="philosophy_and_goals"></a>Philosophy and
                                     Goals</h2></div></div></div><p> </p><div class="itemizedlist"
@@ -893,18 +913,15 @@
                             class="titlepage"><div><div><h2 class="title" style="clear: both"><a
                                             id="file_formats"></a>File
                             Formats</h2></div></div></div><p>At present, the corpus is only
-                            available in the default .psd format. However, in the future (see <a
-                                class="xref" href="#development"
-                                title="Chapter 14. Corpus Development">Chapter 14, <em>Corpus
-                                    Development</em></a>) we plan to release the corpus in three
-                            different formats: </p><div class="itemizedlist"><ul
-                                class="itemizedlist" type="disc">
+                            available in the default .psd format. However, in the future we plan to
+                            release the corpus in three different formats: </p><div
+                            class="itemizedlist"><ul class="itemizedlist" type="disc">
                                 <li class="listitem"><p>part-of-speech (POS) tagged: .pos</p></li>
                                 <li class="listitem"><p>parsed: .psd</p></li>
                                 <li class="listitem"><p>Common Treebank XML: .xml</p></li>
                             </ul></div><p> </p><div class="sect2"
                             title="Part-of-Speech (POS) Tagged Files (.pos)"><div class="titlepage"
-                                            ><div><div><h3 class="title"><a id="d0e77"
+                                            ><div><div><h3 class="title"><a id="d0e83"
                                             ></a>Part-of-Speech (POS) Tagged Files
                                     (.pos)</h3></div></div></div><p>Part-of-speech (POS) tagged
                                 texts have the extension .pos\index{files!.pos files}. They contain
@@ -914,7 +931,7 @@
                                 elements are separated from their POS tags by an underscore. The
                                 text is divided into tokens in the same way as in the text
                                 files.</p></div><div class="sect2" title="Parsed Files (.psd)"><div
-                                class="titlepage"><div><div><h3 class="title"><a id="d0e82"
+                                class="titlepage"><div><div><h3 class="title"><a id="d0e88"
                                             ></a>Parsed Files (.psd)</h3></div></div></div><p>Parsed
                                 files have the extension .psd. They contain a labeled bracketing of
                                 the text, with the first set of labeled parentheses around a word
@@ -975,13 +992,13 @@
                                     ><div><div><h2 class="title"><a id="tags"></a>Chapter 2. List of
                                     Tags and Empty Categories</h2></div></div></div><div class="toc"
                                 ><p><strong>Table of Contents</strong></p><dl>
-                            <dt><span class="sect1"><a href="#d0e116">Part-of-Speech (POS)
+                            <dt><span class="sect1"><a href="#d0e122">Part-of-Speech (POS)
                                     Tags</a></span></dt>
-                            <dt><span class="sect1"><a href="#d0e932">Syntactic Tags</a></span></dt>
+                            <dt><span class="sect1"><a href="#d0e938">Syntactic Tags</a></span></dt>
                         </dl></div><div class="sect1" title="Part-of-Speech (POS) Tags"><div
                             class="titlepage"><div><div><h2 class="title" style="clear: both"><a
-                                            id="d0e116"></a>Part-of-Speech (POS)
-                                Tags</h2></div></div></div><div class="table"><a id="d0e119"></a><p
+                                            id="d0e122"></a>Part-of-Speech (POS)
+                                Tags</h2></div></div></div><div class="table"><a id="d0e125"></a><p
                                 class="title"><strong>Table 2.1. Legal POS Tags</strong></p><div
                                 class="table-contents"><table summary="Legal POS Tags" border="1">
                                     <colgroup>
@@ -1682,7 +1699,7 @@
                                         </tr>
                                     </tbody>
                                 </table></div></div><br class="table-break" /><div class="table"><a
-                                id="d0e882"></a><p class="title"><strong>Table 2.2. Extended Verbal
+                                id="d0e888"></a><p class="title"><strong>Table 2.2. Extended Verbal
                                     Tags</strong></p><div class="table-contents"><table
                                     summary="Extended Verbal Tags" border="1">
                                     <colgroup>
@@ -1730,11 +1747,11 @@
                                     </tbody>
                                 </table></div></div><br class="table-break" /></div><div
                         class="sect1" title="Syntactic Tags"><div class="titlepage"><div><div><h2
-                                        class="title" style="clear: both"><a id="d0e932"
+                                        class="title" style="clear: both"><a id="d0e938"
                                         ></a>Syntactic Tags</h2></div></div></div><p>The contents of
                             the following table(s) are not exhausative but rather give the most
                             common combinations of basic, “dash,” and extended tags.</p><div
-                            class="table"><a id="d0e937"></a><p class="title"
+                            class="table"><a id="d0e943"></a><p class="title"
                                     ><strong>Table 2.3. Basic Syntactic Tags</strong></p><div
                                 class="table-contents"><table summary="Basic Syntactic Tags"
                                     border="1">
@@ -2174,7 +2191,7 @@
                                         </tr>
                                     </tbody>
                                 </table></div></div><br class="table-break" /><div class="table"><a
-                                id="d0e1405"></a><p class="title"><strong>Table 2.4. Dash
+                                id="d0e1411"></a><p class="title"><strong>Table 2.4. Dash
                                     Tags</strong></p><div class="table-contents"><table
                                     summary="Dash Tags" border="1">
                                     <colgroup>
@@ -2584,7 +2601,7 @@
                                         </tr>
                                     </tbody>
                                 </table></div></div><br class="table-break" /><div class="table"><a
-                                id="d0e1802"></a><p class="title"><strong>Table 2.5. Extended Dash
+                                id="d0e1808"></a><p class="title"><strong>Table 2.5. Extended Dash
                                     Tags</strong></p><div class="table-contents"><table
                                     summary="Extended Dash Tags" border="1">
                                     <colgroup>
@@ -2627,7 +2644,7 @@
                                         </tr>
                                     </tbody>
                                 </table></div></div><br class="table-break" /><div class="table"><a
-                                id="d0e1855"></a><p class="title"><strong>Table 2.6. Empty
+                                id="d0e1861"></a><p class="title"><strong>Table 2.6. Empty
                                     Categories</strong></p><div class="table-contents"><table
                                     summary="Empty Categories" border="1">
                                     <colgroup>
@@ -3655,7 +3672,7 @@
                         </dl></div><div class="sect1" title="Adjectives and Adverbs (ADJ, ADV)"><div
                             class="titlepage"><div><div><h2 class="title" style="clear: both"><a
                                             id="ADJ_ADV"></a>Adjectives and Adverbs (ADJ,
-                                    ADV)</h2></div></div></div><div class="table"><a id="d0e3122"
+                                    ADV)</h2></div></div></div><div class="table"><a id="d0e3128"
                                 ></a><p class="title"><strong>Table 4.1. ADJ and ADV
                                 Tags</strong></p><div class="table-contents"><table
                                     summary="ADJ and ADV Tags" border="1">
@@ -3782,7 +3799,7 @@
                         title="Cardinal Numbers (NUM)"><div class="titlepage"><div><div><h2
                                         class="title" style="clear: both"><a id="NUM"></a>Cardinal
                                         Numbers (NUM)</h2></div></div></div><div class="table"><a
-                                id="d0e3279"></a><p class="title"><strong>Table 4.2. NUM
+                                id="d0e3285"></a><p class="title"><strong>Table 4.2. NUM
                                     Tags</strong></p><div class="table-contents"><table
                                     summary="NUM Tags" border="1">
                                     <colgroup>
@@ -3836,7 +3853,7 @@
                                 </ul></div></div></div><div class="sect1" title="Clitics (CL)"><div
                             class="titlepage"><div><div><h2 class="title" style="clear: both"><a
                                             id="CL"></a>Clitics (CL)</h2></div></div></div><div
-                            class="table"><a id="d0e3359"></a><p class="title"><strong>Table 4.3. CL
+                            class="table"><a id="d0e3365"></a><p class="title"><strong>Table 4.3. CL
                                     Tags</strong></p><div class="table-contents"><table
                                     summary="CL Tags" border="1">
                                     <colgroup>
@@ -3964,7 +3981,7 @@
                         title="Complementizers (C)"><div class="titlepage"><div><div><h2
                                         class="title" style="clear: both"><a id="C"
                                         ></a>Complementizers (C)</h2></div></div></div><div
-                            class="table"><a id="d0e3533"></a><p class="title"><strong>Table 4.4. C
+                            class="table"><a id="d0e3539"></a><p class="title"><strong>Table 4.4. C
                                     Tags</strong></p><div class="table-contents"><table
                                     summary="C Tags" border="1">
                                     <colgroup>
@@ -4005,7 +4022,7 @@
                                         ><div><div><h2 class="title" style="clear: both"><a
                                             id="CONJ_CLTE"></a>Coordinating Conjunctions (CONJ,
                                         CLTE)</h2></div></div></div><div class="table"><a
-                                id="d0e3580"></a><p class="title"><strong>Table 4.5. CONJ and CLTE
+                                id="d0e3586"></a><p class="title"><strong>Table 4.5. CONJ and CLTE
                                     Tags</strong></p><div class="table-contents"><table
                                     summary="CONJ and CLTE Tags" border="1">
                                     <colgroup>
@@ -4078,7 +4095,7 @@
                         title="Determiners and Demonstratives (D)"><div class="titlepage"
                                         ><div><div><h2 class="title" style="clear: both"><a id="D"
                                         ></a>Determiners and Demonstratives
-                            (D)</h2></div></div></div><div class="table"><a id="d0e3668"></a><p
+                            (D)</h2></div></div></div><div class="table"><a id="d0e3674"></a><p
                                 class="title"><strong>Table 4.6. D Tags</strong></p><div
                                 class="table-contents"><table summary="D Tags" border="1">
                                     <colgroup>
@@ -4203,7 +4220,7 @@
                                 </ul></div></div></div><div class="sect1" title="Foreign Words (FW)"
                             ><div class="titlepage"><div><div><h2 class="title" style="clear: both"
                                             ><a id="FW"></a>Foreign Words
-                            (FW)</h2></div></div></div><div class="table"><a id="d0e3766"></a><p
+                            (FW)</h2></div></div></div><div class="table"><a id="d0e3772"></a><p
                                 class="title"><strong>Table 4.7. FW Tags</strong></p><div
                                 class="table-contents"><table summary="FW Tags" border="1">
                                     <colgroup>
@@ -4227,8 +4244,8 @@
                                                 id="FW_notes"></a>Notes</h3></div></div></div><div
                                 class="itemizedlist"><ul class="itemizedlist" type="disc">
                                     <li class="listitem"><p> If a potential foreign word has an
-                                            entry in the LSJ<sup>[<a id="d0e3789"
-                                                  href="#ftn.d0e3789" class="footnote">1</a>]</sup>,
+                                            entry in the LSJ<sup>[<a id="d0e3795"
+                                                  href="#ftn.d0e3795" class="footnote">1</a>]</sup>,
                                             it is not tagged as FW. This is true even for nouns that
                                             retain a foreign plural. </p></li>
                                     <li class="listitem"><p> Foreign names are treated as nouns.
@@ -4242,7 +4259,7 @@
                         title="Interjections (INTJ)"><div class="titlepage"><div><div><h2
                                         class="title" style="clear: both"><a id="INTJ"
                                         ></a>Interjections (INTJ)</h2></div></div></div><div
-                            class="table"><a id="d0e3808"></a><p class="title"
+                            class="table"><a id="d0e3814"></a><p class="title"
                                     ><strong>Table 4.8. INTJ Tags</strong></p><div
                                 class="table-contents"><table summary="INTJ Tags" border="1">
                                     <colgroup>
@@ -4300,7 +4317,7 @@
                                 </ul></div></div></div><div class="sect1" title="Negation (NEG)"
                             ><div class="titlepage"><div><div><h2 class="title" style="clear: both"
                                             ><a id="NEG"></a>Negation
-                            (NEG)</h2></div></div></div><div class="table"><a id="d0e3872"></a><p
+                            (NEG)</h2></div></div></div><div class="table"><a id="d0e3878"></a><p
                                 class="title"><strong>Table 4.9. NEG Tags</strong></p><div
                                 class="table-contents"><table summary="NEG Tags" border="1">
                                     <colgroup>
@@ -4378,7 +4395,7 @@
                         title="Nominals (N, PRO, CLPRO)"><div class="titlepage"><div><div><h2
                                         class="title" style="clear: both"><a id="nominals"
                                         ></a>Nominals (N, PRO, CLPRO)</h2></div></div></div><div
-                            class="table"><a id="d0e3960"></a><p class="title"
+                            class="table"><a id="d0e3966"></a><p class="title"
                                     ><strong>Table 4.10. Nominal Tags</strong></p><div
                                 class="table-contents"><table summary="Nominal Tags" border="1">
                                     <colgroup>
@@ -4600,7 +4617,7 @@
                             ><div class="titlepage"><div><div><h2 class="title" style="clear: both"
                                             ><a id="particles"></a>Particles (CLPRT, AN, KE, PRTQ,
                                         CLGE)</h2></div></div></div><div class="table"><a
-                                id="d0e4208"></a><p class="title"><strong>Table 4.11. Particle
+                                id="d0e4214"></a><p class="title"><strong>Table 4.11. Particle
                                     Tags</strong></p><div class="table-contents"><table
                                     summary="Particle Tags" border="1">
                                     <colgroup>
@@ -4678,7 +4695,7 @@
                                 </ul></div></div></div><div class="sect1" title="Prepositions (P)"
                             ><div class="titlepage"><div><div><h2 class="title" style="clear: both"
                                             ><a id="P"></a>Prepositions
-                            (P)</h2></div></div></div><div class="table"><a id="d0e4308"></a><p
+                            (P)</h2></div></div></div><div class="table"><a id="d0e4314"></a><p
                                 class="title"><strong>Table 4.12. P Tags</strong></p><div
                                 class="table-contents"><table summary="P Tags" border="1">
                                     <colgroup>
@@ -4729,7 +4746,7 @@
                             class="titlepage"><div><div><h2 class="title" style="clear: both"><a
                                             id="punctuation"
                             ></a>Punctuation</h2></div></div></div><div class="table"><a
-                                id="d0e4354"></a><p class="title"><strong>Table 4.13. Punctuation
+                                id="d0e4360"></a><p class="title"><strong>Table 4.13. Punctuation
                                     Tags</strong></p><div class="table-contents"><table
                                     summary="Punctuation Tags" border="1">
                                     <colgroup>
@@ -4792,7 +4809,7 @@
                                 </ul></div></div></div><div class="sect1" title="Quantifiers (Q)"
                             ><div class="titlepage"><div><div><h2 class="title" style="clear: both"
                                             ><a id="Q"></a>Quantifiers
-                            (Q)</h2></div></div></div><div class="table"><a id="d0e4411"></a><p
+                            (Q)</h2></div></div></div><div class="table"><a id="d0e4417"></a><p
                                 class="title"><strong>Table 4.14. Q Tags</strong></p><div
                                 class="table-contents"><table summary="Q Tags" border="1">
                                     <colgroup>
@@ -4874,7 +4891,7 @@
                                 “Complementizers (C)”</a>. </p></div><div class="sect1"
                         title="Verbs (VB*, BE*)"><div class="titlepage"><div><div><h2 class="title"
                                         style="clear: both"><a id="VB_BE"></a>Verbs (VB*,
-                                    BE*)</h2></div></div></div><div class="table"><a id="d0e4523"
+                                    BE*)</h2></div></div></div><div class="table"><a id="d0e4529"
                                 ></a><p class="title"><strong>Table 4.15. VB* and BE*
                                 Tags</strong></p><div class="table-contents"><table
                                     summary="VB* and BE* Tags" border="1">
@@ -5307,7 +5324,7 @@
                                 </ul></div></div></div><div class="sect1" title="Wh- Words (W)"><div
                             class="titlepage"><div><div><h2 class="title" style="clear: both"><a
                                             id="W"></a>Wh- Words (W)</h2></div></div></div><div
-                            class="table"><a id="d0e4841"></a><p class="title"><strong>Table 4.17. W
+                            class="table"><a id="d0e4847"></a><p class="title"><strong>Table 4.17. W
                                     Tags</strong></p><div class="table-contents"><table
                                     summary="W Tags" border="1">
                                     <colgroup>
@@ -5487,14 +5504,14 @@
                                             title="Compound NEG Tags">the section called “Compound
                                             NEG Tags”</a>. </p></li>
                             </ul></div><p> </p></div><div class="footnotes"><br /><hr width="100"
-                            align="left" /><div class="footnote"><p><sup>[<a id="ftn.d0e3789"
-                                        href="#d0e3789" class="para">1</a>] </sup>Henry George
+                            align="left" /><div class="footnote"><p><sup>[<a id="ftn.d0e3795"
+                                        href="#d0e3795" class="para">1</a>] </sup>Henry George
                                 Liddell and Robert Scott. <span class="emphasis"><em>A Greek-English
                                         Lexicon</em></span>. Revised and augmented throughout by Sir
                                 Henry Stuart Jones with the assistance of Roderick McKenzie. Oxford.
                                 Clarendon Press. 1940.</p></div></div></div></div><div class="part"
                 title="Part II. Syntactic Annotation"><div class="titlepage"><div><div><h1
-                                class="title"><a id="d0e5048"></a>Part II. Syntactic
+                                class="title"><a id="d0e5054"></a>Part II. Syntactic
                             Annotation</h1></div></div></div><div class="toc"><p><strong>Table of
                             Contents</strong></p><dl>
                         <dt><span class="chapter"><a href="#syn_intro">5.
@@ -6336,7 +6353,7 @@
                             Clauses are labeled either CP or IP. CPs contain either a complementizer
                             or a wh- position (or both). IPs contain neither. All IPs and CPs carry
                             dash tags indicating their subtype, as follows. </p><div class="table"
-                                ><a id="d0e5256"></a><p class="title"><strong>Table 5.1. Common
+                                ><a id="d0e5262"></a><p class="title"><strong>Table 5.1. Common
                                     IP-Dash Tag Combinations</strong></p><div class="table-contents"
                                     ><table summary="Common IP-Dash Tag Combinations" border="1">
                                     <colgroup>
@@ -6408,7 +6425,7 @@
                                         </tr>
                                     </tbody>
                                 </table></div></div><br class="table-break" /><div class="table"><a
-                                id="d0e5337"></a><p class="title"><strong>Table 5.2. Common CP-Dash
+                                id="d0e5343"></a><p class="title"><strong>Table 5.2. Common CP-Dash
                                     Tag Combinations</strong></p><div class="table-contents"><table
                                     summary="Common CP-Dash Tag Combinations" border="1">
                                     <colgroup>
@@ -7376,7 +7393,7 @@ Whereupon joy reigned unconfined ._.
                                             <span class="emphasis"><em>NP complements of
                                                 N.</em></span> NP complements of nouns are labeled
                                             NP-COM. In the traditional terms of Greek
-                                                  grammar<sup>[<a id="d0e5926" href="#ftn.d0e5926"
+                                                  grammar<sup>[<a id="d0e5932" href="#ftn.d0e5932"
                                                   class="footnote">2</a>]</sup>, these NP
                                             complements, most often in the genitive case, are
                                             objective genitives.
@@ -8022,7 +8039,7 @@ Whereupon joy reigned unconfined ._.
                                     href="#SPE" title="Direct Speech">the section called “Direct
                                     Speech”</a>. </p></div></div><div class="footnotes"><br /><hr
                             width="100" align="left" /><div class="footnote"><p><sup>[<a
-                                        id="ftn.d0e5926" href="#d0e5926" class="para">2</a>]
+                                        id="ftn.d0e5932" href="#d0e5932" class="para">2</a>]
                                 </sup>See the Appendix (pp. 694-703) in Hansen and Quinn’s <span
                                     class="emphasis"><em>Greek: An Intensive Course</em></span> for
                                 descriptions of these terms.</p></div></div></div><div
@@ -10378,7 +10395,7 @@ Whereupon joy reigned unconfined ._.
                                 In most cases if trying to decide between <a class="link"
                                     href="#NP-ADT" title="Non-Argument (Adjunct) NP">NP-ADT</a> and
                                 NP-ADV, the choice will be NP-ADV. In the traditional terms of Greek
-                                        grammar<sup>[<a id="d0e7472" href="#ftn.d0e7472"
+                                        grammar<sup>[<a id="d0e7478" href="#ftn.d0e7478"
                                         class="footnote">3</a>]</sup>, some of the uses which NP-ADV
                                 covers (but this list is probably not exhaustive) are: </p><div
                                 class="itemizedlist"><ul class="itemizedlist" type="disc">
@@ -10549,7 +10566,7 @@ Whereupon joy reigned unconfined ._.
                                 indicating the means or instrument with which something was
                                 accomplished is labeled NP-INS. This corresponds with the dative of
                                 means/instrumental dative in the terms of traditional Greek
-                                        grammar<sup>[<a id="d0e7583" href="#ftn.d0e7583"
+                                        grammar<sup>[<a id="d0e7589" href="#ftn.d0e7589"
                                         class="footnote">4</a>]</sup>.
                                 </p><pre class="programlisting">
 (NP-SBJ (NPR Ἰωάνης))
@@ -10562,7 +10579,7 @@ Whereupon joy reigned unconfined ._.
                                             ></a>Locative NP</h3></div></div></div><p> A bare NP
                                 indicating location is labeled NP-LOC. This corresponds with the
                                 dative of place where in the terms of traditional Greek
-                                        grammar<sup>[<a id="d0e7598" href="#ftn.d0e7598"
+                                        grammar<sup>[<a id="d0e7604" href="#ftn.d0e7604"
                                         class="footnote">5</a>]</sup>.
                                 </p><pre class="programlisting">
 (NP-SBJ (NEG+Q Οὐδεὶς))
@@ -10664,7 +10681,7 @@ Whereupon joy reigned unconfined ._.
                             </pre><p>
                                             (Luke 1.25) </p></li>
                                     <li class="listitem"><p> dative of time at which (?<sup>[<a
-                                                  id="d0e7642" href="#ftn.d0e7642" class="footnote"
+                                                  id="d0e7648" href="#ftn.d0e7648" class="footnote"
                                                   >6</a>]</sup>):
                                             </p><pre class="programlisting">
 ( (IP-MAT (CODE {VS:8_27})
@@ -10909,7 +10926,7 @@ Whereupon joy reigned unconfined ._.
                                 > </p><p> In the terms of traditional Greek grammar, the NPs
                                 receiving the label NP-TMP correspond to genitive of time within
                                 which, the dative of time at which, and the accusative of extent of
-                                        time<sup>[<a id="d0e7770" href="#ftn.d0e7770"
+                                        time<sup>[<a id="d0e7776" href="#ftn.d0e7776"
                                         class="footnote">7</a>]</sup>. </p></div><div class="sect2"
                             title="Vocative"><div class="titlepage"><div><div><h3 class="title"><a
                                                 id="NP-VOC"></a>Vocative</h3></div></div></div><p>
@@ -11654,19 +11671,19 @@ Whereupon joy reigned unconfined ._.
                         </pre><p>
                                         (Matthew 23.26) </p></li>
                             </ul></div><p> </p></div><div class="footnotes"><br /><hr width="100"
-                            align="left" /><div class="footnote"><p><sup>[<a id="ftn.d0e7472"
-                                        href="#d0e7472" class="para">3</a>] </sup>See the Appendix
+                            align="left" /><div class="footnote"><p><sup>[<a id="ftn.d0e7478"
+                                        href="#d0e7478" class="para">3</a>] </sup>See the Appendix
                                 (pp. 699-707) in Hansen and Quinn’s <span class="emphasis"
                                         ><em>Greek: An Intensive Course</em></span> for descriptions
                                 of these terms.</p></div><div class="footnote"><p><sup>[<a
-                                        id="ftn.d0e7583" href="#d0e7583" class="para">4</a>]
+                                        id="ftn.d0e7589" href="#d0e7589" class="para">4</a>]
                                 </sup>See Hansen and Quinn’s <span class="emphasis"><em>Greek: An
                                         Intensive Course</em></span> pg. 701.</p></div><div
-                            class="footnote"><p><sup>[<a id="ftn.d0e7598" href="#d0e7598"
+                            class="footnote"><p><sup>[<a id="ftn.d0e7604" href="#d0e7604"
                                         class="para">5</a>] </sup>See Hansen and Quinn’s <span
                                     class="emphasis"><em>Greek: An Intensive Course</em></span> pg.
-                                702.</p></div><div class="footnote"><p><sup>[<a id="ftn.d0e7642"
-                                        href="#d0e7642" class="para">6</a>] </sup>The usage here is
+                                702.</p></div><div class="footnote"><p><sup>[<a id="ftn.d0e7648"
+                                        href="#d0e7648" class="para">6</a>] </sup>The usage here is
                                 quite odd, but no other type of dative in Hansen and Quinn’s <span
                                     class="emphasis"><em>Greek: An Intensive Course</em></span> or
                                 Smyth’s <span class="emphasis"><em>Greek Grammar</em></span> seems
@@ -11676,7 +11693,7 @@ Whereupon joy reigned unconfined ._.
                                 with the author, with the assistance of John Welch, S.J.) remarks
                                 that this is a case of the dative being used instead of the
                                 accusative of duration (p. 207).</p></div><div class="footnote"
-                                        ><p><sup>[<a id="ftn.d0e7770" href="#d0e7770" class="para"
+                                        ><p><sup>[<a id="ftn.d0e7776" href="#d0e7776" class="para"
                                         >7</a>] </sup>See pp. 697-706 in Hansen and Quinn’s <span
                                     class="emphasis"><em>Greek: An Intensive Course</em></span> for
                                 explanations of these terms.</p></div></div></div><div
@@ -13584,8 +13601,8 @@ to-devise       [CP −COM    that   the body    the brother     cutting-down   
                                             ></a>IP-INF-THT</h3></div></div></div><p> Infinitival
                                 clauses of indirect discourse in Greek are labeled IP-INF-THT. At
                                 least the following verbs may (but perhaps not always!) introduce
-                                infinitives of indirect discourse<sup>[<a id="d0e8907"
-                                        href="#ftn.d0e8907" class="footnote">8</a>]</sup>: </p><div
+                                infinitives of indirect discourse<sup>[<a id="d0e8913"
+                                        href="#ftn.d0e8913" class="footnote">8</a>]</sup>: </p><div
                                 class="itemizedlist"><ul class="itemizedlist" type="disc">
                                     <li class="listitem"><p> φήμι ‘say, declare’ </p></li>
                                     <li class="listitem"><p> νομίζω ‘consider’ </p></li>
@@ -13936,8 +13953,8 @@ to-devise       [CP −COM    that   the body    the brother     cutting-down   
   (ID GreekNT,Revelation))                    
                 </pre><p
                                 > </p><p> The verbs that (optionally) select for participles of
-                                indirect discourse are the following<sup>[<a id="d0e9107"
-                                        href="#ftn.d0e9107" class="footnote">9</a>]</sup>: </p><div
+                                indirect discourse are the following<sup>[<a id="d0e9113"
+                                        href="#ftn.d0e9113" class="footnote">9</a>]</sup>: </p><div
                                 class="itemizedlist"><ul class="itemizedlist" type="disc">
                                     <li class="listitem"><p>
                                             <a class="link" href="#ἀγγέλλω" title="ἀγγέλλω"
@@ -13965,10 +13982,10 @@ to-devise       [CP −COM    that   the body    the brother     cutting-down   
                                             (cf. the example above with the aorist εἶδον) </p></li>
                                 </ul></div><p> </p></div></div><div class="footnotes"><br /><hr
                             width="100" align="left" /><div class="footnote"><p><sup>[<a
-                                        id="ftn.d0e8907" href="#d0e8907" class="para">8</a>]
+                                        id="ftn.d0e8913" href="#d0e8913" class="para">8</a>]
                                 </sup>From CUNY Summer Greek Institute Day 21, Unit 16 Handout by
                                 Hardy Hansen.</p></div><div class="footnote"><p><sup>[<a
-                                        id="ftn.d0e9107" href="#d0e9107" class="para">9</a>]
+                                        id="ftn.d0e9113" href="#d0e9113" class="para">9</a>]
                                 </sup>From CUNY Summer Greek Institute Day 21, Unit 16 Handout by
                                 Hardy Hansen.</p></div></div></div><div class="chapter"
                     title="Chapter 11. Special Constructions"><div class="titlepage"><div><div><h2
@@ -14751,53 +14768,150 @@ to-devise       [CP −COM    that   the body    the brother     cutting-down   
             </pre><p
                         > </p></div></div></div><div class="part"
                 title="Part III. Planned Corpus Development and Known Issues"><div class="titlepage"
-                                ><div><div><h1 class="title"><a id="d0e9452"></a>Part III. Planned
+                                ><div><div><h1 class="title"><a id="d0e9458"></a>Part III. Planned
                                 Corpus Development and Known Issues</h1></div></div></div><div
                     class="toc"><p><strong>Table of Contents</strong></p><dl>
-                        <dt><span class="chapter"><a href="#development">14. Corpus
-                                Development</a></span></dt>
-                        <dd><dl>
-                                <dt><span class="sect1"><a href="#schedule">Tentative Corpus
-                                            Development Schedule</a></span></dt>
-                            </dl></dd>
-                        <dt><span class="chapter"><a href="#known_issues">15. Known
+                        <dt><span class="chapter"><a href="#known_issues">14. Known
                                 Issues</a></span></dt>
-                    </dl></div><div class="chapter" title="Chapter 14. Corpus Development"><div
-                        class="titlepage"><div><div><h2 class="title"><a id="development"
-                                    ></a>Chapter 14. Corpus Development</h2></div></div></div><div
+                        <dd><dl>
+                                <dt><span class="sect1"><a href="#corpus_state">State of the
+                                            Corpora</a></span></dt>
+                                <dt><span class="sect1"><a href="#d0e9470">State of Each
+                                        Corpus</a></span></dt>
+                                <dt><span class="sect1"><a href="#new_POS">New POS Tags (and Parsing
+                                            Guidelines)</a></span></dt>
+                                <dd><dl>
+                                        <dt><span class="sect2"><a href="#d0e9528">To Be
+                                                Revised</a></span></dt>
+                                    </dl></dd>
+                                <dt><span class="sect1"><a href="#d0e9565">Revisions to
+                                            Herodotus</a></span></dt>
+                            </dl></dd>
+                    </dl></div><div class="chapter" title="Chapter 14. Known Issues"><div
+                        class="titlepage"><div><div><h2 class="title"><a id="known_issues"
+                                    ></a>Chapter 14. Known Issues</h2></div></div></div><div
                         class="toc"><p><strong>Table of Contents</strong></p><dl>
-                            <dt><span class="sect1"><a href="#schedule">Tentative Corpus Development
-                                        Schedule</a></span></dt>
-                        </dl></div><div class="sect1" title="Tentative Corpus Development Schedule"
-                            ><div class="titlepage"><div><div><h2 class="title" style="clear: both"
-                                            ><a id="schedule"></a>Tentative Corpus Development
-                                        Schedule</h2></div></div></div><div class="itemizedlist"><ul
+                            <dt><span class="sect1"><a href="#corpus_state">State of the
+                                    Corpora</a></span></dt>
+                            <dt><span class="sect1"><a href="#d0e9470">State of Each
+                                    Corpus</a></span></dt>
+                            <dt><span class="sect1"><a href="#new_POS">New POS Tags (and Parsing
+                                        Guidelines)</a></span></dt>
+                            <dd><dl>
+                                    <dt><span class="sect2"><a href="#d0e9528">To Be
+                                            Revised</a></span></dt>
+                                </dl></dd>
+                            <dt><span class="sect1"><a href="#d0e9565">Revisions to
+                                    Herodotus</a></span></dt>
+                        </dl></div><div class="sect1" title="State of the Corpora"><div
+                            class="titlepage"><div><div><h2 class="title" style="clear: both"><a
+                                            id="corpus_state"></a>State of the
+                                Corpora</h2></div></div></div><p> As of November 1, 2013, the Penn
+                            Parsed Corpora of Historical Greek are no longer being developed. This
+                            chapter gives the details of the state of the corpus and advice on
+                            proceeding with the work to get the corpus into a state where it can be
+                            used—with confidence—for research. </p></div><div class="sect1"
+                        title="State of Each Corpus"><div class="titlepage"><div><div><h2
+                                        class="title" style="clear: both"><a id="d0e9470"></a>State
+                                        of Each Corpus</h2></div></div></div><p> </p><div
+                            class="itemizedlist"><ul class="itemizedlist" type="disc">
+                                <li class="listitem"><p>Herodotus, <span class="emphasis"
+                                                ><em>Histories</em></span>: Books 1-3 parsed, some
+                                        TODOs on individual sentences remaining (indicated with
+                                        (CODE {TODO:[...desc. of TODO]}) tags), but otherwise
+                                        corrected and sanity-checked. </p><p> Filenames: </p><div
+                                        class="itemizedlist"><ul class="itemizedlist" type="circle">
+                                            <li class="listitem"><p>Book 1: Histories1.psd</p></li>
+                                            <li class="listitem"><p>Book 2: Histories2.psd</p></li>
+                                            <li class="listitem"><p>Book 3: Histories3.psd</p></li>
+                                        </ul></div><p> </p></li>
+                                <li class="listitem"><p>Greek New Testament: all parsed, in various
+                                        states of correction</p><p> Filenames and progress details:
+                                        </p><div class="itemizedlist"><ul class="itemizedlist"
+                                            type="circle">
+                                            <li class="listitem"><p> Matthew: Matthew.psd parsed,
+                                                  corrected and sanity-checked, no TODOs remaining
+                                                  </p><p> Mark: Mark.psd parsed, corrected and
+                                                  sanity-checked, no TODOs remaining </p><p> Luke:
+                                                  parsed, correction and sanity-checking following
+                                                  update to new POS tags and update to parsing
+                                                  guidelines (see <a class="xref" href="#new_POS"
+                                                  title="New POS Tags (and Parsing Guidelines)">the
+                                                  section called “New POS Tags (and Parsing
+                                                  Guidelines)”</a>) in progress, currrently working
+                                                  on file LukeA.04.psd (in PSD/Luke; files were
+                                                  split using Aaron Ecay's split_file.py for better
+                                                  loading in Annotald). </p><p> John: parsed,
+                                                  correction and sanity-checking following update to
+                                                  new POS tags and update to parsing guidelines (see
+                                                  <a class="xref" href="#new_POS"
+                                                  title="New POS Tags (and Parsing Guidelines)">the
+                                                  section called “New POS Tags (and Parsing
+                                                  Guidelines)”</a>) not yet started.</p><p> Acts and
+                                                  remaining books: parsed, not yet updated to <a
+                                                  class="link" href="#new_POS"
+                                                  title="New POS Tags (and Parsing Guidelines)">new
+                                                  POS tags and parsing guidelines</a></p></li>
+                                        </ul></div><p> </p></li>
+                            </ul></div><p> </p></div><div class="sect1"
+                        title="New POS Tags (and Parsing Guidelines)"><div class="titlepage"
+                                        ><div><div><h2 class="title" style="clear: both"><a
+                                            id="new_POS"></a>New POS Tags (and Parsing
+                                        Guidelines)</h2></div></div></div><p>Since the Penn Parsed
+                            Corpora of Historical Greek were designed following the model of the
+                            Penn Parsed Corpora of Historical English, at first the POS tags used
+                            mirrored the English tags quite closely and—given the vast differences
+                            between English and Greek—inappropriately. At a later stage, the corpora
+                            were switched to use an expanded POS tagging and parsing scheme (as
+                            described, for the most part, in this manual, although Matthew and Mark
+                            from the Greek New Testament and the first book of Herodotus' <span
+                                class="emphasis"><em>Histories</em></span> should be taken as the
+                            gold standard), but this transition was not completed for the Gospels
+                            beyond Matthew and Mark, and from Acts to the remainder of the New
+                            Testament, the corpus remains in the original, English-style
+                            format.</p><div class="sect2" title="To Be Revised"><div
+                                class="titlepage"><div><div><h3 class="title"><a id="d0e9528"></a>To
+                                            Be Revised</h3></div></div></div><p> When revising the
+                                Greek New Testament corpus beyond Matthew and Mark, in general the
+                                following things all need to be checked: </p><div
+                                class="itemizedlist"><ul class="itemizedlist" type="disc">
+                                    <li class="listitem"><p>add NP-ATR and NP-PAR where
+                                            appropriate</p></li>
+                                    <li class="listitem"><p>add NP-OBP and NP-OBQ where
+                                            appropriate</p></li>
+                                    <li class="listitem"><p>add -PASS where appropriate</p></li>
+                                    <li class="listitem"><p>fix CP-CMPs where needed</p></li>
+                                    <li class="listitem"><p>add -TAG dash tag to tag questions where
+                                            appropriate</p></li>
+                                    <li class="listitem"><p>fix movement (see "How to Check
+                                            Movement" in docs/ directory of GitHub repo)</p></li>
+                                    <li class="listitem"><p>syntactic and POS correction queries
+                                            (see "GNT Correction Queries" in docs/ directory of
+                                            GitHub repo)</p></li>
+                                    <li class="listitem"><p>check that words are split correctly (in
+                                            particular, find all cases of crasis and fix any cases
+                                            where breathing marks are not in the first part of the
+                                            split word)</p></li>
+                                    <li class="listitem"><p>collect D lemmas from Matthew and Mark
+                                            for D-to-DEM, etc. queries</p></li>
+                                    <li class="listitem"><p>write and run Matthew and Mark D-to-DEM,
+                                            etc. queries</p></li>
+                                </ul></div><p> </p></div></div><div class="sect1"
+                        title="Revisions to Herodotus"><div class="titlepage"><div><div><h2
+                                        class="title" style="clear: both"><a id="d0e9565"
+                                        ></a>Revisions to Herodotus</h2></div></div></div><p> Some
+                            things should also be checked in Herodotus' <span class="emphasis"
+                                    ><em>Histories</em></span>. </p><div class="itemizedlist"><ul
                                 class="itemizedlist" type="disc">
-                                <li class="listitem"><p> 11/18/2011: Release Matthew from the Greek
-                                        New Testament and Book 1 from Herodotus’ <span
-                                            class="emphasis"><em>Histories</em></span> as samples of
-                                        the PPCHiG annotation system. </p></li>
-                                <li class="listitem"><p> 12/2/2011: Release the remaining books of
-                                        the Gospels from the Greek New Testament. </p></li>
-                                <li class="listitem"><p> 12/30/2011: Release the remaining books of
-                                        the Greek New Testament. </p></li>
-                                <li class="listitem"><p> 3/16/2011: Release the remaining books of
-                                        Herodotus’ <span class="emphasis"><em>Histories</em></span>.
-                                    </p></li>
-                                <li class="listitem"><p> 6/15/2011: Release Homer’s <span
-                                            class="emphasis"><em>Iliad</em></span> and <span
-                                            class="emphasis"><em>Odyssey</em></span>. </p></li>
-                                <li class="listitem"><p> 7/13/2011: Release Hesiod’s <span
-                                            class="emphasis"><em>Theogeny</em></span> and <span
-                                            class="emphasis"><em>Works and Days</em></span>.
-                                    </p></li>
-                            </ul></div></div></div><div class="chapter"
-                    title="Chapter 15. Known Issues"><div class="titlepage"><div><div><h2
-                                    class="title"><a id="known_issues"></a>Chapter 15. Known
-                                    Issues</h2></div></div></div><p>Coming soon.</p></div></div><div
-                class="appendix" title="Appendix A. Appendix"><div class="titlepage"><div><div><h2
-                                class="title"><a id="appendix"
-                        ></a>Appendix A. Appendix</h2></div></div></div><div class="toc"
+                                <li class="listitem"><p>make sure all books of HDT have D vs. DEM
+                                        distinction</p></li>
+                                <li class="listitem"><p>check that all clitic pronouns in HDT have
+                                        CL* tags</p></li>
+                                <li class="listitem"><p>fix TODOs in HDT</p></li>
+                            </ul></div><p> </p></div></div></div><div class="appendix"
+                title="Appendix A. Appendix"><div class="titlepage"><div><div><h2 class="title"><a
+                                    id="appendix"
+                    ></a>Appendix A. Appendix</h2></div></div></div><div class="toc"
                             ><p><strong>Table of Contents</strong></p><dl>
                         <dt><span class="sect1"><a href="#copular_verbs">Copular
                             Verbs</a></span></dt>
